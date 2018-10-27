@@ -2081,6 +2081,9 @@ Public Class ElencoPrenCamere
       g_frmMain.eui_Strumenti_Aggiorna.Visible = True
       g_frmMain.eui_Strumenti_Esporta.Visible = True
 
+      g_frmMain.eui_Strumenti_Esporta_SepXML.Visible = False
+      g_frmMain.eui_Strumenti_Esporta_XML.Visible = False
+
       ' Stampa.
       g_frmMain.eui_Strumenti_Stampa_Anteprima.Visible = True
       g_frmMain.eui_Strumenti_Stampa_Elenco.Visible = True

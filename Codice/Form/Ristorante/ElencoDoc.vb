@@ -2650,6 +2650,9 @@ Public Class ElencoDoc
       g_frmMain.eui_Strumenti_Aggiorna.Visible = True
       g_frmMain.eui_Strumenti_Esporta.Visible = True
 
+      g_frmMain.eui_Strumenti_Esporta_SepXML.Visible = True
+      g_frmMain.eui_Strumenti_Esporta_XML.Visible = True
+
       ' Stampa.
       g_frmMain.eui_Strumenti_Stampa_Anteprima.Visible = True
       g_frmMain.eui_Strumenti_Stampa_Elenco.Visible = True
