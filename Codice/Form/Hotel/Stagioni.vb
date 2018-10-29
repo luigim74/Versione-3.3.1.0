@@ -1157,11 +1157,6 @@ Public Class frmStagioni
          ' Ottiene l'effetto a scomparsa.
          Me.WindowState = FormWindowState.Minimized
 
-         ' Chiude i comandi sul Ribbon.
-         g_frmMain.rtgGestionaleAmica.Visible = False
-         g_frmMain.rtgPlanningCamere.Visible = False
-         g_frmMain.rtgStrumentiModifica.Visible = False
-
          ' Distrugge l'oggetto e libera le risorse.
          g_frmStagioni.Dispose()
          g_frmStagioni = Nothing

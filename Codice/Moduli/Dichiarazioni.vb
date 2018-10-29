@@ -595,6 +595,7 @@ Module Dichiarazioni
    Public g_frmEtichette As ElencoEtichette
    Public g_frmDocumenti As ElencoDoc
    Public g_frmDocumento As frmDocumento
+   Public g_frmFatturaElettronica As FatturaElettronica
    Public g_frmCorrispettivi As ElencoCorrispettivi
    Public g_frmMenu As Menu
    Public g_frmCap As ElencoCAP

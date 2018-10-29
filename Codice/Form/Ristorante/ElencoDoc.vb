@@ -1183,6 +1183,7 @@ Public Class ElencoDoc
          AttivaDisattivaAnnullaSospeso()
          AttivaDisattivaBuoni()
          AttivaDisattivaAnnullaDoc()
+         AttivaDisattivaEsportaFatturaElettronica()
 
          ' Registra loperazione effettuata dall'operatore identificato.
          Dim strDescrizione As String = "(" & Documento & " n. " & Numero & " del " & Data & " - € " & CFormatta.FormattaEuro(Importo) & ")"
@@ -1494,6 +1495,7 @@ Public Class ElencoDoc
          AttivaDisattivaAnnullaSospeso()
          AttivaDisattivaBuoni()
          AttivaDisattivaAnnullaDoc()
+         AttivaDisattivaEsportaFatturaElettronica()
 
          ' Se nella tabella non ci sono record disattiva i pulsanti.
          ConvalidaDati()
@@ -1538,6 +1540,7 @@ Public Class ElencoDoc
             AttivaDisattivaAnnullaSospeso()
             AttivaDisattivaBuoni()
             AttivaDisattivaAnnullaDoc()
+            AttivaDisattivaEsportaFatturaElettronica()
 
             ' Aggiorna l'intestazione della griglia dati.
             AggIntGriglia()
@@ -1578,6 +1581,7 @@ Public Class ElencoDoc
          AttivaDisattivaAnnullaSospeso()
          AttivaDisattivaBuoni()
          AttivaDisattivaAnnullaDoc()
+         AttivaDisattivaEsportaFatturaElettronica()
 
          ' Aggiorna l'intestazione della griglia dati.
          AggIntGriglia()
@@ -1616,6 +1620,7 @@ Public Class ElencoDoc
          AttivaDisattivaAnnullaSospeso()
          AttivaDisattivaBuoni()
          AttivaDisattivaAnnullaDoc()
+         AttivaDisattivaEsportaFatturaElettronica()
 
          ' Aggiorna l'intestazione della griglia dati.
          AggIntGriglia()
@@ -1713,30 +1718,30 @@ Public Class ElencoDoc
 
    ' DA_FARE_B: NON UTILIZZATA!
    Private Sub ApriDati(ByVal val As String)
-      Try
-         ' Modifica il cursore del mouse.
-         Cursor.Current = Cursors.AppStarting
+      'Try
+      '   ' Modifica il cursore del mouse.
+      '   Cursor.Current = Cursors.AppStarting
 
-         ' Per la versione demo.
-         ' Se è un nuovo inserimento verifica il numero dei record.
-         If val = String.Empty Then
-            If g_VerDemo = True Then
-               ' Test per la versione demo.
-               If VerificaNumRecord(LeggiNumRecord(TAB_DOCUMENTI)) = True Then
-                  Exit Sub
-               End If
-            End If
-         End If
+      '   ' Per la versione demo.
+      '   ' Se è un nuovo inserimento verifica il numero dei record.
+      '   If val = String.Empty Then
+      '      If g_VerDemo = True Then
+      '         ' Test per la versione demo.
+      '         If VerificaNumRecord(LeggiNumRecord(TAB_DOCUMENTI)) = True Then
+      '            Exit Sub
+      '         End If
+      '      End If
+      '   End If
 
-         Dim frm As New frmAcquisti
-         frm.Tag = val
-         frm.ShowDialog()
+      '   Dim frm As New frmAcquisti
+      '   frm.Tag = val
+      '   frm.ShowDialog()
 
-      Catch ex As Exception
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
+      'Catch ex As Exception
+      '   ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+      '   err.GestisciErrore(ex.StackTrace, ex.Message)
 
-      End Try
+      'End Try
    End Sub
 
    Public Sub AggIntGriglia()
@@ -1901,6 +1906,40 @@ Public Class ElencoDoc
       End Try
    End Sub
 
+   Public Sub AttivaDisattivaEsportaFatturaElettronica()
+      Try
+         ' Attiva/disattiva il pulsante per esportare il documento in Fattura elettronica.
+         If numRecord <> 0 Then
+
+            Dim tipoDoc As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_TIPO_DOC)
+            Dim statoDoc As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_STATO_DOC)
+
+            Select Case tipoDoc
+               Case TIPO_DOC_FF
+
+                  Select Case statoDoc
+                     Case STATO_DOC_ANNULLATO
+                        g_frmMain.eui_Strumenti_Esporta_XML.Enabled = False
+
+                     Case Else
+                        g_frmMain.eui_Strumenti_Esporta_XML.Enabled = True
+
+                  End Select
+
+               Case Else
+                  g_frmMain.eui_Strumenti_Esporta_XML.Enabled = False
+
+            End Select
+         End If
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
+
    Public Sub AnnullaDocumento()
       Try
          Dim Id As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_ID_DOC)
@@ -1950,6 +1989,7 @@ Public Class ElencoDoc
          AttivaDisattivaAnnullaSospeso()
          AttivaDisattivaBuoni()
          AttivaDisattivaAnnullaDoc()
+         AttivaDisattivaEsportaFatturaElettronica()
 
          ' Registra loperazione effettuata dall'operatore identificato.
          Dim strDescrizione As String = "(" & Documento & " n. " & Numero & " del " & Data & " - € " & CFormatta.FormattaEuro(Importo) & ")"
@@ -2339,6 +2379,7 @@ Public Class ElencoDoc
          AttivaDisattivaAnnullaSospeso()
          AttivaDisattivaBuoni()
          AttivaDisattivaAnnullaDoc()
+         AttivaDisattivaEsportaFatturaElettronica()
 
          ' Aggiorna l'intestazione della griglia dati.
          AggIntGriglia()
@@ -2812,6 +2853,9 @@ Public Class ElencoDoc
             ' Attiva/disattiva il pulsante per annullare un documento.
             AttivaDisattivaAnnullaDoc()
 
+            ' Attiva/disattiva il pulsante per esportare il documento in Fattura elettronica.
+            AttivaDisattivaEsportaFatturaElettronica()
+
             ' Attiva/disattiva il pulsanti per i sospesi.
             AttivaDisattivaSospeso()
             AttivaDisattivaPassaSospeso()
@@ -2844,6 +2888,9 @@ Public Class ElencoDoc
       ' Attiva/disattiva il pulsante per annullare un documento.
       AttivaDisattivaAnnullaDoc()
 
+      ' Attiva/disattiva il pulsante per esportare il documento in Fattura elettronica.
+      AttivaDisattivaEsportaFatturaElettronica()
+
       ' Attiva/disattiva i pulsanti per i sospesi.
       AttivaDisattivaSospeso()
       AttivaDisattivaPassaSospeso()
@@ -2864,6 +2911,34 @@ Public Class ElencoDoc
    End Sub
 
    Private Sub DataGrid1_DoubleClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles DataGrid1.DoubleClick
+      ' Apre la finestra Documento per la modifica dei dati.
+      Modifica()
+   End Sub
+
+   Private Sub dtpDal_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles dtpDal.ValueChanged
+      AggiornaDatiPeriodo()
+   End Sub
+
+   Private Sub dtpAl_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles dtpAl.ValueChanged
+      AggiornaDatiPeriodo()
+   End Sub
+
+   Public Sub Nuovo()
+      Try
+         ' Modifica il cursore del mouse.
+         Cursor.Current = Cursors.AppStarting
+
+         g_frmDocumento = New frmDocumento("ElencoDoc", "Conto", String.Empty)
+         g_frmDocumento.ShowDialog()
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
+   Public Sub Modifica()
       Try
          ' Modifica il cursore del mouse.
          Cursor.Current = Cursors.AppStarting
@@ -2879,12 +2954,19 @@ Public Class ElencoDoc
       End Try
    End Sub
 
-   Private Sub dtpDal_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles dtpDal.ValueChanged
-      AggiornaDatiPeriodo()
-   End Sub
+   Public Sub NuovaFatturaElettronica()
+      Try
+         ' Modifica il cursore del mouse.
+         Cursor.Current = Cursors.AppStarting
 
-   Private Sub dtpAl_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles dtpAl.ValueChanged
-      AggiornaDatiPeriodo()
+         g_frmFatturaElettronica = New FatturaElettronica
+         g_frmFatturaElettronica.ShowDialog()
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
    End Sub
 
 

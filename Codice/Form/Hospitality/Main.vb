@@ -1,6 +1,5 @@
 #Region " DATI FILE.VB "
 ' ******************************************************************
-' Nome form:            frmMain
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       04/01/2006
 ' Data ultima modifica: 05/09/2018
@@ -12077,11 +12076,7 @@ Friend Class frmMain
                g_frmListiniCamere.Nuovo()
 
             Case TITOLO_FINESTRA_ELENCO_DOCUMENTI
-               ' Modifica il cursore del mouse.
-               Cursor.Current = Cursors.AppStarting
-
-               g_frmDocumento = New frmDocumento("ElencoDoc", "Conto", String.Empty)
-               g_frmDocumento.ShowDialog()
+               g_frmDocumenti.Nuovo()
 
             Case TITOLO_FINESTRA_ELENCO_EMAIL
                g_frmEmail.Nuovo()
@@ -12294,6 +12289,7 @@ Friend Class frmMain
 
    ' DA_FARE_A: Sviluppare!
    Private Sub eui_Strumenti_Esporta_XML_Click(sender As Object, e As EventArgs) Handles eui_Strumenti_Esporta_XML.Click
+      g_frmDocumenti.NuovaFatturaElettronica()
 
    End Sub
 

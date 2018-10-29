@@ -409,6 +409,12 @@
     <Compile Include="Codice\Form\Hospitality\ElencoEmail.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Codice\Form\Hospitality\FatturaElettronica.Designer.vb">
+      <DependentUpon>FatturaElettronica.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Codice\Form\Hospitality\FatturaElettronica.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Codice\Form\Hospitality\InvioEmail.Designer.vb">
       <DependentUpon>InvioEmail.vb</DependentUpon>
     </Compile>
@@ -997,6 +1003,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Codice\Form\Hospitality\ElencoEmail.resx">
       <DependentUpon>ElencoEmail.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Codice\Form\Hospitality\FatturaElettronica.resx">
+      <DependentUpon>FatturaElettronica.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Codice\Form\Hospitality\InvioEmail.resx">
       <DependentUpon>InvioEmail.vb</DependentUpon>

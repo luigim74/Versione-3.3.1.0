@@ -1,4 +1,17 @@
-﻿Imports Elegant.Ui
+﻿#Region " DATI FILE.VB "
+' **********************************************************************************************
+' Autore:               Luigi Montana, Montana Software
+' Data creazione:       04/01/2017
+' Data ultima modifica: 05/09/2018
+' Descrizione:          Form per la compilazione dei documenti fiscali (Fatture, Ricevute ecc.)
+' Note:
+'
+' Elenco Attivita:
+'
+' ***********************************************************************************************
+#End Region
+
+Imports Elegant.Ui
 
 Public Class frmDocumento
 
@@ -37,7 +50,6 @@ Public Class frmDocumento
    Const STATO_DOC_NUOVO As String = " (Nuovo)"
    Const STATO_DOC_MODIFICA As String = " (Modifica)"
    Private statoDoc As String
-
 
    ' Dichiara un oggetto connessione.
    Dim cn As New OleDbConnection(ConnString)
@@ -2281,6 +2293,19 @@ Public Class frmDocumento
       Finally
          ' Modifica il cursore del mouse.
          Cursor.Current = Cursors.Default
+
+      End Try
+   End Sub
+
+   Private Sub frmDocumento_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
+      Try
+         ' Distrugge l'oggetto e libera le risorse.
+         g_frmDocumento.Dispose()
+         g_frmDocumento = Nothing
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
 
       End Try
    End Sub
