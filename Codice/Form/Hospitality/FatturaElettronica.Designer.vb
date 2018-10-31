@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class FatturaElettronica
+Partial Class frmFatturaElettronica
    Inherits System.Windows.Forms.Form
 
    'Form esegue l'override del metodo Dispose per pulire l'elenco dei componenti.
@@ -22,42 +22,43 @@ Partial Class FatturaElettronica
    'Non modificarla mediante l'editor del codice.
    <System.Diagnostics.DebuggerStepThrough()> _
    Private Sub InitializeComponent()
-      Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FatturaElettronica))
+      Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmFatturaElettronica))
       Me.formFrameSkinner = New Elegant.Ui.FormFrameSkinner()
       Me.StatusBar1 = New Elegant.Ui.StatusBar()
       Me.StatusBarNotificationsArea1 = New Elegant.Ui.StatusBarNotificationsArea()
       Me.StatusBarPane2 = New Elegant.Ui.StatusBarPane()
-      Me.StatusBarControlsArea1 = New Elegant.Ui.StatusBarControlsArea()
-      Me.eui_cmdTastiera = New Elegant.Ui.Button()
-      Me.eui_cmdAnnulla = New Elegant.Ui.Button()
-      Me.eui_tpcDocumento = New Elegant.Ui.TabControl()
-      Me.TabPage1 = New Elegant.Ui.TabPage()
-      Me.TabPage2 = New Elegant.Ui.TabPage()
-      Me.Button3 = New Elegant.Ui.Button()
-      Me.Button2 = New Elegant.Ui.Button()
-      Me.eui_txtNote = New Elegant.Ui.TextBox()
-      Me.TabPage3 = New Elegant.Ui.TabPage()
-      Me.Button6 = New Elegant.Ui.Button()
-      Me.TextBox1 = New Elegant.Ui.TextBox()
-      Me.Button4 = New Elegant.Ui.Button()
-      Me.TabPage4 = New Elegant.Ui.TabPage()
-      Me.Button7 = New Elegant.Ui.Button()
-      Me.eui_cmdAnteprima = New Elegant.Ui.Button()
-      Me.Button1 = New Elegant.Ui.Button()
-      Me.Button8 = New Elegant.Ui.Button()
-      Me.StatusBarPane5 = New Elegant.Ui.StatusBarPane()
-      Me.eui_lblStatoDataDoc = New Elegant.Ui.Label()
-      Me.StatusBarPane1 = New Elegant.Ui.StatusBarPane()
-      Me.eui_lblStatoClienteDoc = New Elegant.Ui.Label()
       Me.Label1 = New Elegant.Ui.Label()
       Me.LinkLabel2 = New System.Windows.Forms.LinkLabel()
       Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
       Me.StatusBarPane3 = New Elegant.Ui.StatusBarPane()
       Me.Label2 = New Elegant.Ui.Label()
+      Me.StatusBarControlsArea1 = New Elegant.Ui.StatusBarControlsArea()
       Me.StatusBarPane4 = New Elegant.Ui.StatusBarPane()
+      Me.eui_cmdTastiera = New Elegant.Ui.Button()
+      Me.eui_cmdAnnulla = New Elegant.Ui.Button()
+      Me.eui_tpcDocumento = New Elegant.Ui.TabControl()
+      Me.TabPage1 = New Elegant.Ui.TabPage()
+      Me.TabPage2 = New Elegant.Ui.TabPage()
+      Me.eui_cmdSalvaErrori = New Elegant.Ui.Button()
+      Me.eui_cmdConvalida = New Elegant.Ui.Button()
+      Me.eui_txtNote = New Elegant.Ui.TextBox()
+      Me.TabPage3 = New Elegant.Ui.TabPage()
+      Me.eui_cmdCopiaPercorso = New Elegant.Ui.Button()
+      Me.TextBox1 = New Elegant.Ui.TextBox()
+      Me.eui_cmdSalvaTestoXml = New Elegant.Ui.Button()
+      Me.TabPage4 = New Elegant.Ui.TabPage()
+      Me.eui_cmdSalvaAnteprimaHtml = New Elegant.Ui.Button()
+      Me.eui_cmdApriCartella = New Elegant.Ui.Button()
+      Me.eui_cmdEsporta = New Elegant.Ui.Button()
+      Me.eui_cmdInvia = New Elegant.Ui.Button()
+      Me.StatusBarPane5 = New Elegant.Ui.StatusBarPane()
+      Me.eui_lblStatoDataDoc = New Elegant.Ui.Label()
+      Me.StatusBarPane1 = New Elegant.Ui.StatusBarPane()
+      Me.eui_lblStatoClienteDoc = New Elegant.Ui.Label()
       Me.StatusBar1.SuspendLayout()
       Me.StatusBarNotificationsArea1.SuspendLayout()
       Me.StatusBarPane2.SuspendLayout()
+      Me.StatusBarPane3.SuspendLayout()
       Me.StatusBarControlsArea1.SuspendLayout()
       CType(Me.eui_tpcDocumento, System.ComponentModel.ISupportInitialize).BeginInit()
       Me.TabPage2.SuspendLayout()
@@ -65,7 +66,6 @@ Partial Class FatturaElettronica
       Me.TabPage4.SuspendLayout()
       Me.StatusBarPane5.SuspendLayout()
       Me.StatusBarPane1.SuspendLayout()
-      Me.StatusBarPane3.SuspendLayout()
       Me.SuspendLayout()
       '
       'formFrameSkinner
@@ -79,10 +79,10 @@ Partial Class FatturaElettronica
       Me.StatusBar1.Controls.Add(Me.StatusBarControlsArea1)
       Me.StatusBar1.ControlsArea = Me.StatusBarControlsArea1
       Me.StatusBar1.Dock = System.Windows.Forms.DockStyle.Bottom
-      Me.StatusBar1.Location = New System.Drawing.Point(0, 517)
+      Me.StatusBar1.Location = New System.Drawing.Point(0, 528)
       Me.StatusBar1.Name = "StatusBar1"
       Me.StatusBar1.NotificationsArea = Me.StatusBarNotificationsArea1
-      Me.StatusBar1.Size = New System.Drawing.Size(894, 22)
+      Me.StatusBar1.Size = New System.Drawing.Size(902, 22)
       Me.StatusBar1.TabIndex = 4
       Me.StatusBar1.Text = "StatusBar1"
       '
@@ -95,7 +95,7 @@ Partial Class FatturaElettronica
       Me.StatusBarNotificationsArea1.MaximumSize = New System.Drawing.Size(0, 22)
       Me.StatusBarNotificationsArea1.MinimumSize = New System.Drawing.Size(0, 22)
       Me.StatusBarNotificationsArea1.Name = "StatusBarNotificationsArea1"
-      Me.StatusBarNotificationsArea1.Size = New System.Drawing.Size(822, 22)
+      Me.StatusBarNotificationsArea1.Size = New System.Drawing.Size(830, 22)
       Me.StatusBarNotificationsArea1.TabIndex = 1
       '
       'StatusBarPane2
@@ -112,16 +112,81 @@ Partial Class FatturaElettronica
       Me.StatusBarPane2.Size = New System.Drawing.Size(404, 22)
       Me.StatusBarPane2.TabIndex = 0
       '
+      'Label1
+      '
+      Me.Label1.Location = New System.Drawing.Point(5, 5)
+      Me.Label1.Name = "Label1"
+      Me.Label1.ScreenTip.Text = "Cliente intestatario"
+      Me.Label1.Size = New System.Drawing.Size(114, 13)
+      Me.Label1.TabIndex = 24
+      Me.Label1.Text = "Per info e servizi gratuiti:"
+      '
+      'LinkLabel2
+      '
+      Me.LinkLabel2.ActiveLinkColor = System.Drawing.Color.White
+      Me.LinkLabel2.AutoSize = True
+      Me.LinkLabel2.BackColor = System.Drawing.Color.Transparent
+      Me.LinkLabel2.LinkColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+      Me.LinkLabel2.Location = New System.Drawing.Point(125, 5)
+      Me.LinkLabel2.Name = "LinkLabel2"
+      Me.LinkLabel2.Size = New System.Drawing.Size(133, 13)
+      Me.LinkLabel2.TabIndex = 25
+      Me.LinkLabel2.TabStop = True
+      Me.LinkLabel2.Text = "www.agenziaentrate.gov.it"
+      Me.LinkLabel2.VisitedLinkColor = System.Drawing.Color.Magenta
+      '
+      'LinkLabel1
+      '
+      Me.LinkLabel1.ActiveLinkColor = System.Drawing.Color.White
+      Me.LinkLabel1.AutoSize = True
+      Me.LinkLabel1.BackColor = System.Drawing.Color.Transparent
+      Me.LinkLabel1.LinkColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+      Me.LinkLabel1.Location = New System.Drawing.Point(264, 5)
+      Me.LinkLabel1.Name = "LinkLabel1"
+      Me.LinkLabel1.Size = New System.Drawing.Size(105, 13)
+      Me.LinkLabel1.TabIndex = 26
+      Me.LinkLabel1.TabStop = True
+      Me.LinkLabel1.Text = "www.fatturapa.gov.it"
+      Me.LinkLabel1.VisitedLinkColor = System.Drawing.Color.Magenta
+      '
+      'StatusBarPane3
+      '
+      Me.StatusBarPane3.Controls.Add(Me.Label2)
+      Me.StatusBarPane3.Location = New System.Drawing.Point(404, 0)
+      Me.StatusBarPane3.MaximumSize = New System.Drawing.Size(0, 22)
+      Me.StatusBarPane3.MinimumSize = New System.Drawing.Size(0, 22)
+      Me.StatusBarPane3.Name = "StatusBarPane3"
+      Me.StatusBarPane3.Size = New System.Drawing.Size(303, 22)
+      Me.StatusBarPane3.TabIndex = 1
+      '
+      'Label2
+      '
+      Me.Label2.Location = New System.Drawing.Point(5, 5)
+      Me.Label2.Name = "Label2"
+      Me.Label2.ScreenTip.Text = "Numero documento"
+      Me.Label2.Size = New System.Drawing.Size(263, 13)
+      Me.Label2.TabIndex = 26
+      Me.Label2.Text = "C:\Migg\Gim9\Archivi\Xml\IT00000000000_D9757.xml"
+      '
       'StatusBarControlsArea1
       '
       Me.StatusBarControlsArea1.Controls.Add(Me.StatusBarPane4)
       Me.StatusBarControlsArea1.Dock = System.Windows.Forms.DockStyle.Right
-      Me.StatusBarControlsArea1.Location = New System.Drawing.Point(822, 0)
+      Me.StatusBarControlsArea1.Location = New System.Drawing.Point(830, 0)
       Me.StatusBarControlsArea1.MaximumSize = New System.Drawing.Size(0, 22)
       Me.StatusBarControlsArea1.MinimumSize = New System.Drawing.Size(0, 22)
       Me.StatusBarControlsArea1.Name = "StatusBarControlsArea1"
       Me.StatusBarControlsArea1.Size = New System.Drawing.Size(72, 22)
       Me.StatusBarControlsArea1.TabIndex = 0
+      '
+      'StatusBarPane4
+      '
+      Me.StatusBarPane4.Location = New System.Drawing.Point(0, 0)
+      Me.StatusBarPane4.MaximumSize = New System.Drawing.Size(0, 22)
+      Me.StatusBarPane4.MinimumSize = New System.Drawing.Size(0, 22)
+      Me.StatusBarPane4.Name = "StatusBarPane4"
+      Me.StatusBarPane4.Size = New System.Drawing.Size(20, 22)
+      Me.StatusBarPane4.TabIndex = 0
       '
       'eui_cmdTastiera
       '
@@ -180,8 +245,8 @@ Partial Class FatturaElettronica
       'TabPage2
       '
       Me.TabPage2.ActiveControl = Nothing
-      Me.TabPage2.Controls.Add(Me.Button3)
-      Me.TabPage2.Controls.Add(Me.Button2)
+      Me.TabPage2.Controls.Add(Me.eui_cmdSalvaErrori)
+      Me.TabPage2.Controls.Add(Me.eui_cmdConvalida)
       Me.TabPage2.Controls.Add(Me.eui_txtNote)
       Me.TabPage2.KeyTip = Nothing
       Me.TabPage2.Name = "TabPage2"
@@ -189,23 +254,23 @@ Partial Class FatturaElettronica
       Me.TabPage2.TabIndex = 1
       Me.TabPage2.Text = "Convalida"
       '
-      'Button3
+      'eui_cmdSalvaErrori
       '
-      Me.Button3.Id = "b3876e90-9e2d-438a-ab42-9cb94349f33f"
-      Me.Button3.Location = New System.Drawing.Point(607, 423)
-      Me.Button3.Name = "Button3"
-      Me.Button3.Size = New System.Drawing.Size(110, 32)
-      Me.Button3.TabIndex = 3
-      Me.Button3.Text = "Salva lista errori"
+      Me.eui_cmdSalvaErrori.Id = "b3876e90-9e2d-438a-ab42-9cb94349f33f"
+      Me.eui_cmdSalvaErrori.Location = New System.Drawing.Point(607, 423)
+      Me.eui_cmdSalvaErrori.Name = "eui_cmdSalvaErrori"
+      Me.eui_cmdSalvaErrori.Size = New System.Drawing.Size(110, 32)
+      Me.eui_cmdSalvaErrori.TabIndex = 3
+      Me.eui_cmdSalvaErrori.Text = "Salva lista errori"
       '
-      'Button2
+      'eui_cmdConvalida
       '
-      Me.Button2.Id = "f06cd621-78bb-492f-aebb-74b0711187e1"
-      Me.Button2.Location = New System.Drawing.Point(486, 423)
-      Me.Button2.Name = "Button2"
-      Me.Button2.Size = New System.Drawing.Size(110, 32)
-      Me.Button2.TabIndex = 2
-      Me.Button2.Text = "Convalida"
+      Me.eui_cmdConvalida.Id = "f06cd621-78bb-492f-aebb-74b0711187e1"
+      Me.eui_cmdConvalida.Location = New System.Drawing.Point(486, 423)
+      Me.eui_cmdConvalida.Name = "eui_cmdConvalida"
+      Me.eui_cmdConvalida.Size = New System.Drawing.Size(110, 32)
+      Me.eui_cmdConvalida.TabIndex = 2
+      Me.eui_cmdConvalida.Text = "Convalida"
       '
       'eui_txtNote
       '
@@ -220,25 +285,25 @@ Partial Class FatturaElettronica
       'TabPage3
       '
       Me.TabPage3.ActiveControl = Nothing
-      Me.TabPage3.Controls.Add(Me.Button6)
+      Me.TabPage3.Controls.Add(Me.eui_cmdCopiaPercorso)
       Me.TabPage3.Controls.Add(Me.TextBox1)
-      Me.TabPage3.Controls.Add(Me.Button4)
+      Me.TabPage3.Controls.Add(Me.eui_cmdSalvaTestoXml)
       Me.TabPage3.KeyTip = Nothing
       Me.TabPage3.Name = "TabPage3"
       Me.TabPage3.Size = New System.Drawing.Size(728, 464)
       Me.TabPage3.TabIndex = 2
       Me.TabPage3.Text = "XML"
       '
-      'Button6
+      'eui_cmdCopiaPercorso
       '
-      Me.Button6.Id = "60ebbd95-62c4-4451-90f1-4270387cc16d"
-      Me.Button6.Location = New System.Drawing.Point(486, 423)
-      Me.Button6.Name = "Button6"
-      Me.Button6.ScreenTip.Caption = "Copia percorso"
-      Me.Button6.ScreenTip.Text = "Copia il percorso del file XML negli appunti."
-      Me.Button6.Size = New System.Drawing.Size(110, 32)
-      Me.Button6.TabIndex = 7
-      Me.Button6.Text = "Copia percorso"
+      Me.eui_cmdCopiaPercorso.Id = "60ebbd95-62c4-4451-90f1-4270387cc16d"
+      Me.eui_cmdCopiaPercorso.Location = New System.Drawing.Point(486, 423)
+      Me.eui_cmdCopiaPercorso.Name = "eui_cmdCopiaPercorso"
+      Me.eui_cmdCopiaPercorso.ScreenTip.Caption = "Copia percorso"
+      Me.eui_cmdCopiaPercorso.ScreenTip.Text = "Copia il percorso del file XML negli appunti."
+      Me.eui_cmdCopiaPercorso.Size = New System.Drawing.Size(110, 32)
+      Me.eui_cmdCopiaPercorso.TabIndex = 7
+      Me.eui_cmdCopiaPercorso.Text = "Copia percorso"
       '
       'TextBox1
       '
@@ -250,82 +315,82 @@ Partial Class FatturaElettronica
       Me.TextBox1.TabIndex = 6
       Me.TextBox1.TextEditorWidth = 720
       '
-      'Button4
+      'eui_cmdSalvaTestoXml
       '
-      Me.Button4.Id = "396425fd-fa39-42d2-8af8-2039c1104cdd"
-      Me.Button4.Location = New System.Drawing.Point(607, 423)
-      Me.Button4.Name = "Button4"
-      Me.Button4.ScreenTip.Caption = "Salva"
-      Me.Button4.ScreenTip.Text = "Salva il codice XML in un file di testo TXT."
-      Me.Button4.Size = New System.Drawing.Size(110, 32)
-      Me.Button4.TabIndex = 5
-      Me.Button4.Text = "Salva"
+      Me.eui_cmdSalvaTestoXml.Id = "396425fd-fa39-42d2-8af8-2039c1104cdd"
+      Me.eui_cmdSalvaTestoXml.Location = New System.Drawing.Point(607, 423)
+      Me.eui_cmdSalvaTestoXml.Name = "eui_cmdSalvaTestoXml"
+      Me.eui_cmdSalvaTestoXml.ScreenTip.Caption = "Salva"
+      Me.eui_cmdSalvaTestoXml.ScreenTip.Text = "Salva il codice XML in un file di testo TXT."
+      Me.eui_cmdSalvaTestoXml.Size = New System.Drawing.Size(110, 32)
+      Me.eui_cmdSalvaTestoXml.TabIndex = 5
+      Me.eui_cmdSalvaTestoXml.Text = "Salva"
       '
       'TabPage4
       '
       Me.TabPage4.ActiveControl = Nothing
-      Me.TabPage4.Controls.Add(Me.Button7)
+      Me.TabPage4.Controls.Add(Me.eui_cmdSalvaAnteprimaHtml)
       Me.TabPage4.KeyTip = Nothing
       Me.TabPage4.Name = "TabPage4"
       Me.TabPage4.Size = New System.Drawing.Size(728, 464)
       Me.TabPage4.TabIndex = 3
       Me.TabPage4.Text = "Anteprima"
       '
-      'Button7
+      'eui_cmdSalvaAnteprimaHtml
       '
-      Me.Button7.Id = "bfe22173-aa8c-41f0-9da6-be644ae84a1e"
-      Me.Button7.Location = New System.Drawing.Point(607, 423)
-      Me.Button7.Name = "Button7"
-      Me.Button7.ScreenTip.Caption = "Salva"
-      Me.Button7.ScreenTip.Text = "Salva una copia visualizzabile della Fattura Elettronica XML in un file HTML."
-      Me.Button7.Size = New System.Drawing.Size(110, 32)
-      Me.Button7.TabIndex = 7
-      Me.Button7.Text = "Salva"
+      Me.eui_cmdSalvaAnteprimaHtml.Id = "bfe22173-aa8c-41f0-9da6-be644ae84a1e"
+      Me.eui_cmdSalvaAnteprimaHtml.Location = New System.Drawing.Point(607, 423)
+      Me.eui_cmdSalvaAnteprimaHtml.Name = "eui_cmdSalvaAnteprimaHtml"
+      Me.eui_cmdSalvaAnteprimaHtml.ScreenTip.Caption = "Salva"
+      Me.eui_cmdSalvaAnteprimaHtml.ScreenTip.Text = "Salva una copia visualizzabile della Fattura Elettronica XML in un file HTML."
+      Me.eui_cmdSalvaAnteprimaHtml.Size = New System.Drawing.Size(110, 32)
+      Me.eui_cmdSalvaAnteprimaHtml.TabIndex = 7
+      Me.eui_cmdSalvaAnteprimaHtml.Text = "Salva"
       '
-      'eui_cmdAnteprima
+      'eui_cmdApriCartella
       '
-      Me.eui_cmdAnteprima.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.eui_cmdAnteprima.Id = "26a292a3-ef05-45a1-8f74-0996002fd2fc"
-      Me.eui_cmdAnteprima.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-      Me.eui_cmdAnteprima.Location = New System.Drawing.Point(752, 29)
-      Me.eui_cmdAnteprima.Name = "eui_cmdAnteprima"
-      Me.eui_cmdAnteprima.ScreenTip.Caption = "Anteprima"
-      Me.eui_cmdAnteprima.ScreenTip.Text = "Salva e visualizza l'anteprima del documento."
-      Me.eui_cmdAnteprima.Size = New System.Drawing.Size(129, 65)
-      Me.eui_cmdAnteprima.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdAnteprima.SmallImages.Images"), System.Drawing.Image))})
-      Me.eui_cmdAnteprima.TabIndex = 16
-      Me.eui_cmdAnteprima.Text = "Apri cartella..."
-      Me.eui_cmdAnteprima.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+      Me.eui_cmdApriCartella.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+      Me.eui_cmdApriCartella.Id = "26a292a3-ef05-45a1-8f74-0996002fd2fc"
+      Me.eui_cmdApriCartella.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+      Me.eui_cmdApriCartella.Location = New System.Drawing.Point(752, 29)
+      Me.eui_cmdApriCartella.Name = "eui_cmdApriCartella"
+      Me.eui_cmdApriCartella.ScreenTip.Caption = "Anteprima"
+      Me.eui_cmdApriCartella.ScreenTip.Text = "Salva e visualizza l'anteprima del documento."
+      Me.eui_cmdApriCartella.Size = New System.Drawing.Size(129, 65)
+      Me.eui_cmdApriCartella.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdAnteprima.SmallImages.Images"), System.Drawing.Image))})
+      Me.eui_cmdApriCartella.TabIndex = 16
+      Me.eui_cmdApriCartella.Text = "Apri cartella..."
+      Me.eui_cmdApriCartella.TextAlign = System.Drawing.ContentAlignment.BottomCenter
       '
-      'Button1
+      'eui_cmdEsporta
       '
-      Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.Button1.Id = "5d8dd0e2-1657-41ae-af95-d93b67be2536"
-      Me.Button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-      Me.Button1.Location = New System.Drawing.Point(752, 279)
-      Me.Button1.Name = "Button1"
-      Me.Button1.ScreenTip.Caption = "Salva"
-      Me.Button1.ScreenTip.Text = "Salva il documento."
-      Me.Button1.Size = New System.Drawing.Size(129, 65)
-      Me.Button1.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("Button1.SmallImages.Images"), System.Drawing.Image))})
-      Me.Button1.TabIndex = 17
-      Me.Button1.Text = "Esporta"
-      Me.Button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+      Me.eui_cmdEsporta.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+      Me.eui_cmdEsporta.Id = "5d8dd0e2-1657-41ae-af95-d93b67be2536"
+      Me.eui_cmdEsporta.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+      Me.eui_cmdEsporta.Location = New System.Drawing.Point(752, 279)
+      Me.eui_cmdEsporta.Name = "eui_cmdEsporta"
+      Me.eui_cmdEsporta.ScreenTip.Caption = "Salva"
+      Me.eui_cmdEsporta.ScreenTip.Text = "Salva il documento."
+      Me.eui_cmdEsporta.Size = New System.Drawing.Size(129, 65)
+      Me.eui_cmdEsporta.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("Button1.SmallImages.Images"), System.Drawing.Image))})
+      Me.eui_cmdEsporta.TabIndex = 17
+      Me.eui_cmdEsporta.Text = "Esporta"
+      Me.eui_cmdEsporta.TextAlign = System.Drawing.ContentAlignment.BottomCenter
       '
-      'Button8
+      'eui_cmdInvia
       '
-      Me.Button8.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.Button8.Id = "e098d816-fac2-4c14-bb8e-ded39b6e9ceb"
-      Me.Button8.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-      Me.Button8.Location = New System.Drawing.Point(752, 107)
-      Me.Button8.Name = "Button8"
-      Me.Button8.ScreenTip.Caption = "Anteprima"
-      Me.Button8.ScreenTip.Text = "Salva e visualizza l'anteprima del documento."
-      Me.Button8.Size = New System.Drawing.Size(129, 65)
-      Me.Button8.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("Button8.SmallImages.Images"), System.Drawing.Image))})
-      Me.Button8.TabIndex = 18
-      Me.Button8.Text = "Invia"
-      Me.Button8.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+      Me.eui_cmdInvia.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+      Me.eui_cmdInvia.Id = "e098d816-fac2-4c14-bb8e-ded39b6e9ceb"
+      Me.eui_cmdInvia.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+      Me.eui_cmdInvia.Location = New System.Drawing.Point(752, 107)
+      Me.eui_cmdInvia.Name = "eui_cmdInvia"
+      Me.eui_cmdInvia.ScreenTip.Caption = "Anteprima"
+      Me.eui_cmdInvia.ScreenTip.Text = "Salva e visualizza l'anteprima del documento."
+      Me.eui_cmdInvia.Size = New System.Drawing.Size(129, 65)
+      Me.eui_cmdInvia.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("Button8.SmallImages.Images"), System.Drawing.Image))})
+      Me.eui_cmdInvia.TabIndex = 18
+      Me.eui_cmdInvia.Text = "Invia"
+      Me.eui_cmdInvia.TextAlign = System.Drawing.ContentAlignment.BottomCenter
       '
       'StatusBarPane5
       '
@@ -367,80 +432,15 @@ Partial Class FatturaElettronica
       Me.eui_lblStatoClienteDoc.TabIndex = 0
       Me.eui_lblStatoClienteDoc.Text = "Luigi Montana Spa"
       '
-      'Label1
-      '
-      Me.Label1.Location = New System.Drawing.Point(5, 5)
-      Me.Label1.Name = "Label1"
-      Me.Label1.ScreenTip.Text = "Cliente intestatario"
-      Me.Label1.Size = New System.Drawing.Size(114, 13)
-      Me.Label1.TabIndex = 24
-      Me.Label1.Text = "Per info e servizi gratuiti:"
-      '
-      'LinkLabel2
-      '
-      Me.LinkLabel2.ActiveLinkColor = System.Drawing.Color.White
-      Me.LinkLabel2.AutoSize = True
-      Me.LinkLabel2.BackColor = System.Drawing.Color.Transparent
-      Me.LinkLabel2.LinkColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-      Me.LinkLabel2.Location = New System.Drawing.Point(125, 5)
-      Me.LinkLabel2.Name = "LinkLabel2"
-      Me.LinkLabel2.Size = New System.Drawing.Size(133, 13)
-      Me.LinkLabel2.TabIndex = 25
-      Me.LinkLabel2.TabStop = True
-      Me.LinkLabel2.Text = "www.agenziaentrate.gov.it"
-      Me.LinkLabel2.VisitedLinkColor = System.Drawing.Color.Magenta
-      '
-      'LinkLabel1
-      '
-      Me.LinkLabel1.ActiveLinkColor = System.Drawing.Color.White
-      Me.LinkLabel1.AutoSize = True
-      Me.LinkLabel1.BackColor = System.Drawing.Color.Transparent
-      Me.LinkLabel1.LinkColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-      Me.LinkLabel1.Location = New System.Drawing.Point(264, 5)
-      Me.LinkLabel1.Name = "LinkLabel1"
-      Me.LinkLabel1.Size = New System.Drawing.Size(105, 13)
-      Me.LinkLabel1.TabIndex = 26
-      Me.LinkLabel1.TabStop = True
-      Me.LinkLabel1.Text = "www.fatturapa.gov.it"
-      Me.LinkLabel1.VisitedLinkColor = System.Drawing.Color.Magenta
-      '
-      'StatusBarPane3
-      '
-      Me.StatusBarPane3.Controls.Add(Me.Label2)
-      Me.StatusBarPane3.Location = New System.Drawing.Point(404, 0)
-      Me.StatusBarPane3.MaximumSize = New System.Drawing.Size(0, 22)
-      Me.StatusBarPane3.MinimumSize = New System.Drawing.Size(0, 22)
-      Me.StatusBarPane3.Name = "StatusBarPane3"
-      Me.StatusBarPane3.Size = New System.Drawing.Size(303, 22)
-      Me.StatusBarPane3.TabIndex = 1
-      '
-      'Label2
-      '
-      Me.Label2.Location = New System.Drawing.Point(5, 5)
-      Me.Label2.Name = "Label2"
-      Me.Label2.ScreenTip.Text = "Numero documento"
-      Me.Label2.Size = New System.Drawing.Size(263, 13)
-      Me.Label2.TabIndex = 26
-      Me.Label2.Text = "C:\Migg\Gim9\Archivi\Xml\IT00000000000_D9757.xml"
-      '
-      'StatusBarPane4
-      '
-      Me.StatusBarPane4.Location = New System.Drawing.Point(0, 0)
-      Me.StatusBarPane4.MaximumSize = New System.Drawing.Size(0, 22)
-      Me.StatusBarPane4.MinimumSize = New System.Drawing.Size(0, 22)
-      Me.StatusBarPane4.Name = "StatusBarPane4"
-      Me.StatusBarPane4.Size = New System.Drawing.Size(20, 22)
-      Me.StatusBarPane4.TabIndex = 0
-      '
       'FatturaElettronica
       '
       Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
       Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(894, 539)
-      Me.Controls.Add(Me.Button8)
-      Me.Controls.Add(Me.Button1)
-      Me.Controls.Add(Me.eui_cmdAnteprima)
+      Me.ClientSize = New System.Drawing.Size(902, 550)
+      Me.Controls.Add(Me.eui_cmdInvia)
+      Me.Controls.Add(Me.eui_cmdEsporta)
+      Me.Controls.Add(Me.eui_cmdApriCartella)
       Me.Controls.Add(Me.eui_tpcDocumento)
       Me.Controls.Add(Me.eui_cmdTastiera)
       Me.Controls.Add(Me.eui_cmdAnnulla)
@@ -454,6 +454,8 @@ Partial Class FatturaElettronica
       Me.StatusBarNotificationsArea1.PerformLayout()
       Me.StatusBarPane2.ResumeLayout(False)
       Me.StatusBarPane2.PerformLayout()
+      Me.StatusBarPane3.ResumeLayout(False)
+      Me.StatusBarPane3.PerformLayout()
       Me.StatusBarControlsArea1.ResumeLayout(False)
       Me.StatusBarControlsArea1.PerformLayout()
       CType(Me.eui_tpcDocumento, System.ComponentModel.ISupportInitialize).EndInit()
@@ -466,8 +468,6 @@ Partial Class FatturaElettronica
       Me.StatusBarPane5.PerformLayout()
       Me.StatusBarPane1.ResumeLayout(False)
       Me.StatusBarPane1.PerformLayout()
-      Me.StatusBarPane3.ResumeLayout(False)
-      Me.StatusBarPane3.PerformLayout()
       Me.ResumeLayout(False)
       Me.PerformLayout()
 
@@ -485,16 +485,16 @@ Partial Class FatturaElettronica
    Friend WithEvents TabPage2 As Elegant.Ui.TabPage
    Friend WithEvents TabPage3 As Elegant.Ui.TabPage
    Friend WithEvents TabPage4 As Elegant.Ui.TabPage
-   Friend WithEvents Button1 As Elegant.Ui.Button
-   Friend WithEvents eui_cmdAnteprima As Elegant.Ui.Button
+   Friend WithEvents eui_cmdEsporta As Elegant.Ui.Button
+   Friend WithEvents eui_cmdApriCartella As Elegant.Ui.Button
    Friend WithEvents TextBox1 As Elegant.Ui.TextBox
-   Friend WithEvents Button4 As Elegant.Ui.Button
-   Friend WithEvents Button3 As Elegant.Ui.Button
-   Friend WithEvents Button2 As Elegant.Ui.Button
+   Friend WithEvents eui_cmdSalvaTestoXml As Elegant.Ui.Button
+   Friend WithEvents eui_cmdSalvaErrori As Elegant.Ui.Button
+   Friend WithEvents eui_cmdConvalida As Elegant.Ui.Button
    Friend WithEvents eui_txtNote As Elegant.Ui.TextBox
-   Friend WithEvents Button7 As Elegant.Ui.Button
-   Friend WithEvents Button6 As Elegant.Ui.Button
-   Friend WithEvents Button8 As Elegant.Ui.Button
+   Friend WithEvents eui_cmdSalvaAnteprimaHtml As Elegant.Ui.Button
+   Friend WithEvents eui_cmdCopiaPercorso As Elegant.Ui.Button
+   Friend WithEvents eui_cmdInvia As Elegant.Ui.Button
    Friend WithEvents StatusBarPane5 As Elegant.Ui.StatusBarPane
    Friend WithEvents eui_lblStatoDataDoc As Elegant.Ui.Label
    Friend WithEvents StatusBarPane1 As Elegant.Ui.StatusBarPane

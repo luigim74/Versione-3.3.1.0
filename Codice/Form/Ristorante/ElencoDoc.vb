@@ -2487,14 +2487,14 @@ Public Class ElencoDoc
 
    Public Sub IncassaSospeso()
       Try
-            ' Apre la finestra per l'incasso del sospeso.
-            Dim frm As New IncassaSospeso(DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_ID_DOC),
+         ' Apre la finestra per l'incasso del sospeso.
+         Dim frm As New IncassaSospeso(DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_ID_DOC),
                                           DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_NUMERO_DOC),
                                           DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_DATA_DOC),
                                           DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_TIPO_DOC),
                                           DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_INTESTATARIO),
                                           DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_IMPORTO_SOSPESO))
-            frm.ShowDialog()
+         frm.ShowDialog()
 
       Catch ex As Exception
 
@@ -2531,13 +2531,13 @@ Public Class ElencoDoc
             ' Conferma transazione.
             tr.Commit()
 
-                Dim Data As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_DATA_DOC)
-                Dim Documento As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_TIPO_DOC)
-                Dim Numero As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_NUMERO_DOC)
-                Dim Importo As String = CFormatta.FormattaEuro(DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_IMPORTO_TOTALE))
+            Dim Data As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_DATA_DOC)
+            Dim Documento As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_TIPO_DOC)
+            Dim Numero As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_NUMERO_DOC)
+            Dim Importo As String = CFormatta.FormattaEuro(DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_IMPORTO_TOTALE))
 
-                ' Registra loperazione effettuata dall'operatore identificato.
-                Dim strDescrizione As String = "(" & Documento & " n. " & Numero & " del " & Data & " - € " & Importo & ")"
+            ' Registra loperazione effettuata dall'operatore identificato.
+            Dim strDescrizione As String = "(" & Documento & " n. " & Numero & " del " & Data & " - € " & Importo & ")"
             g_frmMain.RegistraOperazione(TipoOperazione.PassaSospeso, strDescrizione, MODULO_CONTABILITA_DOCUMENTI)
 
             If g_frmMain.eui_Strumenti_Sospesi_Filtra.Pressed = True Then
@@ -2604,13 +2604,13 @@ Public Class ElencoDoc
             ' Conferma transazione.
             tr.Commit()
 
-                Dim Data As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_DATA_DOC)
-                Dim Documento As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_TIPO_DOC)
-                Dim Numero As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_NUMERO_DOC)
-                Dim Importo As String = CFormatta.FormattaEuro(DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_IMPORTO_TOTALE))
+            Dim Data As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_DATA_DOC)
+            Dim Documento As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_TIPO_DOC)
+            Dim Numero As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_NUMERO_DOC)
+            Dim Importo As String = CFormatta.FormattaEuro(DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_IMPORTO_TOTALE))
 
-                ' Registra loperazione effettuata dall'operatore identificato.
-                Dim strDescrizione As String = "(" & Documento & " n. " & Numero & " del " & Data & " - € " & Importo & ")"
+            ' Registra loperazione effettuata dall'operatore identificato.
+            Dim strDescrizione As String = "(" & Documento & " n. " & Numero & " del " & Data & " - € " & Importo & ")"
             g_frmMain.RegistraOperazione(TipoOperazione.AnnullaSospeso, strDescrizione, MODULO_CONTABILITA_DOCUMENTI)
 
             If g_frmMain.eui_Strumenti_Sospesi_Filtra.Pressed = True Then
@@ -2659,9 +2659,9 @@ Public Class ElencoDoc
 
          Dim frm As New ElencoBuoni
 
-            ' Visualizza l'anagrafica clienti.
-            frm.Tag = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_ID_DOC)
-            frm.ShowDialog()
+         ' Visualizza l'anagrafica clienti.
+         frm.Tag = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_ID_DOC)
+         frm.ShowDialog()
 
          ' Modifica il cursore del mouse.
          Cursor.Current = Cursors.Default
@@ -2959,7 +2959,7 @@ Public Class ElencoDoc
          ' Modifica il cursore del mouse.
          Cursor.Current = Cursors.AppStarting
 
-         g_frmFatturaElettronica = New FatturaElettronica
+         g_frmFatturaElettronica = New frmFatturaElettronica
          g_frmFatturaElettronica.ShowDialog()
 
       Catch ex As Exception
