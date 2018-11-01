@@ -23,18 +23,20 @@ Partial Class frmDocumento
    <System.Diagnostics.DebuggerStepThrough()>
    Private Sub InitializeComponent()
       Me.components = New System.ComponentModel.Container()
-      Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-      Dim DataGridViewCellStyle18 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-      Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-      Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-      Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-      Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-      Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-      Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-      Dim DataGridViewCellStyle17 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+      Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+      Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+      Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+      Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+      Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+      Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+      Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+      Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+      Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
       Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmDocumento))
       Me.formFrameSkinner = New Elegant.Ui.FormFrameSkinner()
       Me.eui_tpcDocumento = New Elegant.Ui.TabControl()
+      Me.eui_tpNote = New Elegant.Ui.TabPage()
+      Me.eui_txtNote = New Elegant.Ui.TextBox()
       Me.eui_tpGenerale = New Elegant.Ui.TabPage()
       Me.eui_txtNumProgressivo = New Elegant.Ui.TextBox()
       Me.eui_txtCameriere = New Elegant.Ui.TextBox()
@@ -137,8 +139,6 @@ Partial Class frmDocumento
       Me.eui_txtTotaliImponibile = New Elegant.Ui.TextBox()
       Me.Label20 = New Elegant.Ui.Label()
       Me.Label21 = New Elegant.Ui.Label()
-      Me.eui_tpNote = New Elegant.Ui.TabPage()
-      Me.eui_txtNote = New Elegant.Ui.TextBox()
       Me.PopupMenu2 = New Elegant.Ui.PopupMenu(Me.components)
       Me.Button1 = New Elegant.Ui.Button()
       Me.Button2 = New Elegant.Ui.Button()
@@ -173,12 +173,12 @@ Partial Class frmDocumento
       Me.eui_cmdEmettiStampa = New Elegant.Ui.Button()
       Me.eui_cmdTastiera = New Elegant.Ui.Button()
       CType(Me.eui_tpcDocumento, System.ComponentModel.ISupportInitialize).BeginInit()
+      Me.eui_tpNote.SuspendLayout()
       Me.eui_tpGenerale.SuspendLayout()
       Me.eui_tpDettagli.SuspendLayout()
       CType(Me.PopupMenu1, System.ComponentModel.ISupportInitialize).BeginInit()
       CType(Me.dgvDettagli, System.ComponentModel.ISupportInitialize).BeginInit()
       Me.eui_tpTotali.SuspendLayout()
-      Me.eui_tpNote.SuspendLayout()
       CType(Me.PopupMenu2, System.ComponentModel.ISupportInitialize).BeginInit()
       Me.StatusBar1.SuspendLayout()
       Me.StatusBarNotificationsArea1.SuspendLayout()
@@ -204,11 +204,32 @@ Partial Class frmDocumento
       Me.eui_tpcDocumento.EqualTabWidth = True
       Me.eui_tpcDocumento.Location = New System.Drawing.Point(9, 9)
       Me.eui_tpcDocumento.Name = "eui_tpcDocumento"
-      Me.eui_tpcDocumento.SelectedTabPage = Me.eui_tpNote
+      Me.eui_tpcDocumento.SelectedTabPage = Me.eui_tpGenerale
       Me.eui_tpcDocumento.Size = New System.Drawing.Size(680, 480)
       Me.eui_tpcDocumento.TabIndex = 0
       Me.eui_tpcDocumento.TabPages.AddRange(New Elegant.Ui.TabPage() {Me.eui_tpGenerale, Me.eui_tpDettagli, Me.eui_tpTotali, Me.eui_tpNote})
       Me.eui_tpcDocumento.Text = " "
+      '
+      'eui_tpNote
+      '
+      Me.eui_tpNote.ActiveControl = Nothing
+      Me.eui_tpNote.Controls.Add(Me.eui_txtNote)
+      Me.eui_tpNote.KeyTip = Nothing
+      Me.eui_tpNote.Name = "eui_tpNote"
+      Me.eui_tpNote.Size = New System.Drawing.Size(678, 459)
+      Me.eui_tpNote.TabIndex = 2
+      Me.eui_tpNote.Text = "Note"
+      '
+      'eui_txtNote
+      '
+      Me.eui_txtNote.Dock = System.Windows.Forms.DockStyle.Fill
+      Me.eui_txtNote.Id = "dda24583-0823-4af6-a304-1b9f1a7cf785"
+      Me.eui_txtNote.Location = New System.Drawing.Point(0, 0)
+      Me.eui_txtNote.Multiline = True
+      Me.eui_txtNote.Name = "eui_txtNote"
+      Me.eui_txtNote.Size = New System.Drawing.Size(678, 459)
+      Me.eui_txtNote.TabIndex = 0
+      Me.eui_txtNote.TextEditorWidth = 653
       '
       'eui_tpGenerale
       '
@@ -757,22 +778,22 @@ Partial Class frmDocumento
       '
       'dgvDettagli
       '
-      DataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-      Me.dgvDettagli.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle10
+      DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+      Me.dgvDettagli.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
       Me.dgvDettagli.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.dgvDettagli.BorderStyle = System.Windows.Forms.BorderStyle.None
       Me.dgvDettagli.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
       Me.dgvDettagli.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.clnCodice, Me.clnDescrizione, Me.clnUm, Me.clnQta, Me.clnPrezzo, Me.clnSconto, Me.clnImporto, Me.clnIva, Me.clnRepartoIva, Me.clnValoreSconto, Me.clnCategoria})
-      DataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-      DataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Window
-      DataGridViewCellStyle18.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      DataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.ControlText
-      DataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.Orange
-      DataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.ControlText
-      DataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-      Me.dgvDettagli.DefaultCellStyle = DataGridViewCellStyle18
+      DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+      DataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window
+      DataGridViewCellStyle9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      DataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText
+      DataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.Orange
+      DataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.ControlText
+      DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+      Me.dgvDettagli.DefaultCellStyle = DataGridViewCellStyle9
       Me.dgvDettagli.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter
       Me.dgvDettagli.Location = New System.Drawing.Point(5, 2)
       Me.dgvDettagli.MultiSelect = False
@@ -783,9 +804,9 @@ Partial Class frmDocumento
       '
       'clnCodice
       '
-      DataGridViewCellStyle11.Format = "N0"
-      DataGridViewCellStyle11.NullValue = Nothing
-      Me.clnCodice.DefaultCellStyle = DataGridViewCellStyle11
+      DataGridViewCellStyle2.Format = "N0"
+      DataGridViewCellStyle2.NullValue = Nothing
+      Me.clnCodice.DefaultCellStyle = DataGridViewCellStyle2
       Me.clnCodice.HeaderText = "Codice"
       Me.clnCodice.Name = "clnCodice"
       Me.clnCodice.ToolTipText = "Codice"
@@ -794,8 +815,8 @@ Partial Class frmDocumento
       'clnDescrizione
       '
       Me.clnDescrizione.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-      DataGridViewCellStyle12.NullValue = Nothing
-      Me.clnDescrizione.DefaultCellStyle = DataGridViewCellStyle12
+      DataGridViewCellStyle3.NullValue = Nothing
+      Me.clnDescrizione.DefaultCellStyle = DataGridViewCellStyle3
       Me.clnDescrizione.HeaderText = "Descrizione"
       Me.clnDescrizione.Name = "clnDescrizione"
       Me.clnDescrizione.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
@@ -811,11 +832,11 @@ Partial Class frmDocumento
       '
       'clnQta
       '
-      DataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight
-      DataGridViewCellStyle13.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      DataGridViewCellStyle13.Format = "N2"
-      DataGridViewCellStyle13.NullValue = "0,00"
-      Me.clnQta.DefaultCellStyle = DataGridViewCellStyle13
+      DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight
+      DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      DataGridViewCellStyle4.Format = "N2"
+      DataGridViewCellStyle4.NullValue = "0,00"
+      Me.clnQta.DefaultCellStyle = DataGridViewCellStyle4
       Me.clnQta.HeaderText = "Q.tà"
       Me.clnQta.Name = "clnQta"
       Me.clnQta.ToolTipText = "Quantità"
@@ -823,20 +844,20 @@ Partial Class frmDocumento
       '
       'clnPrezzo
       '
-      DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight
-      DataGridViewCellStyle14.Format = "C2"
-      DataGridViewCellStyle14.NullValue = "0,00"
-      Me.clnPrezzo.DefaultCellStyle = DataGridViewCellStyle14
+      DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight
+      DataGridViewCellStyle5.Format = "C2"
+      DataGridViewCellStyle5.NullValue = "0,00"
+      Me.clnPrezzo.DefaultCellStyle = DataGridViewCellStyle5
       Me.clnPrezzo.HeaderText = "Prezzo"
       Me.clnPrezzo.Name = "clnPrezzo"
       Me.clnPrezzo.ToolTipText = "Prezzo unitario"
       '
       'clnSconto
       '
-      DataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight
-      DataGridViewCellStyle15.Format = "N2"
-      DataGridViewCellStyle15.NullValue = "0,00"
-      Me.clnSconto.DefaultCellStyle = DataGridViewCellStyle15
+      DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight
+      DataGridViewCellStyle6.Format = "N2"
+      DataGridViewCellStyle6.NullValue = "0,00"
+      Me.clnSconto.DefaultCellStyle = DataGridViewCellStyle6
       Me.clnSconto.HeaderText = "Sconto %"
       Me.clnSconto.Name = "clnSconto"
       Me.clnSconto.ToolTipText = "Sconto"
@@ -844,11 +865,11 @@ Partial Class frmDocumento
       '
       'clnImporto
       '
-      DataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight
-      DataGridViewCellStyle16.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      DataGridViewCellStyle16.Format = "C2"
-      DataGridViewCellStyle16.NullValue = "0,00"
-      Me.clnImporto.DefaultCellStyle = DataGridViewCellStyle16
+      DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight
+      DataGridViewCellStyle7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      DataGridViewCellStyle7.Format = "C2"
+      DataGridViewCellStyle7.NullValue = "0,00"
+      Me.clnImporto.DefaultCellStyle = DataGridViewCellStyle7
       Me.clnImporto.HeaderText = "Importo"
       Me.clnImporto.Name = "clnImporto"
       Me.clnImporto.ReadOnly = True
@@ -856,10 +877,10 @@ Partial Class frmDocumento
       '
       'clnIva
       '
-      DataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight
-      DataGridViewCellStyle17.Format = "N0"
-      DataGridViewCellStyle17.NullValue = "0"
-      Me.clnIva.DefaultCellStyle = DataGridViewCellStyle17
+      DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight
+      DataGridViewCellStyle8.Format = "N0"
+      DataGridViewCellStyle8.NullValue = "0"
+      Me.clnIva.DefaultCellStyle = DataGridViewCellStyle8
       Me.clnIva.HeaderText = "I.V.A. %"
       Me.clnIva.Name = "clnIva"
       Me.clnIva.ToolTipText = "Aliquota Iva"
@@ -1297,27 +1318,6 @@ Partial Class frmDocumento
       Me.Label21.TabIndex = 46
       Me.Label21.Text = "Imponibile:"
       '
-      'eui_tpNote
-      '
-      Me.eui_tpNote.ActiveControl = Nothing
-      Me.eui_tpNote.Controls.Add(Me.eui_txtNote)
-      Me.eui_tpNote.KeyTip = Nothing
-      Me.eui_tpNote.Name = "eui_tpNote"
-      Me.eui_tpNote.Size = New System.Drawing.Size(678, 459)
-      Me.eui_tpNote.TabIndex = 2
-      Me.eui_tpNote.Text = "Note"
-      '
-      'eui_txtNote
-      '
-      Me.eui_txtNote.Dock = System.Windows.Forms.DockStyle.Fill
-      Me.eui_txtNote.Id = "dda24583-0823-4af6-a304-1b9f1a7cf785"
-      Me.eui_txtNote.Location = New System.Drawing.Point(0, 0)
-      Me.eui_txtNote.Multiline = True
-      Me.eui_txtNote.Name = "eui_txtNote"
-      Me.eui_txtNote.Size = New System.Drawing.Size(678, 459)
-      Me.eui_txtNote.TabIndex = 0
-      Me.eui_txtNote.TextEditorWidth = 653
-      '
       'PopupMenu2
       '
       Me.PopupMenu2.Items.AddRange(New System.Windows.Forms.Control() {Me.Button1, Me.Button2, Me.Button3, Me.Button4})
@@ -1367,10 +1367,10 @@ Partial Class frmDocumento
       Me.StatusBar1.Controls.Add(Me.StatusBarControlsArea1)
       Me.StatusBar1.ControlsArea = Me.StatusBarControlsArea1
       Me.StatusBar1.Dock = System.Windows.Forms.DockStyle.Bottom
-      Me.StatusBar1.Location = New System.Drawing.Point(0, 576)
+      Me.StatusBar1.Location = New System.Drawing.Point(0, 587)
       Me.StatusBar1.Name = "StatusBar1"
       Me.StatusBar1.NotificationsArea = Me.StatusBarNotificationsArea1
-      Me.StatusBar1.Size = New System.Drawing.Size(853, 22)
+      Me.StatusBar1.Size = New System.Drawing.Size(861, 22)
       Me.StatusBar1.TabIndex = 3
       Me.StatusBar1.Text = "StatusBar1"
       '
@@ -1384,7 +1384,7 @@ Partial Class frmDocumento
       Me.StatusBarNotificationsArea1.MaximumSize = New System.Drawing.Size(0, 22)
       Me.StatusBarNotificationsArea1.MinimumSize = New System.Drawing.Size(0, 22)
       Me.StatusBarNotificationsArea1.Name = "StatusBarNotificationsArea1"
-      Me.StatusBarNotificationsArea1.Size = New System.Drawing.Size(719, 22)
+      Me.StatusBarNotificationsArea1.Size = New System.Drawing.Size(727, 22)
       Me.StatusBarNotificationsArea1.TabIndex = 1
       '
       'StatusBarPane2
@@ -1452,7 +1452,7 @@ Partial Class frmDocumento
       '
       Me.StatusBarControlsArea1.Controls.Add(Me.StatusBarPane4)
       Me.StatusBarControlsArea1.Dock = System.Windows.Forms.DockStyle.Right
-      Me.StatusBarControlsArea1.Location = New System.Drawing.Point(719, 0)
+      Me.StatusBarControlsArea1.Location = New System.Drawing.Point(727, 0)
       Me.StatusBarControlsArea1.MaximumSize = New System.Drawing.Size(0, 22)
       Me.StatusBarControlsArea1.MinimumSize = New System.Drawing.Size(0, 22)
       Me.StatusBarControlsArea1.Name = "StatusBarControlsArea1"
@@ -1696,7 +1696,7 @@ Partial Class frmDocumento
       Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
       Me.CancelButton = Me.eui_cmdAnnulla
-      Me.ClientSize = New System.Drawing.Size(853, 598)
+      Me.ClientSize = New System.Drawing.Size(861, 609)
       Me.Controls.Add(Me.eui_cmdTastiera)
       Me.Controls.Add(Me.eui_cmdEmettiStampa)
       Me.Controls.Add(Me.eui_txtTotaleDocumento)
@@ -1721,6 +1721,8 @@ Partial Class frmDocumento
       Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
       Me.Text = "Conto"
       CType(Me.eui_tpcDocumento, System.ComponentModel.ISupportInitialize).EndInit()
+      Me.eui_tpNote.ResumeLayout(False)
+      Me.eui_tpNote.PerformLayout()
       Me.eui_tpGenerale.ResumeLayout(False)
       Me.eui_tpGenerale.PerformLayout()
       Me.eui_tpDettagli.ResumeLayout(False)
@@ -1728,8 +1730,6 @@ Partial Class frmDocumento
       CType(Me.dgvDettagli, System.ComponentModel.ISupportInitialize).EndInit()
       Me.eui_tpTotali.ResumeLayout(False)
       Me.eui_tpTotali.PerformLayout()
-      Me.eui_tpNote.ResumeLayout(False)
-      Me.eui_tpNote.PerformLayout()
       CType(Me.PopupMenu2, System.ComponentModel.ISupportInitialize).EndInit()
       Me.StatusBar1.ResumeLayout(False)
       Me.StatusBar1.PerformLayout()
