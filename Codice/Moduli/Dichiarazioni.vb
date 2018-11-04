@@ -150,6 +150,7 @@ Module Dichiarazioni
    Public Const PERCORSO_DB_CLIENTI As String = "\Archivi\Hospitality.mdb"
    Public Const PERCORSO_DB_CAP As String = "\Archivi\Cap.mdb"
    Public Const PERCORSO_BKP As String = "\Backup\Hospitality.mdb"
+   Public Const CARTELLA_FATTURE_ELETTRONICHE As String = "Fatture elettroniche"
 
    ' Percorso reports.
    Public Const PERCORSO_REP_CLIENTI As String = "\Reports\Clienti.rpt"

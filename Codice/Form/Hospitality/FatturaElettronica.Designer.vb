@@ -39,25 +39,6 @@ Partial Class frmFatturaElettronica
       Me.eui_tpcDocumento = New Elegant.Ui.TabControl()
       Me.TabPage1 = New Elegant.Ui.TabPage()
       Me.TabControl1 = New Elegant.Ui.TabControl()
-      Me.TabPage7 = New Elegant.Ui.TabPage()
-      Me.Label52 = New Elegant.Ui.Label()
-      Me.GroupBox10 = New Elegant.Ui.GroupBox()
-      Me.Label45 = New Elegant.Ui.Label()
-      Me.Label46 = New Elegant.Ui.Label()
-      Me.Label47 = New Elegant.Ui.Label()
-      Me.eui_txtRfCpCodiceEORI = New Elegant.Ui.TextBox()
-      Me.eui_txtRfCpTitolo = New Elegant.Ui.TextBox()
-      Me.eui_txtRfCpCognome = New Elegant.Ui.TextBox()
-      Me.eui_txtRfCpDenominazione = New Elegant.Ui.TextBox()
-      Me.eui_txtRfCpNome = New Elegant.Ui.TextBox()
-      Me.Label48 = New Elegant.Ui.Label()
-      Me.Label49 = New Elegant.Ui.Label()
-      Me.eui_txtRfCpCodiceFiscale = New Elegant.Ui.TextBox()
-      Me.GroupBox11 = New Elegant.Ui.GroupBox()
-      Me.eui_txtRfCpIdCodice = New Elegant.Ui.TextBox()
-      Me.Label50 = New Elegant.Ui.Label()
-      Me.eui_cmbRfCpIdPaese = New Elegant.Ui.ComboBox()
-      Me.Label51 = New Elegant.Ui.Label()
       Me.TabPage5 = New Elegant.Ui.TabPage()
       Me.GroupBox2 = New Elegant.Ui.GroupBox()
       Me.Label10 = New Elegant.Ui.Label()
@@ -160,29 +141,28 @@ Partial Class frmFatturaElettronica
       Me.TabPage16 = New Elegant.Ui.TabPage()
       Me.eui_txtCpRifAmministrazione = New Elegant.Ui.TextBox()
       Me.Label44 = New Elegant.Ui.Label()
+      Me.TabPage7 = New Elegant.Ui.TabPage()
+      Me.Label52 = New Elegant.Ui.Label()
+      Me.GroupBox10 = New Elegant.Ui.GroupBox()
+      Me.Label45 = New Elegant.Ui.Label()
+      Me.Label46 = New Elegant.Ui.Label()
+      Me.Label47 = New Elegant.Ui.Label()
+      Me.eui_txtRfCpCodiceEORI = New Elegant.Ui.TextBox()
+      Me.eui_txtRfCpTitolo = New Elegant.Ui.TextBox()
+      Me.eui_txtRfCpCognome = New Elegant.Ui.TextBox()
+      Me.eui_txtRfCpDenominazione = New Elegant.Ui.TextBox()
+      Me.eui_txtRfCpNome = New Elegant.Ui.TextBox()
+      Me.Label48 = New Elegant.Ui.Label()
+      Me.Label49 = New Elegant.Ui.Label()
+      Me.eui_txtRfCpCodiceFiscale = New Elegant.Ui.TextBox()
+      Me.GroupBox11 = New Elegant.Ui.GroupBox()
+      Me.eui_txtRfCpIdCodice = New Elegant.Ui.TextBox()
+      Me.Label50 = New Elegant.Ui.Label()
+      Me.eui_cmbRfCpIdPaese = New Elegant.Ui.ComboBox()
+      Me.Label51 = New Elegant.Ui.Label()
       Me.TabPage8 = New Elegant.Ui.TabPage()
-      Me.TabPage9 = New Elegant.Ui.TabPage()
-      Me.TabPage10 = New Elegant.Ui.TabPage()
-      Me.TabPage2 = New Elegant.Ui.TabPage()
-      Me.eui_cmdSalvaErrori = New Elegant.Ui.Button()
-      Me.eui_cmdConvalida = New Elegant.Ui.Button()
-      Me.eui_txtNote = New Elegant.Ui.TextBox()
-      Me.TabPage3 = New Elegant.Ui.TabPage()
-      Me.eui_cmdCopiaPercorso = New Elegant.Ui.Button()
-      Me.TextBox1 = New Elegant.Ui.TextBox()
-      Me.eui_cmdSalvaTestoXml = New Elegant.Ui.Button()
-      Me.TabPage4 = New Elegant.Ui.TabPage()
-      Me.eui_cmdSalvaAnteprimaHtml = New Elegant.Ui.Button()
-      Me.eui_cmdApriCartella = New Elegant.Ui.Button()
-      Me.eui_cmdEsporta = New Elegant.Ui.Button()
-      Me.eui_cmdInvia = New Elegant.Ui.Button()
-      Me.StatusBarPane5 = New Elegant.Ui.StatusBarPane()
-      Me.eui_lblStatoDataDoc = New Elegant.Ui.Label()
-      Me.StatusBarPane1 = New Elegant.Ui.StatusBarPane()
-      Me.eui_lblStatoClienteDoc = New Elegant.Ui.Label()
       Me.TabControl3 = New Elegant.Ui.TabControl()
       Me.TabPage17 = New Elegant.Ui.TabPage()
-      Me.TabPage18 = New Elegant.Ui.TabPage()
       Me.GroupBox12 = New Elegant.Ui.GroupBox()
       Me.Label53 = New Elegant.Ui.Label()
       Me.Label54 = New Elegant.Ui.Label()
@@ -201,6 +181,7 @@ Partial Class frmFatturaElettronica
       Me.Label59 = New Elegant.Ui.Label()
       Me.eui_cmbCcIdPaese = New Elegant.Ui.ComboBox()
       Me.Label60 = New Elegant.Ui.Label()
+      Me.TabPage18 = New Elegant.Ui.TabPage()
       Me.GroupBox14 = New Elegant.Ui.GroupBox()
       Me.eui_CcSedeNazione = New Elegant.Ui.ComboBox()
       Me.Label61 = New Elegant.Ui.Label()
@@ -214,6 +195,7 @@ Partial Class frmFatturaElettronica
       Me.eui_txtCcSedeNumeroCivico = New Elegant.Ui.TextBox()
       Me.Label65 = New Elegant.Ui.Label()
       Me.Label66 = New Elegant.Ui.Label()
+      Me.TabPage9 = New Elegant.Ui.TabPage()
       Me.GroupBox15 = New Elegant.Ui.GroupBox()
       Me.Label67 = New Elegant.Ui.Label()
       Me.Label68 = New Elegant.Ui.Label()
@@ -232,8 +214,26 @@ Partial Class frmFatturaElettronica
       Me.Label73 = New Elegant.Ui.Label()
       Me.eui_cmbTiSeIdPaese = New Elegant.Ui.ComboBox()
       Me.Label74 = New Elegant.Ui.Label()
+      Me.TabPage10 = New Elegant.Ui.TabPage()
       Me.eui_cmbSoggettoEmittente = New Elegant.Ui.ComboBox()
       Me.Label75 = New Elegant.Ui.Label()
+      Me.TabPage2 = New Elegant.Ui.TabPage()
+      Me.eui_cmdSalvaErrori = New Elegant.Ui.Button()
+      Me.eui_cmdConvalida = New Elegant.Ui.Button()
+      Me.eui_txtNote = New Elegant.Ui.TextBox()
+      Me.TabPage3 = New Elegant.Ui.TabPage()
+      Me.eui_cmdCopiaPercorso = New Elegant.Ui.Button()
+      Me.TextBox1 = New Elegant.Ui.TextBox()
+      Me.eui_cmdSalvaTestoXml = New Elegant.Ui.Button()
+      Me.TabPage4 = New Elegant.Ui.TabPage()
+      Me.eui_cmdSalvaAnteprimaHtml = New Elegant.Ui.Button()
+      Me.eui_cmdApriCartella = New Elegant.Ui.Button()
+      Me.eui_cmdEsporta = New Elegant.Ui.Button()
+      Me.eui_cmdInvia = New Elegant.Ui.Button()
+      Me.StatusBarPane5 = New Elegant.Ui.StatusBarPane()
+      Me.eui_lblStatoDataDoc = New Elegant.Ui.Label()
+      Me.StatusBarPane1 = New Elegant.Ui.StatusBarPane()
+      Me.eui_lblStatoClienteDoc = New Elegant.Ui.Label()
       Me.StatusBar1.SuspendLayout()
       Me.StatusBarNotificationsArea1.SuspendLayout()
       Me.StatusBarPane2.SuspendLayout()
@@ -241,9 +241,6 @@ Partial Class frmFatturaElettronica
       CType(Me.eui_tpcDocumento, System.ComponentModel.ISupportInitialize).BeginInit()
       Me.TabPage1.SuspendLayout()
       CType(Me.TabControl1, System.ComponentModel.ISupportInitialize).BeginInit()
-      Me.TabPage7.SuspendLayout()
-      Me.GroupBox10.SuspendLayout()
-      Me.GroupBox11.SuspendLayout()
       Me.TabPage5.SuspendLayout()
       Me.GroupBox2.SuspendLayout()
       Me.GroupBox1.SuspendLayout()
@@ -262,22 +259,25 @@ Partial Class frmFatturaElettronica
       Me.TabPage15.SuspendLayout()
       Me.GroupBox9.SuspendLayout()
       Me.TabPage16.SuspendLayout()
+      Me.TabPage7.SuspendLayout()
+      Me.GroupBox10.SuspendLayout()
+      Me.GroupBox11.SuspendLayout()
       Me.TabPage8.SuspendLayout()
+      CType(Me.TabControl3, System.ComponentModel.ISupportInitialize).BeginInit()
+      Me.TabPage17.SuspendLayout()
+      Me.GroupBox12.SuspendLayout()
+      Me.GroupBox13.SuspendLayout()
+      Me.TabPage18.SuspendLayout()
+      Me.GroupBox14.SuspendLayout()
       Me.TabPage9.SuspendLayout()
+      Me.GroupBox15.SuspendLayout()
+      Me.GroupBox16.SuspendLayout()
       Me.TabPage10.SuspendLayout()
       Me.TabPage2.SuspendLayout()
       Me.TabPage3.SuspendLayout()
       Me.TabPage4.SuspendLayout()
       Me.StatusBarPane5.SuspendLayout()
       Me.StatusBarPane1.SuspendLayout()
-      CType(Me.TabControl3, System.ComponentModel.ISupportInitialize).BeginInit()
-      Me.TabPage17.SuspendLayout()
-      Me.TabPage18.SuspendLayout()
-      Me.GroupBox12.SuspendLayout()
-      Me.GroupBox13.SuspendLayout()
-      Me.GroupBox14.SuspendLayout()
-      Me.GroupBox15.SuspendLayout()
-      Me.GroupBox16.SuspendLayout()
       Me.SuspendLayout()
       '
       'formFrameSkinner
@@ -291,10 +291,10 @@ Partial Class frmFatturaElettronica
       Me.StatusBar1.Controls.Add(Me.StatusBarControlsArea1)
       Me.StatusBar1.ControlsArea = Me.StatusBarControlsArea1
       Me.StatusBar1.Dock = System.Windows.Forms.DockStyle.Bottom
-      Me.StatusBar1.Location = New System.Drawing.Point(0, 507)
+      Me.StatusBar1.Location = New System.Drawing.Point(0, 518)
       Me.StatusBar1.Name = "StatusBar1"
       Me.StatusBar1.NotificationsArea = Me.StatusBarNotificationsArea1
-      Me.StatusBar1.Size = New System.Drawing.Size(971, 22)
+      Me.StatusBar1.Size = New System.Drawing.Size(979, 22)
       Me.StatusBar1.TabIndex = 4
       Me.StatusBar1.Text = "StatusBar1"
       '
@@ -307,7 +307,7 @@ Partial Class frmFatturaElettronica
       Me.StatusBarNotificationsArea1.MaximumSize = New System.Drawing.Size(0, 22)
       Me.StatusBarNotificationsArea1.MinimumSize = New System.Drawing.Size(0, 22)
       Me.StatusBarNotificationsArea1.Name = "StatusBarNotificationsArea1"
-      Me.StatusBarNotificationsArea1.Size = New System.Drawing.Size(951, 22)
+      Me.StatusBarNotificationsArea1.Size = New System.Drawing.Size(959, 22)
       Me.StatusBarNotificationsArea1.TabIndex = 1
       '
       'StatusBarPane2
@@ -399,7 +399,7 @@ Partial Class frmFatturaElettronica
       'StatusBarControlsArea1
       '
       Me.StatusBarControlsArea1.Dock = System.Windows.Forms.DockStyle.Right
-      Me.StatusBarControlsArea1.Location = New System.Drawing.Point(951, 0)
+      Me.StatusBarControlsArea1.Location = New System.Drawing.Point(959, 0)
       Me.StatusBarControlsArea1.MaximumSize = New System.Drawing.Size(0, 22)
       Me.StatusBarControlsArea1.MinimumSize = New System.Drawing.Size(0, 22)
       Me.StatusBarControlsArea1.Name = "StatusBarControlsArea1"
@@ -466,188 +466,6 @@ Partial Class frmFatturaElettronica
       Me.TabControl1.TabPages.AddRange(New Elegant.Ui.TabPage() {Me.TabPage5, Me.TabPage6, Me.TabPage7, Me.TabPage8, Me.TabPage9, Me.TabPage10})
       Me.TabControl1.Text = "TabControl1"
       '
-      'TabPage7
-      '
-      Me.TabPage7.ActiveControl = Nothing
-      Me.TabPage7.Controls.Add(Me.Label52)
-      Me.TabPage7.Controls.Add(Me.GroupBox10)
-      Me.TabPage7.Controls.Add(Me.eui_txtRfCpCodiceFiscale)
-      Me.TabPage7.Controls.Add(Me.GroupBox11)
-      Me.TabPage7.KeyTip = Nothing
-      Me.TabPage7.Name = "TabPage7"
-      Me.TabPage7.Size = New System.Drawing.Size(798, 434)
-      Me.TabPage7.TabIndex = 2
-      Me.TabPage7.Text = "Rappresentante Fiscale"
-      '
-      'Label52
-      '
-      Me.Label52.Location = New System.Drawing.Point(27, 126)
-      Me.Label52.Name = "Label52"
-      Me.Label52.Size = New System.Drawing.Size(87, 19)
-      Me.Label52.TabIndex = 10
-      Me.Label52.Text = "Codice fiscale:"
-      '
-      'GroupBox10
-      '
-      Me.GroupBox10.Controls.Add(Me.Label45)
-      Me.GroupBox10.Controls.Add(Me.Label46)
-      Me.GroupBox10.Controls.Add(Me.Label47)
-      Me.GroupBox10.Controls.Add(Me.eui_txtRfCpCodiceEORI)
-      Me.GroupBox10.Controls.Add(Me.eui_txtRfCpTitolo)
-      Me.GroupBox10.Controls.Add(Me.eui_txtRfCpCognome)
-      Me.GroupBox10.Controls.Add(Me.eui_txtRfCpDenominazione)
-      Me.GroupBox10.Controls.Add(Me.eui_txtRfCpNome)
-      Me.GroupBox10.Controls.Add(Me.Label48)
-      Me.GroupBox10.Controls.Add(Me.Label49)
-      Me.GroupBox10.Id = "e0fc915e-c43a-4204-acd3-c25858953e4f"
-      Me.GroupBox10.Location = New System.Drawing.Point(8, 159)
-      Me.GroupBox10.Name = "GroupBox10"
-      Me.GroupBox10.Size = New System.Drawing.Size(381, 203)
-      Me.GroupBox10.TabIndex = 9
-      Me.GroupBox10.Text = "Anagrafica"
-      '
-      'Label45
-      '
-      Me.Label45.Location = New System.Drawing.Point(19, 165)
-      Me.Label45.Name = "Label45"
-      Me.Label45.Size = New System.Drawing.Size(78, 19)
-      Me.Label45.TabIndex = 10
-      Me.Label45.Text = "Codice EORI:"
-      '
-      'Label46
-      '
-      Me.Label46.Location = New System.Drawing.Point(19, 130)
-      Me.Label46.Name = "Label46"
-      Me.Label46.Size = New System.Drawing.Size(78, 19)
-      Me.Label46.TabIndex = 9
-      Me.Label46.Text = "Titolo:"
-      '
-      'Label47
-      '
-      Me.Label47.Location = New System.Drawing.Point(19, 94)
-      Me.Label47.Name = "Label47"
-      Me.Label47.Size = New System.Drawing.Size(78, 19)
-      Me.Label47.TabIndex = 8
-      Me.Label47.Text = "Cognome:"
-      '
-      'eui_txtRfCpCodiceEORI
-      '
-      Me.eui_txtRfCpCodiceEORI.Id = "4d0e96fa-fa65-474c-bda1-757280380148"
-      Me.eui_txtRfCpCodiceEORI.Location = New System.Drawing.Point(114, 163)
-      Me.eui_txtRfCpCodiceEORI.Name = "eui_txtRfCpCodiceEORI"
-      Me.eui_txtRfCpCodiceEORI.Size = New System.Drawing.Size(201, 21)
-      Me.eui_txtRfCpCodiceEORI.TabIndex = 4
-      Me.eui_txtRfCpCodiceEORI.TextEditorWidth = 195
-      '
-      'eui_txtRfCpTitolo
-      '
-      Me.eui_txtRfCpTitolo.Id = "9ab9a17b-0ca9-4a7c-85bb-607ceae8c587"
-      Me.eui_txtRfCpTitolo.Location = New System.Drawing.Point(114, 128)
-      Me.eui_txtRfCpTitolo.Name = "eui_txtRfCpTitolo"
-      Me.eui_txtRfCpTitolo.Size = New System.Drawing.Size(201, 21)
-      Me.eui_txtRfCpTitolo.TabIndex = 3
-      Me.eui_txtRfCpTitolo.TextEditorWidth = 195
-      '
-      'eui_txtRfCpCognome
-      '
-      Me.eui_txtRfCpCognome.Id = "b7b28f37-2e3d-41f2-86c1-59578e4f5aa6"
-      Me.eui_txtRfCpCognome.Location = New System.Drawing.Point(113, 92)
-      Me.eui_txtRfCpCognome.Name = "eui_txtRfCpCognome"
-      Me.eui_txtRfCpCognome.Size = New System.Drawing.Size(201, 21)
-      Me.eui_txtRfCpCognome.TabIndex = 2
-      Me.eui_txtRfCpCognome.TextEditorWidth = 195
-      '
-      'eui_txtRfCpDenominazione
-      '
-      Me.eui_txtRfCpDenominazione.Id = "e6e6549a-2d4f-4bad-98ec-4937e10ba3ee"
-      Me.eui_txtRfCpDenominazione.Location = New System.Drawing.Point(113, 23)
-      Me.eui_txtRfCpDenominazione.Name = "eui_txtRfCpDenominazione"
-      Me.eui_txtRfCpDenominazione.Size = New System.Drawing.Size(201, 21)
-      Me.eui_txtRfCpDenominazione.TabIndex = 0
-      Me.eui_txtRfCpDenominazione.TextEditorWidth = 195
-      '
-      'eui_txtRfCpNome
-      '
-      Me.eui_txtRfCpNome.Id = "98814ec3-4c8a-49da-bd6e-8c2b98fb5f4f"
-      Me.eui_txtRfCpNome.Location = New System.Drawing.Point(113, 57)
-      Me.eui_txtRfCpNome.Name = "eui_txtRfCpNome"
-      Me.eui_txtRfCpNome.Size = New System.Drawing.Size(201, 21)
-      Me.eui_txtRfCpNome.TabIndex = 1
-      Me.eui_txtRfCpNome.TextEditorWidth = 195
-      '
-      'Label48
-      '
-      Me.Label48.Location = New System.Drawing.Point(19, 57)
-      Me.Label48.Name = "Label48"
-      Me.Label48.Size = New System.Drawing.Size(131, 19)
-      Me.Label48.TabIndex = 2
-      Me.Label48.Text = "Nome:"
-      '
-      'Label49
-      '
-      Me.Label49.Location = New System.Drawing.Point(19, 25)
-      Me.Label49.Name = "Label49"
-      Me.Label49.Size = New System.Drawing.Size(76, 19)
-      Me.Label49.TabIndex = 0
-      Me.Label49.Text = "Denominazione:"
-      '
-      'eui_txtRfCpCodiceFiscale
-      '
-      Me.eui_txtRfCpCodiceFiscale.Id = "07138d7e-d5c4-4a6b-b1f6-a5294f53c4ae"
-      Me.eui_txtRfCpCodiceFiscale.Location = New System.Drawing.Point(122, 124)
-      Me.eui_txtRfCpCodiceFiscale.Name = "eui_txtRfCpCodiceFiscale"
-      Me.eui_txtRfCpCodiceFiscale.Size = New System.Drawing.Size(201, 21)
-      Me.eui_txtRfCpCodiceFiscale.TabIndex = 0
-      Me.eui_txtRfCpCodiceFiscale.TextEditorWidth = 195
-      '
-      'GroupBox11
-      '
-      Me.GroupBox11.Controls.Add(Me.eui_txtRfCpIdCodice)
-      Me.GroupBox11.Controls.Add(Me.Label50)
-      Me.GroupBox11.Controls.Add(Me.eui_cmbRfCpIdPaese)
-      Me.GroupBox11.Controls.Add(Me.Label51)
-      Me.GroupBox11.Id = "09af98f6-67bb-429e-b03d-95f8330e087b"
-      Me.GroupBox11.Location = New System.Drawing.Point(8, 9)
-      Me.GroupBox11.Name = "GroupBox11"
-      Me.GroupBox11.Size = New System.Drawing.Size(381, 100)
-      Me.GroupBox11.TabIndex = 7
-      Me.GroupBox11.Text = "Id Fiscale IVA"
-      '
-      'eui_txtRfCpIdCodice
-      '
-      Me.eui_txtRfCpIdCodice.Id = "7495df6b-1c95-4e57-905b-8680851f0663"
-      Me.eui_txtRfCpIdCodice.Location = New System.Drawing.Point(113, 57)
-      Me.eui_txtRfCpIdCodice.Name = "eui_txtRfCpIdCodice"
-      Me.eui_txtRfCpIdCodice.Size = New System.Drawing.Size(201, 21)
-      Me.eui_txtRfCpIdCodice.TabIndex = 1
-      Me.eui_txtRfCpIdCodice.TextEditorWidth = 195
-      '
-      'Label50
-      '
-      Me.Label50.Location = New System.Drawing.Point(19, 57)
-      Me.Label50.Name = "Label50"
-      Me.Label50.Size = New System.Drawing.Size(131, 19)
-      Me.Label50.TabIndex = 2
-      Me.Label50.Text = "Partita IVA:"
-      '
-      'eui_cmbRfCpIdPaese
-      '
-      Me.eui_cmbRfCpIdPaese.FormattingEnabled = False
-      Me.eui_cmbRfCpIdPaese.Id = "1461def2-6c01-4f5c-8b47-1b114053b10e"
-      Me.eui_cmbRfCpIdPaese.Location = New System.Drawing.Point(113, 23)
-      Me.eui_cmbRfCpIdPaese.Name = "eui_cmbRfCpIdPaese"
-      Me.eui_cmbRfCpIdPaese.Size = New System.Drawing.Size(101, 21)
-      Me.eui_cmbRfCpIdPaese.TabIndex = 0
-      Me.eui_cmbRfCpIdPaese.TextEditorWidth = 82
-      '
-      'Label51
-      '
-      Me.Label51.Location = New System.Drawing.Point(19, 25)
-      Me.Label51.Name = "Label51"
-      Me.Label51.Size = New System.Drawing.Size(50, 19)
-      Me.Label51.TabIndex = 0
-      Me.Label51.Text = "Paese:"
-      '
       'TabPage5
       '
       Me.TabPage5.ActiveControl = Nothing
@@ -693,6 +511,7 @@ Partial Class frmFatturaElettronica
       '
       Me.eui_txtTrasmittentePECDestinatario.Id = "565f1a0b-f27c-4c3f-b58d-a95108ec3465"
       Me.eui_txtTrasmittentePECDestinatario.Location = New System.Drawing.Point(161, 93)
+      Me.eui_txtTrasmittentePECDestinatario.MaxLength = 256
       Me.eui_txtTrasmittentePECDestinatario.Name = "eui_txtTrasmittentePECDestinatario"
       Me.eui_txtTrasmittentePECDestinatario.Size = New System.Drawing.Size(201, 21)
       Me.eui_txtTrasmittentePECDestinatario.TabIndex = 2
@@ -702,6 +521,7 @@ Partial Class frmFatturaElettronica
       '
       Me.eui_txtTrasmittenteTelefono.Id = "7fbb2205-1fd0-4f0f-8fd8-d1fdb9c243d9"
       Me.eui_txtTrasmittenteTelefono.Location = New System.Drawing.Point(161, 23)
+      Me.eui_txtTrasmittenteTelefono.MaxLength = 12
       Me.eui_txtTrasmittenteTelefono.Name = "eui_txtTrasmittenteTelefono"
       Me.eui_txtTrasmittenteTelefono.Size = New System.Drawing.Size(201, 21)
       Me.eui_txtTrasmittenteTelefono.TabIndex = 0
@@ -711,6 +531,7 @@ Partial Class frmFatturaElettronica
       '
       Me.eui_txtTrasmittenteEmail.Id = "65e93da9-c779-46e0-98d2-aee936ef62fb"
       Me.eui_txtTrasmittenteEmail.Location = New System.Drawing.Point(161, 57)
+      Me.eui_txtTrasmittenteEmail.MaxLength = 256
       Me.eui_txtTrasmittenteEmail.Name = "eui_txtTrasmittenteEmail"
       Me.eui_txtTrasmittenteEmail.Size = New System.Drawing.Size(201, 21)
       Me.eui_txtTrasmittenteEmail.TabIndex = 1
@@ -736,6 +557,7 @@ Partial Class frmFatturaElettronica
       '
       Me.eui_txtProgressivoInvio.Id = "dc244b45-e5d1-483a-8c12-b069b2822598"
       Me.eui_txtProgressivoInvio.Location = New System.Drawing.Point(173, 130)
+      Me.eui_txtProgressivoInvio.MaxLength = 10
       Me.eui_txtProgressivoInvio.Name = "eui_txtProgressivoInvio"
       Me.eui_txtProgressivoInvio.Size = New System.Drawing.Size(201, 21)
       Me.eui_txtProgressivoInvio.TabIndex = 0
@@ -753,6 +575,7 @@ Partial Class frmFatturaElettronica
       '
       Me.eui_txtCodiceDestinatario.Id = "e70c0676-da53-4b00-b304-f82eb0d9f5bd"
       Me.eui_txtCodiceDestinatario.Location = New System.Drawing.Point(171, 197)
+      Me.eui_txtCodiceDestinatario.MaxLength = 7
       Me.eui_txtCodiceDestinatario.Name = "eui_txtCodiceDestinatario"
       Me.eui_txtCodiceDestinatario.Size = New System.Drawing.Size(201, 21)
       Me.eui_txtCodiceDestinatario.TabIndex = 2
@@ -770,7 +593,7 @@ Partial Class frmFatturaElettronica
       '
       Me.eui_cmbFormatoTrasmissione.FormattingEnabled = False
       Me.eui_cmbFormatoTrasmissione.Id = "d71e40ca-1c67-4fd6-b225-783f1484673c"
-      Me.eui_cmbFormatoTrasmissione.Items.AddRange(New Object() {"FPR12", "FPA12"})
+      Me.eui_cmbFormatoTrasmissione.Items.AddRange(New Object() {"FPA12", "FPR12"})
       Me.eui_cmbFormatoTrasmissione.Location = New System.Drawing.Point(173, 163)
       Me.eui_cmbFormatoTrasmissione.Name = "eui_cmbFormatoTrasmissione"
       Me.eui_cmbFormatoTrasmissione.Size = New System.Drawing.Size(111, 21)
@@ -802,6 +625,7 @@ Partial Class frmFatturaElettronica
       '
       Me.eui_txtTrasmittenteIdCodice.Id = "433798ef-3d1e-4f71-af05-cb5195003521"
       Me.eui_txtTrasmittenteIdCodice.Location = New System.Drawing.Point(161, 57)
+      Me.eui_txtTrasmittenteIdCodice.MaxLength = 28
       Me.eui_txtTrasmittenteIdCodice.Name = "eui_txtTrasmittenteIdCodice"
       Me.eui_txtTrasmittenteIdCodice.Size = New System.Drawing.Size(201, 21)
       Me.eui_txtTrasmittenteIdCodice.TabIndex = 1
@@ -819,6 +643,7 @@ Partial Class frmFatturaElettronica
       '
       Me.eui_cmbTrasmittenteIdPaese.FormattingEnabled = False
       Me.eui_cmbTrasmittenteIdPaese.Id = "4ea8545f-2893-4998-bf33-cba9d5abf513"
+      Me.eui_cmbTrasmittenteIdPaese.Items.AddRange(New Object() {"IT- ITALIA"})
       Me.eui_cmbTrasmittenteIdPaese.Location = New System.Drawing.Point(163, 23)
       Me.eui_cmbTrasmittenteIdPaese.Name = "eui_cmbTrasmittenteIdPaese"
       Me.eui_cmbTrasmittenteIdPaese.Size = New System.Drawing.Size(111, 21)
@@ -1639,6 +1464,188 @@ Partial Class frmFatturaElettronica
       Me.Label44.TabIndex = 6
       Me.Label44.Text = "Riferimento amministrazione:"
       '
+      'TabPage7
+      '
+      Me.TabPage7.ActiveControl = Nothing
+      Me.TabPage7.Controls.Add(Me.Label52)
+      Me.TabPage7.Controls.Add(Me.GroupBox10)
+      Me.TabPage7.Controls.Add(Me.eui_txtRfCpCodiceFiscale)
+      Me.TabPage7.Controls.Add(Me.GroupBox11)
+      Me.TabPage7.KeyTip = Nothing
+      Me.TabPage7.Name = "TabPage7"
+      Me.TabPage7.Size = New System.Drawing.Size(798, 434)
+      Me.TabPage7.TabIndex = 2
+      Me.TabPage7.Text = "Rappresentante Fiscale"
+      '
+      'Label52
+      '
+      Me.Label52.Location = New System.Drawing.Point(27, 126)
+      Me.Label52.Name = "Label52"
+      Me.Label52.Size = New System.Drawing.Size(87, 19)
+      Me.Label52.TabIndex = 10
+      Me.Label52.Text = "Codice fiscale:"
+      '
+      'GroupBox10
+      '
+      Me.GroupBox10.Controls.Add(Me.Label45)
+      Me.GroupBox10.Controls.Add(Me.Label46)
+      Me.GroupBox10.Controls.Add(Me.Label47)
+      Me.GroupBox10.Controls.Add(Me.eui_txtRfCpCodiceEORI)
+      Me.GroupBox10.Controls.Add(Me.eui_txtRfCpTitolo)
+      Me.GroupBox10.Controls.Add(Me.eui_txtRfCpCognome)
+      Me.GroupBox10.Controls.Add(Me.eui_txtRfCpDenominazione)
+      Me.GroupBox10.Controls.Add(Me.eui_txtRfCpNome)
+      Me.GroupBox10.Controls.Add(Me.Label48)
+      Me.GroupBox10.Controls.Add(Me.Label49)
+      Me.GroupBox10.Id = "e0fc915e-c43a-4204-acd3-c25858953e4f"
+      Me.GroupBox10.Location = New System.Drawing.Point(8, 159)
+      Me.GroupBox10.Name = "GroupBox10"
+      Me.GroupBox10.Size = New System.Drawing.Size(381, 203)
+      Me.GroupBox10.TabIndex = 9
+      Me.GroupBox10.Text = "Anagrafica"
+      '
+      'Label45
+      '
+      Me.Label45.Location = New System.Drawing.Point(19, 165)
+      Me.Label45.Name = "Label45"
+      Me.Label45.Size = New System.Drawing.Size(78, 19)
+      Me.Label45.TabIndex = 10
+      Me.Label45.Text = "Codice EORI:"
+      '
+      'Label46
+      '
+      Me.Label46.Location = New System.Drawing.Point(19, 130)
+      Me.Label46.Name = "Label46"
+      Me.Label46.Size = New System.Drawing.Size(78, 19)
+      Me.Label46.TabIndex = 9
+      Me.Label46.Text = "Titolo:"
+      '
+      'Label47
+      '
+      Me.Label47.Location = New System.Drawing.Point(19, 94)
+      Me.Label47.Name = "Label47"
+      Me.Label47.Size = New System.Drawing.Size(78, 19)
+      Me.Label47.TabIndex = 8
+      Me.Label47.Text = "Cognome:"
+      '
+      'eui_txtRfCpCodiceEORI
+      '
+      Me.eui_txtRfCpCodiceEORI.Id = "4d0e96fa-fa65-474c-bda1-757280380148"
+      Me.eui_txtRfCpCodiceEORI.Location = New System.Drawing.Point(114, 163)
+      Me.eui_txtRfCpCodiceEORI.Name = "eui_txtRfCpCodiceEORI"
+      Me.eui_txtRfCpCodiceEORI.Size = New System.Drawing.Size(201, 21)
+      Me.eui_txtRfCpCodiceEORI.TabIndex = 4
+      Me.eui_txtRfCpCodiceEORI.TextEditorWidth = 195
+      '
+      'eui_txtRfCpTitolo
+      '
+      Me.eui_txtRfCpTitolo.Id = "9ab9a17b-0ca9-4a7c-85bb-607ceae8c587"
+      Me.eui_txtRfCpTitolo.Location = New System.Drawing.Point(114, 128)
+      Me.eui_txtRfCpTitolo.Name = "eui_txtRfCpTitolo"
+      Me.eui_txtRfCpTitolo.Size = New System.Drawing.Size(201, 21)
+      Me.eui_txtRfCpTitolo.TabIndex = 3
+      Me.eui_txtRfCpTitolo.TextEditorWidth = 195
+      '
+      'eui_txtRfCpCognome
+      '
+      Me.eui_txtRfCpCognome.Id = "b7b28f37-2e3d-41f2-86c1-59578e4f5aa6"
+      Me.eui_txtRfCpCognome.Location = New System.Drawing.Point(113, 92)
+      Me.eui_txtRfCpCognome.Name = "eui_txtRfCpCognome"
+      Me.eui_txtRfCpCognome.Size = New System.Drawing.Size(201, 21)
+      Me.eui_txtRfCpCognome.TabIndex = 2
+      Me.eui_txtRfCpCognome.TextEditorWidth = 195
+      '
+      'eui_txtRfCpDenominazione
+      '
+      Me.eui_txtRfCpDenominazione.Id = "e6e6549a-2d4f-4bad-98ec-4937e10ba3ee"
+      Me.eui_txtRfCpDenominazione.Location = New System.Drawing.Point(113, 23)
+      Me.eui_txtRfCpDenominazione.Name = "eui_txtRfCpDenominazione"
+      Me.eui_txtRfCpDenominazione.Size = New System.Drawing.Size(201, 21)
+      Me.eui_txtRfCpDenominazione.TabIndex = 0
+      Me.eui_txtRfCpDenominazione.TextEditorWidth = 195
+      '
+      'eui_txtRfCpNome
+      '
+      Me.eui_txtRfCpNome.Id = "98814ec3-4c8a-49da-bd6e-8c2b98fb5f4f"
+      Me.eui_txtRfCpNome.Location = New System.Drawing.Point(113, 57)
+      Me.eui_txtRfCpNome.Name = "eui_txtRfCpNome"
+      Me.eui_txtRfCpNome.Size = New System.Drawing.Size(201, 21)
+      Me.eui_txtRfCpNome.TabIndex = 1
+      Me.eui_txtRfCpNome.TextEditorWidth = 195
+      '
+      'Label48
+      '
+      Me.Label48.Location = New System.Drawing.Point(19, 57)
+      Me.Label48.Name = "Label48"
+      Me.Label48.Size = New System.Drawing.Size(131, 19)
+      Me.Label48.TabIndex = 2
+      Me.Label48.Text = "Nome:"
+      '
+      'Label49
+      '
+      Me.Label49.Location = New System.Drawing.Point(19, 25)
+      Me.Label49.Name = "Label49"
+      Me.Label49.Size = New System.Drawing.Size(76, 19)
+      Me.Label49.TabIndex = 0
+      Me.Label49.Text = "Denominazione:"
+      '
+      'eui_txtRfCpCodiceFiscale
+      '
+      Me.eui_txtRfCpCodiceFiscale.Id = "07138d7e-d5c4-4a6b-b1f6-a5294f53c4ae"
+      Me.eui_txtRfCpCodiceFiscale.Location = New System.Drawing.Point(122, 124)
+      Me.eui_txtRfCpCodiceFiscale.Name = "eui_txtRfCpCodiceFiscale"
+      Me.eui_txtRfCpCodiceFiscale.Size = New System.Drawing.Size(201, 21)
+      Me.eui_txtRfCpCodiceFiscale.TabIndex = 0
+      Me.eui_txtRfCpCodiceFiscale.TextEditorWidth = 195
+      '
+      'GroupBox11
+      '
+      Me.GroupBox11.Controls.Add(Me.eui_txtRfCpIdCodice)
+      Me.GroupBox11.Controls.Add(Me.Label50)
+      Me.GroupBox11.Controls.Add(Me.eui_cmbRfCpIdPaese)
+      Me.GroupBox11.Controls.Add(Me.Label51)
+      Me.GroupBox11.Id = "09af98f6-67bb-429e-b03d-95f8330e087b"
+      Me.GroupBox11.Location = New System.Drawing.Point(8, 9)
+      Me.GroupBox11.Name = "GroupBox11"
+      Me.GroupBox11.Size = New System.Drawing.Size(381, 100)
+      Me.GroupBox11.TabIndex = 7
+      Me.GroupBox11.Text = "Id Fiscale IVA"
+      '
+      'eui_txtRfCpIdCodice
+      '
+      Me.eui_txtRfCpIdCodice.Id = "7495df6b-1c95-4e57-905b-8680851f0663"
+      Me.eui_txtRfCpIdCodice.Location = New System.Drawing.Point(113, 57)
+      Me.eui_txtRfCpIdCodice.Name = "eui_txtRfCpIdCodice"
+      Me.eui_txtRfCpIdCodice.Size = New System.Drawing.Size(201, 21)
+      Me.eui_txtRfCpIdCodice.TabIndex = 1
+      Me.eui_txtRfCpIdCodice.TextEditorWidth = 195
+      '
+      'Label50
+      '
+      Me.Label50.Location = New System.Drawing.Point(19, 57)
+      Me.Label50.Name = "Label50"
+      Me.Label50.Size = New System.Drawing.Size(131, 19)
+      Me.Label50.TabIndex = 2
+      Me.Label50.Text = "Partita IVA:"
+      '
+      'eui_cmbRfCpIdPaese
+      '
+      Me.eui_cmbRfCpIdPaese.FormattingEnabled = False
+      Me.eui_cmbRfCpIdPaese.Id = "1461def2-6c01-4f5c-8b47-1b114053b10e"
+      Me.eui_cmbRfCpIdPaese.Location = New System.Drawing.Point(113, 23)
+      Me.eui_cmbRfCpIdPaese.Name = "eui_cmbRfCpIdPaese"
+      Me.eui_cmbRfCpIdPaese.Size = New System.Drawing.Size(101, 21)
+      Me.eui_cmbRfCpIdPaese.TabIndex = 0
+      Me.eui_cmbRfCpIdPaese.TextEditorWidth = 82
+      '
+      'Label51
+      '
+      Me.Label51.Location = New System.Drawing.Point(19, 25)
+      Me.Label51.Name = "Label51"
+      Me.Label51.Size = New System.Drawing.Size(50, 19)
+      Me.Label51.TabIndex = 0
+      Me.Label51.Text = "Paese:"
+      '
       'TabPage8
       '
       Me.TabPage8.ActiveControl = Nothing
@@ -1648,6 +1655,334 @@ Partial Class frmFatturaElettronica
       Me.TabPage8.Size = New System.Drawing.Size(798, 434)
       Me.TabPage8.TabIndex = 3
       Me.TabPage8.Text = "Cessionario/Committente"
+      '
+      'TabControl3
+      '
+      Me.TabControl3.Location = New System.Drawing.Point(8, 9)
+      Me.TabControl3.Name = "TabControl3"
+      Me.TabControl3.SelectedTabPage = Me.TabPage17
+      Me.TabControl3.Size = New System.Drawing.Size(782, 418)
+      Me.TabControl3.TabIndex = 0
+      Me.TabControl3.TabPages.AddRange(New Elegant.Ui.TabPage() {Me.TabPage17, Me.TabPage18})
+      Me.TabControl3.Text = "TabControl3"
+      '
+      'TabPage17
+      '
+      Me.TabPage17.ActiveControl = Nothing
+      Me.TabPage17.Controls.Add(Me.GroupBox12)
+      Me.TabPage17.Controls.Add(Me.eui_txtCcCodiceFiscale)
+      Me.TabPage17.Controls.Add(Me.Label58)
+      Me.TabPage17.Controls.Add(Me.GroupBox13)
+      Me.TabPage17.KeyTip = Nothing
+      Me.TabPage17.Name = "TabPage17"
+      Me.TabPage17.Size = New System.Drawing.Size(780, 397)
+      Me.TabPage17.TabIndex = 0
+      Me.TabPage17.Text = "Dati Anagrafici"
+      '
+      'GroupBox12
+      '
+      Me.GroupBox12.Controls.Add(Me.Label53)
+      Me.GroupBox12.Controls.Add(Me.Label54)
+      Me.GroupBox12.Controls.Add(Me.Label55)
+      Me.GroupBox12.Controls.Add(Me.eui_txtCcCodiceEORI)
+      Me.GroupBox12.Controls.Add(Me.eui_txtCcTitolo)
+      Me.GroupBox12.Controls.Add(Me.eui_txtCcCognome)
+      Me.GroupBox12.Controls.Add(Me.eui_txtCcDenominazione)
+      Me.GroupBox12.Controls.Add(Me.eui_txtCcNome)
+      Me.GroupBox12.Controls.Add(Me.Label56)
+      Me.GroupBox12.Controls.Add(Me.Label57)
+      Me.GroupBox12.Id = "232dfa5d-3669-4f70-b81c-7e77581a16df"
+      Me.GroupBox12.Location = New System.Drawing.Point(11, 162)
+      Me.GroupBox12.Name = "GroupBox12"
+      Me.GroupBox12.Size = New System.Drawing.Size(381, 203)
+      Me.GroupBox12.TabIndex = 10
+      Me.GroupBox12.Text = "Anagrafica"
+      '
+      'Label53
+      '
+      Me.Label53.Location = New System.Drawing.Point(19, 165)
+      Me.Label53.Name = "Label53"
+      Me.Label53.Size = New System.Drawing.Size(78, 19)
+      Me.Label53.TabIndex = 10
+      Me.Label53.Text = "Codice EORI:"
+      '
+      'Label54
+      '
+      Me.Label54.Location = New System.Drawing.Point(19, 130)
+      Me.Label54.Name = "Label54"
+      Me.Label54.Size = New System.Drawing.Size(78, 19)
+      Me.Label54.TabIndex = 9
+      Me.Label54.Text = "Titolo:"
+      '
+      'Label55
+      '
+      Me.Label55.Location = New System.Drawing.Point(19, 94)
+      Me.Label55.Name = "Label55"
+      Me.Label55.Size = New System.Drawing.Size(78, 19)
+      Me.Label55.TabIndex = 8
+      Me.Label55.Text = "Cognome:"
+      '
+      'eui_txtCcCodiceEORI
+      '
+      Me.eui_txtCcCodiceEORI.Id = "15e99148-7540-45b1-958c-03402d03502a"
+      Me.eui_txtCcCodiceEORI.Location = New System.Drawing.Point(114, 163)
+      Me.eui_txtCcCodiceEORI.Name = "eui_txtCcCodiceEORI"
+      Me.eui_txtCcCodiceEORI.Size = New System.Drawing.Size(201, 21)
+      Me.eui_txtCcCodiceEORI.TabIndex = 4
+      Me.eui_txtCcCodiceEORI.TextEditorWidth = 195
+      '
+      'eui_txtCcTitolo
+      '
+      Me.eui_txtCcTitolo.Id = "f5d78260-9acf-4925-b876-f6d829438497"
+      Me.eui_txtCcTitolo.Location = New System.Drawing.Point(114, 128)
+      Me.eui_txtCcTitolo.Name = "eui_txtCcTitolo"
+      Me.eui_txtCcTitolo.Size = New System.Drawing.Size(201, 21)
+      Me.eui_txtCcTitolo.TabIndex = 3
+      Me.eui_txtCcTitolo.TextEditorWidth = 195
+      '
+      'eui_txtCcCognome
+      '
+      Me.eui_txtCcCognome.Id = "776d7fe0-656d-4ed3-9c73-99f40851695f"
+      Me.eui_txtCcCognome.Location = New System.Drawing.Point(113, 92)
+      Me.eui_txtCcCognome.Name = "eui_txtCcCognome"
+      Me.eui_txtCcCognome.Size = New System.Drawing.Size(201, 21)
+      Me.eui_txtCcCognome.TabIndex = 2
+      Me.eui_txtCcCognome.TextEditorWidth = 195
+      '
+      'eui_txtCcDenominazione
+      '
+      Me.eui_txtCcDenominazione.Id = "7ff21d99-7696-45da-a2df-627c5dcc39b3"
+      Me.eui_txtCcDenominazione.Location = New System.Drawing.Point(113, 23)
+      Me.eui_txtCcDenominazione.Name = "eui_txtCcDenominazione"
+      Me.eui_txtCcDenominazione.Size = New System.Drawing.Size(201, 21)
+      Me.eui_txtCcDenominazione.TabIndex = 0
+      Me.eui_txtCcDenominazione.TextEditorWidth = 195
+      '
+      'eui_txtCcNome
+      '
+      Me.eui_txtCcNome.Id = "b87f3b4d-4366-4e52-82ea-1b91ba4b915d"
+      Me.eui_txtCcNome.Location = New System.Drawing.Point(113, 57)
+      Me.eui_txtCcNome.Name = "eui_txtCcNome"
+      Me.eui_txtCcNome.Size = New System.Drawing.Size(201, 21)
+      Me.eui_txtCcNome.TabIndex = 1
+      Me.eui_txtCcNome.TextEditorWidth = 195
+      '
+      'Label56
+      '
+      Me.Label56.Location = New System.Drawing.Point(19, 57)
+      Me.Label56.Name = "Label56"
+      Me.Label56.Size = New System.Drawing.Size(131, 19)
+      Me.Label56.TabIndex = 2
+      Me.Label56.Text = "Nome:"
+      '
+      'Label57
+      '
+      Me.Label57.Location = New System.Drawing.Point(19, 25)
+      Me.Label57.Name = "Label57"
+      Me.Label57.Size = New System.Drawing.Size(76, 19)
+      Me.Label57.TabIndex = 0
+      Me.Label57.Text = "Denominazione:"
+      '
+      'eui_txtCcCodiceFiscale
+      '
+      Me.eui_txtCcCodiceFiscale.Id = "60aa28cd-e59b-4f2b-b5b6-3f7ecc536c7b"
+      Me.eui_txtCcCodiceFiscale.Location = New System.Drawing.Point(125, 127)
+      Me.eui_txtCcCodiceFiscale.Name = "eui_txtCcCodiceFiscale"
+      Me.eui_txtCcCodiceFiscale.Size = New System.Drawing.Size(201, 21)
+      Me.eui_txtCcCodiceFiscale.TabIndex = 0
+      Me.eui_txtCcCodiceFiscale.TextEditorWidth = 195
+      '
+      'Label58
+      '
+      Me.Label58.Location = New System.Drawing.Point(27, 129)
+      Me.Label58.Name = "Label58"
+      Me.Label58.Size = New System.Drawing.Size(87, 19)
+      Me.Label58.TabIndex = 8
+      Me.Label58.Text = "Codice fiscale:"
+      '
+      'GroupBox13
+      '
+      Me.GroupBox13.Controls.Add(Me.eui_txtCcIdCodice)
+      Me.GroupBox13.Controls.Add(Me.Label59)
+      Me.GroupBox13.Controls.Add(Me.eui_cmbCcIdPaese)
+      Me.GroupBox13.Controls.Add(Me.Label60)
+      Me.GroupBox13.Id = "28c6e520-ba70-4c82-a72e-12d7722fe9bd"
+      Me.GroupBox13.Location = New System.Drawing.Point(11, 12)
+      Me.GroupBox13.Name = "GroupBox13"
+      Me.GroupBox13.Size = New System.Drawing.Size(381, 100)
+      Me.GroupBox13.TabIndex = 7
+      Me.GroupBox13.Text = "Id Fiscale IVA"
+      '
+      'eui_txtCcIdCodice
+      '
+      Me.eui_txtCcIdCodice.Id = "9974755a-122d-40c5-9882-1c5e6365e341"
+      Me.eui_txtCcIdCodice.Location = New System.Drawing.Point(113, 57)
+      Me.eui_txtCcIdCodice.Name = "eui_txtCcIdCodice"
+      Me.eui_txtCcIdCodice.Size = New System.Drawing.Size(201, 21)
+      Me.eui_txtCcIdCodice.TabIndex = 1
+      Me.eui_txtCcIdCodice.TextEditorWidth = 195
+      '
+      'Label59
+      '
+      Me.Label59.Location = New System.Drawing.Point(19, 57)
+      Me.Label59.Name = "Label59"
+      Me.Label59.Size = New System.Drawing.Size(131, 19)
+      Me.Label59.TabIndex = 2
+      Me.Label59.Text = "Partita IVA:"
+      '
+      'eui_cmbCcIdPaese
+      '
+      Me.eui_cmbCcIdPaese.FormattingEnabled = False
+      Me.eui_cmbCcIdPaese.Id = "173b940e-60ac-47f1-a963-c134a868fe92"
+      Me.eui_cmbCcIdPaese.Location = New System.Drawing.Point(113, 23)
+      Me.eui_cmbCcIdPaese.Name = "eui_cmbCcIdPaese"
+      Me.eui_cmbCcIdPaese.Size = New System.Drawing.Size(201, 21)
+      Me.eui_cmbCcIdPaese.TabIndex = 0
+      Me.eui_cmbCcIdPaese.TextEditorWidth = 182
+      '
+      'Label60
+      '
+      Me.Label60.Location = New System.Drawing.Point(19, 25)
+      Me.Label60.Name = "Label60"
+      Me.Label60.Size = New System.Drawing.Size(50, 19)
+      Me.Label60.TabIndex = 0
+      Me.Label60.Text = "Paese:"
+      '
+      'TabPage18
+      '
+      Me.TabPage18.ActiveControl = Nothing
+      Me.TabPage18.Controls.Add(Me.GroupBox14)
+      Me.TabPage18.KeyTip = Nothing
+      Me.TabPage18.Name = "TabPage18"
+      Me.TabPage18.Size = New System.Drawing.Size(780, 397)
+      Me.TabPage18.TabIndex = 1
+      Me.TabPage18.Text = "Sede"
+      '
+      'GroupBox14
+      '
+      Me.GroupBox14.Controls.Add(Me.eui_CcSedeNazione)
+      Me.GroupBox14.Controls.Add(Me.Label61)
+      Me.GroupBox14.Controls.Add(Me.eui_cmbCcSedeProvincia)
+      Me.GroupBox14.Controls.Add(Me.Label62)
+      Me.GroupBox14.Controls.Add(Me.Label63)
+      Me.GroupBox14.Controls.Add(Me.Label64)
+      Me.GroupBox14.Controls.Add(Me.eui_txtCcSedeComune)
+      Me.GroupBox14.Controls.Add(Me.eui_txtCcSedeCAP)
+      Me.GroupBox14.Controls.Add(Me.eui_txtCcSedeIndirizzo)
+      Me.GroupBox14.Controls.Add(Me.eui_txtCcSedeNumeroCivico)
+      Me.GroupBox14.Controls.Add(Me.Label65)
+      Me.GroupBox14.Controls.Add(Me.Label66)
+      Me.GroupBox14.Id = "5da6b73d-f29b-49d6-8f48-40565e019692"
+      Me.GroupBox14.Location = New System.Drawing.Point(11, 12)
+      Me.GroupBox14.Name = "GroupBox14"
+      Me.GroupBox14.Size = New System.Drawing.Size(381, 230)
+      Me.GroupBox14.TabIndex = 8
+      Me.GroupBox14.Text = "Sede del cessionario/committente"
+      '
+      'eui_CcSedeNazione
+      '
+      Me.eui_CcSedeNazione.FormattingEnabled = False
+      Me.eui_CcSedeNazione.Id = "cc881ac6-a2a6-47cf-9a62-73a9b84b4fd3"
+      Me.eui_CcSedeNazione.Location = New System.Drawing.Point(113, 194)
+      Me.eui_CcSedeNazione.Name = "eui_CcSedeNazione"
+      Me.eui_CcSedeNazione.Size = New System.Drawing.Size(240, 21)
+      Me.eui_CcSedeNazione.TabIndex = 5
+      Me.eui_CcSedeNazione.TextEditorWidth = 221
+      '
+      'Label61
+      '
+      Me.Label61.Location = New System.Drawing.Point(19, 196)
+      Me.Label61.Name = "Label61"
+      Me.Label61.Size = New System.Drawing.Size(78, 19)
+      Me.Label61.TabIndex = 12
+      Me.Label61.Text = "Nazione:"
+      '
+      'eui_cmbCcSedeProvincia
+      '
+      Me.eui_cmbCcSedeProvincia.FormattingEnabled = False
+      Me.eui_cmbCcSedeProvincia.Id = "f26c1c3a-590d-402f-9933-6c96fe5a5796"
+      Me.eui_cmbCcSedeProvincia.Location = New System.Drawing.Point(113, 163)
+      Me.eui_cmbCcSedeProvincia.Name = "eui_cmbCcSedeProvincia"
+      Me.eui_cmbCcSedeProvincia.Size = New System.Drawing.Size(241, 21)
+      Me.eui_cmbCcSedeProvincia.TabIndex = 4
+      Me.eui_cmbCcSedeProvincia.TextEditorWidth = 222
+      '
+      'Label62
+      '
+      Me.Label62.Location = New System.Drawing.Point(19, 165)
+      Me.Label62.Name = "Label62"
+      Me.Label62.Size = New System.Drawing.Size(78, 19)
+      Me.Label62.TabIndex = 10
+      Me.Label62.Text = "Provincia:"
+      '
+      'Label63
+      '
+      Me.Label63.Location = New System.Drawing.Point(19, 130)
+      Me.Label63.Name = "Label63"
+      Me.Label63.Size = New System.Drawing.Size(78, 19)
+      Me.Label63.TabIndex = 9
+      Me.Label63.Text = "Comune:"
+      '
+      'Label64
+      '
+      Me.Label64.Location = New System.Drawing.Point(19, 94)
+      Me.Label64.Name = "Label64"
+      Me.Label64.Size = New System.Drawing.Size(78, 19)
+      Me.Label64.TabIndex = 8
+      Me.Label64.Tag = ""
+      Me.Label64.Text = "CAP:"
+      '
+      'eui_txtCcSedeComune
+      '
+      Me.eui_txtCcSedeComune.Id = "dea454d8-8680-4b91-b8d1-d72be0a02597"
+      Me.eui_txtCcSedeComune.Location = New System.Drawing.Point(114, 128)
+      Me.eui_txtCcSedeComune.Name = "eui_txtCcSedeComune"
+      Me.eui_txtCcSedeComune.Size = New System.Drawing.Size(240, 21)
+      Me.eui_txtCcSedeComune.TabIndex = 3
+      Me.eui_txtCcSedeComune.TextEditorWidth = 234
+      '
+      'eui_txtCcSedeCAP
+      '
+      Me.eui_txtCcSedeCAP.Id = "da1569ce-a757-41e7-aca9-f14d7007263b"
+      Me.eui_txtCcSedeCAP.Location = New System.Drawing.Point(113, 92)
+      Me.eui_txtCcSedeCAP.Name = "eui_txtCcSedeCAP"
+      Me.eui_txtCcSedeCAP.Size = New System.Drawing.Size(105, 21)
+      Me.eui_txtCcSedeCAP.TabIndex = 2
+      Me.eui_txtCcSedeCAP.TextEditorWidth = 99
+      '
+      'eui_txtCcSedeIndirizzo
+      '
+      Me.eui_txtCcSedeIndirizzo.Id = "bf6f4141-19c4-4406-9a4e-5df57ebcff4e"
+      Me.eui_txtCcSedeIndirizzo.Location = New System.Drawing.Point(113, 23)
+      Me.eui_txtCcSedeIndirizzo.Name = "eui_txtCcSedeIndirizzo"
+      Me.eui_txtCcSedeIndirizzo.Size = New System.Drawing.Size(240, 21)
+      Me.eui_txtCcSedeIndirizzo.TabIndex = 0
+      Me.eui_txtCcSedeIndirizzo.TextEditorWidth = 234
+      '
+      'eui_txtCcSedeNumeroCivico
+      '
+      Me.eui_txtCcSedeNumeroCivico.Id = "aaa9eac4-ff12-439a-9c44-63c8a7d4efe8"
+      Me.eui_txtCcSedeNumeroCivico.Location = New System.Drawing.Point(113, 57)
+      Me.eui_txtCcSedeNumeroCivico.Name = "eui_txtCcSedeNumeroCivico"
+      Me.eui_txtCcSedeNumeroCivico.Size = New System.Drawing.Size(105, 21)
+      Me.eui_txtCcSedeNumeroCivico.TabIndex = 1
+      Me.eui_txtCcSedeNumeroCivico.TextEditorWidth = 99
+      '
+      'Label65
+      '
+      Me.Label65.Location = New System.Drawing.Point(19, 57)
+      Me.Label65.Name = "Label65"
+      Me.Label65.Size = New System.Drawing.Size(76, 19)
+      Me.Label65.TabIndex = 2
+      Me.Label65.Text = "Numero civico:"
+      '
+      'Label66
+      '
+      Me.Label66.Location = New System.Drawing.Point(19, 25)
+      Me.Label66.Name = "Label66"
+      Me.Label66.Size = New System.Drawing.Size(76, 19)
+      Me.Label66.TabIndex = 0
+      Me.Label66.Text = "Indirizzo:"
       '
       'TabPage9
       '
@@ -1662,6 +1997,175 @@ Partial Class frmFatturaElettronica
       Me.TabPage9.TabIndex = 4
       Me.TabPage9.Text = "Terzo Intermediario o Soggetto Emittente"
       '
+      'GroupBox15
+      '
+      Me.GroupBox15.Controls.Add(Me.Label67)
+      Me.GroupBox15.Controls.Add(Me.Label68)
+      Me.GroupBox15.Controls.Add(Me.Label69)
+      Me.GroupBox15.Controls.Add(Me.eui_txtTiSeCodiceEORI)
+      Me.GroupBox15.Controls.Add(Me.eui_txtTiSeTitolo)
+      Me.GroupBox15.Controls.Add(Me.eui_txtTiSeCognome)
+      Me.GroupBox15.Controls.Add(Me.eui_txtTiSeDenominazione)
+      Me.GroupBox15.Controls.Add(Me.eui_txtTiSeNome)
+      Me.GroupBox15.Controls.Add(Me.Label70)
+      Me.GroupBox15.Controls.Add(Me.Label71)
+      Me.GroupBox15.Id = "5b79e596-fb20-4a54-9549-e14bb1a21de9"
+      Me.GroupBox15.Location = New System.Drawing.Point(9, 162)
+      Me.GroupBox15.Name = "GroupBox15"
+      Me.GroupBox15.Size = New System.Drawing.Size(381, 203)
+      Me.GroupBox15.TabIndex = 14
+      Me.GroupBox15.Text = "Anagrafica"
+      '
+      'Label67
+      '
+      Me.Label67.Location = New System.Drawing.Point(19, 165)
+      Me.Label67.Name = "Label67"
+      Me.Label67.Size = New System.Drawing.Size(78, 19)
+      Me.Label67.TabIndex = 10
+      Me.Label67.Text = "Codice EORI:"
+      '
+      'Label68
+      '
+      Me.Label68.Location = New System.Drawing.Point(19, 130)
+      Me.Label68.Name = "Label68"
+      Me.Label68.Size = New System.Drawing.Size(78, 19)
+      Me.Label68.TabIndex = 9
+      Me.Label68.Text = "Titolo:"
+      '
+      'Label69
+      '
+      Me.Label69.Location = New System.Drawing.Point(19, 94)
+      Me.Label69.Name = "Label69"
+      Me.Label69.Size = New System.Drawing.Size(78, 19)
+      Me.Label69.TabIndex = 8
+      Me.Label69.Text = "Cognome:"
+      '
+      'eui_txtTiSeCodiceEORI
+      '
+      Me.eui_txtTiSeCodiceEORI.Id = "83a3e0a1-96b4-47eb-b95d-b24cd79a83d6"
+      Me.eui_txtTiSeCodiceEORI.Location = New System.Drawing.Point(114, 163)
+      Me.eui_txtTiSeCodiceEORI.Name = "eui_txtTiSeCodiceEORI"
+      Me.eui_txtTiSeCodiceEORI.Size = New System.Drawing.Size(201, 21)
+      Me.eui_txtTiSeCodiceEORI.TabIndex = 4
+      Me.eui_txtTiSeCodiceEORI.TextEditorWidth = 195
+      '
+      'eui_txtTiSeTitolo
+      '
+      Me.eui_txtTiSeTitolo.Id = "a276f51e-9af8-4075-a9c9-a16f23077ce5"
+      Me.eui_txtTiSeTitolo.Location = New System.Drawing.Point(114, 128)
+      Me.eui_txtTiSeTitolo.Name = "eui_txtTiSeTitolo"
+      Me.eui_txtTiSeTitolo.Size = New System.Drawing.Size(201, 21)
+      Me.eui_txtTiSeTitolo.TabIndex = 3
+      Me.eui_txtTiSeTitolo.TextEditorWidth = 195
+      '
+      'eui_txtTiSeCognome
+      '
+      Me.eui_txtTiSeCognome.Id = "f7ef083c-cf9d-4e47-957a-2fd353017251"
+      Me.eui_txtTiSeCognome.Location = New System.Drawing.Point(113, 92)
+      Me.eui_txtTiSeCognome.Name = "eui_txtTiSeCognome"
+      Me.eui_txtTiSeCognome.Size = New System.Drawing.Size(201, 21)
+      Me.eui_txtTiSeCognome.TabIndex = 2
+      Me.eui_txtTiSeCognome.TextEditorWidth = 195
+      '
+      'eui_txtTiSeDenominazione
+      '
+      Me.eui_txtTiSeDenominazione.Id = "5a5e37e5-188f-4bfd-bf17-d3bcdb30cf6a"
+      Me.eui_txtTiSeDenominazione.Location = New System.Drawing.Point(113, 23)
+      Me.eui_txtTiSeDenominazione.Name = "eui_txtTiSeDenominazione"
+      Me.eui_txtTiSeDenominazione.Size = New System.Drawing.Size(201, 21)
+      Me.eui_txtTiSeDenominazione.TabIndex = 0
+      Me.eui_txtTiSeDenominazione.TextEditorWidth = 195
+      '
+      'eui_txtTiSeNome
+      '
+      Me.eui_txtTiSeNome.Id = "9cfedeb5-e462-460d-96eb-56c5e39ab723"
+      Me.eui_txtTiSeNome.Location = New System.Drawing.Point(113, 57)
+      Me.eui_txtTiSeNome.Name = "eui_txtTiSeNome"
+      Me.eui_txtTiSeNome.Size = New System.Drawing.Size(201, 21)
+      Me.eui_txtTiSeNome.TabIndex = 1
+      Me.eui_txtTiSeNome.TextEditorWidth = 195
+      '
+      'Label70
+      '
+      Me.Label70.Location = New System.Drawing.Point(19, 57)
+      Me.Label70.Name = "Label70"
+      Me.Label70.Size = New System.Drawing.Size(131, 19)
+      Me.Label70.TabIndex = 2
+      Me.Label70.Text = "Nome:"
+      '
+      'Label71
+      '
+      Me.Label71.Location = New System.Drawing.Point(19, 25)
+      Me.Label71.Name = "Label71"
+      Me.Label71.Size = New System.Drawing.Size(76, 19)
+      Me.Label71.TabIndex = 0
+      Me.Label71.Text = "Denominazione:"
+      '
+      'eui_txtTiSeCodiceFiscale
+      '
+      Me.eui_txtTiSeCodiceFiscale.Id = "9e8059d7-7a99-4c0f-9760-bfe4ae3dc4a9"
+      Me.eui_txtTiSeCodiceFiscale.Location = New System.Drawing.Point(123, 127)
+      Me.eui_txtTiSeCodiceFiscale.Name = "eui_txtTiSeCodiceFiscale"
+      Me.eui_txtTiSeCodiceFiscale.Size = New System.Drawing.Size(201, 21)
+      Me.eui_txtTiSeCodiceFiscale.TabIndex = 0
+      Me.eui_txtTiSeCodiceFiscale.TextEditorWidth = 195
+      '
+      'Label72
+      '
+      Me.Label72.Location = New System.Drawing.Point(25, 129)
+      Me.Label72.Name = "Label72"
+      Me.Label72.Size = New System.Drawing.Size(87, 19)
+      Me.Label72.TabIndex = 12
+      Me.Label72.Text = "Codice fiscale:"
+      '
+      'GroupBox16
+      '
+      Me.GroupBox16.Controls.Add(Me.eui_txtTiSeIdCodice)
+      Me.GroupBox16.Controls.Add(Me.Label73)
+      Me.GroupBox16.Controls.Add(Me.eui_cmbTiSeIdPaese)
+      Me.GroupBox16.Controls.Add(Me.Label74)
+      Me.GroupBox16.Id = "01e0f9f4-ce5b-46e1-99dc-dbcd4bf60cfe"
+      Me.GroupBox16.Location = New System.Drawing.Point(9, 12)
+      Me.GroupBox16.Name = "GroupBox16"
+      Me.GroupBox16.Size = New System.Drawing.Size(381, 100)
+      Me.GroupBox16.TabIndex = 11
+      Me.GroupBox16.Text = "Id Fiscale IVA"
+      '
+      'eui_txtTiSeIdCodice
+      '
+      Me.eui_txtTiSeIdCodice.Id = "3d17eb93-9055-469c-b73b-64adf70c8b77"
+      Me.eui_txtTiSeIdCodice.Location = New System.Drawing.Point(113, 57)
+      Me.eui_txtTiSeIdCodice.Name = "eui_txtTiSeIdCodice"
+      Me.eui_txtTiSeIdCodice.Size = New System.Drawing.Size(201, 21)
+      Me.eui_txtTiSeIdCodice.TabIndex = 1
+      Me.eui_txtTiSeIdCodice.TextEditorWidth = 195
+      '
+      'Label73
+      '
+      Me.Label73.Location = New System.Drawing.Point(19, 57)
+      Me.Label73.Name = "Label73"
+      Me.Label73.Size = New System.Drawing.Size(131, 19)
+      Me.Label73.TabIndex = 2
+      Me.Label73.Text = "Partita IVA:"
+      '
+      'eui_cmbTiSeIdPaese
+      '
+      Me.eui_cmbTiSeIdPaese.FormattingEnabled = False
+      Me.eui_cmbTiSeIdPaese.Id = "8a81ecb8-0b4f-4a40-b81b-0bb6f56365f8"
+      Me.eui_cmbTiSeIdPaese.Location = New System.Drawing.Point(113, 23)
+      Me.eui_cmbTiSeIdPaese.Name = "eui_cmbTiSeIdPaese"
+      Me.eui_cmbTiSeIdPaese.Size = New System.Drawing.Size(100, 21)
+      Me.eui_cmbTiSeIdPaese.TabIndex = 0
+      Me.eui_cmbTiSeIdPaese.TextEditorWidth = 81
+      '
+      'Label74
+      '
+      Me.Label74.Location = New System.Drawing.Point(19, 25)
+      Me.Label74.Name = "Label74"
+      Me.Label74.Size = New System.Drawing.Size(50, 19)
+      Me.Label74.TabIndex = 0
+      Me.Label74.Text = "Paese:"
+      '
       'TabPage10
       '
       Me.TabPage10.ActiveControl = Nothing
@@ -1672,6 +2176,25 @@ Partial Class frmFatturaElettronica
       Me.TabPage10.Size = New System.Drawing.Size(798, 434)
       Me.TabPage10.TabIndex = 5
       Me.TabPage10.Text = "Soggetto Emittente"
+      '
+      'eui_cmbSoggettoEmittente
+      '
+      Me.eui_cmbSoggettoEmittente.FormattingEnabled = False
+      Me.eui_cmbSoggettoEmittente.Id = "563fb4f7-645a-4e63-8634-86c9d5aabb58"
+      Me.eui_cmbSoggettoEmittente.Items.AddRange(New Object() {"CC", "TZ"})
+      Me.eui_cmbSoggettoEmittente.Location = New System.Drawing.Point(121, 13)
+      Me.eui_cmbSoggettoEmittente.Name = "eui_cmbSoggettoEmittente"
+      Me.eui_cmbSoggettoEmittente.Size = New System.Drawing.Size(141, 21)
+      Me.eui_cmbSoggettoEmittente.TabIndex = 0
+      Me.eui_cmbSoggettoEmittente.TextEditorWidth = 122
+      '
+      'Label75
+      '
+      Me.Label75.Location = New System.Drawing.Point(15, 16)
+      Me.Label75.Name = "Label75"
+      Me.Label75.Size = New System.Drawing.Size(92, 19)
+      Me.Label75.TabIndex = 20
+      Me.Label75.Text = "Soggetto emittente:"
       '
       'TabPage2
       '
@@ -1860,528 +2383,12 @@ Partial Class frmFatturaElettronica
       Me.eui_lblStatoClienteDoc.TabIndex = 0
       Me.eui_lblStatoClienteDoc.Text = "Luigi Montana Spa"
       '
-      'TabControl3
-      '
-      Me.TabControl3.Location = New System.Drawing.Point(8, 9)
-      Me.TabControl3.Name = "TabControl3"
-      Me.TabControl3.SelectedTabPage = Me.TabPage17
-      Me.TabControl3.Size = New System.Drawing.Size(782, 418)
-      Me.TabControl3.TabIndex = 0
-      Me.TabControl3.TabPages.AddRange(New Elegant.Ui.TabPage() {Me.TabPage17, Me.TabPage18})
-      Me.TabControl3.Text = "TabControl3"
-      '
-      'TabPage17
-      '
-      Me.TabPage17.ActiveControl = Nothing
-      Me.TabPage17.Controls.Add(Me.GroupBox12)
-      Me.TabPage17.Controls.Add(Me.eui_txtCcCodiceFiscale)
-      Me.TabPage17.Controls.Add(Me.Label58)
-      Me.TabPage17.Controls.Add(Me.GroupBox13)
-      Me.TabPage17.KeyTip = Nothing
-      Me.TabPage17.Name = "TabPage17"
-      Me.TabPage17.Size = New System.Drawing.Size(780, 397)
-      Me.TabPage17.TabIndex = 0
-      Me.TabPage17.Text = "Dati Anagrafici"
-      '
-      'TabPage18
-      '
-      Me.TabPage18.ActiveControl = Nothing
-      Me.TabPage18.Controls.Add(Me.GroupBox14)
-      Me.TabPage18.KeyTip = Nothing
-      Me.TabPage18.Name = "TabPage18"
-      Me.TabPage18.Size = New System.Drawing.Size(780, 397)
-      Me.TabPage18.TabIndex = 1
-      Me.TabPage18.Text = "Sede"
-      '
-      'GroupBox12
-      '
-      Me.GroupBox12.Controls.Add(Me.Label53)
-      Me.GroupBox12.Controls.Add(Me.Label54)
-      Me.GroupBox12.Controls.Add(Me.Label55)
-      Me.GroupBox12.Controls.Add(Me.eui_txtCcCodiceEORI)
-      Me.GroupBox12.Controls.Add(Me.eui_txtCcTitolo)
-      Me.GroupBox12.Controls.Add(Me.eui_txtCcCognome)
-      Me.GroupBox12.Controls.Add(Me.eui_txtCcDenominazione)
-      Me.GroupBox12.Controls.Add(Me.eui_txtCcNome)
-      Me.GroupBox12.Controls.Add(Me.Label56)
-      Me.GroupBox12.Controls.Add(Me.Label57)
-      Me.GroupBox12.Id = "232dfa5d-3669-4f70-b81c-7e77581a16df"
-      Me.GroupBox12.Location = New System.Drawing.Point(11, 162)
-      Me.GroupBox12.Name = "GroupBox12"
-      Me.GroupBox12.Size = New System.Drawing.Size(381, 203)
-      Me.GroupBox12.TabIndex = 10
-      Me.GroupBox12.Text = "Anagrafica"
-      '
-      'Label53
-      '
-      Me.Label53.Location = New System.Drawing.Point(19, 165)
-      Me.Label53.Name = "Label53"
-      Me.Label53.Size = New System.Drawing.Size(78, 19)
-      Me.Label53.TabIndex = 10
-      Me.Label53.Text = "Codice EORI:"
-      '
-      'Label54
-      '
-      Me.Label54.Location = New System.Drawing.Point(19, 130)
-      Me.Label54.Name = "Label54"
-      Me.Label54.Size = New System.Drawing.Size(78, 19)
-      Me.Label54.TabIndex = 9
-      Me.Label54.Text = "Titolo:"
-      '
-      'Label55
-      '
-      Me.Label55.Location = New System.Drawing.Point(19, 94)
-      Me.Label55.Name = "Label55"
-      Me.Label55.Size = New System.Drawing.Size(78, 19)
-      Me.Label55.TabIndex = 8
-      Me.Label55.Text = "Cognome:"
-      '
-      'eui_txtCcCodiceEORI
-      '
-      Me.eui_txtCcCodiceEORI.Id = "15e99148-7540-45b1-958c-03402d03502a"
-      Me.eui_txtCcCodiceEORI.Location = New System.Drawing.Point(114, 163)
-      Me.eui_txtCcCodiceEORI.Name = "eui_txtCcCodiceEORI"
-      Me.eui_txtCcCodiceEORI.Size = New System.Drawing.Size(201, 21)
-      Me.eui_txtCcCodiceEORI.TabIndex = 4
-      Me.eui_txtCcCodiceEORI.TextEditorWidth = 195
-      '
-      'eui_txtCcTitolo
-      '
-      Me.eui_txtCcTitolo.Id = "f5d78260-9acf-4925-b876-f6d829438497"
-      Me.eui_txtCcTitolo.Location = New System.Drawing.Point(114, 128)
-      Me.eui_txtCcTitolo.Name = "eui_txtCcTitolo"
-      Me.eui_txtCcTitolo.Size = New System.Drawing.Size(201, 21)
-      Me.eui_txtCcTitolo.TabIndex = 3
-      Me.eui_txtCcTitolo.TextEditorWidth = 195
-      '
-      'eui_txtCcCognome
-      '
-      Me.eui_txtCcCognome.Id = "776d7fe0-656d-4ed3-9c73-99f40851695f"
-      Me.eui_txtCcCognome.Location = New System.Drawing.Point(113, 92)
-      Me.eui_txtCcCognome.Name = "eui_txtCcCognome"
-      Me.eui_txtCcCognome.Size = New System.Drawing.Size(201, 21)
-      Me.eui_txtCcCognome.TabIndex = 2
-      Me.eui_txtCcCognome.TextEditorWidth = 195
-      '
-      'eui_txtCcDenominazione
-      '
-      Me.eui_txtCcDenominazione.Id = "7ff21d99-7696-45da-a2df-627c5dcc39b3"
-      Me.eui_txtCcDenominazione.Location = New System.Drawing.Point(113, 23)
-      Me.eui_txtCcDenominazione.Name = "eui_txtCcDenominazione"
-      Me.eui_txtCcDenominazione.Size = New System.Drawing.Size(201, 21)
-      Me.eui_txtCcDenominazione.TabIndex = 0
-      Me.eui_txtCcDenominazione.TextEditorWidth = 195
-      '
-      'eui_txtCcNome
-      '
-      Me.eui_txtCcNome.Id = "b87f3b4d-4366-4e52-82ea-1b91ba4b915d"
-      Me.eui_txtCcNome.Location = New System.Drawing.Point(113, 57)
-      Me.eui_txtCcNome.Name = "eui_txtCcNome"
-      Me.eui_txtCcNome.Size = New System.Drawing.Size(201, 21)
-      Me.eui_txtCcNome.TabIndex = 1
-      Me.eui_txtCcNome.TextEditorWidth = 195
-      '
-      'Label56
-      '
-      Me.Label56.Location = New System.Drawing.Point(19, 57)
-      Me.Label56.Name = "Label56"
-      Me.Label56.Size = New System.Drawing.Size(131, 19)
-      Me.Label56.TabIndex = 2
-      Me.Label56.Text = "Nome:"
-      '
-      'Label57
-      '
-      Me.Label57.Location = New System.Drawing.Point(19, 25)
-      Me.Label57.Name = "Label57"
-      Me.Label57.Size = New System.Drawing.Size(76, 19)
-      Me.Label57.TabIndex = 0
-      Me.Label57.Text = "Denominazione:"
-      '
-      'eui_txtCcCodiceFiscale
-      '
-      Me.eui_txtCcCodiceFiscale.Id = "60aa28cd-e59b-4f2b-b5b6-3f7ecc536c7b"
-      Me.eui_txtCcCodiceFiscale.Location = New System.Drawing.Point(125, 127)
-      Me.eui_txtCcCodiceFiscale.Name = "eui_txtCcCodiceFiscale"
-      Me.eui_txtCcCodiceFiscale.Size = New System.Drawing.Size(201, 21)
-      Me.eui_txtCcCodiceFiscale.TabIndex = 0
-      Me.eui_txtCcCodiceFiscale.TextEditorWidth = 195
-      '
-      'Label58
-      '
-      Me.Label58.Location = New System.Drawing.Point(27, 129)
-      Me.Label58.Name = "Label58"
-      Me.Label58.Size = New System.Drawing.Size(87, 19)
-      Me.Label58.TabIndex = 8
-      Me.Label58.Text = "Codice fiscale:"
-      '
-      'GroupBox13
-      '
-      Me.GroupBox13.Controls.Add(Me.eui_txtCcIdCodice)
-      Me.GroupBox13.Controls.Add(Me.Label59)
-      Me.GroupBox13.Controls.Add(Me.eui_cmbCcIdPaese)
-      Me.GroupBox13.Controls.Add(Me.Label60)
-      Me.GroupBox13.Id = "28c6e520-ba70-4c82-a72e-12d7722fe9bd"
-      Me.GroupBox13.Location = New System.Drawing.Point(11, 12)
-      Me.GroupBox13.Name = "GroupBox13"
-      Me.GroupBox13.Size = New System.Drawing.Size(381, 100)
-      Me.GroupBox13.TabIndex = 7
-      Me.GroupBox13.Text = "Id Fiscale IVA"
-      '
-      'eui_txtCcIdCodice
-      '
-      Me.eui_txtCcIdCodice.Id = "9974755a-122d-40c5-9882-1c5e6365e341"
-      Me.eui_txtCcIdCodice.Location = New System.Drawing.Point(113, 57)
-      Me.eui_txtCcIdCodice.Name = "eui_txtCcIdCodice"
-      Me.eui_txtCcIdCodice.Size = New System.Drawing.Size(201, 21)
-      Me.eui_txtCcIdCodice.TabIndex = 1
-      Me.eui_txtCcIdCodice.TextEditorWidth = 195
-      '
-      'Label59
-      '
-      Me.Label59.Location = New System.Drawing.Point(19, 57)
-      Me.Label59.Name = "Label59"
-      Me.Label59.Size = New System.Drawing.Size(131, 19)
-      Me.Label59.TabIndex = 2
-      Me.Label59.Text = "Partita IVA:"
-      '
-      'eui_cmbCcIdPaese
-      '
-      Me.eui_cmbCcIdPaese.FormattingEnabled = False
-      Me.eui_cmbCcIdPaese.Id = "173b940e-60ac-47f1-a963-c134a868fe92"
-      Me.eui_cmbCcIdPaese.Location = New System.Drawing.Point(113, 23)
-      Me.eui_cmbCcIdPaese.Name = "eui_cmbCcIdPaese"
-      Me.eui_cmbCcIdPaese.Size = New System.Drawing.Size(201, 21)
-      Me.eui_cmbCcIdPaese.TabIndex = 0
-      Me.eui_cmbCcIdPaese.TextEditorWidth = 182
-      '
-      'Label60
-      '
-      Me.Label60.Location = New System.Drawing.Point(19, 25)
-      Me.Label60.Name = "Label60"
-      Me.Label60.Size = New System.Drawing.Size(50, 19)
-      Me.Label60.TabIndex = 0
-      Me.Label60.Text = "Paese:"
-      '
-      'GroupBox14
-      '
-      Me.GroupBox14.Controls.Add(Me.eui_CcSedeNazione)
-      Me.GroupBox14.Controls.Add(Me.Label61)
-      Me.GroupBox14.Controls.Add(Me.eui_cmbCcSedeProvincia)
-      Me.GroupBox14.Controls.Add(Me.Label62)
-      Me.GroupBox14.Controls.Add(Me.Label63)
-      Me.GroupBox14.Controls.Add(Me.Label64)
-      Me.GroupBox14.Controls.Add(Me.eui_txtCcSedeComune)
-      Me.GroupBox14.Controls.Add(Me.eui_txtCcSedeCAP)
-      Me.GroupBox14.Controls.Add(Me.eui_txtCcSedeIndirizzo)
-      Me.GroupBox14.Controls.Add(Me.eui_txtCcSedeNumeroCivico)
-      Me.GroupBox14.Controls.Add(Me.Label65)
-      Me.GroupBox14.Controls.Add(Me.Label66)
-      Me.GroupBox14.Id = "5da6b73d-f29b-49d6-8f48-40565e019692"
-      Me.GroupBox14.Location = New System.Drawing.Point(11, 12)
-      Me.GroupBox14.Name = "GroupBox14"
-      Me.GroupBox14.Size = New System.Drawing.Size(381, 230)
-      Me.GroupBox14.TabIndex = 8
-      Me.GroupBox14.Text = "Sede del cessionario/committente"
-      '
-      'eui_CcSedeNazione
-      '
-      Me.eui_CcSedeNazione.FormattingEnabled = False
-      Me.eui_CcSedeNazione.Id = "cc881ac6-a2a6-47cf-9a62-73a9b84b4fd3"
-      Me.eui_CcSedeNazione.Location = New System.Drawing.Point(113, 194)
-      Me.eui_CcSedeNazione.Name = "eui_CcSedeNazione"
-      Me.eui_CcSedeNazione.Size = New System.Drawing.Size(240, 21)
-      Me.eui_CcSedeNazione.TabIndex = 5
-      Me.eui_CcSedeNazione.TextEditorWidth = 221
-      '
-      'Label61
-      '
-      Me.Label61.Location = New System.Drawing.Point(19, 196)
-      Me.Label61.Name = "Label61"
-      Me.Label61.Size = New System.Drawing.Size(78, 19)
-      Me.Label61.TabIndex = 12
-      Me.Label61.Text = "Nazione:"
-      '
-      'eui_cmbCcSedeProvincia
-      '
-      Me.eui_cmbCcSedeProvincia.FormattingEnabled = False
-      Me.eui_cmbCcSedeProvincia.Id = "f26c1c3a-590d-402f-9933-6c96fe5a5796"
-      Me.eui_cmbCcSedeProvincia.Location = New System.Drawing.Point(113, 163)
-      Me.eui_cmbCcSedeProvincia.Name = "eui_cmbCcSedeProvincia"
-      Me.eui_cmbCcSedeProvincia.Size = New System.Drawing.Size(241, 21)
-      Me.eui_cmbCcSedeProvincia.TabIndex = 4
-      Me.eui_cmbCcSedeProvincia.TextEditorWidth = 222
-      '
-      'Label62
-      '
-      Me.Label62.Location = New System.Drawing.Point(19, 165)
-      Me.Label62.Name = "Label62"
-      Me.Label62.Size = New System.Drawing.Size(78, 19)
-      Me.Label62.TabIndex = 10
-      Me.Label62.Text = "Provincia:"
-      '
-      'Label63
-      '
-      Me.Label63.Location = New System.Drawing.Point(19, 130)
-      Me.Label63.Name = "Label63"
-      Me.Label63.Size = New System.Drawing.Size(78, 19)
-      Me.Label63.TabIndex = 9
-      Me.Label63.Text = "Comune:"
-      '
-      'Label64
-      '
-      Me.Label64.Location = New System.Drawing.Point(19, 94)
-      Me.Label64.Name = "Label64"
-      Me.Label64.Size = New System.Drawing.Size(78, 19)
-      Me.Label64.TabIndex = 8
-      Me.Label64.Tag = ""
-      Me.Label64.Text = "CAP:"
-      '
-      'eui_txtCcSedeComune
-      '
-      Me.eui_txtCcSedeComune.Id = "dea454d8-8680-4b91-b8d1-d72be0a02597"
-      Me.eui_txtCcSedeComune.Location = New System.Drawing.Point(114, 128)
-      Me.eui_txtCcSedeComune.Name = "eui_txtCcSedeComune"
-      Me.eui_txtCcSedeComune.Size = New System.Drawing.Size(240, 21)
-      Me.eui_txtCcSedeComune.TabIndex = 3
-      Me.eui_txtCcSedeComune.TextEditorWidth = 234
-      '
-      'eui_txtCcSedeCAP
-      '
-      Me.eui_txtCcSedeCAP.Id = "da1569ce-a757-41e7-aca9-f14d7007263b"
-      Me.eui_txtCcSedeCAP.Location = New System.Drawing.Point(113, 92)
-      Me.eui_txtCcSedeCAP.Name = "eui_txtCcSedeCAP"
-      Me.eui_txtCcSedeCAP.Size = New System.Drawing.Size(105, 21)
-      Me.eui_txtCcSedeCAP.TabIndex = 2
-      Me.eui_txtCcSedeCAP.TextEditorWidth = 99
-      '
-      'eui_txtCcSedeIndirizzo
-      '
-      Me.eui_txtCcSedeIndirizzo.Id = "bf6f4141-19c4-4406-9a4e-5df57ebcff4e"
-      Me.eui_txtCcSedeIndirizzo.Location = New System.Drawing.Point(113, 23)
-      Me.eui_txtCcSedeIndirizzo.Name = "eui_txtCcSedeIndirizzo"
-      Me.eui_txtCcSedeIndirizzo.Size = New System.Drawing.Size(240, 21)
-      Me.eui_txtCcSedeIndirizzo.TabIndex = 0
-      Me.eui_txtCcSedeIndirizzo.TextEditorWidth = 234
-      '
-      'eui_txtCcSedeNumeroCivico
-      '
-      Me.eui_txtCcSedeNumeroCivico.Id = "aaa9eac4-ff12-439a-9c44-63c8a7d4efe8"
-      Me.eui_txtCcSedeNumeroCivico.Location = New System.Drawing.Point(113, 57)
-      Me.eui_txtCcSedeNumeroCivico.Name = "eui_txtCcSedeNumeroCivico"
-      Me.eui_txtCcSedeNumeroCivico.Size = New System.Drawing.Size(105, 21)
-      Me.eui_txtCcSedeNumeroCivico.TabIndex = 1
-      Me.eui_txtCcSedeNumeroCivico.TextEditorWidth = 99
-      '
-      'Label65
-      '
-      Me.Label65.Location = New System.Drawing.Point(19, 57)
-      Me.Label65.Name = "Label65"
-      Me.Label65.Size = New System.Drawing.Size(76, 19)
-      Me.Label65.TabIndex = 2
-      Me.Label65.Text = "Numero civico:"
-      '
-      'Label66
-      '
-      Me.Label66.Location = New System.Drawing.Point(19, 25)
-      Me.Label66.Name = "Label66"
-      Me.Label66.Size = New System.Drawing.Size(76, 19)
-      Me.Label66.TabIndex = 0
-      Me.Label66.Text = "Indirizzo:"
-      '
-      'GroupBox15
-      '
-      Me.GroupBox15.Controls.Add(Me.Label67)
-      Me.GroupBox15.Controls.Add(Me.Label68)
-      Me.GroupBox15.Controls.Add(Me.Label69)
-      Me.GroupBox15.Controls.Add(Me.eui_txtTiSeCodiceEORI)
-      Me.GroupBox15.Controls.Add(Me.eui_txtTiSeTitolo)
-      Me.GroupBox15.Controls.Add(Me.eui_txtTiSeCognome)
-      Me.GroupBox15.Controls.Add(Me.eui_txtTiSeDenominazione)
-      Me.GroupBox15.Controls.Add(Me.eui_txtTiSeNome)
-      Me.GroupBox15.Controls.Add(Me.Label70)
-      Me.GroupBox15.Controls.Add(Me.Label71)
-      Me.GroupBox15.Id = "5b79e596-fb20-4a54-9549-e14bb1a21de9"
-      Me.GroupBox15.Location = New System.Drawing.Point(9, 162)
-      Me.GroupBox15.Name = "GroupBox15"
-      Me.GroupBox15.Size = New System.Drawing.Size(381, 203)
-      Me.GroupBox15.TabIndex = 14
-      Me.GroupBox15.Text = "Anagrafica"
-      '
-      'Label67
-      '
-      Me.Label67.Location = New System.Drawing.Point(19, 165)
-      Me.Label67.Name = "Label67"
-      Me.Label67.Size = New System.Drawing.Size(78, 19)
-      Me.Label67.TabIndex = 10
-      Me.Label67.Text = "Codice EORI:"
-      '
-      'Label68
-      '
-      Me.Label68.Location = New System.Drawing.Point(19, 130)
-      Me.Label68.Name = "Label68"
-      Me.Label68.Size = New System.Drawing.Size(78, 19)
-      Me.Label68.TabIndex = 9
-      Me.Label68.Text = "Titolo:"
-      '
-      'Label69
-      '
-      Me.Label69.Location = New System.Drawing.Point(19, 94)
-      Me.Label69.Name = "Label69"
-      Me.Label69.Size = New System.Drawing.Size(78, 19)
-      Me.Label69.TabIndex = 8
-      Me.Label69.Text = "Cognome:"
-      '
-      'eui_txtTiSeCodiceEORI
-      '
-      Me.eui_txtTiSeCodiceEORI.Id = "83a3e0a1-96b4-47eb-b95d-b24cd79a83d6"
-      Me.eui_txtTiSeCodiceEORI.Location = New System.Drawing.Point(114, 163)
-      Me.eui_txtTiSeCodiceEORI.Name = "eui_txtTiSeCodiceEORI"
-      Me.eui_txtTiSeCodiceEORI.Size = New System.Drawing.Size(201, 21)
-      Me.eui_txtTiSeCodiceEORI.TabIndex = 4
-      Me.eui_txtTiSeCodiceEORI.TextEditorWidth = 195
-      '
-      'eui_txtTiSeTitolo
-      '
-      Me.eui_txtTiSeTitolo.Id = "a276f51e-9af8-4075-a9c9-a16f23077ce5"
-      Me.eui_txtTiSeTitolo.Location = New System.Drawing.Point(114, 128)
-      Me.eui_txtTiSeTitolo.Name = "eui_txtTiSeTitolo"
-      Me.eui_txtTiSeTitolo.Size = New System.Drawing.Size(201, 21)
-      Me.eui_txtTiSeTitolo.TabIndex = 3
-      Me.eui_txtTiSeTitolo.TextEditorWidth = 195
-      '
-      'eui_txtTiSeCognome
-      '
-      Me.eui_txtTiSeCognome.Id = "f7ef083c-cf9d-4e47-957a-2fd353017251"
-      Me.eui_txtTiSeCognome.Location = New System.Drawing.Point(113, 92)
-      Me.eui_txtTiSeCognome.Name = "eui_txtTiSeCognome"
-      Me.eui_txtTiSeCognome.Size = New System.Drawing.Size(201, 21)
-      Me.eui_txtTiSeCognome.TabIndex = 2
-      Me.eui_txtTiSeCognome.TextEditorWidth = 195
-      '
-      'eui_txtTiSeDenominazione
-      '
-      Me.eui_txtTiSeDenominazione.Id = "5a5e37e5-188f-4bfd-bf17-d3bcdb30cf6a"
-      Me.eui_txtTiSeDenominazione.Location = New System.Drawing.Point(113, 23)
-      Me.eui_txtTiSeDenominazione.Name = "eui_txtTiSeDenominazione"
-      Me.eui_txtTiSeDenominazione.Size = New System.Drawing.Size(201, 21)
-      Me.eui_txtTiSeDenominazione.TabIndex = 0
-      Me.eui_txtTiSeDenominazione.TextEditorWidth = 195
-      '
-      'eui_txtTiSeNome
-      '
-      Me.eui_txtTiSeNome.Id = "9cfedeb5-e462-460d-96eb-56c5e39ab723"
-      Me.eui_txtTiSeNome.Location = New System.Drawing.Point(113, 57)
-      Me.eui_txtTiSeNome.Name = "eui_txtTiSeNome"
-      Me.eui_txtTiSeNome.Size = New System.Drawing.Size(201, 21)
-      Me.eui_txtTiSeNome.TabIndex = 1
-      Me.eui_txtTiSeNome.TextEditorWidth = 195
-      '
-      'Label70
-      '
-      Me.Label70.Location = New System.Drawing.Point(19, 57)
-      Me.Label70.Name = "Label70"
-      Me.Label70.Size = New System.Drawing.Size(131, 19)
-      Me.Label70.TabIndex = 2
-      Me.Label70.Text = "Nome:"
-      '
-      'Label71
-      '
-      Me.Label71.Location = New System.Drawing.Point(19, 25)
-      Me.Label71.Name = "Label71"
-      Me.Label71.Size = New System.Drawing.Size(76, 19)
-      Me.Label71.TabIndex = 0
-      Me.Label71.Text = "Denominazione:"
-      '
-      'eui_txtTiSeCodiceFiscale
-      '
-      Me.eui_txtTiSeCodiceFiscale.Id = "9e8059d7-7a99-4c0f-9760-bfe4ae3dc4a9"
-      Me.eui_txtTiSeCodiceFiscale.Location = New System.Drawing.Point(123, 127)
-      Me.eui_txtTiSeCodiceFiscale.Name = "eui_txtTiSeCodiceFiscale"
-      Me.eui_txtTiSeCodiceFiscale.Size = New System.Drawing.Size(201, 21)
-      Me.eui_txtTiSeCodiceFiscale.TabIndex = 0
-      Me.eui_txtTiSeCodiceFiscale.TextEditorWidth = 195
-      '
-      'Label72
-      '
-      Me.Label72.Location = New System.Drawing.Point(25, 129)
-      Me.Label72.Name = "Label72"
-      Me.Label72.Size = New System.Drawing.Size(87, 19)
-      Me.Label72.TabIndex = 12
-      Me.Label72.Text = "Codice fiscale:"
-      '
-      'GroupBox16
-      '
-      Me.GroupBox16.Controls.Add(Me.eui_txtTiSeIdCodice)
-      Me.GroupBox16.Controls.Add(Me.Label73)
-      Me.GroupBox16.Controls.Add(Me.eui_cmbTiSeIdPaese)
-      Me.GroupBox16.Controls.Add(Me.Label74)
-      Me.GroupBox16.Id = "01e0f9f4-ce5b-46e1-99dc-dbcd4bf60cfe"
-      Me.GroupBox16.Location = New System.Drawing.Point(9, 12)
-      Me.GroupBox16.Name = "GroupBox16"
-      Me.GroupBox16.Size = New System.Drawing.Size(381, 100)
-      Me.GroupBox16.TabIndex = 11
-      Me.GroupBox16.Text = "Id Fiscale IVA"
-      '
-      'eui_txtTiSeIdCodice
-      '
-      Me.eui_txtTiSeIdCodice.Id = "3d17eb93-9055-469c-b73b-64adf70c8b77"
-      Me.eui_txtTiSeIdCodice.Location = New System.Drawing.Point(113, 57)
-      Me.eui_txtTiSeIdCodice.Name = "eui_txtTiSeIdCodice"
-      Me.eui_txtTiSeIdCodice.Size = New System.Drawing.Size(201, 21)
-      Me.eui_txtTiSeIdCodice.TabIndex = 1
-      Me.eui_txtTiSeIdCodice.TextEditorWidth = 195
-      '
-      'Label73
-      '
-      Me.Label73.Location = New System.Drawing.Point(19, 57)
-      Me.Label73.Name = "Label73"
-      Me.Label73.Size = New System.Drawing.Size(131, 19)
-      Me.Label73.TabIndex = 2
-      Me.Label73.Text = "Partita IVA:"
-      '
-      'eui_cmbTiSeIdPaese
-      '
-      Me.eui_cmbTiSeIdPaese.FormattingEnabled = False
-      Me.eui_cmbTiSeIdPaese.Id = "8a81ecb8-0b4f-4a40-b81b-0bb6f56365f8"
-      Me.eui_cmbTiSeIdPaese.Location = New System.Drawing.Point(113, 23)
-      Me.eui_cmbTiSeIdPaese.Name = "eui_cmbTiSeIdPaese"
-      Me.eui_cmbTiSeIdPaese.Size = New System.Drawing.Size(100, 21)
-      Me.eui_cmbTiSeIdPaese.TabIndex = 0
-      Me.eui_cmbTiSeIdPaese.TextEditorWidth = 81
-      '
-      'Label74
-      '
-      Me.Label74.Location = New System.Drawing.Point(19, 25)
-      Me.Label74.Name = "Label74"
-      Me.Label74.Size = New System.Drawing.Size(50, 19)
-      Me.Label74.TabIndex = 0
-      Me.Label74.Text = "Paese:"
-      '
-      'eui_cmbSoggettoEmittente
-      '
-      Me.eui_cmbSoggettoEmittente.FormattingEnabled = False
-      Me.eui_cmbSoggettoEmittente.Id = "563fb4f7-645a-4e63-8634-86c9d5aabb58"
-      Me.eui_cmbSoggettoEmittente.Items.AddRange(New Object() {"CC", "TZ"})
-      Me.eui_cmbSoggettoEmittente.Location = New System.Drawing.Point(121, 13)
-      Me.eui_cmbSoggettoEmittente.Name = "eui_cmbSoggettoEmittente"
-      Me.eui_cmbSoggettoEmittente.Size = New System.Drawing.Size(141, 21)
-      Me.eui_cmbSoggettoEmittente.TabIndex = 0
-      Me.eui_cmbSoggettoEmittente.TextEditorWidth = 122
-      '
-      'Label75
-      '
-      Me.Label75.Location = New System.Drawing.Point(15, 16)
-      Me.Label75.Name = "Label75"
-      Me.Label75.Size = New System.Drawing.Size(92, 19)
-      Me.Label75.TabIndex = 20
-      Me.Label75.Text = "Soggetto emittente:"
-      '
       'frmFatturaElettronica
       '
       Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
       Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(971, 529)
+      Me.ClientSize = New System.Drawing.Size(979, 540)
       Me.Controls.Add(Me.eui_cmdInvia)
       Me.Controls.Add(Me.eui_cmdEsporta)
       Me.Controls.Add(Me.eui_cmdApriCartella)
@@ -2403,12 +2410,6 @@ Partial Class frmFatturaElettronica
       CType(Me.eui_tpcDocumento, System.ComponentModel.ISupportInitialize).EndInit()
       Me.TabPage1.ResumeLayout(False)
       CType(Me.TabControl1, System.ComponentModel.ISupportInitialize).EndInit()
-      Me.TabPage7.ResumeLayout(False)
-      Me.TabPage7.PerformLayout()
-      Me.GroupBox10.ResumeLayout(False)
-      Me.GroupBox10.PerformLayout()
-      Me.GroupBox11.ResumeLayout(False)
-      Me.GroupBox11.PerformLayout()
       Me.TabPage5.ResumeLayout(False)
       Me.TabPage5.PerformLayout()
       Me.GroupBox2.ResumeLayout(False)
@@ -2439,9 +2440,29 @@ Partial Class frmFatturaElettronica
       Me.GroupBox9.PerformLayout()
       Me.TabPage16.ResumeLayout(False)
       Me.TabPage16.PerformLayout()
+      Me.TabPage7.ResumeLayout(False)
+      Me.TabPage7.PerformLayout()
+      Me.GroupBox10.ResumeLayout(False)
+      Me.GroupBox10.PerformLayout()
+      Me.GroupBox11.ResumeLayout(False)
+      Me.GroupBox11.PerformLayout()
       Me.TabPage8.ResumeLayout(False)
+      CType(Me.TabControl3, System.ComponentModel.ISupportInitialize).EndInit()
+      Me.TabPage17.ResumeLayout(False)
+      Me.TabPage17.PerformLayout()
+      Me.GroupBox12.ResumeLayout(False)
+      Me.GroupBox12.PerformLayout()
+      Me.GroupBox13.ResumeLayout(False)
+      Me.GroupBox13.PerformLayout()
+      Me.TabPage18.ResumeLayout(False)
+      Me.GroupBox14.ResumeLayout(False)
+      Me.GroupBox14.PerformLayout()
       Me.TabPage9.ResumeLayout(False)
       Me.TabPage9.PerformLayout()
+      Me.GroupBox15.ResumeLayout(False)
+      Me.GroupBox15.PerformLayout()
+      Me.GroupBox16.ResumeLayout(False)
+      Me.GroupBox16.PerformLayout()
       Me.TabPage10.ResumeLayout(False)
       Me.TabPage10.PerformLayout()
       Me.TabPage2.ResumeLayout(False)
@@ -2453,20 +2474,6 @@ Partial Class frmFatturaElettronica
       Me.StatusBarPane5.PerformLayout()
       Me.StatusBarPane1.ResumeLayout(False)
       Me.StatusBarPane1.PerformLayout()
-      CType(Me.TabControl3, System.ComponentModel.ISupportInitialize).EndInit()
-      Me.TabPage17.ResumeLayout(False)
-      Me.TabPage17.PerformLayout()
-      Me.TabPage18.ResumeLayout(False)
-      Me.GroupBox12.ResumeLayout(False)
-      Me.GroupBox12.PerformLayout()
-      Me.GroupBox13.ResumeLayout(False)
-      Me.GroupBox13.PerformLayout()
-      Me.GroupBox14.ResumeLayout(False)
-      Me.GroupBox14.PerformLayout()
-      Me.GroupBox15.ResumeLayout(False)
-      Me.GroupBox15.PerformLayout()
-      Me.GroupBox16.ResumeLayout(False)
-      Me.GroupBox16.PerformLayout()
       Me.ResumeLayout(False)
       Me.PerformLayout()
 
