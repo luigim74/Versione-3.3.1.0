@@ -28,9 +28,9 @@ Partial Class frmFatturaElettronica
       Me.StatusBarNotificationsArea1 = New Elegant.Ui.StatusBarNotificationsArea()
       Me.StatusBarPane2 = New Elegant.Ui.StatusBarPane()
       Me.Label3 = New Elegant.Ui.Label()
-      Me.LinkLabel4 = New System.Windows.Forms.LinkLabel()
-      Me.LinkLabel5 = New System.Windows.Forms.LinkLabel()
-      Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
+      Me.lnkAgenziaEntrate = New System.Windows.Forms.LinkLabel()
+      Me.lnkFatturaPA = New System.Windows.Forms.LinkLabel()
+      Me.lnkIndicePA = New System.Windows.Forms.LinkLabel()
       Me.StatusBarPane4 = New Elegant.Ui.StatusBarPane()
       Me.eui_lblDirectoryFileXml = New Elegant.Ui.Label()
       Me.StatusBarControlsArea1 = New Elegant.Ui.StatusBarControlsArea()
@@ -325,10 +325,10 @@ Partial Class frmFatturaElettronica
       Me.StatusBar1.Controls.Add(Me.StatusBarControlsArea1)
       Me.StatusBar1.ControlsArea = Me.StatusBarControlsArea1
       Me.StatusBar1.Dock = System.Windows.Forms.DockStyle.Bottom
-      Me.StatusBar1.Location = New System.Drawing.Point(0, 540)
+      Me.StatusBar1.Location = New System.Drawing.Point(0, 551)
       Me.StatusBar1.Name = "StatusBar1"
       Me.StatusBar1.NotificationsArea = Me.StatusBarNotificationsArea1
-      Me.StatusBar1.Size = New System.Drawing.Size(995, 22)
+      Me.StatusBar1.Size = New System.Drawing.Size(1003, 22)
       Me.StatusBar1.TabIndex = 4
       Me.StatusBar1.Text = "StatusBar1"
       '
@@ -341,15 +341,15 @@ Partial Class frmFatturaElettronica
       Me.StatusBarNotificationsArea1.MaximumSize = New System.Drawing.Size(0, 22)
       Me.StatusBarNotificationsArea1.MinimumSize = New System.Drawing.Size(0, 22)
       Me.StatusBarNotificationsArea1.Name = "StatusBarNotificationsArea1"
-      Me.StatusBarNotificationsArea1.Size = New System.Drawing.Size(923, 22)
+      Me.StatusBarNotificationsArea1.Size = New System.Drawing.Size(931, 22)
       Me.StatusBarNotificationsArea1.TabIndex = 1
       '
       'StatusBarPane2
       '
       Me.StatusBarPane2.Controls.Add(Me.Label3)
-      Me.StatusBarPane2.Controls.Add(Me.LinkLabel4)
-      Me.StatusBarPane2.Controls.Add(Me.LinkLabel5)
-      Me.StatusBarPane2.Controls.Add(Me.LinkLabel1)
+      Me.StatusBarPane2.Controls.Add(Me.lnkAgenziaEntrate)
+      Me.StatusBarPane2.Controls.Add(Me.lnkFatturaPA)
+      Me.StatusBarPane2.Controls.Add(Me.lnkIndicePA)
       Me.StatusBarPane2.Dock = System.Windows.Forms.DockStyle.Fill
       Me.StatusBarPane2.Location = New System.Drawing.Point(0, 0)
       Me.StatusBarPane2.MaximumSize = New System.Drawing.Size(0, 22)
@@ -368,47 +368,47 @@ Partial Class frmFatturaElettronica
       Me.Label3.TabIndex = 26
       Me.Label3.Text = "Per info e servizi gratuiti:"
       '
-      'LinkLabel4
+      'lnkAgenziaEntrate
       '
-      Me.LinkLabel4.ActiveLinkColor = System.Drawing.Color.White
-      Me.LinkLabel4.AutoSize = True
-      Me.LinkLabel4.BackColor = System.Drawing.Color.Transparent
-      Me.LinkLabel4.LinkColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-      Me.LinkLabel4.Location = New System.Drawing.Point(125, 5)
-      Me.LinkLabel4.Name = "LinkLabel4"
-      Me.LinkLabel4.Size = New System.Drawing.Size(133, 13)
-      Me.LinkLabel4.TabIndex = 27
-      Me.LinkLabel4.TabStop = True
-      Me.LinkLabel4.Text = "www.agenziaentrate.gov.it"
-      Me.LinkLabel4.VisitedLinkColor = System.Drawing.Color.Magenta
+      Me.lnkAgenziaEntrate.ActiveLinkColor = System.Drawing.Color.White
+      Me.lnkAgenziaEntrate.AutoSize = True
+      Me.lnkAgenziaEntrate.BackColor = System.Drawing.Color.Transparent
+      Me.lnkAgenziaEntrate.LinkColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+      Me.lnkAgenziaEntrate.Location = New System.Drawing.Point(125, 5)
+      Me.lnkAgenziaEntrate.Name = "lnkAgenziaEntrate"
+      Me.lnkAgenziaEntrate.Size = New System.Drawing.Size(133, 13)
+      Me.lnkAgenziaEntrate.TabIndex = 27
+      Me.lnkAgenziaEntrate.TabStop = True
+      Me.lnkAgenziaEntrate.Text = "www.agenziaentrate.gov.it"
+      Me.lnkAgenziaEntrate.VisitedLinkColor = System.Drawing.Color.Magenta
       '
-      'LinkLabel5
+      'lnkFatturaPA
       '
-      Me.LinkLabel5.ActiveLinkColor = System.Drawing.Color.White
-      Me.LinkLabel5.AutoSize = True
-      Me.LinkLabel5.BackColor = System.Drawing.Color.Transparent
-      Me.LinkLabel5.LinkColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-      Me.LinkLabel5.Location = New System.Drawing.Point(264, 5)
-      Me.LinkLabel5.Name = "LinkLabel5"
-      Me.LinkLabel5.Size = New System.Drawing.Size(105, 13)
-      Me.LinkLabel5.TabIndex = 28
-      Me.LinkLabel5.TabStop = True
-      Me.LinkLabel5.Text = "www.fatturapa.gov.it"
-      Me.LinkLabel5.VisitedLinkColor = System.Drawing.Color.Magenta
+      Me.lnkFatturaPA.ActiveLinkColor = System.Drawing.Color.White
+      Me.lnkFatturaPA.AutoSize = True
+      Me.lnkFatturaPA.BackColor = System.Drawing.Color.Transparent
+      Me.lnkFatturaPA.LinkColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+      Me.lnkFatturaPA.Location = New System.Drawing.Point(264, 5)
+      Me.lnkFatturaPA.Name = "lnkFatturaPA"
+      Me.lnkFatturaPA.Size = New System.Drawing.Size(105, 13)
+      Me.lnkFatturaPA.TabIndex = 28
+      Me.lnkFatturaPA.TabStop = True
+      Me.lnkFatturaPA.Text = "www.fatturapa.gov.it"
+      Me.lnkFatturaPA.VisitedLinkColor = System.Drawing.Color.Magenta
       '
-      'LinkLabel1
+      'lnkIndicePA
       '
-      Me.LinkLabel1.ActiveLinkColor = System.Drawing.Color.White
-      Me.LinkLabel1.AutoSize = True
-      Me.LinkLabel1.BackColor = System.Drawing.Color.Transparent
-      Me.LinkLabel1.LinkColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-      Me.LinkLabel1.Location = New System.Drawing.Point(375, 5)
-      Me.LinkLabel1.Name = "LinkLabel1"
-      Me.LinkLabel1.Size = New System.Drawing.Size(103, 13)
-      Me.LinkLabel1.TabIndex = 29
-      Me.LinkLabel1.TabStop = True
-      Me.LinkLabel1.Text = "www.indicepa.gov.it"
-      Me.LinkLabel1.VisitedLinkColor = System.Drawing.Color.Magenta
+      Me.lnkIndicePA.ActiveLinkColor = System.Drawing.Color.White
+      Me.lnkIndicePA.AutoSize = True
+      Me.lnkIndicePA.BackColor = System.Drawing.Color.Transparent
+      Me.lnkIndicePA.LinkColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+      Me.lnkIndicePA.Location = New System.Drawing.Point(375, 5)
+      Me.lnkIndicePA.Name = "lnkIndicePA"
+      Me.lnkIndicePA.Size = New System.Drawing.Size(103, 13)
+      Me.lnkIndicePA.TabIndex = 29
+      Me.lnkIndicePA.TabStop = True
+      Me.lnkIndicePA.Text = "www.indicepa.gov.it"
+      Me.lnkIndicePA.VisitedLinkColor = System.Drawing.Color.Magenta
       '
       'StatusBarPane4
       '
@@ -434,7 +434,7 @@ Partial Class frmFatturaElettronica
       '
       Me.StatusBarControlsArea1.Controls.Add(Me.StatusBarPane3)
       Me.StatusBarControlsArea1.Dock = System.Windows.Forms.DockStyle.Right
-      Me.StatusBarControlsArea1.Location = New System.Drawing.Point(923, 0)
+      Me.StatusBarControlsArea1.Location = New System.Drawing.Point(931, 0)
       Me.StatusBarControlsArea1.MaximumSize = New System.Drawing.Size(0, 22)
       Me.StatusBarControlsArea1.MinimumSize = New System.Drawing.Size(0, 22)
       Me.StatusBarControlsArea1.Name = "StatusBarControlsArea1"
@@ -484,7 +484,7 @@ Partial Class frmFatturaElettronica
       Me.eui_tpcDocumento.EqualTabWidth = True
       Me.eui_tpcDocumento.Location = New System.Drawing.Point(9, 9)
       Me.eui_tpcDocumento.Name = "eui_tpcDocumento"
-      Me.eui_tpcDocumento.SelectedTabPage = Me.TabPage1
+      Me.eui_tpcDocumento.SelectedTabPage = Me.TabPage3
       Me.eui_tpcDocumento.Size = New System.Drawing.Size(814, 486)
       Me.eui_tpcDocumento.TabIndex = 15
       Me.eui_tpcDocumento.TabPages.AddRange(New Elegant.Ui.TabPage() {Me.TabPage1, Me.TabPage2, Me.TabPage3, Me.TabPage4})
@@ -2541,6 +2541,7 @@ Partial Class frmFatturaElettronica
       Me.eui_txtConvalida.Size = New System.Drawing.Size(810, 412)
       Me.eui_txtConvalida.TabIndex = 0
       Me.eui_txtConvalida.TextEditorWidth = 804
+      Me.eui_txtConvalida.WordWrap = False
       '
       'TabPage3
       '
@@ -2612,7 +2613,7 @@ Partial Class frmFatturaElettronica
       '
       Me.eui_cmdApriCartella.Id = "26a292a3-ef05-45a1-8f74-0996002fd2fc"
       Me.eui_cmdApriCartella.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-      Me.eui_cmdApriCartella.Location = New System.Drawing.Point(832, 29)
+      Me.eui_cmdApriCartella.Location = New System.Drawing.Point(832, 103)
       Me.eui_cmdApriCartella.Name = "eui_cmdApriCartella"
       Me.eui_cmdApriCartella.ScreenTip.Caption = "Anteprima"
       Me.eui_cmdApriCartella.ScreenTip.Text = "Salva e visualizza l'anteprima del documento."
@@ -2626,7 +2627,7 @@ Partial Class frmFatturaElettronica
       '
       Me.eui_cmdEsporta.Id = "5d8dd0e2-1657-41ae-af95-d93b67be2536"
       Me.eui_cmdEsporta.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-      Me.eui_cmdEsporta.Location = New System.Drawing.Point(832, 279)
+      Me.eui_cmdEsporta.Location = New System.Drawing.Point(832, 28)
       Me.eui_cmdEsporta.Name = "eui_cmdEsporta"
       Me.eui_cmdEsporta.ScreenTip.Caption = "Salva"
       Me.eui_cmdEsporta.ScreenTip.Text = "Salva il documento."
@@ -2640,7 +2641,7 @@ Partial Class frmFatturaElettronica
       '
       Me.eui_cmdInvia.Id = "e098d816-fac2-4c14-bb8e-ded39b6e9ceb"
       Me.eui_cmdInvia.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-      Me.eui_cmdInvia.Location = New System.Drawing.Point(832, 107)
+      Me.eui_cmdInvia.Location = New System.Drawing.Point(832, 178)
       Me.eui_cmdInvia.Name = "eui_cmdInvia"
       Me.eui_cmdInvia.ScreenTip.Caption = "Anteprima"
       Me.eui_cmdInvia.ScreenTip.Text = "Salva e visualizza l'anteprima del documento."
@@ -2695,7 +2696,7 @@ Partial Class frmFatturaElettronica
       Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
       Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(995, 562)
+      Me.ClientSize = New System.Drawing.Size(1003, 573)
       Me.Controls.Add(Me.eui_cmdInvia)
       Me.Controls.Add(Me.eui_cmdEsporta)
       Me.Controls.Add(Me.eui_cmdApriCartella)
@@ -3031,8 +3032,8 @@ Partial Class frmFatturaElettronica
    Friend WithEvents Label80 As Elegant.Ui.Label
    Friend WithEvents Label81 As Elegant.Ui.Label
    Friend WithEvents Label3 As Elegant.Ui.Label
-   Friend WithEvents LinkLabel4 As LinkLabel
-   Friend WithEvents LinkLabel5 As LinkLabel
-   Friend WithEvents LinkLabel1 As LinkLabel
+   Friend WithEvents lnkAgenziaEntrate As LinkLabel
+   Friend WithEvents lnkFatturaPA As LinkLabel
+   Friend WithEvents lnkIndicePA As LinkLabel
    Friend WithEvents StatusBarPane3 As Elegant.Ui.StatusBarPane
 End Class

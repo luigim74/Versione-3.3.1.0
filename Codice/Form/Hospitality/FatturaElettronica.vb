@@ -19,6 +19,8 @@ Imports System.IO
 
 Public Class frmFatturaElettronica
 
+   Dim nomeDirectory As String = Application.StartupPath & "\" & CARTELLA_FATTURE_ELETTRONICHE & "\" & Today.Year.ToString
+
    Private Sub EsempioFatt()
       Try
          'Dim fatturaXlm As Fattura = Fattura.CreateInstance(Instance.PubblicaAmministrazione)
@@ -256,176 +258,205 @@ Public Class frmFatturaElettronica
          fatturaXlm.Body.Item(0).DatiGenerali.DatiGeneraliDocumento.DatiCassaPrevidenziale.Item(0).Natura = ""
          fatturaXlm.Body.Item(0).DatiGenerali.DatiGeneraliDocumento.DatiCassaPrevidenziale.Item(0).RiferimentoAmministrazione = ""
 
-         ' DA_FARE: Sviluppare!
-
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiGeneraliDocumento.ScontoMaggiorazione.Item(1).Tipo = ""
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiGeneraliDocumento.ScontoMaggiorazione.Item(1).Percentuale = 0
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiGeneraliDocumento.ScontoMaggiorazione.Item(1).Importo = 0
+         Dim scontoMaggiorazione As New Common.ScontoMaggiorazione
+         fatturaXlm.Body.Item(0).DatiGenerali.DatiGeneraliDocumento.ScontoMaggiorazione.Add(scontoMaggiorazione)
+         fatturaXlm.Body.Item(0).DatiGenerali.DatiGeneraliDocumento.ScontoMaggiorazione.Item(0).Tipo = ""
+         fatturaXlm.Body.Item(0).DatiGenerali.DatiGeneraliDocumento.ScontoMaggiorazione.Item(0).Percentuale = 0
+         fatturaXlm.Body.Item(0).DatiGenerali.DatiGeneraliDocumento.ScontoMaggiorazione.Item(0).Importo = 0
 
          fatturaXlm.Body.Item(0).DatiGenerali.DatiGeneraliDocumento.ImportoTotaleDocumento = 0
          fatturaXlm.Body.Item(0).DatiGenerali.DatiGeneraliDocumento.Arrotondamento = 0
 
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiGeneraliDocumento.Causale.Item(1) = 1
+         fatturaXlm.Body.Item(0).DatiGenerali.DatiGeneraliDocumento.Causale.Add("")
          fatturaXlm.Body.Item(0).DatiGenerali.DatiGeneraliDocumento.Art73 = ""
 
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiOrdineAcquisto.Item(1).RiferimentoNumeroLinea.Item(1) = 1
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiOrdineAcquisto.Item(1).IdDocumento = ""
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiOrdineAcquisto.Item(1).Data = Today.Date
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiOrdineAcquisto.Item(1).NumItem = ""
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiOrdineAcquisto.Item(1).CodiceCommessaConvenzione = ""
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiOrdineAcquisto.Item(1).CodiceCUP = ""
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiOrdineAcquisto.Item(1).CodiceCIG = ""
+         Dim datiOrdineAcquisto As New FatturaElettronicaBody.DatiGenerali.DatiOrdineAcquisto
+         fatturaXlm.Body.Item(0).DatiGenerali.DatiOrdineAcquisto.Add(datiOrdineAcquisto)
+         fatturaXlm.Body.Item(0).DatiGenerali.DatiOrdineAcquisto.Item(0).RiferimentoNumeroLinea.Add(0)
+         fatturaXlm.Body.Item(0).DatiGenerali.DatiOrdineAcquisto.Item(0).IdDocumento = ""
+         fatturaXlm.Body.Item(0).DatiGenerali.DatiOrdineAcquisto.Item(0).Data = Today.Date
+         fatturaXlm.Body.Item(0).DatiGenerali.DatiOrdineAcquisto.Item(0).NumItem = ""
+         fatturaXlm.Body.Item(0).DatiGenerali.DatiOrdineAcquisto.Item(0).CodiceCommessaConvenzione = ""
+         fatturaXlm.Body.Item(0).DatiGenerali.DatiOrdineAcquisto.Item(0).CodiceCUP = ""
+         fatturaXlm.Body.Item(0).DatiGenerali.DatiOrdineAcquisto.Item(0).CodiceCIG = ""
 
-         fatturaXlm.Body.Item(1).DatiGenerali.DatiContratto.Item(1).RiferimentoNumeroLinea.Item(1) = 1
-         fatturaXlm.Body.Item(1).DatiGenerali.DatiContratto.Item(1).IdDocumento = ""
-         fatturaXlm.Body.Item(1).DatiGenerali.DatiContratto.Item(1).Data = Today.Date
-         fatturaXlm.Body.Item(1).DatiGenerali.DatiContratto.Item(1).NumItem = ""
-         fatturaXlm.Body.Item(1).DatiGenerali.DatiContratto.Item(1).CodiceCommessaConvenzione = ""
-         fatturaXlm.Body.Item(1).DatiGenerali.DatiContratto.Item(1).CodiceCUP = ""
-         fatturaXlm.Body.Item(1).DatiGenerali.DatiContratto.Item(1).CodiceCIG = ""
+         Dim datiContratto As New FatturaElettronicaBody.DatiGenerali.DatiContratto
+         fatturaXlm.Body.Item(0).DatiGenerali.DatiContratto.Add(datiContratto)
+         fatturaXlm.Body.Item(0).DatiGenerali.DatiContratto.Item(0).RiferimentoNumeroLinea.Add(0)
+         fatturaXlm.Body.Item(0).DatiGenerali.DatiContratto.Item(0).IdDocumento = ""
+         fatturaXlm.Body.Item(0).DatiGenerali.DatiContratto.Item(0).Data = Today.Date
+         fatturaXlm.Body.Item(0).DatiGenerali.DatiContratto.Item(0).NumItem = ""
+         fatturaXlm.Body.Item(0).DatiGenerali.DatiContratto.Item(0).CodiceCommessaConvenzione = ""
+         fatturaXlm.Body.Item(0).DatiGenerali.DatiContratto.Item(0).CodiceCUP = ""
+         fatturaXlm.Body.Item(0).DatiGenerali.DatiContratto.Item(0).CodiceCIG = ""
 
-         fatturaXlm.Body.Item(1).DatiGenerali.DatiConvenzione.Item(1).RiferimentoNumeroLinea.Item(1) = 1
-         fatturaXlm.Body.Item(1).DatiGenerali.DatiConvenzione.Item(1).IdDocumento = ""
-         fatturaXlm.Body.Item(1).DatiGenerali.DatiConvenzione.Item(1).Data = Today.Date
-         fatturaXlm.Body.Item(1).DatiGenerali.DatiConvenzione.Item(1).NumItem = ""
-         fatturaXlm.Body.Item(1).DatiGenerali.DatiConvenzione.Item(1).CodiceCommessaConvenzione = ""
-         fatturaXlm.Body.Item(1).DatiGenerali.DatiConvenzione.Item(1).CodiceCUP = ""
-         fatturaXlm.Body.Item(1).DatiGenerali.DatiConvenzione.Item(1).CodiceCIG = ""
+         Dim datiConvenzione As New FatturaElettronicaBody.DatiGenerali.DatiConvenzione
+         fatturaXlm.Body.Item(0).DatiGenerali.DatiConvenzione.Add(datiConvenzione)
+         fatturaXlm.Body.Item(0).DatiGenerali.DatiConvenzione.Item(0).RiferimentoNumeroLinea.Add(0)
+         fatturaXlm.Body.Item(0).DatiGenerali.DatiConvenzione.Item(0).IdDocumento = ""
+         fatturaXlm.Body.Item(0).DatiGenerali.DatiConvenzione.Item(0).Data = Today.Date
+         fatturaXlm.Body.Item(0).DatiGenerali.DatiConvenzione.Item(0).NumItem = ""
+         fatturaXlm.Body.Item(0).DatiGenerali.DatiConvenzione.Item(0).CodiceCommessaConvenzione = ""
+         fatturaXlm.Body.Item(0).DatiGenerali.DatiConvenzione.Item(0).CodiceCUP = ""
+         fatturaXlm.Body.Item(0).DatiGenerali.DatiConvenzione.Item(0).CodiceCIG = ""
 
-         fatturaXlm.Body.Item(1).DatiGenerali.DatiRicezione.Item(1).RiferimentoNumeroLinea.Item(1) = 1
-         fatturaXlm.Body.Item(1).DatiGenerali.DatiRicezione.Item(1).IdDocumento = ""
-         fatturaXlm.Body.Item(1).DatiGenerali.DatiRicezione.Item(1).Data = Today.Date
-         fatturaXlm.Body.Item(1).DatiGenerali.DatiRicezione.Item(1).NumItem = ""
-         fatturaXlm.Body.Item(1).DatiGenerali.DatiRicezione.Item(1).CodiceCommessaConvenzione = ""
-         fatturaXlm.Body.Item(1).DatiGenerali.DatiRicezione.Item(1).CodiceCUP = ""
-         fatturaXlm.Body.Item(1).DatiGenerali.DatiRicezione.Item(1).CodiceCIG = ""
+         Dim datiRicezione As New FatturaElettronicaBody.DatiGenerali.DatiRicezione
+         fatturaXlm.Body.Item(0).DatiGenerali.DatiRicezione.Add(datiRicezione)
+         fatturaXlm.Body.Item(0).DatiGenerali.DatiRicezione.Item(0).RiferimentoNumeroLinea.Add(0)
+         fatturaXlm.Body.Item(0).DatiGenerali.DatiRicezione.Item(0).IdDocumento = ""
+         fatturaXlm.Body.Item(0).DatiGenerali.DatiRicezione.Item(0).Data = Today.Date
+         fatturaXlm.Body.Item(0).DatiGenerali.DatiRicezione.Item(0).NumItem = ""
+         fatturaXlm.Body.Item(0).DatiGenerali.DatiRicezione.Item(0).CodiceCommessaConvenzione = ""
+         fatturaXlm.Body.Item(0).DatiGenerali.DatiRicezione.Item(0).CodiceCUP = ""
+         fatturaXlm.Body.Item(0).DatiGenerali.DatiRicezione.Item(0).CodiceCIG = ""
 
-         fatturaXlm.Body.Item(1).DatiGenerali.DatiFattureCollegate.Item(1).RiferimentoNumeroLinea.Item(1) = 1
-         fatturaXlm.Body.Item(1).DatiGenerali.DatiFattureCollegate.Item(1).IdDocumento = ""
-         fatturaXlm.Body.Item(1).DatiGenerali.DatiFattureCollegate.Item(1).Data = Today.Date
-         fatturaXlm.Body.Item(1).DatiGenerali.DatiFattureCollegate.Item(1).NumItem = ""
-         fatturaXlm.Body.Item(1).DatiGenerali.DatiFattureCollegate.Item(1).CodiceCommessaConvenzione = ""
-         fatturaXlm.Body.Item(1).DatiGenerali.DatiFattureCollegate.Item(1).CodiceCUP = ""
-         fatturaXlm.Body.Item(1).DatiGenerali.DatiFattureCollegate.Item(1).CodiceCIG = ""
+         Dim datiFattureCollegate As New FatturaElettronicaBody.DatiGenerali.DatiFattureCollegate
+         fatturaXlm.Body.Item(0).DatiGenerali.DatiFattureCollegate.Add(datiFattureCollegate)
+         fatturaXlm.Body.Item(0).DatiGenerali.DatiFattureCollegate.Item(0).RiferimentoNumeroLinea.Add(0)
+         fatturaXlm.Body.Item(0).DatiGenerali.DatiFattureCollegate.Item(0).IdDocumento = ""
+         fatturaXlm.Body.Item(0).DatiGenerali.DatiFattureCollegate.Item(0).Data = Today.Date
+         fatturaXlm.Body.Item(0).DatiGenerali.DatiFattureCollegate.Item(0).NumItem = ""
+         fatturaXlm.Body.Item(0).DatiGenerali.DatiFattureCollegate.Item(0).CodiceCommessaConvenzione = ""
+         fatturaXlm.Body.Item(0).DatiGenerali.DatiFattureCollegate.Item(0).CodiceCUP = ""
+         fatturaXlm.Body.Item(0).DatiGenerali.DatiFattureCollegate.Item(0).CodiceCIG = ""
 
-         fatturaXlm.Body.Item(1).DatiGenerali.DatiSAL.Item(1).RiferimentoFase = 0
+         Dim datiSAL As New FatturaElettronicaBody.DatiGenerali.DatiSAL
+         fatturaXlm.Body.Item(0).DatiGenerali.DatiSAL.Add(datiSAL)
+         fatturaXlm.Body.Item(0).DatiGenerali.DatiSAL.Item(0).RiferimentoFase = 0
 
-         fatturaXlm.Body.Item(1).DatiGenerali.DatiDDT.Item(1).NumeroDDT = ""
-         fatturaXlm.Body.Item(1).DatiGenerali.DatiDDT.Item(1).DataDDT = Today.Date
-         fatturaXlm.Body.Item(1).DatiGenerali.DatiDDT.Item(1).RiferimentoNumeroLinea.Item(1) = 1
+         Dim datiDDT As New FatturaElettronicaBody.DatiGenerali.DatiDDT
+         fatturaXlm.Body.Item(0).DatiGenerali.DatiDDT.Add(datiDDT)
+         fatturaXlm.Body.Item(0).DatiGenerali.DatiDDT.Item(0).NumeroDDT = ""
+         fatturaXlm.Body.Item(0).DatiGenerali.DatiDDT.Item(0).DataDDT = Today.Date
+         fatturaXlm.Body.Item(0).DatiGenerali.DatiDDT.Item(0).RiferimentoNumeroLinea.Add(0)
 
-         fatturaXlm.Body.Item(1).DatiGenerali.DatiTrasporto.DatiAnagraficiVettore.IdFiscaleIVA.IdPaese = ""
-         fatturaXlm.Body.Item(1).DatiGenerali.DatiTrasporto.DatiAnagraficiVettore.IdFiscaleIVA.IdCodice = ""
-         fatturaXlm.Body.Item(1).DatiGenerali.DatiTrasporto.DatiAnagraficiVettore.CodiceFiscale = ""
-         fatturaXlm.Body.Item(1).DatiGenerali.DatiTrasporto.DatiAnagraficiVettore.Anagrafica.Denominazione = ""
-         fatturaXlm.Body.Item(1).DatiGenerali.DatiTrasporto.DatiAnagraficiVettore.Anagrafica.Nome = ""
-         fatturaXlm.Body.Item(1).DatiGenerali.DatiTrasporto.DatiAnagraficiVettore.Anagrafica.Cognome = ""
-         fatturaXlm.Body.Item(1).DatiGenerali.DatiTrasporto.DatiAnagraficiVettore.Anagrafica.Titolo = ""
-         fatturaXlm.Body.Item(1).DatiGenerali.DatiTrasporto.DatiAnagraficiVettore.Anagrafica.CodEORI = ""
-         fatturaXlm.Body.Item(1).DatiGenerali.DatiTrasporto.DatiAnagraficiVettore.NumeroLicenzaGuida = ""
+         fatturaXlm.Body.Item(0).DatiGenerali.DatiTrasporto.DatiAnagraficiVettore.IdFiscaleIVA.IdPaese = ""
+         fatturaXlm.Body.Item(0).DatiGenerali.DatiTrasporto.DatiAnagraficiVettore.IdFiscaleIVA.IdCodice = ""
+         fatturaXlm.Body.Item(0).DatiGenerali.DatiTrasporto.DatiAnagraficiVettore.CodiceFiscale = ""
+         fatturaXlm.Body.Item(0).DatiGenerali.DatiTrasporto.DatiAnagraficiVettore.Anagrafica.Denominazione = ""
+         fatturaXlm.Body.Item(0).DatiGenerali.DatiTrasporto.DatiAnagraficiVettore.Anagrafica.Nome = ""
+         fatturaXlm.Body.Item(0).DatiGenerali.DatiTrasporto.DatiAnagraficiVettore.Anagrafica.Cognome = ""
+         fatturaXlm.Body.Item(0).DatiGenerali.DatiTrasporto.DatiAnagraficiVettore.Anagrafica.Titolo = ""
+         fatturaXlm.Body.Item(0).DatiGenerali.DatiTrasporto.DatiAnagraficiVettore.Anagrafica.CodEORI = ""
+         fatturaXlm.Body.Item(0).DatiGenerali.DatiTrasporto.DatiAnagraficiVettore.NumeroLicenzaGuida = ""
 
-         fatturaXlm.Body.Item(1).DatiGenerali.DatiTrasporto.MezzoTrasporto = ""
-         fatturaXlm.Body.Item(1).DatiGenerali.DatiTrasporto.CausaleTrasporto = ""
-         fatturaXlm.Body.Item(1).DatiGenerali.DatiTrasporto.NumeroColli = 0
-         fatturaXlm.Body.Item(1).DatiGenerali.DatiTrasporto.Descrizione = ""
-         fatturaXlm.Body.Item(1).DatiGenerali.DatiTrasporto.UnitaMisuraPeso = ""
-         fatturaXlm.Body.Item(1).DatiGenerali.DatiTrasporto.PesoLordo = 0
-         fatturaXlm.Body.Item(1).DatiGenerali.DatiTrasporto.PesoNetto = 0
-         fatturaXlm.Body.Item(1).DatiGenerali.DatiTrasporto.DataOraRitiro = Today.Date
-         fatturaXlm.Body.Item(1).DatiGenerali.DatiTrasporto.DataInizioTrasporto = Today.Date
-         fatturaXlm.Body.Item(1).DatiGenerali.DatiTrasporto.TipoResa = ""
+         fatturaXlm.Body.Item(0).DatiGenerali.DatiTrasporto.MezzoTrasporto = ""
+         fatturaXlm.Body.Item(0).DatiGenerali.DatiTrasporto.CausaleTrasporto = ""
+         fatturaXlm.Body.Item(0).DatiGenerali.DatiTrasporto.NumeroColli = 0
+         fatturaXlm.Body.Item(0).DatiGenerali.DatiTrasporto.Descrizione = ""
+         fatturaXlm.Body.Item(0).DatiGenerali.DatiTrasporto.UnitaMisuraPeso = ""
+         fatturaXlm.Body.Item(0).DatiGenerali.DatiTrasporto.PesoLordo = 0
+         fatturaXlm.Body.Item(0).DatiGenerali.DatiTrasporto.PesoNetto = 0
+         fatturaXlm.Body.Item(0).DatiGenerali.DatiTrasporto.DataOraRitiro = Today.Date
+         fatturaXlm.Body.Item(0).DatiGenerali.DatiTrasporto.DataInizioTrasporto = Today.Date
+         fatturaXlm.Body.Item(0).DatiGenerali.DatiTrasporto.TipoResa = ""
 
-         fatturaXlm.Body.Item(1).DatiGenerali.DatiTrasporto.IndirizzoResa.Indirizzo = ""
-         fatturaXlm.Body.Item(1).DatiGenerali.DatiTrasporto.IndirizzoResa.NumeroCivico = ""
-         fatturaXlm.Body.Item(1).DatiGenerali.DatiTrasporto.IndirizzoResa.CAP = ""
-         fatturaXlm.Body.Item(1).DatiGenerali.DatiTrasporto.IndirizzoResa.Comune = ""
-         fatturaXlm.Body.Item(1).DatiGenerali.DatiTrasporto.IndirizzoResa.Provincia = ""
-         fatturaXlm.Body.Item(1).DatiGenerali.DatiTrasporto.IndirizzoResa.Nazione = ""
+         fatturaXlm.Body.Item(0).DatiGenerali.DatiTrasporto.IndirizzoResa.Indirizzo = ""
+         fatturaXlm.Body.Item(0).DatiGenerali.DatiTrasporto.IndirizzoResa.NumeroCivico = ""
+         fatturaXlm.Body.Item(0).DatiGenerali.DatiTrasporto.IndirizzoResa.CAP = ""
+         fatturaXlm.Body.Item(0).DatiGenerali.DatiTrasporto.IndirizzoResa.Comune = ""
+         fatturaXlm.Body.Item(0).DatiGenerali.DatiTrasporto.IndirizzoResa.Provincia = ""
+         fatturaXlm.Body.Item(0).DatiGenerali.DatiTrasporto.IndirizzoResa.Nazione = ""
 
-         fatturaXlm.Body.Item(1).DatiGenerali.DatiTrasporto.DataOraConsegna = Today.Date
+         fatturaXlm.Body.Item(0).DatiGenerali.DatiTrasporto.DataOraConsegna = Today.Date
 
-         fatturaXlm.Body.Item(1).DatiGenerali.FatturaPrincipale.NumeroFatturaPrincipale = ""
-         fatturaXlm.Body.Item(1).DatiGenerali.FatturaPrincipale.DataFatturaPrincipale = Today.Date
+         fatturaXlm.Body.Item(0).DatiGenerali.FatturaPrincipale.NumeroFatturaPrincipale = ""
+         fatturaXlm.Body.Item(0).DatiGenerali.FatturaPrincipale.DataFatturaPrincipale = Today.Date
 
          ' DatiBeniServizi.
 
-         fatturaXlm.Body.Item(1).DatiBeniServizi.DettaglioLinee.Item(1).NumeroLinea = 0
-         fatturaXlm.Body.Item(1).DatiBeniServizi.DettaglioLinee.Item(1).TipoCessionePrestazione = ""
+         Dim dettaglioLinee As New FatturaElettronicaBody.DatiBeniServizi.DettaglioLinee
+         fatturaXlm.Body.Item(0).DatiBeniServizi.DettaglioLinee.Add(dettaglioLinee)
+         fatturaXlm.Body.Item(0).DatiBeniServizi.DettaglioLinee.Item(0).NumeroLinea = 0
+         fatturaXlm.Body.Item(0).DatiBeniServizi.DettaglioLinee.Item(0).TipoCessionePrestazione = ""
 
-         fatturaXlm.Body.Item(1).DatiBeniServizi.DettaglioLinee.Item(1).CodiceArticolo.Item(1).CodiceTipo = ""
-         fatturaXlm.Body.Item(1).DatiBeniServizi.DettaglioLinee.Item(1).CodiceArticolo.Item(1).CodiceValore = ""
+         Dim codiceArticolo As New FatturaElettronicaBody.DatiBeniServizi.CodiceArticolo
+         fatturaXlm.Body.Item(0).DatiBeniServizi.DettaglioLinee.Item(0).CodiceArticolo.Add(codiceArticolo)
+         fatturaXlm.Body.Item(0).DatiBeniServizi.DettaglioLinee.Item(0).CodiceArticolo.Item(0).CodiceTipo = ""
+         fatturaXlm.Body.Item(0).DatiBeniServizi.DettaglioLinee.Item(0).CodiceArticolo.Item(0).CodiceValore = ""
 
-         fatturaXlm.Body.Item(1).DatiBeniServizi.DettaglioLinee.Item(1).Descrizione = ""
-         fatturaXlm.Body.Item(1).DatiBeniServizi.DettaglioLinee.Item(1).Quantita = 0
-         fatturaXlm.Body.Item(1).DatiBeniServizi.DettaglioLinee.Item(1).UnitaMisura = ""
-         fatturaXlm.Body.Item(1).DatiBeniServizi.DettaglioLinee.Item(1).DataInizioPeriodo = Today.Date
-         fatturaXlm.Body.Item(1).DatiBeniServizi.DettaglioLinee.Item(1).DataFinePeriodo = Today.Date
-         fatturaXlm.Body.Item(1).DatiBeniServizi.DettaglioLinee.Item(1).PrezzoUnitario = 0
+         fatturaXlm.Body.Item(0).DatiBeniServizi.DettaglioLinee.Item(0).Descrizione = ""
+         fatturaXlm.Body.Item(0).DatiBeniServizi.DettaglioLinee.Item(0).Quantita = 0
+         fatturaXlm.Body.Item(0).DatiBeniServizi.DettaglioLinee.Item(0).UnitaMisura = ""
+         fatturaXlm.Body.Item(0).DatiBeniServizi.DettaglioLinee.Item(0).DataInizioPeriodo = Today.Date
+         fatturaXlm.Body.Item(0).DatiBeniServizi.DettaglioLinee.Item(0).DataFinePeriodo = Today.Date
+         fatturaXlm.Body.Item(0).DatiBeniServizi.DettaglioLinee.Item(0).PrezzoUnitario = 0
 
-         fatturaXlm.Body.Item(1).DatiBeniServizi.DettaglioLinee.Item(1).ScontoMaggiorazione.Item(1).Tipo = ""
-         fatturaXlm.Body.Item(1).DatiBeniServizi.DettaglioLinee.Item(1).ScontoMaggiorazione.Item(1).Percentuale = 0
-         fatturaXlm.Body.Item(1).DatiBeniServizi.DettaglioLinee.Item(1).ScontoMaggiorazione.Item(1).Importo = 0
+         Dim scontoMaggiorazione1 As New Common.ScontoMaggiorazione
+         fatturaXlm.Body.Item(0).DatiBeniServizi.DettaglioLinee.Item(0).ScontoMaggiorazione.Add(scontoMaggiorazione1)
+         fatturaXlm.Body.Item(0).DatiBeniServizi.DettaglioLinee.Item(0).ScontoMaggiorazione.Item(0).Tipo = ""
+         fatturaXlm.Body.Item(0).DatiBeniServizi.DettaglioLinee.Item(0).ScontoMaggiorazione.Item(0).Percentuale = 0
+         fatturaXlm.Body.Item(0).DatiBeniServizi.DettaglioLinee.Item(0).ScontoMaggiorazione.Item(0).Importo = 0
 
-         fatturaXlm.Body.Item(1).DatiBeniServizi.DettaglioLinee.Item(1).PrezzoTotale = 0
-         fatturaXlm.Body.Item(1).DatiBeniServizi.DettaglioLinee.Item(1).AliquotaIVA = 0
-         fatturaXlm.Body.Item(1).DatiBeniServizi.DettaglioLinee.Item(1).Ritenuta = ""
-         fatturaXlm.Body.Item(1).DatiBeniServizi.DettaglioLinee.Item(1).Natura = ""
-         fatturaXlm.Body.Item(1).DatiBeniServizi.DettaglioLinee.Item(1).RiferimentoAmministrazione = ""
+         fatturaXlm.Body.Item(0).DatiBeniServizi.DettaglioLinee.Item(0).PrezzoTotale = 0
+         fatturaXlm.Body.Item(0).DatiBeniServizi.DettaglioLinee.Item(0).AliquotaIVA = 0
+         fatturaXlm.Body.Item(0).DatiBeniServizi.DettaglioLinee.Item(0).Ritenuta = ""
+         fatturaXlm.Body.Item(0).DatiBeniServizi.DettaglioLinee.Item(0).Natura = ""
+         fatturaXlm.Body.Item(0).DatiBeniServizi.DettaglioLinee.Item(0).RiferimentoAmministrazione = ""
 
-         fatturaXlm.Body.Item(1).DatiBeniServizi.DettaglioLinee.Item(1).AltriDatiGestionali.Item(1).TipoDato = ""
-         fatturaXlm.Body.Item(1).DatiBeniServizi.DettaglioLinee.Item(1).AltriDatiGestionali.Item(1).RiferimentoTesto = ""
-         fatturaXlm.Body.Item(1).DatiBeniServizi.DettaglioLinee.Item(1).AltriDatiGestionali.Item(1).RiferimentoNumero = 0
-         fatturaXlm.Body.Item(1).DatiBeniServizi.DettaglioLinee.Item(1).AltriDatiGestionali.Item(1).RiferimentoData = Today.Date
+         Dim altriDatiGestionali As New FatturaElettronicaBody.DatiBeniServizi.AltriDatiGestionali
+         fatturaXlm.Body.Item(0).DatiBeniServizi.DettaglioLinee.Item(0).AltriDatiGestionali.Add(altriDatiGestionali)
+         fatturaXlm.Body.Item(0).DatiBeniServizi.DettaglioLinee.Item(0).AltriDatiGestionali.Item(0).TipoDato = ""
+         fatturaXlm.Body.Item(0).DatiBeniServizi.DettaglioLinee.Item(0).AltriDatiGestionali.Item(0).RiferimentoTesto = ""
+         fatturaXlm.Body.Item(0).DatiBeniServizi.DettaglioLinee.Item(0).AltriDatiGestionali.Item(0).RiferimentoNumero = 0
+         fatturaXlm.Body.Item(0).DatiBeniServizi.DettaglioLinee.Item(0).AltriDatiGestionali.Item(0).RiferimentoData = Today.Date
 
-         fatturaXlm.Body.Item(1).DatiBeniServizi.DatiRiepilogo.Item(1).AliquotaIVA = 0
-         fatturaXlm.Body.Item(1).DatiBeniServizi.DatiRiepilogo.Item(1).Natura = ""
-         fatturaXlm.Body.Item(1).DatiBeniServizi.DatiRiepilogo.Item(1).SpeseAccessorie = 0
-         fatturaXlm.Body.Item(1).DatiBeniServizi.DatiRiepilogo.Item(1).Arrotondamento = 0
-         fatturaXlm.Body.Item(1).DatiBeniServizi.DatiRiepilogo.Item(1).ImponibileImporto = 0
-         fatturaXlm.Body.Item(1).DatiBeniServizi.DatiRiepilogo.Item(1).Imposta = 0
-         fatturaXlm.Body.Item(1).DatiBeniServizi.DatiRiepilogo.Item(1).EsigibilitaIVA = ""
-         fatturaXlm.Body.Item(1).DatiBeniServizi.DatiRiepilogo.Item(1).RiferimentoNormativo = ""
+         Dim datiRiepilogo As New FatturaElettronicaBody.DatiBeniServizi.DatiRiepilogo
+         fatturaXlm.Body.Item(0).DatiBeniServizi.DatiRiepilogo.Add(datiRiepilogo)
+         fatturaXlm.Body.Item(0).DatiBeniServizi.DatiRiepilogo.Item(0).AliquotaIVA = 0
+         fatturaXlm.Body.Item(0).DatiBeniServizi.DatiRiepilogo.Item(0).Natura = ""
+         fatturaXlm.Body.Item(0).DatiBeniServizi.DatiRiepilogo.Item(0).SpeseAccessorie = 0
+         fatturaXlm.Body.Item(0).DatiBeniServizi.DatiRiepilogo.Item(0).Arrotondamento = 0
+         fatturaXlm.Body.Item(0).DatiBeniServizi.DatiRiepilogo.Item(0).ImponibileImporto = 0
+         fatturaXlm.Body.Item(0).DatiBeniServizi.DatiRiepilogo.Item(0).Imposta = 0
+         fatturaXlm.Body.Item(0).DatiBeniServizi.DatiRiepilogo.Item(0).EsigibilitaIVA = ""
+         fatturaXlm.Body.Item(0).DatiBeniServizi.DatiRiepilogo.Item(0).RiferimentoNormativo = ""
 
          ' DatiVeicoli.
 
-         fatturaXlm.Body.Item(1).DatiVeicoli.Data = Today.Date
-         fatturaXlm.Body.Item(1).DatiVeicoli.TotalePercorso = ""
+         fatturaXlm.Body.Item(0).DatiVeicoli.Data = Today.Date
+         fatturaXlm.Body.Item(0).DatiVeicoli.TotalePercorso = ""
 
          ' DatiPagamento.
 
-         fatturaXlm.Body.Item(1).DatiPagamento.Item(1).CondizioniPagamento = ""
+         Dim datiPagamento As New FatturaElettronicaBody.DatiPagamento.DatiPagamento
+         fatturaXlm.Body.Item(0).DatiPagamento.Add(datiPagamento)
+         fatturaXlm.Body.Item(0).DatiPagamento.Item(0).CondizioniPagamento = ""
 
-         fatturaXlm.Body.Item(1).DatiPagamento.Item(1).DettaglioPagamento.Item(1).Beneficiario = ""
-         fatturaXlm.Body.Item(1).DatiPagamento.Item(1).DettaglioPagamento.Item(1).ModalitaPagamento = ""
-         fatturaXlm.Body.Item(1).DatiPagamento.Item(1).DettaglioPagamento.Item(1).DataRiferimentoTerminiPagamento = Today.Date
-         fatturaXlm.Body.Item(1).DatiPagamento.Item(1).DettaglioPagamento.Item(1).GiorniTerminiPagamento = 0
-         fatturaXlm.Body.Item(1).DatiPagamento.Item(1).DettaglioPagamento.Item(1).DataScadenzaPagamento = Today.Date
-         fatturaXlm.Body.Item(1).DatiPagamento.Item(1).DettaglioPagamento.Item(1).ImportoPagamento = 0
-         fatturaXlm.Body.Item(1).DatiPagamento.Item(1).DettaglioPagamento.Item(1).CodUfficioPostale = ""
-         fatturaXlm.Body.Item(1).DatiPagamento.Item(1).DettaglioPagamento.Item(1).CognomeQuietanzante = ""
-         fatturaXlm.Body.Item(1).DatiPagamento.Item(1).DettaglioPagamento.Item(1).NomeQuietanzante = ""
-         fatturaXlm.Body.Item(1).DatiPagamento.Item(1).DettaglioPagamento.Item(1).CFQuietanzante = ""
-         fatturaXlm.Body.Item(1).DatiPagamento.Item(1).DettaglioPagamento.Item(1).TitoloQuietanzante = ""
-         fatturaXlm.Body.Item(1).DatiPagamento.Item(1).DettaglioPagamento.Item(1).IstitutoFinanziario = ""
-         fatturaXlm.Body.Item(1).DatiPagamento.Item(1).DettaglioPagamento.Item(1).IBAN = ""
-         fatturaXlm.Body.Item(1).DatiPagamento.Item(1).DettaglioPagamento.Item(1).ABI = ""
-         fatturaXlm.Body.Item(1).DatiPagamento.Item(1).DettaglioPagamento.Item(1).CAB = ""
-         fatturaXlm.Body.Item(1).DatiPagamento.Item(1).DettaglioPagamento.Item(1).BIC = ""
-         fatturaXlm.Body.Item(1).DatiPagamento.Item(1).DettaglioPagamento.Item(1).ScontoPagamentoAnticipato = 0
-         fatturaXlm.Body.Item(1).DatiPagamento.Item(1).DettaglioPagamento.Item(1).DataLimitePagamentoAnticipato = Today.Date
-         fatturaXlm.Body.Item(1).DatiPagamento.Item(1).DettaglioPagamento.Item(1).PenalitaPagamentiRitardati = 0
-         fatturaXlm.Body.Item(1).DatiPagamento.Item(1).DettaglioPagamento.Item(1).DataDecorrenzaPenale = Today.Date
-         fatturaXlm.Body.Item(1).DatiPagamento.Item(1).DettaglioPagamento.Item(1).CodicePagamento = ""
+         Dim dettaglioPagamento As New FatturaElettronicaBody.DatiPagamento.DettaglioPagamento
+         fatturaXlm.Body.Item(0).DatiPagamento.Item(0).DettaglioPagamento.Add(dettaglioPagamento)
+         fatturaXlm.Body.Item(0).DatiPagamento.Item(0).DettaglioPagamento.Item(0).Beneficiario = ""
+         fatturaXlm.Body.Item(0).DatiPagamento.Item(0).DettaglioPagamento.Item(0).ModalitaPagamento = ""
+         fatturaXlm.Body.Item(0).DatiPagamento.Item(0).DettaglioPagamento.Item(0).DataRiferimentoTerminiPagamento = Today.Date
+         fatturaXlm.Body.Item(0).DatiPagamento.Item(0).DettaglioPagamento.Item(0).GiorniTerminiPagamento = 0
+         fatturaXlm.Body.Item(0).DatiPagamento.Item(0).DettaglioPagamento.Item(0).DataScadenzaPagamento = Today.Date
+         fatturaXlm.Body.Item(0).DatiPagamento.Item(0).DettaglioPagamento.Item(0).ImportoPagamento = 0
+         fatturaXlm.Body.Item(0).DatiPagamento.Item(0).DettaglioPagamento.Item(0).CodUfficioPostale = ""
+         fatturaXlm.Body.Item(0).DatiPagamento.Item(0).DettaglioPagamento.Item(0).CognomeQuietanzante = ""
+         fatturaXlm.Body.Item(0).DatiPagamento.Item(0).DettaglioPagamento.Item(0).NomeQuietanzante = ""
+         fatturaXlm.Body.Item(0).DatiPagamento.Item(0).DettaglioPagamento.Item(0).CFQuietanzante = ""
+         fatturaXlm.Body.Item(0).DatiPagamento.Item(0).DettaglioPagamento.Item(0).TitoloQuietanzante = ""
+         fatturaXlm.Body.Item(0).DatiPagamento.Item(0).DettaglioPagamento.Item(0).IstitutoFinanziario = ""
+         fatturaXlm.Body.Item(0).DatiPagamento.Item(0).DettaglioPagamento.Item(0).IBAN = ""
+         fatturaXlm.Body.Item(0).DatiPagamento.Item(0).DettaglioPagamento.Item(0).ABI = ""
+         fatturaXlm.Body.Item(0).DatiPagamento.Item(0).DettaglioPagamento.Item(0).CAB = ""
+         fatturaXlm.Body.Item(0).DatiPagamento.Item(0).DettaglioPagamento.Item(0).BIC = ""
+         fatturaXlm.Body.Item(0).DatiPagamento.Item(0).DettaglioPagamento.Item(0).ScontoPagamentoAnticipato = 0
+         fatturaXlm.Body.Item(0).DatiPagamento.Item(0).DettaglioPagamento.Item(0).DataLimitePagamentoAnticipato = Today.Date
+         fatturaXlm.Body.Item(0).DatiPagamento.Item(0).DettaglioPagamento.Item(0).PenalitaPagamentiRitardati = 0
+         fatturaXlm.Body.Item(0).DatiPagamento.Item(0).DettaglioPagamento.Item(0).DataDecorrenzaPenale = Today.Date
+         fatturaXlm.Body.Item(0).DatiPagamento.Item(0).DettaglioPagamento.Item(0).CodicePagamento = ""
 
          ' Allegati.
 
-         fatturaXlm.Body.Item(1).Allegati.Item(1).NomeAttachment = ""
-         fatturaXlm.Body.Item(1).Allegati.Item(1).AlgoritmoCompressione = ""
-         fatturaXlm.Body.Item(1).Allegati.Item(1).FormatoAttachment = ""
-         fatturaXlm.Body.Item(1).Allegati.Item(1).DescrizioneAttachment = ""
-         'fatturaXlm.Body.Item(1).Allegati.Item(1).Attachment =
-
-SALTA:
+         Dim allegati As New FatturaElettronicaBody.Allegati.Allegati
+         fatturaXlm.Body.Item(0).Allegati.Add(allegati)
+         fatturaXlm.Body.Item(0).Allegati.Item(0).NomeAttachment = ""
+         fatturaXlm.Body.Item(0).Allegati.Item(0).AlgoritmoCompressione = ""
+         fatturaXlm.Body.Item(0).Allegati.Item(0).FormatoAttachment = ""
+         fatturaXlm.Body.Item(0).Allegati.Item(0).DescrizioneAttachment = ""
+         Dim allegato As Byte()
+         fatturaXlm.Body.Item(0).Allegati.Item(0).Attachment = allegato
 
          Dim settings As New XmlWriterSettings()
          settings.Indent = True
@@ -448,7 +479,6 @@ SALTA:
 
    Private Function GeneraDirectoryNomeFileXML() As String
       Try
-         Dim nomeDirectory As String = Application.StartupPath & "\" & CARTELLA_FATTURE_ELETTRONICHE & "\" & Today.Year.ToString
          Dim nomeFile As String = GeneraNomeFileXML()
 
          ' Verifica se esiste la cartella dell'anno corrente e in caso contrario la crea.
@@ -608,4 +638,84 @@ SALTA:
       End Try
 
    End Sub
+
+   Private Sub eui_cmdApriCartella_Click(sender As Object, e As EventArgs) Handles eui_cmdApriCartella.Click
+      Try
+         ' Verifica se esiste la cartella dell'anno corrente e in caso contrario la crea.
+         If VerificaEsistenzaCartellaAnnoCorrente(nomeDirectory) = False Then
+            CreaCartellaAnnoCorrente(nomeDirectory)
+         End If
+
+         AvviaEsploraFile(Me.Handle, nomeDirectory)
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
+   Private Sub eui_cmdTastiera_Click(sender As Object, e As EventArgs) Handles eui_cmdTastiera.Click
+      Try
+         AvviaTastieraVirtuale(Me.Handle)
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+
+   End Sub
+
+   Private Sub eui_cmdCopiaPercorso_Click(sender As Object, e As EventArgs) Handles eui_cmdCopiaPercorso.Click
+      Try
+         ' Copia il percorso del file .xml negli appunti di sistema.
+         Clipboard.SetText(GeneraDirectoryNomeFileXML)
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+
+   End Sub
+
+   Private Sub eui_cmdAnnulla_Click(sender As Object, e As EventArgs) Handles eui_cmdAnnulla.Click
+      Me.Close()
+
+   End Sub
+
+   Private Sub lnkAgenziaEntrate_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lnkAgenziaEntrate.LinkClicked
+      Try
+         ApriSitoInternet("Http://www.agenziaentrate.gov.it")
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
+   Private Sub lnkFatturaPA_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lnkFatturaPA.LinkClicked
+      Try
+         ApriSitoInternet("Http://www.fatturapa.gov.it")
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
+   Private Sub lnkIndicePA_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lnkIndicePA.LinkClicked
+      Try
+         ApriSitoInternet("Http://www.indicepa.gov.it")
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
 End Class

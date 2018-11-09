@@ -3508,8 +3508,8 @@ Module Procedure
    Public Sub ApriSitoInternet(ByVal indirizzo As String)
       Try
          If indirizzo = "" Then
-                MsgBox("Il campo 'Internet' è vuoto! Si consiglia di inserire un indirizzo di sito Internet valido e riprovare.", MsgBoxStyle.OkOnly.Information, NOME_PRODOTTO)
-            Else
+            MsgBox("Il campo 'Internet' è vuoto! Si consiglia di inserire un indirizzo di sito Internet valido e riprovare.", MsgBoxStyle.OkOnly.Information, NOME_PRODOTTO)
+         Else
             ' Modifica il cursore del mouse.
             Cursor.Current = Cursors.AppStarting
 
