@@ -38,6 +38,10 @@ Partial Class frmFatturaElettronica
       Me.eui_cmdTastiera = New Elegant.Ui.Button()
       Me.eui_cmdAnnulla = New Elegant.Ui.Button()
       Me.eui_tpcDocumento = New Elegant.Ui.TabControl()
+      Me.TabPage3 = New Elegant.Ui.TabPage()
+      Me.eui_cmdCopiaPercorso = New Elegant.Ui.Button()
+      Me.TextBox1 = New Elegant.Ui.TextBox()
+      Me.eui_cmdSalvaTestoXml = New Elegant.Ui.Button()
       Me.TabPage1 = New Elegant.Ui.TabPage()
       Me.TabControl1 = New Elegant.Ui.TabControl()
       Me.TabPage5 = New Elegant.Ui.TabPage()
@@ -249,10 +253,6 @@ Partial Class frmFatturaElettronica
       Me.eui_cmdSalvaErrori = New Elegant.Ui.Button()
       Me.eui_cmdConvalida = New Elegant.Ui.Button()
       Me.eui_txtConvalida = New Elegant.Ui.TextBox()
-      Me.TabPage3 = New Elegant.Ui.TabPage()
-      Me.eui_cmdCopiaPercorso = New Elegant.Ui.Button()
-      Me.TextBox1 = New Elegant.Ui.TextBox()
-      Me.eui_cmdSalvaTestoXml = New Elegant.Ui.Button()
       Me.TabPage4 = New Elegant.Ui.TabPage()
       Me.eui_cmdSalvaAnteprimaHtml = New Elegant.Ui.Button()
       Me.eui_cmdApriCartella = New Elegant.Ui.Button()
@@ -268,6 +268,7 @@ Partial Class frmFatturaElettronica
       Me.StatusBarPane4.SuspendLayout()
       Me.StatusBarControlsArea1.SuspendLayout()
       CType(Me.eui_tpcDocumento, System.ComponentModel.ISupportInitialize).BeginInit()
+      Me.TabPage3.SuspendLayout()
       Me.TabPage1.SuspendLayout()
       CType(Me.TabControl1, System.ComponentModel.ISupportInitialize).BeginInit()
       Me.TabPage5.SuspendLayout()
@@ -308,7 +309,6 @@ Partial Class frmFatturaElettronica
       Me.GroupBox16.SuspendLayout()
       Me.TabPage10.SuspendLayout()
       Me.TabPage2.SuspendLayout()
-      Me.TabPage3.SuspendLayout()
       Me.TabPage4.SuspendLayout()
       Me.StatusBarPane5.SuspendLayout()
       Me.StatusBarPane1.SuspendLayout()
@@ -325,10 +325,10 @@ Partial Class frmFatturaElettronica
       Me.StatusBar1.Controls.Add(Me.StatusBarControlsArea1)
       Me.StatusBar1.ControlsArea = Me.StatusBarControlsArea1
       Me.StatusBar1.Dock = System.Windows.Forms.DockStyle.Bottom
-      Me.StatusBar1.Location = New System.Drawing.Point(0, 551)
+      Me.StatusBar1.Location = New System.Drawing.Point(0, 562)
       Me.StatusBar1.Name = "StatusBar1"
       Me.StatusBar1.NotificationsArea = Me.StatusBarNotificationsArea1
-      Me.StatusBar1.Size = New System.Drawing.Size(1003, 22)
+      Me.StatusBar1.Size = New System.Drawing.Size(1011, 22)
       Me.StatusBar1.TabIndex = 4
       Me.StatusBar1.Text = "StatusBar1"
       '
@@ -341,7 +341,7 @@ Partial Class frmFatturaElettronica
       Me.StatusBarNotificationsArea1.MaximumSize = New System.Drawing.Size(0, 22)
       Me.StatusBarNotificationsArea1.MinimumSize = New System.Drawing.Size(0, 22)
       Me.StatusBarNotificationsArea1.Name = "StatusBarNotificationsArea1"
-      Me.StatusBarNotificationsArea1.Size = New System.Drawing.Size(931, 22)
+      Me.StatusBarNotificationsArea1.Size = New System.Drawing.Size(939, 22)
       Me.StatusBarNotificationsArea1.TabIndex = 1
       '
       'StatusBarPane2
@@ -434,7 +434,7 @@ Partial Class frmFatturaElettronica
       '
       Me.StatusBarControlsArea1.Controls.Add(Me.StatusBarPane3)
       Me.StatusBarControlsArea1.Dock = System.Windows.Forms.DockStyle.Right
-      Me.StatusBarControlsArea1.Location = New System.Drawing.Point(931, 0)
+      Me.StatusBarControlsArea1.Location = New System.Drawing.Point(939, 0)
       Me.StatusBarControlsArea1.MaximumSize = New System.Drawing.Size(0, 22)
       Me.StatusBarControlsArea1.MinimumSize = New System.Drawing.Size(0, 22)
       Me.StatusBarControlsArea1.Name = "StatusBarControlsArea1"
@@ -484,11 +484,56 @@ Partial Class frmFatturaElettronica
       Me.eui_tpcDocumento.EqualTabWidth = True
       Me.eui_tpcDocumento.Location = New System.Drawing.Point(9, 9)
       Me.eui_tpcDocumento.Name = "eui_tpcDocumento"
-      Me.eui_tpcDocumento.SelectedTabPage = Me.TabPage3
+      Me.eui_tpcDocumento.SelectedTabPage = Me.TabPage1
       Me.eui_tpcDocumento.Size = New System.Drawing.Size(814, 486)
       Me.eui_tpcDocumento.TabIndex = 15
       Me.eui_tpcDocumento.TabPages.AddRange(New Elegant.Ui.TabPage() {Me.TabPage1, Me.TabPage2, Me.TabPage3, Me.TabPage4})
       Me.eui_tpcDocumento.Text = " "
+      '
+      'TabPage3
+      '
+      Me.TabPage3.ActiveControl = Nothing
+      Me.TabPage3.Controls.Add(Me.eui_cmdCopiaPercorso)
+      Me.TabPage3.Controls.Add(Me.TextBox1)
+      Me.TabPage3.Controls.Add(Me.eui_cmdSalvaTestoXml)
+      Me.TabPage3.KeyTip = Nothing
+      Me.TabPage3.Name = "TabPage3"
+      Me.TabPage3.Size = New System.Drawing.Size(812, 465)
+      Me.TabPage3.TabIndex = 2
+      Me.TabPage3.Text = "XML"
+      '
+      'eui_cmdCopiaPercorso
+      '
+      Me.eui_cmdCopiaPercorso.Id = "60ebbd95-62c4-4451-90f1-4270387cc16d"
+      Me.eui_cmdCopiaPercorso.Location = New System.Drawing.Point(575, 422)
+      Me.eui_cmdCopiaPercorso.Name = "eui_cmdCopiaPercorso"
+      Me.eui_cmdCopiaPercorso.ScreenTip.Caption = "Copia percorso"
+      Me.eui_cmdCopiaPercorso.ScreenTip.Text = "Copia il percorso del file XML negli appunti."
+      Me.eui_cmdCopiaPercorso.Size = New System.Drawing.Size(110, 32)
+      Me.eui_cmdCopiaPercorso.TabIndex = 1
+      Me.eui_cmdCopiaPercorso.Text = "Copia percorso"
+      '
+      'TextBox1
+      '
+      Me.TextBox1.Id = "61ba143f-bd45-4a17-9e69-c0fc9db9d3a3"
+      Me.TextBox1.Location = New System.Drawing.Point(1, 0)
+      Me.TextBox1.Multiline = True
+      Me.TextBox1.Name = "TextBox1"
+      Me.TextBox1.ScrollBars = System.Windows.Forms.ScrollBars.Both
+      Me.TextBox1.Size = New System.Drawing.Size(810, 412)
+      Me.TextBox1.TabIndex = 0
+      Me.TextBox1.TextEditorWidth = 804
+      '
+      'eui_cmdSalvaTestoXml
+      '
+      Me.eui_cmdSalvaTestoXml.Id = "396425fd-fa39-42d2-8af8-2039c1104cdd"
+      Me.eui_cmdSalvaTestoXml.Location = New System.Drawing.Point(696, 422)
+      Me.eui_cmdSalvaTestoXml.Name = "eui_cmdSalvaTestoXml"
+      Me.eui_cmdSalvaTestoXml.ScreenTip.Caption = "Salva"
+      Me.eui_cmdSalvaTestoXml.ScreenTip.Text = "Salva il codice XML in un file di testo TXT."
+      Me.eui_cmdSalvaTestoXml.Size = New System.Drawing.Size(110, 32)
+      Me.eui_cmdSalvaTestoXml.TabIndex = 2
+      Me.eui_cmdSalvaTestoXml.Text = "Salva"
       '
       'TabPage1
       '
@@ -603,6 +648,8 @@ Partial Class frmFatturaElettronica
       Me.eui_txtProgressivoInvio.Location = New System.Drawing.Point(173, 130)
       Me.eui_txtProgressivoInvio.MaxLength = 10
       Me.eui_txtProgressivoInvio.Name = "eui_txtProgressivoInvio"
+      Me.eui_txtProgressivoInvio.ScreenTip.Caption = "Progressivo Invio"
+      Me.eui_txtProgressivoInvio.ScreenTip.Text = "Formato alfanumerico; lunghezza massima di 10 caratteri."
       Me.eui_txtProgressivoInvio.Size = New System.Drawing.Size(201, 21)
       Me.eui_txtProgressivoInvio.TabIndex = 0
       Me.eui_txtProgressivoInvio.TextEditorWidth = 195
@@ -2543,51 +2590,6 @@ Partial Class frmFatturaElettronica
       Me.eui_txtConvalida.TextEditorWidth = 804
       Me.eui_txtConvalida.WordWrap = False
       '
-      'TabPage3
-      '
-      Me.TabPage3.ActiveControl = Nothing
-      Me.TabPage3.Controls.Add(Me.eui_cmdCopiaPercorso)
-      Me.TabPage3.Controls.Add(Me.TextBox1)
-      Me.TabPage3.Controls.Add(Me.eui_cmdSalvaTestoXml)
-      Me.TabPage3.KeyTip = Nothing
-      Me.TabPage3.Name = "TabPage3"
-      Me.TabPage3.Size = New System.Drawing.Size(812, 465)
-      Me.TabPage3.TabIndex = 2
-      Me.TabPage3.Text = "XML"
-      '
-      'eui_cmdCopiaPercorso
-      '
-      Me.eui_cmdCopiaPercorso.Id = "60ebbd95-62c4-4451-90f1-4270387cc16d"
-      Me.eui_cmdCopiaPercorso.Location = New System.Drawing.Point(575, 422)
-      Me.eui_cmdCopiaPercorso.Name = "eui_cmdCopiaPercorso"
-      Me.eui_cmdCopiaPercorso.ScreenTip.Caption = "Copia percorso"
-      Me.eui_cmdCopiaPercorso.ScreenTip.Text = "Copia il percorso del file XML negli appunti."
-      Me.eui_cmdCopiaPercorso.Size = New System.Drawing.Size(110, 32)
-      Me.eui_cmdCopiaPercorso.TabIndex = 1
-      Me.eui_cmdCopiaPercorso.Text = "Copia percorso"
-      '
-      'TextBox1
-      '
-      Me.TextBox1.Id = "61ba143f-bd45-4a17-9e69-c0fc9db9d3a3"
-      Me.TextBox1.Location = New System.Drawing.Point(1, 0)
-      Me.TextBox1.Multiline = True
-      Me.TextBox1.Name = "TextBox1"
-      Me.TextBox1.ScrollBars = System.Windows.Forms.ScrollBars.Both
-      Me.TextBox1.Size = New System.Drawing.Size(810, 412)
-      Me.TextBox1.TabIndex = 0
-      Me.TextBox1.TextEditorWidth = 804
-      '
-      'eui_cmdSalvaTestoXml
-      '
-      Me.eui_cmdSalvaTestoXml.Id = "396425fd-fa39-42d2-8af8-2039c1104cdd"
-      Me.eui_cmdSalvaTestoXml.Location = New System.Drawing.Point(696, 422)
-      Me.eui_cmdSalvaTestoXml.Name = "eui_cmdSalvaTestoXml"
-      Me.eui_cmdSalvaTestoXml.ScreenTip.Caption = "Salva"
-      Me.eui_cmdSalvaTestoXml.ScreenTip.Text = "Salva il codice XML in un file di testo TXT."
-      Me.eui_cmdSalvaTestoXml.Size = New System.Drawing.Size(110, 32)
-      Me.eui_cmdSalvaTestoXml.TabIndex = 2
-      Me.eui_cmdSalvaTestoXml.Text = "Salva"
-      '
       'TabPage4
       '
       Me.TabPage4.ActiveControl = Nothing
@@ -2696,7 +2698,7 @@ Partial Class frmFatturaElettronica
       Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
       Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(1003, 573)
+      Me.ClientSize = New System.Drawing.Size(1011, 584)
       Me.Controls.Add(Me.eui_cmdInvia)
       Me.Controls.Add(Me.eui_cmdEsporta)
       Me.Controls.Add(Me.eui_cmdApriCartella)
@@ -2718,6 +2720,8 @@ Partial Class frmFatturaElettronica
       Me.StatusBarControlsArea1.ResumeLayout(False)
       Me.StatusBarControlsArea1.PerformLayout()
       CType(Me.eui_tpcDocumento, System.ComponentModel.ISupportInitialize).EndInit()
+      Me.TabPage3.ResumeLayout(False)
+      Me.TabPage3.PerformLayout()
       Me.TabPage1.ResumeLayout(False)
       CType(Me.TabControl1, System.ComponentModel.ISupportInitialize).EndInit()
       Me.TabPage5.ResumeLayout(False)
@@ -2785,8 +2789,6 @@ Partial Class frmFatturaElettronica
       Me.TabPage10.PerformLayout()
       Me.TabPage2.ResumeLayout(False)
       Me.TabPage2.PerformLayout()
-      Me.TabPage3.ResumeLayout(False)
-      Me.TabPage3.PerformLayout()
       Me.TabPage4.ResumeLayout(False)
       Me.StatusBarPane5.ResumeLayout(False)
       Me.StatusBarPane5.PerformLayout()
