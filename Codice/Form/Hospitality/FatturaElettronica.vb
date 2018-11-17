@@ -2,7 +2,7 @@
 ' ***************************************************************************************************
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       29/10/2018
-' Data ultima modifica: 04/11/2018
+' Data ultima modifica: 17/11/2018
 ' Descrizione:          Form per la compilazione della Fattura elettronica con generazione file XML.
 ' Note:
 '
@@ -19,7 +19,8 @@ Imports System.IO
 
 Public Class frmFatturaElettronica
 
-   Dim nomeDirectory As String = Application.StartupPath & "\" & CARTELLA_FATTURE_ELETTRONICHE & "\" & Today.Year.ToString
+   Private CConvalida As New ConvalidaKeyPress
+   Private nomeDirectory As String = Application.StartupPath & "\" & CARTELLA_FATTURE_ELETTRONICHE & "\" & Today.Year.ToString
 
    Private Sub EsempioFatt()
       Try
@@ -1206,4 +1207,58 @@ Public Class frmFatturaElettronica
       End Try
    End Sub
 
+   Private Sub eui_txtCpSedeCAP_KeyPress(sender As Object, e As KeyPressEventArgs) Handles eui_txtCpSedeCAP.KeyPress
+      Try
+         e.Handled = CConvalida.DigitaSoloNumeri(e.KeyChar)
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
+   Private Sub eui_txtCpStabileOrgCAP_KeyPress(sender As Object, e As KeyPressEventArgs) Handles eui_txtCpStabileOrgCAP.KeyPress
+      Try
+         e.Handled = CConvalida.DigitaSoloNumeri(e.KeyChar)
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
+   Private Sub eui_txtCcSedeCAP_KeyPress(sender As Object, e As KeyPressEventArgs) Handles eui_txtCcSedeCAP.KeyPress
+      Try
+         e.Handled = CConvalida.DigitaSoloNumeri(e.KeyChar)
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
+   Private Sub eui_txtCcStabileOrgCAP_KeyPress(sender As Object, e As KeyPressEventArgs) Handles eui_txtCcStabileOrgCAP.KeyPress
+      Try
+         e.Handled = CConvalida.DigitaSoloNumeri(e.KeyChar)
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
+   Private Sub eui_txtCpCapitaleSocialeREA_KeyPress(sender As Object, e As KeyPressEventArgs) Handles eui_txtCpCapitaleSocialeREA.KeyPress
+      Try
+         e.Handled = CConvalida.DigitaSoloNumeriPuntegg(e.KeyChar)
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
 End Class

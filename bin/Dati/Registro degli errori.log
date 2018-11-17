@@ -1,0 +1,296 @@
+"*** 13/10/2018 - 15:01:17 ***"
+"- DESCRIZIONE ERRORE: Database già aperto in modo esclusivo dall'utente 'Admin' sulla macchina 'LuigiMontana-PC'. Ritentare l'operazione quando il database è disponibile."
+"- NOME PROCEDURA:    in JRO.JetEngineClass.CompactDatabase(String SourceConnection, String Destconnection)
+   in Hospitality_Solution.Procedure.CompattaDb(String PercorsoFileOrigine, String PercorsoFileDestinazione)"
+"
+"
+"*** 13/10/2018 - 15:01:25 ***"
+"- DESCRIZIONE ERRORE: Il processo non può accedere al file 'D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\bin\Archivi\Hospitality.mdb' perché è in uso da un altro processo."
+"- NOME PROCEDURA:    in System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   in System.IO.File.InternalDelete(String path, Boolean checkHost)
+   in System.IO.File.Delete(String path)
+   in Hospitality_Solution.frmMain.eui_cmdArchiviCompatta_Click(Object sender, EventArgs e)"
+"
+"
+"*** 13/10/2018 - 15:01:36 ***"
+"- DESCRIZIONE ERRORE: Database già aperto in modo esclusivo dall'utente 'Admin' sulla macchina 'LuigiMontana-PC'. Ritentare l'operazione quando il database è disponibile."
+"- NOME PROCEDURA:    in JRO.JetEngineClass.CompactDatabase(String SourceConnection, String Destconnection)
+   in Hospitality_Solution.Procedure.CompattaDb(String PercorsoFileOrigine, String PercorsoFileDestinazione)"
+"
+"
+"*** 13/10/2018 - 15:01:38 ***"
+"- DESCRIZIONE ERRORE: Il processo non può accedere al file 'D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\bin\Archivi\Hospitality.mdb' perché è in uso da un altro processo."
+"- NOME PROCEDURA:    in System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   in System.IO.File.InternalDelete(String path, Boolean checkHost)
+   in System.IO.File.Delete(String path)
+   in Hospitality_Solution.frmMain.eui_cmdArchiviCompatta_Click(Object sender, EventArgs e)"
+"
+"
+"*** 31/10/2018 - 16:23:57 ***"
+"- DESCRIZIONE ERRORE: Il file 'D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\bin\IT01234567890_FPA02.xml' non è stato trovato."
+"- NOME PROCEDURA:    in System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   in System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   in System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize)
+   in System.Xml.XmlDownloadManager.GetStream(Uri uri, ICredentials credentials, IWebProxy proxy, RequestCachePolicy cachePolicy)
+   in System.Xml.XmlUrlResolver.GetEntity(Uri absoluteUri, String role, Type ofObjectToReturn)
+   in System.Xml.XmlTextReaderImpl.FinishInitUriString()
+   in System.Xml.XmlTextReaderImpl..ctor(String uriStr, XmlReaderSettings settings, XmlParserContext context, XmlResolver uriResolver)
+   in System.Xml.XmlReaderSettings.CreateReader(String inputUri, XmlParserContext inputContext)
+   in System.Xml.XmlReader.Create(String inputUri, XmlReaderSettings settings, XmlParserContext inputContext)
+   in System.Xml.XmlReader.Create(String inputUri, XmlReaderSettings settings)
+   in Hospitality_Solution.frmFatturaElettronica.FatturaElettronica_Load(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 31"
+"
+"
+"*** 31/10/2018 - 16:25:02 ***"
+"- DESCRIZIONE ERRORE: Non è stato possibile caricare il file o l'assembly 'Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed' o una delle relative dipendenze. Impossibile trovare il file specificato."
+"- NOME PROCEDURA:    in System.ModuleHandle.ResolveType(RuntimeModule module, Int32 typeToken, IntPtr* typeInstArgs, Int32 typeInstCount, IntPtr* methodInstArgs, Int32 methodInstCount, ObjectHandleOnStack type)
+   in System.ModuleHandle.ResolveTypeHandleInternal(RuntimeModule module, Int32 typeToken, RuntimeTypeHandle[] typeInstantiationContext, RuntimeTypeHandle[] methodInstantiationContext)
+   in System.Reflection.RuntimeModule.ResolveType(Int32 metadataToken, Type[] genericTypeArguments, Type[] genericMethodArguments)
+   in System.Reflection.CustomAttribute.FilterCustomAttributeRecord(CustomAttributeRecord caRecord, MetadataImport scope, Assembly& lastAptcaOkAssembly, RuntimeModule decoratedModule, MetadataToken decoratedToken, RuntimeType attributeFilterType, Boolean mustBeInheritable, Object[] attributes, IList derivedAttributes, RuntimeType& attributeType, IRuntimeMethodInfo& ctor, Boolean& ctorHasParameters, Boolean& isVarArg)
+   in System.Reflection.CustomAttribute.GetCustomAttributes(RuntimeModule decoratedModule, Int32 decoratedMetadataToken, Int32 pcaCount, RuntimeType attributeFilterType, Boolean mustBeInheritable, IList derivedAttributes, Boolean isDecoratedTargetSecurityTransparent)
+   in System.Reflection.CustomAttribute.GetCustomAttributes(RuntimePropertyInfo property, RuntimeType caType)
+   in System.Reflection.RuntimePropertyInfo.GetCustomAttributes(Type attributeType, Boolean inherit)
+   in System.Attribute.InternalGetCustomAttributes(PropertyInfo element, Type type, Boolean inherit)
+   in System.Attribute.GetCustomAttributes(MemberInfo element, Type type, Boolean inherit)
+   in System.Reflection.CustomAttributeExtensions.GetCustomAttributes[T](MemberInfo element, Boolean inherit)
+   in FatturaElettronica.Common.BaseClass.<>c.<GetAllDataProperties>b__7_0(PropertyInfo pi)
+   in System.Linq.Enumerable.WhereArrayIterator`1.MoveNext()
+   in System.Linq.Buffer`1..ctor(IEnumerable`1 source)
+   in System.Linq.OrderedEnumerable`1.<GetEnumerator>d__1.MoveNext()
+   in System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   in System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   in FatturaElettronica.Common.BaseClassSerializable.ReadXml(XmlReader r)
+   in FatturaElettronica.Fattura.ReadXml(XmlReader r)
+   in Hospitality_Solution.frmFatturaElettronica.FatturaElettronica_Load(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 32"
+"
+"
+"*** 04/11/2018 - 16:43:35 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.frmFatturaElettronica.eui_cmdEsporta_Click(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 202"
+"
+"
+"*** 05/11/2018 - 17:00:08 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.frmFatturaElettronica.GeneraFileXML(String nomefile) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 79"
+"
+"
+"*** 05/11/2018 - 17:01:46 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.frmFatturaElettronica.GeneraFileXML(String nomefile) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 79"
+"
+"
+"*** 05/11/2018 - 17:04:50 ***"
+"- DESCRIZIONE ERRORE: Cast non valido dalla stringa """" al tipo 'Date'."
+"- NOME PROCEDURA:    in Microsoft.VisualBasic.CompilerServices.Conversions.ToDate(String Value)
+   in Hospitality_Solution.frmFatturaElettronica.GeneraFileXML(String nomefile) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 103"
+"
+"
+"*** 05/11/2018 - 17:08:18 ***"
+"- DESCRIZIONE ERRORE: Index e length devono fare riferimento a una posizione nella stringa.
+Nome parametro: length"
+"- NOME PROCEDURA:    in System.String.Substring(Int32 startIndex, Int32 length)
+   in Hospitality_Solution.frmFatturaElettronica.GeneraNomeFileXML() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 208"
+"
+"
+"*** 05/11/2018 - 17:08:22 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.frmFatturaElettronica.GeneraFileXML(String nomefile) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 79"
+"
+"
+"*** 05/11/2018 - 17:08:53 ***"
+"- DESCRIZIONE ERRORE: Cast non valido dalla stringa """" al tipo 'Decimal'."
+"- NOME PROCEDURA:    in Microsoft.VisualBasic.CompilerServices.Conversions.ToDecimal(String Value, NumberFormatInfo NumberFormat)
+   in Microsoft.VisualBasic.CompilerServices.Conversions.ToDecimal(String Value)
+   in Hospitality_Solution.frmFatturaElettronica.GeneraFileXML(String nomefile) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 122"
+"
+"
+"*** 05/11/2018 - 17:10:20 ***"
+"- DESCRIZIONE ERRORE: Cast non valido dalla stringa """" al tipo 'Decimal'."
+"- NOME PROCEDURA:    in Microsoft.VisualBasic.CompilerServices.Conversions.ToDecimal(String Value, NumberFormatInfo NumberFormat)
+   in Microsoft.VisualBasic.CompilerServices.Conversions.ToDecimal(String Value)
+   in Hospitality_Solution.frmFatturaElettronica.GeneraFileXML(String nomefile) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 122"
+"
+"
+"*** 05/11/2018 - 17:52:03 ***"
+"- DESCRIZIONE ERRORE: Index non compreso nell'intervallo. Richiesto valore non negativo e minore della dimensione della raccolta.
+Nome parametro: index"
+"- NOME PROCEDURA:    in System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
+   in System.Collections.Generic.List`1.get_Item(Int32 index)
+   in Hospitality_Solution.frmFatturaElettronica.GeneraFileXML(String nomefile) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 190"
+"
+"
+"*** 05/11/2018 - 17:52:17 ***"
+"- DESCRIZIONE ERRORE: Index non compreso nell'intervallo. Richiesto valore non negativo e minore della dimensione della raccolta.
+Nome parametro: index"
+"- NOME PROCEDURA:    in System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
+   in System.Collections.Generic.List`1.get_Item(Int32 index)
+   in Hospitality_Solution.frmFatturaElettronica.GeneraFileXML(String nomefile) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 190"
+"
+"
+"*** 08/11/2018 - 16:22:02 ***"
+"- DESCRIZIONE ERRORE: Index non compreso nell'intervallo. Richiesto valore non negativo e minore della dimensione della raccolta.
+Nome parametro: index"
+"- NOME PROCEDURA:    in System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
+   in System.Collections.Generic.List`1.get_Item(Int32 index)
+   in Hospitality_Solution.frmFatturaElettronica.GeneraFileXML(String nomefile) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 232"
+"
+"
+"*** 08/11/2018 - 16:22:15 ***"
+"- DESCRIZIONE ERRORE: Il file 'D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\bin\Fatture elettroniche\2018\ITDHFG6TDFR00KIU_00001.xml' non è stato trovato."
+"- NOME PROCEDURA:    in System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   in System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   in System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize)
+   in System.Xml.XmlDownloadManager.GetStream(Uri uri, ICredentials credentials, IWebProxy proxy, RequestCachePolicy cachePolicy)
+   in System.Xml.XmlUrlResolver.GetEntity(Uri absoluteUri, String role, Type ofObjectToReturn)
+   in System.Xml.XmlTextReaderImpl.FinishInitUriString()
+   in System.Xml.XmlTextReaderImpl..ctor(String uriStr, XmlReaderSettings settings, XmlParserContext context, XmlResolver uriResolver)
+   in System.Xml.XmlReaderSettings.CreateReader(String inputUri, XmlParserContext inputContext)
+   in System.Xml.XmlReader.Create(String inputUri, XmlReaderSettings settings, XmlParserContext inputContext)
+   in System.Xml.XmlReader.Create(String inputUri, XmlReaderSettings settings)
+   in Hospitality_Solution.frmFatturaElettronica.ConvalidaFileXML(String nomefile) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 81"
+"
+"
+"*** 08/11/2018 - 16:24:17 ***"
+"- DESCRIZIONE ERRORE: Index non compreso nell'intervallo. Richiesto valore non negativo e minore della dimensione della raccolta.
+Nome parametro: index"
+"- NOME PROCEDURA:    in System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
+   in System.Collections.Generic.List`1.get_Item(Int32 index)
+   in Hospitality_Solution.frmFatturaElettronica.GeneraFileXML(String nomefile) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 232"
+"
+"
+"*** 08/11/2018 - 16:30:53 ***"
+"- DESCRIZIONE ERRORE: Index non compreso nell'intervallo. Richiesto valore non negativo e minore della dimensione della raccolta.
+Nome parametro: index"
+"- NOME PROCEDURA:    in System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
+   in System.Collections.Generic.List`1.get_Item(Int32 index)
+   in Hospitality_Solution.frmFatturaElettronica.GeneraFileXML(String nomefile) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 232"
+"
+"
+"*** 08/11/2018 - 16:43:01 ***"
+"- DESCRIZIONE ERRORE: Il file 'D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\bin\Fatture elettroniche\2018\ITSDRF56TGGU999_00001.xml' non è stato trovato."
+"- NOME PROCEDURA:    in System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   in System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   in System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize)
+   in System.Xml.XmlDownloadManager.GetStream(Uri uri, ICredentials credentials, IWebProxy proxy, RequestCachePolicy cachePolicy)
+   in System.Xml.XmlUrlResolver.GetEntity(Uri absoluteUri, String role, Type ofObjectToReturn)
+   in System.Xml.XmlTextReaderImpl.FinishInitUriString()
+   in System.Xml.XmlTextReaderImpl..ctor(String uriStr, XmlReaderSettings settings, XmlParserContext context, XmlResolver uriResolver)
+   in System.Xml.XmlReaderSettings.CreateReader(String inputUri, XmlParserContext inputContext)
+   in System.Xml.XmlReader.Create(String inputUri, XmlReaderSettings settings, XmlParserContext inputContext)
+   in System.Xml.XmlReader.Create(String inputUri, XmlReaderSettings settings)
+   in Hospitality_Solution.frmFatturaElettronica.GeneraFileXML(String nomefile) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 122"
+"
+"
+"*** 08/11/2018 - 16:43:42 ***"
+"- DESCRIZIONE ERRORE: Il file 'D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\bin\Fatture elettroniche\2018\ITSDRF56TGGU999_00001.xml' non è stato trovato."
+"- NOME PROCEDURA:    in System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   in System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   in System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize)
+   in System.Xml.XmlDownloadManager.GetStream(Uri uri, ICredentials credentials, IWebProxy proxy, RequestCachePolicy cachePolicy)
+   in System.Xml.XmlUrlResolver.GetEntity(Uri absoluteUri, String role, Type ofObjectToReturn)
+   in System.Xml.XmlTextReaderImpl.FinishInitUriString()
+   in System.Xml.XmlTextReaderImpl..ctor(String uriStr, XmlReaderSettings settings, XmlParserContext context, XmlResolver uriResolver)
+   in System.Xml.XmlReaderSettings.CreateReader(String inputUri, XmlParserContext inputContext)
+   in System.Xml.XmlReader.Create(String inputUri, XmlReaderSettings settings, XmlParserContext inputContext)
+   in System.Xml.XmlReader.Create(String inputUri, XmlReaderSettings settings)
+   in Hospitality_Solution.frmFatturaElettronica.GeneraFileXML(String nomefile) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 122"
+"
+"
+"*** 08/11/2018 - 17:08:05 ***"
+"- DESCRIZIONE ERRORE: Index non compreso nell'intervallo. Richiesto valore non negativo e minore della dimensione della raccolta.
+Nome parametro: index"
+"- NOME PROCEDURA:    in System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
+   in System.Collections.Generic.List`1.get_Item(Int32 index)
+   in Hospitality_Solution.frmFatturaElettronica.GeneraFileXML(String nomefile) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 234"
+"
+"
+"*** 08/11/2018 - 17:13:56 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.frmFatturaElettronica.GeneraFileXML(String nomefile) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 238"
+"
+"
+"*** 08/11/2018 - 17:18:20 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.frmFatturaElettronica.GeneraFileXML(String nomefile) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 237"
+"
+"
+"*** 08/11/2018 - 17:21:50 ***"
+"- DESCRIZIONE ERRORE: Index non compreso nell'intervallo. Richiesto valore non negativo e minore della dimensione della raccolta.
+Nome parametro: index"
+"- NOME PROCEDURA:    in System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
+   in System.Collections.Generic.List`1.get_Item(Int32 index)
+   in Hospitality_Solution.frmFatturaElettronica.GeneraFileXML(String nomefile) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 245"
+"
+"
+"*** 08/11/2018 - 17:37:14 ***"
+"- DESCRIZIONE ERRORE: Index non compreso nell'intervallo. Richiesto valore non negativo e minore della dimensione della raccolta.
+Nome parametro: index"
+"- NOME PROCEDURA:    in System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
+   in System.Collections.Generic.List`1.get_Item(Int32 index)
+   in Hospitality_Solution.frmFatturaElettronica.GeneraFileXML(String nomefile) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 249"
+"
+"
+"*** 09/11/2018 - 15:45:47 ***"
+"- DESCRIZIONE ERRORE: Index non compreso nell'intervallo. Richiesto valore non negativo e minore della dimensione della raccolta.
+Nome parametro: index"
+"- NOME PROCEDURA:    in System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
+   in System.Collections.Generic.List`1.get_Item(Int32 index)
+   in Hospitality_Solution.frmFatturaElettronica.GeneraFileXML(String nomefile) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 261"
+"
+"
+"*** 09/11/2018 - 17:10:20 ***"
+"- DESCRIZIONE ERRORE: Index non compreso nell'intervallo. Richiesto valore non negativo e minore della dimensione della raccolta.
+Nome parametro: index"
+"- NOME PROCEDURA:    in System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
+   in System.Collections.Generic.List`1.get_Item(Int32 index)
+   in Hospitality_Solution.frmFatturaElettronica.GeneraFileXML(String nomefile) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 385"
+"
+"
+"*** 09/11/2018 - 18:07:33 ***"
+"- DESCRIZIONE ERRORE: Index e length devono fare riferimento a una posizione nella stringa.
+Nome parametro: length"
+"- NOME PROCEDURA:    in System.String.Substring(Int32 startIndex, Int32 length)
+   in Hospitality_Solution.frmFatturaElettronica.GeneraNomeFileXML() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 504"
+"
+"
+"*** 09/11/2018 - 18:07:37 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.frmFatturaElettronica.GeneraFileXML(String nomefile) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 122"
+"
+"
+"*** 10/11/2018 - 17:40:31 ***"
+"- DESCRIZIONE ERRORE: Index e length devono fare riferimento a una posizione nella stringa.
+Nome parametro: length"
+"- NOME PROCEDURA:    in System.String.Substring(Int32 startIndex, Int32 length)
+   in Hospitality_Solution.frmFatturaElettronica.GeneraNomeFileXML() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 992"
+"
+"
+"*** 10/11/2018 - 17:40:38 ***"
+"- DESCRIZIONE ERRORE: Index e length devono fare riferimento a una posizione nella stringa.
+Nome parametro: length"
+"- NOME PROCEDURA:    in System.String.Substring(Int32 startIndex, Int32 length)
+   in Hospitality_Solution.frmFatturaElettronica.GeneraNomeFileXML() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 992"
+"
+"
+"*** 10/11/2018 - 17:40:43 ***"
+"- DESCRIZIONE ERRORE: Index e length devono fare riferimento a una posizione nella stringa.
+Nome parametro: length"
+"- NOME PROCEDURA:    in System.String.Substring(Int32 startIndex, Int32 length)
+   in Hospitality_Solution.frmFatturaElettronica.GeneraNomeFileXML() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 992"
+"
+"
+"*** 10/11/2018 - 17:40:46 ***"
+"- DESCRIZIONE ERRORE: Impossibile trovare una parte del percorso 'D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\bin\Fatture elettroniche\2018\'."
+"- NOME PROCEDURA:    in System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   in System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   in System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize)
+   in System.Xml.XmlDownloadManager.GetStream(Uri uri, ICredentials credentials, IWebProxy proxy, RequestCachePolicy cachePolicy)
+   in System.Xml.XmlUrlResolver.GetEntity(Uri absoluteUri, String role, Type ofObjectToReturn)
+   in System.Xml.XmlTextReaderImpl.FinishInitUriString()
+   in System.Xml.XmlTextReaderImpl..ctor(String uriStr, XmlReaderSettings settings, XmlParserContext context, XmlResolver uriResolver)
+   in System.Xml.XmlReaderSettings.CreateReader(String inputUri, XmlParserContext inputContext)
+   in System.Xml.XmlReader.Create(String inputUri, XmlReaderSettings settings, XmlParserContext inputContext)
+   in System.Xml.XmlReader.Create(String inputUri, XmlReaderSettings settings)
+   in Hospitality_Solution.frmFatturaElettronica.ConvalidaFileXML(String nomefile) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 83"
+"
+"
