@@ -294,3 +294,154 @@ Nome parametro: length"
    in Hospitality_Solution.frmFatturaElettronica.ConvalidaFileXML(String nomefile) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 83"
 "
 "
+"*** 21/11/2018 - 09:28:05 ***"
+"- DESCRIZIONE ERRORE: Il file 'D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\bin\Fatture elettroniche\2018\ITDHFGRTYGGFF_00001.xml' non è stato trovato."
+"- NOME PROCEDURA:    in System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   in System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   in System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize)
+   in System.Xml.XmlDownloadManager.GetStream(Uri uri, ICredentials credentials, IWebProxy proxy, RequestCachePolicy cachePolicy)
+   in System.Xml.XmlUrlResolver.GetEntity(Uri absoluteUri, String role, Type ofObjectToReturn)
+   in System.Xml.XmlTextReaderImpl.FinishInitUriString()
+   in System.Xml.XmlTextReaderImpl..ctor(String uriStr, XmlReaderSettings settings, XmlParserContext context, XmlResolver uriResolver)
+   in System.Xml.XmlReaderSettings.CreateReader(String inputUri, XmlParserContext inputContext)
+   in System.Xml.XmlReader.Create(String inputUri, XmlReaderSettings settings, XmlParserContext inputContext)
+   in System.Xml.XmlReader.Create(String inputUri, XmlReaderSettings settings)
+   in Hospitality_Solution.frmFatturaElettronica.ConvalidaFileXML(String nomefile) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 84"
+"
+"
+"*** 21/11/2018 - 09:28:20 ***"
+"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
+"- NOME PROCEDURA:    in System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   in System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   in System.Convert.ToDecimal(String value)
+   in Hospitality_Solution.frmFatturaElettronica.GeneraFileXML(String nomefile) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 257"
+"
+"
+"*** 21/11/2018 - 09:29:10 ***"
+"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
+"- NOME PROCEDURA:    in System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   in System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   in System.Convert.ToDecimal(String value)
+   in Hospitality_Solution.frmFatturaElettronica.GeneraFileXML(String nomefile) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 257"
+"
+"
+"*** 21/11/2018 - 10:45:56 ***"
+"- DESCRIZIONE ERRORE: Index e length devono fare riferimento a una posizione nella stringa.
+Nome parametro: length"
+"- NOME PROCEDURA:    in System.String.Substring(Int32 startIndex, Int32 length)
+   in Hospitality_Solution.frmFatturaElettronica.GeneraFileXML(String nomefile) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 163"
+"
+"
+"*** 21/11/2018 - 13:03:13 ***"
+"- DESCRIZIONE ERRORE: Index e length devono fare riferimento a una posizione nella stringa.
+Nome parametro: length"
+"- NOME PROCEDURA:    in System.String.Substring(Int32 startIndex, Int32 length)
+   in Hospitality_Solution.frmFatturaElettronica.GeneraNomeFileXML() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 1166"
+"
+"
+"*** 21/11/2018 - 13:03:15 ***"
+"- DESCRIZIONE ERRORE: Impossibile trovare una parte del percorso 'D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\bin\Fatture elettroniche\2018\'."
+"- NOME PROCEDURA:    in System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   in System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   in System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize)
+   in System.Xml.XmlDownloadManager.GetStream(Uri uri, ICredentials credentials, IWebProxy proxy, RequestCachePolicy cachePolicy)
+   in System.Xml.XmlUrlResolver.GetEntity(Uri absoluteUri, String role, Type ofObjectToReturn)
+   in System.Xml.XmlTextReaderImpl.FinishInitUriString()
+   in System.Xml.XmlTextReaderImpl..ctor(String uriStr, XmlReaderSettings settings, XmlParserContext context, XmlResolver uriResolver)
+   in System.Xml.XmlReaderSettings.CreateReader(String inputUri, XmlParserContext inputContext)
+   in System.Xml.XmlReader.Create(String inputUri, XmlReaderSettings settings, XmlParserContext inputContext)
+   in System.Xml.XmlReader.Create(String inputUri, XmlReaderSettings settings)
+   in Hospitality_Solution.frmFatturaElettronica.ConvalidaFileXML(String nomefile) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 84"
+"
+"
+"*** 21/11/2018 - 14:31:31 ***"
+"- DESCRIZIONE ERRORE: Index e length devono fare riferimento a una posizione nella stringa.
+Nome parametro: length"
+"- NOME PROCEDURA:    in System.String.Substring(Int32 startIndex, Int32 length)
+   in Hospitality_Solution.frmFatturaElettronica.GeneraNomeFileXML() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 1169"
+"
+"
+"*** 21/11/2018 - 14:42:24 ***"
+"- DESCRIZIONE ERRORE: Il file 'D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\bin\Fatture elettroniche\2018\ITDHFGFYT677555_00001.txt' esiste già."
+"- NOME PROCEDURA:    in System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   in System.IO.File.InternalCopy(String sourceFileName, String destFileName, Boolean overwrite, Boolean checkHost)
+   in System.IO.File.Copy(String sourceFileName, String destFileName)
+   in Hospitality_Solution.frmFatturaElettronica.eui_cmdSalvaTestoXml_Click(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 1446"
+"
+"
+"*** 21/11/2018 - 15:26:50 ***"
+"- DESCRIZIONE ERRORE: Index e length devono fare riferimento a una posizione nella stringa.
+Nome parametro: length"
+"- NOME PROCEDURA:    in System.String.Substring(Int32 startIndex, Int32 length)
+   in Hospitality_Solution.frmFatturaElettronica.GeneraNomeFileXML() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 1170"
+"
+"
+"*** 21/11/2018 - 15:26:53 ***"
+"- DESCRIZIONE ERRORE: Index e length devono fare riferimento a una posizione nella stringa.
+Nome parametro: length"
+"- NOME PROCEDURA:    in System.String.Substring(Int32 startIndex, Int32 length)
+   in Hospitality_Solution.frmFatturaElettronica.GeneraNomeFileTxt() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 1185"
+"
+"
+"*** 21/11/2018 - 15:26:59 ***"
+"- DESCRIZIONE ERRORE: Index e length devono fare riferimento a una posizione nella stringa.
+Nome parametro: length"
+"- NOME PROCEDURA:    in System.String.Substring(Int32 startIndex, Int32 length)
+   in Hospitality_Solution.frmFatturaElettronica.GeneraNomeFileXML() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 1170"
+"
+"
+"*** 21/11/2018 - 15:27:01 ***"
+"- DESCRIZIONE ERRORE: Index e length devono fare riferimento a una posizione nella stringa.
+Nome parametro: length"
+"- NOME PROCEDURA:    in System.String.Substring(Int32 startIndex, Int32 length)
+   in Hospitality_Solution.frmFatturaElettronica.GeneraNomeFileTxt() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 1185"
+"
+"
+"*** 21/11/2018 - 15:27:04 ***"
+"- DESCRIZIONE ERRORE: Index e length devono fare riferimento a una posizione nella stringa.
+Nome parametro: length"
+"- NOME PROCEDURA:    in System.String.Substring(Int32 startIndex, Int32 length)
+   in Hospitality_Solution.frmFatturaElettronica.GeneraNomeFileXML() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 1170"
+"
+"
+"*** 21/11/2018 - 15:27:13 ***"
+"- DESCRIZIONE ERRORE: Index e length devono fare riferimento a una posizione nella stringa.
+Nome parametro: length"
+"- NOME PROCEDURA:    in System.String.Substring(Int32 startIndex, Int32 length)
+   in Hospitality_Solution.frmFatturaElettronica.GeneraNomeFileTxt() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 1185"
+"
+"
+"*** 21/11/2018 - 15:27:16 ***"
+"- DESCRIZIONE ERRORE: Index e length devono fare riferimento a una posizione nella stringa.
+Nome parametro: length"
+"- NOME PROCEDURA:    in System.String.Substring(Int32 startIndex, Int32 length)
+   in Hospitality_Solution.frmFatturaElettronica.GeneraNomeFileXML() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 1170"
+"
+"
+"*** 21/11/2018 - 15:27:18 ***"
+"- DESCRIZIONE ERRORE: Index e length devono fare riferimento a una posizione nella stringa.
+Nome parametro: length"
+"- NOME PROCEDURA:    in System.String.Substring(Int32 startIndex, Int32 length)
+   in Hospitality_Solution.frmFatturaElettronica.GeneraNomeFileTxt() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 1185"
+"
+"
+"*** 21/11/2018 - 16:41:54 ***"
+"- DESCRIZIONE ERRORE: Impossibile trovare una parte del percorso 'D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\bin\Fatture elettroniche\2018\'."
+"- NOME PROCEDURA:    in System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   in System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   in System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize)
+   in System.Xml.XmlDownloadManager.GetStream(Uri uri, ICredentials credentials, IWebProxy proxy, RequestCachePolicy cachePolicy)
+   in System.Xml.XmlUrlResolver.GetEntity(Uri absoluteUri, String role, Type ofObjectToReturn)
+   in System.Xml.XmlTextReaderImpl.FinishInitUriString()
+   in System.Xml.XmlTextReaderImpl..ctor(String uriStr, XmlReaderSettings settings, XmlParserContext context, XmlResolver uriResolver)
+   in System.Xml.XmlReaderSettings.CreateReader(String inputUri, XmlParserContext inputContext)
+   in System.Xml.XmlReader.Create(String inputUri, XmlReaderSettings settings, XmlParserContext inputContext)
+   in System.Xml.XmlReader.Create(String inputUri, XmlReaderSettings settings)
+   in Hospitality_Solution.frmFatturaElettronica.ConvalidaFileXML(String nomefile) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 85"
+"
+"
+"*** 21/11/2018 - 16:42:16 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.frmFatturaElettronica.GeneraFileXML(String nomefile) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 134"
+"
+"

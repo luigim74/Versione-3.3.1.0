@@ -16,6 +16,7 @@ Imports FatturaElettronica.Validators
 Imports FatturaElettronica.Impostazioni
 Imports System.Xml
 Imports System.IO
+Imports Elegant.Ui
 
 Public Class frmFatturaElettronica
 
@@ -89,12 +90,15 @@ Public Class frmFatturaElettronica
          Dim validator As New FatturaValidator
          Dim risultato As FluentValidation.Results.ValidationResult = validator.Validate(fatturaXlm)
 
+         ' Pulisce la casella di testo.
+         eui_txtConvalida.Text = String.Empty
+
          If risultato.IsValid = True Then
-            eui_txtConvalida.Text = "Documento corretto!"
+            eui_txtConvalida.Text = "Il documento è corretto!"
          Else
             Dim i As Integer
             For Each errore As FluentValidation.Results.ValidationFailure In risultato.Errors
-               eui_txtConvalida.Text = eui_txtConvalida.Text & errore.PropertyName & " " & errore.ErrorMessage & " " & errore.ErrorCode & vbCrLf
+               eui_txtConvalida.Text = eui_txtConvalida.Text & errore.PropertyName & ": " & errore.ErrorMessage & vbCrLf
             Next
          End If
 
@@ -126,69 +130,109 @@ Public Class frmFatturaElettronica
 
 #Region "DATI TRASMISSIONE - OBBLIGATORIO "
          ' OBBLIGATORIO - Sigla della nazione espressa secondo lo standard ISO 3166-1 alpha-2 code.
-         fatturaXlm.Header.DatiTrasmissione.IdTrasmittente.IdPaese = eui_cmbTrasmittenteIdPaese.Text.Substring(0, 2)
+         If eui_cmbTrasmittenteIdPaese.Text <> String.Empty Then
+            fatturaXlm.Header.DatiTrasmissione.IdTrasmittente.IdPaese = eui_cmbTrasmittenteIdPaese.Text.Substring(0, 2)
+         End If
 
          ' OBBLIGATORIO - Formato alfanumerico; lunghezza massima di 28 caratteri.
-         fatturaXlm.Header.DatiTrasmissione.IdTrasmittente.IdCodice = eui_txtTrasmittenteIdCodice.Text
+         If eui_txtTrasmittenteIdCodice.Text <> String.Empty Then
+            fatturaXlm.Header.DatiTrasmissione.IdTrasmittente.IdCodice = eui_txtTrasmittenteIdCodice.Text.ToUpper
+         End If
 
          ' OBBLIGATORIO - Formato alfanumerico; lunghezza massima di 10 caratteri.
-         fatturaXlm.Header.DatiTrasmissione.ProgressivoInvio = eui_txtProgressivoInvio.Text
+         If eui_txtProgressivoInvio.Text <> String.Empty Then
+            fatturaXlm.Header.DatiTrasmissione.ProgressivoInvio = eui_txtProgressivoInvio.Text
+         End If
 
          ' OBBLIGATORIO - Formato alfanumerico; lunghezza di 5 caratteri; i valori ammessi sono i seguenti: 
          ' FPR12 Formato di Trasmissione fattura verso privati.
          ' FPA12 Formato di Trasmissione fattura pubblica amministrazione.
-         fatturaXlm.Header.DatiTrasmissione.FormatoTrasmissione = eui_cmbFormatoTrasmissione.Text
+         If eui_cmbFormatoTrasmissione.Text <> String.Empty Then
+            fatturaXlm.Header.DatiTrasmissione.FormatoTrasmissione = eui_cmbFormatoTrasmissione.Text
+         End If
 
-         ' DA_FARE: Verificare!
          ' OBBLIGATORIO - Formato alfanumerico; lunghezza di 7 caratteri. Se esiste la PEC inserire 0000000.
-         fatturaXlm.Header.DatiTrasmissione.CodiceDestinatario = eui_txtCodiceDestinatario.Text
+         If eui_txtCodiceDestinatario.Text <> String.Empty Then
+            fatturaXlm.Header.DatiTrasmissione.CodiceDestinatario = eui_txtCodiceDestinatario.Text
+         End If
 
          ' FACOLTATIVO - Formato alfanumerico; lunghezza che va da 5 a 12 caratteri.
-         fatturaXlm.Header.DatiTrasmissione.ContattiTrasmittente.Telefono = eui_txtTrasmittenteTelefono.Text
+         If eui_txtTrasmittenteTelefono.Text <> String.Empty Then
+            fatturaXlm.Header.DatiTrasmissione.ContattiTrasmittente.Telefono = eui_txtTrasmittenteTelefono.Text
+         End If
 
          ' FACOLTATIVO - Formato alfanumerico; lunghezza che va da 7 a 256 caratteri.
-         fatturaXlm.Header.DatiTrasmissione.ContattiTrasmittente.Email = eui_txtTrasmittenteEmail.Text
+         If eui_txtTrasmittenteEmail.Text <> String.Empty Then
+            fatturaXlm.Header.DatiTrasmissione.ContattiTrasmittente.Email = eui_txtTrasmittenteEmail.Text
+         End If
 
          ' FACOLTATIVO - Formato alfanumerico; lunghezza che va da 7 a 256 caratteri.
-         fatturaXlm.Header.DatiTrasmissione.PECDestinatario = eui_txtTrasmittentePECDestinatario.Text
+         If eui_txtTrasmittentePECDestinatario.Text <> String.Empty Then
+            fatturaXlm.Header.DatiTrasmissione.PECDestinatario = eui_txtTrasmittentePECDestinatario.Text
+         End If
+
 #End Region
 
 #Region "CEDENTE PRESTATORE - OBBLIGATORIO "
          ' OBBLIGATORIO - Sigla della nazione espressa secondo lo standard ISO 3166-1 alpha-2 code.
-         fatturaXlm.Header.CedentePrestatore.DatiAnagrafici.IdFiscaleIVA.IdPaese = eui_cmbCpIdPaese.Text
+         If eui_cmbCpIdPaese.Text <> String.Empty Then
+            fatturaXlm.Header.CedentePrestatore.DatiAnagrafici.IdFiscaleIVA.IdPaese = eui_cmbCpIdPaese.Text.Substring(0, 2)
+         End If
 
          ' OBBLIGATORIO - Formato alfanumerico; lunghezza massima di 28 caratteri.
-         fatturaXlm.Header.CedentePrestatore.DatiAnagrafici.IdFiscaleIVA.IdCodice = eui_txtCpIdCodice.Text
+         If eui_txtCpIdCodice.Text <> String.Empty Then
+            fatturaXlm.Header.CedentePrestatore.DatiAnagrafici.IdFiscaleIVA.IdCodice = eui_txtCpIdCodice.Text
+         End If
 
          ' FACOLTATIVO - Formato alfanumerico; lunghezza compresa tra 11 e 16 caratteri.
-         fatturaXlm.Header.CedentePrestatore.DatiAnagrafici.CodiceFiscale = eui_txtCpCodiceFiscale.Text
+         If eui_txtCpCodiceFiscale.Text <> String.Empty Then
+            fatturaXlm.Header.CedentePrestatore.DatiAnagrafici.CodiceFiscale = eui_txtCpCodiceFiscale.Text.ToUpper
+         End If
 
          ' OBBLIGATORIO - Formato alfanumerico; lunghezza massima di 80 caratteri. Da valorizzare in alternativa ai campi Nome e Cognome seguenti.
-         fatturaXlm.Header.CedentePrestatore.DatiAnagrafici.Anagrafica.Denominazione = eui_txtCpDenominazione.Text
+         If eui_txtCpDenominazione.Text <> String.Empty Then
+            fatturaXlm.Header.CedentePrestatore.DatiAnagrafici.Anagrafica.Denominazione = eui_txtCpDenominazione.Text
+         End If
 
          ' OBBLIGATORIO - Formato alfanumerico; lunghezza massima di 60 caratteri. Da valorizzare insieme al campo Cognome ed in alternativa al campo Denominazione.
-         fatturaXlm.Header.CedentePrestatore.DatiAnagrafici.Anagrafica.Nome = eui_txtCpNome.Text
+         If eui_txtCpNome.Text <> String.Empty Then
+            fatturaXlm.Header.CedentePrestatore.DatiAnagrafici.Anagrafica.Nome = eui_txtCpNome.Text
+         End If
 
          ' OBBLIGATORIO - Formato alfanumerico; lunghezza massima di 60 caratteri. Da valorizzare insieme al campo Nome ed in alternativa al campo Denominazione.
-         fatturaXlm.Header.CedentePrestatore.DatiAnagrafici.Anagrafica.Cognome = eui_txtCpCognome.Text
+         If eui_txtCpCognome.Text <> String.Empty Then
+            fatturaXlm.Header.CedentePrestatore.DatiAnagrafici.Anagrafica.Cognome = eui_txtCpCognome.Text
+         End If
 
          ' FACOLTATIVO - Formato alfanumerico; lunghezza che va da 2 a 10 caratteri.
-         fatturaXlm.Header.CedentePrestatore.DatiAnagrafici.Anagrafica.Titolo = eui_txtCpTitolo.Text
+         If eui_txtCpTitolo.Text <> String.Empty Then
+            fatturaXlm.Header.CedentePrestatore.DatiAnagrafici.Anagrafica.Titolo = eui_txtCpTitolo.Text
+         End If
 
          ' FACOLTATIVO - Formato alfanumerico; lunghezza che va da 13 a 17 caratteri.
-         fatturaXlm.Header.CedentePrestatore.DatiAnagrafici.Anagrafica.CodEORI = eui_txtCpCodiceEORI.Text
+         If eui_txtCpCodiceEORI.Text <> String.Empty Then
+            fatturaXlm.Header.CedentePrestatore.DatiAnagrafici.Anagrafica.CodEORI = eui_txtCpCodiceEORI.Text
+         End If
 
          ' FACOLTATIVO - Alfanumerico; lunghezza massima di 60 caratteri.
-         fatturaXlm.Header.CedentePrestatore.DatiAnagrafici.AlboProfessionale = eui_txtCpAlboProfessionale.Text
+         If eui_txtCpAlboProfessionale.Text <> String.Empty Then
+            fatturaXlm.Header.CedentePrestatore.DatiAnagrafici.AlboProfessionale = eui_txtCpAlboProfessionale.Text
+         End If
 
          ' FACOLTATIVO - Formato alfanumerico; lunghezza di 2 caratteri.
-         fatturaXlm.Header.CedentePrestatore.DatiAnagrafici.ProvinciaAlbo = eui_cmbCpProvinciaAlbo.Text
+         If eui_cmbCpProvinciaAlbo.Text <> String.Empty Then
+            fatturaXlm.Header.CedentePrestatore.DatiAnagrafici.ProvinciaAlbo = eui_cmbCpProvinciaAlbo.Text.Substring(0, 2)
+         End If
 
          ' FACOLTATIVO - Formato alfanumerico; lunghezza massima di 60 caratteri.
-         fatturaXlm.Header.CedentePrestatore.DatiAnagrafici.NumeroIscrizioneAlbo = eui_txtCpNumeroIscrizioneAlbo.Text
+         If eui_txtCpNumeroIscrizioneAlbo.Text <> String.Empty Then
+            fatturaXlm.Header.CedentePrestatore.DatiAnagrafici.NumeroIscrizioneAlbo = eui_txtCpNumeroIscrizioneAlbo.Text
+         End If
 
-         ' FACOLTATIVO - La data deve essere rappresentata secondo il formato ISO 8601:2004, con la seguente precisione: YYYY-MM-DD.
-         fatturaXlm.Header.CedentePrestatore.DatiAnagrafici.DataIscrizioneAlbo = eui_dtpCpDataIscrizioneAlbo.Value.ToString
+         ' FACOLTATIVO - La data deve essere rappresentata secondo il formato ISO 8601:2004, con la seguente precisione: YYYY-MM-DD. 
+         If eui_dtpCpDataIscrizioneAlbo.Value.ToString <> String.Empty Then
+            fatturaXlm.Header.CedentePrestatore.DatiAnagrafici.DataIscrizioneAlbo = eui_dtpCpDataIscrizioneAlbo.Value
+         End If
 
          ' OBBLIGATORIO - formato alfanumerico; lunghezza di 4 caratteri; i valori ammessi sono i seguenti:
          ' RF01 Ordinario;
@@ -209,213 +253,344 @@ Public Class frmFatturaElettronica
          ' RF17 IVA per cassa (art. 32-bis, D.L. 83/2012);
          ' RF18 Altro;
          ' RF19 Forfettario(art.1, c. 54-89, L. 190/2014)
-         fatturaXlm.Header.CedentePrestatore.DatiAnagrafici.RegimeFiscale = eui_cmbCpRegimeFiscale.Text
+         If eui_cmbCpRegimeFiscale.Text <> String.Empty Then
+            fatturaXlm.Header.CedentePrestatore.DatiAnagrafici.RegimeFiscale = eui_cmbCpRegimeFiscale.Text.Substring(0, 4)
+         End If
 
          ' OBBLIGATORIO - formato alfanumerico; lunghezza massima di 60 caratteri.
-         fatturaXlm.Header.CedentePrestatore.Sede.Indirizzo = eui_txtCpSedeIndirizzo.Text
+         If eui_txtCpSedeIndirizzo.Text <> String.Empty Then
+            fatturaXlm.Header.CedentePrestatore.Sede.Indirizzo = eui_txtCpSedeIndirizzo.Text
+         End If
 
          ' FACOLTATIVO - formato alfanumerico; lunghezza massima di 8 caratteri.
-         fatturaXlm.Header.CedentePrestatore.Sede.NumeroCivico = eui_txtCpSedeNumeroCivico.Text
+         If eui_txtCpSedeNumeroCivico.Text <> String.Empty Then
+            fatturaXlm.Header.CedentePrestatore.Sede.NumeroCivico = eui_txtCpSedeNumeroCivico.Text
+         End If
 
          ' OBBLIGATORIO - formato numerico; lunghezza di 5 caratteri.
-         fatturaXlm.Header.CedentePrestatore.Sede.CAP = eui_txtCpSedeCAP.Text
+         If eui_txtCpSedeCAP.Text <> String.Empty Then
+            fatturaXlm.Header.CedentePrestatore.Sede.CAP = eui_txtCpSedeCAP.Text
+         End If
 
          ' OBBLIGATORIO - formato alfanumerico; lunghezza massima di 60 caratteri.
-         fatturaXlm.Header.CedentePrestatore.Sede.Comune = eui_txtCpSedeComune.Text
+         If eui_txtCpSedeComune.Text <> String.Empty Then
+            fatturaXlm.Header.CedentePrestatore.Sede.Comune = eui_txtCpSedeComune.Text
+         End If
 
          ' FACOLTATIVO - formato alfanumerico; lunghezza di 2 caratteri.
-         fatturaXlm.Header.CedentePrestatore.Sede.Provincia = eui_cmbCpSedeProvincia.Text
+         If eui_cmbCpSedeProvincia.Text <> String.Empty Then
+            fatturaXlm.Header.CedentePrestatore.Sede.Provincia = eui_cmbCpSedeProvincia.Text.Substring(0, 2)
+         End If
 
          ' OBBLIGATORIO - sigla della nazione espressa secondo lo standard ISO 3166-1 alpha-2 code.
-         fatturaXlm.Header.CedentePrestatore.Sede.Nazione = eui_cmbCpSedeNazione.Text
+         If eui_cmbCpSedeNazione.Text <> String.Empty Then
+            fatturaXlm.Header.CedentePrestatore.Sede.Nazione = eui_cmbCpSedeNazione.Text.Substring(0, 2)
+         End If
 
          ' OBBLIGATORIO - formato alfanumerico; lunghezza massima di 60 caratteri.
-         fatturaXlm.Header.CedentePrestatore.StabileOrganizzazione.Indirizzo = eui_txtCpStabileOrgIndirizzo.Text
+         If eui_txtCpStabileOrgIndirizzo.Text <> String.Empty Then
+            fatturaXlm.Header.CedentePrestatore.StabileOrganizzazione.Indirizzo = eui_txtCpStabileOrgIndirizzo.Text
+         End If
 
          ' FACOLTATIVO - formato alfanumerico; lunghezza massima di 8 caratteri.
-         fatturaXlm.Header.CedentePrestatore.StabileOrganizzazione.NumeroCivico = eui_txtCpStabileOrgNumeroCivico.Text
+         If eui_txtCpStabileOrgNumeroCivico.Text <> String.Empty Then
+            fatturaXlm.Header.CedentePrestatore.StabileOrganizzazione.NumeroCivico = eui_txtCpStabileOrgNumeroCivico.Text
+         End If
 
          ' OBBLIGATORIO - formato numerico; lunghezza di 5 caratteri.
-         fatturaXlm.Header.CedentePrestatore.StabileOrganizzazione.CAP = eui_txtCpStabileOrgCAP.Text
+         If eui_txtCpStabileOrgCAP.Text <> String.Empty Then
+            fatturaXlm.Header.CedentePrestatore.StabileOrganizzazione.CAP = eui_txtCpStabileOrgCAP.Text
+         End If
 
          ' OBBLIGATORIO - formato alfanumerico; lunghezza massima di 60 caratteri.
-         fatturaXlm.Header.CedentePrestatore.StabileOrganizzazione.Comune = eui_txtCpStabileOrgComune.Text
+         If eui_txtCpStabileOrgComune.Text <> String.Empty Then
+            fatturaXlm.Header.CedentePrestatore.StabileOrganizzazione.Comune = eui_txtCpStabileOrgComune.Text
+         End If
 
          ' FACOLTATIVO - formato alfanumerico; lunghezza di 2 caratteri.
-         fatturaXlm.Header.CedentePrestatore.StabileOrganizzazione.Provincia = eui_cmbCpStabileOrgProvincia.Text
+         If eui_cmbCpStabileOrgProvincia.Text <> String.Empty Then
+            fatturaXlm.Header.CedentePrestatore.StabileOrganizzazione.Provincia = eui_cmbCpStabileOrgProvincia.Text.Substring(0, 2)
+         End If
 
          ' OBBLIGATORIO - sigla della nazione espressa secondo lo standard ISO 3166-1 alpha-2 code.
-         fatturaXlm.Header.CedentePrestatore.StabileOrganizzazione.Nazione = eui_cmbCpStabileOrgNazione.Text
+         If eui_cmbCpStabileOrgNazione.Text <> String.Empty Then
+            fatturaXlm.Header.CedentePrestatore.StabileOrganizzazione.Nazione = eui_cmbCpStabileOrgNazione.Text.Substring(0, 2)
+         End If
 
          ' OBBLIGATORIO - formato alfanumerico; lunghezza di 2 caratteri.
-         fatturaXlm.Header.CedentePrestatore.IscrizioneREA.Ufficio = eui_cmbCpUfficioREA.Text
+         If eui_cmbCpUfficioREA.Text <> String.Empty Then
+            fatturaXlm.Header.CedentePrestatore.IscrizioneREA.Ufficio = eui_cmbCpUfficioREA.Text.Substring(0, 2)
+         End If
 
          ' OBBLIGATORIO - formato alfanumerico; lunghezza massima di 20 caratteri.
-         fatturaXlm.Header.CedentePrestatore.IscrizioneREA.NumeroREA = eui_txtCpNumeroREA.Text
+         If eui_txtCpNumeroREA.Text <> String.Empty Then
+            fatturaXlm.Header.CedentePrestatore.IscrizioneREA.NumeroREA = eui_txtCpNumeroREA.Text
+         End If
 
          ' FACOLTATIVO - formato numerico nel quale i decimali vanno separati dall'intero con il carattere '.' (punto). La sua lunghezza va da 4 a 15 caratteri.
-         fatturaXlm.Header.CedentePrestatore.IscrizioneREA.CapitaleSociale = Convert.ToDecimal(eui_txtCpCapitaleSocialeREA.Text)
+         If eui_txtCpCapitaleSocialeREA.Text <> String.Empty Then
+            fatturaXlm.Header.CedentePrestatore.IscrizioneREA.CapitaleSociale = Convert.ToDecimal(eui_txtCpCapitaleSocialeREA.Text)
+         End If
 
          ' FACOLTATIVO - formato alfanumerico; lunghezza di 2 caratteri; i valori ammessi sono i seguenti:
          ' SU la società è a socio unico.
          ' SM la società NON è a socio unico.
-         fatturaXlm.Header.CedentePrestatore.IscrizioneREA.SocioUnico = eui_cmbCpSocioUnicoREA.Text
+         If eui_cmbCpSocioUnicoREA.Text <> String.Empty Then
+            fatturaXlm.Header.CedentePrestatore.IscrizioneREA.SocioUnico = eui_cmbCpSocioUnicoREA.Text.Substring(0, 2)
+         End If
 
          ' OBBLIGATORIO - formato alfanumerico; lunghezza di 2 caratteri; i valori ammessi sono i seguenti:
          ' LS la società è in stato di liquidazione.
          ' LN la società NON è in stato di liquidazione.
-         fatturaXlm.Header.CedentePrestatore.IscrizioneREA.StatoLiquidazione = eui_cmbCpStatoLiquidazioneREA.Text
+         If eui_cmbCpStatoLiquidazioneREA.Text <> String.Empty Then
+            fatturaXlm.Header.CedentePrestatore.IscrizioneREA.StatoLiquidazione = eui_cmbCpStatoLiquidazioneREA.Text.Substring(0, 2)
+         End If
 
          ' FACOLTATIVO - formato alfanumerico; lunghezza che va da 5 a 12 caratteri.
-         fatturaXlm.Header.CedentePrestatore.Contatti.Telefono = eui_txtCpTelefono.Text
+         If eui_txtCpTelefono.Text <> String.Empty Then
+            fatturaXlm.Header.CedentePrestatore.Contatti.Telefono = eui_txtCpTelefono.Text
+         End If
 
          ' FACOLTATIVO - formato alfanumerico; lunghezza che va da 5 a 12 caratteri.
-         fatturaXlm.Header.CedentePrestatore.Contatti.Fax = eui_txtCpFax.Text
+         If eui_txtCpFax.Text <> String.Empty Then
+            fatturaXlm.Header.CedentePrestatore.Contatti.Fax = eui_txtCpFax.Text
+         End If
 
          ' FACOLTATIVO - formato alfanumerico; lunghezza che va da 7 a 256 caratteri.
-         fatturaXlm.Header.CedentePrestatore.Contatti.Email = eui_txtCpEmail.Text
+         If eui_txtCpEmail.Text <> String.Empty Then
+            fatturaXlm.Header.CedentePrestatore.Contatti.Email = eui_txtCpEmail.Text
+         End If
 
          ' FACOLTATIVO - formato alfanumerico; lunghezza massima di 20 caratteri.
-         fatturaXlm.Header.CedentePrestatore.RiferimentoAmministrazione = eui_txtCpRifAmministrazione.Text
+         If eui_txtCpRifAmministrazione.Text <> String.Empty Then
+            fatturaXlm.Header.CedentePrestatore.RiferimentoAmministrazione = eui_txtCpRifAmministrazione.Text
+         End If
 #End Region
 
 #Region "RAPPRESENTANTE FISCALE - FACOLTATIVO "
          ' OBBLIGATORIO - Sigla della nazione espressa secondo lo standard ISO 3166-1 alpha-2 code.
-         fatturaXlm.Header.Rappresentante.DatiAnagrafici.IdFiscaleIVA.IdPaese = eui_cmbRfCpIdPaese.Text
+         If eui_cmbRfCpIdPaese.Text <> String.Empty Then
+            fatturaXlm.Header.Rappresentante.DatiAnagrafici.IdFiscaleIVA.IdPaese = eui_cmbRfCpIdPaese.Text.Substring(0, 2)
+         End If
 
          ' OBBLIGATORIO - Formato alfanumerico; lunghezza massima di 28 caratteri.
-         fatturaXlm.Header.Rappresentante.DatiAnagrafici.IdFiscaleIVA.IdCodice = eui_txtRfCpIdCodice.Text
+         If eui_txtRfCpIdCodice.Text <> String.Empty Then
+            fatturaXlm.Header.Rappresentante.DatiAnagrafici.IdFiscaleIVA.IdCodice = eui_txtRfCpIdCodice.Text
+         End If
 
          ' FACOLTATIVO - Formato alfanumerico; lunghezza compresa tra 11 e 16 caratteri.
-         fatturaXlm.Header.Rappresentante.DatiAnagrafici.CodiceFiscale = eui_txtRfCpCodiceFiscale.Text
+         If eui_txtRfCpCodiceFiscale.Text <> String.Empty Then
+            fatturaXlm.Header.Rappresentante.DatiAnagrafici.CodiceFiscale = eui_txtRfCpCodiceFiscale.Text.ToUpper
+         End If
 
          ' OBBLIGATORIO - Formato alfanumerico; lunghezza massima di 80 caratteri. Da valorizzare in alternativa ai campi Nome e Cognome seguenti.
-         fatturaXlm.Header.Rappresentante.DatiAnagrafici.Anagrafica.Denominazione = eui_txtRfCpDenominazione.Text
+         If eui_txtRfCpDenominazione.Text <> String.Empty Then
+            fatturaXlm.Header.Rappresentante.DatiAnagrafici.Anagrafica.Denominazione = eui_txtRfCpDenominazione.Text
+         End If
 
          ' OBBLIGATORIO - Formato alfanumerico; lunghezza massima di 60 caratteri. Da valorizzare insieme al campo Cognome ed in alternativa al campo Denominazione.
-         fatturaXlm.Header.Rappresentante.DatiAnagrafici.Anagrafica.Nome = eui_txtRfCpNome.Text
+         If eui_txtRfCpNome.Text <> String.Empty Then
+            fatturaXlm.Header.Rappresentante.DatiAnagrafici.Anagrafica.Nome = eui_txtRfCpNome.Text
+         End If
 
          ' OBBLIGATORIO - Formato alfanumerico; lunghezza massima di 60 caratteri. Da valorizzare insieme al campo Nome ed in alternativa al campo Denominazione.
-         fatturaXlm.Header.Rappresentante.DatiAnagrafici.Anagrafica.Cognome = eui_txtRfCpCognome.Text
+         If eui_txtRfCpCognome.Text <> String.Empty Then
+            fatturaXlm.Header.Rappresentante.DatiAnagrafici.Anagrafica.Cognome = eui_txtRfCpCognome.Text
+         End If
 
          ' FACOLTATIVO - Formato alfanumerico; lunghezza che va da 2 a 10 caratteri.
-         fatturaXlm.Header.Rappresentante.DatiAnagrafici.Anagrafica.Titolo = eui_txtRfCpTitolo.Text
+         If eui_txtRfCpTitolo.Text <> String.Empty Then
+            fatturaXlm.Header.Rappresentante.DatiAnagrafici.Anagrafica.Titolo = eui_txtRfCpTitolo.Text
+         End If
 
          ' FACOLTATIVO - Formato alfanumerico; lunghezza che va da 13 a 17 caratteri.
-         fatturaXlm.Header.Rappresentante.DatiAnagrafici.Anagrafica.CodEORI = eui_txtRfCpCodiceEORI.Text
+         If eui_txtRfCpCodiceEORI.Text <> String.Empty Then
+            fatturaXlm.Header.Rappresentante.DatiAnagrafici.Anagrafica.CodEORI = eui_txtRfCpCodiceEORI.Text
+         End If
 #End Region
 
 #Region "CESSIONARIO COMMITTENTE - OBBLIGATORIO "
          ' OBBLIGATORIO - Sigla della nazione espressa secondo lo standard ISO 3166-1 alpha-2 code.
-         fatturaXlm.Header.CessionarioCommittente.DatiAnagrafici.IdFiscaleIVA.IdPaese = eui_cmbCcIdPaese.Text
+         If eui_cmbCcIdPaese.Text <> String.Empty Then
+            fatturaXlm.Header.CessionarioCommittente.DatiAnagrafici.IdFiscaleIVA.IdPaese = eui_cmbCcIdPaese.Text.Substring(0, 2)
+         End If
 
          ' OBBLIGATORIO - Formato alfanumerico; lunghezza massima di 28 caratteri.
-         fatturaXlm.Header.CessionarioCommittente.DatiAnagrafici.IdFiscaleIVA.IdCodice = eui_txtCcIdCodice.Text
+         If eui_txtCcIdCodice.Text <> String.Empty Then
+            fatturaXlm.Header.CessionarioCommittente.DatiAnagrafici.IdFiscaleIVA.IdCodice = eui_txtCcIdCodice.Text
+         End If
 
          ' FACOLTATIVO - Formato alfanumerico; lunghezza compresa tra 11 e 16 caratteri.
-         fatturaXlm.Header.CessionarioCommittente.DatiAnagrafici.CodiceFiscale = eui_txtCcCodiceFiscale.Text
+         If eui_txtCcCodiceFiscale.Text <> String.Empty Then
+            fatturaXlm.Header.CessionarioCommittente.DatiAnagrafici.CodiceFiscale = eui_txtCcCodiceFiscale.Text.ToUpper
+         End If
 
          ' OBBLIGATORIO - Formato alfanumerico; lunghezza massima di 80 caratteri. Da valorizzare in alternativa ai campi Nome e Cognome seguenti.
-         fatturaXlm.Header.CessionarioCommittente.DatiAnagrafici.Anagrafica.Denominazione = eui_txtCcDenominazione.Text
+         If eui_txtCcDenominazione.Text <> String.Empty Then
+            fatturaXlm.Header.CessionarioCommittente.DatiAnagrafici.Anagrafica.Denominazione = eui_txtCcDenominazione.Text
+         End If
 
          ' OBBLIGATORIO - Formato alfanumerico; lunghezza massima di 60 caratteri. Da valorizzare insieme al campo Cognome ed in alternativa al campo Denominazione.
-         fatturaXlm.Header.CessionarioCommittente.DatiAnagrafici.Anagrafica.Nome = eui_txtCcNome.Text
+         If eui_txtCcNome.Text <> String.Empty Then
+            fatturaXlm.Header.CessionarioCommittente.DatiAnagrafici.Anagrafica.Nome = eui_txtCcNome.Text
+         End If
 
          ' OBBLIGATORIO - Formato alfanumerico; lunghezza massima di 60 caratteri. Da valorizzare insieme al campo Nome ed in alternativa al campo Denominazione.
-         fatturaXlm.Header.CessionarioCommittente.DatiAnagrafici.Anagrafica.Cognome = eui_txtCcCognome.Text
+         If eui_txtCcCognome.Text <> String.Empty Then
+            fatturaXlm.Header.CessionarioCommittente.DatiAnagrafici.Anagrafica.Cognome = eui_txtCcCognome.Text
+         End If
 
          ' FACOLTATIVO - Formato alfanumerico; lunghezza che va da 2 a 10 caratteri.
-         fatturaXlm.Header.CessionarioCommittente.DatiAnagrafici.Anagrafica.Titolo = eui_txtCcTitolo.Text
+         If eui_txtCcTitolo.Text <> String.Empty Then
+            fatturaXlm.Header.CessionarioCommittente.DatiAnagrafici.Anagrafica.Titolo = eui_txtCcTitolo.Text
+         End If
 
          ' FACOLTATIVO - Formato alfanumerico; lunghezza che va da 13 a 17 caratteri.
-         fatturaXlm.Header.CessionarioCommittente.DatiAnagrafici.Anagrafica.CodEORI = eui_txtCcCodiceEORI.Text
+         If eui_txtCcCodiceEORI.Text <> String.Empty Then
+            fatturaXlm.Header.CessionarioCommittente.DatiAnagrafici.Anagrafica.CodEORI = eui_txtCcCodiceEORI.Text
+         End If
 
          ' OBBLIGATORIO - formato alfanumerico; lunghezza massima di 60 caratteri.
-         fatturaXlm.Header.CessionarioCommittente.Sede.Indirizzo = eui_txtCcSedeIndirizzo.Text
+         If eui_txtCcSedeIndirizzo.Text <> String.Empty Then
+            fatturaXlm.Header.CessionarioCommittente.Sede.Indirizzo = eui_txtCcSedeIndirizzo.Text
+         End If
 
          ' FACOLTATIVO - formato alfanumerico; lunghezza massima di 8 caratteri.
-         fatturaXlm.Header.CessionarioCommittente.Sede.NumeroCivico = eui_txtCcSedeNumeroCivico.Text
+         If eui_txtCcSedeNumeroCivico.Text <> String.Empty Then
+            fatturaXlm.Header.CessionarioCommittente.Sede.NumeroCivico = eui_txtCcSedeNumeroCivico.Text
+         End If
 
          ' OBBLIGATORIO - formato numerico; lunghezza di 5 caratteri.
-         fatturaXlm.Header.CessionarioCommittente.Sede.CAP = eui_txtCcSedeCAP.Text
+         If eui_txtCcSedeCAP.Text <> String.Empty Then
+            fatturaXlm.Header.CessionarioCommittente.Sede.CAP = eui_txtCcSedeCAP.Text
+         End If
 
          ' OBBLIGATORIO - formato alfanumerico; lunghezza massima di 60 caratteri.
-         fatturaXlm.Header.CessionarioCommittente.Sede.Comune = eui_txtCcSedeComune.Text
+         If eui_txtCcSedeComune.Text <> String.Empty Then
+            fatturaXlm.Header.CessionarioCommittente.Sede.Comune = eui_txtCcSedeComune.Text
+         End If
 
          ' FACOLTATIVO - formato alfanumerico; lunghezza di 2 caratteri.
-         fatturaXlm.Header.CessionarioCommittente.Sede.Provincia = eui_cmbCcSedeProvincia.Text
+         If eui_cmbCcSedeProvincia.Text <> String.Empty Then
+            fatturaXlm.Header.CessionarioCommittente.Sede.Provincia = eui_cmbCcSedeProvincia.Text.Substring(0, 2)
+         End If
 
          ' OBBLIGATORIO - sigla della nazione espressa secondo lo standard ISO 3166-1 alpha-2 code.
-         fatturaXlm.Header.CessionarioCommittente.Sede.Nazione = eui_cmbCcSedeNazione.Text
+         If eui_cmbCcSedeNazione.Text <> String.Empty Then
+            fatturaXlm.Header.CessionarioCommittente.Sede.Nazione = eui_cmbCcSedeNazione.Text.Substring(0, 2)
+         End If
 
          ' OBBLIGATORIO - formato alfanumerico; lunghezza massima di 60 caratteri.
-         fatturaXlm.Header.CessionarioCommittente.StabileOrganizzazione.Indirizzo = eui_txtCcStabileOrgIndirizzo.Text
+         If eui_txtCcStabileOrgIndirizzo.Text <> String.Empty Then
+            fatturaXlm.Header.CessionarioCommittente.StabileOrganizzazione.Indirizzo = eui_txtCcStabileOrgIndirizzo.Text
+         End If
 
          ' FACOLTATIVO - formato alfanumerico; lunghezza massima di 8 caratteri.
-         fatturaXlm.Header.CessionarioCommittente.StabileOrganizzazione.NumeroCivico = eui_txtCcStabileOrgNumeroCivico.Text
+         If eui_txtCcStabileOrgNumeroCivico.Text <> String.Empty Then
+            fatturaXlm.Header.CessionarioCommittente.StabileOrganizzazione.NumeroCivico = eui_txtCcStabileOrgNumeroCivico.Text
+         End If
 
          ' OBBLIGATORIO - formato numerico; lunghezza di 5 caratteri.
-         fatturaXlm.Header.CessionarioCommittente.StabileOrganizzazione.CAP = eui_txtCcStabileOrgCAP.Text
+         If eui_txtCcStabileOrgCAP.Text <> String.Empty Then
+            fatturaXlm.Header.CessionarioCommittente.StabileOrganizzazione.CAP = eui_txtCcStabileOrgCAP.Text
+         End If
 
          ' OBBLIGATORIO - formato alfanumerico; lunghezza massima di 60 caratteri.
-         fatturaXlm.Header.CessionarioCommittente.StabileOrganizzazione.Comune = eui_txtCcStabileOrgComune.Text
+         If eui_txtCcStabileOrgComune.Text <> String.Empty Then
+            fatturaXlm.Header.CessionarioCommittente.StabileOrganizzazione.Comune = eui_txtCcStabileOrgComune.Text
+         End If
 
          ' FACOLTATIVO - formato alfanumerico; lunghezza di 2 caratteri.
-         fatturaXlm.Header.CessionarioCommittente.StabileOrganizzazione.Provincia = eui_cmbCcStabileOrgProvincia.Text
+         If eui_cmbCcStabileOrgProvincia.Text <> String.Empty Then
+            fatturaXlm.Header.CessionarioCommittente.StabileOrganizzazione.Provincia = eui_cmbCcStabileOrgProvincia.Text.Substring(0, 2)
+         End If
 
          ' OBBLIGATORIO - sigla della nazione espressa secondo lo standard ISO 3166-1 alpha-2 code.
-         fatturaXlm.Header.CessionarioCommittente.StabileOrganizzazione.Nazione = eui_cmbCcStabileOrgNazione.Text
+         If eui_cmbCcStabileOrgNazione.Text <> String.Empty Then
+            fatturaXlm.Header.CessionarioCommittente.StabileOrganizzazione.Nazione = eui_cmbCcStabileOrgNazione.Text.Substring(0, 2)
+         End If
 
          ' OBBLIGATORIO - Sigla della nazione espressa secondo lo standard ISO 3166-1 alpha-2 code.
-         fatturaXlm.Header.CessionarioCommittente.RappresentanteFiscale.IdFiscaleIVA.IdPaese = eui_cmbCcRfIdPaese.Text
+         If eui_cmbCcRfIdPaese.Text <> String.Empty Then
+            fatturaXlm.Header.CessionarioCommittente.RappresentanteFiscale.IdFiscaleIVA.IdPaese = eui_cmbCcRfIdPaese.Text.Substring(0, 2)
+         End If
 
          ' OBBLIGATORIO - Formato alfanumerico; lunghezza massima di 28 caratteri.
-         fatturaXlm.Header.CessionarioCommittente.RappresentanteFiscale.IdFiscaleIVA.IdCodice = eui_txtCcRfIdCodice.Text
+         If eui_txtCcRfIdCodice.Text <> String.Empty Then
+            fatturaXlm.Header.CessionarioCommittente.RappresentanteFiscale.IdFiscaleIVA.IdCodice = eui_txtCcRfIdCodice.Text
+         End If
 
          ' OBBLIGATORIO - formato alfanumerico; lunghezza massima di 80 caratteri. Da valorizzare in alternativa ai campi Nome e Cognome seguenti.
-         fatturaXlm.Header.CessionarioCommittente.RappresentanteFiscale.Denominazione = eui_txtCcRfDenominazione.Text
+         If eui_txtCcRfDenominazione.Text <> String.Empty Then
+            fatturaXlm.Header.CessionarioCommittente.RappresentanteFiscale.Denominazione = eui_txtCcRfDenominazione.Text
+         End If
 
          ' OBBLIGATORIO - formato alfanumerico; lunghezza massima di 60 caratteri. Da valorizzare insieme al campo Cognome ed in alternativa al campo Denominazione.
-         fatturaXlm.Header.CessionarioCommittente.RappresentanteFiscale.Nome = eui_txtCcRfNome.Text
+         If eui_txtCcRfNome.Text <> String.Empty Then
+            fatturaXlm.Header.CessionarioCommittente.RappresentanteFiscale.Nome = eui_txtCcRfNome.Text
+         End If
 
          ' OBBLIGATORIO - formato alfanumerico; lunghezza massima di 60 caratteri. Da valorizzare insieme al campo Nome ed in alternativa al campo Denominazione.
-         fatturaXlm.Header.CessionarioCommittente.RappresentanteFiscale.Cognome = eui_txtCcRfCognome.Text
+         If eui_txtCcRfCognome.Text <> String.Empty Then
+            fatturaXlm.Header.CessionarioCommittente.RappresentanteFiscale.Cognome = eui_txtCcRfCognome.Text
+         End If
 #End Region
 
 #Region "TERZO INTERMEDIARIO O SOGGETTO EMITTENTE - FACOLTATIVO "
          ' OBBLIGATORIO - Sigla della nazione espressa secondo lo standard ISO 3166-1 alpha-2 code.
-         fatturaXlm.Header.TerzoIntermediarioOSoggettoEmittente.DatiAnagrafici.IdFiscaleIVA.IdPaese = eui_cmbTiSeIdPaese.Text
+         If eui_cmbTiSeIdPaese.Text <> String.Empty Then
+            fatturaXlm.Header.TerzoIntermediarioOSoggettoEmittente.DatiAnagrafici.IdFiscaleIVA.IdPaese = eui_cmbTiSeIdPaese.Text.Substring(0, 2)
+         End If
 
          ' OBBLIGATORIO - Formato alfanumerico; lunghezza massima di 28 caratteri.
-         fatturaXlm.Header.TerzoIntermediarioOSoggettoEmittente.DatiAnagrafici.IdFiscaleIVA.IdCodice = eui_txtTiSeIdCodice.Text
+         If eui_txtTiSeIdCodice.Text <> String.Empty Then
+            fatturaXlm.Header.TerzoIntermediarioOSoggettoEmittente.DatiAnagrafici.IdFiscaleIVA.IdCodice = eui_txtTiSeIdCodice.Text
+         End If
 
          ' FACOLTATIVO - Formato alfanumerico; lunghezza compresa tra 11 e 16 caratteri.
-         fatturaXlm.Header.TerzoIntermediarioOSoggettoEmittente.DatiAnagrafici.CodiceFiscale = eui_txtTiSeCodiceFiscale.Text
+         If eui_txtTiSeCodiceFiscale.Text <> String.Empty Then
+            fatturaXlm.Header.TerzoIntermediarioOSoggettoEmittente.DatiAnagrafici.CodiceFiscale = eui_txtTiSeCodiceFiscale.Text.ToUpper
+         End If
 
          ' OBBLIGATORIO - formato alfanumerico; lunghezza massima di 80 caratteri. Da valorizzare in alternativa ai campi Nome e Cognome seguenti.
-         fatturaXlm.Header.TerzoIntermediarioOSoggettoEmittente.DatiAnagrafici.Anagrafica.Denominazione = eui_txtTiSeDenominazione.Text
+         If eui_txtTiSeDenominazione.Text <> String.Empty Then
+            fatturaXlm.Header.TerzoIntermediarioOSoggettoEmittente.DatiAnagrafici.Anagrafica.Denominazione = eui_txtTiSeDenominazione.Text
+         End If
 
          ' OBBLIGATORIO - formato alfanumerico; lunghezza massima di 60 caratteri. Da valorizzare insieme al campo Cognome ed in alternativa al campo Denominazione.
-         fatturaXlm.Header.TerzoIntermediarioOSoggettoEmittente.DatiAnagrafici.Anagrafica.Nome = eui_txtTiSeNome.Text
+         If eui_txtTiSeNome.Text <> String.Empty Then
+            fatturaXlm.Header.TerzoIntermediarioOSoggettoEmittente.DatiAnagrafici.Anagrafica.Nome = eui_txtTiSeNome.Text
+         End If
 
          ' OBBLIGATORIO - formato alfanumerico; lunghezza massima di 60 caratteri. Da valorizzare insieme al campo Nome ed in alternativa al campo Denominazione.
-         fatturaXlm.Header.TerzoIntermediarioOSoggettoEmittente.DatiAnagrafici.Anagrafica.Cognome = eui_txtTiSeCognome.Text
+         If eui_txtTiSeCognome.Text <> String.Empty Then
+            fatturaXlm.Header.TerzoIntermediarioOSoggettoEmittente.DatiAnagrafici.Anagrafica.Cognome = eui_txtTiSeCognome.Text
+         End If
 
          ' FACOLTATIVO - Formato alfanumerico; lunghezza che va da 2 a 10 caratteri.
-         fatturaXlm.Header.TerzoIntermediarioOSoggettoEmittente.DatiAnagrafici.Anagrafica.Titolo = eui_txtTiSeTitolo.Text
+         If eui_txtTiSeTitolo.Text <> String.Empty Then
+            fatturaXlm.Header.TerzoIntermediarioOSoggettoEmittente.DatiAnagrafici.Anagrafica.Titolo = eui_txtTiSeTitolo.Text
+         End If
 
          ' FACOLTATIVO - Formato alfanumerico; lunghezza che va da 13 a 17 caratteri.
-         fatturaXlm.Header.TerzoIntermediarioOSoggettoEmittente.DatiAnagrafici.Anagrafica.CodEORI = eui_txtTiSeCodiceEORI.Text
+         If eui_txtTiSeCodiceEORI.Text <> String.Empty Then
+            fatturaXlm.Header.TerzoIntermediarioOSoggettoEmittente.DatiAnagrafici.Anagrafica.CodEORI = eui_txtTiSeCodiceEORI.Text
+         End If
 #End Region
 
 #Region "SOGGETTO EMITTENTE - FACOLTATIVO "
          ' FACOLTATIVO -  - formato alfanumerico; lunghezza di 2 caratteri; i valori ammessi sono i seguenti:
          ' CC cessionario / committente.
          ' TZ soggetto terzo.
-         fatturaXlm.Header.SoggettoEmittente = eui_cmbSoggettoEmittente.Text
+         If eui_cmbSoggettoEmittente.Text <> String.Empty Then
+            fatturaXlm.Header.SoggettoEmittente = eui_cmbSoggettoEmittente.Text.Substring(0, 2)
+         End If
+
 #End Region
 
 #End Region
+
+         GoTo SALTA
 
 #Region "FATTURA ELETTRONICA BODY - OBBLIGATORIO "
 
@@ -945,6 +1120,8 @@ Public Class frmFatturaElettronica
 
 #End Region
 
+SALTA:
+
 #Region "SCRITTURA DEL FILE XML "
          ' Serializzazione XML
          Dim settings As New XmlWriterSettings()
@@ -990,9 +1167,36 @@ Public Class frmFatturaElettronica
 
    Private Function GeneraNomeFileXML() As String
       Try
-         Dim nomefileXML As String = eui_cmbTrasmittenteIdPaese.Text.Substring(0, 2) & eui_txtTrasmittenteIdCodice.Text & "_" & LeggiProgressivoFileXML() & ".xml"
+         Dim nomefileXML As String
+
+         If eui_cmbTrasmittenteIdPaese.Text <> String.Empty Then
+            nomefileXML = eui_cmbTrasmittenteIdPaese.Text.Substring(0, 2) & eui_txtTrasmittenteIdCodice.Text.ToUpper & "_" & LeggiProgressivoFileXML() & ".xml"
+         Else
+            nomefileXML = String.Empty
+         End If
 
          Return nomefileXML
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+         Return String.Empty
+      End Try
+
+   End Function
+
+   Private Function GeneraNomeFileTxt() As String
+      Try
+         Dim nomefileTXT As String
+
+         If eui_cmbTrasmittenteIdPaese.Text <> String.Empty Then
+            nomefileTXT = eui_cmbTrasmittenteIdPaese.Text.Substring(0, 2) & eui_txtTrasmittenteIdCodice.Text.ToUpper & "_" & LeggiProgressivoFileXML() & ".txt"
+         Else
+            nomefileTXT = String.Empty
+         End If
+
+         Return nomefileTXT
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
@@ -1085,7 +1289,7 @@ Public Class frmFatturaElettronica
          ' Se il file xml è stato generato viene visualizzato il nome e il percorso del file.
          If fileGenerato = True Then
             ' Nome file.
-            Me.Text = Me.Text & " - " & GeneraNomeFileXML()
+            Me.Text = "Fattura Elettronica - " & GeneraNomeFileXML()
 
             ' Percorso file.
             eui_lblDirectoryFileXml.Text = GeneraDirectoryNomeFileXML()
@@ -1108,13 +1312,13 @@ Public Class frmFatturaElettronica
          ' Modifica il cursore del mouse.
          Cursor.Current = Cursors.AppStarting
 
-         ' Convalida la fattura elettronica in formato xml.
-         Dim fileConvalidato As Boolean = ConvalidaFileXML(GeneraDirectoryNomeFileXML)
+         Dim fileConvalidato As Boolean
+         Dim nomeFileXml As String = nomeDirectory & "\" & GeneraNomeFileXML()
 
-         ' Se il file xml è stato convalidato.
-         'If fileConvalidato = True Then
-
-         'End If
+         If File.Exists(nomeFileXml) = True Then
+            ' Convalida la fattura elettronica in formato xml.
+            fileConvalidato = ConvalidaFileXML(GeneraDirectoryNomeFileXML)
+         End If
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
@@ -1125,7 +1329,33 @@ Public Class frmFatturaElettronica
          Cursor.Current = Cursors.Default
 
       End Try
+   End Sub
 
+   Private Sub eui_cmdSalvaErrori_Click(sender As Object, e As EventArgs) Handles eui_cmdSalvaErrori.Click
+      Try
+         ' Modifica il cursore del mouse.
+         Cursor.Current = Cursors.AppStarting
+
+         If eui_txtConvalida.Text <> String.Empty Then
+            Dim nomeFileTxt As String = nomeDirectory & "\" & "Errori_" & GeneraNomeFileTxt()
+
+            If File.Exists(nomeFileTxt) = True Then
+               File.Delete(nomeFileTxt)
+               File.AppendAllText(nomeFileTxt, eui_txtConvalida.Text)
+
+               AvviaWinBloccoNote(Me.Handle, nomeFileTxt)
+            End If
+         End If
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      Finally
+         ' Modifica il cursore del mouse.
+         Cursor.Current = Cursors.Default
+
+      End Try
    End Sub
 
    Private Sub eui_cmdApriCartella_Click(sender As Object, e As EventArgs) Handles eui_cmdApriCartella.Click
@@ -1171,7 +1401,6 @@ Public Class frmFatturaElettronica
 
    Private Sub eui_cmdAnnulla_Click(sender As Object, e As EventArgs) Handles eui_cmdAnnulla.Click
       Me.Close()
-
    End Sub
 
    Private Sub lnkAgenziaEntrate_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lnkAgenziaEntrate.LinkClicked
@@ -1261,4 +1490,83 @@ Public Class frmFatturaElettronica
 
       End Try
    End Sub
+
+   Private Sub eui_cmdApriFileTxt_Click(sender As Object, e As EventArgs) Handles eui_cmdApriFileTxt.Click
+      Try
+         ' Modifica il cursore del mouse.
+         Cursor.Current = Cursors.AppStarting
+
+         Dim nomeFileTxt As String = nomeDirectory & "\" & GeneraNomeFileTxt()
+
+         If File.Exists(nomeFileTxt) = True Then
+            AvviaWinBloccoNote(Me.Handle, nomeDirectory & "\" & GeneraNomeFileTxt())
+         End If
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      Finally
+         ' Modifica il cursore del mouse.
+         Cursor.Current = Cursors.Default
+
+      End Try
+   End Sub
+
+   Private Sub eui_tpcDocumento_SelectedTabPageChanged(sender As Object, e As TabPageChangedEventArgs) Handles eui_tpcDocumento.SelectedTabPageChanged
+      Try
+         Dim nomeFileXml As String = nomeDirectory & "\" & GeneraNomeFileXML()
+         Dim nomeFileTxt As String = nomeDirectory & "\" & GeneraNomeFileTxt()
+
+         Select Case eui_tpcDocumento.SelectedTabPage.Text
+            Case "Intestazione"
+               eui_txtTrasmittenteIdCodice.Focus()
+
+            Case "Convalida"
+               eui_txtConvalida.Focus()
+
+            Case "XML"
+               If File.Exists(nomeFileXml) = True Then
+                  WebBrowser1.Navigate(nomeFileXml)
+               End If
+
+            Case "TXT"
+               ' Modifica il cursore del mouse.
+               Cursor.Current = Cursors.AppStarting
+
+               If File.Exists(nomeFileXml) = True Then
+                  If File.Exists(nomeFileTxt) = True Then
+                     File.Delete(nomeFileTxt)
+                  End If
+
+                  File.Copy(nomeFileXml, nomeFileTxt)
+
+                  Dim riga As String
+                  Dim leggiFile As StreamReader = New StreamReader(nomeFileTxt)
+
+                  eui_txtFormatoTxt.Text = String.Empty
+
+                  Do While leggiFile.Peek >= 0
+                     riga = leggiFile.ReadLine()
+                     eui_txtFormatoTxt.Text = eui_txtFormatoTxt.Text & riga & vbCrLf
+                  Loop
+
+                  leggiFile.Close()
+
+                  ' Modifica il cursore del mouse.
+                  Cursor.Current = Cursors.Default
+               End If
+
+            Case "HTML - (Anteprima)"
+
+         End Select
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+
+   End Sub
+
 End Class
