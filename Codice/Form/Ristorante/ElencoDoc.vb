@@ -2959,7 +2959,7 @@ Public Class ElencoDoc
          ' Modifica il cursore del mouse.
          Cursor.Current = Cursors.AppStarting
 
-         g_frmFatturaElettronica = New frmFatturaElettronica
+         g_frmFatturaElettronica = New frmFatturaElettronica(DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 0).ToString)
          g_frmFatturaElettronica.ShowDialog()
 
       Catch ex As Exception

@@ -2,7 +2,7 @@
 ' ***************************************************************************************************
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       29/10/2018
-' Data ultima modifica: 17/11/2018
+' Data ultima modifica: 23/11/2018
 ' Descrizione:          Form per la compilazione della Fattura elettronica con generazione file XML.
 ' Note:
 '
@@ -20,8 +20,25 @@ Imports Elegant.Ui
 
 Public Class frmFatturaElettronica
 
+   Const TAB_DOCUMENTI As String = "Documenti"
+   Const TAB_DETTAGLI_DOCUMENTI As String = "DettagliDoc"
+
+   Private Doc As New Documenti
+   Private CFormatta As New ClsFormatta
    Private CConvalida As New ConvalidaKeyPress
    Private nomeDirectory As String = Application.StartupPath & "\" & CARTELLA_FATTURE_ELETTRONICHE & "\" & Today.Year.ToString
+   Private idDocumento As String
+
+   Public Sub New(ByVal idDoc As String)
+
+      ' La chiamata è richiesta dalla finestra di progettazione.
+      InitializeComponent()
+
+      idDocumento = idDoc
+
+      ' Aggiungere le eventuali istruzioni di inizializzazione dopo la chiamata a InitializeComponent().
+
+   End Sub
 
    Private Sub EsempioFatt()
       Try
@@ -590,12 +607,13 @@ Public Class frmFatturaElettronica
 
 #End Region
 
-         GoTo SALTA
-
 #Region "FATTURA ELETTRONICA BODY - OBBLIGATORIO "
 
          Dim fattBody As New FatturaElettronicaBody.Body
          fatturaXlm.Body.Add(fattBody)
+
+         ' Legge i dati del documento selezionato.
+         Doc.LeggiDati(TAB_DOCUMENTI, idDocumento)
 
 #Region "DATI GENERALI - OBBLIGATORIO "
          ' OBBLIGATORIO - formato alfanumerico; lunghezza di 4 caratteri; i valori ammessi sono i seguenti:
@@ -609,37 +627,37 @@ Public Class frmFatturaElettronica
          fatturaXlm.Body.Item(0).DatiGenerali.DatiGeneraliDocumento.TipoDocumento = "TD01"
 
          ' OBBLIGATORIO - questo campo deve essere espresso secondo lo standard ISO 4217 alpha-3:2001 (es.: EUR, USD, GBP, CZK………).
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiGeneraliDocumento.Divisa = ""
+         fatturaXlm.Body.Item(0).DatiGenerali.DatiGeneraliDocumento.Divisa = "EUR"
 
          ' OBBLIGATORIO - la data deve essere rappresentata secondo il formato ISO 8601:2004, con la seguente precisione: YYYY-MM-DD.
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiGeneraliDocumento.Data = Today.Date
+         fatturaXlm.Body.Item(0).DatiGenerali.DatiGeneraliDocumento.Data = Doc.Data
 
          ' OBBLIGATORIO - formato alfanumerico; lunghezza massima di 20 caratteri.
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiGeneraliDocumento.Numero = "1"
+         fatturaXlm.Body.Item(0).DatiGenerali.DatiGeneraliDocumento.Numero = Doc.Numero
 
          ' FACOLTATIVO - OBBLIGATORIO - formato alfanumerico; lunghezza di 4 caratteri; i valori ammessi sono i seguenti:
          ' RT01 Ritenuta persone fisiche
          ' RT02 Ritenuta persone giuridiche
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiGeneraliDocumento.DatiRitenuta.TipoRitenuta = ""
+         'fatturaXlm.Body.Item(0).DatiGenerali.DatiGeneraliDocumento.DatiRitenuta.TipoRitenuta = ""
 
          ' FACOLTATIVO - OBBLIGATORIO - formato numerico nel quale i decimali vanno separati dall'intero con il carattere '.' (punto). La sua lunghezza va da 4 a 15 caratteri.
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiGeneraliDocumento.DatiRitenuta.ImportoRitenuta = 0
+         'fatturaXlm.Body.Item(0).DatiGenerali.DatiGeneraliDocumento.DatiRitenuta.ImportoRitenuta = 0
 
          ' FACOLTATIVO - OBBLIGATORIO - formato numerico nel quale i decimali vanno separati dall'intero con il carattere '.' (punto). La sua lunghezza va da 4 a 6 caratteri.
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiGeneraliDocumento.DatiRitenuta.AliquotaRitenuta = 0
+         'fatturaXlm.Body.Item(0).DatiGenerali.DatiGeneraliDocumento.DatiRitenuta.AliquotaRitenuta = 0
 
          ' FACOLTATIVO - OBBLIGATORIO - formato alfanumerico; lunghezza di massimo 2 caratteri; i valori ammessi sono quelli del 770S consultabili alla pagina delle istruzioni di compilazione del modello.
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiGeneraliDocumento.DatiRitenuta.CausalePagamento = ""
+         'fatturaXlm.Body.Item(0).DatiGenerali.DatiGeneraliDocumento.DatiRitenuta.CausalePagamento = ""
 
          ' FACOLTATIVO - OBBLIGATORIO - formato alfanumerico, lunghezza di 2 caratteri; il valore ammesso è SI bollo assolto ai sensi del decreto MEF 14 giugno 2014.
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiGeneraliDocumento.DatiBollo.BolloVirtuale = ""
+         'fatturaXlm.Body.Item(0).DatiGenerali.DatiGeneraliDocumento.DatiBollo.BolloVirtuale = ""
 
          ' FACOLTATIVO - OBBLIGATORIO - formato numerico nel quale i decimali vanno separati dall'intero con il carattere '.' (punto). La sua lunghezza va da 4 a 15 caratteri.
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiGeneraliDocumento.DatiBollo.ImportoBollo = 0
+         'fatturaXlm.Body.Item(0).DatiGenerali.DatiGeneraliDocumento.DatiBollo.ImportoBollo = 0
 
          ' FACOLTATIVO - 
-         Dim datiCassaPrevidenziale As New FatturaElettronicaBody.DatiGenerali.DatiCassaPrevidenziale
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiGeneraliDocumento.DatiCassaPrevidenziale.Add(datiCassaPrevidenziale)
+         'Dim datiCassaPrevidenziale As New FatturaElettronicaBody.DatiGenerali.DatiCassaPrevidenziale
+         'fatturaXlm.Body.Item(0).DatiGenerali.DatiGeneraliDocumento.DatiCassaPrevidenziale.Add(datiCassaPrevidenziale)
 
          ' OBBLIGATORIO - formato alfanumerico; lunghezza di 4 caratteri; i valori ammessi sono i seguenti:
          ' TC01 Cassa Nazionale Previdenza e Assistenza Avvocati e Procuratori Legali
@@ -664,22 +682,22 @@ Public Class frmFatturaElettronica
          ' TC20 Ente Nazionale Previdenza e Assistenza Professione Infermieristica (ENPAPI)
          ' TC21 Ente Nazionale Previdenza e Assistenza Psicologi (ENPAP)
          ' TC22 INPS
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiGeneraliDocumento.DatiCassaPrevidenziale.Item(0).TipoCassa = ""
+         'fatturaXlm.Body.Item(0).DatiGenerali.DatiGeneraliDocumento.DatiCassaPrevidenziale.Item(0).TipoCassa = ""
 
          '  OBBLIGATORIO - formato numerico nel quale i decimali vanno separati dall'intero con il carattere '.' (punto). La sua lunghezza va da 4 a 6 caratteri.
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiGeneraliDocumento.DatiCassaPrevidenziale.Item(0).AlCassa = 0
+         'fatturaXlm.Body.Item(0).DatiGenerali.DatiGeneraliDocumento.DatiCassaPrevidenziale.Item(0).AlCassa = 0
 
          ' OBBLIGATORIO - formato numerico nel quale i decimali vanno separati dall'intero con il carattere '.' (punto). La sua lunghezza va da 4 a 15 caratteri.
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiGeneraliDocumento.DatiCassaPrevidenziale.Item(0).ImportoContributoCassa = 0
+         'fatturaXlm.Body.Item(0).DatiGenerali.DatiGeneraliDocumento.DatiCassaPrevidenziale.Item(0).ImportoContributoCassa = 0
 
          ' FACOLTATIVO - formato numerico nel quale i decinali vanno separati dall’intero con il carattere ‘.’ (punto). La sua lunghezza va da 4 a 15 caratteri.
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiGeneraliDocumento.DatiCassaPrevidenziale.Item(0).ImponibileCassa = 0
+         'fatturaXlm.Body.Item(0).DatiGenerali.DatiGeneraliDocumento.DatiCassaPrevidenziale.Item(0).ImponibileCassa = 0
 
          ' OBBLIGATORIO - formato numerico nel quale i decimali vanno separati dall'intero con il carattere '.' (punto). La sua lunghezza va da 4 a 6 caratteri.
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiGeneraliDocumento.DatiCassaPrevidenziale.Item(0).AliquotaIVA = 0
+         'fatturaXlm.Body.Item(0).DatiGenerali.DatiGeneraliDocumento.DatiCassaPrevidenziale.Item(0).AliquotaIVA = 0
 
          ' FACOLTATIVO - formato alfanumerico; lunghezza di 2 caratteri; il valore ammesso è: SI contributo cassa soggetto a ritenuta.
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiGeneraliDocumento.DatiCassaPrevidenziale.Item(0).Ritenuta = ""
+         'fatturaXlm.Body.Item(0).DatiGenerali.DatiGeneraliDocumento.DatiCassaPrevidenziale.Item(0).Ritenuta = ""
 
          ' FACOLTATIVO - formato alfanumerico; lunghezza di 2 caratteri; i valori ammessi sono i seguenti:
          ' N1 escluse ex art.15
@@ -689,334 +707,466 @@ Public Class frmFatturaElettronica
          ' N5 regime del margine / IVA non esposta in fattura
          ' N6 inversione contabile (per le operazioni in reverse charge ovvero nei casi di autofatturazione per acquisti extra UE di servizi ovvero per importazioni di beni nei soli casi previsti)
          ' N7 IVA assolta In altro stato UE (vendite a distanza ex art. 40 commi 3 e 4 e art. 41 comma 1 lett. b, DL 331/93; prestazione di servizi di telecomunicazioni, tele - radiodiffusione ed elettronici ex art. 7-sexies lett. f, g, DPR 633/72 e art. 74-sexies, DPR 633/72)
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiGeneraliDocumento.DatiCassaPrevidenziale.Item(0).Natura = ""
+         'fatturaXlm.Body.Item(0).DatiGenerali.DatiGeneraliDocumento.DatiCassaPrevidenziale.Item(0).Natura = ""
 
          ' FACOLTATIVO - formato alfanumerico; lunghezza massima di 20 caratteri.
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiGeneraliDocumento.DatiCassaPrevidenziale.Item(0).RiferimentoAmministrazione = ""
+         'fatturaXlm.Body.Item(0).DatiGenerali.DatiGeneraliDocumento.DatiCassaPrevidenziale.Item(0).RiferimentoAmministrazione = ""
 
          ' FACOLTATIVO
-         Dim scontoMaggiorazione As New Common.ScontoMaggiorazione
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiGeneraliDocumento.ScontoMaggiorazione.Add(scontoMaggiorazione)
+         'Dim scontoMaggiorazione As New Common.ScontoMaggiorazione
+         'fatturaXlm.Body.Item(0).DatiGenerali.DatiGeneraliDocumento.ScontoMaggiorazione.Add(scontoMaggiorazione)
 
          ' OBBLIGATORIO - formato alfanumerico; lunghezza di 2 caratteri; i valori ammessi sono i seguenti:
          ' SC sconto
          ' MG maggiorazione
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiGeneraliDocumento.ScontoMaggiorazione.Item(0).Tipo = ""
+         'fatturaXlm.Body.Item(0).DatiGenerali.DatiGeneraliDocumento.ScontoMaggiorazione.Item(0).Tipo = ""
 
          ' FACOLTATIVO - formato numerico nel quale i decimali vanno separati dall’intero con il carattere ‘.’ (punto). La sua lunghezza va da 4 a 6 caratteri.
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiGeneraliDocumento.ScontoMaggiorazione.Item(0).Percentuale = 0
+         'fatturaXlm.Body.Item(0).DatiGenerali.DatiGeneraliDocumento.ScontoMaggiorazione.Item(0).Percentuale = 0
 
          ' FACOLTATIVO - formato numerico nel quale i decimali vanno separati dall’intero con il carattere ‘.’ (punto). La sua lunghezza va da 4 a 15 caratteri.
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiGeneraliDocumento.ScontoMaggiorazione.Item(0).Importo = 0
+         'fatturaXlm.Body.Item(0).DatiGenerali.DatiGeneraliDocumento.ScontoMaggiorazione.Item(0).Importo = 0
 
          ' FACOLTATIVO - formato numerico nel quale i decimali vanno separati dall'intero con il carattere '.' (punto). La sua lunghezza va da 4 a 15 caratteri.
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiGeneraliDocumento.ImportoTotaleDocumento = 0
+         fatturaXlm.Body.Item(0).DatiGenerali.DatiGeneraliDocumento.ImportoTotaleDocumento = Convert.ToDecimal(CFormatta.FormattaEuro(Doc.TotDoc))
 
          ' FACOLTATIVO - formato numerico nel quale i decimali vanno separati dall'intero con il carattere '.' (punto). La sua lunghezza va da 4 a 15 caratteri.
          fatturaXlm.Body.Item(0).DatiGenerali.DatiGeneraliDocumento.Arrotondamento = 0
 
          ' FACOLTATIVO - formato alfanumerico; lunghezza massima di 200 caratteri.
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiGeneraliDocumento.Causale.Add("")
+         fatturaXlm.Body.Item(0).DatiGenerali.DatiGeneraliDocumento.Causale.Add(Doc.Causale)
 
          ' FACOLTATIVO - formato alfanumerico; lunghezza di 2 caratteri; il valore ammesso è:
          ' SI documento emesso secondo modalità e termini stabiliti con DM ai sensi del'’art. 73 del DPR 633/72.
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiGeneraliDocumento.Art73 = ""
+         'fatturaXlm.Body.Item(0).DatiGenerali.DatiGeneraliDocumento.Art73 = ""
+
+         ' DA_FARE: Terminare!
 
          ' FACOLTATIVO
-         Dim datiOrdineAcquisto As New FatturaElettronicaBody.DatiGenerali.DatiOrdineAcquisto
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiOrdineAcquisto.Add(datiOrdineAcquisto)
+         'Dim datiOrdineAcquisto As New FatturaElettronicaBody.DatiGenerali.DatiOrdineAcquisto
+         'fatturaXlm.Body.Item(0).DatiGenerali.DatiOrdineAcquisto.Add(datiOrdineAcquisto)
 
          ' FACOLTATIVO - formato numerico; lunghezza massima di 4 caratteri.
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiOrdineAcquisto.Item(0).RiferimentoNumeroLinea.Add(0)
+         'fatturaXlm.Body.Item(0).DatiGenerali.DatiOrdineAcquisto.Item(0).RiferimentoNumeroLinea.Add(0)
          ' OBBLIGATORIO - formato alfanumerico; lunghezza massima di 20 caratteri.
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiOrdineAcquisto.Item(0).IdDocumento = ""
+         'fatturaXlm.Body.Item(0).DatiGenerali.DatiOrdineAcquisto.Item(0).IdDocumento = ""
          ' FACOLTATIVO - la data deve essere rappresentata secondo il formato ISO 8601:2004, con la seguente precisione: YYYY-MM-DD.
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiOrdineAcquisto.Item(0).Data = Today.Date
+         'fatturaXlm.Body.Item(0).DatiGenerali.DatiOrdineAcquisto.Item(0).Data = Today.Date
          ' FACOLTATIVO - formato alfanumerico; lunghezza massima di 20 caratteri.
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiOrdineAcquisto.Item(0).NumItem = ""
+         'fatturaXlm.Body.Item(0).DatiGenerali.DatiOrdineAcquisto.Item(0).NumItem = ""
          ' FACOLTATIVO - formato alfanumerico; lunghezza massima di 100 caratteri.
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiOrdineAcquisto.Item(0).CodiceCommessaConvenzione = ""
+         'fatturaXlm.Body.Item(0).DatiGenerali.DatiOrdineAcquisto.Item(0).CodiceCommessaConvenzione = ""
          ' FACOLTATIVO - formato alfanumerico; lunghezza massima di 15 caratteri.
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiOrdineAcquisto.Item(0).CodiceCUP = ""
+         'fatturaXlm.Body.Item(0).DatiGenerali.DatiOrdineAcquisto.Item(0).CodiceCUP = ""
          ' FACOLTATIVO - formato alfanumerico; lunghezza massima di 15 caratteri.
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiOrdineAcquisto.Item(0).CodiceCIG = ""
+         'fatturaXlm.Body.Item(0).DatiGenerali.DatiOrdineAcquisto.Item(0).CodiceCIG = ""
 
          ' FACOLTATIVO
-         Dim datiContratto As New FatturaElettronicaBody.DatiGenerali.DatiContratto
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiContratto.Add(datiContratto)
+         'Dim datiContratto As New FatturaElettronicaBody.DatiGenerali.DatiContratto
+         'fatturaXlm.Body.Item(0).DatiGenerali.DatiContratto.Add(datiContratto)
 
          ' FACOLTATIVO - formato numerico; lunghezza massima di 4 caratteri.
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiContratto.Item(0).RiferimentoNumeroLinea.Add(0)
+         'fatturaXlm.Body.Item(0).DatiGenerali.DatiContratto.Item(0).RiferimentoNumeroLinea.Add(0)
          ' OBBLIGATORIO - formato alfanumerico; lunghezza massima di 20 caratteri.
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiContratto.Item(0).IdDocumento = ""
+         'fatturaXlm.Body.Item(0).DatiGenerali.DatiContratto.Item(0).IdDocumento = ""
          ' FACOLTATIVO - la data deve essere rappresentata secondo il formato ISO 8601:2004, con la seguente precisione: YYYY-MM-DD.
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiContratto.Item(0).Data = Today.Date
+         'fatturaXlm.Body.Item(0).DatiGenerali.DatiContratto.Item(0).Data = Today.Date
          ' FACOLTATIVO - formato alfanumerico; lunghezza massima di 20 caratteri.
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiContratto.Item(0).NumItem = ""
+         'fatturaXlm.Body.Item(0).DatiGenerali.DatiContratto.Item(0).NumItem = ""
          ' FACOLTATIVO - formato alfanumerico; lunghezza massima di 100 caratteri.
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiContratto.Item(0).CodiceCommessaConvenzione = ""
+         'fatturaXlm.Body.Item(0).DatiGenerali.DatiContratto.Item(0).CodiceCommessaConvenzione = ""
          ' FACOLTATIVO - formato alfanumerico; lunghezza massima di 15 caratteri.
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiContratto.Item(0).CodiceCUP = ""
+         'fatturaXlm.Body.Item(0).DatiGenerali.DatiContratto.Item(0).CodiceCUP = ""
          ' FACOLTATIVO - formato alfanumerico; lunghezza massima di 15 caratteri.
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiContratto.Item(0).CodiceCIG = ""
+         'fatturaXlm.Body.Item(0).DatiGenerali.DatiContratto.Item(0).CodiceCIG = ""
 
          ' FACOLTATIVO
-         Dim datiConvenzione As New FatturaElettronicaBody.DatiGenerali.DatiConvenzione
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiConvenzione.Add(datiConvenzione)
+         'Dim datiConvenzione As New FatturaElettronicaBody.DatiGenerali.DatiConvenzione
+         'fatturaXlm.Body.Item(0).DatiGenerali.DatiConvenzione.Add(datiConvenzione)
 
          ' FACOLTATIVO - formato numerico; lunghezza massima di 4 caratteri.
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiConvenzione.Item(0).RiferimentoNumeroLinea.Add(0)
+         'fatturaXlm.Body.Item(0).DatiGenerali.DatiConvenzione.Item(0).RiferimentoNumeroLinea.Add(0)
          ' OBBLIGATORIO - formato alfanumerico; lunghezza massima di 20 caratteri.
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiConvenzione.Item(0).IdDocumento = ""
+         'fatturaXlm.Body.Item(0).DatiGenerali.DatiConvenzione.Item(0).IdDocumento = ""
          ' FACOLTATIVO - la data deve essere rappresentata secondo il formato ISO 8601:2004, con la seguente precisione: YYYY-MM-DD.
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiConvenzione.Item(0).Data = Today.Date
+         'fatturaXlm.Body.Item(0).DatiGenerali.DatiConvenzione.Item(0).Data = Today.Date
          ' FACOLTATIVO - formato alfanumerico; lunghezza massima di 20 caratteri.
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiConvenzione.Item(0).NumItem = ""
+         'fatturaXlm.Body.Item(0).DatiGenerali.DatiConvenzione.Item(0).NumItem = ""
          ' FACOLTATIVO - formato alfanumerico; lunghezza massima di 100 caratteri.
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiConvenzione.Item(0).CodiceCommessaConvenzione = ""
+         'fatturaXlm.Body.Item(0).DatiGenerali.DatiConvenzione.Item(0).CodiceCommessaConvenzione = ""
          ' FACOLTATIVO - formato alfanumerico; lunghezza massima di 15 caratteri.
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiConvenzione.Item(0).CodiceCUP = ""
+         'fatturaXlm.Body.Item(0).DatiGenerali.DatiConvenzione.Item(0).CodiceCUP = ""
          ' FACOLTATIVO - formato alfanumerico; lunghezza massima di 15 caratteri.
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiConvenzione.Item(0).CodiceCIG = ""
+         'fatturaXlm.Body.Item(0).DatiGenerali.DatiConvenzione.Item(0).CodiceCIG = ""
 
          ' FACOLTATIVO
-         Dim datiRicezione As New FatturaElettronicaBody.DatiGenerali.DatiRicezione
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiRicezione.Add(datiRicezione)
+         'Dim datiRicezione As New FatturaElettronicaBody.DatiGenerali.DatiRicezione
+         'fatturaXlm.Body.Item(0).DatiGenerali.DatiRicezione.Add(datiRicezione)
 
          ' FACOLTATIVO - formato numerico; lunghezza massima di 4 caratteri.
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiRicezione.Item(0).RiferimentoNumeroLinea.Add(0)
+         'fatturaXlm.Body.Item(0).DatiGenerali.DatiRicezione.Item(0).RiferimentoNumeroLinea.Add(0)
          ' OBBLIGATORIO - formato alfanumerico; lunghezza massima di 20 caratteri.
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiRicezione.Item(0).IdDocumento = ""
+         'fatturaXlm.Body.Item(0).DatiGenerali.DatiRicezione.Item(0).IdDocumento = ""
          ' FACOLTATIVO - la data deve essere rappresentata secondo il formato ISO 8601:2004, con la seguente precisione: YYYY-MM-DD.
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiRicezione.Item(0).Data = Today.Date
+         'fatturaXlm.Body.Item(0).DatiGenerali.DatiRicezione.Item(0).Data = Today.Date
          ' FACOLTATIVO - formato alfanumerico; lunghezza massima di 20 caratteri.
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiRicezione.Item(0).NumItem = ""
+         'fatturaXlm.Body.Item(0).DatiGenerali.DatiRicezione.Item(0).NumItem = ""
          ' FACOLTATIVO - formato alfanumerico; lunghezza massima di 100 caratteri.
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiRicezione.Item(0).CodiceCommessaConvenzione = ""
+         'fatturaXlm.Body.Item(0).DatiGenerali.DatiRicezione.Item(0).CodiceCommessaConvenzione = ""
          ' FACOLTATIVO - formato alfanumerico; lunghezza massima di 15 caratteri.
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiRicezione.Item(0).CodiceCUP = ""
+         'fatturaXlm.Body.Item(0).DatiGenerali.DatiRicezione.Item(0).CodiceCUP = ""
          ' FACOLTATIVO - formato alfanumerico; lunghezza massima di 15 caratteri.
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiRicezione.Item(0).CodiceCIG = ""
+         'fatturaXlm.Body.Item(0).DatiGenerali.DatiRicezione.Item(0).CodiceCIG = ""
 
          ' FACOLTATIVO
-         Dim datiFattureCollegate As New FatturaElettronicaBody.DatiGenerali.DatiFattureCollegate
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiFattureCollegate.Add(datiFattureCollegate)
+         'Dim datiFattureCollegate As New FatturaElettronicaBody.DatiGenerali.DatiFattureCollegate
+         'fatturaXlm.Body.Item(0).DatiGenerali.DatiFattureCollegate.Add(datiFattureCollegate)
 
          ' FACOLTATIVO - formato numerico; lunghezza massima di 4 caratteri.
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiFattureCollegate.Item(0).RiferimentoNumeroLinea.Add(0)
+         'fatturaXlm.Body.Item(0).DatiGenerali.DatiFattureCollegate.Item(0).RiferimentoNumeroLinea.Add(0)
          ' OBBLIGATORIO - formato alfanumerico; lunghezza massima di 20 caratteri.
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiFattureCollegate.Item(0).IdDocumento = ""
+         'fatturaXlm.Body.Item(0).DatiGenerali.DatiFattureCollegate.Item(0).IdDocumento = ""
          ' FACOLTATIVO - la data deve essere rappresentata secondo il formato ISO 8601:2004, con la seguente precisione: YYYY-MM-DD.
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiFattureCollegate.Item(0).Data = Today.Date
+         'fatturaXlm.Body.Item(0).DatiGenerali.DatiFattureCollegate.Item(0).Data = Today.Date
          ' FACOLTATIVO - formato alfanumerico; lunghezza massima di 20 caratteri.
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiFattureCollegate.Item(0).NumItem = ""
+         'fatturaXlm.Body.Item(0).DatiGenerali.DatiFattureCollegate.Item(0).NumItem = ""
          ' FACOLTATIVO - formato alfanumerico; lunghezza massima di 100 caratteri.
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiFattureCollegate.Item(0).CodiceCommessaConvenzione = ""
+         'fatturaXlm.Body.Item(0).DatiGenerali.DatiFattureCollegate.Item(0).CodiceCommessaConvenzione = ""
          ' FACOLTATIVO - formato alfanumerico; lunghezza massima di 15 caratteri.
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiFattureCollegate.Item(0).CodiceCUP = ""
+         'fatturaXlm.Body.Item(0).DatiGenerali.DatiFattureCollegate.Item(0).CodiceCUP = ""
          ' FACOLTATIVO - formato alfanumerico; lunghezza massima di 15 caratteri.
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiFattureCollegate.Item(0).CodiceCIG = ""
+         'fatturaXlm.Body.Item(0).DatiGenerali.DatiFattureCollegate.Item(0).CodiceCIG = ""
 
          ' FACOLTATIVO
-         Dim datiSAL As New FatturaElettronicaBody.DatiGenerali.DatiSAL
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiSAL.Add(datiSAL)
+         'Dim datiSAL As New FatturaElettronicaBody.DatiGenerali.DatiSAL
+         'fatturaXlm.Body.Item(0).DatiGenerali.DatiSAL.Add(datiSAL)
 
          ' OBBLIGATORIO - formato numerico; lunghezza massima di 3 caratteri.
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiSAL.Item(0).RiferimentoFase = 0
+         'fatturaXlm.Body.Item(0).DatiGenerali.DatiSAL.Item(0).RiferimentoFase = 0
 
          ' FACOLTATIVO
-         Dim datiDDT As New FatturaElettronicaBody.DatiGenerali.DatiDDT
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiDDT.Add(datiDDT)
+         'Dim datiDDT As New FatturaElettronicaBody.DatiGenerali.DatiDDT
+         'fatturaXlm.Body.Item(0).DatiGenerali.DatiDDT.Add(datiDDT)
 
          ' OBBLIGATORIO - formato alfanumerico; lunghezza massima di 20 caratteri.
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiDDT.Item(0).NumeroDDT = ""
+         'fatturaXlm.Body.Item(0).DatiGenerali.DatiDDT.Item(0).NumeroDDT = ""
          ' OBBLIGATORIO - la data deve essere rappresentata secondo il formato ISO 8601:2004, con la seguente precisione: YYYY-MM-DD.
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiDDT.Item(0).DataDDT = Today.Date
+         'fatturaXlm.Body.Item(0).DatiGenerali.DatiDDT.Item(0).DataDDT = Today.Date
          ' FACOLTATIVO - formato numerico; lunghezza massima di 4 caratteri.
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiDDT.Item(0).RiferimentoNumeroLinea.Add(0)
+         'fatturaXlm.Body.Item(0).DatiGenerali.DatiDDT.Item(0).RiferimentoNumeroLinea.Add(0)
 
          ' FACOLTATIVO
          ' OBBLIGATORIO - Sigla della nazione espressa secondo lo standard ISO 3166-1 alpha-2 code.
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiTrasporto.DatiAnagraficiVettore.IdFiscaleIVA.IdPaese = ""
+         'fatturaXlm.Body.Item(0).DatiGenerali.DatiTrasporto.DatiAnagraficiVettore.IdFiscaleIVA.IdPaese = ""
          ' OBBLIGATORIO - Formato alfanumerico; lunghezza massima di 28 caratteri.
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiTrasporto.DatiAnagraficiVettore.IdFiscaleIVA.IdCodice = ""
+         'fatturaXlm.Body.Item(0).DatiGenerali.DatiTrasporto.DatiAnagraficiVettore.IdFiscaleIVA.IdCodice = ""
          ' FACOLTATIVO - Formato alfanumerico; lunghezza compresa tra 11 e 16 caratteri.
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiTrasporto.DatiAnagraficiVettore.CodiceFiscale = ""
+         'fatturaXlm.Body.Item(0).DatiGenerali.DatiTrasporto.DatiAnagraficiVettore.CodiceFiscale = ""
          ' OBBLIGATORIO - formato alfanumerico; lunghezza massima di 80 caratteri. Da valorizzare in alternativa ai campi Nome e Cognome seguenti.
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiTrasporto.DatiAnagraficiVettore.Anagrafica.Denominazione = ""
+         'fatturaXlm.Body.Item(0).DatiGenerali.DatiTrasporto.DatiAnagraficiVettore.Anagrafica.Denominazione = ""
          ' OBBLIGATORIO - formato alfanumerico; lunghezza massima di 60 caratteri. Da valorizzare insieme al campo Cognome ed in alternativa al campo Denominazione.
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiTrasporto.DatiAnagraficiVettore.Anagrafica.Nome = ""
+         'fatturaXlm.Body.Item(0).DatiGenerali.DatiTrasporto.DatiAnagraficiVettore.Anagrafica.Nome = ""
          ' OBBLIGATORIO - formato alfanumerico; lunghezza massima di 60 caratteri. Da valorizzare insieme al campo Nome ed in alternativa al campo Denominazione.
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiTrasporto.DatiAnagraficiVettore.Anagrafica.Cognome = ""
+         'fatturaXlm.Body.Item(0).DatiGenerali.DatiTrasporto.DatiAnagraficiVettore.Anagrafica.Cognome = ""
          ' FACOLTATIVO - Formato alfanumerico; lunghezza che va da 2 a 10 caratteri.
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiTrasporto.DatiAnagraficiVettore.Anagrafica.Titolo = ""
+         'fatturaXlm.Body.Item(0).DatiGenerali.DatiTrasporto.DatiAnagraficiVettore.Anagrafica.Titolo = ""
          ' FACOLTATIVO - Formato alfanumerico; lunghezza che va da 13 a 17 caratteri.
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiTrasporto.DatiAnagraficiVettore.Anagrafica.CodEORI = ""
+         'fatturaXlm.Body.Item(0).DatiGenerali.DatiTrasporto.DatiAnagraficiVettore.Anagrafica.CodEORI = ""
          ' FACOLTATIVO - formato alfanumerico; lunghezza massima di 20 caratteri.
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiTrasporto.DatiAnagraficiVettore.NumeroLicenzaGuida = ""
+         'fatturaXlm.Body.Item(0).DatiGenerali.DatiTrasporto.DatiAnagraficiVettore.NumeroLicenzaGuida = ""
 
          ' FACOLTATIVO - formato alfanumerico; lunghezza massima di 80 caratteri.
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiTrasporto.MezzoTrasporto = ""
+         'fatturaXlm.Body.Item(0).DatiGenerali.DatiTrasporto.MezzoTrasporto = ""
          ' FACOLTATIVO - formato alfanumerico; lunghezza massima di 100 caratteri.
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiTrasporto.CausaleTrasporto = ""
+         'fatturaXlm.Body.Item(0).DatiGenerali.DatiTrasporto.CausaleTrasporto = ""
          ' FACOLTATIVO - formato numerico; lunghezza massima di 4 caratteri.
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiTrasporto.NumeroColli = 0
+         'fatturaXlm.Body.Item(0).DatiGenerali.DatiTrasporto.NumeroColli = 0
          ' FACOLTATIVO - formato alfanumerico; lunghezza massima di 100 caratteri.
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiTrasporto.Descrizione = ""
+         'fatturaXlm.Body.Item(0).DatiGenerali.DatiTrasporto.Descrizione = ""
          ' FACOLTATIVO - formato alfanumerico; lunghezza massima di 10 caratteri.
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiTrasporto.UnitaMisuraPeso = ""
+         'fatturaXlm.Body.Item(0).DatiGenerali.DatiTrasporto.UnitaMisuraPeso = ""
          ' FACOLTATIVO - formato numerico nel quale i decimali vanno separati dall'intero con il carattere '.' (punto). La sua lunghezza va da 4 a 7 caratteri.
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiTrasporto.PesoLordo = 0
+         'fatturaXlm.Body.Item(0).DatiGenerali.DatiTrasporto.PesoLordo = 0
          ' FACOLTATIVO - formato numerico nel quale i decimali vanno separati dall'intero con il carattere '.' (punto). La sua lunghezza va da 4 a 7 caratteri.
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiTrasporto.PesoNetto = 0
+         'fatturaXlm.Body.Item(0).DatiGenerali.DatiTrasporto.PesoNetto = 0
          ' FACOLTATIVO - la data deve essere rappresentata secondo il formato ISO 8601:2004, con la seguente precisione: YYYY-MM-DDTHH:MM:SS.
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiTrasporto.DataOraRitiro = Today.Date
+         'fatturaXlm.Body.Item(0).DatiGenerali.DatiTrasporto.DataOraRitiro = Today.Date
          ' FACOLTATIVO - la data deve essere rappresentata secondo il formato ISO 8601:2004, con la seguente precisione: YYYY-MM-DD.
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiTrasporto.DataInizioTrasporto = Today.Date
+         'fatturaXlm.Body.Item(0).DatiGenerali.DatiTrasporto.DataInizioTrasporto = Today.Date
          ' FACOLTATIVO - codifica del termine di resa (Incoterms) espresso secondo lo standard ICC-Camera di Commercio Internazionale (formato alfanumerico di 3 caratteri)
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiTrasporto.TipoResa = ""
+         'fatturaXlm.Body.Item(0).DatiGenerali.DatiTrasporto.TipoResa = ""
 
          ' OBBLIGATORIO - formato alfanumerico; lunghezza massima di 60 caratteri.
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiTrasporto.IndirizzoResa.Indirizzo = ""
+         'fatturaXlm.Body.Item(0).DatiGenerali.DatiTrasporto.IndirizzoResa.Indirizzo = ""
          ' FACOLTATIVO - formato alfanumerico; lunghezza massima di 8 caratteri.
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiTrasporto.IndirizzoResa.NumeroCivico = ""
+         'fatturaXlm.Body.Item(0).DatiGenerali.DatiTrasporto.IndirizzoResa.NumeroCivico = ""
          ' OBBLIGATORIO - formato numerico; lunghezza di 5 caratteri.
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiTrasporto.IndirizzoResa.CAP = ""
+         'fatturaXlm.Body.Item(0).DatiGenerali.DatiTrasporto.IndirizzoResa.CAP = ""
          ' OBBLIGATORIO - formato alfanumerico; lunghezza massima di 60 caratteri.
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiTrasporto.IndirizzoResa.Comune = ""
+         'fatturaXlm.Body.Item(0).DatiGenerali.DatiTrasporto.IndirizzoResa.Comune = ""
          ' FACOLTATIVO - formato alfanumerico; lunghezza di 2 caratteri.
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiTrasporto.IndirizzoResa.Provincia = ""
+         'fatturaXlm.Body.Item(0).DatiGenerali.DatiTrasporto.IndirizzoResa.Provincia = ""
          ' OBBLIGATORIO - sigla della nazione espressa secondo lo standard ISO 3166-1 alpha-2 code.
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiTrasporto.IndirizzoResa.Nazione = ""
+         'fatturaXlm.Body.Item(0).DatiGenerali.DatiTrasporto.IndirizzoResa.Nazione = ""
 
          ' FACOLTATIVO - la data deve essere rappresentata secondo il formato ISO 8601:2004, con la seguente precisione: YYYY-MM-DDTHH:MM:SS.
-         fatturaXlm.Body.Item(0).DatiGenerali.DatiTrasporto.DataOraConsegna = Today.Date
+         'fatturaXlm.Body.Item(0).DatiGenerali.DatiTrasporto.DataOraConsegna = Today.Date
 
          ' FACOLTATIVO
          ' OBBLIGATORIO - formato alfanumerico; lunghezza massima di 20 caratteri.
-         fatturaXlm.Body.Item(0).DatiGenerali.FatturaPrincipale.NumeroFatturaPrincipale = ""
+         'fatturaXlm.Body.Item(0).DatiGenerali.FatturaPrincipale.NumeroFatturaPrincipale = ""
          ' OBBLIGATORIO - la data deve essere rappresentata secondo il formato ISO 8601:2004, con la seguente precisione: YYYY-MM-DD.
-         fatturaXlm.Body.Item(0).DatiGenerali.FatturaPrincipale.DataFatturaPrincipale = Today.Date
+         'fatturaXlm.Body.Item(0).DatiGenerali.FatturaPrincipale.DataFatturaPrincipale = Today.Date
 #End Region
 
 #Region "DATI BENI SERVIZI - OBBLIGATORIO "
-         ' OBBLIGATORIO
-         Dim dettaglioLinee As New FatturaElettronicaBody.DatiBeniServizi.DettaglioLinee
-         fatturaXlm.Body.Item(0).DatiBeniServizi.DettaglioLinee.Add(dettaglioLinee)
 
-         ' OBBLIGATORIO - formato numerico; lunghezza massima di 4 caratteri.
-         fatturaXlm.Body.Item(0).DatiBeniServizi.DettaglioLinee.Item(0).NumeroLinea = 0
-         ' FACOLTATIVO - formato alfanumerico; lunghezza di 2 caratteri; i ivalori ammessi sono:
-         ' SC Sconto
-         ' PR Premio
-         ' AB Abbuono
-         ' AC Spesa accessoria
-         fatturaXlm.Body.Item(0).DatiBeniServizi.DettaglioLinee.Item(0).TipoCessionePrestazione = ""
+         ' Dichiara un oggetto connessione.
+         Dim cn As New OleDbConnection(ConnString)
+         cn.Open()
 
-         ' FACOLTATIVO
-         Dim codiceArticolo As New FatturaElettronicaBody.DatiBeniServizi.CodiceArticolo
-         fatturaXlm.Body.Item(0).DatiBeniServizi.DettaglioLinee.Item(0).CodiceArticolo.Add(codiceArticolo)
+         Dim cmd As New OleDbCommand("SELECT * FROM " & TAB_DETTAGLI_DOCUMENTI & " WHERE RifDoc = " & idDocumento & " ORDER BY Id ASC", cn)
+         Dim dr As OleDbDataReader = cmd.ExecuteReader()
+         Dim numLinea As Integer = 1
 
-         ' OBBLIGATORIO - formato alfanumerico; lunghezza massima di 35 caratteri.
-         fatturaXlm.Body.Item(0).DatiBeniServizi.DettaglioLinee.Item(0).CodiceArticolo.Item(0).CodiceTipo = ""
-         ' OBBLIGATORIO - formato alfanumerico; lunghezza massima di 35 caratteri.
-         fatturaXlm.Body.Item(0).DatiBeniServizi.DettaglioLinee.Item(0).CodiceArticolo.Item(0).CodiceValore = ""
+         Do While dr.Read()
 
-         ' OBBLIGATORIO - formato alfanumerico; lunghezza massima di 1000 caratteri.
-         fatturaXlm.Body.Item(0).DatiBeniServizi.DettaglioLinee.Item(0).Descrizione = ""
-         ' FACOLTATIVO - formato numerico nel quale i decimali vanno separati dall'intero con il carattere '.' (punto). La sua lunghezza va da 4 a 21 caratteri.
-         fatturaXlm.Body.Item(0).DatiBeniServizi.DettaglioLinee.Item(0).Quantita = 0
-         ' FACOLTATIVO - formato alfanumerico; lunghezza massima di 10 caratteri.
-         fatturaXlm.Body.Item(0).DatiBeniServizi.DettaglioLinee.Item(0).UnitaMisura = ""
-         ' FACOLTATIVO - la data deve essere rappresentata secondo il formato ISO 8601:2004, con la seguente precisione: YYYY-MM-DD.
-         fatturaXlm.Body.Item(0).DatiBeniServizi.DettaglioLinee.Item(0).DataInizioPeriodo = Today.Date
-         ' FACOLTATIVO - la data deve essere rappresentata secondo il formato ISO 8601:2004, con la seguente precisione: YYYY-MM-DD.
-         fatturaXlm.Body.Item(0).DatiBeniServizi.DettaglioLinee.Item(0).DataFinePeriodo = Today.Date
-         ' OBBLIGATORIO - formato numerico nel quale i decimali vanno separati dall'intero con il carattere '.' (punto). La sua lunghezza va da 4 a 21 caratteri.
-         fatturaXlm.Body.Item(0).DatiBeniServizi.DettaglioLinee.Item(0).PrezzoUnitario = 0
+            ' OBBLIGATORIO
+            Dim dettaglioLinee As New FatturaElettronicaBody.DatiBeniServizi.DettaglioLinee
+            fatturaXlm.Body.Item(0).DatiBeniServizi.DettaglioLinee.Add(dettaglioLinee)
 
-         ' FACOLTATIVO
-         Dim scontoMaggiorazione1 As New Common.ScontoMaggiorazione
-         fatturaXlm.Body.Item(0).DatiBeniServizi.DettaglioLinee.Item(0).ScontoMaggiorazione.Add(scontoMaggiorazione1)
+            ' OBBLIGATORIO - formato numerico; lunghezza massima di 4 caratteri.
+            fatturaXlm.Body.Item(0).DatiBeniServizi.DettaglioLinee.Item(numLinea - 1).NumeroLinea = numLinea
 
-         ' OBBLIGATORIO - formato alfanumerico; lunghezza di 2 caratteri; i valori ammessi sono i seguenti:
-         ' SC sconto
-         ' MG maggiorazione
-         fatturaXlm.Body.Item(0).DatiBeniServizi.DettaglioLinee.Item(0).ScontoMaggiorazione.Item(0).Tipo = ""
-         ' FACOLTATIVO - formato numerico nel quale i decimali vanno separati dall’intero con il carattere ‘.’ (punto). La sua lunghezza va da 4 a 6 caratteri.
-         fatturaXlm.Body.Item(0).DatiBeniServizi.DettaglioLinee.Item(0).ScontoMaggiorazione.Item(0).Percentuale = 0
-         ' FACOLTATIVO - formato numerico nel quale i decimali vanno separati dall’intero con il carattere ‘.’ (punto). La sua lunghezza va da 4 a 15 caratteri.
-         fatturaXlm.Body.Item(0).DatiBeniServizi.DettaglioLinee.Item(0).ScontoMaggiorazione.Item(0).Importo = 0
+            ' FACOLTATIVO - formato alfanumerico; lunghezza di 2 caratteri; i ivalori ammessi sono:
+            ' SC Sconto
+            ' PR Premio
+            ' AB Abbuono
+            ' AC Spesa accessoria
+            If dr.Item("ValoreUnitario").ToString.Contains("-") = True Then
+               fatturaXlm.Body.Item(0).DatiBeniServizi.DettaglioLinee.Item(numLinea - 1).TipoCessionePrestazione = "SC"
+            End If
 
-         ' OBBLIGATORIO - formato numerico nel quale i decimali vanno separati dall'intero con il carattere '.' (punto). La sua lunghezza va da 4 a 21 caratteri.
-         fatturaXlm.Body.Item(0).DatiBeniServizi.DettaglioLinee.Item(0).PrezzoTotale = 0
-         ' OBBLIGATORIO - formato numerico nel quale i decimali vanno separati dall'intero con il carattere '.' (punto). La sua lunghezza va da 4 a 6 caratteri.
-         fatturaXlm.Body.Item(0).DatiBeniServizi.DettaglioLinee.Item(0).AliquotaIVA = 0
+            If dr.Item("CodiceArticolo").ToString <> String.Empty Then
+               ' FACOLTATIVO
+               Dim codiceArticolo As New FatturaElettronicaBody.DatiBeniServizi.CodiceArticolo
+               fatturaXlm.Body.Item(0).DatiBeniServizi.DettaglioLinee.Item(numLinea - 1).CodiceArticolo.Add(codiceArticolo)
 
-         ' FACOLTATIVO - formato alfanumerico; lunghezza di 2 caratteri; il valore ammesso è: SI linea di fattura soggetta a ritenuta.
-         fatturaXlm.Body.Item(0).DatiBeniServizi.DettaglioLinee.Item(0).Ritenuta = ""
-         ' FACOLTATIVO - formato alfanumerico; lunghezza di 2 caratteri; i valori ammessi sono i seguenti:
-         ' N1 escluse ex art.15
-         ' N2 non soggette
-         ' N3 non imponibili
-         ' N4 esenti
-         ' N5 regime del margine / IVA non esposta in fattura
-         ' N6 inversione contabile (per le operazioni in reverse charge ovvero nei casi di autofatturazione per acquisti extra UE di servizi ovvero per importazioni di beni nei soli casi previsti)
-         ' N7 IVA assolta In altro stato UE (vendite a distanza ex art. 40 commi 3 e 4 e art. 41 comma 1 lett. b, DL 331/93; prestazione di servizi di telecomunicazioni, tele - radiodiffusione ed elettronici ex art. 7-sexies lett. f, g, DPR 633/72 e art. 74-sexies, DPR 633/72)
-         fatturaXlm.Body.Item(0).DatiBeniServizi.DettaglioLinee.Item(0).Natura = ""
-         ' FACOLTATIVO - formato alfanumerico; lunghezza massima di 20 caratteri.
-         fatturaXlm.Body.Item(0).DatiBeniServizi.DettaglioLinee.Item(0).RiferimentoAmministrazione = ""
+               ' OBBLIGATORIO - formato alfanumerico; lunghezza massima di 35 caratteri.
+               fatturaXlm.Body.Item(0).DatiBeniServizi.DettaglioLinee.Item(numLinea - 1).CodiceArticolo.Item(0).CodiceTipo = "Alfanumerico"
+               ' OBBLIGATORIO - formato alfanumerico; lunghezza massima di 35 caratteri.
+               fatturaXlm.Body.Item(0).DatiBeniServizi.DettaglioLinee.Item(numLinea - 1).CodiceArticolo.Item(0).CodiceValore = dr.Item("CodiceArticolo").ToString
+            End If
 
-         ' FACOLTATIVO
-         Dim altriDatiGestionali As New FatturaElettronicaBody.DatiBeniServizi.AltriDatiGestionali
-         fatturaXlm.Body.Item(0).DatiBeniServizi.DettaglioLinee.Item(0).AltriDatiGestionali.Add(altriDatiGestionali)
+            ' OBBLIGATORIO - formato alfanumerico; lunghezza massima di 1000 caratteri.
+            fatturaXlm.Body.Item(0).DatiBeniServizi.DettaglioLinee.Item(numLinea - 1).Descrizione = dr.Item("Descrizione").ToString
+            ' FACOLTATIVO - formato numerico nel quale i decimali vanno separati dall'intero con il carattere '.' (punto). La sua lunghezza va da 4 a 21 caratteri.
+            fatturaXlm.Body.Item(0).DatiBeniServizi.DettaglioLinee.Item(numLinea - 1).Quantita = Convert.ToDecimal(CFormatta.FormattaEuro(dr.Item("Quantità")))
+            ' FACOLTATIVO - formato alfanumerico; lunghezza massima di 10 caratteri.
+            fatturaXlm.Body.Item(0).DatiBeniServizi.DettaglioLinee.Item(numLinea - 1).UnitaMisura = dr.Item("UnitàMisura").ToString
+            ' FACOLTATIVO - la data deve essere rappresentata secondo il formato ISO 8601:2004, con la seguente precisione: YYYY-MM-DD.
+            'fatturaXlm.Body.Item(0).DatiBeniServizi.DettaglioLinee.Item(numLinea - 1).DataInizioPeriodo = Today.Date
+            ' FACOLTATIVO - la data deve essere rappresentata secondo il formato ISO 8601:2004, con la seguente precisione: YYYY-MM-DD.
+            'fatturaXlm.Body.Item(0).DatiBeniServizi.DettaglioLinee.Item(numLinea - 1).DataFinePeriodo = Today.Date
+            ' OBBLIGATORIO - formato numerico nel quale i decimali vanno separati dall'intero con il carattere '.' (punto). La sua lunghezza va da 4 a 21 caratteri.
+            fatturaXlm.Body.Item(0).DatiBeniServizi.DettaglioLinee.Item(numLinea - 1).PrezzoUnitario = Convert.ToDecimal(CFormatta.FormattaEuro(dr.Item("ValoreUnitario")))
 
-         ' OBBLIGATORIO - formato alfanumerico; lunghezza massima di 10 caratteri.
-         fatturaXlm.Body.Item(0).DatiBeniServizi.DettaglioLinee.Item(0).AltriDatiGestionali.Item(0).TipoDato = ""
-         ' FACOLTATIVO - formato alfanumerico; lunghezza massima di 60 caratteri.
-         fatturaXlm.Body.Item(0).DatiBeniServizi.DettaglioLinee.Item(0).AltriDatiGestionali.Item(0).RiferimentoTesto = ""
-         ' FACOLTATIVO - formato numerico nel quale i decimali vanno separati dall'intero con il carattere '.' (punto). La sua lunghezza va da 4 a 21 caratteri.
-         fatturaXlm.Body.Item(0).DatiBeniServizi.DettaglioLinee.Item(0).AltriDatiGestionali.Item(0).RiferimentoNumero = 0
-         ' FACOLTATIVO - la data deve essere rappresentata secondo il formato ISO 8601:2004, con la seguente precisione: YYYY-MM-DD.
-         fatturaXlm.Body.Item(0).DatiBeniServizi.DettaglioLinee.Item(0).AltriDatiGestionali.Item(0).RiferimentoData = Today.Date
+            If Convert.ToDecimal(dr.Item("Sconto")) <> 0 Then
+               ' FACOLTATIVO
+               Dim scontoMaggiorazione1 As New Common.ScontoMaggiorazione
+               fatturaXlm.Body.Item(0).DatiBeniServizi.DettaglioLinee.Item(numLinea - 1).ScontoMaggiorazione.Add(scontoMaggiorazione1)
+               ' OBBLIGATORIO - formato alfanumerico; lunghezza di 2 caratteri; i valori ammessi sono i seguenti:
+               ' SC sconto
+               ' MG maggiorazione
+               fatturaXlm.Body.Item(0).DatiBeniServizi.DettaglioLinee.Item(numLinea - 1).ScontoMaggiorazione.Item(0).Tipo = "SC"
+               ' FACOLTATIVO - formato numerico nel quale i decimali vanno separati dall’intero con il carattere ‘.’ (punto). La sua lunghezza va da 4 a 6 caratteri.
+               fatturaXlm.Body.Item(0).DatiBeniServizi.DettaglioLinee.Item(numLinea - 1).ScontoMaggiorazione.Item(0).Percentuale = Convert.ToDecimal(CFormatta.FormattaEuro(dr.Item("Sconto")))
+               ' FACOLTATIVO - formato numerico nel quale i decimali vanno separati dall’intero con il carattere ‘.’ (punto). La sua lunghezza va da 4 a 15 caratteri.
+               fatturaXlm.Body.Item(0).DatiBeniServizi.DettaglioLinee.Item(numLinea - 1).ScontoMaggiorazione.Item(0).Importo = 0
+            End If
 
-         ' OBBLIGATORIO
-         Dim datiRiepilogo As New FatturaElettronicaBody.DatiBeniServizi.DatiRiepilogo
-         fatturaXlm.Body.Item(0).DatiBeniServizi.DatiRiepilogo.Add(datiRiepilogo)
+            ' OBBLIGATORIO - formato numerico nel quale i decimali vanno separati dall'intero con il carattere '.' (punto). La sua lunghezza va da 4 a 21 caratteri.
+            fatturaXlm.Body.Item(0).DatiBeniServizi.DettaglioLinee.Item(numLinea - 1).PrezzoTotale = Convert.ToDecimal(CFormatta.FormattaEuro(dr.Item("ImportoNetto")))
+            ' OBBLIGATORIO - formato numerico nel quale i decimali vanno separati dall'intero con il carattere '.' (punto). La sua lunghezza va da 4 a 6 caratteri.
+            fatturaXlm.Body.Item(0).DatiBeniServizi.DettaglioLinee.Item(numLinea - 1).AliquotaIVA = Convert.ToDecimal(CFormatta.FormattaEuro(dr.Item("AliquotaIva")))
 
-         ' OBBLIGATORIO - formato numerico nel quale i decimali vanno separati dall'intero con il carattere '.' (punto). La sua lunghezza va da 4 a 6 caratteri.
-         fatturaXlm.Body.Item(0).DatiBeniServizi.DatiRiepilogo.Item(0).AliquotaIVA = 0
-         ' FACOLTATIVO - formato alfanumerico; lunghezza di 2 caratteri; i valori ammessi sono i seguenti:
-         ' N1 escluse ex art.15
-         ' N2 non soggette
-         ' N3 non imponibili
-         ' N4 esenti
-         ' N5 regime del margine / IVA non esposta in fattura
-         ' N6 inversione contabile (per le operazioni in reverse charge ovvero nei casi di autofatturazione per acquisti extra UE di servizi ovvero per importazioni di beni nei soli casi previsti)
-         ' N7 IVA assolta In altro stato UE (vendite a distanza ex art. 40 commi 3 e 4 e art. 41 comma 1 lett. b, DL 331/93; prestazione di servizi di telecomunicazioni, tele - radiodiffusione ed elettronici ex art. 7-sexies lett. f, g, DPR 633/72 e art. 74-sexies, DPR 633/72)
-         fatturaXlm.Body.Item(0).DatiBeniServizi.DatiRiepilogo.Item(0).Natura = ""
-         ' FACOLTATIVO - formato numerico nel quale i decimali vanno separati dall'intero con il carattere '.' (punto). La sua lunghezza va da 4 a 15 caratteri.
-         fatturaXlm.Body.Item(0).DatiBeniServizi.DatiRiepilogo.Item(0).SpeseAccessorie = 0
-         ' FACOLTATIVO - formato numerico nel quale i decimali vanno separati dall'intero con il carattere '.' (punto). La sua lunghezza va da 4 a 21 caratteri.
-         fatturaXlm.Body.Item(0).DatiBeniServizi.DatiRiepilogo.Item(0).Arrotondamento = 0
-         ' OBBLIGATORIO - formato numerico nel quale i decimali vanno separati dall'intero con il carattere '.' (punto). La sua lunghezza va da 4 a 15 caratteri.
-         fatturaXlm.Body.Item(0).DatiBeniServizi.DatiRiepilogo.Item(0).ImponibileImporto = 0
-         ' OBBLIGATORIO - formato numerico nel quale i decimali vanno separati dall'intero con il carattere '.' (punto). La sua lunghezza va da 4 a 15 caratteri.
-         fatturaXlm.Body.Item(0).DatiBeniServizi.DatiRiepilogo.Item(0).Imposta = 0
-         ' FACOLTATIVO - formato alfanumerico; lunghezza di 1 carattere; i valori ammessi sono i seguenti:
-         ' I IVA ad esigibilità immediata
-         ' D IVA ad esigibilità differita
-         ' S scissione dei pagamenti
-         fatturaXlm.Body.Item(0).DatiBeniServizi.DatiRiepilogo.Item(0).EsigibilitaIVA = ""
-         ' FACOLTATIVO - formato alfanumerico; lunghezza massima di 100 caratteri.
-         fatturaXlm.Body.Item(0).DatiBeniServizi.DatiRiepilogo.Item(0).RiferimentoNormativo = ""
+            ' FACOLTATIVO - formato alfanumerico; lunghezza di 2 caratteri; il valore ammesso è: SI linea di fattura soggetta a ritenuta.
+            'fatturaXlm.Body.Item(0).DatiBeniServizi.DettaglioLinee.Item(numLinea - 1).Ritenuta = ""
+
+            If Convert.ToDecimal(dr.Item("AliquotaIva")) = 0 Then
+               ' FACOLTATIVO - formato alfanumerico; lunghezza di 2 caratteri; i valori ammessi sono i seguenti:
+               ' N1 escluse ex art.15
+               ' N2 non soggette
+               ' N3 non imponibili
+               ' N4 esenti
+               ' N5 regime del margine / IVA non esposta in fattura
+               ' N6 inversione contabile (per le operazioni in reverse charge ovvero nei casi di autofatturazione per acquisti extra UE di servizi ovvero per importazioni di beni nei soli casi previsti)
+               ' N7 IVA assolta In altro stato UE (vendite a distanza ex art. 40 commi 3 e 4 e art. 41 comma 1 lett. b, DL 331/93; prestazione di servizi di telecomunicazioni, tele - radiodiffusione ed elettronici ex art. 7-sexies lett. f, g, DPR 633/72 e art. 74-sexies, DPR 633/72)
+               fatturaXlm.Body.Item(0).DatiBeniServizi.DettaglioLinee.Item(numLinea - 1).Natura = "N2"
+            End If
+
+            ' FACOLTATIVO - formato alfanumerico; lunghezza massima di 20 caratteri.
+            'fatturaXlm.Body.Item(0).DatiBeniServizi.DettaglioLinee.Item(numLinea - 1).RiferimentoAmministrazione = ""
+
+            ' FACOLTATIVO
+            'Dim altriDatiGestionali As New FatturaElettronicaBody.DatiBeniServizi.AltriDatiGestionali
+            'fatturaXlm.Body.Item(0).DatiBeniServizi.DettaglioLinee.Item(numLinea - 1).AltriDatiGestionali.Add(altriDatiGestionali)
+
+            ' OBBLIGATORIO - formato alfanumerico; lunghezza massima di 10 caratteri.
+            'fatturaXlm.Body.Item(0).DatiBeniServizi.DettaglioLinee.Item(numLinea - 1).AltriDatiGestionali.Item(0).TipoDato = ""
+            ' FACOLTATIVO - formato alfanumerico; lunghezza massima di 60 caratteri.
+            'fatturaXlm.Body.Item(0).DatiBeniServizi.DettaglioLinee.Item(numLinea - 1).AltriDatiGestionali.Item(0).RiferimentoTesto = ""
+            ' FACOLTATIVO - formato numerico nel quale i decimali vanno separati dall'intero con il carattere '.' (punto). La sua lunghezza va da 4 a 21 caratteri.
+            'fatturaXlm.Body.Item(0).DatiBeniServizi.DettaglioLinee.Item(numLinea - 1).AltriDatiGestionali.Item(0).RiferimentoNumero = 0
+            ' FACOLTATIVO - la data deve essere rappresentata secondo il formato ISO 8601:2004, con la seguente precisione: YYYY-MM-DD.
+            'fatturaXlm.Body.Item(0).DatiBeniServizi.DettaglioLinee.Item(numLinea - 1).AltriDatiGestionali.Item(0).RiferimentoData = Today.Date
+
+            numLinea += 1
+         Loop
+
+         Dim i As Integer = 0
+         If Convert.ToDecimal(Doc.AliquotaIvaRep1) <> 0 Then
+            ' OBBLIGATORIO
+            Dim datiRiepilogo As New FatturaElettronicaBody.DatiBeniServizi.DatiRiepilogo
+            fatturaXlm.Body.Item(0).DatiBeniServizi.DatiRiepilogo.Add(datiRiepilogo)
+
+            ' OBBLIGATORIO - formato numerico nel quale i decimali vanno separati dall'intero con il carattere '.' (punto). La sua lunghezza va da 4 a 6 caratteri.
+            fatturaXlm.Body.Item(0).DatiBeniServizi.DatiRiepilogo.Item(i).AliquotaIVA = Convert.ToDecimal(CFormatta.FormattaEuro(Doc.AliquotaIvaRep1))
+            ' FACOLTATIVO - formato alfanumerico; lunghezza di 2 caratteri; i valori ammessi sono i seguenti:
+            ' N1 escluse ex art.15
+            ' N2 non soggette
+            ' N3 non imponibili
+            ' N4 esenti
+            ' N5 regime del margine / IVA non esposta in fattura
+            ' N6 inversione contabile (per le operazioni in reverse charge ovvero nei casi di autofatturazione per acquisti extra UE di servizi ovvero per importazioni di beni nei soli casi previsti)
+            ' N7 IVA assolta In altro stato UE (vendite a distanza ex art. 40 commi 3 e 4 e art. 41 comma 1 lett. b, DL 331/93; prestazione di servizi di telecomunicazioni, tele - radiodiffusione ed elettronici ex art. 7-sexies lett. f, g, DPR 633/72 e art. 74-sexies, DPR 633/72)
+            'fatturaXlm.Body.Item(0).DatiBeniServizi.DatiRiepilogo.Item(i).Natura = ""
+            ' FACOLTATIVO - formato numerico nel quale i decimali vanno separati dall'intero con il carattere '.' (punto). La sua lunghezza va da 4 a 15 caratteri.
+            'fatturaXlm.Body.Item(0).DatiBeniServizi.DatiRiepilogo.Item(i).SpeseAccessorie = 0
+            ' FACOLTATIVO - formato numerico nel quale i decimali vanno separati dall'intero con il carattere '.' (punto). La sua lunghezza va da 4 a 21 caratteri.
+            fatturaXlm.Body.Item(0).DatiBeniServizi.DatiRiepilogo.Item(i).Arrotondamento = 0
+            ' OBBLIGATORIO - formato numerico nel quale i decimali vanno separati dall'intero con il carattere '.' (punto). La sua lunghezza va da 4 a 15 caratteri.
+            fatturaXlm.Body.Item(0).DatiBeniServizi.DatiRiepilogo.Item(i).ImponibileImporto = Convert.ToDecimal(CFormatta.FormattaEuro(Doc.ImpLordoRep1))
+            ' OBBLIGATORIO - formato numerico nel quale i decimali vanno separati dall'intero con il carattere '.' (punto). La sua lunghezza va da 4 a 15 caratteri.
+            fatturaXlm.Body.Item(0).DatiBeniServizi.DatiRiepilogo.Item(i).Imposta = Convert.ToDecimal(CFormatta.FormattaEuro(Doc.ImpostaRep1))
+            ' FACOLTATIVO - formato alfanumerico; lunghezza di 1 carattere; i valori ammessi sono i seguenti:
+            ' I IVA ad esigibilità immediata
+            ' D IVA ad esigibilità differita
+            ' S scissione dei pagamenti
+            'fatturaXlm.Body.Item(0).DatiBeniServizi.DatiRiepilogo.Item(i).EsigibilitaIVA = ""
+            ' FACOLTATIVO - formato alfanumerico; lunghezza massima di 100 caratteri.
+            'fatturaXlm.Body.Item(0).DatiBeniServizi.DatiRiepilogo.Item(i).RiferimentoNormativo = ""
+            i += 1
+         End If
+
+         If Convert.ToDecimal(Doc.AliquotaIvaRep2) <> 0 Then
+            ' OBBLIGATORIO
+            Dim datiRiepilogo As New FatturaElettronicaBody.DatiBeniServizi.DatiRiepilogo
+            fatturaXlm.Body.Item(0).DatiBeniServizi.DatiRiepilogo.Add(datiRiepilogo)
+
+            ' OBBLIGATORIO - formato numerico nel quale i decimali vanno separati dall'intero con il carattere '.' (punto). La sua lunghezza va da 4 a 6 caratteri.
+            fatturaXlm.Body.Item(0).DatiBeniServizi.DatiRiepilogo.Item(i).AliquotaIVA = Convert.ToDecimal(CFormatta.FormattaEuro(Doc.AliquotaIvaRep2))
+            ' FACOLTATIVO - formato alfanumerico; lunghezza di 2 caratteri; i valori ammessi sono i seguenti:
+            ' N1 escluse ex art.15
+            ' N2 non soggette
+            ' N3 non imponibili
+            ' N4 esenti
+            ' N5 regime del margine / IVA non esposta in fattura
+            ' N6 inversione contabile (per le operazioni in reverse charge ovvero nei casi di autofatturazione per acquisti extra UE di servizi ovvero per importazioni di beni nei soli casi previsti)
+            ' N7 IVA assolta In altro stato UE (vendite a distanza ex art. 40 commi 3 e 4 e art. 41 comma 1 lett. b, DL 331/93; prestazione di servizi di telecomunicazioni, tele - radiodiffusione ed elettronici ex art. 7-sexies lett. f, g, DPR 633/72 e art. 74-sexies, DPR 633/72)
+            'fatturaXlm.Body.Item(0).DatiBeniServizi.DatiRiepilogo.Item(i).Natura = ""
+            ' FACOLTATIVO - formato numerico nel quale i decimali vanno separati dall'intero con il carattere '.' (punto). La sua lunghezza va da 4 a 15 caratteri.
+            'fatturaXlm.Body.Item(0).DatiBeniServizi.DatiRiepilogo.Item(i).SpeseAccessorie = 0
+            ' FACOLTATIVO - formato numerico nel quale i decimali vanno separati dall'intero con il carattere '.' (punto). La sua lunghezza va da 4 a 21 caratteri.
+            fatturaXlm.Body.Item(0).DatiBeniServizi.DatiRiepilogo.Item(i).Arrotondamento = 0
+            ' OBBLIGATORIO - formato numerico nel quale i decimali vanno separati dall'intero con il carattere '.' (punto). La sua lunghezza va da 4 a 15 caratteri.
+            fatturaXlm.Body.Item(0).DatiBeniServizi.DatiRiepilogo.Item(i).ImponibileImporto = Convert.ToDecimal(CFormatta.FormattaEuro(Doc.ImpLordoRep2))
+            ' OBBLIGATORIO - formato numerico nel quale i decimali vanno separati dall'intero con il carattere '.' (punto). La sua lunghezza va da 4 a 15 caratteri.
+            fatturaXlm.Body.Item(0).DatiBeniServizi.DatiRiepilogo.Item(i).Imposta = Convert.ToDecimal(CFormatta.FormattaEuro(Doc.ImpostaRep2))
+            ' FACOLTATIVO - formato alfanumerico; lunghezza di 1 carattere; i valori ammessi sono i seguenti:
+            ' I IVA ad esigibilità immediata
+            ' D IVA ad esigibilità differita
+            ' S scissione dei pagamenti
+            'fatturaXlm.Body.Item(0).DatiBeniServizi.DatiRiepilogo.Item(i).EsigibilitaIVA = ""
+            ' FACOLTATIVO - formato alfanumerico; lunghezza massima di 100 caratteri.
+            'fatturaXlm.Body.Item(0).DatiBeniServizi.DatiRiepilogo.Item(i).RiferimentoNormativo = ""
+            i += 1
+         End If
+
+         If Convert.ToDecimal(Doc.AliquotaIvaRep3) <> 0 Then
+            ' OBBLIGATORIO
+            Dim datiRiepilogo As New FatturaElettronicaBody.DatiBeniServizi.DatiRiepilogo
+            fatturaXlm.Body.Item(0).DatiBeniServizi.DatiRiepilogo.Add(datiRiepilogo)
+
+            ' OBBLIGATORIO - formato numerico nel quale i decimali vanno separati dall'intero con il carattere '.' (punto). La sua lunghezza va da 4 a 6 caratteri.
+            fatturaXlm.Body.Item(0).DatiBeniServizi.DatiRiepilogo.Item(i).AliquotaIVA = Convert.ToDecimal(CFormatta.FormattaEuro(Doc.AliquotaIvaRep3))
+            ' FACOLTATIVO - formato alfanumerico; lunghezza di 2 caratteri; i valori ammessi sono i seguenti:
+            ' N1 escluse ex art.15
+            ' N2 non soggette
+            ' N3 non imponibili
+            ' N4 esenti
+            ' N5 regime del margine / IVA non esposta in fattura
+            ' N6 inversione contabile (per le operazioni in reverse charge ovvero nei casi di autofatturazione per acquisti extra UE di servizi ovvero per importazioni di beni nei soli casi previsti)
+            ' N7 IVA assolta In altro stato UE (vendite a distanza ex art. 40 commi 3 e 4 e art. 41 comma 1 lett. b, DL 331/93; prestazione di servizi di telecomunicazioni, tele - radiodiffusione ed elettronici ex art. 7-sexies lett. f, g, DPR 633/72 e art. 74-sexies, DPR 633/72)
+            'fatturaXlm.Body.Item(0).DatiBeniServizi.DatiRiepilogo.Item(i).Natura = ""
+            ' FACOLTATIVO - formato numerico nel quale i decimali vanno separati dall'intero con il carattere '.' (punto). La sua lunghezza va da 4 a 15 caratteri.
+            'fatturaXlm.Body.Item(0).DatiBeniServizi.DatiRiepilogo.Item(i).SpeseAccessorie = 0
+            ' FACOLTATIVO - formato numerico nel quale i decimali vanno separati dall'intero con il carattere '.' (punto). La sua lunghezza va da 4 a 21 caratteri.
+            fatturaXlm.Body.Item(0).DatiBeniServizi.DatiRiepilogo.Item(i).Arrotondamento = 0
+            ' OBBLIGATORIO - formato numerico nel quale i decimali vanno separati dall'intero con il carattere '.' (punto). La sua lunghezza va da 4 a 15 caratteri.
+            fatturaXlm.Body.Item(0).DatiBeniServizi.DatiRiepilogo.Item(i).ImponibileImporto = Convert.ToDecimal(CFormatta.FormattaEuro(Doc.ImpLordoRep3))
+            ' OBBLIGATORIO - formato numerico nel quale i decimali vanno separati dall'intero con il carattere '.' (punto). La sua lunghezza va da 4 a 15 caratteri.
+            fatturaXlm.Body.Item(0).DatiBeniServizi.DatiRiepilogo.Item(i).Imposta = Convert.ToDecimal(CFormatta.FormattaEuro(Doc.ImpostaRep3))
+            ' FACOLTATIVO - formato alfanumerico; lunghezza di 1 carattere; i valori ammessi sono i seguenti:
+            ' I IVA ad esigibilità immediata
+            ' D IVA ad esigibilità differita
+            ' S scissione dei pagamenti
+            'fatturaXlm.Body.Item(0).DatiBeniServizi.DatiRiepilogo.Item(i).EsigibilitaIVA = ""
+            ' FACOLTATIVO - formato alfanumerico; lunghezza massima di 100 caratteri.
+            'fatturaXlm.Body.Item(0).DatiBeniServizi.DatiRiepilogo.Item(i).RiferimentoNormativo = ""
+            i += 1
+         End If
+
+         If Convert.ToDecimal(Doc.AliquotaIvaRep4) <> 0 Then
+            ' OBBLIGATORIO
+            Dim datiRiepilogo As New FatturaElettronicaBody.DatiBeniServizi.DatiRiepilogo
+            fatturaXlm.Body.Item(0).DatiBeniServizi.DatiRiepilogo.Add(datiRiepilogo)
+
+            ' OBBLIGATORIO - formato numerico nel quale i decimali vanno separati dall'intero con il carattere '.' (punto). La sua lunghezza va da 4 a 6 caratteri.
+            fatturaXlm.Body.Item(0).DatiBeniServizi.DatiRiepilogo.Item(i).AliquotaIVA = Convert.ToDecimal(CFormatta.FormattaEuro(Doc.AliquotaIvaRep4))
+            ' FACOLTATIVO - formato alfanumerico; lunghezza di 2 caratteri; i valori ammessi sono i seguenti:
+            ' N1 escluse ex art.15
+            ' N2 non soggette
+            ' N3 non imponibili
+            ' N4 esenti
+            ' N5 regime del margine / IVA non esposta in fattura
+            ' N6 inversione contabile (per le operazioni in reverse charge ovvero nei casi di autofatturazione per acquisti extra UE di servizi ovvero per importazioni di beni nei soli casi previsti)
+            ' N7 IVA assolta In altro stato UE (vendite a distanza ex art. 40 commi 3 e 4 e art. 41 comma 1 lett. b, DL 331/93; prestazione di servizi di telecomunicazioni, tele - radiodiffusione ed elettronici ex art. 7-sexies lett. f, g, DPR 633/72 e art. 74-sexies, DPR 633/72)
+            'fatturaXlm.Body.Item(0).DatiBeniServizi.DatiRiepilogo.Item(i).Natura = ""
+            ' FACOLTATIVO - formato numerico nel quale i decimali vanno separati dall'intero con il carattere '.' (punto). La sua lunghezza va da 4 a 15 caratteri.
+            'fatturaXlm.Body.Item(0).DatiBeniServizi.DatiRiepilogo.Item(i).SpeseAccessorie = 0
+            ' FACOLTATIVO - formato numerico nel quale i decimali vanno separati dall'intero con il carattere '.' (punto). La sua lunghezza va da 4 a 21 caratteri.
+            fatturaXlm.Body.Item(0).DatiBeniServizi.DatiRiepilogo.Item(i).Arrotondamento = 0
+            ' OBBLIGATORIO - formato numerico nel quale i decimali vanno separati dall'intero con il carattere '.' (punto). La sua lunghezza va da 4 a 15 caratteri.
+            fatturaXlm.Body.Item(0).DatiBeniServizi.DatiRiepilogo.Item(i).ImponibileImporto = Convert.ToDecimal(CFormatta.FormattaEuro(Doc.ImpLordoRep4))
+            ' OBBLIGATORIO - formato numerico nel quale i decimali vanno separati dall'intero con il carattere '.' (punto). La sua lunghezza va da 4 a 15 caratteri.
+            fatturaXlm.Body.Item(0).DatiBeniServizi.DatiRiepilogo.Item(i).Imposta = Convert.ToDecimal(CFormatta.FormattaEuro(Doc.ImpostaRep4))
+            ' FACOLTATIVO - formato alfanumerico; lunghezza di 1 carattere; i valori ammessi sono i seguenti:
+            ' I IVA ad esigibilità immediata
+            ' D IVA ad esigibilità differita
+            ' S scissione dei pagamenti
+            'fatturaXlm.Body.Item(0).DatiBeniServizi.DatiRiepilogo.Item(i).EsigibilitaIVA = ""
+            ' FACOLTATIVO - formato alfanumerico; lunghezza massima di 100 caratteri.
+            'fatturaXlm.Body.Item(0).DatiBeniServizi.DatiRiepilogo.Item(i).RiferimentoNormativo = ""
+         End If
+
 #End Region
 
 #Region "DATI VEICOLI - FACOLTATIVO "
          ' OBBLIGATORIO - la data deve essere rappresentata secondo il formato ISO 8601:2004, con la seguente precisione: YYYY-MM-DD.
-         fatturaXlm.Body.Item(0).DatiVeicoli.Data = Today.Date
+         'fatturaXlm.Body.Item(0).DatiVeicoli.Data = Today.Date
          ' OBBLIGATORIO - formato alfanumerico; lunghezza massima di 15 caratteri.
-         fatturaXlm.Body.Item(0).DatiVeicoli.TotalePercorso = ""
+         'fatturaXlm.Body.Item(0).DatiVeicoli.TotalePercorso = ""
 #End Region
 
 #Region "DATI PAGAMENTO - FACOLTATIVO "
@@ -1028,14 +1178,15 @@ Public Class frmFatturaElettronica
          ' TP01 pagamento a rate
          ' TP02 pagamento completo
          ' TP03 anticipo
-         fatturaXlm.Body.Item(0).DatiPagamento.Item(0).CondizioniPagamento = ""
+         fatturaXlm.Body.Item(0).DatiPagamento.Item(0).CondizioniPagamento = "TP02"
 
          ' OBBLIGATORIO
          Dim dettaglioPagamento As New FatturaElettronicaBody.DatiPagamento.DettaglioPagamento
          fatturaXlm.Body.Item(0).DatiPagamento.Item(0).DettaglioPagamento.Add(dettaglioPagamento)
 
          ' FACOLTATIVO - formato alfanumerico; lunghezza massima di 200 caratteri.
-         fatturaXlm.Body.Item(0).DatiPagamento.Item(0).DettaglioPagamento.Item(0).Beneficiario = ""
+         fatturaXlm.Body.Item(0).DatiPagamento.Item(0).DettaglioPagamento.Item(0).Beneficiario = Doc.Cliente
+
          ' OBBLIGATORIO - formato alfanumerico; lunghezza di 4 caratteri; i valori ammessi sono i seguenti:
          ' MP01 Contanti
          ' MP02 assegno
@@ -1059,68 +1210,117 @@ Public Class frmFatturaElettronica
          ' MP20 SEPA Direct Debit CORE
          ' MP21 SEPA Direct Debit B2B
          ' MP22 Trattenuta su somme già riscosse
-         fatturaXlm.Body.Item(0).DatiPagamento.Item(0).DettaglioPagamento.Item(0).ModalitaPagamento = ""
+         Dim codicePagamento As String
+         Select Case Doc.TipoPagamento.ToUpper
+            Case "CONTANTI"
+               codicePagamento = "MP01"
+            Case "ASSEGNO"
+               codicePagamento = "MP02"
+            Case "ASSEGNO CIRCOLARE"
+               codicePagamento = "MP03"
+            Case "CONTANTI PRESSO TESORERIA"
+               codicePagamento = "MP04"
+            Case "BONIFICO"
+               codicePagamento = "MP05"
+            Case "VAGLIA CAMBIARIO"
+               codicePagamento = "MP06"
+            Case "BOLLETTINO BANCARIO"
+               codicePagamento = "MP07"
+            Case "CARTA DI PAGAMENTO"
+               codicePagamento = "MP08"
+            Case "RID"
+               codicePagamento = "MP09"
+            Case "RID UTENZE"
+               codicePagamento = "MP10"
+            Case "RID VELOCE"
+               codicePagamento = "MP11"
+            Case "RIBA"
+               codicePagamento = "MP12"
+            Case "MAV"
+               codicePagamento = "MP13"
+            Case "QUIETANZA ERARIO STATO"
+               codicePagamento = "MP14"
+            Case "GIROCONTO SU CONTI DI CONTABILITÀ SPECIALE"
+               codicePagamento = "MP15"
+            Case "DOMICILIAZIONE BANCARIA"
+               codicePagamento = "MP16"
+            Case "DOMICILIAZIONE POSTALE"
+               codicePagamento = "MP17"
+            Case "BOLLETTINO DI C/C POSTALE"
+               codicePagamento = "MP18"
+            Case "SEPA DIRECT DEBIT"
+               codicePagamento = "MP19"
+            Case "SEPA DIRECT DEBIT CORE"
+               codicePagamento = "MP20"
+            Case "SEPA DIRECT DEBIT B2B"
+               codicePagamento = "MP21"
+            Case "TRATTENUTA SU SOMME GIÀ RISCOSSE"
+               codicePagamento = "MP22"
+            Case Else
+               codicePagamento = "MP01"
+         End Select
+         fatturaXlm.Body.Item(0).DatiPagamento.Item(0).DettaglioPagamento.Item(0).ModalitaPagamento = codicePagamento
          ' FACOLTATIVO - la data deve essere rappresentata secondo il formato ISO 8601:2004, con la seguente precisione: YYYY-MM-DD.
-         fatturaXlm.Body.Item(0).DatiPagamento.Item(0).DettaglioPagamento.Item(0).DataRiferimentoTerminiPagamento = Today.Date
+         'fatturaXlm.Body.Item(0).DatiPagamento.Item(0).DettaglioPagamento.Item(0).DataRiferimentoTerminiPagamento = Today.Date
          ' FACOLTATIVO - formato numerico di lunghezza massima pari a 3. Vale 0 (zero) per pagamenti a vista.
-         fatturaXlm.Body.Item(0).DatiPagamento.Item(0).DettaglioPagamento.Item(0).GiorniTerminiPagamento = 0
+         'fatturaXlm.Body.Item(0).DatiPagamento.Item(0).DettaglioPagamento.Item(0).GiorniTerminiPagamento = 0
          ' FACOLTATIVO - la data deve essere rappresentata secondo il formato ISO 8601:2004, con la seguente precisione: YYYY-MM-DD.
-         fatturaXlm.Body.Item(0).DatiPagamento.Item(0).DettaglioPagamento.Item(0).DataScadenzaPagamento = Today.Date
+         'fatturaXlm.Body.Item(0).DatiPagamento.Item(0).DettaglioPagamento.Item(0).DataScadenzaPagamento = Today.Date
          ' OBBLIGATORIO - formato numerico nel quale i decimali vanno separati dall'intero con il carattere '.' (punto). La sua lunghezza va da 4 a 15 caratteri.
-         fatturaXlm.Body.Item(0).DatiPagamento.Item(0).DettaglioPagamento.Item(0).ImportoPagamento = 0
+         fatturaXlm.Body.Item(0).DatiPagamento.Item(0).DettaglioPagamento.Item(0).ImportoPagamento = Convert.ToDecimal(CFormatta.FormattaEuro(Doc.TotDoc))
          ' FACOLTATIVO - formato alfanumerico; lunghezza massima di 20 caratteri.
-         fatturaXlm.Body.Item(0).DatiPagamento.Item(0).DettaglioPagamento.Item(0).CodUfficioPostale = ""
+         'fatturaXlm.Body.Item(0).DatiPagamento.Item(0).DettaglioPagamento.Item(0).CodUfficioPostale = ""
          ' FACOLTATIVO - formato alfanumerico; lunghezza massima di 60 caratteri.
-         fatturaXlm.Body.Item(0).DatiPagamento.Item(0).DettaglioPagamento.Item(0).CognomeQuietanzante = ""
+         'fatturaXlm.Body.Item(0).DatiPagamento.Item(0).DettaglioPagamento.Item(0).CognomeQuietanzante = ""
          ' FACOLTATIVO - formato alfanumerico; lunghezza massima di 60 caratteri.
-         fatturaXlm.Body.Item(0).DatiPagamento.Item(0).DettaglioPagamento.Item(0).NomeQuietanzante = ""
+         'fatturaXlm.Body.Item(0).DatiPagamento.Item(0).DettaglioPagamento.Item(0).NomeQuietanzante = ""
          ' FACOLTATIVO - formato alfanumerico; lunghezza di 16 caratteri.
-         fatturaXlm.Body.Item(0).DatiPagamento.Item(0).DettaglioPagamento.Item(0).CFQuietanzante = ""
+         'fatturaXlm.Body.Item(0).DatiPagamento.Item(0).DettaglioPagamento.Item(0).CFQuietanzante = ""
          ' FACOLTATIVO - formato alfanumerico; lunghezza che va da 2 a 10 caratteri.
-         fatturaXlm.Body.Item(0).DatiPagamento.Item(0).DettaglioPagamento.Item(0).TitoloQuietanzante = ""
+         'fatturaXlm.Body.Item(0).DatiPagamento.Item(0).DettaglioPagamento.Item(0).TitoloQuietanzante = ""
          ' FACOLTATIVO - formato alfanumerico; lunghezza massima di 80 caratteri.
-         fatturaXlm.Body.Item(0).DatiPagamento.Item(0).DettaglioPagamento.Item(0).IstitutoFinanziario = ""
+         'fatturaXlm.Body.Item(0).DatiPagamento.Item(0).DettaglioPagamento.Item(0).IstitutoFinanziario = ""
          ' FACOLTATIVO - formato alfanumerico; lunghezza che va da 15 a 34 caratteri.
-         fatturaXlm.Body.Item(0).DatiPagamento.Item(0).DettaglioPagamento.Item(0).IBAN = ""
+         'fatturaXlm.Body.Item(0).DatiPagamento.Item(0).DettaglioPagamento.Item(0).IBAN = ""
          ' FACOLTATIVO - formato numerico di 5 caratteri.
-         fatturaXlm.Body.Item(0).DatiPagamento.Item(0).DettaglioPagamento.Item(0).ABI = ""
+         'fatturaXlm.Body.Item(0).DatiPagamento.Item(0).DettaglioPagamento.Item(0).ABI = ""
          ' FACOLTATIVO - formato numerico di 5 caratteri.
-         fatturaXlm.Body.Item(0).DatiPagamento.Item(0).DettaglioPagamento.Item(0).CAB = ""
+         'fatturaXlm.Body.Item(0).DatiPagamento.Item(0).DettaglioPagamento.Item(0).CAB = ""
          ' FACOLTATIVO - formato alfanumerico; lunghezza che va da 8 a 11 caratteri.
-         fatturaXlm.Body.Item(0).DatiPagamento.Item(0).DettaglioPagamento.Item(0).BIC = ""
+         'fatturaXlm.Body.Item(0).DatiPagamento.Item(0).DettaglioPagamento.Item(0).BIC = ""
          ' FACOLTATIVO - formato numerico nel quale i decimali vanno separati dall'intero con il carattere '.' (punto). La sua lunghezza va da 4 a 15 caratteri.
-         fatturaXlm.Body.Item(0).DatiPagamento.Item(0).DettaglioPagamento.Item(0).ScontoPagamentoAnticipato = 0
+         'fatturaXlm.Body.Item(0).DatiPagamento.Item(0).DettaglioPagamento.Item(0).ScontoPagamentoAnticipato = 0
          ' FACOLTATIVO - la data deve essere rappresentata secondo il formato ISO 8601:2004, con la seguente precisione: YYYY-MM-DD.
-         fatturaXlm.Body.Item(0).DatiPagamento.Item(0).DettaglioPagamento.Item(0).DataLimitePagamentoAnticipato = Today.Date
+         'fatturaXlm.Body.Item(0).DatiPagamento.Item(0).DettaglioPagamento.Item(0).DataLimitePagamentoAnticipato = Today.Date
          ' FACOLTATIVO - formato numerico nel quale i decimali vanno separati dall'intero con il carattere '.' (punto). La sua lunghezza va da 4 a 15 caratteri.
-         fatturaXlm.Body.Item(0).DatiPagamento.Item(0).DettaglioPagamento.Item(0).PenalitaPagamentiRitardati = 0
+         'fatturaXlm.Body.Item(0).DatiPagamento.Item(0).DettaglioPagamento.Item(0).PenalitaPagamentiRitardati = 0
          ' FACOLTATIVO - la data deve essere rappresentata secondo il formato ISO 8601:2004, con la seguente precisione: YYYY-MM-DD.
-         fatturaXlm.Body.Item(0).DatiPagamento.Item(0).DettaglioPagamento.Item(0).DataDecorrenzaPenale = Today.Date
+         'fatturaXlm.Body.Item(0).DatiPagamento.Item(0).DettaglioPagamento.Item(0).DataDecorrenzaPenale = Today.Date
          ' FACOLTATIVO - formato alfanumerico; lunghezza massima di 60 caratteri.
-         fatturaXlm.Body.Item(0).DatiPagamento.Item(0).DettaglioPagamento.Item(0).CodicePagamento = ""
+         'fatturaXlm.Body.Item(0).DatiPagamento.Item(0).DettaglioPagamento.Item(0).CodicePagamento = ""
 #End Region
 
 #Region "ALLEGATI - FACOLTATIVO "
          '' FACOLTATIVO
-         Dim allegati As New FatturaElettronicaBody.Allegati.Allegati
-         fatturaXlm.Body.Item(0).Allegati.Add(allegati)
+         'Dim allegati As New FatturaElettronicaBody.Allegati.Allegati
+         'fatturaXlm.Body.Item(0).Allegati.Add(allegati)
 
          ' OBBLIGATORIO - formato alfanumerico; lunghezza massima di 60 caratteri.
-         fatturaXlm.Body.Item(0).Allegati.Item(0).NomeAttachment = ""
+         'fatturaXlm.Body.Item(0).Allegati.Item(0).NomeAttachment = ""
          ' FACOLTATIVO - formato alfanumerico; lunghezza massima di 10 caratteri.
-         fatturaXlm.Body.Item(0).Allegati.Item(0).AlgoritmoCompressione = ""
+         'fatturaXlm.Body.Item(0).Allegati.Item(0).AlgoritmoCompressione = ""
          ' FACOLTATIVO - formato alfanumerico; lunghezza massima di 10 caratteri.
-         fatturaXlm.Body.Item(0).Allegati.Item(0).FormatoAttachment = ""
+         'fatturaXlm.Body.Item(0).Allegati.Item(0).FormatoAttachment = ""
          ' FACOLTATIVO - formato alfanumerico; lunghezza massima di 100 caratteri.
-         fatturaXlm.Body.Item(0).Allegati.Item(0).DescrizioneAttachment = ""
+         'fatturaXlm.Body.Item(0).Allegati.Item(0).DescrizioneAttachment = ""
          ' OBBLIGATORIO - è in formato xs:base64Binary.
-         Dim allegato As Byte()
-         fatturaXlm.Body.Item(0).Allegati.Item(0).Attachment = allegato
+         'Dim allegato As Byte()
+         'fatturaXlm.Body.Item(0).Allegati.Item(0).Attachment = allegato
 #End Region
 
 #End Region
 
-SALTA:
+salta:
 
 #Region "SCRITTURA DEL FILE XML "
          ' Serializzazione XML
@@ -1170,7 +1370,7 @@ SALTA:
          Dim nomefileXML As String
 
          If eui_cmbTrasmittenteIdPaese.Text <> String.Empty Then
-            nomefileXML = eui_cmbTrasmittenteIdPaese.Text.Substring(0, 2) & eui_txtTrasmittenteIdCodice.Text.ToUpper & "_" & LeggiProgressivoFileXML() & ".xml"
+            nomefileXML = eui_cmbTrasmittenteIdPaese.Text.Substring(0, 2) & eui_txtTrasmittenteIdCodice.Text.ToUpper & "_" & InserisciZero(eui_txtProgressivoInvio.Text) & ".xml"
          Else
             nomefileXML = String.Empty
          End If
@@ -1191,7 +1391,7 @@ SALTA:
          Dim nomefileTXT As String
 
          If eui_cmbTrasmittenteIdPaese.Text <> String.Empty Then
-            nomefileTXT = eui_cmbTrasmittenteIdPaese.Text.Substring(0, 2) & eui_txtTrasmittenteIdCodice.Text.ToUpper & "_" & LeggiProgressivoFileXML() & ".txt"
+            nomefileTXT = eui_cmbTrasmittenteIdPaese.Text.Substring(0, 2) & eui_txtTrasmittenteIdCodice.Text.ToUpper & "_" & InserisciZero(eui_txtProgressivoInvio.Text) & ".txt"
          Else
             nomefileTXT = String.Empty
          End If
@@ -1207,11 +1407,20 @@ SALTA:
 
    End Function
 
-   Private Function LeggiProgressivoFileXML() As String
+   Private Function LeggiNumeroProgressivoFileXML() As String
       Try
-         ' DA_FARE_A: Sviluppare!
+         Dim chiaveConfig As String = "NumeroProgressivoFileXML"
 
-         Return "00001"
+         Dim DatiConfig As AppConfig
+         DatiConfig = New AppConfig
+         DatiConfig.ConfigType = ConfigFileType.AppConfig
+
+         If DatiConfig.GetValue(chiaveConfig) = False Then
+            Return "1"
+         Else
+            ' Legge dal file di configurazione.
+            Return DatiConfig.GetValue(chiaveConfig)
+         End If
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
@@ -1220,6 +1429,29 @@ SALTA:
       End Try
 
    End Function
+
+   Private Sub SalvaNumeroProgressivoFileXML()
+      Try
+         Dim chiaveConfig As String = "NumeroProgressivoFileXML"
+
+         Dim DatiConfig As AppConfig
+         DatiConfig = New AppConfig
+         DatiConfig.ConfigType = ConfigFileType.AppConfig
+
+         Dim numProgressivo As Integer
+         If IsNumeric(eui_txtProgressivoInvio.Text) = True Then
+            numProgressivo = Convert.ToInt32(eui_txtProgressivoInvio.Text)
+
+            DatiConfig.SetValue(chiaveConfig, (numProgressivo + 1).ToString)
+         End If
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+
+   End Sub
 
    Private Function VerificaEsistenzaCartellaAnnoCorrente(ByVal nomeDir As String) As Boolean
       ' Verifica se esiste la cartella dell'anno corrente.
@@ -1255,6 +1487,12 @@ SALTA:
       Try
          ImpostaIcona(Me)
 
+         ' Legge il numero progressivo del file e lo formatta con degli zeri.
+         eui_txtProgressivoInvio.Text = LeggiNumeroProgressivoFileXML()
+
+         ' Imposta il formato di trasmissione.
+         eui_cmbFormatoTrasmissione.SelectedIndex = 0
+
          ' Percorso file.
          eui_lblDirectoryFileXml.Text = String.Empty
 
@@ -1280,6 +1518,25 @@ SALTA:
 
    Private Sub eui_cmdEsporta_Click(sender As Object, e As EventArgs) Handles eui_cmdEsporta.Click
       Try
+         ' Convalida i campi necessari per creare il nome del file xml.
+         If eui_cmbTrasmittenteIdPaese.Text = String.Empty Then
+            MessageBox.Show("Specificare un valore per il campo 'Paese' dell'Identificativo Trasmittente.", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            eui_cmbTrasmittenteIdPaese.Focus()
+            Exit Sub
+         End If
+
+         If eui_txtTrasmittenteIdCodice.Text = String.Empty Then
+            MessageBox.Show("Specificare un valore per il campo 'Codice Identificativo Fiscale' dell'Identificativo Trasmittente.", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            eui_txtTrasmittenteIdCodice.Focus()
+            Exit Sub
+         End If
+
+         If eui_txtProgressivoInvio.Text = String.Empty Then
+            MessageBox.Show("Specificare un valore per il campo 'Progressivo Invio'.", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            eui_txtProgressivoInvio.Focus()
+            Exit Sub
+         End If
+
          ' Modifica il cursore del mouse.
          Cursor.Current = Cursors.AppStarting
 
@@ -1293,6 +1550,12 @@ SALTA:
 
             ' Percorso file.
             eui_lblDirectoryFileXml.Text = GeneraDirectoryNomeFileXML()
+
+            ' Se numerico salva il numero progressivo del file.
+            SalvaNumeroProgressivoFileXML()
+
+            ' Esegue la convalida del file xml.
+            eui_cmdConvalida.PerformClick()
          End If
 
       Catch ex As Exception

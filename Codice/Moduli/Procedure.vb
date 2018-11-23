@@ -2197,8 +2197,8 @@ Module Procedure
 
             Return val
 
-         ElseIf val = "" Then
-            Return ""
+         ElseIf val = String.Empty Then
+            Return String.Empty
 
          Else
             Return Nothing
