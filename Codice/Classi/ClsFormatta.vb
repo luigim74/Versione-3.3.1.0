@@ -133,6 +133,21 @@ Public Class ClsFormatta
       End Try
    End Function
 
+   Public Function FormattaImponibileIva(ByVal numero As Double) As Decimal
+      Try
+         Dim valString As String = String.Format("{0:##,##0.00}", numero)
+         Dim valDecimal As Decimal = Convert.ToDecimal(valString)
+
+         Return valDecimal
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+         Return 0
+      End Try
+   End Function
+
    Public Function FormattaData(ByVal val As Date) As String
       Try
          Dim Giorno As String
