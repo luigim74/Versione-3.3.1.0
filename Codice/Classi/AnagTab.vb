@@ -16,6 +16,7 @@ Namespace Anagrafiche
       Public Provincia As String
       Public Regione As String
       Public Nazione As String
+      Public RegimeFiscale As String
       Public Telefono As String
       Public Fax As String
       Public Email As String
@@ -141,6 +142,11 @@ Namespace Anagrafiche
                Me.Nazione = ds.Tables(tabella).Rows(0)("Nazione")
             Else
                Me.Nazione = ""
+            End If
+            If IsDBNull(ds.Tables(tabella).Rows(0)("RegimeFiscale")) = False Then
+               Me.RegimeFiscale = ds.Tables(tabella).Rows(0)("RegimeFiscale")
+            Else
+               Me.RegimeFiscale = ""
             End If
             If IsDBNull(ds.Tables(tabella).Rows(0)("Regione")) = False Then
                Me.Regione = ds.Tables(tabella).Rows(0)("Regione")
@@ -321,6 +327,11 @@ Namespace Anagrafiche
             Else
                Me.Nazione = ""
             End If
+            If IsDBNull(ds.Tables(tabella).Rows(0)("RegimeFiscale")) = False Then
+               Me.RegimeFiscale = ds.Tables(tabella).Rows(0)("RegimeFiscale")
+            Else
+               Me.RegimeFiscale = ""
+            End If
             If IsDBNull(ds.Tables(tabella).Rows(0)("Regione")) = False Then
                Me.Regione = ds.Tables(tabella).Rows(0)("Regione")
             Else
@@ -429,11 +440,11 @@ Namespace Anagrafiche
 
             ' Avvia una transazione.
             tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
-            sql = String.Format("INSERT INTO {0} (RagSoc, Descrizione, Iva, CodFisc, Rea, Iri, Indirizzo, " & _
-                                                 "Città, Prov, Cap, Nazione, Tel, Fax, Internet, " & _
-                                                 "Mail, Immagine, Attività, PercorsoDB) " & _
-                                          "VALUES(@RagSoc, @Descrizione, @Iva, @CodFisc, @Rea, @Iri, @Indirizzo, " & _
-                                                 "@Città, @Prov, @Cap, @Nazione, @Tel, @Fax, @Internet, " & _
+            sql = String.Format("INSERT INTO {0} (RagSoc, Descrizione, Iva, CodFisc, Rea, Iri, Indirizzo, " &
+                                                 "Città, Prov, Cap, Nazione, RegimeFiscale, Tel, Fax, Internet, " &
+                                                 "Mail, Immagine, Attività, PercorsoDB) " &
+                                          "VALUES(@RagSoc, @Descrizione, @Iva, @CodFisc, @Rea, @Iri, @Indirizzo, " &
+                                                 "@Città, @Prov, @Cap, @Nazione, @RegimeFiscale, @Tel, @Fax, @Internet, " &
                                                  "@Mail, @Immagine, @Attività, @PercorsoDB)", tabella)
 
             ' Crea il comando per la connessione corrente.
@@ -450,6 +461,7 @@ Namespace Anagrafiche
             cmdInsert.Parameters.Add("@Prov", Me.Provincia)
             cmdInsert.Parameters.Add("@Cap", Me.Cap)
             cmdInsert.Parameters.Add("@Nazione", Me.Nazione)
+            cmdInsert.Parameters.Add("@RegimeFiscale", Me.RegimeFiscale)
             cmdInsert.Parameters.Add("@Tel", Me.Telefono)
             cmdInsert.Parameters.Add("@Fax", Me.Fax)
             cmdInsert.Parameters.Add("@Internet", Me.Internet)
@@ -491,35 +503,36 @@ Namespace Anagrafiche
             tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
 
             ' Crea la stringa di eliminazione.
-            sql = String.Format("UPDATE {0} " & _
-                                "SET RagSoc = @RagSoc, " & _
-                                "Descrizione = @Descrizione, " & _
-                                "Iva = @Iva, " & _
-                                "CodFisc = @CodFisc, " & _
-                                "Rea = @Rea, " & _
-                                "Iri = @Iri, " & _
-                                "Indirizzo = @Indirizzo, " & _
-                                "Città = @Città, " & _
-                                "Prov = @Prov, " & _
-                                "Cap = @Cap, " & _
-                                "Nazione = @Nazione, " & _
-                                "Tel = @Tel, " & _
-                                "Fax = @Fax, " & _
-                                "Internet = @Internet, " & _
-                                "Mail = @Mail, " & _
-                                "Immagine = @Immagine, " & _
-                                "PercorsoImg = @PercorsoImg, " & _
-                                "Attività = @Attività, " & _
-                                "PercorsoDB = @PercorsoDB, " & _
-                                "ModPagamento = @ModPagamento, " & _
-                                "Banca = @Banca, " & _
-                                "Cin = @Cin, " & _
-                                "Abi = @Abi, " & _
-                                "Cab = @Cab, " & _
-                                "Cc = @Cc, " & _
-                                "Iban = @Iban " & _
-                                "WHERE Id = {1}", _
-                                 tabella, _
+            sql = String.Format("UPDATE {0} " &
+                                "SET RagSoc = @RagSoc, " &
+                                "Descrizione = @Descrizione, " &
+                                "Iva = @Iva, " &
+                                "CodFisc = @CodFisc, " &
+                                "Rea = @Rea, " &
+                                "Iri = @Iri, " &
+                                "Indirizzo = @Indirizzo, " &
+                                "Città = @Città, " &
+                                "Prov = @Prov, " &
+                                "Cap = @Cap, " &
+                                "Nazione = @Nazione, " &
+                                "RegimeFiscale = @RegimeFiscale, " &
+                                "Tel = @Tel, " &
+                                "Fax = @Fax, " &
+                                "Internet = @Internet, " &
+                                "Mail = @Mail, " &
+                                "Immagine = @Immagine, " &
+                                "PercorsoImg = @PercorsoImg, " &
+                                "Attività = @Attività, " &
+                                "PercorsoDB = @PercorsoDB, " &
+                                "ModPagamento = @ModPagamento, " &
+                                "Banca = @Banca, " &
+                                "Cin = @Cin, " &
+                                "Abi = @Abi, " &
+                                "Cab = @Cab, " &
+                                "Cc = @Cc, " &
+                                "Iban = @Iban " &
+                                "WHERE Id = {1}",
+                                 tabella,
                                  codice)
 
             ' Crea il comando per la connessione corrente.
@@ -536,6 +549,7 @@ Namespace Anagrafiche
             cmdUpdate.Parameters.Add("@Prov", Me.Provincia)
             cmdUpdate.Parameters.Add("@Cap", Me.Cap)
             cmdUpdate.Parameters.Add("@Nazione", Me.Nazione)
+            cmdUpdate.Parameters.Add("@RegimeFiscale", Me.RegimeFiscale)
             cmdUpdate.Parameters.Add("@Tel", Me.Telefono)
             cmdUpdate.Parameters.Add("@Fax", Me.Fax)
             cmdUpdate.Parameters.Add("@Internet", Me.Internet)

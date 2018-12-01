@@ -22,6 +22,7 @@ Public Class frmFatturaElettronica
 
    Const TAB_DOCUMENTI As String = "Documenti"
    Const TAB_DETTAGLI_DOCUMENTI As String = "DettagliDoc"
+   Const IT_ITALIA As String = "IT Italia"
 
    Private Doc As New Documenti
    Private CFormatta As New ClsFormatta
@@ -41,45 +42,38 @@ Public Class frmFatturaElettronica
    End Sub
 
    Private Sub EsempioFatt()
-      Try
-         'Dim fatturaXlm As Fattura = Fattura.CreateInstance(Instance.PubblicaAmministrazione)
+      'Dim fatturaXlm As Fattura = Fattura.CreateInstance(Instance.PubblicaAmministrazione)
 
-         'Dim settings As New XmlReaderSettings()
-         'settings.IgnoreWhitespace = True
-         'settings.IgnoreComments = True
+      'Dim settings As New XmlReaderSettings()
+      'settings.IgnoreWhitespace = True
+      'settings.IgnoreComments = True
 
-         '' Modifica proprietà Header.
-         'fatturaXlm.Header.CedentePrestatore.Sede.Indirizzo = "Via Dolcedo, 121"
+      '' Modifica proprietà Header.
+      'fatturaXlm.Header.CedentePrestatore.Sede.Indirizzo = "Via Dolcedo, 121"
 
-         'fatturaXlm.Header.CedentePrestatore.DatiAnagrafici.Anagrafica.Denominazione = "Bianchi Srl"
+      'fatturaXlm.Header.CedentePrestatore.DatiAnagrafici.Anagrafica.Denominazione = "Bianchi Srl"
 
-         'Dim settingsW As New XmlWriterSettings()
-         'settingsW.Indent = True
+      'Dim settingsW As New XmlWriterSettings()
+      'settingsW.Indent = True
 
-         '' Serializzazione XML
-         'Using writer As XmlWriter = XmlWriter.Create("Documenti\IT01234567890_FPA01.xml", settingsW)
-         '   fatturaXlm.WriteXml(writer)
-         'End Using
+      '' Serializzazione XML
+      'Using writer As XmlWriter = XmlWriter.Create("Documenti\IT01234567890_FPA01.xml", settingsW)
+      '   fatturaXlm.WriteXml(writer)
+      'End Using
 
-         '' Lettura da file XML
-         'Using reader As XmlReader = XmlReader.Create("IT01234567890_FPA02.xml", settings)
-         '   fatturaXlm.ReadXml(reader)
-         'End Using
+      '' Lettura da file XML
+      'Using reader As XmlReader = XmlReader.Create("IT01234567890_FPA02.xml", settings)
+      '   fatturaXlm.ReadXml(reader)
+      'End Using
 
-         'For Each doc As FatturaElettronicaBody.Body In fatturaXlm.Body
-         '   Me.Text = doc.DatiGenerali.DatiGeneraliDocumento.Numero & " - " & doc.DatiGenerali.DatiGeneraliDocumento.Data
-         'Next
+      'For Each doc As FatturaElettronicaBody.Body In fatturaXlm.Body
+      '   Me.Text = doc.DatiGenerali.DatiGeneraliDocumento.Numero & " - " & doc.DatiGenerali.DatiGeneraliDocumento.Data
+      'Next
 
-         '' Convalida del documento.
-         'Dim validator As New FatturaValidator
-         'Dim risultato As FluentValidation.Results.ValidationResult = validator.Validate(fatturaXlm)
-         'Me.Text = risultato.IsValid
-
-      Catch ex As Exception
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      End Try
+      '' Convalida del documento.
+      'Dim validator As New FatturaValidator
+      'Dim risultato As FluentValidation.Results.ValidationResult = validator.Validate(fatturaXlm)
+      'Me.Text = risultato.IsValid
 
    End Sub
 
@@ -112,17 +106,22 @@ Public Class frmFatturaElettronica
 
          If risultato.IsValid = True Then
             eui_txtConvalida.Text = "Il documento è corretto!"
+
+            Return True
          Else
             Dim i As Integer
             For Each errore As FluentValidation.Results.ValidationFailure In risultato.Errors
                eui_txtConvalida.Text = eui_txtConvalida.Text & errore.PropertyName & ": " & errore.ErrorMessage & vbCrLf
             Next
+
+            Return False
          End If
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
          err.GestisciErrore(ex.StackTrace, ex.Message)
 
+         Return False
       End Try
 
    End Function
@@ -247,7 +246,7 @@ Public Class frmFatturaElettronica
          End If
 
          ' FACOLTATIVO - La data deve essere rappresentata secondo il formato ISO 8601:2004, con la seguente precisione: YYYY-MM-DD. 
-         If eui_dtpCpDataIscrizioneAlbo.Value.ToString <> String.Empty Then
+         If eui_txtCpAlboProfessionale.Text <> String.Empty Then
             fatturaXlm.Header.CedentePrestatore.DatiAnagrafici.DataIscrizioneAlbo = eui_dtpCpDataIscrizioneAlbo.Value
          End If
 
@@ -1483,6 +1482,251 @@ salta:
 
    End Function
 
+   Private Sub CaricaDatiAzienda()
+      ' Dichiara un oggetto connessione.
+      Dim cn As New OleDbConnection(ConnString)
+
+      Try
+         cn.Open()
+
+         Dim cmd As New OleDbCommand("SELECT * FROM Azienda ORDER BY Id ASC", cn)
+         Dim dr As OleDbDataReader = cmd.ExecuteReader()
+
+         Do While dr.Read()
+
+            ' DATI DI TRASMISSIONE.
+
+            ' Identificativo Trasmittente IdPaese.
+            eui_cmbTrasmittenteIdPaese.SelectedItem = IT_ITALIA
+
+            ' Codice identificativo fiscale.
+            If IsDBNull(dr.Item("CodFisc")) = False Then
+               eui_txtTrasmittenteIdCodice.Text = dr.Item("CodFisc").ToString.ToUpper
+            Else
+               eui_txtTrasmittenteIdCodice.Text = String.Empty
+            End If
+
+            ' Telefono.
+            If IsDBNull(dr.Item("Tel")) = False Then
+               eui_txtTrasmittenteTelefono.Text = dr.Item("Tel")
+            Else
+               eui_txtTrasmittenteTelefono.Text = String.Empty
+            End If
+
+            ' E-mail.
+            If IsDBNull(dr.Item("Mail")) = False Then
+               eui_txtTrasmittenteEmail.Text = dr.Item("Mail")
+            Else
+               eui_txtTrasmittenteEmail.Text = String.Empty
+            End If
+
+            ' DA_FARE_A: Sviluppare! PEC Destinatario.
+
+            ' CEDENTE / PRESTATORE.
+
+            ' Identificativo Trasmittente IdPaese.
+            eui_cmbCpIdPaese.SelectedItem = IT_ITALIA
+
+            ' Partita IVA.
+            If IsDBNull(dr.Item("Iva")) = False Then
+               eui_txtCpIdCodice.Text = dr.Item("Iva").ToString
+            Else
+               eui_txtCpIdCodice.Text = String.Empty
+            End If
+
+            ' Codice fiscale.
+            If IsDBNull(dr.Item("CodFisc")) = False Then
+               eui_txtCpCodiceFiscale.Text = dr.Item("CodFisc").ToString.ToUpper
+            Else
+               eui_txtCpCodiceFiscale.Text = String.Empty
+            End If
+
+            ' Denominazione.
+            If IsDBNull(dr.Item("RagSoc")) = False Then
+               eui_txtCpDenominazione.Text = dr.Item("RagSoc").ToString
+            Else
+               eui_txtCpDenominazione.Text = String.Empty
+            End If
+
+            ' Regime fiscale.
+            If IsDBNull(dr.Item("RegimeFiscale")) = False Then
+               eui_cmbCpRegimeFiscale.Text = dr.Item("RegimeFiscale").ToString
+            Else
+               eui_cmbCpRegimeFiscale.Text = String.Empty
+            End If
+
+            ' Sede - Indirizzo.
+            If IsDBNull(dr.Item("Indirizzo")) = False Then
+               eui_txtCpSedeIndirizzo.Text = dr.Item("Indirizzo").ToString
+            Else
+               eui_txtCpSedeIndirizzo.Text = String.Empty
+            End If
+
+            ' Sede - CAP.
+            If IsDBNull(dr.Item("Cap")) = False Then
+               eui_txtCpSedeCAP.Text = dr.Item("Cap").ToString
+            Else
+               eui_txtCpSedeCAP.Text = String.Empty
+            End If
+
+            ' Sede - Comune.
+            If IsDBNull(dr.Item("Città")) = False Then
+               eui_txtCpSedeComune.Text = dr.Item("Città").ToString
+            Else
+               eui_txtCpSedeComune.Text = String.Empty
+            End If
+
+            ' Sede - Provincia.
+            If IsDBNull(dr.Item("Prov")) = False Then
+               eui_cmbCpSedeProvincia.Text = dr.Item("Prov").ToString
+            Else
+               eui_cmbCpSedeProvincia.Text = String.Empty
+            End If
+
+            ' Sede - Nazione.
+            eui_cmbCpSedeNazione.Text = IT_ITALIA
+
+            ' Iscrizione REA.
+            If IsDBNull(dr.Item("Rea")) = False Then
+               eui_txtCpNumeroREA.Text = dr.Item("Rea").ToString
+            Else
+               eui_txtCpNumeroREA.Text = String.Empty
+            End If
+
+            ' Contatti - Telefono.
+            If IsDBNull(dr.Item("Tel")) = False Then
+               eui_txtCpTelefono.Text = dr.Item("Tel").ToString
+            Else
+               eui_txtCpTelefono.Text = String.Empty
+            End If
+
+            ' Contatti - Fax.
+            If IsDBNull(dr.Item("Fax")) = False Then
+               eui_txtCpFax.Text = dr.Item("Fax").ToString
+            Else
+               eui_txtCpFax.Text = String.Empty
+            End If
+
+            ' Contatti - E-mail.
+            If IsDBNull(dr.Item("Mail")) = False Then
+               eui_txtCpEmail.Text = dr.Item("Mail").ToString
+            Else
+               eui_txtCpEmail.Text = String.Empty
+            End If
+         Loop
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      Finally
+         cn.Close()
+
+      End Try
+   End Sub
+
+   Private Sub CaricaDatiCliente()
+      ' Dichiara un oggetto connessione.
+      Dim cn As New OleDbConnection(ConnString)
+
+      Try
+         cn.Open()
+
+         Dim cmd As New OleDbCommand("SELECT * FROM Azienda ORDER BY Id ASC", cn)
+         Dim dr As OleDbDataReader = cmd.ExecuteReader()
+
+         Do While dr.Read()
+
+            ' CESSIONARIO / COMMITTENTE.
+
+            ' Identificativo Trasmittente IdPaese.
+            eui_cmbCcIdPaese.SelectedItem = IT_ITALIA
+
+            ' Partita IVA.
+            If IsDBNull(dr.Item("Piva")) = False Then
+               eui_txtCpIdCodice.Text = dr.Item("Piva").ToString
+            Else
+               eui_txtCpIdCodice.Text = String.Empty
+            End If
+
+            ' Codice fiscale.
+            If IsDBNull(dr.Item("CodFisc")) = False Then
+               eui_txtCcCodiceFiscale.Text = dr.Item("CodFisc").ToString.ToUpper
+            Else
+               eui_txtCcCodiceFiscale.Text = String.Empty
+            End If
+
+            ' Denominazione.
+            If IsDBNull(dr.Item("Cognome")) = False Then
+               eui_txtCcDenominazione.Text = dr.Item("Cognome").ToString
+            Else
+               eui_txtCcDenominazione.Text = String.Empty
+            End If
+
+            ' Nome.
+            If IsDBNull(dr.Item("Nome")) = False Then
+               eui_txtCcNome.Text = dr.Item("Nome").ToString
+            Else
+               eui_txtCcNome.Text = String.Empty
+            End If
+
+            ' Cognome.
+            If IsDBNull(dr.Item("Cognome")) = False Then
+               eui_txtCcCognome.Text = dr.Item("Cognome").ToString
+            Else
+               eui_txtCcCognome.Text = String.Empty
+            End If
+
+            ' Titolo.
+            If IsDBNull(dr.Item("Titolo")) = False Then
+               eui_txtCcTitolo.Text = dr.Item("Titolo").ToString
+            Else
+               eui_txtCcTitolo.Text = String.Empty
+            End If
+
+            ' Sede - Indirizzo.
+            If IsDBNull(dr.Item("Indirizzo")) = False Then
+               eui_txtCcSedeIndirizzo.Text = dr.Item("Indirizzo").ToString
+            Else
+               eui_txtCcSedeIndirizzo.Text = String.Empty
+            End If
+
+            ' Sede - CAP.
+            If IsDBNull(dr.Item("Cap")) = False Then
+               eui_txtCcSedeCAP.Text = dr.Item("Cap").ToString
+            Else
+               eui_txtCcSedeCAP.Text = String.Empty
+            End If
+
+            ' Sede - Comune.
+            If IsDBNull(dr.Item("Città")) = False Then
+               eui_txtCcSedeComune.Text = dr.Item("Città").ToString
+            Else
+               eui_txtCcSedeComune.Text = String.Empty
+            End If
+
+            ' Sede - Provincia.
+            If IsDBNull(dr.Item("Provincia")) = False Then
+               eui_cmbCcSedeProvincia.Text = dr.Item("Provincia").ToString
+            Else
+               eui_cmbCcSedeProvincia.Text = String.Empty
+            End If
+
+            ' Sede - Nazione.
+            eui_cmbCcSedeNazione.Text = IT_ITALIA
+
+         Loop
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      Finally
+         cn.Close()
+
+      End Try
+   End Sub
+
    Private Sub FatturaElettronica_Load(sender As Object, e As EventArgs) Handles Me.Load
       Try
          ImpostaIcona(Me)
@@ -1491,10 +1735,16 @@ salta:
          eui_txtProgressivoInvio.Text = LeggiNumeroProgressivoFileXML()
 
          ' Imposta il formato di trasmissione.
-         eui_cmbFormatoTrasmissione.SelectedIndex = 0
+         eui_cmbFormatoTrasmissione.SelectedItem = "FPR12"
 
          ' Percorso file.
          eui_lblDirectoryFileXml.Text = String.Empty
+
+         ' Carica i dati dell'Azienda.
+         CaricaDatiAzienda()
+
+         ' Carica i dati del Cliente.
+         CaricaDatiCliente()
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
@@ -1576,11 +1826,12 @@ salta:
    End Sub
 
    Private Sub eui_cmdConvalida_Click(sender As Object, e As EventArgs) Handles eui_cmdConvalida.Click
+      Dim fileConvalidato As Boolean
+
       Try
          ' Modifica il cursore del mouse.
          Cursor.Current = Cursors.AppStarting
 
-         Dim fileConvalidato As Boolean
          Dim nomeFileXml As String = nomeDirectory & "\" & GeneraNomeFileXML()
 
          If File.Exists(nomeFileXml) = True Then
@@ -1595,6 +1846,10 @@ salta:
       Finally
          ' Modifica il cursore del mouse.
          Cursor.Current = Cursors.Default
+
+         If fileConvalidato = False Then
+            MessageBox.Show("Riscontrati errori di convalida.", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Error)
+         End If
 
       End Try
    End Sub

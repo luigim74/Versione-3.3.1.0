@@ -38,7 +38,6 @@ Partial Class frmFatturaElettronica
       Me.eui_cmdTastiera = New Elegant.Ui.Button()
       Me.eui_cmdAnnulla = New Elegant.Ui.Button()
       Me.eui_tpcDocumento = New Elegant.Ui.TabControl()
-      Me.TabPage4 = New Elegant.Ui.TabPage()
       Me.TabPage1 = New Elegant.Ui.TabPage()
       Me.TabControl1 = New Elegant.Ui.TabControl()
       Me.TabPage5 = New Elegant.Ui.TabPage()
@@ -256,6 +255,7 @@ Partial Class frmFatturaElettronica
       Me.TabPage21 = New Elegant.Ui.TabPage()
       Me.eui_txtFormatoTxt = New Elegant.Ui.TextBox()
       Me.eui_cmdApriFileTxt = New Elegant.Ui.Button()
+      Me.TabPage4 = New Elegant.Ui.TabPage()
       Me.eui_cmdApriCartella = New Elegant.Ui.Button()
       Me.eui_cmdEsporta = New Elegant.Ui.Button()
       Me.eui_cmdInvia = New Elegant.Ui.Button()
@@ -326,10 +326,10 @@ Partial Class frmFatturaElettronica
       Me.StatusBar1.Controls.Add(Me.StatusBarControlsArea1)
       Me.StatusBar1.ControlsArea = Me.StatusBarControlsArea1
       Me.StatusBar1.Dock = System.Windows.Forms.DockStyle.Bottom
-      Me.StatusBar1.Location = New System.Drawing.Point(0, 526)
+      Me.StatusBar1.Location = New System.Drawing.Point(0, 537)
       Me.StatusBar1.Name = "StatusBar1"
       Me.StatusBar1.NotificationsArea = Me.StatusBarNotificationsArea1
-      Me.StatusBar1.Size = New System.Drawing.Size(983, 22)
+      Me.StatusBar1.Size = New System.Drawing.Size(991, 22)
       Me.StatusBar1.TabIndex = 4
       Me.StatusBar1.Text = "StatusBar1"
       '
@@ -342,7 +342,7 @@ Partial Class frmFatturaElettronica
       Me.StatusBarNotificationsArea1.MaximumSize = New System.Drawing.Size(0, 22)
       Me.StatusBarNotificationsArea1.MinimumSize = New System.Drawing.Size(0, 22)
       Me.StatusBarNotificationsArea1.Name = "StatusBarNotificationsArea1"
-      Me.StatusBarNotificationsArea1.Size = New System.Drawing.Size(911, 22)
+      Me.StatusBarNotificationsArea1.Size = New System.Drawing.Size(919, 22)
       Me.StatusBarNotificationsArea1.TabIndex = 1
       '
       'StatusBarPane2
@@ -435,7 +435,7 @@ Partial Class frmFatturaElettronica
       '
       Me.StatusBarControlsArea1.Controls.Add(Me.StatusBarPane3)
       Me.StatusBarControlsArea1.Dock = System.Windows.Forms.DockStyle.Right
-      Me.StatusBarControlsArea1.Location = New System.Drawing.Point(911, 0)
+      Me.StatusBarControlsArea1.Location = New System.Drawing.Point(919, 0)
       Me.StatusBarControlsArea1.MaximumSize = New System.Drawing.Size(0, 22)
       Me.StatusBarControlsArea1.MinimumSize = New System.Drawing.Size(0, 22)
       Me.StatusBarControlsArea1.Name = "StatusBarControlsArea1"
@@ -491,15 +491,6 @@ Partial Class frmFatturaElettronica
       Me.eui_tpcDocumento.TabPages.AddRange(New Elegant.Ui.TabPage() {Me.TabPage1, Me.eui_tpConvalida, Me.TabPage3, Me.TabPage21, Me.TabPage4})
       Me.eui_tpcDocumento.Text = " "
       '
-      'TabPage4
-      '
-      Me.TabPage4.ActiveControl = Nothing
-      Me.TabPage4.KeyTip = Nothing
-      Me.TabPage4.Name = "TabPage4"
-      Me.TabPage4.Size = New System.Drawing.Size(812, 465)
-      Me.TabPage4.TabIndex = 3
-      Me.TabPage4.Text = "HTML - (Anteprima)"
-      '
       'TabPage1
       '
       Me.TabPage1.ActiveControl = Nothing
@@ -514,7 +505,7 @@ Partial Class frmFatturaElettronica
       '
       Me.TabControl1.Location = New System.Drawing.Point(6, 4)
       Me.TabControl1.Name = "TabControl1"
-      Me.TabControl1.SelectedTabPage = Me.TabPage5
+      Me.TabControl1.SelectedTabPage = Me.TabPage8
       Me.TabControl1.Size = New System.Drawing.Size(800, 455)
       Me.TabControl1.TabIndex = 19
       Me.TabControl1.TabPages.AddRange(New Elegant.Ui.TabPage() {Me.TabPage5, Me.TabPage6, Me.TabPage7, Me.TabPage8, Me.TabPage9, Me.TabPage10})
@@ -730,7 +721,7 @@ Partial Class frmFatturaElettronica
       '
       Me.TabControl2.Location = New System.Drawing.Point(8, 6)
       Me.TabControl2.Name = "TabControl2"
-      Me.TabControl2.SelectedTabPage = Me.TabPage12
+      Me.TabControl2.SelectedTabPage = Me.TabPage11
       Me.TabControl2.Size = New System.Drawing.Size(782, 419)
       Me.TabControl2.TabIndex = 0
       Me.TabControl2.TabPages.AddRange(New Elegant.Ui.TabPage() {Me.TabPage11, Me.TabPage12, Me.TabPage13, Me.TabPage14, Me.TabPage15, Me.TabPage16})
@@ -1774,7 +1765,7 @@ Partial Class frmFatturaElettronica
       '
       Me.TabControl3.Location = New System.Drawing.Point(8, 9)
       Me.TabControl3.Name = "TabControl3"
-      Me.TabControl3.SelectedTabPage = Me.TabPage18
+      Me.TabControl3.SelectedTabPage = Me.TabPage17
       Me.TabControl3.Size = New System.Drawing.Size(782, 418)
       Me.TabControl3.TabIndex = 0
       Me.TabControl3.TabPages.AddRange(New Elegant.Ui.TabPage() {Me.TabPage17, Me.TabPage18, Me.TabPage19, Me.TabPage20})
@@ -2717,6 +2708,15 @@ Partial Class frmFatturaElettronica
       Me.eui_cmdApriFileTxt.TabIndex = 3
       Me.eui_cmdApriFileTxt.Text = "Apri"
       '
+      'TabPage4
+      '
+      Me.TabPage4.ActiveControl = Nothing
+      Me.TabPage4.KeyTip = Nothing
+      Me.TabPage4.Name = "TabPage4"
+      Me.TabPage4.Size = New System.Drawing.Size(812, 465)
+      Me.TabPage4.TabIndex = 3
+      Me.TabPage4.Text = "HTML - (Anteprima)"
+      '
       'eui_cmdApriCartella
       '
       Me.eui_cmdApriCartella.Id = "26a292a3-ef05-45a1-8f74-0996002fd2fc"
@@ -2804,7 +2804,7 @@ Partial Class frmFatturaElettronica
       Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
       Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(983, 548)
+      Me.ClientSize = New System.Drawing.Size(991, 559)
       Me.Controls.Add(Me.eui_cmdInvia)
       Me.Controls.Add(Me.eui_cmdEsporta)
       Me.Controls.Add(Me.eui_cmdApriCartella)

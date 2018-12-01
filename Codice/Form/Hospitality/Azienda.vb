@@ -57,7 +57,6 @@ Friend Class frmAzienda
    Public WithEvents Label36 As System.Windows.Forms.Label
    Public WithEvents Label37 As System.Windows.Forms.Label
    Public WithEvents Label38 As System.Windows.Forms.Label
-   Friend WithEvents cmbNazione As System.Windows.Forms.ComboBox
    Friend WithEvents EliminaImg As System.Windows.Forms.Button
    Friend WithEvents ApriImg As System.Windows.Forms.Button
    Public WithEvents picFoto As System.Windows.Forms.PictureBox
@@ -85,6 +84,13 @@ Friend Class frmAzienda
    Friend WithEvents Button1 As System.Windows.Forms.Button
    Friend WithEvents formFrameSkinner As Elegant.Ui.FormFrameSkinner
    Friend WithEvents tbrSalva As ToolBarButton
+   Public WithEvents txtNumeroREA As TextBox
+   Public WithEvents Label11 As Label
+   Public WithEvents txtCodiceFiscale As TextBox
+   Public WithEvents Label8 As Label
+   Friend WithEvents cmbRegimeFiscale As ComboBox
+   Public WithEvents Label12 As Label
+   Friend WithEvents cmbNazione As ComboBox
    Friend WithEvents tbrElimina As System.Windows.Forms.ToolBarButton
    <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
       Me.components = New System.ComponentModel.Container()
@@ -100,7 +106,12 @@ Friend Class frmAzienda
       Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
       Me.TabControl1 = New System.Windows.Forms.TabControl()
       Me.TabPage1 = New System.Windows.Forms.TabPage()
-      Me.cmbNazione = New System.Windows.Forms.ComboBox()
+      Me.cmbRegimeFiscale = New System.Windows.Forms.ComboBox()
+      Me.Label12 = New System.Windows.Forms.Label()
+      Me.txtNumeroREA = New System.Windows.Forms.TextBox()
+      Me.Label11 = New System.Windows.Forms.Label()
+      Me.txtCodiceFiscale = New System.Windows.Forms.TextBox()
+      Me.Label8 = New System.Windows.Forms.Label()
       Me.EliminaImg = New System.Windows.Forms.Button()
       Me.ApriImg = New System.Windows.Forms.Button()
       Me.picFoto = New System.Windows.Forms.PictureBox()
@@ -143,6 +154,7 @@ Friend Class frmAzienda
       Me.Label37 = New System.Windows.Forms.Label()
       Me.Label38 = New System.Windows.Forms.Label()
       Me.formFrameSkinner = New Elegant.Ui.FormFrameSkinner()
+      Me.cmbNazione = New System.Windows.Forms.ComboBox()
       Me.Panel1.SuspendLayout()
       CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
       Me.TabControl1.SuspendLayout()
@@ -161,7 +173,7 @@ Friend Class frmAzienda
       Me.ToolBar1.Location = New System.Drawing.Point(0, 0)
       Me.ToolBar1.Name = "ToolBar1"
       Me.ToolBar1.ShowToolTips = True
-      Me.ToolBar1.Size = New System.Drawing.Size(543, 28)
+      Me.ToolBar1.Size = New System.Drawing.Size(567, 28)
       Me.ToolBar1.TabIndex = 1
       Me.ToolBar1.TextAlign = System.Windows.Forms.ToolBarTextAlign.Right
       '
@@ -196,7 +208,7 @@ Friend Class frmAzienda
       Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
       Me.Panel1.Location = New System.Drawing.Point(0, 28)
       Me.Panel1.Name = "Panel1"
-      Me.Panel1.Size = New System.Drawing.Size(543, 20)
+      Me.Panel1.Size = New System.Drawing.Size(567, 20)
       Me.Panel1.TabIndex = 19
       '
       'lblIntestazione
@@ -238,13 +250,19 @@ Friend Class frmAzienda
       Me.TabControl1.Multiline = True
       Me.TabControl1.Name = "TabControl1"
       Me.TabControl1.SelectedIndex = 0
-      Me.TabControl1.Size = New System.Drawing.Size(543, 311)
+      Me.TabControl1.Size = New System.Drawing.Size(567, 335)
       Me.TabControl1.TabIndex = 0
       '
       'TabPage1
       '
       Me.TabPage1.BackColor = System.Drawing.SystemColors.AppWorkspace
       Me.TabPage1.Controls.Add(Me.cmbNazione)
+      Me.TabPage1.Controls.Add(Me.cmbRegimeFiscale)
+      Me.TabPage1.Controls.Add(Me.Label12)
+      Me.TabPage1.Controls.Add(Me.txtNumeroREA)
+      Me.TabPage1.Controls.Add(Me.Label11)
+      Me.TabPage1.Controls.Add(Me.txtCodiceFiscale)
+      Me.TabPage1.Controls.Add(Me.Label8)
       Me.TabPage1.Controls.Add(Me.EliminaImg)
       Me.TabPage1.Controls.Add(Me.ApriImg)
       Me.TabPage1.Controls.Add(Me.picFoto)
@@ -264,46 +282,118 @@ Friend Class frmAzienda
       Me.TabPage1.ForeColor = System.Drawing.SystemColors.Desktop
       Me.TabPage1.Location = New System.Drawing.Point(4, 22)
       Me.TabPage1.Name = "TabPage1"
-      Me.TabPage1.Size = New System.Drawing.Size(535, 285)
+      Me.TabPage1.Size = New System.Drawing.Size(559, 309)
       Me.TabPage1.TabIndex = 0
       Me.TabPage1.Tag = "Codice fornito da Azienda emettitrice di Buoni pasto:"
       Me.TabPage1.Text = "Dati principali"
       Me.TabPage1.ToolTipText = "Dati principali"
       '
-      'cmbNazione
+      'cmbRegimeFiscale
       '
-      Me.cmbNazione.BackColor = System.Drawing.SystemColors.Window
-      Me.cmbNazione.Cursor = System.Windows.Forms.Cursors.Default
-      Me.cmbNazione.ForeColor = System.Drawing.SystemColors.WindowText
-      Me.cmbNazione.Location = New System.Drawing.Point(104, 168)
-      Me.cmbNazione.Name = "cmbNazione"
-      Me.cmbNazione.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.cmbNazione.Size = New System.Drawing.Size(160, 21)
-      Me.cmbNazione.TabIndex = 6
+      Me.cmbRegimeFiscale.BackColor = System.Drawing.SystemColors.Window
+      Me.cmbRegimeFiscale.Cursor = System.Windows.Forms.Cursors.Default
+      Me.cmbRegimeFiscale.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+      Me.cmbRegimeFiscale.ForeColor = System.Drawing.SystemColors.WindowText
+      Me.cmbRegimeFiscale.Items.AddRange(New Object() {" ", "RF01 Ordinario", "RF02 Contribuenti minimi (art. 1, c.96-117, L. 244/2007)", "RF04 Agricoltura e attività connesse e pesca (artt. 34 e 34-bis, D.P.R. 633/1972)" &
+                "", "RF05 Vendita sali e tabacchi (art. 74, c.1, D.P.R. 633/1972)", "RF06 Commercio dei fiammiferi (art. 74, c.1, D.P.R. 633/1972)", "RF07 Editoria (art. 74, c.1, D.P.R. 633/1972)", "RF08 Gestione di servizi di telefonia pubblica (art. 74, c.1, D.P.R. 633/1972)", "RF09 Rivendita di documenti di trasporto pubblico e di sosta (art. 74, c.1, D.P.R" &
+                ". 633/1972)", "RF10 Intrattenimenti, giochi e altre attività di cui alla tariffa allegata al D.P" &
+                ".R. n. 640/72 (art. 74, c.6, D.P.R. 633/1972)", "RF11 Agenzie di viaggi e turismo (art. 74-ter, D.P.R. 633/1972)", "RF12 Agriturismo (art. 5, c.2, L. 413/1991)", "RF13 Vendite a domicilio (art. 25-bis, c.6, D.P.R. 600/1973)", "RF14 Rivendita di beni usati, di oggetti d’arte, d’antiquariato o da collezione (" &
+                "art. 36, D.L. 41/1995)", "RF15 Agenzie di vendite all’asta di oggetti d’arte, antiquariato o da collezione " &
+                "(art. 40-bis, D.L. 41/1995)", "RF16 IVA per cassa P.A. (art. 6, c.5, D.P.R. 633/1972)", "RF17 IVA per cassa (art. 32-bis, D.L. 83/2012)", "RF18 Altro", "RF19 Forfettario (art.1, c. 54-89, L. 190/2014)"})
+      Me.cmbRegimeFiscale.Location = New System.Drawing.Point(104, 251)
+      Me.cmbRegimeFiscale.Name = "cmbRegimeFiscale"
+      Me.cmbRegimeFiscale.RightToLeft = System.Windows.Forms.RightToLeft.No
+      Me.cmbRegimeFiscale.Size = New System.Drawing.Size(416, 21)
+      Me.cmbRegimeFiscale.TabIndex = 9
+      '
+      'Label12
+      '
+      Me.Label12.AutoSize = True
+      Me.Label12.BackColor = System.Drawing.Color.Transparent
+      Me.Label12.Cursor = System.Windows.Forms.Cursors.Default
+      Me.Label12.ForeColor = System.Drawing.Color.Black
+      Me.Label12.Location = New System.Drawing.Point(16, 251)
+      Me.Label12.Name = "Label12"
+      Me.Label12.RightToLeft = System.Windows.Forms.RightToLeft.No
+      Me.Label12.Size = New System.Drawing.Size(82, 13)
+      Me.Label12.TabIndex = 215
+      Me.Label12.Text = "Regime Fiscale:"
+      '
+      'txtNumeroREA
+      '
+      Me.txtNumeroREA.AcceptsReturn = True
+      Me.txtNumeroREA.BackColor = System.Drawing.SystemColors.Window
+      Me.txtNumeroREA.Cursor = System.Windows.Forms.Cursors.IBeam
+      Me.txtNumeroREA.ForeColor = System.Drawing.SystemColors.WindowText
+      Me.txtNumeroREA.Location = New System.Drawing.Point(104, 108)
+      Me.txtNumeroREA.MaxLength = 20
+      Me.txtNumeroREA.Name = "txtNumeroREA"
+      Me.txtNumeroREA.RightToLeft = System.Windows.Forms.RightToLeft.No
+      Me.txtNumeroREA.Size = New System.Drawing.Size(160, 20)
+      Me.txtNumeroREA.TabIndex = 3
+      '
+      'Label11
+      '
+      Me.Label11.AutoSize = True
+      Me.Label11.BackColor = System.Drawing.Color.Transparent
+      Me.Label11.Cursor = System.Windows.Forms.Cursors.Default
+      Me.Label11.ForeColor = System.Drawing.Color.Black
+      Me.Label11.Location = New System.Drawing.Point(16, 108)
+      Me.Label11.Name = "Label11"
+      Me.Label11.RightToLeft = System.Windows.Forms.RightToLeft.No
+      Me.Label11.Size = New System.Drawing.Size(81, 13)
+      Me.Label11.TabIndex = 213
+      Me.Label11.Text = "Numero R.E.A.:"
+      '
+      'txtCodiceFiscale
+      '
+      Me.txtCodiceFiscale.AcceptsReturn = True
+      Me.txtCodiceFiscale.BackColor = System.Drawing.SystemColors.Window
+      Me.txtCodiceFiscale.Cursor = System.Windows.Forms.Cursors.IBeam
+      Me.txtCodiceFiscale.ForeColor = System.Drawing.SystemColors.WindowText
+      Me.txtCodiceFiscale.Location = New System.Drawing.Point(104, 82)
+      Me.txtCodiceFiscale.MaxLength = 16
+      Me.txtCodiceFiscale.Name = "txtCodiceFiscale"
+      Me.txtCodiceFiscale.RightToLeft = System.Windows.Forms.RightToLeft.No
+      Me.txtCodiceFiscale.Size = New System.Drawing.Size(160, 20)
+      Me.txtCodiceFiscale.TabIndex = 2
+      '
+      'Label8
+      '
+      Me.Label8.AutoSize = True
+      Me.Label8.BackColor = System.Drawing.Color.Transparent
+      Me.Label8.Cursor = System.Windows.Forms.Cursors.Default
+      Me.Label8.ForeColor = System.Drawing.Color.Black
+      Me.Label8.Location = New System.Drawing.Point(16, 82)
+      Me.Label8.Name = "Label8"
+      Me.Label8.RightToLeft = System.Windows.Forms.RightToLeft.No
+      Me.Label8.Size = New System.Drawing.Size(79, 13)
+      Me.Label8.TabIndex = 211
+      Me.Label8.Text = "Codice Fiscale:"
       '
       'EliminaImg
       '
       Me.EliminaImg.FlatStyle = System.Windows.Forms.FlatStyle.System
-      Me.EliminaImg.Location = New System.Drawing.Point(448, 176)
+      Me.EliminaImg.Location = New System.Drawing.Point(447, 184)
       Me.EliminaImg.Name = "EliminaImg"
       Me.EliminaImg.Size = New System.Drawing.Size(72, 24)
-      Me.EliminaImg.TabIndex = 9
+      Me.EliminaImg.TabIndex = 11
       Me.EliminaImg.Text = "&Elimina"
       '
       'ApriImg
       '
       Me.ApriImg.FlatStyle = System.Windows.Forms.FlatStyle.System
-      Me.ApriImg.Location = New System.Drawing.Point(368, 176)
+      Me.ApriImg.Location = New System.Drawing.Point(367, 184)
       Me.ApriImg.Name = "ApriImg"
       Me.ApriImg.Size = New System.Drawing.Size(72, 24)
-      Me.ApriImg.TabIndex = 8
+      Me.ApriImg.TabIndex = 10
       Me.ApriImg.Text = "&Apri"
       '
       'picFoto
       '
       Me.picFoto.BackColor = System.Drawing.Color.White
       Me.picFoto.Cursor = System.Windows.Forms.Cursors.Default
-      Me.picFoto.Location = New System.Drawing.Point(368, 16)
+      Me.picFoto.Location = New System.Drawing.Point(367, 24)
       Me.picFoto.Name = "picFoto"
       Me.picFoto.Size = New System.Drawing.Size(153, 153)
       Me.picFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -316,12 +406,12 @@ Friend Class frmAzienda
       Me.txtIndirizzo.BackColor = System.Drawing.SystemColors.Window
       Me.txtIndirizzo.Cursor = System.Windows.Forms.Cursors.IBeam
       Me.txtIndirizzo.ForeColor = System.Drawing.SystemColors.WindowText
-      Me.txtIndirizzo.Location = New System.Drawing.Point(104, 88)
+      Me.txtIndirizzo.Location = New System.Drawing.Point(104, 140)
       Me.txtIndirizzo.MaxLength = 100
       Me.txtIndirizzo.Name = "txtIndirizzo"
       Me.txtIndirizzo.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.txtIndirizzo.Size = New System.Drawing.Size(248, 20)
-      Me.txtIndirizzo.TabIndex = 2
+      Me.txtIndirizzo.TabIndex = 4
       '
       'txtPIva
       '
@@ -342,12 +432,12 @@ Friend Class frmAzienda
       Me.txtProv.BackColor = System.Drawing.SystemColors.Window
       Me.txtProv.Cursor = System.Windows.Forms.Cursors.IBeam
       Me.txtProv.ForeColor = System.Drawing.SystemColors.WindowText
-      Me.txtProv.Location = New System.Drawing.Point(104, 136)
+      Me.txtProv.Location = New System.Drawing.Point(104, 192)
       Me.txtProv.MaxLength = 2
       Me.txtProv.Name = "txtProv"
       Me.txtProv.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.txtProv.Size = New System.Drawing.Size(56, 20)
-      Me.txtProv.TabIndex = 4
+      Me.txtProv.TabIndex = 6
       '
       'txtCap
       '
@@ -355,12 +445,12 @@ Friend Class frmAzienda
       Me.txtCap.BackColor = System.Drawing.SystemColors.Window
       Me.txtCap.Cursor = System.Windows.Forms.Cursors.IBeam
       Me.txtCap.ForeColor = System.Drawing.SystemColors.WindowText
-      Me.txtCap.Location = New System.Drawing.Point(264, 136)
+      Me.txtCap.Location = New System.Drawing.Point(264, 192)
       Me.txtCap.MaxLength = 5
       Me.txtCap.Name = "txtCap"
       Me.txtCap.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.txtCap.Size = New System.Drawing.Size(88, 20)
-      Me.txtCap.TabIndex = 5
+      Me.txtCap.TabIndex = 7
       '
       'txtCittà
       '
@@ -368,12 +458,12 @@ Friend Class frmAzienda
       Me.txtCittà.BackColor = System.Drawing.SystemColors.Window
       Me.txtCittà.Cursor = System.Windows.Forms.Cursors.IBeam
       Me.txtCittà.ForeColor = System.Drawing.SystemColors.WindowText
-      Me.txtCittà.Location = New System.Drawing.Point(104, 112)
+      Me.txtCittà.Location = New System.Drawing.Point(104, 166)
       Me.txtCittà.MaxLength = 100
       Me.txtCittà.Name = "txtCittà"
       Me.txtCittà.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.txtCittà.Size = New System.Drawing.Size(248, 20)
-      Me.txtCittà.TabIndex = 3
+      Me.txtCittà.TabIndex = 5
       '
       'txtRagSoc
       '
@@ -408,7 +498,7 @@ Friend Class frmAzienda
       Me.Label10.BackColor = System.Drawing.Color.Transparent
       Me.Label10.Cursor = System.Windows.Forms.Cursors.Default
       Me.Label10.ForeColor = System.Drawing.Color.Black
-      Me.Label10.Location = New System.Drawing.Point(16, 168)
+      Me.Label10.Location = New System.Drawing.Point(16, 218)
       Me.Label10.Name = "Label10"
       Me.Label10.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.Label10.Size = New System.Drawing.Size(49, 13)
@@ -421,7 +511,7 @@ Friend Class frmAzienda
       Me.Label9.BackColor = System.Drawing.Color.Transparent
       Me.Label9.Cursor = System.Windows.Forms.Cursors.Default
       Me.Label9.ForeColor = System.Drawing.Color.Black
-      Me.Label9.Location = New System.Drawing.Point(16, 136)
+      Me.Label9.Location = New System.Drawing.Point(16, 192)
       Me.Label9.Name = "Label9"
       Me.Label9.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.Label9.Size = New System.Drawing.Size(54, 13)
@@ -434,7 +524,7 @@ Friend Class frmAzienda
       Me.Label6.BackColor = System.Drawing.Color.Transparent
       Me.Label6.Cursor = System.Windows.Forms.Cursors.Default
       Me.Label6.ForeColor = System.Drawing.Color.Black
-      Me.Label6.Location = New System.Drawing.Point(224, 136)
+      Me.Label6.Location = New System.Drawing.Point(224, 192)
       Me.Label6.Name = "Label6"
       Me.Label6.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.Label6.Size = New System.Drawing.Size(40, 13)
@@ -447,7 +537,7 @@ Friend Class frmAzienda
       Me.Label5.BackColor = System.Drawing.Color.Transparent
       Me.Label5.Cursor = System.Windows.Forms.Cursors.Default
       Me.Label5.ForeColor = System.Drawing.Color.Black
-      Me.Label5.Location = New System.Drawing.Point(16, 112)
+      Me.Label5.Location = New System.Drawing.Point(16, 166)
       Me.Label5.Name = "Label5"
       Me.Label5.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.Label5.Size = New System.Drawing.Size(31, 13)
@@ -460,7 +550,7 @@ Friend Class frmAzienda
       Me.Label4.BackColor = System.Drawing.Color.Transparent
       Me.Label4.Cursor = System.Windows.Forms.Cursors.Default
       Me.Label4.ForeColor = System.Drawing.Color.Black
-      Me.Label4.Location = New System.Drawing.Point(16, 88)
+      Me.Label4.Location = New System.Drawing.Point(16, 140)
       Me.Label4.Name = "Label4"
       Me.Label4.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.Label4.Size = New System.Drawing.Size(48, 13)
@@ -493,7 +583,7 @@ Friend Class frmAzienda
       Me.TabPage3.Controls.Add(Me.Label21)
       Me.TabPage3.Location = New System.Drawing.Point(4, 22)
       Me.TabPage3.Name = "TabPage3"
-      Me.TabPage3.Size = New System.Drawing.Size(535, 308)
+      Me.TabPage3.Size = New System.Drawing.Size(551, 301)
       Me.TabPage3.TabIndex = 2
       Me.TabPage3.Text = "Tel./Internet"
       Me.TabPage3.ToolTipText = "Dati sul telefono e Internet"
@@ -623,7 +713,7 @@ Friend Class frmAzienda
       Me.TabPage2.Controls.Add(Me.Label38)
       Me.TabPage2.Location = New System.Drawing.Point(4, 22)
       Me.TabPage2.Name = "TabPage2"
-      Me.TabPage2.Size = New System.Drawing.Size(535, 308)
+      Me.TabPage2.Size = New System.Drawing.Size(551, 301)
       Me.TabPage2.TabIndex = 6
       Me.TabPage2.Text = "Modalità pagamento"
       Me.TabPage2.Visible = False
@@ -817,11 +907,18 @@ Friend Class frmAzienda
       Me.formFrameSkinner.AllowGlass = False
       Me.formFrameSkinner.Form = Me
       '
+      'cmbNazione
+      '
+      Me.cmbNazione.Location = New System.Drawing.Point(104, 218)
+      Me.cmbNazione.Name = "cmbNazione"
+      Me.cmbNazione.Size = New System.Drawing.Size(160, 21)
+      Me.cmbNazione.TabIndex = 216
+      '
       'frmAzienda
       '
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(543, 359)
+      Me.ClientSize = New System.Drawing.Size(567, 383)
       Me.Controls.Add(Me.TabControl1)
       Me.Controls.Add(Me.chkVisRagSoc)
       Me.Controls.Add(Me.Panel1)
@@ -872,11 +969,14 @@ Friend Class frmAzienda
          ' Salva i dati eventualmente modificati.
          AAzienda.RagSociale = txtRagSoc.Text ' FormattaApici(txtRagSoc.Text)
          AAzienda.Piva = FormattaApici(txtPIva.Text)
+         AAzienda.CodFisc = FormattaApici(txtCodiceFiscale.Text)
+         AAzienda.Rea = FormattaApici(txtNumeroREA.Text)
          AAzienda.Indirizzo = FormattaApici(txtIndirizzo.Text)
          AAzienda.Cap = FormattaApici(txtCap.Text)
          AAzienda.Città = FormattaApici(txtCittà.Text)
          AAzienda.Provincia = FormattaApici(txtProv.Text)
          AAzienda.Nazione = FormattaApici(cmbNazione.Text)
+         AAzienda.RegimeFiscale = FormattaApici(cmbRegimeFiscale.Text)
          AAzienda.Telefono = FormattaApici(txtTel.Text)
          AAzienda.Fax = FormattaApici(txtFax.Text)
          AAzienda.Email = FormattaApici(txtMail.Text)
@@ -901,17 +1001,20 @@ Friend Class frmAzienda
    Private Sub Elimina()
       Try
          ' Svuota tutte le caselle di testo da eventuali valori.
-         txtRagSoc.Text = ""
-         txtPIva.Text = ""
-         txtIndirizzo.Text = ""
-         txtCap.Text = ""
-         txtCittà.Text = ""
-         txtProv.Text = ""
-         cmbNazione.Text = ""
-         txtTel.Text = ""
-         txtFax.Text = ""
-         txtMail.Text = ""
-         txtInternet.Text = ""
+         txtRagSoc.Text = String.Empty
+         txtPIva.Text = String.Empty
+         txtCodiceFiscale.Text = String.Empty
+         txtNumeroREA.Text = String.Empty
+         txtIndirizzo.Text = String.Empty
+         txtCap.Text = String.Empty
+         txtCittà.Text = String.Empty
+         txtProv.Text = String.Empty
+         cmbNazione.Text = String.Empty
+         cmbRegimeFiscale.Text = String.Empty
+         txtTel.Text = String.Empty
+         txtFax.Text = String.Empty
+         txtMail.Text = String.Empty
+         txtInternet.Text = String.Empty
 
          EliminaImmagine()
 
@@ -932,13 +1035,13 @@ Friend Class frmAzienda
 
    Private Sub InserisciImmagine()
       Try
-         OpenFileDialog1.Filter = "Tutti i formati |*.Bmp; *.Gif; *.Jpg; *.Jpeg; *.Png; *.Tga; *.Tiff; *.Wmf|" & _
-                                  "Bmp (Bitmap di Windows)|*.Bmp|" & _
-                                  "Gif |*.Gif|" & _
-                                  "Jpeg/Jpg |*.Jpg; *.Jpeg |" & _
-                                  "Png |*.Png|" & _
-                                  "Tga |*.Tga|" & _
-                                  "Tiff |*.Tiff|" & _
+         OpenFileDialog1.Filter = "Tutti i formati |*.Bmp; *.Gif; *.Jpg; *.Jpeg; *.Png; *.Tga; *.Tiff; *.Wmf|" &
+                                  "Bmp (Bitmap di Windows)|*.Bmp|" &
+                                  "Gif |*.Gif|" &
+                                  "Jpeg/Jpg |*.Jpg; *.Jpeg |" &
+                                  "Png |*.Png|" &
+                                  "Tga |*.Tga|" &
+                                  "Tiff |*.Tiff|" &
                                   "Wmf (Metafile di Windows) |*.Wmf"
 
          OpenFileDialog1.FilterIndex = 1
@@ -1030,11 +1133,14 @@ Friend Class frmAzienda
          ' Assegna i dati dei campi della classe alle caselle di testo.
          txtRagSoc.Text = AAzienda.RagSociale
          txtPIva.Text = AAzienda.Piva
+         txtCodiceFiscale.Text = AAzienda.CodFisc
+         txtNumeroREA.Text = AAzienda.Rea
          txtIndirizzo.Text = AAzienda.Indirizzo
          txtCap.Text = AAzienda.Cap
          txtCittà.Text = AAzienda.Città
          txtProv.Text = AAzienda.Provincia
          cmbNazione.Text = AAzienda.Nazione
+         cmbRegimeFiscale.Text = AAzienda.RegimeFiscale
          txtTel.Text = AAzienda.Telefono
          txtFax.Text = AAzienda.Fax
          txtMail.Text = AAzienda.Email

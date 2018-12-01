@@ -473,3 +473,29 @@ Nome parametro: index"
    in Hospitality_Solution.frmFatturaElettronica.GeneraFileXML(String nomefile) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 1057"
 "
 "
+"*** 01/12/2018 - 15:27:58 ***"
+"- DESCRIZIONE ERRORE: Impossibile aggiungere la quantità di dati desiderata. Inserire o incollare meno dati."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.Anagrafiche.Azienda.ModificaDati(String tabella, Int32 codice) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Classi\AnagTab.vb:riga 556"
+"
+"
+"*** 01/12/2018 - 16:35:26 ***"
+"- DESCRIZIONE ERRORE: La colonna 'RegimeFiscale' non appartiene alla tabella Azienda."
+"- NOME PROCEDURA:    in System.Data.DataRow.GetDataColumn(String columnName)
+   in System.Data.DataRow.get_Item(String columnName)
+   in Hospitality_Solution.Anagrafiche.Azienda.LeggiDati(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Classi\AnagTab.vb:riga 330"
+"
+"
+"*** 01/12/2018 - 18:10:47 ***"
+"- DESCRIZIONE ERRORE: Piva"
+"- NOME PROCEDURA:    in System.Data.ProviderBase.FieldNameLookup.GetOrdinal(String fieldName)
+   in System.Data.OleDb.OleDbDataReader.GetOrdinal(String name)
+   in System.Data.OleDb.OleDbDataReader.get_Item(String name)
+   in Hospitality_Solution.frmFatturaElettronica.CaricaDatiCliente() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 1646"
+"
+"
