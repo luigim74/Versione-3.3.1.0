@@ -1,8 +1,15 @@
-' Nome form:            frmClienti
+#Region " DATI FILE.VB "
+' **********************************************************************************************
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       07/01/2006
-' Data ultima modifica: 23/06/2006
-' Descrizione:          Anagrafica Clienti.
+' Data ultima modifica: 15/12/2018
+' Descrizione:          Anagrafica Aziende.
+' Note:
+'
+' Elenco Attivita:
+'
+' ***********************************************************************************************
+#End Region
 
 Option Strict Off
 Option Explicit On 
@@ -100,8 +107,6 @@ Public Class frmAziende
    Friend WithEvents chkPrivacy As System.Windows.Forms.CheckBox
    Friend WithEvents cmbTipoCliente As System.Windows.Forms.ComboBox
    Friend WithEvents ImageList1 As System.Windows.Forms.ImageList
-   Friend WithEvents cmdScrivi As System.Windows.Forms.Button
-   Friend WithEvents cmdVai As System.Windows.Forms.Button
    Public WithEvents Label8 As System.Windows.Forms.Label
    Public WithEvents Label12 As System.Windows.Forms.Label
    Public WithEvents txtSconto As System.Windows.Forms.TextBox
@@ -171,6 +176,11 @@ Public Class frmAziende
    Friend WithEvents PrintDocument1 As System.Drawing.Printing.PrintDocument
    Friend WithEvents formFrameSkinner As Elegant.Ui.FormFrameSkinner
    Friend WithEvents cmbCittà As ComboBox
+   Friend WithEvents eui_cmdNuovoMsgPEC As Elegant.Ui.Button
+   Public WithEvents txtPec As TextBox
+   Public WithEvents Label36 As Label
+   Friend WithEvents eui_cmdApriWeb As Elegant.Ui.Button
+   Friend WithEvents eui_cmdNuovoMsg As Elegant.Ui.Button
    Public WithEvents txtNoteDoc As System.Windows.Forms.TextBox
    <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
       Me.components = New System.ComponentModel.Container()
@@ -219,8 +229,11 @@ Public Class frmAziende
       Me.chkPrivacy = New System.Windows.Forms.CheckBox()
       Me.Label39 = New System.Windows.Forms.Label()
       Me.TabPage3 = New System.Windows.Forms.TabPage()
-      Me.cmdVai = New System.Windows.Forms.Button()
-      Me.cmdScrivi = New System.Windows.Forms.Button()
+      Me.eui_cmdApriWeb = New Elegant.Ui.Button()
+      Me.eui_cmdNuovoMsg = New Elegant.Ui.Button()
+      Me.eui_cmdNuovoMsgPEC = New Elegant.Ui.Button()
+      Me.txtPec = New System.Windows.Forms.TextBox()
+      Me.Label36 = New System.Windows.Forms.Label()
       Me.txtInternet = New System.Windows.Forms.TextBox()
       Me.Label14 = New System.Windows.Forms.Label()
       Me.txtFax = New System.Windows.Forms.TextBox()
@@ -328,7 +341,7 @@ Public Class frmAziende
       Me.ToolBar1.Location = New System.Drawing.Point(0, 0)
       Me.ToolBar1.Name = "ToolBar1"
       Me.ToolBar1.ShowToolTips = True
-      Me.ToolBar1.Size = New System.Drawing.Size(543, 26)
+      Me.ToolBar1.Size = New System.Drawing.Size(563, 26)
       Me.ToolBar1.TabIndex = 0
       Me.ToolBar1.TextAlign = System.Windows.Forms.ToolBarTextAlign.Right
       '
@@ -373,7 +386,7 @@ Public Class frmAziende
       Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
       Me.Panel1.Location = New System.Drawing.Point(0, 26)
       Me.Panel1.Name = "Panel1"
-      Me.Panel1.Size = New System.Drawing.Size(543, 20)
+      Me.Panel1.Size = New System.Drawing.Size(563, 20)
       Me.Panel1.TabIndex = 0
       '
       'lblIntestazione
@@ -401,7 +414,7 @@ Public Class frmAziende
       Me.TabControl1.Multiline = True
       Me.TabControl1.Name = "TabControl1"
       Me.TabControl1.SelectedIndex = 0
-      Me.TabControl1.Size = New System.Drawing.Size(543, 321)
+      Me.TabControl1.Size = New System.Drawing.Size(563, 341)
       Me.TabControl1.TabIndex = 0
       '
       'TabPage1
@@ -445,7 +458,7 @@ Public Class frmAziende
       Me.TabPage1.ForeColor = System.Drawing.SystemColors.Desktop
       Me.TabPage1.Location = New System.Drawing.Point(4, 22)
       Me.TabPage1.Name = "TabPage1"
-      Me.TabPage1.Size = New System.Drawing.Size(535, 295)
+      Me.TabPage1.Size = New System.Drawing.Size(555, 315)
       Me.TabPage1.TabIndex = 0
       Me.TabPage1.Text = "Dati principali"
       Me.TabPage1.ToolTipText = "Dati principali"
@@ -861,8 +874,11 @@ Public Class frmAziende
       'TabPage3
       '
       Me.TabPage3.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.TabPage3.Controls.Add(Me.cmdVai)
-      Me.TabPage3.Controls.Add(Me.cmdScrivi)
+      Me.TabPage3.Controls.Add(Me.eui_cmdApriWeb)
+      Me.TabPage3.Controls.Add(Me.eui_cmdNuovoMsg)
+      Me.TabPage3.Controls.Add(Me.eui_cmdNuovoMsgPEC)
+      Me.TabPage3.Controls.Add(Me.txtPec)
+      Me.TabPage3.Controls.Add(Me.Label36)
       Me.TabPage3.Controls.Add(Me.txtInternet)
       Me.TabPage3.Controls.Add(Me.Label14)
       Me.TabPage3.Controls.Add(Me.txtFax)
@@ -877,30 +893,72 @@ Public Class frmAziende
       Me.TabPage3.Controls.Add(Me.Label11)
       Me.TabPage3.Location = New System.Drawing.Point(4, 22)
       Me.TabPage3.Name = "TabPage3"
-      Me.TabPage3.Size = New System.Drawing.Size(535, 295)
+      Me.TabPage3.Size = New System.Drawing.Size(555, 315)
       Me.TabPage3.TabIndex = 2
       Me.TabPage3.Text = "Tel./Internet"
       Me.TabPage3.ToolTipText = "Dati sul telefono e Internet"
       '
-      'cmdVai
+      'eui_cmdApriWeb
       '
-      Me.cmdVai.FlatStyle = System.Windows.Forms.FlatStyle.System
-      Me.cmdVai.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-      Me.cmdVai.Location = New System.Drawing.Point(443, 192)
-      Me.cmdVai.Name = "cmdVai"
-      Me.cmdVai.Size = New System.Drawing.Size(48, 19)
-      Me.cmdVai.TabIndex = 7
-      Me.cmdVai.Text = "&Vai..."
+      Me.eui_cmdApriWeb.Id = "3dc88ef3-6065-4313-9d3e-cc8a4bf2da9a"
+      Me.eui_cmdApriWeb.ImageAlign = System.Drawing.ContentAlignment.BottomCenter
+      Me.eui_cmdApriWeb.Location = New System.Drawing.Point(441, 218)
+      Me.eui_cmdApriWeb.Name = "eui_cmdApriWeb"
+      Me.eui_cmdApriWeb.ScreenTip.Caption = "Apri sito Internet"
+      Me.eui_cmdApriWeb.ScreenTip.Text = "Apre il sito Internet specificato."
+      Me.eui_cmdApriWeb.Size = New System.Drawing.Size(31, 23)
+      Me.eui_cmdApriWeb.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdApriWeb.SmallImages.Images"), System.Drawing.Image))})
+      Me.eui_cmdApriWeb.TabIndex = 9
       '
-      'cmdScrivi
+      'eui_cmdNuovoMsg
       '
-      Me.cmdScrivi.FlatStyle = System.Windows.Forms.FlatStyle.System
-      Me.cmdScrivi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-      Me.cmdScrivi.Location = New System.Drawing.Point(443, 160)
-      Me.cmdScrivi.Name = "cmdScrivi"
-      Me.cmdScrivi.Size = New System.Drawing.Size(48, 19)
-      Me.cmdScrivi.TabIndex = 5
-      Me.cmdScrivi.Text = "&Scrivi..."
+      Me.eui_cmdNuovoMsg.Id = "cc1ad18c-16cd-44e9-b017-3503ee6b9074"
+      Me.eui_cmdNuovoMsg.ImageAlign = System.Drawing.ContentAlignment.BottomCenter
+      Me.eui_cmdNuovoMsg.Location = New System.Drawing.Point(441, 158)
+      Me.eui_cmdNuovoMsg.Name = "eui_cmdNuovoMsg"
+      Me.eui_cmdNuovoMsg.ScreenTip.Caption = "Nuovo messaggio"
+      Me.eui_cmdNuovoMsg.ScreenTip.Text = "Scrivi un nuovo messaggio e-mail all'indirizzo specificato." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+      Me.eui_cmdNuovoMsg.Size = New System.Drawing.Size(31, 23)
+      Me.eui_cmdNuovoMsg.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdNuovoMsg.SmallImages.Images"), System.Drawing.Image))})
+      Me.eui_cmdNuovoMsg.TabIndex = 5
+      '
+      'eui_cmdNuovoMsgPEC
+      '
+      Me.eui_cmdNuovoMsgPEC.Id = "9fb34cd8-4417-46b2-87b7-47ae84f15045"
+      Me.eui_cmdNuovoMsgPEC.ImageAlign = System.Drawing.ContentAlignment.BottomCenter
+      Me.eui_cmdNuovoMsgPEC.Location = New System.Drawing.Point(441, 188)
+      Me.eui_cmdNuovoMsgPEC.Name = "eui_cmdNuovoMsgPEC"
+      Me.eui_cmdNuovoMsgPEC.ScreenTip.Caption = "Nuovo messaggio"
+      Me.eui_cmdNuovoMsgPEC.ScreenTip.Text = "Scrivi un nuovo messaggio e-mail all'indirizzo specificato."
+      Me.eui_cmdNuovoMsgPEC.Size = New System.Drawing.Size(31, 23)
+      Me.eui_cmdNuovoMsgPEC.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdNuovoMsgPEC.SmallImages.Images"), System.Drawing.Image))})
+      Me.eui_cmdNuovoMsgPEC.TabIndex = 7
+      '
+      'txtPec
+      '
+      Me.txtPec.AcceptsReturn = True
+      Me.txtPec.BackColor = System.Drawing.SystemColors.Window
+      Me.txtPec.Cursor = System.Windows.Forms.Cursors.IBeam
+      Me.txtPec.ForeColor = System.Drawing.SystemColors.WindowText
+      Me.txtPec.Location = New System.Drawing.Point(96, 190)
+      Me.txtPec.MaxLength = 256
+      Me.txtPec.Name = "txtPec"
+      Me.txtPec.RightToLeft = System.Windows.Forms.RightToLeft.No
+      Me.txtPec.Size = New System.Drawing.Size(344, 20)
+      Me.txtPec.TabIndex = 6
+      '
+      'Label36
+      '
+      Me.Label36.AutoSize = True
+      Me.Label36.BackColor = System.Drawing.Color.Transparent
+      Me.Label36.Cursor = System.Windows.Forms.Cursors.Default
+      Me.Label36.ForeColor = System.Drawing.Color.Black
+      Me.Label36.Location = New System.Drawing.Point(32, 190)
+      Me.Label36.Name = "Label36"
+      Me.Label36.RightToLeft = System.Windows.Forms.RightToLeft.No
+      Me.Label36.Size = New System.Drawing.Size(31, 13)
+      Me.Label36.TabIndex = 195
+      Me.Label36.Text = "PEC:"
       '
       'txtInternet
       '
@@ -908,12 +966,12 @@ Public Class frmAziende
       Me.txtInternet.BackColor = System.Drawing.SystemColors.Window
       Me.txtInternet.Cursor = System.Windows.Forms.Cursors.IBeam
       Me.txtInternet.ForeColor = System.Drawing.SystemColors.WindowText
-      Me.txtInternet.Location = New System.Drawing.Point(96, 192)
+      Me.txtInternet.Location = New System.Drawing.Point(96, 220)
       Me.txtInternet.MaxLength = 0
       Me.txtInternet.Name = "txtInternet"
       Me.txtInternet.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.txtInternet.Size = New System.Drawing.Size(344, 20)
-      Me.txtInternet.TabIndex = 6
+      Me.txtInternet.TabIndex = 8
       '
       'Label14
       '
@@ -921,7 +979,7 @@ Public Class frmAziende
       Me.Label14.BackColor = System.Drawing.Color.Transparent
       Me.Label14.Cursor = System.Windows.Forms.Cursors.Default
       Me.Label14.ForeColor = System.Drawing.Color.Black
-      Me.Label14.Location = New System.Drawing.Point(32, 192)
+      Me.Label14.Location = New System.Drawing.Point(32, 220)
       Me.Label14.Name = "Label14"
       Me.Label14.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.Label14.Size = New System.Drawing.Size(46, 13)
@@ -1077,7 +1135,7 @@ Public Class frmAziende
       Me.TabPage2.Controls.Add(Me.Label23)
       Me.TabPage2.Location = New System.Drawing.Point(4, 22)
       Me.TabPage2.Name = "TabPage2"
-      Me.TabPage2.Size = New System.Drawing.Size(535, 295)
+      Me.TabPage2.Size = New System.Drawing.Size(545, 305)
       Me.TabPage2.TabIndex = 6
       Me.TabPage2.Text = "Modalità pagamento"
       '
@@ -1265,7 +1323,7 @@ Public Class frmAziende
       Me.TabPage5.Controls.Add(Me.lvwBuoniPasto)
       Me.TabPage5.Location = New System.Drawing.Point(4, 22)
       Me.TabPage5.Name = "TabPage5"
-      Me.TabPage5.Size = New System.Drawing.Size(535, 295)
+      Me.TabPage5.Size = New System.Drawing.Size(545, 305)
       Me.TabPage5.TabIndex = 7
       Me.TabPage5.Text = "Buoni pasto"
       '
@@ -1372,7 +1430,7 @@ Public Class frmAziende
       Me.TabPage7.Controls.Add(Me.Label27)
       Me.TabPage7.Location = New System.Drawing.Point(4, 22)
       Me.TabPage7.Name = "TabPage7"
-      Me.TabPage7.Size = New System.Drawing.Size(535, 295)
+      Me.TabPage7.Size = New System.Drawing.Size(545, 305)
       Me.TabPage7.TabIndex = 8
       Me.TabPage7.Text = "Fatturazione"
       '
@@ -1517,7 +1575,7 @@ Public Class frmAziende
       Me.cmbDataAl.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.cmbDataAl.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.cmbDataAl.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-      Me.cmbDataAl.Location = New System.Drawing.Point(343, 8)
+      Me.cmbDataAl.Location = New System.Drawing.Point(353, 8)
       Me.cmbDataAl.Name = "cmbDataAl"
       Me.cmbDataAl.Size = New System.Drawing.Size(88, 20)
       Me.cmbDataAl.TabIndex = 10
@@ -1528,7 +1586,7 @@ Public Class frmAziende
       Me.cmbDataDal.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.cmbDataDal.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.cmbDataDal.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-      Me.cmbDataDal.Location = New System.Drawing.Point(223, 8)
+      Me.cmbDataDal.Location = New System.Drawing.Point(233, 8)
       Me.cmbDataDal.MaxDate = New Date(9998, 12, 1, 0, 0, 0, 0)
       Me.cmbDataDal.Name = "cmbDataDal"
       Me.cmbDataDal.Size = New System.Drawing.Size(88, 20)
@@ -1541,7 +1599,7 @@ Public Class frmAziende
       Me.lblAl.AutoSize = True
       Me.lblAl.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.lblAl.ForeColor = System.Drawing.Color.Black
-      Me.lblAl.Location = New System.Drawing.Point(319, 8)
+      Me.lblAl.Location = New System.Drawing.Point(329, 8)
       Me.lblAl.Name = "lblAl"
       Me.lblAl.Size = New System.Drawing.Size(20, 15)
       Me.lblAl.TabIndex = 55667
@@ -1554,7 +1612,7 @@ Public Class frmAziende
       Me.lblDal.AutoSize = True
       Me.lblDal.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.lblDal.ForeColor = System.Drawing.Color.Black
-      Me.lblDal.Location = New System.Drawing.Point(191, 8)
+      Me.lblDal.Location = New System.Drawing.Point(201, 8)
       Me.lblDal.Name = "lblDal"
       Me.lblDal.Size = New System.Drawing.Size(29, 15)
       Me.lblDal.TabIndex = 55666
@@ -1664,7 +1722,7 @@ Public Class frmAziende
       Me.TabPage4.Controls.Add(Me.lvwAllegati)
       Me.TabPage4.Location = New System.Drawing.Point(4, 22)
       Me.TabPage4.Name = "TabPage4"
-      Me.TabPage4.Size = New System.Drawing.Size(535, 287)
+      Me.TabPage4.Size = New System.Drawing.Size(545, 305)
       Me.TabPage4.TabIndex = 3
       Me.TabPage4.Text = "Documenti allegati"
       '
@@ -1744,7 +1802,7 @@ Public Class frmAziende
       Me.TabPage6.Controls.Add(Me.txtNote)
       Me.TabPage6.Location = New System.Drawing.Point(4, 22)
       Me.TabPage6.Name = "TabPage6"
-      Me.TabPage6.Size = New System.Drawing.Size(556, 316)
+      Me.TabPage6.Size = New System.Drawing.Size(545, 305)
       Me.TabPage6.TabIndex = 5
       Me.TabPage6.Text = "Note"
       Me.TabPage6.ToolTipText = "Note varie"
@@ -1762,7 +1820,7 @@ Public Class frmAziende
       Me.txtNote.Name = "txtNote"
       Me.txtNote.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.txtNote.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-      Me.txtNote.Size = New System.Drawing.Size(556, 316)
+      Me.txtNote.Size = New System.Drawing.Size(545, 305)
       Me.txtNote.TabIndex = 0
       '
       'PrintDialog1
@@ -1783,7 +1841,7 @@ Public Class frmAziende
       Me.AcceptButton = Me.ApriImg
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(543, 367)
+      Me.ClientSize = New System.Drawing.Size(563, 387)
       Me.Controls.Add(Me.TabControl1)
       Me.Controls.Add(Me.Panel1)
       Me.Controls.Add(Me.ToolBar1)
@@ -1970,6 +2028,7 @@ Public Class frmAziende
             .Cell = FormattaApici(txtCell.Text)
             .Fax = FormattaApici(txtFax.Text)
             .Email = FormattaApici(txtEmail.Text)
+            .PEC = FormattaApici(txtPec.Text)
             .Internet = FormattaApici(txtInternet.Text)
             .TipoPagamento = FormattaApici(cmbPagamento.Text)
             .Banca = FormattaApici(txtBanca.Text)
@@ -2819,6 +2878,7 @@ Public Class frmAziende
                txtCell.Text = .Cell
                txtFax.Text = .Fax
                txtEmail.Text = .Email
+               txtPec.Text = .PEC
                txtInternet.Text = .Internet
                cmbPagamento.Text = .TipoPagamento
                txtBanca.Text = .Banca
@@ -3106,7 +3166,27 @@ Public Class frmAziende
       End Try
    End Sub
 
-   Private Sub cmdVai_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdVai.Click
+   Private Sub eui_cmdNuovoMsg_Click(sender As Object, e As EventArgs) Handles eui_cmdNuovoMsg.Click
+      Try
+         InviaEmail(txtEmail.Text)
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+      End Try
+   End Sub
+
+   Private Sub eui_cmdNuovoMsgPEC_Click(sender As Object, e As EventArgs) Handles eui_cmdNuovoMsgPEC.Click
+      Try
+         InviaEmail(txtPec.Text)
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+      End Try
+   End Sub
+
+   Private Sub eui_cmdApriWeb_Click(sender As Object, e As EventArgs) Handles eui_cmdApriWeb.Click
       Try
          ApriSitoInternet(txtInternet.Text)
 
@@ -3114,24 +3194,6 @@ Public Class frmAziende
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
          err.GestisciErrore(ex.StackTrace, ex.Message)
       End Try
-   End Sub
-
-   Private Sub cmdVai_MouseEnter(ByVal sender As Object, ByVal e As System.EventArgs) Handles cmdVai.MouseEnter
-      ToolTip1.SetToolTip(sender, "Vai a """ & txtInternet.Text & """")
-   End Sub
-
-   Private Sub cmdScrivi_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdScrivi.Click
-      Try
-         ScriviEmail(txtEmail.Text)
-
-      Catch ex As Exception
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
-      End Try
-   End Sub
-
-   Private Sub cmdScrivi_MouseEnter(ByVal sender As Object, ByVal e As System.EventArgs) Handles cmdScrivi.MouseEnter
-      ToolTip1.SetToolTip(sender, "Scrivi a """ & txtEmail.Text & """")
    End Sub
 
    Private Sub txtCap_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtCap.KeyPress
@@ -3338,4 +3400,5 @@ Public Class frmAziende
 
       End Try
    End Sub
+
 End Class

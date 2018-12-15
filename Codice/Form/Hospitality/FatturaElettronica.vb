@@ -7,6 +7,8 @@
 ' Note:
 '
 ' Elenco Attivita:
+' DA_FARE: Sviluppare! Aggiungere i campi CUP, CIG ecc in Fattura.
+'
 '
 ' ***************************************************************************************************
 #End Region
@@ -1520,8 +1522,6 @@ salta:
                eui_txtTrasmittenteEmail.Text = String.Empty
             End If
 
-            ' DA_FARE_A: Sviluppare! PEC Destinatario.
-
             ' CEDENTE / PRESTATORE.
 
             ' Identificativo Trasmittente IdPaese.
@@ -1632,10 +1632,30 @@ salta:
       Try
          cn.Open()
 
-         Dim cmd As New OleDbCommand("SELECT * FROM Azienda ORDER BY Id ASC", cn)
+         Dim cmd As New OleDbCommand("SELECT * FROM Clienti ORDER BY Id ASC", cn)
          Dim dr As OleDbDataReader = cmd.ExecuteReader()
 
          Do While dr.Read()
+            ' DATI TRASMISSIONE.
+
+            ' Codice Destinatario.
+            If IsDBNull(dr.Item("CodiceDestinatario")) = False Then
+               If dr.Item("CodiceDestinatario").ToString <> String.Empty Then
+                  eui_txtCodiceDestinatario.Text = dr.Item("CodiceDestinatario").ToString
+               Else
+                  eui_txtCodiceDestinatario.Text = "0000000"
+
+                  ' PEC Destinatario.
+                  If IsDBNull(dr.Item("PEC")) = False Then
+                     eui_txtTrasmittentePECDestinatario.Text = dr.Item("PEC").ToString
+                  Else
+                     eui_txtTrasmittentePECDestinatario.Text = String.Empty
+                  End If
+
+               End If
+            Else
+               eui_txtCodiceDestinatario.Text = String.Empty
+            End If
 
             ' CESSIONARIO / COMMITTENTE.
 

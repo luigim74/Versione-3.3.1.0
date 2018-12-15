@@ -958,7 +958,12 @@ Public Class ElencoEmail
       g_frmMain.eui_Strumenti_Elimina.Visible = True
       g_frmMain.eui_Strumenti_Annulla.Visible = False
       g_frmMain.eui_Strumenti_Aggiorna.Visible = True
+
+      ' Esporta.
       g_frmMain.eui_Strumenti_Esporta.Visible = True
+      g_frmMain.eui_Strumenti_Esporta_SepXML.Visible = True
+      g_frmMain.eui_Strumenti_Esporta_XML.Visible = False
+      g_frmMain.eui_Strumenti_Esporta_EML.Visible = True
 
       ' Stampa.
       g_frmMain.eui_Strumenti_Stampa_Anteprima.Visible = True
@@ -1335,5 +1340,26 @@ Public Class ElencoEmail
 
       End Try
    End Sub
+
+   Public Sub Esporta()
+      Try
+         ' Attiva/disattiva il pulsante per esportare il documento in Fattura elettronica.
+         If numRecord <> 0 Then
+
+            Dim mittente As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_MITTENTE)
+            Dim destinatario As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_DESTINATARIO)
+            Dim oggetto As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_OGGETTO)
+            Dim allegati As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_ALLEGATI)
+
+            EsportaEmail(mittente, destinatario, oggetto, allegati)
+         End If
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
 
 End Class

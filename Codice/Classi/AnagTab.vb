@@ -1,3 +1,18 @@
+#Region " DATI FILE.VB "
+' ******************************************************************
+' Autore:               Luigi Montana, Montana Software
+' Data creazione:       01/01/2005
+' Data ultima modifica: 12/12/2018
+' Descrizione:          Classe Anagrafiche e Tabelle.
+' Note:
+' ATTENZIONENE! QUESTO FILE CONTIENE PROCEDURE VARIE CONDIVISE DA TUTTI I PROGETTI.
+' LE MODIFICHE APPORTATE AL CODICE POSSONO DANNEGGIARE IL FUNZIONAMENTO DI ALTRI PROGRAMMI.
+'
+' Elenco Attivita:
+'
+' ******************************************************************
+#End Region
+
 Imports System.Data.OleDb
 
 Namespace Anagrafiche
@@ -628,13 +643,18 @@ Namespace Anagrafiche
       Public Fax As String = String.Empty
       Public Cell As String = String.Empty
       Public Email As String = String.Empty
+      Public PEC As String = String.Empty
       Public Internet As String = String.Empty
       Public Immagine As String = String.Empty
       Public Professione As String = String.Empty
       Public Lingua As String = String.Empty
+      Public Note As String = String.Empty
+
       ' Utilizzato per il codice tessera.
       Public NumeroDoc As String = String.Empty
-      Public Note As String = String.Empty
+
+      'Utilizzato per la Fatturazione Elettronica.
+      Public CodiceDestinatario As String = String.Empty
 
    End Class
 
@@ -653,7 +673,6 @@ Namespace Anagrafiche
       Public Strutture As String = String.Empty
       Public Iva As String = String.Empty
       Public Sconto As String = String.Empty
-      'Public CodiceTessera As String = String.Empty
 
       Private m_ConnString As String
 
@@ -906,6 +925,11 @@ Namespace Anagrafiche
             Else
                Me.Email = ""
             End If
+            If IsDBNull(ds.Tables(tabella).Rows(0)("PEC")) = False Then
+               Me.PEC = ds.Tables(tabella).Rows(0)("PEC")
+            Else
+               Me.PEC = ""
+            End If
             If IsDBNull(ds.Tables(tabella).Rows(0)("Internet")) = False Then
                Me.Internet = ds.Tables(tabella).Rows(0)("Internet")
             Else
@@ -987,6 +1011,12 @@ Namespace Anagrafiche
             Else
                Me.NumeroDoc = ""
             End If
+            ' Fatturazione Elettronica.
+            If IsDBNull(ds.Tables(tabella).Rows(0)("CodiceDestinatario")) = False Then
+               Me.CodiceDestinatario = ds.Tables(tabella).Rows(0)("CodiceDestinatario")
+            Else
+               Me.CodiceDestinatario = ""
+            End If
 
          Catch ex As Exception
             ' Visualizza un messaggio di errore e lo registra nell'apposito file.
@@ -1015,15 +1045,15 @@ Namespace Anagrafiche
             sql = String.Format("INSERT INTO {0} (Mastro, Titolo, Nome, Cognome, Sesso, Indirizzo, Cap, Citt‡, Provincia, Regione, Nazione, CodFisc, Piva, " &
                                                  "DataNascita, LuogoNascita, ProvNascita, NazioneNascita, Nazionalit‡, " &
                                                  "TipoAlloggiato, TipoDoc, NumeroDocIdentit‡, DataRilascioDoc, RilasciatoDa, Citt‡RilascioDoc, NazioneRilascioDoc, " &
-                                                 "Disabile, InvioCorrisp, Obsoleto, TelCasa, TelUfficio, Cell, Fax, Email, Internet, " &
+                                                 "Disabile, InvioCorrisp, Obsoleto, TelCasa, TelUfficio, Cell, Fax, Email, PEC, Internet, " &
                                                  "CartaCredito, TitolareCarta, NumCarta, ScadenzaCarta, TipoCliente, TipoPagamento, Strutture, Targa, Intestatario," &
-                                                 "[Note], Immagine, Mercato, Canale, Lingua, Professione, [NoteVideo], [NoteStampa], Privacy, InsPS, NumComp, Iva, Sconto, NumeroDoc) " &
+                                                 "[Note], Immagine, Mercato, Canale, Lingua, Professione, [NoteVideo], [NoteStampa], Privacy, InsPS, NumComp, Iva, Sconto, NumeroDoc, CodiceDestinatario) " &
                                           "VALUES(@Mastro, @Titolo, @Nome, @Cognome, @Sesso, @Indirizzo, @Cap, @Citt‡, @Provincia, @Regione, @Nazione, @CodFisc, @Piva, " &
                                                  "@DataNascita, @LuogoNascita, @ProvNascita, @NazioneNascita, @Nazionalit‡, " &
                                                  "@TipoAlloggiato, @TipoDoc, @NumeroDocIdentit‡, @DataRilascioDoc, @RilasciatoDa, @Citt‡RilascioDoc, @NazioneRilascioDoc, " &
-                                                 "@Disabile, @InvioCorrisp, @Obsoleto, @TelCasa, @TelUfficio, @Cell, @Fax, @Email, @Internet, " &
+                                                 "@Disabile, @InvioCorrisp, @Obsoleto, @TelCasa, @TelUfficio, @Cell, @Fax, @Email, @PEC, @Internet, " &
                                                  "@CartaCredito, @TitolareCarta, @NumCarta, @ScadenzaCarta, @TipoCliente, @TipoPagamento, @Strutture, @Targa, @Intestatario," &
-                                                 "@Note, @Immagine, @Mercato, @Canale, @Lingua, @Professione, @NoteVideo, @NoteStampa, @Privacy, @InsPS, @NumComp, @Iva, @Sconto, @NumeroDoc)", tabella)
+                                                 "@Note, @Immagine, @Mercato, @Canale, @Lingua, @Professione, @NoteVideo, @NoteStampa, @Privacy, @InsPS, @NumComp, @Iva, @Sconto, @NumeroDoc, @CodiceDestinatario)", tabella)
 
             ' Crea il comando per la connessione corrente.
             Dim cmdInsert As New OleDbCommand(sql, cn, tr)
@@ -1061,6 +1091,7 @@ Namespace Anagrafiche
             cmdInsert.Parameters.Add("@Cell", Me.Cell)
             cmdInsert.Parameters.Add("@Fax", Me.Fax)
             cmdInsert.Parameters.Add("@Email", Me.Email)
+            cmdInsert.Parameters.Add("@PEC", Me.PEC)
             cmdInsert.Parameters.Add("@Internet", Me.Internet)
             cmdInsert.Parameters.Add("@CartaCredito", Me.CartaCredito)
             cmdInsert.Parameters.Add("@TitolareCarta", Me.TitolareCarta)
@@ -1085,6 +1116,7 @@ Namespace Anagrafiche
             cmdInsert.Parameters.Add("@Iva", Me.Iva)
             cmdInsert.Parameters.Add("@Sconto", Me.Sconto)
             cmdInsert.Parameters.Add("@NumeroDoc", Me.NumeroDoc)
+            cmdInsert.Parameters.Add("@CodiceDestinatario", Me.CodiceDestinatario)
 
             ' Esegue il comando.
             Dim Record As Integer = cmdInsert.ExecuteNonQuery()
@@ -1157,6 +1189,7 @@ Namespace Anagrafiche
                                 "Cell = @Cell, " &
                                 "Fax = @Fax, " &
                                 "Email = @Email, " &
+                                "PEC = @PEC, " &
                                 "Internet = @Internet, " &
                                 "CartaCredito = @CartaCredito, " &
                                 "TitolareCarta = @TitolareCarta, " &
@@ -1180,7 +1213,8 @@ Namespace Anagrafiche
                                 "NumComp = @NumComp, " &
                                 "Iva = @Iva, " &
                                 "Sconto = @Sconto, " &
-                                "NumeroDoc = @NumeroDoc " &
+                                "NumeroDoc = @NumeroDoc, " &
+                                "CodiceDestinatario = @CodiceDestinatario " &
                                 "WHERE Id = {1}",
                                  tabella,
                                  codice)
@@ -1222,6 +1256,7 @@ Namespace Anagrafiche
             cmdUpdate.Parameters.Add("@Cell", Me.Cell)
             cmdUpdate.Parameters.Add("@Fax", Me.Fax)
             cmdUpdate.Parameters.Add("@Email", Me.Email)
+            cmdUpdate.Parameters.Add("@PEC", Me.PEC)
             cmdUpdate.Parameters.Add("@Internet", Me.Internet)
             cmdUpdate.Parameters.Add("@CartaCredito", Me.CartaCredito)
             cmdUpdate.Parameters.Add("@TitolareCarta", Me.TitolareCarta)
@@ -1246,6 +1281,7 @@ Namespace Anagrafiche
             cmdUpdate.Parameters.Add("@Iva", Me.Iva)
             cmdUpdate.Parameters.Add("@Sconto", Me.Sconto)
             cmdUpdate.Parameters.Add("@NumeroDoc", Me.NumeroDoc)
+            cmdUpdate.Parameters.Add("@CodiceDestinatario", Me.CodiceDestinatario)
 
             ' Esegue il comando.
             Dim Record As Integer = cmdUpdate.ExecuteNonQuery()
@@ -1458,16 +1494,6 @@ Namespace Anagrafiche
             Else
                Me.FaxDest = ""
             End If
-            If IsDBNull(ds.Tables(tabella).Rows(0)("Fax")) = False Then
-               Me.Fax = ds.Tables(tabella).Rows(0)("Fax")
-            Else
-               Me.Fax = ""
-            End If
-            If IsDBNull(ds.Tables(tabella).Rows(0)("Email")) = False Then
-               Me.Email = ds.Tables(tabella).Rows(0)("Email")
-            Else
-               Me.Email = ""
-            End If
             If IsDBNull(ds.Tables(tabella).Rows(0)("ModPagamento")) = False Then
                Me.TipoPagamento = ds.Tables(tabella).Rows(0)("ModPagamento")
             Else
@@ -1563,6 +1589,11 @@ Namespace Anagrafiche
             Else
                Me.Email = ""
             End If
+            If IsDBNull(ds.Tables(tabella).Rows(0)("PEC")) = False Then
+               Me.PEC = ds.Tables(tabella).Rows(0)("PEC")
+            Else
+               Me.PEC = ""
+            End If
             If IsDBNull(ds.Tables(tabella).Rows(0)("Internet")) = False Then
                Me.Internet = ds.Tables(tabella).Rows(0)("Internet")
             Else
@@ -1623,67 +1654,71 @@ Namespace Anagrafiche
             ' Avvia una transazione.
             tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
             ' Crea la stringa di eliminazione.
-            sql = String.Format("INSERT INTO {0} (RagSociale, Indirizzo, Cap, Citt‡, Provincia, Regione, Nazione, Contatto, " & _
-                                                 "Attivit‡, Immagine, Piva, CodFisc, RagioneSocialeDest, IndirizzoDest, CapDest, " & _
-                                                 "Citt‡Dest, ProvinciaDest, NazioneDest, TelDest, FaxDest, ModPagamento, " & _
-                                                 "Banca, Cin, Abi, Cab, Cc, Iban, Listino, Sconto, IvaInfatt, CodIva, Aliquota, " & _
-                                                 "DescrizioneIva, Puntualit‡, TelCasa, TelUfficio, Fax, Cell, " & _
-                                                 "[Note], Email, Internet, Iva, Privacy, Titolo, CodAzienda, NoteDoc) " & _
-                                          "VALUES('{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}', '{10}', " & _
-                                                 "'{11}', '{12}', '{13}', '{14}', '{15}', '{16}', '{17}', '{18}', '{19}', '{20}', " & _
-                                                 "'{21}', '{22}', '{23}', '{24}', '{25}', '{26}', '{27}', '{28}', '{29}', '{30}', " & _
-                                                 "'{31}', '{32}', '{33}', '{34}', '{35}', '{36}', '{37}', '{38}', '{39}', '{40}', " & _
-                                                 "'{41}', '{42}', '{43}', '{44}', '{45}', '{46}')", _
-                                                 tabella, _
-                                                 Me.RagSociale, _
-                                                 Me.Indirizzo1, _
-                                                 Me.Cap, _
-                                                 Me.Citt‡, _
-                                                 Me.Provincia, _
-                                                 Me.Regione, _
-                                                 Me.Nazione, _
-                                                 Me.Contatto, _
-                                                 Me.Attivit‡, _
-                                                 Me.Immagine, _
-                                                 Me.PIva, _
-                                                 Me.CodFisc, _
-                                                 Me.RagSocialeDest, _
-                                                 Me.IndirizzoDest, _
-                                                 Me.CapDest, _
-                                                 Me.Citt‡Dest, _
-                                                 Me.ProvDest, _
-                                                 Me.NazioneDest, _
-                                                 Me.TelDest, _
-                                                 Me.FaxDest, _
-                                                 Me.TipoPagamento, _
-                                                 Me.Banca, _
-                                                 Me.Cin, _
-                                                 Me.Abi, _
-                                                 Me.Cab, _
-                                                 Me.Cc, _
-                                                 Me.Iban, _
-                                                 Me.Listino, _
-                                                 Me.Sconto, _
-                                                 Me.IvaInFatt, _
-                                                 Me.CodIva, _
-                                                 Me.Aliquota, _
-                                                 Me.DescrizioneIva, _
-                                                 Me.Puntualit‡, _
-                                                 Me.TelCasa, _
-                                                 Me.TelUfficio, _
-                                                 Me.Fax, _
-                                                 Me.Cell, _
-                                                 Me.Note, _
-                                                 Me.Email, _
-                                                 Me.Internet, _
-                                                 Me.Iva, _
-                                                 Me.Privacy, _
-                                                 Me.Titolo, _
-                                                 Me.CodAzienda, _
-                                                 Me.NoteDoc)
+            sql = String.Format("INSERT INTO {0} (RagSociale, Indirizzo, Cap, Citt‡, Provincia, Regione, Nazione, Contatto, " &
+                                                 "Attivit‡, Immagine, Piva, CodFisc, RagioneSocialeDest, IndirizzoDest, CapDest, " &
+                                                 "Citt‡Dest, ProvinciaDest, NazioneDest, TelDest, FaxDest, ModPagamento, " &
+                                                 "Banca, Cin, Abi, Cab, Cc, Iban, Listino, Sconto, IvaInfatt, CodIva, Aliquota, " &
+                                                 "DescrizioneIva, Puntualit‡, TelCasa, TelUfficio, Fax, Cell, " &
+                                                 "[Note], Email, PEC, Internet, Iva, Privacy, Titolo, CodAzienda, NoteDoc) " &
+                                          "VALUES(@RagSociale, @Indirizzo, @Cap, @Citt‡, @Provincia, @Regione, @Nazione, @Contatto, " &
+                                                 "@Attivit‡, @Immagine, @Piva, @CodFisc, @RagioneSocialeDest, @IndirizzoDest, @CapDest, " &
+                                                 "@Citt‡Dest, @ProvinciaDest, @NazioneDest, @TelDest, @FaxDest, @ModPagamento, " &
+                                                 "@Banca, @Cin, @Abi, @Cab, @Cc, @Iban, @Listino, @Sconto, @IvaInfatt, @CodIva, @Aliquota, " &
+                                                 "@DescrizioneIva, @Puntualit‡, @TelCasa, @TelUfficio, @Fax, @Cell, " &
+                                                 "@Note, @Email, @PEC, @Internet, @Iva, @Privacy, @Titolo, @CodAzienda, @NoteDoc)", tabella)
+
 
             ' Crea il comando per la connessione corrente.
             Dim cmdInsert As New OleDbCommand(sql, cn, tr)
+
+            cmdInsert.Parameters.Add("@RagSociale", Me.RagSociale)
+            cmdInsert.Parameters.Add("@Indirizzo", Me.Indirizzo1)
+            cmdInsert.Parameters.Add("@Cap", Me.Cap)
+            cmdInsert.Parameters.Add("@Citt‡", Me.Citt‡)
+            cmdInsert.Parameters.Add("@Provincia", Me.Provincia)
+            cmdInsert.Parameters.Add("@Regione", Me.Regione)
+            cmdInsert.Parameters.Add("@Nazione", Me.Nazione)
+            cmdInsert.Parameters.Add("@Contatto", Me.Contatto)
+            cmdInsert.Parameters.Add("@Attivit‡", Me.Attivit‡)
+            cmdInsert.Parameters.Add("@Immagine", Me.Immagine)
+            cmdInsert.Parameters.Add("@Piva", Me.PIva)
+            cmdInsert.Parameters.Add("@CodFisc", Me.CodFisc)
+            cmdInsert.Parameters.Add("@RagSocialeDest", Me.RagSocialeDest)
+            cmdInsert.Parameters.Add("@IndirizzoDest", Me.IndirizzoDest)
+            cmdInsert.Parameters.Add("@CapDest", Me.CapDest)
+            cmdInsert.Parameters.Add("@Citt‡Dest", Me.Citt‡Dest)
+            cmdInsert.Parameters.Add("@ProvinciaDest", Me.ProvDest)
+            cmdInsert.Parameters.Add("@NazioneDest", Me.NazioneDest)
+            cmdInsert.Parameters.Add("@TelDest", Me.TelDest)
+            cmdInsert.Parameters.Add("@FaxDest", Me.FaxDest)
+            cmdInsert.Parameters.Add("@ModPagamento", Me.TipoPagamento)
+            cmdInsert.Parameters.Add("@Banca", Me.Banca)
+            cmdInsert.Parameters.Add("@Cin", Me.Cin)
+            cmdInsert.Parameters.Add("@Abi", Me.Abi)
+            cmdInsert.Parameters.Add("@Cab", Me.Cab)
+            cmdInsert.Parameters.Add("@Cc", Me.Cc)
+            cmdInsert.Parameters.Add("@Iban", Me.Iban)
+            cmdInsert.Parameters.Add("@Listino", Me.Listino)
+            cmdInsert.Parameters.Add("@Sconto", Me.Sconto)
+            cmdInsert.Parameters.Add("@IvaInFatt", Me.IvaInFatt)
+            cmdInsert.Parameters.Add("@CodIva", Me.CodIva)
+            cmdInsert.Parameters.Add("@Aliquota", Me.Aliquota)
+            cmdInsert.Parameters.Add("@DescrizioneIva", Me.DescrizioneIva)
+            cmdInsert.Parameters.Add("@Puntualit‡", Me.Puntualit‡)
+            cmdInsert.Parameters.Add("@TelCasa", Me.TelCasa)
+            cmdInsert.Parameters.Add("@TelUfficio", Me.TelUfficio)
+            cmdInsert.Parameters.Add("@Fax", Me.Fax)
+            cmdInsert.Parameters.Add("@Cell", Me.Cell)
+            cmdInsert.Parameters.Add("@Note", Me.Note)
+            cmdInsert.Parameters.Add("@Email", Me.Email)
+            cmdInsert.Parameters.Add("@PEC", Me.PEC)
+            cmdInsert.Parameters.Add("@Internet", Me.Internet)
+            cmdInsert.Parameters.Add("@Iva", Me.Iva)
+            cmdInsert.Parameters.Add("@Privacy", Me.Privacy)
+            cmdInsert.Parameters.Add("@Titolo", Me.Titolo)
+            cmdInsert.Parameters.Add("@CodAzienda", Me.CodAzienda)
+            cmdInsert.Parameters.Add("@NoteDoc", Me.NoteDoc)
+
             ' Esegue il comando.
             Dim Record As Integer = cmdInsert.ExecuteNonQuery()
 
@@ -1721,105 +1756,109 @@ Namespace Anagrafiche
             tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
 
             ' Crea la stringa di eliminazione.
-            sql = String.Format("UPDATE {0} " & _
-                                "SET RagSociale = '{1}', " & _
-                                "Indirizzo = '{2}', " & _
-                                "Cap = '{3}', " & _
-                                "Citt‡ = '{4}', " & _
-                                "Provincia = '{5}', " & _
-                                "Regione = '{6}', " & _
-                                "Nazione = '{7}', " & _
-                                "Contatto = '{8}', " & _
-                                "Attivit‡ = '{9}', " & _
-                                "Immagine = '{10}', " & _
-                                "Piva = '{11}', " & _
-                                "CodFisc = '{12}', " & _
-                                "RagioneSocialeDest = '{13}', " & _
-                                "IndirizzoDest = '{14}', " & _
-                                "CapDest = '{15}', " & _
-                                "Citt‡Dest = '{16}', " & _
-                                "ProvinciaDest = '{17}', " & _
-                                "NazioneDest = '{18}', " & _
-                                "TelDest = '{19}', " & _
-                                "FaxDest = '{20}', " & _
-                                "ModPagamento = '{21}', " & _
-                                "Banca = '{22}', " & _
-                                "Cin = '{23}', " & _
-                                "Abi = '{24}', " & _
-                                "Cab = '{25}', " & _
-                                "Cc = '{26}', " & _
-                                "Iban = '{27}', " & _
-                                "Listino = '{28}', " & _
-                                "Sconto = '{29}', " & _
-                                "IvaInfatt = '{30}', " & _
-                                "CodIva = '{31}', " & _
-                                "Aliquota = '{32}', " & _
-                                "DescrizioneIva = '{33}', " & _
-                                "Puntualit‡ = '{34}', " & _
-                                "TelCasa = '{35}', " & _
-                                "TelUfficio= '{36}', " & _
-                                "Fax = '{37}', " & _
-                                "Cell = '{38}', " & _
-                                "[Note] = '{39}', " & _
-                                "Email = '{40}', " & _
-                                "Internet = '{41}', " & _
-                                "Iva = '{42}', " & _
-                                "Privacy = '{43}', " & _
-                                "Titolo = '{44}', " & _
-                                "CodAzienda = '{45}', " & _
-                                "NoteDoc = '{46}' " & _
-                                "WHERE Id = {47}", _
-                                 tabella, _
-                                 Me.RagSociale, _
-                                 Me.Indirizzo1, _
-                                 Me.Cap, _
-                                 Me.Citt‡, _
-                                 Me.Provincia, _
-                                 Me.Regione, _
-                                 Me.Nazione, _
-                                 Me.Contatto, _
-                                 Me.Attivit‡, _
-                                 Me.Immagine, _
-                                 Me.PIva, _
-                                 Me.CodFisc, _
-                                 Me.RagSocialeDest, _
-                                 Me.IndirizzoDest, _
-                                 Me.CapDest, _
-                                 Me.Citt‡Dest, _
-                                 Me.ProvDest, _
-                                 Me.NazioneDest, _
-                                 Me.TelDest, _
-                                 Me.FaxDest, _
-                                 Me.TipoPagamento, _
-                                 Me.Banca, _
-                                 Me.Cin, _
-                                 Me.Abi, _
-                                 Me.Cab, _
-                                 Me.Cc, _
-                                 Me.Iban, _
-                                 Me.Listino, _
-                                 Me.Sconto, _
-                                 Me.IvaInFatt, _
-                                 Me.CodIva, _
-                                 Me.Aliquota, _
-                                 Me.DescrizioneIva, _
-                                 Me.Puntualit‡, _
-                                 Me.TelCasa, _
-                                 Me.TelUfficio, _
-                                 Me.Fax, _
-                                 Me.Cell, _
-                                 Me.Note, _
-                                 Me.Email, _
-                                 Me.Internet, _
-                                 Me.Iva, _
-                                 Me.Privacy, _
-                                 Me.Titolo, _
-                                 Me.CodAzienda, _
-                                 Me.NoteDoc, _
+            sql = String.Format("UPDATE {0} " &
+                                "SET RagSociale = @RagSociale, " &
+                                "Indirizzo = @Indirizzo, " &
+                                "Cap = @Cap, " &
+                                "Citt‡ = @Citt‡, " &
+                                "Provincia = @Provincia, " &
+                                "Regione = @Regione, " &
+                                "Nazione = @Nazione, " &
+                                "Contatto = @Contatto, " &
+                                "Attivit‡ = @Attivit‡, " &
+                                "Immagine = @Immagine, " &
+                                "Piva = @Piva, " &
+                                "CodFisc = @CodFisc, " &
+                                "RagioneSocialeDest = @RagioneSocialeDest, " &
+                                "IndirizzoDest = @IndirizzoDest, " &
+                                "CapDest = @CapDest, " &
+                                "Citt‡Dest = @Citt‡Dest, " &
+                                "ProvinciaDest = @ProvinciaDest, " &
+                                "NazioneDest = @NazioneDest, " &
+                                "TelDest = @TelDest, " &
+                                "FaxDest = @FaxDest, " &
+                                "ModPagamento = @ModPagamento, " &
+                                "Banca = @Banca, " &
+                                "Cin = @Cin, " &
+                                "Abi = @Abi, " &
+                                "Cab = @Cab, " &
+                                "Cc = @Cc, " &
+                                "Iban = @Iban, " &
+                                "Listino = @Listino, " &
+                                "Sconto = @Sconto, " &
+                                "IvaInfatt = @IvaInfatt, " &
+                                "CodIva = @CodIva, " &
+                                "Aliquota = @Aliquota, " &
+                                "DescrizioneIva = @DescrizioneIva, " &
+                                "Puntualit‡ = @Puntualit‡, " &
+                                "TelCasa = @TelCasa, " &
+                                "TelUfficio= @TelUfficio, " &
+                                "Fax = @Fax, " &
+                                "Cell = @Cell, " &
+                                "[Note] = @Note, " &
+                                "Email = @Email, " &
+                                "PEC = @PEC, " &
+                                "Internet = @Internet, " &
+                                "Iva = @Iva, " &
+                                "Privacy = @Privacy, " &
+                                "Titolo = @Titolo, " &
+                                "CodAzienda = @CodAzienda, " &
+                                "NoteDoc = @NoteDoc " &
+                                "WHERE Id = {1}",
+                                 tabella,
                                  codice)
 
             ' Crea il comando per la connessione corrente.
             Dim cmdUpdate As New OleDbCommand(sql, cn, tr)
+
+            cmdUpdate.Parameters.Add("@RagSociale", Me.RagSociale)
+            cmdUpdate.Parameters.Add("@Indirizzo", Me.Indirizzo1)
+            cmdUpdate.Parameters.Add("@Cap", Me.Cap)
+            cmdUpdate.Parameters.Add("@Citt‡", Me.Citt‡)
+            cmdUpdate.Parameters.Add("@Provincia", Me.Provincia)
+            cmdUpdate.Parameters.Add("@Regione", Me.Regione)
+            cmdUpdate.Parameters.Add("@Nazione", Me.Nazione)
+            cmdUpdate.Parameters.Add("@Contatto", Me.Contatto)
+            cmdUpdate.Parameters.Add("@Attivit‡", Me.Attivit‡)
+            cmdUpdate.Parameters.Add("@Immagine", Me.Immagine)
+            cmdUpdate.Parameters.Add("@Piva", Me.PIva)
+            cmdUpdate.Parameters.Add("@CodFisc", Me.CodFisc)
+            cmdUpdate.Parameters.Add("@RagioneSocialeDest", Me.RagSocialeDest)
+            cmdUpdate.Parameters.Add("@IndirizzoDest", Me.IndirizzoDest)
+            cmdUpdate.Parameters.Add("@CapDest", Me.CapDest)
+            cmdUpdate.Parameters.Add("@Citt‡Dest", Me.Citt‡Dest)
+            cmdUpdate.Parameters.Add("@ProvinciaDest", Me.ProvDest)
+            cmdUpdate.Parameters.Add("@NazioneDest", Me.NazioneDest)
+            cmdUpdate.Parameters.Add("@TelDest", Me.TelDest)
+            cmdUpdate.Parameters.Add("@FaxDest", Me.FaxDest)
+            cmdUpdate.Parameters.Add("@ModPagamento", Me.TipoPagamento)
+            cmdUpdate.Parameters.Add("@Banca", Me.Banca)
+            cmdUpdate.Parameters.Add("@Cin", Me.Cin)
+            cmdUpdate.Parameters.Add("@Abi", Me.Abi)
+            cmdUpdate.Parameters.Add("@Cab", Me.Cab)
+            cmdUpdate.Parameters.Add("@Cc", Me.Cc)
+            cmdUpdate.Parameters.Add("@Iban", Me.Iban)
+            cmdUpdate.Parameters.Add("@Listino", Me.Listino)
+            cmdUpdate.Parameters.Add("@Sconto", Me.Sconto)
+            cmdUpdate.Parameters.Add("@IvaInfatt", Me.IvaInFatt)
+            cmdUpdate.Parameters.Add("@CodIva", Me.CodIva)
+            cmdUpdate.Parameters.Add("@Aliquota", Me.Aliquota)
+            cmdUpdate.Parameters.Add("@DescrizioneIva", Me.DescrizioneIva)
+            cmdUpdate.Parameters.Add("@Puntualit‡", Me.Puntualit‡)
+            cmdUpdate.Parameters.Add("@TelCasa", Me.TelCasa)
+            cmdUpdate.Parameters.Add("@TelUfficio", Me.TelUfficio)
+            cmdUpdate.Parameters.Add("@Fax", Me.Fax)
+            cmdUpdate.Parameters.Add("@Cell", Me.Cell)
+            cmdUpdate.Parameters.Add("@Note", Me.Note)
+            cmdUpdate.Parameters.Add("@Email", Me.Email)
+            cmdUpdate.Parameters.Add("@PEC", Me.PEC)
+            cmdUpdate.Parameters.Add("@Internet", Me.Internet)
+            cmdUpdate.Parameters.Add("@Iva", Me.Iva)
+            cmdUpdate.Parameters.Add("@Privacy", Me.Privacy)
+            cmdUpdate.Parameters.Add("@Titolo", Me.Titolo)
+            cmdUpdate.Parameters.Add("@CodAzienda", Me.CodAzienda)
+            cmdUpdate.Parameters.Add("@NoteDoc", Me.NoteDoc) _
+
             ' Esegue il comando.
             Dim Record As Integer = cmdUpdate.ExecuteNonQuery()
 

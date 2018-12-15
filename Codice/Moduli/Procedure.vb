@@ -13,7 +13,6 @@
 ' ******************************************************************
 #End Region
 
-
 #Region "Importazioni"
 
 Imports System.IO
@@ -3507,8 +3506,8 @@ Module Procedure
 
    Public Sub ApriSitoInternet(ByVal indirizzo As String)
       Try
-         If indirizzo = "" Then
-            MsgBox("Il campo 'Internet' è vuoto! Si consiglia di inserire un indirizzo di sito Internet valido e riprovare.", MsgBoxStyle.OkOnly.Information, NOME_PRODOTTO)
+         If indirizzo = String.Empty Then
+            MessageBox.Show("Il campo 'Internet' è vuoto! Si consiglia di inserire un indirizzo di sito Internet valido e riprovare.", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
          Else
             ' Modifica il cursore del mouse.
             Cursor.Current = Cursors.AppStarting
@@ -3527,32 +3526,51 @@ Module Procedure
 
    End Sub
 
-   ' DA_FARE_A: Modificare!
-   Public Sub ScriviEmail(ByVal indirizzo As String)
+   Public Sub EsportaEmail(ByVal mittente As String, ByVal destinatario As String, ByVal oggetto As String, ByVal allegato As String)
       Try
-         If indirizzo = "" Then
-            MsgBox("Il campo 'E-mail' è vuoto! Si consiglia di inserire un indirizzo di posta elettronica valido e riprovare.", _
-                   MsgBoxStyle.OkOnly.Information, NOME_PRODOTTO)
-         Else
+         ' Modifica il cursore del mouse.
+         Cursor.Current = Cursors.AppStarting
 
-            ' Modifica il cursore del mouse.
-            Cursor.Current = Cursors.AppStarting
+         Dim Web As New Varie.WebSolution
+         Dim allegati As String() = {allegato}
 
-            Dim Web As New Varie.WebSolution
-            Dim allegato As String() = {"ProvaPDF.pdf"}
+         Web.createEmail(Application.StartupPath & "\Documenti\" & "Email.eml", mittente, destinatario, oggetto, allegato)
+         Process.Start(Application.StartupPath & "\Documenti\" & "Email.eml")
 
-            Web.createEmail(Application.StartupPath & "\Documenti\" & "Email.eml", "info@montanasoftware.it", indirizzo, "Prenotazione N. 294004", "Questa è una e-mail.", allegato)
-            Process.Start(Application.StartupPath & "\Documenti\" & "Email.eml")
-
-            ' Modifica il cursore del mouse.
-            Cursor.Current = Cursors.Default
-         End If
+         ' Modifica il cursore del mouse.
+         Cursor.Current = Cursors.Default
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
          err.GestisciErrore(ex.StackTrace, ex.Message)
       End Try
 
+   End Sub
+
+   Public Sub InviaEmail(ByVal destinatario As String)
+      Try
+         If destinatario = String.Empty Then
+            MessageBox.Show("Il campo 'E-mail' è vuoto! Si consiglia di inserire un indirizzo di posta elettronica valido e riprovare.", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+         Else
+            ' Modifica il cursore del mouse.
+            Cursor.Current = Cursors.AppStarting
+
+            ' Apre la finestra Invio e-mail per un nuovo messaggio.
+            Dim frmEmail As New InvioEmail(g_frmMain.LeggiEmailMittente, destinatario, String.Empty, String.Empty, String.Empty, String.Empty, String.Empty, String.Empty, String.Empty)
+
+            frmEmail.Tag = String.Empty
+            frmEmail.ShowDialog()
+         End If
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      Finally
+         ' Modifica il cursore del mouse.
+         Cursor.Current = Cursors.Default
+
+      End Try
    End Sub
 
    Public Sub ApriFileGuida(ByVal percorsoFile As String)
