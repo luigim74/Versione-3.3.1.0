@@ -3168,7 +3168,7 @@ Public Class frmAziende
 
    Private Sub eui_cmdNuovoMsg_Click(sender As Object, e As EventArgs) Handles eui_cmdNuovoMsg.Click
       Try
-         InviaEmail(txtEmail.Text)
+         InviaEmail(g_frmMain.LeggiEmailMittente, txtEmail.Text, String.Empty, String.Empty, String.Empty)
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
@@ -3176,15 +3176,6 @@ Public Class frmAziende
       End Try
    End Sub
 
-   Private Sub eui_cmdNuovoMsgPEC_Click(sender As Object, e As EventArgs) Handles eui_cmdNuovoMsgPEC.Click
-      Try
-         InviaEmail(txtPec.Text)
-
-      Catch ex As Exception
-         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-         err.GestisciErrore(ex.StackTrace, ex.Message)
-      End Try
-   End Sub
 
    Private Sub eui_cmdApriWeb_Click(sender As Object, e As EventArgs) Handles eui_cmdApriWeb.Click
       Try

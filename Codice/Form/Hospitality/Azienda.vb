@@ -1,8 +1,16 @@
-' Nome form:            frmAzienda
+#Region " DATI FILE.VB "
+' ***************************************************************************************************
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       04/01/2006
-' Data ultima modifica: 28/02/2006
+' Data ultima modifica: 19/12/2018
 ' Descrizione:          Anagrafica Azienda.
+' Note:
+'
+' Elenco Attivita:
+'
+'
+' ***************************************************************************************************
+#End Region
 
 Option Strict Off
 Option Explicit On 
@@ -91,6 +99,8 @@ Friend Class frmAzienda
    Friend WithEvents cmbRegimeFiscale As ComboBox
    Public WithEvents Label12 As Label
    Friend WithEvents cmbNazione As ComboBox
+   Public WithEvents txtPec As TextBox
+   Friend WithEvents Label13 As Label
    Friend WithEvents tbrElimina As System.Windows.Forms.ToolBarButton
    <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
       Me.components = New System.ComponentModel.Container()
@@ -106,6 +116,7 @@ Friend Class frmAzienda
       Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
       Me.TabControl1 = New System.Windows.Forms.TabControl()
       Me.TabPage1 = New System.Windows.Forms.TabPage()
+      Me.cmbNazione = New System.Windows.Forms.ComboBox()
       Me.cmbRegimeFiscale = New System.Windows.Forms.ComboBox()
       Me.Label12 = New System.Windows.Forms.Label()
       Me.txtNumeroREA = New System.Windows.Forms.TextBox()
@@ -154,7 +165,8 @@ Friend Class frmAzienda
       Me.Label37 = New System.Windows.Forms.Label()
       Me.Label38 = New System.Windows.Forms.Label()
       Me.formFrameSkinner = New Elegant.Ui.FormFrameSkinner()
-      Me.cmbNazione = New System.Windows.Forms.ComboBox()
+      Me.txtPec = New System.Windows.Forms.TextBox()
+      Me.Label13 = New System.Windows.Forms.Label()
       Me.Panel1.SuspendLayout()
       CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
       Me.TabControl1.SuspendLayout()
@@ -173,7 +185,7 @@ Friend Class frmAzienda
       Me.ToolBar1.Location = New System.Drawing.Point(0, 0)
       Me.ToolBar1.Name = "ToolBar1"
       Me.ToolBar1.ShowToolTips = True
-      Me.ToolBar1.Size = New System.Drawing.Size(567, 28)
+      Me.ToolBar1.Size = New System.Drawing.Size(575, 28)
       Me.ToolBar1.TabIndex = 1
       Me.ToolBar1.TextAlign = System.Windows.Forms.ToolBarTextAlign.Right
       '
@@ -208,7 +220,7 @@ Friend Class frmAzienda
       Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
       Me.Panel1.Location = New System.Drawing.Point(0, 28)
       Me.Panel1.Name = "Panel1"
-      Me.Panel1.Size = New System.Drawing.Size(567, 20)
+      Me.Panel1.Size = New System.Drawing.Size(575, 20)
       Me.Panel1.TabIndex = 19
       '
       'lblIntestazione
@@ -250,7 +262,7 @@ Friend Class frmAzienda
       Me.TabControl1.Multiline = True
       Me.TabControl1.Name = "TabControl1"
       Me.TabControl1.SelectedIndex = 0
-      Me.TabControl1.Size = New System.Drawing.Size(567, 335)
+      Me.TabControl1.Size = New System.Drawing.Size(575, 343)
       Me.TabControl1.TabIndex = 0
       '
       'TabPage1
@@ -282,11 +294,18 @@ Friend Class frmAzienda
       Me.TabPage1.ForeColor = System.Drawing.SystemColors.Desktop
       Me.TabPage1.Location = New System.Drawing.Point(4, 22)
       Me.TabPage1.Name = "TabPage1"
-      Me.TabPage1.Size = New System.Drawing.Size(559, 309)
+      Me.TabPage1.Size = New System.Drawing.Size(567, 317)
       Me.TabPage1.TabIndex = 0
       Me.TabPage1.Tag = "Codice fornito da Azienda emettitrice di Buoni pasto:"
       Me.TabPage1.Text = "Dati principali"
       Me.TabPage1.ToolTipText = "Dati principali"
+      '
+      'cmbNazione
+      '
+      Me.cmbNazione.Location = New System.Drawing.Point(104, 218)
+      Me.cmbNazione.Name = "cmbNazione"
+      Me.cmbNazione.Size = New System.Drawing.Size(160, 21)
+      Me.cmbNazione.TabIndex = 216
       '
       'cmbRegimeFiscale
       '
@@ -573,6 +592,8 @@ Friend Class frmAzienda
       'TabPage3
       '
       Me.TabPage3.BackColor = System.Drawing.SystemColors.AppWorkspace
+      Me.TabPage3.Controls.Add(Me.txtPec)
+      Me.TabPage3.Controls.Add(Me.Label13)
       Me.TabPage3.Controls.Add(Me.txtInternet)
       Me.TabPage3.Controls.Add(Me.Label2)
       Me.TabPage3.Controls.Add(Me.txtMail)
@@ -583,7 +604,7 @@ Friend Class frmAzienda
       Me.TabPage3.Controls.Add(Me.Label21)
       Me.TabPage3.Location = New System.Drawing.Point(4, 22)
       Me.TabPage3.Name = "TabPage3"
-      Me.TabPage3.Size = New System.Drawing.Size(551, 301)
+      Me.TabPage3.Size = New System.Drawing.Size(567, 317)
       Me.TabPage3.TabIndex = 2
       Me.TabPage3.Text = "Tel./Internet"
       Me.TabPage3.ToolTipText = "Dati sul telefono e Internet"
@@ -595,12 +616,12 @@ Friend Class frmAzienda
       Me.txtInternet.BackColor = System.Drawing.SystemColors.Window
       Me.txtInternet.Cursor = System.Windows.Forms.Cursors.IBeam
       Me.txtInternet.ForeColor = System.Drawing.SystemColors.WindowText
-      Me.txtInternet.Location = New System.Drawing.Point(112, 104)
+      Me.txtInternet.Location = New System.Drawing.Point(112, 133)
       Me.txtInternet.MaxLength = 0
       Me.txtInternet.Name = "txtInternet"
       Me.txtInternet.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.txtInternet.Size = New System.Drawing.Size(248, 20)
-      Me.txtInternet.TabIndex = 3
+      Me.txtInternet.TabIndex = 4
       '
       'Label2
       '
@@ -608,7 +629,7 @@ Friend Class frmAzienda
       Me.Label2.BackColor = System.Drawing.Color.Transparent
       Me.Label2.Cursor = System.Windows.Forms.Cursors.Default
       Me.Label2.ForeColor = System.Drawing.Color.Black
-      Me.Label2.Location = New System.Drawing.Point(24, 104)
+      Me.Label2.Location = New System.Drawing.Point(24, 133)
       Me.Label2.Name = "Label2"
       Me.Label2.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.Label2.Size = New System.Drawing.Size(46, 13)
@@ -713,7 +734,7 @@ Friend Class frmAzienda
       Me.TabPage2.Controls.Add(Me.Label38)
       Me.TabPage2.Location = New System.Drawing.Point(4, 22)
       Me.TabPage2.Name = "TabPage2"
-      Me.TabPage2.Size = New System.Drawing.Size(551, 301)
+      Me.TabPage2.Size = New System.Drawing.Size(559, 309)
       Me.TabPage2.TabIndex = 6
       Me.TabPage2.Text = "Modalità pagamento"
       Me.TabPage2.Visible = False
@@ -907,18 +928,37 @@ Friend Class frmAzienda
       Me.formFrameSkinner.AllowGlass = False
       Me.formFrameSkinner.Form = Me
       '
-      'cmbNazione
+      'txtPec
       '
-      Me.cmbNazione.Location = New System.Drawing.Point(104, 218)
-      Me.cmbNazione.Name = "cmbNazione"
-      Me.cmbNazione.Size = New System.Drawing.Size(160, 21)
-      Me.cmbNazione.TabIndex = 216
+      Me.txtPec.AcceptsReturn = True
+      Me.txtPec.BackColor = System.Drawing.SystemColors.Window
+      Me.txtPec.Cursor = System.Windows.Forms.Cursors.IBeam
+      Me.txtPec.ForeColor = System.Drawing.SystemColors.WindowText
+      Me.txtPec.Location = New System.Drawing.Point(112, 106)
+      Me.txtPec.MaxLength = 0
+      Me.txtPec.Name = "txtPec"
+      Me.txtPec.RightToLeft = System.Windows.Forms.RightToLeft.No
+      Me.txtPec.Size = New System.Drawing.Size(248, 20)
+      Me.txtPec.TabIndex = 3
+      '
+      'Label13
+      '
+      Me.Label13.AutoSize = True
+      Me.Label13.BackColor = System.Drawing.Color.Transparent
+      Me.Label13.Cursor = System.Windows.Forms.Cursors.Default
+      Me.Label13.ForeColor = System.Drawing.Color.Black
+      Me.Label13.Location = New System.Drawing.Point(24, 106)
+      Me.Label13.Name = "Label13"
+      Me.Label13.RightToLeft = System.Windows.Forms.RightToLeft.No
+      Me.Label13.Size = New System.Drawing.Size(31, 13)
+      Me.Label13.TabIndex = 220
+      Me.Label13.Text = "PEC:"
       '
       'frmAzienda
       '
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(567, 383)
+      Me.ClientSize = New System.Drawing.Size(575, 391)
       Me.Controls.Add(Me.TabControl1)
       Me.Controls.Add(Me.chkVisRagSoc)
       Me.Controls.Add(Me.Panel1)
@@ -980,6 +1020,7 @@ Friend Class frmAzienda
          AAzienda.Telefono = FormattaApici(txtTel.Text)
          AAzienda.Fax = FormattaApici(txtFax.Text)
          AAzienda.Email = FormattaApici(txtMail.Text)
+         AAzienda.PEC = FormattaApici(txtPec.Text)
          AAzienda.Internet = FormattaApici(txtInternet.Text)
          AAzienda.TipoPagamento = FormattaApici(cmbPagamento.Text)
          AAzienda.Banca = FormattaApici(txtBanca.Text)
@@ -1144,6 +1185,7 @@ Friend Class frmAzienda
          txtTel.Text = AAzienda.Telefono
          txtFax.Text = AAzienda.Fax
          txtMail.Text = AAzienda.Email
+         txtPec.Text = AAzienda.PEC
          txtInternet.Text = AAzienda.Internet
          cmbPagamento.Text = AAzienda.TipoPagamento
          txtBanca.Text = AAzienda.Banca

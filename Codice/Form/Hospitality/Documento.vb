@@ -580,7 +580,7 @@ Public Class frmDocumento
          ' Assegna il tipo del documento al titolo della finestra.
          Me.Text = tipoDocumento & statoDoc
 
-         ' SHEDA GENERALE.
+         ' SCHEDA GENERALE.
          Dim NumeroDocumento As Integer
 
          Select Case tipoDocumento
@@ -611,9 +611,15 @@ Public Class frmDocumento
          eui_txtImposta.Text = VALORE_ZERO
          eui_txtTotaleDocumento.Text = VALORE_ZERO
 
-         ' SHEDA DETTAGLI.
+         ' SCHEDA DETTAGLI.
 
-         ' SHEDA TOTALI.
+         ' SCHEDA PA.
+         eui_txtNumeroDoc_PA.Text = String.Empty
+         eui_txtCodiceCUP_PA.Text = String.Empty
+         eui_txtCodiceCIG_PA.Text = String.Empty
+         eui_txtCodiceCommConv_PA.Text = String.Empty
+
+         ' SCHEDA TOTALI.
          eui_txtTotaliRep1ImponibileLordo.Text = VALORE_ZERO
          eui_txtTotaliRep2ImponibileLordo.Text = VALORE_ZERO
          eui_txtTotaliRep3ImponibileLordo.Text = VALORE_ZERO
@@ -709,6 +715,12 @@ Public Class frmDocumento
             eui_txtTotaleImposta.Text = CFormatta.FormattaNumeroDouble(Convert.ToDouble(.Imposta))
             eui_txtTotaleConto.Text = CFormatta.FormattaNumeroDouble(Convert.ToDouble(.TotDoc))
             eui_txtTotaleDocumento.Text = CFormatta.FormattaNumeroDouble(Convert.ToDouble(.TotDoc))
+
+            ' PA.
+            eui_txtNumeroDoc_PA.Text = .NumeroDoc_PA
+            eui_txtCodiceCUP_PA.Text = .CodiceCUP_PA
+            eui_txtCodiceCIG_PA.Text = .CodiceCIG_PA
+            eui_txtCodiceCommConv_PA.Text = .CodiceCommConv_PA
 
             ' TOTALI.
             ' Se Fattura, Ricevuta o Scontrino salva l'iva...
@@ -1243,6 +1255,12 @@ Public Class frmDocumento
             .Sospeso = valSospeso.ToString
             .SospesoIncassare = valSospeso.ToString
             .TotDoc = valDaPagare.ToString
+
+            ' SCHEDA PA.
+            .NumeroDoc_PA = eui_txtNumeroDoc_PA.Text
+            .CodiceCUP_PA = eui_txtCodiceCUP_PA.Text
+            .CodiceCIG_PA = eui_txtCodiceCIG_PA.Text
+            .CodiceCommConv_PA = eui_txtCodiceCommConv_PA.Text
 
             ' Imposta il tipo di pagamento con il relativo importo.
             If eui_txtTotaliCarte.Text <> VALORE_ZERO And eui_txtTotaliCarte.Text <> String.Empty Then
@@ -2868,12 +2886,24 @@ Public Class frmDocumento
 
    Private Sub eui_tpcDocumento_SelectedTabPageChanged(sender As Object, e As TabPageChangedEventArgs) Handles eui_tpcDocumento.SelectedTabPageChanged
       Try
-         'Select Case eui_tpcDocumento.SelectedTabPage.Text
-         '   Case "Dettagli"
-         '      If dgvDettagli.Rows.Count = 1 Then
-         '         eui_cmdCancellaTutto.PerformClick()
-         '      End If
-         'End Select
+         ' Applica lo stato attivo dei rispettivi controlli in base alla selezione della scheda.
+         Select Case eui_tpcDocumento.SelectedTabPage.Text
+            Case "&Generale"
+               eui_txtNumero.Focus()
+
+            Case "&Dettagli"
+               dgvDettagli.Focus()
+
+            Case "&PA"
+               eui_txtNumeroDoc_PA.Focus()
+
+            Case "&Totali"
+               eui_txtTotaliContanti.Focus()
+
+            Case "&Note"
+               eui_txtNote.Focus()
+
+         End Select
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
@@ -3329,5 +3359,6 @@ Public Class frmDocumento
 
       End Try
    End Sub
+
 
 End Class

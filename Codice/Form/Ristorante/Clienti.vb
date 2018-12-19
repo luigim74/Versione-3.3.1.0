@@ -2608,26 +2608,30 @@ Public Class frmClienti
          Select Case TabControl1.SelectedIndex()
             Case 0
                ' Imposta lo stato attivo.
-               Me.cmbTitolo.Focus()
+               cmbTitolo.Focus()
 
             Case 1
                ' Imposta lo stato attivo.
-               Me.txtTelCasa.Focus()
+               txtTelCasa.Focus()
 
             Case 2
                ' Imposta lo stato attivo.
-               Me.lvwAllegati.Focus()
+               lvwAllegati.Focus()
                ' Imposta il pulsante di default.
                cmdInserimento.NotifyDefault(True)
 
             Case 3
-               Me.DataGrid1.Focus()
+               DataGrid1.Focus()
                ' Aggiorna l'intestazione della griglia dati.
                AggIntGriglia()
 
             Case 4
                ' Imposta lo stato attivo.
-               Me.txtNote.Focus()
+               txtCodiceDestinatrio.Focus()
+
+            Case 5
+               ' Imposta lo stato attivo.
+               txtNote.Focus()
 
          End Select
 
@@ -2767,7 +2771,7 @@ Public Class frmClienti
 
    Private Sub eui_cmdNuovoMsg_Click(sender As Object, e As EventArgs) Handles eui_cmdNuovoMsg.Click
       Try
-         InviaEmail(txtEmail.Text)
+         InviaEmail(g_frmMain.LeggiEmailMittente, txtEmail.Text, String.Empty, String.Empty, String.Empty)
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
@@ -2777,7 +2781,7 @@ Public Class frmClienti
 
    Private Sub eui_cmdNuovoMsgPEC_Click(sender As Object, e As EventArgs) Handles eui_cmdNuovoMsgPEC.Click
       Try
-         InviaEmail(txtPec.Text)
+         InviaEmail(g_frmMain.LeggiEmailMittente, txtEmail.Text, String.Empty, String.Empty, String.Empty)
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.

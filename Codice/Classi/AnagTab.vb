@@ -35,6 +35,7 @@ Namespace Anagrafiche
       Public Telefono As String
       Public Fax As String
       Public Email As String
+      Public PEC As String
       Public Internet As String
       Public Attività As String
       Public Immagine() As Byte
@@ -182,6 +183,11 @@ Namespace Anagrafiche
                Me.Email = ds.Tables(tabella).Rows(0)("Mail")
             Else
                Me.Email = ""
+            End If
+            If IsDBNull(ds.Tables(tabella).Rows(0)("PEC")) = False Then
+               Me.PEC = ds.Tables(tabella).Rows(0)("PEC")
+            Else
+               Me.PEC = ""
             End If
             If IsDBNull(ds.Tables(tabella).Rows(0)("Internet")) = False Then
                Me.Internet = ds.Tables(tabella).Rows(0)("Internet")
@@ -367,6 +373,11 @@ Namespace Anagrafiche
             Else
                Me.Email = ""
             End If
+            If IsDBNull(ds.Tables(tabella).Rows(0)("PEC")) = False Then
+               Me.PEC = ds.Tables(tabella).Rows(0)("PEC")
+            Else
+               Me.PEC = ""
+            End If
             If IsDBNull(ds.Tables(tabella).Rows(0)("Internet")) = False Then
                Me.Internet = ds.Tables(tabella).Rows(0)("Internet")
             Else
@@ -457,10 +468,10 @@ Namespace Anagrafiche
             tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
             sql = String.Format("INSERT INTO {0} (RagSoc, Descrizione, Iva, CodFisc, Rea, Iri, Indirizzo, " &
                                                  "Città, Prov, Cap, Nazione, RegimeFiscale, Tel, Fax, Internet, " &
-                                                 "Mail, Immagine, Attività, PercorsoDB) " &
+                                                 "Mail, PEC, Immagine, Attività, PercorsoDB) " &
                                           "VALUES(@RagSoc, @Descrizione, @Iva, @CodFisc, @Rea, @Iri, @Indirizzo, " &
                                                  "@Città, @Prov, @Cap, @Nazione, @RegimeFiscale, @Tel, @Fax, @Internet, " &
-                                                 "@Mail, @Immagine, @Attività, @PercorsoDB)", tabella)
+                                                 "@Mail, @PEC, @Immagine, @Attività, @PercorsoDB)", tabella)
 
             ' Crea il comando per la connessione corrente.
             Dim cmdInsert As New OleDbCommand(sql, cn, tr)
@@ -481,6 +492,7 @@ Namespace Anagrafiche
             cmdInsert.Parameters.Add("@Fax", Me.Fax)
             cmdInsert.Parameters.Add("@Internet", Me.Internet)
             cmdInsert.Parameters.Add("@Mail", Me.Email)
+            cmdInsert.Parameters.Add("@PEC", Me.PEC)
             cmdInsert.Parameters.Add("@Immagine", Me.Immagine)
             cmdInsert.Parameters.Add("@Attività", Me.Attività)
             cmdInsert.Parameters.Add("@PercorsoDB", Me.PercorsoDB)
@@ -535,6 +547,7 @@ Namespace Anagrafiche
                                 "Fax = @Fax, " &
                                 "Internet = @Internet, " &
                                 "Mail = @Mail, " &
+                                "PEC = @PEC, " &
                                 "Immagine = @Immagine, " &
                                 "PercorsoImg = @PercorsoImg, " &
                                 "Attività = @Attività, " &
@@ -569,6 +582,7 @@ Namespace Anagrafiche
             cmdUpdate.Parameters.Add("@Fax", Me.Fax)
             cmdUpdate.Parameters.Add("@Internet", Me.Internet)
             cmdUpdate.Parameters.Add("@Mail", Me.Email)
+            cmdUpdate.Parameters.Add("@PEC", Me.PEC)
             cmdUpdate.Parameters.Add("@Immagine", Me.Immagine)
             cmdUpdate.Parameters.Add("@PercorsoImg", Me.PercorsoImg)
             cmdUpdate.Parameters.Add("@Attività", Me.Attività)

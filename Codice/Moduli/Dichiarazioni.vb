@@ -139,6 +139,9 @@ Module Dichiarazioni
    ' Dati per l'invio dell'e-mail di utilizzo del software.
    Public Const EMAIL_DATI_LICENZA_A As String = "hospitality@montanasoftware.it"
 
+   ' Indirizzo e-mail per il servizio di interscambio delle fattura elettronica.
+   Public Const EMAIL_SDI_FATTURA_PA As String = "sdi01@pec.fatturapa.it"
+
    ' Stringa per la richiesta di informazioni sul Report non disponibile..
    Public Const MESSAGGIO_REPORT_NON_DISPONIBILE As String = "Per questo elenco non è disponibile un Report di stampa. Per informazioni scrivere a assistenza@montanasoftware.it."
 

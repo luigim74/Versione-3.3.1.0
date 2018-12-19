@@ -50,6 +50,10 @@ Public Class Documenti
    Public Iva As String
    Public Imposta As String
    Public Chiuso As String
+   Public NumeroDoc_PA As String
+   Public CodiceCUP_PA As String
+   Public CodiceCIG_PA As String
+   Public CodiceCommConv_PA As String
    Public Note As String
 
    ' Dichiara un oggetto connessione.
@@ -322,10 +326,30 @@ Public Class Documenti
          Else
             Me.Chiuso = "No"
          End If
+         If IsDBNull(ds.Tables(tabella).Rows(0)("NumeroDoc_PA")) = False Then
+            Me.NumeroDoc_PA = ds.Tables(tabella).Rows(0)("NumeroDoc_PA").ToString
+         Else
+            Me.NumeroDoc_PA = String.Empty
+         End If
+         If IsDBNull(ds.Tables(tabella).Rows(0)("CodiceCUP_PA")) = False Then
+            Me.CodiceCUP_PA = ds.Tables(tabella).Rows(0)("CodiceCUP_PA").ToString
+         Else
+            Me.CodiceCUP_PA = String.Empty
+         End If
+         If IsDBNull(ds.Tables(tabella).Rows(0)("CodiceCIG_PA")) = False Then
+            Me.CodiceCIG_PA = ds.Tables(tabella).Rows(0)("CodiceCIG_PA").ToString
+         Else
+            Me.CodiceCIG_PA = String.Empty
+         End If
+         If IsDBNull(ds.Tables(tabella).Rows(0)("CodiceCommConv_PA")) = False Then
+            Me.CodiceCommConv_PA = ds.Tables(tabella).Rows(0)("CodiceCommConv_PA").ToString
+         Else
+            Me.CodiceCommConv_PA = String.Empty
+         End If
          If IsDBNull(ds.Tables(tabella).Rows(0)("Note")) = False Then
             Me.Note = ds.Tables(tabella).Rows(0)("Note").ToString
          Else
-            Me.Note = ""
+            Me.Note = String.Empty
          End If
 
       Catch ex As Exception
@@ -354,12 +378,12 @@ Public Class Documenti
                                               "Cap, Città, Provincia, Piva, CodFiscale, CodAzienda, Coperto, Sconto, TipoSconto, Servizio, TipoServizio, Contanti, Carte, BuoniPasto, BuoniPastoIncassare, " &
                                               "ImpLordoRep1, ImpLordoRep2, ImpLordoRep3, ImpLordoRep4, " &
                                               "AliquotaIvaRep1, AliquotaIvaRep2, AliquotaIvaRep3, AliquotaIvaRep4, ImpostaRep1, ImpostaRep2, ImpostaRep3, ImpostaRep4, " &
-                                              "TipoPagamento, Tavolo, TotDoc, Sospeso, SospesoIncassare, Cameriere, Imponibile, Iva, Imposta, Chiuso, [Note]) " &
+                                              "TipoPagamento, Tavolo, TotDoc, Sospeso, SospesoIncassare, Cameriere, Imponibile, Iva, Imposta, Chiuso, NumeroDoc_PA, CodiceCUP_PA, CodiceCIG_PA, CodiceCommConv_PA, [Note]) " &
                                        "VALUES(@Numero, @AnnoDoc, @Data, @Ora, @Tipo, @StatoDoc, @CausaleDoc, @IdCliente, @Cliente, @Indirizzo, " &
                                               "@Cap, @Città, @Provincia, @PIva, @CodFiscale, @CodAzienda, @Coperto, @Sconto, @TipoSconto, @Servizio, @TipoServizio, @Contanti, @Carte, @BuoniPasto, @BuoniPastoIncassare, " &
                                               "@ImpLordoRep1, @ImpLordoRep2, @ImpLordoRep3, @ImpLordoRep4, " &
                                               "@AliquotaIvaRep1, @AliquotaIvaRep2, @AliquotaIvaRep3, @AliquotaIvaRep4, @ImpostaRep1, @ImpostaRep2, @ImpostaRep3, @ImpostaRep4, " &
-                                              "@TipoPagamento, @Tavolo, @TotDoc, @Sospeso, @SospesoIncassare, @Cameriere, @Imponibile, @Iva, @Imposta, @Chiuso, @Note)", tabella)
+                                              "@TipoPagamento, @Tavolo, @TotDoc, @Sospeso, @SospesoIncassare, @Cameriere, @Imponibile, @Iva, @Imposta, @Chiuso, @NumeroDoc_PA, @CodiceCUP_PA, @CodiceCIG_PA, @CodiceCommConv_PA, @Note)", tabella)
 
          ' Crea il comando per la connessione corrente.
          Dim cmdInsert As New OleDbCommand(sql, cn, tr)
@@ -411,6 +435,10 @@ Public Class Documenti
          cmdInsert.Parameters.AddWithValue("@Iva", Me.Iva)
          cmdInsert.Parameters.AddWithValue("@Imposta", Me.Imposta)
          cmdInsert.Parameters.AddWithValue("@Chiuso", Me.Chiuso)
+         cmdInsert.Parameters.AddWithValue("@NumeroDoc_PA", Me.NumeroDoc_PA)
+         cmdInsert.Parameters.AddWithValue("@CodiceCUP_PA", Me.CodiceCUP_PA)
+         cmdInsert.Parameters.AddWithValue("@CodiceCIG_PA", Me.CodiceCIG_PA)
+         cmdInsert.Parameters.AddWithValue("@CodiceCommConv_PA", Me.CodiceCommConv_PA)
          cmdInsert.Parameters.AddWithValue("@Note", Me.Note)
 
          ' Esegue il comando.
@@ -536,6 +564,10 @@ Public Class Documenti
                              "Iva = @Iva, " &
                              "Imposta = @Imposta, " &
                              "Chiuso = @Chiuso, " &
+                             "NumeroDoc_PA = @NumeroDoc_PA, " &
+                             "CodiceCUP_PA = @CodiceCUP_PA, " &
+                             "CodiceCIG_PA = @CodiceCIG_PA, " &
+                             "CodiceCommConv_PA = @CodiceCommConv_PA, " &
                              "[Note] = @Note " &
                              "WHERE Id = {1}",
                               tabella,
@@ -591,6 +623,10 @@ Public Class Documenti
          cmdUpdate.Parameters.AddWithValue("@Iva", Me.Iva)
          cmdUpdate.Parameters.AddWithValue("@Imposta", Me.Imposta)
          cmdUpdate.Parameters.AddWithValue("@Chiuso", Me.Chiuso)
+         cmdUpdate.Parameters.AddWithValue("@NumeroDoc_PA", Me.NumeroDoc_PA)
+         cmdUpdate.Parameters.AddWithValue("@CodiceCUP_PA", Me.CodiceCUP_PA)
+         cmdUpdate.Parameters.AddWithValue("@CodiceCIG_PA", Me.CodiceCIG_PA)
+         cmdUpdate.Parameters.AddWithValue("@CodiceCommConv_PA", Me.CodiceCommConv_PA)
          cmdUpdate.Parameters.AddWithValue("@Note", Me.Note)
 
          ' Esegue il comando.

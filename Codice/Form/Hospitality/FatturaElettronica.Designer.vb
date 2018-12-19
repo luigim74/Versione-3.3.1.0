@@ -40,68 +40,6 @@ Partial Class frmFatturaElettronica
       Me.eui_tpcDocumento = New Elegant.Ui.TabControl()
       Me.TabPage1 = New Elegant.Ui.TabPage()
       Me.TabControl1 = New Elegant.Ui.TabControl()
-      Me.TabPage8 = New Elegant.Ui.TabPage()
-      Me.TabControl3 = New Elegant.Ui.TabControl()
-      Me.TabPage17 = New Elegant.Ui.TabPage()
-      Me.GroupBox12 = New Elegant.Ui.GroupBox()
-      Me.Label53 = New Elegant.Ui.Label()
-      Me.Label54 = New Elegant.Ui.Label()
-      Me.Label55 = New Elegant.Ui.Label()
-      Me.eui_txtCcCodiceEORI = New Elegant.Ui.TextBox()
-      Me.eui_txtCcTitolo = New Elegant.Ui.TextBox()
-      Me.eui_txtCcCognome = New Elegant.Ui.TextBox()
-      Me.eui_txtCcDenominazione = New Elegant.Ui.TextBox()
-      Me.eui_txtCcNome = New Elegant.Ui.TextBox()
-      Me.Label56 = New Elegant.Ui.Label()
-      Me.Label57 = New Elegant.Ui.Label()
-      Me.eui_txtCcCodiceFiscale = New Elegant.Ui.TextBox()
-      Me.Label58 = New Elegant.Ui.Label()
-      Me.GroupBox13 = New Elegant.Ui.GroupBox()
-      Me.eui_txtCcIdCodice = New Elegant.Ui.TextBox()
-      Me.Label59 = New Elegant.Ui.Label()
-      Me.eui_cmbCcIdPaese = New Elegant.Ui.ComboBox()
-      Me.Label60 = New Elegant.Ui.Label()
-      Me.TabPage18 = New Elegant.Ui.TabPage()
-      Me.GroupBox14 = New Elegant.Ui.GroupBox()
-      Me.eui_cmbCcSedeNazione = New Elegant.Ui.ComboBox()
-      Me.Label61 = New Elegant.Ui.Label()
-      Me.eui_cmbCcSedeProvincia = New Elegant.Ui.ComboBox()
-      Me.Label62 = New Elegant.Ui.Label()
-      Me.Label63 = New Elegant.Ui.Label()
-      Me.Label64 = New Elegant.Ui.Label()
-      Me.eui_txtCcSedeComune = New Elegant.Ui.TextBox()
-      Me.eui_txtCcSedeCAP = New Elegant.Ui.TextBox()
-      Me.eui_txtCcSedeIndirizzo = New Elegant.Ui.TextBox()
-      Me.eui_txtCcSedeNumeroCivico = New Elegant.Ui.TextBox()
-      Me.Label65 = New Elegant.Ui.Label()
-      Me.Label66 = New Elegant.Ui.Label()
-      Me.TabPage19 = New Elegant.Ui.TabPage()
-      Me.GroupBox17 = New Elegant.Ui.GroupBox()
-      Me.eui_cmbCcStabileOrgNazione = New Elegant.Ui.ComboBox()
-      Me.Label76 = New Elegant.Ui.Label()
-      Me.eui_cmbCcStabileOrgProvincia = New Elegant.Ui.ComboBox()
-      Me.Label77 = New Elegant.Ui.Label()
-      Me.Label78 = New Elegant.Ui.Label()
-      Me.Label79 = New Elegant.Ui.Label()
-      Me.eui_txtCcStabileOrgComune = New Elegant.Ui.TextBox()
-      Me.eui_txtCcStabileOrgCAP = New Elegant.Ui.TextBox()
-      Me.eui_txtCcStabileOrgIndirizzo = New Elegant.Ui.TextBox()
-      Me.eui_txtCcStabileOrgNumeroCivico = New Elegant.Ui.TextBox()
-      Me.Label80 = New Elegant.Ui.Label()
-      Me.Label81 = New Elegant.Ui.Label()
-      Me.TabPage20 = New Elegant.Ui.TabPage()
-      Me.GroupBox18 = New Elegant.Ui.GroupBox()
-      Me.Label85 = New Elegant.Ui.Label()
-      Me.eui_txtCcRfCognome = New Elegant.Ui.TextBox()
-      Me.eui_txtCcRfDenominazione = New Elegant.Ui.TextBox()
-      Me.eui_txtCcRfNome = New Elegant.Ui.TextBox()
-      Me.Label86 = New Elegant.Ui.Label()
-      Me.Label87 = New Elegant.Ui.Label()
-      Me.GroupBox19 = New Elegant.Ui.GroupBox()
-      Me.eui_txtCcRfIdCodice = New Elegant.Ui.TextBox()
-      Me.Label88 = New Elegant.Ui.Label()
-      Me.eui_cmbCcRfIdPaese = New Elegant.Ui.ComboBox()
-      Me.Label89 = New Elegant.Ui.Label()
       Me.TabPage5 = New Elegant.Ui.TabPage()
       Me.GroupBox2 = New Elegant.Ui.GroupBox()
       Me.Label10 = New Elegant.Ui.Label()
@@ -223,6 +161,68 @@ Partial Class frmFatturaElettronica
       Me.Label50 = New Elegant.Ui.Label()
       Me.eui_cmbRfCpIdPaese = New Elegant.Ui.ComboBox()
       Me.Label51 = New Elegant.Ui.Label()
+      Me.TabPage8 = New Elegant.Ui.TabPage()
+      Me.TabControl3 = New Elegant.Ui.TabControl()
+      Me.TabPage17 = New Elegant.Ui.TabPage()
+      Me.GroupBox12 = New Elegant.Ui.GroupBox()
+      Me.Label53 = New Elegant.Ui.Label()
+      Me.Label54 = New Elegant.Ui.Label()
+      Me.Label55 = New Elegant.Ui.Label()
+      Me.eui_txtCcCodiceEORI = New Elegant.Ui.TextBox()
+      Me.eui_txtCcTitolo = New Elegant.Ui.TextBox()
+      Me.eui_txtCcCognome = New Elegant.Ui.TextBox()
+      Me.eui_txtCcDenominazione = New Elegant.Ui.TextBox()
+      Me.eui_txtCcNome = New Elegant.Ui.TextBox()
+      Me.Label56 = New Elegant.Ui.Label()
+      Me.Label57 = New Elegant.Ui.Label()
+      Me.eui_txtCcCodiceFiscale = New Elegant.Ui.TextBox()
+      Me.Label58 = New Elegant.Ui.Label()
+      Me.GroupBox13 = New Elegant.Ui.GroupBox()
+      Me.eui_txtCcIdCodice = New Elegant.Ui.TextBox()
+      Me.Label59 = New Elegant.Ui.Label()
+      Me.eui_cmbCcIdPaese = New Elegant.Ui.ComboBox()
+      Me.Label60 = New Elegant.Ui.Label()
+      Me.TabPage18 = New Elegant.Ui.TabPage()
+      Me.GroupBox14 = New Elegant.Ui.GroupBox()
+      Me.eui_cmbCcSedeNazione = New Elegant.Ui.ComboBox()
+      Me.Label61 = New Elegant.Ui.Label()
+      Me.eui_cmbCcSedeProvincia = New Elegant.Ui.ComboBox()
+      Me.Label62 = New Elegant.Ui.Label()
+      Me.Label63 = New Elegant.Ui.Label()
+      Me.Label64 = New Elegant.Ui.Label()
+      Me.eui_txtCcSedeComune = New Elegant.Ui.TextBox()
+      Me.eui_txtCcSedeCAP = New Elegant.Ui.TextBox()
+      Me.eui_txtCcSedeIndirizzo = New Elegant.Ui.TextBox()
+      Me.eui_txtCcSedeNumeroCivico = New Elegant.Ui.TextBox()
+      Me.Label65 = New Elegant.Ui.Label()
+      Me.Label66 = New Elegant.Ui.Label()
+      Me.TabPage19 = New Elegant.Ui.TabPage()
+      Me.GroupBox17 = New Elegant.Ui.GroupBox()
+      Me.eui_cmbCcStabileOrgNazione = New Elegant.Ui.ComboBox()
+      Me.Label76 = New Elegant.Ui.Label()
+      Me.eui_cmbCcStabileOrgProvincia = New Elegant.Ui.ComboBox()
+      Me.Label77 = New Elegant.Ui.Label()
+      Me.Label78 = New Elegant.Ui.Label()
+      Me.Label79 = New Elegant.Ui.Label()
+      Me.eui_txtCcStabileOrgComune = New Elegant.Ui.TextBox()
+      Me.eui_txtCcStabileOrgCAP = New Elegant.Ui.TextBox()
+      Me.eui_txtCcStabileOrgIndirizzo = New Elegant.Ui.TextBox()
+      Me.eui_txtCcStabileOrgNumeroCivico = New Elegant.Ui.TextBox()
+      Me.Label80 = New Elegant.Ui.Label()
+      Me.Label81 = New Elegant.Ui.Label()
+      Me.TabPage20 = New Elegant.Ui.TabPage()
+      Me.GroupBox18 = New Elegant.Ui.GroupBox()
+      Me.Label85 = New Elegant.Ui.Label()
+      Me.eui_txtCcRfCognome = New Elegant.Ui.TextBox()
+      Me.eui_txtCcRfDenominazione = New Elegant.Ui.TextBox()
+      Me.eui_txtCcRfNome = New Elegant.Ui.TextBox()
+      Me.Label86 = New Elegant.Ui.Label()
+      Me.Label87 = New Elegant.Ui.Label()
+      Me.GroupBox19 = New Elegant.Ui.GroupBox()
+      Me.eui_txtCcRfIdCodice = New Elegant.Ui.TextBox()
+      Me.Label88 = New Elegant.Ui.Label()
+      Me.eui_cmbCcRfIdPaese = New Elegant.Ui.ComboBox()
+      Me.Label89 = New Elegant.Ui.Label()
       Me.TabPage9 = New Elegant.Ui.TabPage()
       Me.GroupBox15 = New Elegant.Ui.GroupBox()
       Me.Label67 = New Elegant.Ui.Label()
@@ -263,6 +263,10 @@ Partial Class frmFatturaElettronica
       Me.eui_lblStatoDataDoc = New Elegant.Ui.Label()
       Me.StatusBarPane1 = New Elegant.Ui.StatusBarPane()
       Me.eui_lblStatoClienteDoc = New Elegant.Ui.Label()
+      Me.eui_cmdConvalidaWeb = New Elegant.Ui.Button()
+      Me.Label2 = New System.Windows.Forms.Label()
+      Me.eui_cmdAnteprimaWeb = New Elegant.Ui.Button()
+      Me.eui_cmdSalva = New Elegant.Ui.Button()
       Me.StatusBar1.SuspendLayout()
       Me.StatusBarNotificationsArea1.SuspendLayout()
       Me.StatusBarPane2.SuspendLayout()
@@ -271,18 +275,6 @@ Partial Class frmFatturaElettronica
       CType(Me.eui_tpcDocumento, System.ComponentModel.ISupportInitialize).BeginInit()
       Me.TabPage1.SuspendLayout()
       CType(Me.TabControl1, System.ComponentModel.ISupportInitialize).BeginInit()
-      Me.TabPage8.SuspendLayout()
-      CType(Me.TabControl3, System.ComponentModel.ISupportInitialize).BeginInit()
-      Me.TabPage17.SuspendLayout()
-      Me.GroupBox12.SuspendLayout()
-      Me.GroupBox13.SuspendLayout()
-      Me.TabPage18.SuspendLayout()
-      Me.GroupBox14.SuspendLayout()
-      Me.TabPage19.SuspendLayout()
-      Me.GroupBox17.SuspendLayout()
-      Me.TabPage20.SuspendLayout()
-      Me.GroupBox18.SuspendLayout()
-      Me.GroupBox19.SuspendLayout()
       Me.TabPage5.SuspendLayout()
       Me.GroupBox2.SuspendLayout()
       Me.GroupBox1.SuspendLayout()
@@ -304,6 +296,18 @@ Partial Class frmFatturaElettronica
       Me.TabPage7.SuspendLayout()
       Me.GroupBox10.SuspendLayout()
       Me.GroupBox11.SuspendLayout()
+      Me.TabPage8.SuspendLayout()
+      CType(Me.TabControl3, System.ComponentModel.ISupportInitialize).BeginInit()
+      Me.TabPage17.SuspendLayout()
+      Me.GroupBox12.SuspendLayout()
+      Me.GroupBox13.SuspendLayout()
+      Me.TabPage18.SuspendLayout()
+      Me.GroupBox14.SuspendLayout()
+      Me.TabPage19.SuspendLayout()
+      Me.GroupBox17.SuspendLayout()
+      Me.TabPage20.SuspendLayout()
+      Me.GroupBox18.SuspendLayout()
+      Me.GroupBox19.SuspendLayout()
       Me.TabPage9.SuspendLayout()
       Me.GroupBox15.SuspendLayout()
       Me.GroupBox16.SuspendLayout()
@@ -311,6 +315,7 @@ Partial Class frmFatturaElettronica
       Me.eui_tpConvalida.SuspendLayout()
       Me.TabPage3.SuspendLayout()
       Me.TabPage21.SuspendLayout()
+      Me.TabPage4.SuspendLayout()
       Me.StatusBarPane5.SuspendLayout()
       Me.StatusBarPane1.SuspendLayout()
       Me.SuspendLayout()
@@ -326,10 +331,10 @@ Partial Class frmFatturaElettronica
       Me.StatusBar1.Controls.Add(Me.StatusBarControlsArea1)
       Me.StatusBar1.ControlsArea = Me.StatusBarControlsArea1
       Me.StatusBar1.Dock = System.Windows.Forms.DockStyle.Bottom
-      Me.StatusBar1.Location = New System.Drawing.Point(0, 548)
+      Me.StatusBar1.Location = New System.Drawing.Point(0, 507)
       Me.StatusBar1.Name = "StatusBar1"
       Me.StatusBar1.NotificationsArea = Me.StatusBarNotificationsArea1
-      Me.StatusBar1.Size = New System.Drawing.Size(999, 22)
+      Me.StatusBar1.Size = New System.Drawing.Size(967, 22)
       Me.StatusBar1.TabIndex = 4
       Me.StatusBar1.Text = "StatusBar1"
       '
@@ -342,7 +347,7 @@ Partial Class frmFatturaElettronica
       Me.StatusBarNotificationsArea1.MaximumSize = New System.Drawing.Size(0, 22)
       Me.StatusBarNotificationsArea1.MinimumSize = New System.Drawing.Size(0, 22)
       Me.StatusBarNotificationsArea1.Name = "StatusBarNotificationsArea1"
-      Me.StatusBarNotificationsArea1.Size = New System.Drawing.Size(927, 22)
+      Me.StatusBarNotificationsArea1.Size = New System.Drawing.Size(895, 22)
       Me.StatusBarNotificationsArea1.TabIndex = 1
       '
       'StatusBarPane2
@@ -435,7 +440,7 @@ Partial Class frmFatturaElettronica
       '
       Me.StatusBarControlsArea1.Controls.Add(Me.StatusBarPane3)
       Me.StatusBarControlsArea1.Dock = System.Windows.Forms.DockStyle.Right
-      Me.StatusBarControlsArea1.Location = New System.Drawing.Point(927, 0)
+      Me.StatusBarControlsArea1.Location = New System.Drawing.Point(895, 0)
       Me.StatusBarControlsArea1.MaximumSize = New System.Drawing.Size(0, 22)
       Me.StatusBarControlsArea1.MinimumSize = New System.Drawing.Size(0, 22)
       Me.StatusBarControlsArea1.Name = "StatusBarControlsArea1"
@@ -460,7 +465,7 @@ Partial Class frmFatturaElettronica
       Me.eui_cmdTastiera.ScreenTip.Text = "Apre la tastiera virtuale."
       Me.eui_cmdTastiera.Size = New System.Drawing.Size(129, 65)
       Me.eui_cmdTastiera.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdTastiera.SmallImages.Images"), System.Drawing.Image))})
-      Me.eui_cmdTastiera.TabIndex = 4
+      Me.eui_cmdTastiera.TabIndex = 5
       Me.eui_cmdTastiera.TextAlign = System.Drawing.ContentAlignment.BottomCenter
       '
       'eui_cmdAnnulla
@@ -471,10 +476,10 @@ Partial Class frmFatturaElettronica
       Me.eui_cmdAnnulla.Location = New System.Drawing.Point(832, 356)
       Me.eui_cmdAnnulla.Name = "eui_cmdAnnulla"
       Me.eui_cmdAnnulla.ScreenTip.Caption = "Esci"
-      Me.eui_cmdAnnulla.ScreenTip.Text = "Annula le modifiche e chiude il documento."
+      Me.eui_cmdAnnulla.ScreenTip.Text = "Annula le modifiche e chiude la finestra."
       Me.eui_cmdAnnulla.Size = New System.Drawing.Size(129, 65)
       Me.eui_cmdAnnulla.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdAnnulla.SmallImages.Images"), System.Drawing.Image))})
-      Me.eui_cmdAnnulla.TabIndex = 3
+      Me.eui_cmdAnnulla.TabIndex = 4
       Me.eui_cmdAnnulla.Text = "Esci"
       Me.eui_cmdAnnulla.TextAlign = System.Drawing.ContentAlignment.BottomCenter
       '
@@ -510,635 +515,6 @@ Partial Class frmFatturaElettronica
       Me.TabControl1.TabIndex = 19
       Me.TabControl1.TabPages.AddRange(New Elegant.Ui.TabPage() {Me.TabPage5, Me.TabPage6, Me.TabPage7, Me.TabPage8, Me.TabPage9, Me.TabPage10})
       Me.TabControl1.Text = "TabControl1"
-      '
-      'TabPage8
-      '
-      Me.TabPage8.ActiveControl = Nothing
-      Me.TabPage8.Controls.Add(Me.TabControl3)
-      Me.TabPage8.KeyTip = Nothing
-      Me.TabPage8.Name = "TabPage8"
-      Me.TabPage8.Size = New System.Drawing.Size(798, 434)
-      Me.TabPage8.TabIndex = 3
-      Me.TabPage8.Text = "Cessionario/Committente"
-      '
-      'TabControl3
-      '
-      Me.TabControl3.Location = New System.Drawing.Point(8, 9)
-      Me.TabControl3.Name = "TabControl3"
-      Me.TabControl3.SelectedTabPage = Me.TabPage17
-      Me.TabControl3.Size = New System.Drawing.Size(782, 418)
-      Me.TabControl3.TabIndex = 0
-      Me.TabControl3.TabPages.AddRange(New Elegant.Ui.TabPage() {Me.TabPage17, Me.TabPage18, Me.TabPage19, Me.TabPage20})
-      Me.TabControl3.Text = "TabControl3"
-      '
-      'TabPage17
-      '
-      Me.TabPage17.ActiveControl = Nothing
-      Me.TabPage17.Controls.Add(Me.GroupBox12)
-      Me.TabPage17.Controls.Add(Me.eui_txtCcCodiceFiscale)
-      Me.TabPage17.Controls.Add(Me.Label58)
-      Me.TabPage17.Controls.Add(Me.GroupBox13)
-      Me.TabPage17.KeyTip = Nothing
-      Me.TabPage17.Name = "TabPage17"
-      Me.TabPage17.Size = New System.Drawing.Size(780, 397)
-      Me.TabPage17.TabIndex = 0
-      Me.TabPage17.Text = "Dati Anagrafici"
-      '
-      'GroupBox12
-      '
-      Me.GroupBox12.Controls.Add(Me.Label53)
-      Me.GroupBox12.Controls.Add(Me.Label54)
-      Me.GroupBox12.Controls.Add(Me.Label55)
-      Me.GroupBox12.Controls.Add(Me.eui_txtCcCodiceEORI)
-      Me.GroupBox12.Controls.Add(Me.eui_txtCcTitolo)
-      Me.GroupBox12.Controls.Add(Me.eui_txtCcCognome)
-      Me.GroupBox12.Controls.Add(Me.eui_txtCcDenominazione)
-      Me.GroupBox12.Controls.Add(Me.eui_txtCcNome)
-      Me.GroupBox12.Controls.Add(Me.Label56)
-      Me.GroupBox12.Controls.Add(Me.Label57)
-      Me.GroupBox12.Id = "232dfa5d-3669-4f70-b81c-7e77581a16df"
-      Me.GroupBox12.Location = New System.Drawing.Point(11, 162)
-      Me.GroupBox12.Name = "GroupBox12"
-      Me.GroupBox12.Size = New System.Drawing.Size(381, 203)
-      Me.GroupBox12.TabIndex = 10
-      Me.GroupBox12.Text = "Anagrafica"
-      '
-      'Label53
-      '
-      Me.Label53.Location = New System.Drawing.Point(19, 165)
-      Me.Label53.Name = "Label53"
-      Me.Label53.Size = New System.Drawing.Size(78, 19)
-      Me.Label53.TabIndex = 10
-      Me.Label53.Text = "Codice EORI:"
-      '
-      'Label54
-      '
-      Me.Label54.Location = New System.Drawing.Point(19, 130)
-      Me.Label54.Name = "Label54"
-      Me.Label54.Size = New System.Drawing.Size(78, 19)
-      Me.Label54.TabIndex = 9
-      Me.Label54.Text = "Titolo:"
-      '
-      'Label55
-      '
-      Me.Label55.Location = New System.Drawing.Point(19, 94)
-      Me.Label55.Name = "Label55"
-      Me.Label55.Size = New System.Drawing.Size(78, 19)
-      Me.Label55.TabIndex = 8
-      Me.Label55.Text = "Cognome:"
-      '
-      'eui_txtCcCodiceEORI
-      '
-      Me.eui_txtCcCodiceEORI.Id = "15e99148-7540-45b1-958c-03402d03502a"
-      Me.eui_txtCcCodiceEORI.Location = New System.Drawing.Point(114, 163)
-      Me.eui_txtCcCodiceEORI.MaxLength = 17
-      Me.eui_txtCcCodiceEORI.Name = "eui_txtCcCodiceEORI"
-      Me.eui_txtCcCodiceEORI.Size = New System.Drawing.Size(201, 21)
-      Me.eui_txtCcCodiceEORI.TabIndex = 4
-      Me.eui_txtCcCodiceEORI.TextEditorWidth = 195
-      '
-      'eui_txtCcTitolo
-      '
-      Me.eui_txtCcTitolo.Id = "f5d78260-9acf-4925-b876-f6d829438497"
-      Me.eui_txtCcTitolo.Location = New System.Drawing.Point(114, 128)
-      Me.eui_txtCcTitolo.MaxLength = 10
-      Me.eui_txtCcTitolo.Name = "eui_txtCcTitolo"
-      Me.eui_txtCcTitolo.Size = New System.Drawing.Size(201, 21)
-      Me.eui_txtCcTitolo.TabIndex = 3
-      Me.eui_txtCcTitolo.TextEditorWidth = 195
-      '
-      'eui_txtCcCognome
-      '
-      Me.eui_txtCcCognome.Id = "776d7fe0-656d-4ed3-9c73-99f40851695f"
-      Me.eui_txtCcCognome.Location = New System.Drawing.Point(113, 92)
-      Me.eui_txtCcCognome.MaxLength = 60
-      Me.eui_txtCcCognome.Name = "eui_txtCcCognome"
-      Me.eui_txtCcCognome.Size = New System.Drawing.Size(201, 21)
-      Me.eui_txtCcCognome.TabIndex = 2
-      Me.eui_txtCcCognome.TextEditorWidth = 195
-      '
-      'eui_txtCcDenominazione
-      '
-      Me.eui_txtCcDenominazione.Id = "7ff21d99-7696-45da-a2df-627c5dcc39b3"
-      Me.eui_txtCcDenominazione.Location = New System.Drawing.Point(113, 23)
-      Me.eui_txtCcDenominazione.MaxLength = 80
-      Me.eui_txtCcDenominazione.Name = "eui_txtCcDenominazione"
-      Me.eui_txtCcDenominazione.Size = New System.Drawing.Size(201, 21)
-      Me.eui_txtCcDenominazione.TabIndex = 0
-      Me.eui_txtCcDenominazione.TextEditorWidth = 195
-      '
-      'eui_txtCcNome
-      '
-      Me.eui_txtCcNome.Id = "b87f3b4d-4366-4e52-82ea-1b91ba4b915d"
-      Me.eui_txtCcNome.Location = New System.Drawing.Point(113, 57)
-      Me.eui_txtCcNome.MaxLength = 60
-      Me.eui_txtCcNome.Name = "eui_txtCcNome"
-      Me.eui_txtCcNome.Size = New System.Drawing.Size(201, 21)
-      Me.eui_txtCcNome.TabIndex = 1
-      Me.eui_txtCcNome.TextEditorWidth = 195
-      '
-      'Label56
-      '
-      Me.Label56.Location = New System.Drawing.Point(19, 57)
-      Me.Label56.Name = "Label56"
-      Me.Label56.Size = New System.Drawing.Size(131, 19)
-      Me.Label56.TabIndex = 2
-      Me.Label56.Text = "Nome:"
-      '
-      'Label57
-      '
-      Me.Label57.Location = New System.Drawing.Point(19, 25)
-      Me.Label57.Name = "Label57"
-      Me.Label57.Size = New System.Drawing.Size(76, 19)
-      Me.Label57.TabIndex = 0
-      Me.Label57.Text = "Denominazione:"
-      '
-      'eui_txtCcCodiceFiscale
-      '
-      Me.eui_txtCcCodiceFiscale.Id = "60aa28cd-e59b-4f2b-b5b6-3f7ecc536c7b"
-      Me.eui_txtCcCodiceFiscale.Location = New System.Drawing.Point(125, 127)
-      Me.eui_txtCcCodiceFiscale.MaxLength = 16
-      Me.eui_txtCcCodiceFiscale.Name = "eui_txtCcCodiceFiscale"
-      Me.eui_txtCcCodiceFiscale.Size = New System.Drawing.Size(201, 21)
-      Me.eui_txtCcCodiceFiscale.TabIndex = 0
-      Me.eui_txtCcCodiceFiscale.TextEditorWidth = 195
-      '
-      'Label58
-      '
-      Me.Label58.Location = New System.Drawing.Point(27, 129)
-      Me.Label58.Name = "Label58"
-      Me.Label58.Size = New System.Drawing.Size(87, 19)
-      Me.Label58.TabIndex = 8
-      Me.Label58.Text = "Codice fiscale:"
-      '
-      'GroupBox13
-      '
-      Me.GroupBox13.Controls.Add(Me.eui_txtCcIdCodice)
-      Me.GroupBox13.Controls.Add(Me.Label59)
-      Me.GroupBox13.Controls.Add(Me.eui_cmbCcIdPaese)
-      Me.GroupBox13.Controls.Add(Me.Label60)
-      Me.GroupBox13.Id = "28c6e520-ba70-4c82-a72e-12d7722fe9bd"
-      Me.GroupBox13.Location = New System.Drawing.Point(11, 12)
-      Me.GroupBox13.Name = "GroupBox13"
-      Me.GroupBox13.Size = New System.Drawing.Size(381, 100)
-      Me.GroupBox13.TabIndex = 7
-      Me.GroupBox13.Text = "Id Fiscale IVA"
-      '
-      'eui_txtCcIdCodice
-      '
-      Me.eui_txtCcIdCodice.Id = "9974755a-122d-40c5-9882-1c5e6365e341"
-      Me.eui_txtCcIdCodice.Location = New System.Drawing.Point(113, 57)
-      Me.eui_txtCcIdCodice.MaxLength = 28
-      Me.eui_txtCcIdCodice.Name = "eui_txtCcIdCodice"
-      Me.eui_txtCcIdCodice.Size = New System.Drawing.Size(201, 21)
-      Me.eui_txtCcIdCodice.TabIndex = 1
-      Me.eui_txtCcIdCodice.TextEditorWidth = 195
-      '
-      'Label59
-      '
-      Me.Label59.Location = New System.Drawing.Point(19, 57)
-      Me.Label59.Name = "Label59"
-      Me.Label59.Size = New System.Drawing.Size(131, 19)
-      Me.Label59.TabIndex = 2
-      Me.Label59.Text = "Partita IVA:"
-      '
-      'eui_cmbCcIdPaese
-      '
-      Me.eui_cmbCcIdPaese.Editable = False
-      Me.eui_cmbCcIdPaese.FormattingEnabled = False
-      Me.eui_cmbCcIdPaese.Id = "173b940e-60ac-47f1-a963-c134a868fe92"
-      Me.eui_cmbCcIdPaese.Items.AddRange(New Object() {" ", "AD Andorra", "AE Emirati Arabi Uniti", "AF Afghanistan", "AG Antigua e Barbuda", "AI Anguilla", "AL Albania", "AM Armenia", "AO Angola", "AQ Antartide ", "AR Argentina", "AS Samoa Americane", "AT Austria", "AU Australia", "AW Aruba", "AX Isole Åland", "AZ Azerbaigian", "BA Bosnia ed Erzegovina", "BB Barbados", "BD Bangladesh", "BE Belgio", "BF Burkina Faso", "BG Bulgaria", "BH Bahrein", "BI Burundi", "BJ Benin", "BL Saint-Barthélemy", "BM Bermuda", "BN Brunei", "BO Bolivia", "BQ Isole BES", "BR Brasile", "BS Bahamas", "BT Bhutan", "BV Isola Bouvet", "BW Botswana", "BY Bielorussia", "BZ Belize", "CA Canada", "CC Isole Cocos e Keeling", "CD Repubblica Democratica del Congo", "CF Repubblica Centrafricana", "CG Repubblica del Congo", "CH Svizzera", "CI Costa d'Avorio", "CK Isole Cook", "CL Cile", "CM Camerun", "CN Cina", "CO Colombia", "CR Costa Rica", "CU Cuba", "CV Capo Verde", "CW Curaçao", "CX Isola del Natale", "CY Cipro", "CZ Repubblica Ceca", "DE Germania", "DJ Gibuti", "DK Danimarca", "DM Dominica", "DO Repubblica Dominicana", "DZ Algeria", "EC Ecuador", "EE Estonia", "EG Egitto", "EH Sahara Occidentale", "ER Eritrea", "ES Spagna", "ET Etiopia", "FI Finlandia", "FJ Figi", "FK Isole Falkland", "FM Stati Federati di Micronesia", "FO Isole Fær Øer", "FR Francia", "GA Gabon", "GB Regno Unito", "GD Grenada", "GE Georgia", "GF Guyana francese", "GG Guernsey", "GH Ghana", "GI Gibilterra", "GL Groenlandia", "GM Gambia", "GN Guinea", "GP Guadalupa", "GQ Guinea Equatoriale", "GR Grecia", "GS Georgia del Sud e isole Sandwich meridionali", "GT Guatemala", "GU Guam", "GW Guinea-Bissau", "GY Guyana", "HK Hong Kong", "HM Isole Heard e McDonald", "HN Honduras", "HR Croazia", "HT Haiti", "HU Ungheria", "ID Indonesia", "IE Irlanda", "IL Israele", "IM Isola di Man", "IN India", "IO Territori Britannici dell'Oceano Indiano", "IQ Iraq", "IR Iran", "IS Islanda", "IT Italia", "JE Jersey", "JM Giamaica", "JO Giordania", "JP Giappone", "KE Kenya", "KG Kirghizistan", "KH Cambogia", "KI Kiribati", "KM Comore", "KN Saint Kitts e Nevis", "KP Corea del Nord", "KR Corea del Sud", "KW Kuwait", "KY Isole Cayman", "KZ Kazakistan", "LA Laos", "LB Libano", "LC Santa Lucia", "LI Liechtenstein", "LK Sri Lanka", "LR Liberia", "LS Lesotho", "LT Lituania", "LU Lussemburgo", "LV Lettonia", "LY Libia", "MA Marocco", "MC Monaco", "MD Moldavia", "ME Montenegro", "MF Saint-Martin", "MG Madagascar", "MH Isole Marshall", "MK Macedonia", "ML Mali", "MM Birmania", "MN Mongolia", "MO Macao", "MP Isole Marianne Settentrionali", "MQ Martinica", "MR Mauritania", "MS Montserrat", "MT Malta", "MU Mauritius", "MV Maldive", "MW Malawi", "MX Messico", "MY Malaysia", "MZ Mozambico", "NA Namibia", "NC Nuova Caledonia", "NE Niger", "NF Isola Norfolk", "NG Nigeria", "NI Nicaragua", "NL Paesi Bassi", "NO Norvegia", "NP Nepal", "NR Nauru", "NU Niue", "NZ Nuova Zelanda", "OM Oman", "PA Panama", "PE Perù", "PF Polinesia Francese", "PG Papua Nuova Guinea", "PH Filippine", "PK Pakistan", "PL Polonia", "PM Saint-Pierre e Miquelon", "PN Isole Pitcairn", "PR Porto Rico", "PS Stato di Palestina", "PT Portogallo", "PW Palau", "PY Paraguay", "QA Qatar", "RE Riunione", "RO Romania", "RS Serbia", "RU Russia", "RW Ruanda", "SA Arabia Saudita", "SB Isole Salomone", "SC Seychelles", "SD Sudan", "SE Svezia", "SG Singapore", "SH Sant'Elena, Isola di Ascensione e Tristan da Cunha", "SI Slovenia", "SJ Svalbard e Jan Mayen", "SK Slovacchia", "SL Sierra Leone", "SM San Marino", "SN Senegal", "SO Somalia", "SR Suriname", "SS Sudan del Sud", "ST São Tomé e Príncipe", "SV El Salvador", "SX Sint Maarten", "SY Siria", "SZ Swaziland", "TC Isole Turks e Caicos", "TD Ciad", "TF Territori Francesi del Sud", "TG Togo", "TH Thailandia", "TJ Tagikistan", "TK Tokelau", "TL Timor Est", "TM Turkmenistan", "TN Tunisia", "TO Tonga", "TR Turchia", "TT Trinidad e Tobago", "TV Tuvalu", "TW Repubblica di Cina", "TZ Tanzania", "UA Ucraina", "UG Uganda", "UM Isole minori esterne degli Stati Uniti", "US Stati Uniti d'America", "UY Uruguay", "UZ Uzbekistan", "VA Città del Vaticano", "VC Saint Vincent e Grenadine", "VE Venezuela", "VG Isole Vergini britanniche", "VI Isole Vergini americane", "VN Vietnam", "VU Vanuatu", "WF Wallis e Futuna", "WS Samoa", "YE Yemen", "YT Mayotte", "ZA Sudafrica", "ZM Zambia", "ZW Zimbabwe"})
-      Me.eui_cmbCcIdPaese.Location = New System.Drawing.Point(113, 23)
-      Me.eui_cmbCcIdPaese.Name = "eui_cmbCcIdPaese"
-      Me.eui_cmbCcIdPaese.Size = New System.Drawing.Size(201, 21)
-      Me.eui_cmbCcIdPaese.TabIndex = 0
-      Me.eui_cmbCcIdPaese.TextEditorWidth = 182
-      '
-      'Label60
-      '
-      Me.Label60.Location = New System.Drawing.Point(19, 25)
-      Me.Label60.Name = "Label60"
-      Me.Label60.Size = New System.Drawing.Size(50, 19)
-      Me.Label60.TabIndex = 0
-      Me.Label60.Text = "Paese:"
-      '
-      'TabPage18
-      '
-      Me.TabPage18.ActiveControl = Nothing
-      Me.TabPage18.Controls.Add(Me.GroupBox14)
-      Me.TabPage18.KeyTip = Nothing
-      Me.TabPage18.Name = "TabPage18"
-      Me.TabPage18.Size = New System.Drawing.Size(780, 397)
-      Me.TabPage18.TabIndex = 1
-      Me.TabPage18.Text = "Sede"
-      '
-      'GroupBox14
-      '
-      Me.GroupBox14.Controls.Add(Me.eui_cmbCcSedeNazione)
-      Me.GroupBox14.Controls.Add(Me.Label61)
-      Me.GroupBox14.Controls.Add(Me.eui_cmbCcSedeProvincia)
-      Me.GroupBox14.Controls.Add(Me.Label62)
-      Me.GroupBox14.Controls.Add(Me.Label63)
-      Me.GroupBox14.Controls.Add(Me.Label64)
-      Me.GroupBox14.Controls.Add(Me.eui_txtCcSedeComune)
-      Me.GroupBox14.Controls.Add(Me.eui_txtCcSedeCAP)
-      Me.GroupBox14.Controls.Add(Me.eui_txtCcSedeIndirizzo)
-      Me.GroupBox14.Controls.Add(Me.eui_txtCcSedeNumeroCivico)
-      Me.GroupBox14.Controls.Add(Me.Label65)
-      Me.GroupBox14.Controls.Add(Me.Label66)
-      Me.GroupBox14.Id = "5da6b73d-f29b-49d6-8f48-40565e019692"
-      Me.GroupBox14.Location = New System.Drawing.Point(11, 12)
-      Me.GroupBox14.Name = "GroupBox14"
-      Me.GroupBox14.Size = New System.Drawing.Size(381, 230)
-      Me.GroupBox14.TabIndex = 8
-      Me.GroupBox14.Text = "Sede del cessionario/committente"
-      '
-      'eui_cmbCcSedeNazione
-      '
-      Me.eui_cmbCcSedeNazione.Editable = False
-      Me.eui_cmbCcSedeNazione.FormattingEnabled = False
-      Me.eui_cmbCcSedeNazione.Id = "cc881ac6-a2a6-47cf-9a62-73a9b84b4fd3"
-      Me.eui_cmbCcSedeNazione.Items.AddRange(New Object() {" ", "AD Andorra", "AE Emirati Arabi Uniti", "AF Afghanistan", "AG Antigua e Barbuda", "AI Anguilla", "AL Albania", "AM Armenia", "AO Angola", "AQ Antartide ", "AR Argentina", "AS Samoa Americane", "AT Austria", "AU Australia", "AW Aruba", "AX Isole Åland", "AZ Azerbaigian", "BA Bosnia ed Erzegovina", "BB Barbados", "BD Bangladesh", "BE Belgio", "BF Burkina Faso", "BG Bulgaria", "BH Bahrein", "BI Burundi", "BJ Benin", "BL Saint-Barthélemy", "BM Bermuda", "BN Brunei", "BO Bolivia", "BQ Isole BES", "BR Brasile", "BS Bahamas", "BT Bhutan", "BV Isola Bouvet", "BW Botswana", "BY Bielorussia", "BZ Belize", "CA Canada", "CC Isole Cocos e Keeling", "CD Repubblica Democratica del Congo", "CF Repubblica Centrafricana", "CG Repubblica del Congo", "CH Svizzera", "CI Costa d'Avorio", "CK Isole Cook", "CL Cile", "CM Camerun", "CN Cina", "CO Colombia", "CR Costa Rica", "CU Cuba", "CV Capo Verde", "CW Curaçao", "CX Isola del Natale", "CY Cipro", "CZ Repubblica Ceca", "DE Germania", "DJ Gibuti", "DK Danimarca", "DM Dominica", "DO Repubblica Dominicana", "DZ Algeria", "EC Ecuador", "EE Estonia", "EG Egitto", "EH Sahara Occidentale", "ER Eritrea", "ES Spagna", "ET Etiopia", "FI Finlandia", "FJ Figi", "FK Isole Falkland", "FM Stati Federati di Micronesia", "FO Isole Fær Øer", "FR Francia", "GA Gabon", "GB Regno Unito", "GD Grenada", "GE Georgia", "GF Guyana francese", "GG Guernsey", "GH Ghana", "GI Gibilterra", "GL Groenlandia", "GM Gambia", "GN Guinea", "GP Guadalupa", "GQ Guinea Equatoriale", "GR Grecia", "GS Georgia del Sud e isole Sandwich meridionali", "GT Guatemala", "GU Guam", "GW Guinea-Bissau", "GY Guyana", "HK Hong Kong", "HM Isole Heard e McDonald", "HN Honduras", "HR Croazia", "HT Haiti", "HU Ungheria", "ID Indonesia", "IE Irlanda", "IL Israele", "IM Isola di Man", "IN India", "IO Territori Britannici dell'Oceano Indiano", "IQ Iraq", "IR Iran", "IS Islanda", "IT Italia", "JE Jersey", "JM Giamaica", "JO Giordania", "JP Giappone", "KE Kenya", "KG Kirghizistan", "KH Cambogia", "KI Kiribati", "KM Comore", "KN Saint Kitts e Nevis", "KP Corea del Nord", "KR Corea del Sud", "KW Kuwait", "KY Isole Cayman", "KZ Kazakistan", "LA Laos", "LB Libano", "LC Santa Lucia", "LI Liechtenstein", "LK Sri Lanka", "LR Liberia", "LS Lesotho", "LT Lituania", "LU Lussemburgo", "LV Lettonia", "LY Libia", "MA Marocco", "MC Monaco", "MD Moldavia", "ME Montenegro", "MF Saint-Martin", "MG Madagascar", "MH Isole Marshall", "MK Macedonia", "ML Mali", "MM Birmania", "MN Mongolia", "MO Macao", "MP Isole Marianne Settentrionali", "MQ Martinica", "MR Mauritania", "MS Montserrat", "MT Malta", "MU Mauritius", "MV Maldive", "MW Malawi", "MX Messico", "MY Malaysia", "MZ Mozambico", "NA Namibia", "NC Nuova Caledonia", "NE Niger", "NF Isola Norfolk", "NG Nigeria", "NI Nicaragua", "NL Paesi Bassi", "NO Norvegia", "NP Nepal", "NR Nauru", "NU Niue", "NZ Nuova Zelanda", "OM Oman", "PA Panama", "PE Perù", "PF Polinesia Francese", "PG Papua Nuova Guinea", "PH Filippine", "PK Pakistan", "PL Polonia", "PM Saint-Pierre e Miquelon", "PN Isole Pitcairn", "PR Porto Rico", "PS Stato di Palestina", "PT Portogallo", "PW Palau", "PY Paraguay", "QA Qatar", "RE Riunione", "RO Romania", "RS Serbia", "RU Russia", "RW Ruanda", "SA Arabia Saudita", "SB Isole Salomone", "SC Seychelles", "SD Sudan", "SE Svezia", "SG Singapore", "SH Sant'Elena, Isola di Ascensione e Tristan da Cunha", "SI Slovenia", "SJ Svalbard e Jan Mayen", "SK Slovacchia", "SL Sierra Leone", "SM San Marino", "SN Senegal", "SO Somalia", "SR Suriname", "SS Sudan del Sud", "ST São Tomé e Príncipe", "SV El Salvador", "SX Sint Maarten", "SY Siria", "SZ Swaziland", "TC Isole Turks e Caicos", "TD Ciad", "TF Territori Francesi del Sud", "TG Togo", "TH Thailandia", "TJ Tagikistan", "TK Tokelau", "TL Timor Est", "TM Turkmenistan", "TN Tunisia", "TO Tonga", "TR Turchia", "TT Trinidad e Tobago", "TV Tuvalu", "TW Repubblica di Cina", "TZ Tanzania", "UA Ucraina", "UG Uganda", "UM Isole minori esterne degli Stati Uniti", "US Stati Uniti d'America", "UY Uruguay", "UZ Uzbekistan", "VA Città del Vaticano", "VC Saint Vincent e Grenadine", "VE Venezuela", "VG Isole Vergini britanniche", "VI Isole Vergini americane", "VN Vietnam", "VU Vanuatu", "WF Wallis e Futuna", "WS Samoa", "YE Yemen", "YT Mayotte", "ZA Sudafrica", "ZM Zambia", "ZW Zimbabwe"})
-      Me.eui_cmbCcSedeNazione.Location = New System.Drawing.Point(113, 194)
-      Me.eui_cmbCcSedeNazione.Name = "eui_cmbCcSedeNazione"
-      Me.eui_cmbCcSedeNazione.Size = New System.Drawing.Size(240, 21)
-      Me.eui_cmbCcSedeNazione.TabIndex = 5
-      Me.eui_cmbCcSedeNazione.TextEditorWidth = 221
-      '
-      'Label61
-      '
-      Me.Label61.Location = New System.Drawing.Point(19, 196)
-      Me.Label61.Name = "Label61"
-      Me.Label61.Size = New System.Drawing.Size(78, 19)
-      Me.Label61.TabIndex = 12
-      Me.Label61.Text = "Nazione:"
-      '
-      'eui_cmbCcSedeProvincia
-      '
-      Me.eui_cmbCcSedeProvincia.Editable = False
-      Me.eui_cmbCcSedeProvincia.FormattingEnabled = False
-      Me.eui_cmbCcSedeProvincia.Id = "f26c1c3a-590d-402f-9933-6c96fe5a5796"
-      Me.eui_cmbCcSedeProvincia.Items.AddRange(New Object() {" ", "AG Agrigento", "AL Alessandria", "AN Ancona", "AO Aosta", "AR Arezzo", "AP Ascoli Piceno", "AT Asti", "AV Avellino", "BA Bari", "BT Barletta-Andria-Trani", "BL Belluno", "BN Benevento", "BG Bergamo", "BI Biella", "BO Bologna", "BZ Bolzano", "BS Brescia", "BR Brindisi", "CA Cagliari", "CL Caltanissetta", "CB Campobasso", "CI Carbonia-Iglesias", "CE Caserta", "CT Catania", "CZ Catanzaro", "CH Chieti", "CO Como", "CS Cosenza", "CR Cremona", "KR Crotone", "CN Cuneo", "EN Enna", "FM Fermo", "FE Ferrara", "FI Firenze", "FU Fiume", "FG Foggia", "FC Forlì-Cesena", "FR Frosinone", "GE Genova", "GO Gorizia", "GR Grosseto", "IM Imperia", "IS Isernia", "AQ L'Aquila", "SP La Spezia", "LT Latina", "LE Lecce", "LC Lecco", "LI Livorno", "LO Lodi", "LB Lubiana", "LU Lucca", "MC Macerata", "MN Mantova", "MS Massa-Carrara", "MT Matera", "VS Medio Campidano", "ME Messina", "MI Milano", "MO Modena", "MB Monza e Brianza", "NA Napoli", "NO Novara", "NU Nuoro", "OG Ogliastra", "OT Olbia-Tempio", "OR Oristano", "PD Padova", "PA Palermo", "PR Parma", "PV Pavia", "PG Perugia", "PU Pesaro e Urbino ", "PE Pescara", "PC Piacenza", "PI Pisa", "PT Pistoia", "PL Pola", "PN Pordenone", "PZ Potenza", "PO Prato", "RG Ragusa", "RA Ravenna", "RC Reggio di Calabria", "RE Reggio nell'Emilia", "RI Rieti", "RN Rimini", "RM Roma", "RO Rovigo", "SA Salerno", "SS Sassari", "SV Savona", "SI Siena", "SR Siracusa", "SO Sondrio", "SU Sud Sardegna", "TA Taranto", "TE Teramo", "TR Terni", "TO Torino", "TP Trapani", "TN Trento", "TV Treviso", "TS Trieste", "UD Udine", "VA Varese", "VE Venezia", "VB Verbano-Cusio-Ossola", "VC Vercelli", "VR Verona", "VV Vibo Valentia", "VI Vicenza", "VT Viterbo", "ZA Zara"})
-      Me.eui_cmbCcSedeProvincia.Location = New System.Drawing.Point(113, 163)
-      Me.eui_cmbCcSedeProvincia.Name = "eui_cmbCcSedeProvincia"
-      Me.eui_cmbCcSedeProvincia.Size = New System.Drawing.Size(241, 21)
-      Me.eui_cmbCcSedeProvincia.TabIndex = 4
-      Me.eui_cmbCcSedeProvincia.TextEditorWidth = 222
-      '
-      'Label62
-      '
-      Me.Label62.Location = New System.Drawing.Point(19, 165)
-      Me.Label62.Name = "Label62"
-      Me.Label62.Size = New System.Drawing.Size(78, 19)
-      Me.Label62.TabIndex = 10
-      Me.Label62.Text = "Provincia:"
-      '
-      'Label63
-      '
-      Me.Label63.Location = New System.Drawing.Point(19, 130)
-      Me.Label63.Name = "Label63"
-      Me.Label63.Size = New System.Drawing.Size(78, 19)
-      Me.Label63.TabIndex = 9
-      Me.Label63.Text = "Comune:"
-      '
-      'Label64
-      '
-      Me.Label64.Location = New System.Drawing.Point(19, 94)
-      Me.Label64.Name = "Label64"
-      Me.Label64.Size = New System.Drawing.Size(78, 19)
-      Me.Label64.TabIndex = 8
-      Me.Label64.Tag = ""
-      Me.Label64.Text = "CAP:"
-      '
-      'eui_txtCcSedeComune
-      '
-      Me.eui_txtCcSedeComune.Id = "dea454d8-8680-4b91-b8d1-d72be0a02597"
-      Me.eui_txtCcSedeComune.Location = New System.Drawing.Point(114, 128)
-      Me.eui_txtCcSedeComune.MaxLength = 60
-      Me.eui_txtCcSedeComune.Name = "eui_txtCcSedeComune"
-      Me.eui_txtCcSedeComune.Size = New System.Drawing.Size(240, 21)
-      Me.eui_txtCcSedeComune.TabIndex = 3
-      Me.eui_txtCcSedeComune.TextEditorWidth = 234
-      '
-      'eui_txtCcSedeCAP
-      '
-      Me.eui_txtCcSedeCAP.Id = "da1569ce-a757-41e7-aca9-f14d7007263b"
-      Me.eui_txtCcSedeCAP.Location = New System.Drawing.Point(113, 92)
-      Me.eui_txtCcSedeCAP.MaxLength = 5
-      Me.eui_txtCcSedeCAP.Name = "eui_txtCcSedeCAP"
-      Me.eui_txtCcSedeCAP.Size = New System.Drawing.Size(105, 21)
-      Me.eui_txtCcSedeCAP.TabIndex = 2
-      Me.eui_txtCcSedeCAP.TextEditorWidth = 99
-      '
-      'eui_txtCcSedeIndirizzo
-      '
-      Me.eui_txtCcSedeIndirizzo.Id = "bf6f4141-19c4-4406-9a4e-5df57ebcff4e"
-      Me.eui_txtCcSedeIndirizzo.Location = New System.Drawing.Point(113, 23)
-      Me.eui_txtCcSedeIndirizzo.MaxLength = 60
-      Me.eui_txtCcSedeIndirizzo.Name = "eui_txtCcSedeIndirizzo"
-      Me.eui_txtCcSedeIndirizzo.Size = New System.Drawing.Size(240, 21)
-      Me.eui_txtCcSedeIndirizzo.TabIndex = 0
-      Me.eui_txtCcSedeIndirizzo.TextEditorWidth = 234
-      '
-      'eui_txtCcSedeNumeroCivico
-      '
-      Me.eui_txtCcSedeNumeroCivico.Id = "aaa9eac4-ff12-439a-9c44-63c8a7d4efe8"
-      Me.eui_txtCcSedeNumeroCivico.Location = New System.Drawing.Point(113, 57)
-      Me.eui_txtCcSedeNumeroCivico.MaxLength = 8
-      Me.eui_txtCcSedeNumeroCivico.Name = "eui_txtCcSedeNumeroCivico"
-      Me.eui_txtCcSedeNumeroCivico.Size = New System.Drawing.Size(105, 21)
-      Me.eui_txtCcSedeNumeroCivico.TabIndex = 1
-      Me.eui_txtCcSedeNumeroCivico.TextEditorWidth = 99
-      '
-      'Label65
-      '
-      Me.Label65.Location = New System.Drawing.Point(19, 57)
-      Me.Label65.Name = "Label65"
-      Me.Label65.Size = New System.Drawing.Size(76, 19)
-      Me.Label65.TabIndex = 2
-      Me.Label65.Text = "Numero civico:"
-      '
-      'Label66
-      '
-      Me.Label66.Location = New System.Drawing.Point(19, 25)
-      Me.Label66.Name = "Label66"
-      Me.Label66.Size = New System.Drawing.Size(76, 19)
-      Me.Label66.TabIndex = 0
-      Me.Label66.Text = "Indirizzo:"
-      '
-      'TabPage19
-      '
-      Me.TabPage19.ActiveControl = Nothing
-      Me.TabPage19.Controls.Add(Me.GroupBox17)
-      Me.TabPage19.KeyTip = Nothing
-      Me.TabPage19.Name = "TabPage19"
-      Me.TabPage19.Size = New System.Drawing.Size(780, 397)
-      Me.TabPage19.TabIndex = 2
-      Me.TabPage19.Text = "Stabile Organizzazione"
-      '
-      'GroupBox17
-      '
-      Me.GroupBox17.Controls.Add(Me.eui_cmbCcStabileOrgNazione)
-      Me.GroupBox17.Controls.Add(Me.Label76)
-      Me.GroupBox17.Controls.Add(Me.eui_cmbCcStabileOrgProvincia)
-      Me.GroupBox17.Controls.Add(Me.Label77)
-      Me.GroupBox17.Controls.Add(Me.Label78)
-      Me.GroupBox17.Controls.Add(Me.Label79)
-      Me.GroupBox17.Controls.Add(Me.eui_txtCcStabileOrgComune)
-      Me.GroupBox17.Controls.Add(Me.eui_txtCcStabileOrgCAP)
-      Me.GroupBox17.Controls.Add(Me.eui_txtCcStabileOrgIndirizzo)
-      Me.GroupBox17.Controls.Add(Me.eui_txtCcStabileOrgNumeroCivico)
-      Me.GroupBox17.Controls.Add(Me.Label80)
-      Me.GroupBox17.Controls.Add(Me.Label81)
-      Me.GroupBox17.Id = "dcc297f2-e62c-4f03-a597-fb49c6ea3fe5"
-      Me.GroupBox17.Location = New System.Drawing.Point(12, 12)
-      Me.GroupBox17.Name = "GroupBox17"
-      Me.GroupBox17.Size = New System.Drawing.Size(381, 230)
-      Me.GroupBox17.TabIndex = 9
-      Me.GroupBox17.Text = "Stabile Organizazzione del cessionario/committente non residente"
-      '
-      'eui_cmbCcStabileOrgNazione
-      '
-      Me.eui_cmbCcStabileOrgNazione.Editable = False
-      Me.eui_cmbCcStabileOrgNazione.FormattingEnabled = False
-      Me.eui_cmbCcStabileOrgNazione.Id = "3a3d54ee-3b99-428d-8b55-62e64c656b75"
-      Me.eui_cmbCcStabileOrgNazione.Items.AddRange(New Object() {" ", "AD Andorra", "AE Emirati Arabi Uniti", "AF Afghanistan", "AG Antigua e Barbuda", "AI Anguilla", "AL Albania", "AM Armenia", "AO Angola", "AQ Antartide ", "AR Argentina", "AS Samoa Americane", "AT Austria", "AU Australia", "AW Aruba", "AX Isole Åland", "AZ Azerbaigian", "BA Bosnia ed Erzegovina", "BB Barbados", "BD Bangladesh", "BE Belgio", "BF Burkina Faso", "BG Bulgaria", "BH Bahrein", "BI Burundi", "BJ Benin", "BL Saint-Barthélemy", "BM Bermuda", "BN Brunei", "BO Bolivia", "BQ Isole BES", "BR Brasile", "BS Bahamas", "BT Bhutan", "BV Isola Bouvet", "BW Botswana", "BY Bielorussia", "BZ Belize", "CA Canada", "CC Isole Cocos e Keeling", "CD Repubblica Democratica del Congo", "CF Repubblica Centrafricana", "CG Repubblica del Congo", "CH Svizzera", "CI Costa d'Avorio", "CK Isole Cook", "CL Cile", "CM Camerun", "CN Cina", "CO Colombia", "CR Costa Rica", "CU Cuba", "CV Capo Verde", "CW Curaçao", "CX Isola del Natale", "CY Cipro", "CZ Repubblica Ceca", "DE Germania", "DJ Gibuti", "DK Danimarca", "DM Dominica", "DO Repubblica Dominicana", "DZ Algeria", "EC Ecuador", "EE Estonia", "EG Egitto", "EH Sahara Occidentale", "ER Eritrea", "ES Spagna", "ET Etiopia", "FI Finlandia", "FJ Figi", "FK Isole Falkland", "FM Stati Federati di Micronesia", "FO Isole Fær Øer", "FR Francia", "GA Gabon", "GB Regno Unito", "GD Grenada", "GE Georgia", "GF Guyana francese", "GG Guernsey", "GH Ghana", "GI Gibilterra", "GL Groenlandia", "GM Gambia", "GN Guinea", "GP Guadalupa", "GQ Guinea Equatoriale", "GR Grecia", "GS Georgia del Sud e isole Sandwich meridionali", "GT Guatemala", "GU Guam", "GW Guinea-Bissau", "GY Guyana", "HK Hong Kong", "HM Isole Heard e McDonald", "HN Honduras", "HR Croazia", "HT Haiti", "HU Ungheria", "ID Indonesia", "IE Irlanda", "IL Israele", "IM Isola di Man", "IN India", "IO Territori Britannici dell'Oceano Indiano", "IQ Iraq", "IR Iran", "IS Islanda", "IT Italia", "JE Jersey", "JM Giamaica", "JO Giordania", "JP Giappone", "KE Kenya", "KG Kirghizistan", "KH Cambogia", "KI Kiribati", "KM Comore", "KN Saint Kitts e Nevis", "KP Corea del Nord", "KR Corea del Sud", "KW Kuwait", "KY Isole Cayman", "KZ Kazakistan", "LA Laos", "LB Libano", "LC Santa Lucia", "LI Liechtenstein", "LK Sri Lanka", "LR Liberia", "LS Lesotho", "LT Lituania", "LU Lussemburgo", "LV Lettonia", "LY Libia", "MA Marocco", "MC Monaco", "MD Moldavia", "ME Montenegro", "MF Saint-Martin", "MG Madagascar", "MH Isole Marshall", "MK Macedonia", "ML Mali", "MM Birmania", "MN Mongolia", "MO Macao", "MP Isole Marianne Settentrionali", "MQ Martinica", "MR Mauritania", "MS Montserrat", "MT Malta", "MU Mauritius", "MV Maldive", "MW Malawi", "MX Messico", "MY Malaysia", "MZ Mozambico", "NA Namibia", "NC Nuova Caledonia", "NE Niger", "NF Isola Norfolk", "NG Nigeria", "NI Nicaragua", "NL Paesi Bassi", "NO Norvegia", "NP Nepal", "NR Nauru", "NU Niue", "NZ Nuova Zelanda", "OM Oman", "PA Panama", "PE Perù", "PF Polinesia Francese", "PG Papua Nuova Guinea", "PH Filippine", "PK Pakistan", "PL Polonia", "PM Saint-Pierre e Miquelon", "PN Isole Pitcairn", "PR Porto Rico", "PS Stato di Palestina", "PT Portogallo", "PW Palau", "PY Paraguay", "QA Qatar", "RE Riunione", "RO Romania", "RS Serbia", "RU Russia", "RW Ruanda", "SA Arabia Saudita", "SB Isole Salomone", "SC Seychelles", "SD Sudan", "SE Svezia", "SG Singapore", "SH Sant'Elena, Isola di Ascensione e Tristan da Cunha", "SI Slovenia", "SJ Svalbard e Jan Mayen", "SK Slovacchia", "SL Sierra Leone", "SM San Marino", "SN Senegal", "SO Somalia", "SR Suriname", "SS Sudan del Sud", "ST São Tomé e Príncipe", "SV El Salvador", "SX Sint Maarten", "SY Siria", "SZ Swaziland", "TC Isole Turks e Caicos", "TD Ciad", "TF Territori Francesi del Sud", "TG Togo", "TH Thailandia", "TJ Tagikistan", "TK Tokelau", "TL Timor Est", "TM Turkmenistan", "TN Tunisia", "TO Tonga", "TR Turchia", "TT Trinidad e Tobago", "TV Tuvalu", "TW Repubblica di Cina", "TZ Tanzania", "UA Ucraina", "UG Uganda", "UM Isole minori esterne degli Stati Uniti", "US Stati Uniti d'America", "UY Uruguay", "UZ Uzbekistan", "VA Città del Vaticano", "VC Saint Vincent e Grenadine", "VE Venezuela", "VG Isole Vergini britanniche", "VI Isole Vergini americane", "VN Vietnam", "VU Vanuatu", "WF Wallis e Futuna", "WS Samoa", "YE Yemen", "YT Mayotte", "ZA Sudafrica", "ZM Zambia", "ZW Zimbabwe"})
-      Me.eui_cmbCcStabileOrgNazione.Location = New System.Drawing.Point(113, 194)
-      Me.eui_cmbCcStabileOrgNazione.Name = "eui_cmbCcStabileOrgNazione"
-      Me.eui_cmbCcStabileOrgNazione.Size = New System.Drawing.Size(240, 21)
-      Me.eui_cmbCcStabileOrgNazione.TabIndex = 5
-      Me.eui_cmbCcStabileOrgNazione.TextEditorWidth = 221
-      '
-      'Label76
-      '
-      Me.Label76.Location = New System.Drawing.Point(19, 196)
-      Me.Label76.Name = "Label76"
-      Me.Label76.Size = New System.Drawing.Size(78, 19)
-      Me.Label76.TabIndex = 12
-      Me.Label76.Text = "Nazione:"
-      '
-      'eui_cmbCcStabileOrgProvincia
-      '
-      Me.eui_cmbCcStabileOrgProvincia.Editable = False
-      Me.eui_cmbCcStabileOrgProvincia.FormattingEnabled = False
-      Me.eui_cmbCcStabileOrgProvincia.Id = "f07047cd-7c09-46a6-b0d5-d57bbd022de1"
-      Me.eui_cmbCcStabileOrgProvincia.Location = New System.Drawing.Point(113, 163)
-      Me.eui_cmbCcStabileOrgProvincia.Name = "eui_cmbCcStabileOrgProvincia"
-      Me.eui_cmbCcStabileOrgProvincia.Size = New System.Drawing.Size(240, 21)
-      Me.eui_cmbCcStabileOrgProvincia.TabIndex = 4
-      Me.eui_cmbCcStabileOrgProvincia.TextEditorWidth = 221
-      '
-      'Label77
-      '
-      Me.Label77.Location = New System.Drawing.Point(19, 165)
-      Me.Label77.Name = "Label77"
-      Me.Label77.Size = New System.Drawing.Size(78, 19)
-      Me.Label77.TabIndex = 10
-      Me.Label77.Text = "Provincia:"
-      '
-      'Label78
-      '
-      Me.Label78.Location = New System.Drawing.Point(19, 130)
-      Me.Label78.Name = "Label78"
-      Me.Label78.Size = New System.Drawing.Size(78, 19)
-      Me.Label78.TabIndex = 9
-      Me.Label78.Text = "Comune:"
-      '
-      'Label79
-      '
-      Me.Label79.Location = New System.Drawing.Point(19, 94)
-      Me.Label79.Name = "Label79"
-      Me.Label79.Size = New System.Drawing.Size(78, 19)
-      Me.Label79.TabIndex = 8
-      Me.Label79.Tag = ""
-      Me.Label79.Text = "CAP:"
-      '
-      'eui_txtCcStabileOrgComune
-      '
-      Me.eui_txtCcStabileOrgComune.Id = "0b38f99d-de8f-4167-bd84-20ad28cf53f9"
-      Me.eui_txtCcStabileOrgComune.Location = New System.Drawing.Point(114, 128)
-      Me.eui_txtCcStabileOrgComune.MaxLength = 60
-      Me.eui_txtCcStabileOrgComune.Name = "eui_txtCcStabileOrgComune"
-      Me.eui_txtCcStabileOrgComune.Size = New System.Drawing.Size(239, 21)
-      Me.eui_txtCcStabileOrgComune.TabIndex = 3
-      Me.eui_txtCcStabileOrgComune.TextEditorWidth = 233
-      '
-      'eui_txtCcStabileOrgCAP
-      '
-      Me.eui_txtCcStabileOrgCAP.Id = "500d78d4-3f07-4507-a87b-9d7133b63085"
-      Me.eui_txtCcStabileOrgCAP.Location = New System.Drawing.Point(113, 92)
-      Me.eui_txtCcStabileOrgCAP.MaxLength = 5
-      Me.eui_txtCcStabileOrgCAP.Name = "eui_txtCcStabileOrgCAP"
-      Me.eui_txtCcStabileOrgCAP.Size = New System.Drawing.Size(110, 21)
-      Me.eui_txtCcStabileOrgCAP.TabIndex = 2
-      Me.eui_txtCcStabileOrgCAP.TextEditorWidth = 104
-      '
-      'eui_txtCcStabileOrgIndirizzo
-      '
-      Me.eui_txtCcStabileOrgIndirizzo.Id = "e2a8b1b8-ac83-4a2f-9f59-97f98fcf69ec"
-      Me.eui_txtCcStabileOrgIndirizzo.Location = New System.Drawing.Point(113, 23)
-      Me.eui_txtCcStabileOrgIndirizzo.MaxLength = 60
-      Me.eui_txtCcStabileOrgIndirizzo.Name = "eui_txtCcStabileOrgIndirizzo"
-      Me.eui_txtCcStabileOrgIndirizzo.Size = New System.Drawing.Size(240, 21)
-      Me.eui_txtCcStabileOrgIndirizzo.TabIndex = 0
-      Me.eui_txtCcStabileOrgIndirizzo.TextEditorWidth = 234
-      '
-      'eui_txtCcStabileOrgNumeroCivico
-      '
-      Me.eui_txtCcStabileOrgNumeroCivico.Id = "9c61c352-fa8b-41e9-8137-8ea26aa3ac28"
-      Me.eui_txtCcStabileOrgNumeroCivico.Location = New System.Drawing.Point(113, 57)
-      Me.eui_txtCcStabileOrgNumeroCivico.MaxLength = 8
-      Me.eui_txtCcStabileOrgNumeroCivico.Name = "eui_txtCcStabileOrgNumeroCivico"
-      Me.eui_txtCcStabileOrgNumeroCivico.Size = New System.Drawing.Size(110, 21)
-      Me.eui_txtCcStabileOrgNumeroCivico.TabIndex = 1
-      Me.eui_txtCcStabileOrgNumeroCivico.TextEditorWidth = 104
-      '
-      'Label80
-      '
-      Me.Label80.Location = New System.Drawing.Point(19, 57)
-      Me.Label80.Name = "Label80"
-      Me.Label80.Size = New System.Drawing.Size(76, 19)
-      Me.Label80.TabIndex = 2
-      Me.Label80.Text = "Numero civico:"
-      '
-      'Label81
-      '
-      Me.Label81.Location = New System.Drawing.Point(19, 25)
-      Me.Label81.Name = "Label81"
-      Me.Label81.Size = New System.Drawing.Size(76, 19)
-      Me.Label81.TabIndex = 0
-      Me.Label81.Text = "Indirizzo:"
-      '
-      'TabPage20
-      '
-      Me.TabPage20.ActiveControl = Nothing
-      Me.TabPage20.Controls.Add(Me.GroupBox18)
-      Me.TabPage20.Controls.Add(Me.GroupBox19)
-      Me.TabPage20.KeyTip = Nothing
-      Me.TabPage20.Name = "TabPage20"
-      Me.TabPage20.Size = New System.Drawing.Size(780, 397)
-      Me.TabPage20.TabIndex = 3
-      Me.TabPage20.Text = "Rappresentante Fiscale"
-      '
-      'GroupBox18
-      '
-      Me.GroupBox18.Controls.Add(Me.Label85)
-      Me.GroupBox18.Controls.Add(Me.eui_txtCcRfCognome)
-      Me.GroupBox18.Controls.Add(Me.eui_txtCcRfDenominazione)
-      Me.GroupBox18.Controls.Add(Me.eui_txtCcRfNome)
-      Me.GroupBox18.Controls.Add(Me.Label86)
-      Me.GroupBox18.Controls.Add(Me.Label87)
-      Me.GroupBox18.Id = "f97eb022-37ec-427a-9f38-b2f7512da93c"
-      Me.GroupBox18.Location = New System.Drawing.Point(12, 127)
-      Me.GroupBox18.Name = "GroupBox18"
-      Me.GroupBox18.Size = New System.Drawing.Size(381, 135)
-      Me.GroupBox18.TabIndex = 13
-      Me.GroupBox18.Text = "Anagrafica"
-      '
-      'Label85
-      '
-      Me.Label85.Location = New System.Drawing.Point(19, 94)
-      Me.Label85.Name = "Label85"
-      Me.Label85.Size = New System.Drawing.Size(78, 19)
-      Me.Label85.TabIndex = 8
-      Me.Label85.Text = "Cognome:"
-      '
-      'eui_txtCcRfCognome
-      '
-      Me.eui_txtCcRfCognome.Id = "bc2fd1dd-c9bf-4077-a5db-c9df797bbf82"
-      Me.eui_txtCcRfCognome.Location = New System.Drawing.Point(113, 92)
-      Me.eui_txtCcRfCognome.MaxLength = 60
-      Me.eui_txtCcRfCognome.Name = "eui_txtCcRfCognome"
-      Me.eui_txtCcRfCognome.Size = New System.Drawing.Size(201, 21)
-      Me.eui_txtCcRfCognome.TabIndex = 2
-      Me.eui_txtCcRfCognome.TextEditorWidth = 195
-      '
-      'eui_txtCcRfDenominazione
-      '
-      Me.eui_txtCcRfDenominazione.Id = "05038dc0-dbe5-41c9-8513-3116e1c83ca9"
-      Me.eui_txtCcRfDenominazione.Location = New System.Drawing.Point(113, 23)
-      Me.eui_txtCcRfDenominazione.MaxLength = 80
-      Me.eui_txtCcRfDenominazione.Name = "eui_txtCcRfDenominazione"
-      Me.eui_txtCcRfDenominazione.Size = New System.Drawing.Size(201, 21)
-      Me.eui_txtCcRfDenominazione.TabIndex = 0
-      Me.eui_txtCcRfDenominazione.TextEditorWidth = 195
-      '
-      'eui_txtCcRfNome
-      '
-      Me.eui_txtCcRfNome.Id = "7151a3b6-830f-4984-aaa5-bae7b06721ce"
-      Me.eui_txtCcRfNome.Location = New System.Drawing.Point(113, 57)
-      Me.eui_txtCcRfNome.MaxLength = 60
-      Me.eui_txtCcRfNome.Name = "eui_txtCcRfNome"
-      Me.eui_txtCcRfNome.Size = New System.Drawing.Size(201, 21)
-      Me.eui_txtCcRfNome.TabIndex = 1
-      Me.eui_txtCcRfNome.TextEditorWidth = 195
-      '
-      'Label86
-      '
-      Me.Label86.Location = New System.Drawing.Point(19, 57)
-      Me.Label86.Name = "Label86"
-      Me.Label86.Size = New System.Drawing.Size(131, 19)
-      Me.Label86.TabIndex = 2
-      Me.Label86.Text = "Nome:"
-      '
-      'Label87
-      '
-      Me.Label87.Location = New System.Drawing.Point(19, 25)
-      Me.Label87.Name = "Label87"
-      Me.Label87.Size = New System.Drawing.Size(76, 19)
-      Me.Label87.TabIndex = 0
-      Me.Label87.Text = "Denominazione:"
-      '
-      'GroupBox19
-      '
-      Me.GroupBox19.Controls.Add(Me.eui_txtCcRfIdCodice)
-      Me.GroupBox19.Controls.Add(Me.Label88)
-      Me.GroupBox19.Controls.Add(Me.eui_cmbCcRfIdPaese)
-      Me.GroupBox19.Controls.Add(Me.Label89)
-      Me.GroupBox19.Id = "bc4f4e63-6e6c-4761-8759-a915e7d573e5"
-      Me.GroupBox19.Location = New System.Drawing.Point(12, 12)
-      Me.GroupBox19.Name = "GroupBox19"
-      Me.GroupBox19.Size = New System.Drawing.Size(381, 100)
-      Me.GroupBox19.TabIndex = 12
-      Me.GroupBox19.Text = "Id Fiscale IVA"
-      '
-      'eui_txtCcRfIdCodice
-      '
-      Me.eui_txtCcRfIdCodice.Id = "d6743b80-4caf-45c5-ae24-dd2da41a5a87"
-      Me.eui_txtCcRfIdCodice.Location = New System.Drawing.Point(113, 57)
-      Me.eui_txtCcRfIdCodice.MaxLength = 28
-      Me.eui_txtCcRfIdCodice.Name = "eui_txtCcRfIdCodice"
-      Me.eui_txtCcRfIdCodice.Size = New System.Drawing.Size(201, 21)
-      Me.eui_txtCcRfIdCodice.TabIndex = 1
-      Me.eui_txtCcRfIdCodice.TextEditorWidth = 195
-      '
-      'Label88
-      '
-      Me.Label88.Location = New System.Drawing.Point(19, 57)
-      Me.Label88.Name = "Label88"
-      Me.Label88.Size = New System.Drawing.Size(131, 19)
-      Me.Label88.TabIndex = 2
-      Me.Label88.Text = "Partita IVA:"
-      '
-      'eui_cmbCcRfIdPaese
-      '
-      Me.eui_cmbCcRfIdPaese.Editable = False
-      Me.eui_cmbCcRfIdPaese.FormattingEnabled = False
-      Me.eui_cmbCcRfIdPaese.Id = "48cf304a-feb5-4f62-b50c-40ab3a755ed8"
-      Me.eui_cmbCcRfIdPaese.Items.AddRange(New Object() {" ", "AD Andorra", "AE Emirati Arabi Uniti", "AF Afghanistan", "AG Antigua e Barbuda", "AI Anguilla", "AL Albania", "AM Armenia", "AO Angola", "AQ Antartide ", "AR Argentina", "AS Samoa Americane", "AT Austria", "AU Australia", "AW Aruba", "AX Isole Åland", "AZ Azerbaigian", "BA Bosnia ed Erzegovina", "BB Barbados", "BD Bangladesh", "BE Belgio", "BF Burkina Faso", "BG Bulgaria", "BH Bahrein", "BI Burundi", "BJ Benin", "BL Saint-Barthélemy", "BM Bermuda", "BN Brunei", "BO Bolivia", "BQ Isole BES", "BR Brasile", "BS Bahamas", "BT Bhutan", "BV Isola Bouvet", "BW Botswana", "BY Bielorussia", "BZ Belize", "CA Canada", "CC Isole Cocos e Keeling", "CD Repubblica Democratica del Congo", "CF Repubblica Centrafricana", "CG Repubblica del Congo", "CH Svizzera", "CI Costa d'Avorio", "CK Isole Cook", "CL Cile", "CM Camerun", "CN Cina", "CO Colombia", "CR Costa Rica", "CU Cuba", "CV Capo Verde", "CW Curaçao", "CX Isola del Natale", "CY Cipro", "CZ Repubblica Ceca", "DE Germania", "DJ Gibuti", "DK Danimarca", "DM Dominica", "DO Repubblica Dominicana", "DZ Algeria", "EC Ecuador", "EE Estonia", "EG Egitto", "EH Sahara Occidentale", "ER Eritrea", "ES Spagna", "ET Etiopia", "FI Finlandia", "FJ Figi", "FK Isole Falkland", "FM Stati Federati di Micronesia", "FO Isole Fær Øer", "FR Francia", "GA Gabon", "GB Regno Unito", "GD Grenada", "GE Georgia", "GF Guyana francese", "GG Guernsey", "GH Ghana", "GI Gibilterra", "GL Groenlandia", "GM Gambia", "GN Guinea", "GP Guadalupa", "GQ Guinea Equatoriale", "GR Grecia", "GS Georgia del Sud e isole Sandwich meridionali", "GT Guatemala", "GU Guam", "GW Guinea-Bissau", "GY Guyana", "HK Hong Kong", "HM Isole Heard e McDonald", "HN Honduras", "HR Croazia", "HT Haiti", "HU Ungheria", "ID Indonesia", "IE Irlanda", "IL Israele", "IM Isola di Man", "IN India", "IO Territori Britannici dell'Oceano Indiano", "IQ Iraq", "IR Iran", "IS Islanda", "IT Italia", "JE Jersey", "JM Giamaica", "JO Giordania", "JP Giappone", "KE Kenya", "KG Kirghizistan", "KH Cambogia", "KI Kiribati", "KM Comore", "KN Saint Kitts e Nevis", "KP Corea del Nord", "KR Corea del Sud", "KW Kuwait", "KY Isole Cayman", "KZ Kazakistan", "LA Laos", "LB Libano", "LC Santa Lucia", "LI Liechtenstein", "LK Sri Lanka", "LR Liberia", "LS Lesotho", "LT Lituania", "LU Lussemburgo", "LV Lettonia", "LY Libia", "MA Marocco", "MC Monaco", "MD Moldavia", "ME Montenegro", "MF Saint-Martin", "MG Madagascar", "MH Isole Marshall", "MK Macedonia", "ML Mali", "MM Birmania", "MN Mongolia", "MO Macao", "MP Isole Marianne Settentrionali", "MQ Martinica", "MR Mauritania", "MS Montserrat", "MT Malta", "MU Mauritius", "MV Maldive", "MW Malawi", "MX Messico", "MY Malaysia", "MZ Mozambico", "NA Namibia", "NC Nuova Caledonia", "NE Niger", "NF Isola Norfolk", "NG Nigeria", "NI Nicaragua", "NL Paesi Bassi", "NO Norvegia", "NP Nepal", "NR Nauru", "NU Niue", "NZ Nuova Zelanda", "OM Oman", "PA Panama", "PE Perù", "PF Polinesia Francese", "PG Papua Nuova Guinea", "PH Filippine", "PK Pakistan", "PL Polonia", "PM Saint-Pierre e Miquelon", "PN Isole Pitcairn", "PR Porto Rico", "PS Stato di Palestina", "PT Portogallo", "PW Palau", "PY Paraguay", "QA Qatar", "RE Riunione", "RO Romania", "RS Serbia", "RU Russia", "RW Ruanda", "SA Arabia Saudita", "SB Isole Salomone", "SC Seychelles", "SD Sudan", "SE Svezia", "SG Singapore", "SH Sant'Elena, Isola di Ascensione e Tristan da Cunha", "SI Slovenia", "SJ Svalbard e Jan Mayen", "SK Slovacchia", "SL Sierra Leone", "SM San Marino", "SN Senegal", "SO Somalia", "SR Suriname", "SS Sudan del Sud", "ST São Tomé e Príncipe", "SV El Salvador", "SX Sint Maarten", "SY Siria", "SZ Swaziland", "TC Isole Turks e Caicos", "TD Ciad", "TF Territori Francesi del Sud", "TG Togo", "TH Thailandia", "TJ Tagikistan", "TK Tokelau", "TL Timor Est", "TM Turkmenistan", "TN Tunisia", "TO Tonga", "TR Turchia", "TT Trinidad e Tobago", "TV Tuvalu", "TW Repubblica di Cina", "TZ Tanzania", "UA Ucraina", "UG Uganda", "UM Isole minori esterne degli Stati Uniti", "US Stati Uniti d'America", "UY Uruguay", "UZ Uzbekistan", "VA Città del Vaticano", "VC Saint Vincent e Grenadine", "VE Venezuela", "VG Isole Vergini britanniche", "VI Isole Vergini americane", "VN Vietnam", "VU Vanuatu", "WF Wallis e Futuna", "WS Samoa", "YE Yemen", "YT Mayotte", "ZA Sudafrica", "ZM Zambia", "ZW Zimbabwe"})
-      Me.eui_cmbCcRfIdPaese.Location = New System.Drawing.Point(113, 23)
-      Me.eui_cmbCcRfIdPaese.Name = "eui_cmbCcRfIdPaese"
-      Me.eui_cmbCcRfIdPaese.Size = New System.Drawing.Size(201, 21)
-      Me.eui_cmbCcRfIdPaese.TabIndex = 0
-      Me.eui_cmbCcRfIdPaese.TextEditorWidth = 182
-      '
-      'Label89
-      '
-      Me.Label89.Location = New System.Drawing.Point(19, 25)
-      Me.Label89.Name = "Label89"
-      Me.Label89.Size = New System.Drawing.Size(50, 19)
-      Me.Label89.TabIndex = 0
-      Me.Label89.Text = "Paese:"
       '
       'TabPage5
       '
@@ -2380,6 +1756,635 @@ Partial Class frmFatturaElettronica
       Me.Label51.TabIndex = 0
       Me.Label51.Text = "Paese:"
       '
+      'TabPage8
+      '
+      Me.TabPage8.ActiveControl = Nothing
+      Me.TabPage8.Controls.Add(Me.TabControl3)
+      Me.TabPage8.KeyTip = Nothing
+      Me.TabPage8.Name = "TabPage8"
+      Me.TabPage8.Size = New System.Drawing.Size(798, 434)
+      Me.TabPage8.TabIndex = 3
+      Me.TabPage8.Text = "Cessionario/Committente"
+      '
+      'TabControl3
+      '
+      Me.TabControl3.Location = New System.Drawing.Point(8, 9)
+      Me.TabControl3.Name = "TabControl3"
+      Me.TabControl3.SelectedTabPage = Me.TabPage17
+      Me.TabControl3.Size = New System.Drawing.Size(782, 418)
+      Me.TabControl3.TabIndex = 0
+      Me.TabControl3.TabPages.AddRange(New Elegant.Ui.TabPage() {Me.TabPage17, Me.TabPage18, Me.TabPage19, Me.TabPage20})
+      Me.TabControl3.Text = "TabControl3"
+      '
+      'TabPage17
+      '
+      Me.TabPage17.ActiveControl = Nothing
+      Me.TabPage17.Controls.Add(Me.GroupBox12)
+      Me.TabPage17.Controls.Add(Me.eui_txtCcCodiceFiscale)
+      Me.TabPage17.Controls.Add(Me.Label58)
+      Me.TabPage17.Controls.Add(Me.GroupBox13)
+      Me.TabPage17.KeyTip = Nothing
+      Me.TabPage17.Name = "TabPage17"
+      Me.TabPage17.Size = New System.Drawing.Size(780, 397)
+      Me.TabPage17.TabIndex = 0
+      Me.TabPage17.Text = "Dati Anagrafici"
+      '
+      'GroupBox12
+      '
+      Me.GroupBox12.Controls.Add(Me.Label53)
+      Me.GroupBox12.Controls.Add(Me.Label54)
+      Me.GroupBox12.Controls.Add(Me.Label55)
+      Me.GroupBox12.Controls.Add(Me.eui_txtCcCodiceEORI)
+      Me.GroupBox12.Controls.Add(Me.eui_txtCcTitolo)
+      Me.GroupBox12.Controls.Add(Me.eui_txtCcCognome)
+      Me.GroupBox12.Controls.Add(Me.eui_txtCcDenominazione)
+      Me.GroupBox12.Controls.Add(Me.eui_txtCcNome)
+      Me.GroupBox12.Controls.Add(Me.Label56)
+      Me.GroupBox12.Controls.Add(Me.Label57)
+      Me.GroupBox12.Id = "232dfa5d-3669-4f70-b81c-7e77581a16df"
+      Me.GroupBox12.Location = New System.Drawing.Point(11, 162)
+      Me.GroupBox12.Name = "GroupBox12"
+      Me.GroupBox12.Size = New System.Drawing.Size(381, 203)
+      Me.GroupBox12.TabIndex = 10
+      Me.GroupBox12.Text = "Anagrafica"
+      '
+      'Label53
+      '
+      Me.Label53.Location = New System.Drawing.Point(19, 165)
+      Me.Label53.Name = "Label53"
+      Me.Label53.Size = New System.Drawing.Size(78, 19)
+      Me.Label53.TabIndex = 10
+      Me.Label53.Text = "Codice EORI:"
+      '
+      'Label54
+      '
+      Me.Label54.Location = New System.Drawing.Point(19, 130)
+      Me.Label54.Name = "Label54"
+      Me.Label54.Size = New System.Drawing.Size(78, 19)
+      Me.Label54.TabIndex = 9
+      Me.Label54.Text = "Titolo:"
+      '
+      'Label55
+      '
+      Me.Label55.Location = New System.Drawing.Point(19, 94)
+      Me.Label55.Name = "Label55"
+      Me.Label55.Size = New System.Drawing.Size(78, 19)
+      Me.Label55.TabIndex = 8
+      Me.Label55.Text = "Cognome:"
+      '
+      'eui_txtCcCodiceEORI
+      '
+      Me.eui_txtCcCodiceEORI.Id = "15e99148-7540-45b1-958c-03402d03502a"
+      Me.eui_txtCcCodiceEORI.Location = New System.Drawing.Point(114, 163)
+      Me.eui_txtCcCodiceEORI.MaxLength = 17
+      Me.eui_txtCcCodiceEORI.Name = "eui_txtCcCodiceEORI"
+      Me.eui_txtCcCodiceEORI.Size = New System.Drawing.Size(201, 21)
+      Me.eui_txtCcCodiceEORI.TabIndex = 4
+      Me.eui_txtCcCodiceEORI.TextEditorWidth = 195
+      '
+      'eui_txtCcTitolo
+      '
+      Me.eui_txtCcTitolo.Id = "f5d78260-9acf-4925-b876-f6d829438497"
+      Me.eui_txtCcTitolo.Location = New System.Drawing.Point(114, 128)
+      Me.eui_txtCcTitolo.MaxLength = 10
+      Me.eui_txtCcTitolo.Name = "eui_txtCcTitolo"
+      Me.eui_txtCcTitolo.Size = New System.Drawing.Size(201, 21)
+      Me.eui_txtCcTitolo.TabIndex = 3
+      Me.eui_txtCcTitolo.TextEditorWidth = 195
+      '
+      'eui_txtCcCognome
+      '
+      Me.eui_txtCcCognome.Id = "776d7fe0-656d-4ed3-9c73-99f40851695f"
+      Me.eui_txtCcCognome.Location = New System.Drawing.Point(113, 92)
+      Me.eui_txtCcCognome.MaxLength = 60
+      Me.eui_txtCcCognome.Name = "eui_txtCcCognome"
+      Me.eui_txtCcCognome.Size = New System.Drawing.Size(201, 21)
+      Me.eui_txtCcCognome.TabIndex = 2
+      Me.eui_txtCcCognome.TextEditorWidth = 195
+      '
+      'eui_txtCcDenominazione
+      '
+      Me.eui_txtCcDenominazione.Id = "7ff21d99-7696-45da-a2df-627c5dcc39b3"
+      Me.eui_txtCcDenominazione.Location = New System.Drawing.Point(113, 23)
+      Me.eui_txtCcDenominazione.MaxLength = 80
+      Me.eui_txtCcDenominazione.Name = "eui_txtCcDenominazione"
+      Me.eui_txtCcDenominazione.Size = New System.Drawing.Size(201, 21)
+      Me.eui_txtCcDenominazione.TabIndex = 0
+      Me.eui_txtCcDenominazione.TextEditorWidth = 195
+      '
+      'eui_txtCcNome
+      '
+      Me.eui_txtCcNome.Id = "b87f3b4d-4366-4e52-82ea-1b91ba4b915d"
+      Me.eui_txtCcNome.Location = New System.Drawing.Point(113, 57)
+      Me.eui_txtCcNome.MaxLength = 60
+      Me.eui_txtCcNome.Name = "eui_txtCcNome"
+      Me.eui_txtCcNome.Size = New System.Drawing.Size(201, 21)
+      Me.eui_txtCcNome.TabIndex = 1
+      Me.eui_txtCcNome.TextEditorWidth = 195
+      '
+      'Label56
+      '
+      Me.Label56.Location = New System.Drawing.Point(19, 57)
+      Me.Label56.Name = "Label56"
+      Me.Label56.Size = New System.Drawing.Size(131, 19)
+      Me.Label56.TabIndex = 2
+      Me.Label56.Text = "Nome:"
+      '
+      'Label57
+      '
+      Me.Label57.Location = New System.Drawing.Point(19, 25)
+      Me.Label57.Name = "Label57"
+      Me.Label57.Size = New System.Drawing.Size(76, 19)
+      Me.Label57.TabIndex = 0
+      Me.Label57.Text = "Denominazione:"
+      '
+      'eui_txtCcCodiceFiscale
+      '
+      Me.eui_txtCcCodiceFiscale.Id = "60aa28cd-e59b-4f2b-b5b6-3f7ecc536c7b"
+      Me.eui_txtCcCodiceFiscale.Location = New System.Drawing.Point(125, 127)
+      Me.eui_txtCcCodiceFiscale.MaxLength = 16
+      Me.eui_txtCcCodiceFiscale.Name = "eui_txtCcCodiceFiscale"
+      Me.eui_txtCcCodiceFiscale.Size = New System.Drawing.Size(201, 21)
+      Me.eui_txtCcCodiceFiscale.TabIndex = 0
+      Me.eui_txtCcCodiceFiscale.TextEditorWidth = 195
+      '
+      'Label58
+      '
+      Me.Label58.Location = New System.Drawing.Point(27, 129)
+      Me.Label58.Name = "Label58"
+      Me.Label58.Size = New System.Drawing.Size(87, 19)
+      Me.Label58.TabIndex = 8
+      Me.Label58.Text = "Codice fiscale:"
+      '
+      'GroupBox13
+      '
+      Me.GroupBox13.Controls.Add(Me.eui_txtCcIdCodice)
+      Me.GroupBox13.Controls.Add(Me.Label59)
+      Me.GroupBox13.Controls.Add(Me.eui_cmbCcIdPaese)
+      Me.GroupBox13.Controls.Add(Me.Label60)
+      Me.GroupBox13.Id = "28c6e520-ba70-4c82-a72e-12d7722fe9bd"
+      Me.GroupBox13.Location = New System.Drawing.Point(11, 12)
+      Me.GroupBox13.Name = "GroupBox13"
+      Me.GroupBox13.Size = New System.Drawing.Size(381, 100)
+      Me.GroupBox13.TabIndex = 7
+      Me.GroupBox13.Text = "Id Fiscale IVA"
+      '
+      'eui_txtCcIdCodice
+      '
+      Me.eui_txtCcIdCodice.Id = "9974755a-122d-40c5-9882-1c5e6365e341"
+      Me.eui_txtCcIdCodice.Location = New System.Drawing.Point(113, 57)
+      Me.eui_txtCcIdCodice.MaxLength = 28
+      Me.eui_txtCcIdCodice.Name = "eui_txtCcIdCodice"
+      Me.eui_txtCcIdCodice.Size = New System.Drawing.Size(201, 21)
+      Me.eui_txtCcIdCodice.TabIndex = 1
+      Me.eui_txtCcIdCodice.TextEditorWidth = 195
+      '
+      'Label59
+      '
+      Me.Label59.Location = New System.Drawing.Point(19, 57)
+      Me.Label59.Name = "Label59"
+      Me.Label59.Size = New System.Drawing.Size(131, 19)
+      Me.Label59.TabIndex = 2
+      Me.Label59.Text = "Partita IVA:"
+      '
+      'eui_cmbCcIdPaese
+      '
+      Me.eui_cmbCcIdPaese.Editable = False
+      Me.eui_cmbCcIdPaese.FormattingEnabled = False
+      Me.eui_cmbCcIdPaese.Id = "173b940e-60ac-47f1-a963-c134a868fe92"
+      Me.eui_cmbCcIdPaese.Items.AddRange(New Object() {" ", "AD Andorra", "AE Emirati Arabi Uniti", "AF Afghanistan", "AG Antigua e Barbuda", "AI Anguilla", "AL Albania", "AM Armenia", "AO Angola", "AQ Antartide ", "AR Argentina", "AS Samoa Americane", "AT Austria", "AU Australia", "AW Aruba", "AX Isole Åland", "AZ Azerbaigian", "BA Bosnia ed Erzegovina", "BB Barbados", "BD Bangladesh", "BE Belgio", "BF Burkina Faso", "BG Bulgaria", "BH Bahrein", "BI Burundi", "BJ Benin", "BL Saint-Barthélemy", "BM Bermuda", "BN Brunei", "BO Bolivia", "BQ Isole BES", "BR Brasile", "BS Bahamas", "BT Bhutan", "BV Isola Bouvet", "BW Botswana", "BY Bielorussia", "BZ Belize", "CA Canada", "CC Isole Cocos e Keeling", "CD Repubblica Democratica del Congo", "CF Repubblica Centrafricana", "CG Repubblica del Congo", "CH Svizzera", "CI Costa d'Avorio", "CK Isole Cook", "CL Cile", "CM Camerun", "CN Cina", "CO Colombia", "CR Costa Rica", "CU Cuba", "CV Capo Verde", "CW Curaçao", "CX Isola del Natale", "CY Cipro", "CZ Repubblica Ceca", "DE Germania", "DJ Gibuti", "DK Danimarca", "DM Dominica", "DO Repubblica Dominicana", "DZ Algeria", "EC Ecuador", "EE Estonia", "EG Egitto", "EH Sahara Occidentale", "ER Eritrea", "ES Spagna", "ET Etiopia", "FI Finlandia", "FJ Figi", "FK Isole Falkland", "FM Stati Federati di Micronesia", "FO Isole Fær Øer", "FR Francia", "GA Gabon", "GB Regno Unito", "GD Grenada", "GE Georgia", "GF Guyana francese", "GG Guernsey", "GH Ghana", "GI Gibilterra", "GL Groenlandia", "GM Gambia", "GN Guinea", "GP Guadalupa", "GQ Guinea Equatoriale", "GR Grecia", "GS Georgia del Sud e isole Sandwich meridionali", "GT Guatemala", "GU Guam", "GW Guinea-Bissau", "GY Guyana", "HK Hong Kong", "HM Isole Heard e McDonald", "HN Honduras", "HR Croazia", "HT Haiti", "HU Ungheria", "ID Indonesia", "IE Irlanda", "IL Israele", "IM Isola di Man", "IN India", "IO Territori Britannici dell'Oceano Indiano", "IQ Iraq", "IR Iran", "IS Islanda", "IT Italia", "JE Jersey", "JM Giamaica", "JO Giordania", "JP Giappone", "KE Kenya", "KG Kirghizistan", "KH Cambogia", "KI Kiribati", "KM Comore", "KN Saint Kitts e Nevis", "KP Corea del Nord", "KR Corea del Sud", "KW Kuwait", "KY Isole Cayman", "KZ Kazakistan", "LA Laos", "LB Libano", "LC Santa Lucia", "LI Liechtenstein", "LK Sri Lanka", "LR Liberia", "LS Lesotho", "LT Lituania", "LU Lussemburgo", "LV Lettonia", "LY Libia", "MA Marocco", "MC Monaco", "MD Moldavia", "ME Montenegro", "MF Saint-Martin", "MG Madagascar", "MH Isole Marshall", "MK Macedonia", "ML Mali", "MM Birmania", "MN Mongolia", "MO Macao", "MP Isole Marianne Settentrionali", "MQ Martinica", "MR Mauritania", "MS Montserrat", "MT Malta", "MU Mauritius", "MV Maldive", "MW Malawi", "MX Messico", "MY Malaysia", "MZ Mozambico", "NA Namibia", "NC Nuova Caledonia", "NE Niger", "NF Isola Norfolk", "NG Nigeria", "NI Nicaragua", "NL Paesi Bassi", "NO Norvegia", "NP Nepal", "NR Nauru", "NU Niue", "NZ Nuova Zelanda", "OM Oman", "PA Panama", "PE Perù", "PF Polinesia Francese", "PG Papua Nuova Guinea", "PH Filippine", "PK Pakistan", "PL Polonia", "PM Saint-Pierre e Miquelon", "PN Isole Pitcairn", "PR Porto Rico", "PS Stato di Palestina", "PT Portogallo", "PW Palau", "PY Paraguay", "QA Qatar", "RE Riunione", "RO Romania", "RS Serbia", "RU Russia", "RW Ruanda", "SA Arabia Saudita", "SB Isole Salomone", "SC Seychelles", "SD Sudan", "SE Svezia", "SG Singapore", "SH Sant'Elena, Isola di Ascensione e Tristan da Cunha", "SI Slovenia", "SJ Svalbard e Jan Mayen", "SK Slovacchia", "SL Sierra Leone", "SM San Marino", "SN Senegal", "SO Somalia", "SR Suriname", "SS Sudan del Sud", "ST São Tomé e Príncipe", "SV El Salvador", "SX Sint Maarten", "SY Siria", "SZ Swaziland", "TC Isole Turks e Caicos", "TD Ciad", "TF Territori Francesi del Sud", "TG Togo", "TH Thailandia", "TJ Tagikistan", "TK Tokelau", "TL Timor Est", "TM Turkmenistan", "TN Tunisia", "TO Tonga", "TR Turchia", "TT Trinidad e Tobago", "TV Tuvalu", "TW Repubblica di Cina", "TZ Tanzania", "UA Ucraina", "UG Uganda", "UM Isole minori esterne degli Stati Uniti", "US Stati Uniti d'America", "UY Uruguay", "UZ Uzbekistan", "VA Città del Vaticano", "VC Saint Vincent e Grenadine", "VE Venezuela", "VG Isole Vergini britanniche", "VI Isole Vergini americane", "VN Vietnam", "VU Vanuatu", "WF Wallis e Futuna", "WS Samoa", "YE Yemen", "YT Mayotte", "ZA Sudafrica", "ZM Zambia", "ZW Zimbabwe"})
+      Me.eui_cmbCcIdPaese.Location = New System.Drawing.Point(113, 23)
+      Me.eui_cmbCcIdPaese.Name = "eui_cmbCcIdPaese"
+      Me.eui_cmbCcIdPaese.Size = New System.Drawing.Size(201, 21)
+      Me.eui_cmbCcIdPaese.TabIndex = 0
+      Me.eui_cmbCcIdPaese.TextEditorWidth = 182
+      '
+      'Label60
+      '
+      Me.Label60.Location = New System.Drawing.Point(19, 25)
+      Me.Label60.Name = "Label60"
+      Me.Label60.Size = New System.Drawing.Size(50, 19)
+      Me.Label60.TabIndex = 0
+      Me.Label60.Text = "Paese:"
+      '
+      'TabPage18
+      '
+      Me.TabPage18.ActiveControl = Nothing
+      Me.TabPage18.Controls.Add(Me.GroupBox14)
+      Me.TabPage18.KeyTip = Nothing
+      Me.TabPage18.Name = "TabPage18"
+      Me.TabPage18.Size = New System.Drawing.Size(780, 397)
+      Me.TabPage18.TabIndex = 1
+      Me.TabPage18.Text = "Sede"
+      '
+      'GroupBox14
+      '
+      Me.GroupBox14.Controls.Add(Me.eui_cmbCcSedeNazione)
+      Me.GroupBox14.Controls.Add(Me.Label61)
+      Me.GroupBox14.Controls.Add(Me.eui_cmbCcSedeProvincia)
+      Me.GroupBox14.Controls.Add(Me.Label62)
+      Me.GroupBox14.Controls.Add(Me.Label63)
+      Me.GroupBox14.Controls.Add(Me.Label64)
+      Me.GroupBox14.Controls.Add(Me.eui_txtCcSedeComune)
+      Me.GroupBox14.Controls.Add(Me.eui_txtCcSedeCAP)
+      Me.GroupBox14.Controls.Add(Me.eui_txtCcSedeIndirizzo)
+      Me.GroupBox14.Controls.Add(Me.eui_txtCcSedeNumeroCivico)
+      Me.GroupBox14.Controls.Add(Me.Label65)
+      Me.GroupBox14.Controls.Add(Me.Label66)
+      Me.GroupBox14.Id = "5da6b73d-f29b-49d6-8f48-40565e019692"
+      Me.GroupBox14.Location = New System.Drawing.Point(11, 12)
+      Me.GroupBox14.Name = "GroupBox14"
+      Me.GroupBox14.Size = New System.Drawing.Size(381, 230)
+      Me.GroupBox14.TabIndex = 8
+      Me.GroupBox14.Text = "Sede del cessionario/committente"
+      '
+      'eui_cmbCcSedeNazione
+      '
+      Me.eui_cmbCcSedeNazione.Editable = False
+      Me.eui_cmbCcSedeNazione.FormattingEnabled = False
+      Me.eui_cmbCcSedeNazione.Id = "cc881ac6-a2a6-47cf-9a62-73a9b84b4fd3"
+      Me.eui_cmbCcSedeNazione.Items.AddRange(New Object() {" ", "AD Andorra", "AE Emirati Arabi Uniti", "AF Afghanistan", "AG Antigua e Barbuda", "AI Anguilla", "AL Albania", "AM Armenia", "AO Angola", "AQ Antartide ", "AR Argentina", "AS Samoa Americane", "AT Austria", "AU Australia", "AW Aruba", "AX Isole Åland", "AZ Azerbaigian", "BA Bosnia ed Erzegovina", "BB Barbados", "BD Bangladesh", "BE Belgio", "BF Burkina Faso", "BG Bulgaria", "BH Bahrein", "BI Burundi", "BJ Benin", "BL Saint-Barthélemy", "BM Bermuda", "BN Brunei", "BO Bolivia", "BQ Isole BES", "BR Brasile", "BS Bahamas", "BT Bhutan", "BV Isola Bouvet", "BW Botswana", "BY Bielorussia", "BZ Belize", "CA Canada", "CC Isole Cocos e Keeling", "CD Repubblica Democratica del Congo", "CF Repubblica Centrafricana", "CG Repubblica del Congo", "CH Svizzera", "CI Costa d'Avorio", "CK Isole Cook", "CL Cile", "CM Camerun", "CN Cina", "CO Colombia", "CR Costa Rica", "CU Cuba", "CV Capo Verde", "CW Curaçao", "CX Isola del Natale", "CY Cipro", "CZ Repubblica Ceca", "DE Germania", "DJ Gibuti", "DK Danimarca", "DM Dominica", "DO Repubblica Dominicana", "DZ Algeria", "EC Ecuador", "EE Estonia", "EG Egitto", "EH Sahara Occidentale", "ER Eritrea", "ES Spagna", "ET Etiopia", "FI Finlandia", "FJ Figi", "FK Isole Falkland", "FM Stati Federati di Micronesia", "FO Isole Fær Øer", "FR Francia", "GA Gabon", "GB Regno Unito", "GD Grenada", "GE Georgia", "GF Guyana francese", "GG Guernsey", "GH Ghana", "GI Gibilterra", "GL Groenlandia", "GM Gambia", "GN Guinea", "GP Guadalupa", "GQ Guinea Equatoriale", "GR Grecia", "GS Georgia del Sud e isole Sandwich meridionali", "GT Guatemala", "GU Guam", "GW Guinea-Bissau", "GY Guyana", "HK Hong Kong", "HM Isole Heard e McDonald", "HN Honduras", "HR Croazia", "HT Haiti", "HU Ungheria", "ID Indonesia", "IE Irlanda", "IL Israele", "IM Isola di Man", "IN India", "IO Territori Britannici dell'Oceano Indiano", "IQ Iraq", "IR Iran", "IS Islanda", "IT Italia", "JE Jersey", "JM Giamaica", "JO Giordania", "JP Giappone", "KE Kenya", "KG Kirghizistan", "KH Cambogia", "KI Kiribati", "KM Comore", "KN Saint Kitts e Nevis", "KP Corea del Nord", "KR Corea del Sud", "KW Kuwait", "KY Isole Cayman", "KZ Kazakistan", "LA Laos", "LB Libano", "LC Santa Lucia", "LI Liechtenstein", "LK Sri Lanka", "LR Liberia", "LS Lesotho", "LT Lituania", "LU Lussemburgo", "LV Lettonia", "LY Libia", "MA Marocco", "MC Monaco", "MD Moldavia", "ME Montenegro", "MF Saint-Martin", "MG Madagascar", "MH Isole Marshall", "MK Macedonia", "ML Mali", "MM Birmania", "MN Mongolia", "MO Macao", "MP Isole Marianne Settentrionali", "MQ Martinica", "MR Mauritania", "MS Montserrat", "MT Malta", "MU Mauritius", "MV Maldive", "MW Malawi", "MX Messico", "MY Malaysia", "MZ Mozambico", "NA Namibia", "NC Nuova Caledonia", "NE Niger", "NF Isola Norfolk", "NG Nigeria", "NI Nicaragua", "NL Paesi Bassi", "NO Norvegia", "NP Nepal", "NR Nauru", "NU Niue", "NZ Nuova Zelanda", "OM Oman", "PA Panama", "PE Perù", "PF Polinesia Francese", "PG Papua Nuova Guinea", "PH Filippine", "PK Pakistan", "PL Polonia", "PM Saint-Pierre e Miquelon", "PN Isole Pitcairn", "PR Porto Rico", "PS Stato di Palestina", "PT Portogallo", "PW Palau", "PY Paraguay", "QA Qatar", "RE Riunione", "RO Romania", "RS Serbia", "RU Russia", "RW Ruanda", "SA Arabia Saudita", "SB Isole Salomone", "SC Seychelles", "SD Sudan", "SE Svezia", "SG Singapore", "SH Sant'Elena, Isola di Ascensione e Tristan da Cunha", "SI Slovenia", "SJ Svalbard e Jan Mayen", "SK Slovacchia", "SL Sierra Leone", "SM San Marino", "SN Senegal", "SO Somalia", "SR Suriname", "SS Sudan del Sud", "ST São Tomé e Príncipe", "SV El Salvador", "SX Sint Maarten", "SY Siria", "SZ Swaziland", "TC Isole Turks e Caicos", "TD Ciad", "TF Territori Francesi del Sud", "TG Togo", "TH Thailandia", "TJ Tagikistan", "TK Tokelau", "TL Timor Est", "TM Turkmenistan", "TN Tunisia", "TO Tonga", "TR Turchia", "TT Trinidad e Tobago", "TV Tuvalu", "TW Repubblica di Cina", "TZ Tanzania", "UA Ucraina", "UG Uganda", "UM Isole minori esterne degli Stati Uniti", "US Stati Uniti d'America", "UY Uruguay", "UZ Uzbekistan", "VA Città del Vaticano", "VC Saint Vincent e Grenadine", "VE Venezuela", "VG Isole Vergini britanniche", "VI Isole Vergini americane", "VN Vietnam", "VU Vanuatu", "WF Wallis e Futuna", "WS Samoa", "YE Yemen", "YT Mayotte", "ZA Sudafrica", "ZM Zambia", "ZW Zimbabwe"})
+      Me.eui_cmbCcSedeNazione.Location = New System.Drawing.Point(113, 194)
+      Me.eui_cmbCcSedeNazione.Name = "eui_cmbCcSedeNazione"
+      Me.eui_cmbCcSedeNazione.Size = New System.Drawing.Size(240, 21)
+      Me.eui_cmbCcSedeNazione.TabIndex = 5
+      Me.eui_cmbCcSedeNazione.TextEditorWidth = 221
+      '
+      'Label61
+      '
+      Me.Label61.Location = New System.Drawing.Point(19, 196)
+      Me.Label61.Name = "Label61"
+      Me.Label61.Size = New System.Drawing.Size(78, 19)
+      Me.Label61.TabIndex = 12
+      Me.Label61.Text = "Nazione:"
+      '
+      'eui_cmbCcSedeProvincia
+      '
+      Me.eui_cmbCcSedeProvincia.Editable = False
+      Me.eui_cmbCcSedeProvincia.FormattingEnabled = False
+      Me.eui_cmbCcSedeProvincia.Id = "f26c1c3a-590d-402f-9933-6c96fe5a5796"
+      Me.eui_cmbCcSedeProvincia.Items.AddRange(New Object() {" ", "AG Agrigento", "AL Alessandria", "AN Ancona", "AO Aosta", "AR Arezzo", "AP Ascoli Piceno", "AT Asti", "AV Avellino", "BA Bari", "BT Barletta-Andria-Trani", "BL Belluno", "BN Benevento", "BG Bergamo", "BI Biella", "BO Bologna", "BZ Bolzano", "BS Brescia", "BR Brindisi", "CA Cagliari", "CL Caltanissetta", "CB Campobasso", "CI Carbonia-Iglesias", "CE Caserta", "CT Catania", "CZ Catanzaro", "CH Chieti", "CO Como", "CS Cosenza", "CR Cremona", "KR Crotone", "CN Cuneo", "EN Enna", "FM Fermo", "FE Ferrara", "FI Firenze", "FU Fiume", "FG Foggia", "FC Forlì-Cesena", "FR Frosinone", "GE Genova", "GO Gorizia", "GR Grosseto", "IM Imperia", "IS Isernia", "AQ L'Aquila", "SP La Spezia", "LT Latina", "LE Lecce", "LC Lecco", "LI Livorno", "LO Lodi", "LB Lubiana", "LU Lucca", "MC Macerata", "MN Mantova", "MS Massa-Carrara", "MT Matera", "VS Medio Campidano", "ME Messina", "MI Milano", "MO Modena", "MB Monza e Brianza", "NA Napoli", "NO Novara", "NU Nuoro", "OG Ogliastra", "OT Olbia-Tempio", "OR Oristano", "PD Padova", "PA Palermo", "PR Parma", "PV Pavia", "PG Perugia", "PU Pesaro e Urbino ", "PE Pescara", "PC Piacenza", "PI Pisa", "PT Pistoia", "PL Pola", "PN Pordenone", "PZ Potenza", "PO Prato", "RG Ragusa", "RA Ravenna", "RC Reggio di Calabria", "RE Reggio nell'Emilia", "RI Rieti", "RN Rimini", "RM Roma", "RO Rovigo", "SA Salerno", "SS Sassari", "SV Savona", "SI Siena", "SR Siracusa", "SO Sondrio", "SU Sud Sardegna", "TA Taranto", "TE Teramo", "TR Terni", "TO Torino", "TP Trapani", "TN Trento", "TV Treviso", "TS Trieste", "UD Udine", "VA Varese", "VE Venezia", "VB Verbano-Cusio-Ossola", "VC Vercelli", "VR Verona", "VV Vibo Valentia", "VI Vicenza", "VT Viterbo", "ZA Zara"})
+      Me.eui_cmbCcSedeProvincia.Location = New System.Drawing.Point(113, 163)
+      Me.eui_cmbCcSedeProvincia.Name = "eui_cmbCcSedeProvincia"
+      Me.eui_cmbCcSedeProvincia.Size = New System.Drawing.Size(241, 21)
+      Me.eui_cmbCcSedeProvincia.TabIndex = 4
+      Me.eui_cmbCcSedeProvincia.TextEditorWidth = 222
+      '
+      'Label62
+      '
+      Me.Label62.Location = New System.Drawing.Point(19, 165)
+      Me.Label62.Name = "Label62"
+      Me.Label62.Size = New System.Drawing.Size(78, 19)
+      Me.Label62.TabIndex = 10
+      Me.Label62.Text = "Provincia:"
+      '
+      'Label63
+      '
+      Me.Label63.Location = New System.Drawing.Point(19, 130)
+      Me.Label63.Name = "Label63"
+      Me.Label63.Size = New System.Drawing.Size(78, 19)
+      Me.Label63.TabIndex = 9
+      Me.Label63.Text = "Comune:"
+      '
+      'Label64
+      '
+      Me.Label64.Location = New System.Drawing.Point(19, 94)
+      Me.Label64.Name = "Label64"
+      Me.Label64.Size = New System.Drawing.Size(78, 19)
+      Me.Label64.TabIndex = 8
+      Me.Label64.Tag = ""
+      Me.Label64.Text = "CAP:"
+      '
+      'eui_txtCcSedeComune
+      '
+      Me.eui_txtCcSedeComune.Id = "dea454d8-8680-4b91-b8d1-d72be0a02597"
+      Me.eui_txtCcSedeComune.Location = New System.Drawing.Point(114, 128)
+      Me.eui_txtCcSedeComune.MaxLength = 60
+      Me.eui_txtCcSedeComune.Name = "eui_txtCcSedeComune"
+      Me.eui_txtCcSedeComune.Size = New System.Drawing.Size(240, 21)
+      Me.eui_txtCcSedeComune.TabIndex = 3
+      Me.eui_txtCcSedeComune.TextEditorWidth = 234
+      '
+      'eui_txtCcSedeCAP
+      '
+      Me.eui_txtCcSedeCAP.Id = "da1569ce-a757-41e7-aca9-f14d7007263b"
+      Me.eui_txtCcSedeCAP.Location = New System.Drawing.Point(113, 92)
+      Me.eui_txtCcSedeCAP.MaxLength = 5
+      Me.eui_txtCcSedeCAP.Name = "eui_txtCcSedeCAP"
+      Me.eui_txtCcSedeCAP.Size = New System.Drawing.Size(105, 21)
+      Me.eui_txtCcSedeCAP.TabIndex = 2
+      Me.eui_txtCcSedeCAP.TextEditorWidth = 99
+      '
+      'eui_txtCcSedeIndirizzo
+      '
+      Me.eui_txtCcSedeIndirizzo.Id = "bf6f4141-19c4-4406-9a4e-5df57ebcff4e"
+      Me.eui_txtCcSedeIndirizzo.Location = New System.Drawing.Point(113, 23)
+      Me.eui_txtCcSedeIndirizzo.MaxLength = 60
+      Me.eui_txtCcSedeIndirizzo.Name = "eui_txtCcSedeIndirizzo"
+      Me.eui_txtCcSedeIndirizzo.Size = New System.Drawing.Size(240, 21)
+      Me.eui_txtCcSedeIndirizzo.TabIndex = 0
+      Me.eui_txtCcSedeIndirizzo.TextEditorWidth = 234
+      '
+      'eui_txtCcSedeNumeroCivico
+      '
+      Me.eui_txtCcSedeNumeroCivico.Id = "aaa9eac4-ff12-439a-9c44-63c8a7d4efe8"
+      Me.eui_txtCcSedeNumeroCivico.Location = New System.Drawing.Point(113, 57)
+      Me.eui_txtCcSedeNumeroCivico.MaxLength = 8
+      Me.eui_txtCcSedeNumeroCivico.Name = "eui_txtCcSedeNumeroCivico"
+      Me.eui_txtCcSedeNumeroCivico.Size = New System.Drawing.Size(105, 21)
+      Me.eui_txtCcSedeNumeroCivico.TabIndex = 1
+      Me.eui_txtCcSedeNumeroCivico.TextEditorWidth = 99
+      '
+      'Label65
+      '
+      Me.Label65.Location = New System.Drawing.Point(19, 57)
+      Me.Label65.Name = "Label65"
+      Me.Label65.Size = New System.Drawing.Size(76, 19)
+      Me.Label65.TabIndex = 2
+      Me.Label65.Text = "Numero civico:"
+      '
+      'Label66
+      '
+      Me.Label66.Location = New System.Drawing.Point(19, 25)
+      Me.Label66.Name = "Label66"
+      Me.Label66.Size = New System.Drawing.Size(76, 19)
+      Me.Label66.TabIndex = 0
+      Me.Label66.Text = "Indirizzo:"
+      '
+      'TabPage19
+      '
+      Me.TabPage19.ActiveControl = Nothing
+      Me.TabPage19.Controls.Add(Me.GroupBox17)
+      Me.TabPage19.KeyTip = Nothing
+      Me.TabPage19.Name = "TabPage19"
+      Me.TabPage19.Size = New System.Drawing.Size(780, 397)
+      Me.TabPage19.TabIndex = 2
+      Me.TabPage19.Text = "Stabile Organizzazione"
+      '
+      'GroupBox17
+      '
+      Me.GroupBox17.Controls.Add(Me.eui_cmbCcStabileOrgNazione)
+      Me.GroupBox17.Controls.Add(Me.Label76)
+      Me.GroupBox17.Controls.Add(Me.eui_cmbCcStabileOrgProvincia)
+      Me.GroupBox17.Controls.Add(Me.Label77)
+      Me.GroupBox17.Controls.Add(Me.Label78)
+      Me.GroupBox17.Controls.Add(Me.Label79)
+      Me.GroupBox17.Controls.Add(Me.eui_txtCcStabileOrgComune)
+      Me.GroupBox17.Controls.Add(Me.eui_txtCcStabileOrgCAP)
+      Me.GroupBox17.Controls.Add(Me.eui_txtCcStabileOrgIndirizzo)
+      Me.GroupBox17.Controls.Add(Me.eui_txtCcStabileOrgNumeroCivico)
+      Me.GroupBox17.Controls.Add(Me.Label80)
+      Me.GroupBox17.Controls.Add(Me.Label81)
+      Me.GroupBox17.Id = "dcc297f2-e62c-4f03-a597-fb49c6ea3fe5"
+      Me.GroupBox17.Location = New System.Drawing.Point(12, 12)
+      Me.GroupBox17.Name = "GroupBox17"
+      Me.GroupBox17.Size = New System.Drawing.Size(381, 230)
+      Me.GroupBox17.TabIndex = 9
+      Me.GroupBox17.Text = "Stabile Organizazzione del cessionario/committente non residente"
+      '
+      'eui_cmbCcStabileOrgNazione
+      '
+      Me.eui_cmbCcStabileOrgNazione.Editable = False
+      Me.eui_cmbCcStabileOrgNazione.FormattingEnabled = False
+      Me.eui_cmbCcStabileOrgNazione.Id = "3a3d54ee-3b99-428d-8b55-62e64c656b75"
+      Me.eui_cmbCcStabileOrgNazione.Items.AddRange(New Object() {" ", "AD Andorra", "AE Emirati Arabi Uniti", "AF Afghanistan", "AG Antigua e Barbuda", "AI Anguilla", "AL Albania", "AM Armenia", "AO Angola", "AQ Antartide ", "AR Argentina", "AS Samoa Americane", "AT Austria", "AU Australia", "AW Aruba", "AX Isole Åland", "AZ Azerbaigian", "BA Bosnia ed Erzegovina", "BB Barbados", "BD Bangladesh", "BE Belgio", "BF Burkina Faso", "BG Bulgaria", "BH Bahrein", "BI Burundi", "BJ Benin", "BL Saint-Barthélemy", "BM Bermuda", "BN Brunei", "BO Bolivia", "BQ Isole BES", "BR Brasile", "BS Bahamas", "BT Bhutan", "BV Isola Bouvet", "BW Botswana", "BY Bielorussia", "BZ Belize", "CA Canada", "CC Isole Cocos e Keeling", "CD Repubblica Democratica del Congo", "CF Repubblica Centrafricana", "CG Repubblica del Congo", "CH Svizzera", "CI Costa d'Avorio", "CK Isole Cook", "CL Cile", "CM Camerun", "CN Cina", "CO Colombia", "CR Costa Rica", "CU Cuba", "CV Capo Verde", "CW Curaçao", "CX Isola del Natale", "CY Cipro", "CZ Repubblica Ceca", "DE Germania", "DJ Gibuti", "DK Danimarca", "DM Dominica", "DO Repubblica Dominicana", "DZ Algeria", "EC Ecuador", "EE Estonia", "EG Egitto", "EH Sahara Occidentale", "ER Eritrea", "ES Spagna", "ET Etiopia", "FI Finlandia", "FJ Figi", "FK Isole Falkland", "FM Stati Federati di Micronesia", "FO Isole Fær Øer", "FR Francia", "GA Gabon", "GB Regno Unito", "GD Grenada", "GE Georgia", "GF Guyana francese", "GG Guernsey", "GH Ghana", "GI Gibilterra", "GL Groenlandia", "GM Gambia", "GN Guinea", "GP Guadalupa", "GQ Guinea Equatoriale", "GR Grecia", "GS Georgia del Sud e isole Sandwich meridionali", "GT Guatemala", "GU Guam", "GW Guinea-Bissau", "GY Guyana", "HK Hong Kong", "HM Isole Heard e McDonald", "HN Honduras", "HR Croazia", "HT Haiti", "HU Ungheria", "ID Indonesia", "IE Irlanda", "IL Israele", "IM Isola di Man", "IN India", "IO Territori Britannici dell'Oceano Indiano", "IQ Iraq", "IR Iran", "IS Islanda", "IT Italia", "JE Jersey", "JM Giamaica", "JO Giordania", "JP Giappone", "KE Kenya", "KG Kirghizistan", "KH Cambogia", "KI Kiribati", "KM Comore", "KN Saint Kitts e Nevis", "KP Corea del Nord", "KR Corea del Sud", "KW Kuwait", "KY Isole Cayman", "KZ Kazakistan", "LA Laos", "LB Libano", "LC Santa Lucia", "LI Liechtenstein", "LK Sri Lanka", "LR Liberia", "LS Lesotho", "LT Lituania", "LU Lussemburgo", "LV Lettonia", "LY Libia", "MA Marocco", "MC Monaco", "MD Moldavia", "ME Montenegro", "MF Saint-Martin", "MG Madagascar", "MH Isole Marshall", "MK Macedonia", "ML Mali", "MM Birmania", "MN Mongolia", "MO Macao", "MP Isole Marianne Settentrionali", "MQ Martinica", "MR Mauritania", "MS Montserrat", "MT Malta", "MU Mauritius", "MV Maldive", "MW Malawi", "MX Messico", "MY Malaysia", "MZ Mozambico", "NA Namibia", "NC Nuova Caledonia", "NE Niger", "NF Isola Norfolk", "NG Nigeria", "NI Nicaragua", "NL Paesi Bassi", "NO Norvegia", "NP Nepal", "NR Nauru", "NU Niue", "NZ Nuova Zelanda", "OM Oman", "PA Panama", "PE Perù", "PF Polinesia Francese", "PG Papua Nuova Guinea", "PH Filippine", "PK Pakistan", "PL Polonia", "PM Saint-Pierre e Miquelon", "PN Isole Pitcairn", "PR Porto Rico", "PS Stato di Palestina", "PT Portogallo", "PW Palau", "PY Paraguay", "QA Qatar", "RE Riunione", "RO Romania", "RS Serbia", "RU Russia", "RW Ruanda", "SA Arabia Saudita", "SB Isole Salomone", "SC Seychelles", "SD Sudan", "SE Svezia", "SG Singapore", "SH Sant'Elena, Isola di Ascensione e Tristan da Cunha", "SI Slovenia", "SJ Svalbard e Jan Mayen", "SK Slovacchia", "SL Sierra Leone", "SM San Marino", "SN Senegal", "SO Somalia", "SR Suriname", "SS Sudan del Sud", "ST São Tomé e Príncipe", "SV El Salvador", "SX Sint Maarten", "SY Siria", "SZ Swaziland", "TC Isole Turks e Caicos", "TD Ciad", "TF Territori Francesi del Sud", "TG Togo", "TH Thailandia", "TJ Tagikistan", "TK Tokelau", "TL Timor Est", "TM Turkmenistan", "TN Tunisia", "TO Tonga", "TR Turchia", "TT Trinidad e Tobago", "TV Tuvalu", "TW Repubblica di Cina", "TZ Tanzania", "UA Ucraina", "UG Uganda", "UM Isole minori esterne degli Stati Uniti", "US Stati Uniti d'America", "UY Uruguay", "UZ Uzbekistan", "VA Città del Vaticano", "VC Saint Vincent e Grenadine", "VE Venezuela", "VG Isole Vergini britanniche", "VI Isole Vergini americane", "VN Vietnam", "VU Vanuatu", "WF Wallis e Futuna", "WS Samoa", "YE Yemen", "YT Mayotte", "ZA Sudafrica", "ZM Zambia", "ZW Zimbabwe"})
+      Me.eui_cmbCcStabileOrgNazione.Location = New System.Drawing.Point(113, 194)
+      Me.eui_cmbCcStabileOrgNazione.Name = "eui_cmbCcStabileOrgNazione"
+      Me.eui_cmbCcStabileOrgNazione.Size = New System.Drawing.Size(240, 21)
+      Me.eui_cmbCcStabileOrgNazione.TabIndex = 5
+      Me.eui_cmbCcStabileOrgNazione.TextEditorWidth = 221
+      '
+      'Label76
+      '
+      Me.Label76.Location = New System.Drawing.Point(19, 196)
+      Me.Label76.Name = "Label76"
+      Me.Label76.Size = New System.Drawing.Size(78, 19)
+      Me.Label76.TabIndex = 12
+      Me.Label76.Text = "Nazione:"
+      '
+      'eui_cmbCcStabileOrgProvincia
+      '
+      Me.eui_cmbCcStabileOrgProvincia.Editable = False
+      Me.eui_cmbCcStabileOrgProvincia.FormattingEnabled = False
+      Me.eui_cmbCcStabileOrgProvincia.Id = "f07047cd-7c09-46a6-b0d5-d57bbd022de1"
+      Me.eui_cmbCcStabileOrgProvincia.Location = New System.Drawing.Point(113, 163)
+      Me.eui_cmbCcStabileOrgProvincia.Name = "eui_cmbCcStabileOrgProvincia"
+      Me.eui_cmbCcStabileOrgProvincia.Size = New System.Drawing.Size(240, 21)
+      Me.eui_cmbCcStabileOrgProvincia.TabIndex = 4
+      Me.eui_cmbCcStabileOrgProvincia.TextEditorWidth = 221
+      '
+      'Label77
+      '
+      Me.Label77.Location = New System.Drawing.Point(19, 165)
+      Me.Label77.Name = "Label77"
+      Me.Label77.Size = New System.Drawing.Size(78, 19)
+      Me.Label77.TabIndex = 10
+      Me.Label77.Text = "Provincia:"
+      '
+      'Label78
+      '
+      Me.Label78.Location = New System.Drawing.Point(19, 130)
+      Me.Label78.Name = "Label78"
+      Me.Label78.Size = New System.Drawing.Size(78, 19)
+      Me.Label78.TabIndex = 9
+      Me.Label78.Text = "Comune:"
+      '
+      'Label79
+      '
+      Me.Label79.Location = New System.Drawing.Point(19, 94)
+      Me.Label79.Name = "Label79"
+      Me.Label79.Size = New System.Drawing.Size(78, 19)
+      Me.Label79.TabIndex = 8
+      Me.Label79.Tag = ""
+      Me.Label79.Text = "CAP:"
+      '
+      'eui_txtCcStabileOrgComune
+      '
+      Me.eui_txtCcStabileOrgComune.Id = "0b38f99d-de8f-4167-bd84-20ad28cf53f9"
+      Me.eui_txtCcStabileOrgComune.Location = New System.Drawing.Point(114, 128)
+      Me.eui_txtCcStabileOrgComune.MaxLength = 60
+      Me.eui_txtCcStabileOrgComune.Name = "eui_txtCcStabileOrgComune"
+      Me.eui_txtCcStabileOrgComune.Size = New System.Drawing.Size(239, 21)
+      Me.eui_txtCcStabileOrgComune.TabIndex = 3
+      Me.eui_txtCcStabileOrgComune.TextEditorWidth = 233
+      '
+      'eui_txtCcStabileOrgCAP
+      '
+      Me.eui_txtCcStabileOrgCAP.Id = "500d78d4-3f07-4507-a87b-9d7133b63085"
+      Me.eui_txtCcStabileOrgCAP.Location = New System.Drawing.Point(113, 92)
+      Me.eui_txtCcStabileOrgCAP.MaxLength = 5
+      Me.eui_txtCcStabileOrgCAP.Name = "eui_txtCcStabileOrgCAP"
+      Me.eui_txtCcStabileOrgCAP.Size = New System.Drawing.Size(110, 21)
+      Me.eui_txtCcStabileOrgCAP.TabIndex = 2
+      Me.eui_txtCcStabileOrgCAP.TextEditorWidth = 104
+      '
+      'eui_txtCcStabileOrgIndirizzo
+      '
+      Me.eui_txtCcStabileOrgIndirizzo.Id = "e2a8b1b8-ac83-4a2f-9f59-97f98fcf69ec"
+      Me.eui_txtCcStabileOrgIndirizzo.Location = New System.Drawing.Point(113, 23)
+      Me.eui_txtCcStabileOrgIndirizzo.MaxLength = 60
+      Me.eui_txtCcStabileOrgIndirizzo.Name = "eui_txtCcStabileOrgIndirizzo"
+      Me.eui_txtCcStabileOrgIndirizzo.Size = New System.Drawing.Size(240, 21)
+      Me.eui_txtCcStabileOrgIndirizzo.TabIndex = 0
+      Me.eui_txtCcStabileOrgIndirizzo.TextEditorWidth = 234
+      '
+      'eui_txtCcStabileOrgNumeroCivico
+      '
+      Me.eui_txtCcStabileOrgNumeroCivico.Id = "9c61c352-fa8b-41e9-8137-8ea26aa3ac28"
+      Me.eui_txtCcStabileOrgNumeroCivico.Location = New System.Drawing.Point(113, 57)
+      Me.eui_txtCcStabileOrgNumeroCivico.MaxLength = 8
+      Me.eui_txtCcStabileOrgNumeroCivico.Name = "eui_txtCcStabileOrgNumeroCivico"
+      Me.eui_txtCcStabileOrgNumeroCivico.Size = New System.Drawing.Size(110, 21)
+      Me.eui_txtCcStabileOrgNumeroCivico.TabIndex = 1
+      Me.eui_txtCcStabileOrgNumeroCivico.TextEditorWidth = 104
+      '
+      'Label80
+      '
+      Me.Label80.Location = New System.Drawing.Point(19, 57)
+      Me.Label80.Name = "Label80"
+      Me.Label80.Size = New System.Drawing.Size(76, 19)
+      Me.Label80.TabIndex = 2
+      Me.Label80.Text = "Numero civico:"
+      '
+      'Label81
+      '
+      Me.Label81.Location = New System.Drawing.Point(19, 25)
+      Me.Label81.Name = "Label81"
+      Me.Label81.Size = New System.Drawing.Size(76, 19)
+      Me.Label81.TabIndex = 0
+      Me.Label81.Text = "Indirizzo:"
+      '
+      'TabPage20
+      '
+      Me.TabPage20.ActiveControl = Nothing
+      Me.TabPage20.Controls.Add(Me.GroupBox18)
+      Me.TabPage20.Controls.Add(Me.GroupBox19)
+      Me.TabPage20.KeyTip = Nothing
+      Me.TabPage20.Name = "TabPage20"
+      Me.TabPage20.Size = New System.Drawing.Size(780, 397)
+      Me.TabPage20.TabIndex = 3
+      Me.TabPage20.Text = "Rappresentante Fiscale"
+      '
+      'GroupBox18
+      '
+      Me.GroupBox18.Controls.Add(Me.Label85)
+      Me.GroupBox18.Controls.Add(Me.eui_txtCcRfCognome)
+      Me.GroupBox18.Controls.Add(Me.eui_txtCcRfDenominazione)
+      Me.GroupBox18.Controls.Add(Me.eui_txtCcRfNome)
+      Me.GroupBox18.Controls.Add(Me.Label86)
+      Me.GroupBox18.Controls.Add(Me.Label87)
+      Me.GroupBox18.Id = "f97eb022-37ec-427a-9f38-b2f7512da93c"
+      Me.GroupBox18.Location = New System.Drawing.Point(12, 127)
+      Me.GroupBox18.Name = "GroupBox18"
+      Me.GroupBox18.Size = New System.Drawing.Size(381, 135)
+      Me.GroupBox18.TabIndex = 13
+      Me.GroupBox18.Text = "Anagrafica"
+      '
+      'Label85
+      '
+      Me.Label85.Location = New System.Drawing.Point(19, 94)
+      Me.Label85.Name = "Label85"
+      Me.Label85.Size = New System.Drawing.Size(78, 19)
+      Me.Label85.TabIndex = 8
+      Me.Label85.Text = "Cognome:"
+      '
+      'eui_txtCcRfCognome
+      '
+      Me.eui_txtCcRfCognome.Id = "bc2fd1dd-c9bf-4077-a5db-c9df797bbf82"
+      Me.eui_txtCcRfCognome.Location = New System.Drawing.Point(113, 92)
+      Me.eui_txtCcRfCognome.MaxLength = 60
+      Me.eui_txtCcRfCognome.Name = "eui_txtCcRfCognome"
+      Me.eui_txtCcRfCognome.Size = New System.Drawing.Size(201, 21)
+      Me.eui_txtCcRfCognome.TabIndex = 2
+      Me.eui_txtCcRfCognome.TextEditorWidth = 195
+      '
+      'eui_txtCcRfDenominazione
+      '
+      Me.eui_txtCcRfDenominazione.Id = "05038dc0-dbe5-41c9-8513-3116e1c83ca9"
+      Me.eui_txtCcRfDenominazione.Location = New System.Drawing.Point(113, 23)
+      Me.eui_txtCcRfDenominazione.MaxLength = 80
+      Me.eui_txtCcRfDenominazione.Name = "eui_txtCcRfDenominazione"
+      Me.eui_txtCcRfDenominazione.Size = New System.Drawing.Size(201, 21)
+      Me.eui_txtCcRfDenominazione.TabIndex = 0
+      Me.eui_txtCcRfDenominazione.TextEditorWidth = 195
+      '
+      'eui_txtCcRfNome
+      '
+      Me.eui_txtCcRfNome.Id = "7151a3b6-830f-4984-aaa5-bae7b06721ce"
+      Me.eui_txtCcRfNome.Location = New System.Drawing.Point(113, 57)
+      Me.eui_txtCcRfNome.MaxLength = 60
+      Me.eui_txtCcRfNome.Name = "eui_txtCcRfNome"
+      Me.eui_txtCcRfNome.Size = New System.Drawing.Size(201, 21)
+      Me.eui_txtCcRfNome.TabIndex = 1
+      Me.eui_txtCcRfNome.TextEditorWidth = 195
+      '
+      'Label86
+      '
+      Me.Label86.Location = New System.Drawing.Point(19, 57)
+      Me.Label86.Name = "Label86"
+      Me.Label86.Size = New System.Drawing.Size(131, 19)
+      Me.Label86.TabIndex = 2
+      Me.Label86.Text = "Nome:"
+      '
+      'Label87
+      '
+      Me.Label87.Location = New System.Drawing.Point(19, 25)
+      Me.Label87.Name = "Label87"
+      Me.Label87.Size = New System.Drawing.Size(76, 19)
+      Me.Label87.TabIndex = 0
+      Me.Label87.Text = "Denominazione:"
+      '
+      'GroupBox19
+      '
+      Me.GroupBox19.Controls.Add(Me.eui_txtCcRfIdCodice)
+      Me.GroupBox19.Controls.Add(Me.Label88)
+      Me.GroupBox19.Controls.Add(Me.eui_cmbCcRfIdPaese)
+      Me.GroupBox19.Controls.Add(Me.Label89)
+      Me.GroupBox19.Id = "bc4f4e63-6e6c-4761-8759-a915e7d573e5"
+      Me.GroupBox19.Location = New System.Drawing.Point(12, 12)
+      Me.GroupBox19.Name = "GroupBox19"
+      Me.GroupBox19.Size = New System.Drawing.Size(381, 100)
+      Me.GroupBox19.TabIndex = 12
+      Me.GroupBox19.Text = "Id Fiscale IVA"
+      '
+      'eui_txtCcRfIdCodice
+      '
+      Me.eui_txtCcRfIdCodice.Id = "d6743b80-4caf-45c5-ae24-dd2da41a5a87"
+      Me.eui_txtCcRfIdCodice.Location = New System.Drawing.Point(113, 57)
+      Me.eui_txtCcRfIdCodice.MaxLength = 28
+      Me.eui_txtCcRfIdCodice.Name = "eui_txtCcRfIdCodice"
+      Me.eui_txtCcRfIdCodice.Size = New System.Drawing.Size(201, 21)
+      Me.eui_txtCcRfIdCodice.TabIndex = 1
+      Me.eui_txtCcRfIdCodice.TextEditorWidth = 195
+      '
+      'Label88
+      '
+      Me.Label88.Location = New System.Drawing.Point(19, 57)
+      Me.Label88.Name = "Label88"
+      Me.Label88.Size = New System.Drawing.Size(131, 19)
+      Me.Label88.TabIndex = 2
+      Me.Label88.Text = "Partita IVA:"
+      '
+      'eui_cmbCcRfIdPaese
+      '
+      Me.eui_cmbCcRfIdPaese.Editable = False
+      Me.eui_cmbCcRfIdPaese.FormattingEnabled = False
+      Me.eui_cmbCcRfIdPaese.Id = "48cf304a-feb5-4f62-b50c-40ab3a755ed8"
+      Me.eui_cmbCcRfIdPaese.Items.AddRange(New Object() {" ", "AD Andorra", "AE Emirati Arabi Uniti", "AF Afghanistan", "AG Antigua e Barbuda", "AI Anguilla", "AL Albania", "AM Armenia", "AO Angola", "AQ Antartide ", "AR Argentina", "AS Samoa Americane", "AT Austria", "AU Australia", "AW Aruba", "AX Isole Åland", "AZ Azerbaigian", "BA Bosnia ed Erzegovina", "BB Barbados", "BD Bangladesh", "BE Belgio", "BF Burkina Faso", "BG Bulgaria", "BH Bahrein", "BI Burundi", "BJ Benin", "BL Saint-Barthélemy", "BM Bermuda", "BN Brunei", "BO Bolivia", "BQ Isole BES", "BR Brasile", "BS Bahamas", "BT Bhutan", "BV Isola Bouvet", "BW Botswana", "BY Bielorussia", "BZ Belize", "CA Canada", "CC Isole Cocos e Keeling", "CD Repubblica Democratica del Congo", "CF Repubblica Centrafricana", "CG Repubblica del Congo", "CH Svizzera", "CI Costa d'Avorio", "CK Isole Cook", "CL Cile", "CM Camerun", "CN Cina", "CO Colombia", "CR Costa Rica", "CU Cuba", "CV Capo Verde", "CW Curaçao", "CX Isola del Natale", "CY Cipro", "CZ Repubblica Ceca", "DE Germania", "DJ Gibuti", "DK Danimarca", "DM Dominica", "DO Repubblica Dominicana", "DZ Algeria", "EC Ecuador", "EE Estonia", "EG Egitto", "EH Sahara Occidentale", "ER Eritrea", "ES Spagna", "ET Etiopia", "FI Finlandia", "FJ Figi", "FK Isole Falkland", "FM Stati Federati di Micronesia", "FO Isole Fær Øer", "FR Francia", "GA Gabon", "GB Regno Unito", "GD Grenada", "GE Georgia", "GF Guyana francese", "GG Guernsey", "GH Ghana", "GI Gibilterra", "GL Groenlandia", "GM Gambia", "GN Guinea", "GP Guadalupa", "GQ Guinea Equatoriale", "GR Grecia", "GS Georgia del Sud e isole Sandwich meridionali", "GT Guatemala", "GU Guam", "GW Guinea-Bissau", "GY Guyana", "HK Hong Kong", "HM Isole Heard e McDonald", "HN Honduras", "HR Croazia", "HT Haiti", "HU Ungheria", "ID Indonesia", "IE Irlanda", "IL Israele", "IM Isola di Man", "IN India", "IO Territori Britannici dell'Oceano Indiano", "IQ Iraq", "IR Iran", "IS Islanda", "IT Italia", "JE Jersey", "JM Giamaica", "JO Giordania", "JP Giappone", "KE Kenya", "KG Kirghizistan", "KH Cambogia", "KI Kiribati", "KM Comore", "KN Saint Kitts e Nevis", "KP Corea del Nord", "KR Corea del Sud", "KW Kuwait", "KY Isole Cayman", "KZ Kazakistan", "LA Laos", "LB Libano", "LC Santa Lucia", "LI Liechtenstein", "LK Sri Lanka", "LR Liberia", "LS Lesotho", "LT Lituania", "LU Lussemburgo", "LV Lettonia", "LY Libia", "MA Marocco", "MC Monaco", "MD Moldavia", "ME Montenegro", "MF Saint-Martin", "MG Madagascar", "MH Isole Marshall", "MK Macedonia", "ML Mali", "MM Birmania", "MN Mongolia", "MO Macao", "MP Isole Marianne Settentrionali", "MQ Martinica", "MR Mauritania", "MS Montserrat", "MT Malta", "MU Mauritius", "MV Maldive", "MW Malawi", "MX Messico", "MY Malaysia", "MZ Mozambico", "NA Namibia", "NC Nuova Caledonia", "NE Niger", "NF Isola Norfolk", "NG Nigeria", "NI Nicaragua", "NL Paesi Bassi", "NO Norvegia", "NP Nepal", "NR Nauru", "NU Niue", "NZ Nuova Zelanda", "OM Oman", "PA Panama", "PE Perù", "PF Polinesia Francese", "PG Papua Nuova Guinea", "PH Filippine", "PK Pakistan", "PL Polonia", "PM Saint-Pierre e Miquelon", "PN Isole Pitcairn", "PR Porto Rico", "PS Stato di Palestina", "PT Portogallo", "PW Palau", "PY Paraguay", "QA Qatar", "RE Riunione", "RO Romania", "RS Serbia", "RU Russia", "RW Ruanda", "SA Arabia Saudita", "SB Isole Salomone", "SC Seychelles", "SD Sudan", "SE Svezia", "SG Singapore", "SH Sant'Elena, Isola di Ascensione e Tristan da Cunha", "SI Slovenia", "SJ Svalbard e Jan Mayen", "SK Slovacchia", "SL Sierra Leone", "SM San Marino", "SN Senegal", "SO Somalia", "SR Suriname", "SS Sudan del Sud", "ST São Tomé e Príncipe", "SV El Salvador", "SX Sint Maarten", "SY Siria", "SZ Swaziland", "TC Isole Turks e Caicos", "TD Ciad", "TF Territori Francesi del Sud", "TG Togo", "TH Thailandia", "TJ Tagikistan", "TK Tokelau", "TL Timor Est", "TM Turkmenistan", "TN Tunisia", "TO Tonga", "TR Turchia", "TT Trinidad e Tobago", "TV Tuvalu", "TW Repubblica di Cina", "TZ Tanzania", "UA Ucraina", "UG Uganda", "UM Isole minori esterne degli Stati Uniti", "US Stati Uniti d'America", "UY Uruguay", "UZ Uzbekistan", "VA Città del Vaticano", "VC Saint Vincent e Grenadine", "VE Venezuela", "VG Isole Vergini britanniche", "VI Isole Vergini americane", "VN Vietnam", "VU Vanuatu", "WF Wallis e Futuna", "WS Samoa", "YE Yemen", "YT Mayotte", "ZA Sudafrica", "ZM Zambia", "ZW Zimbabwe"})
+      Me.eui_cmbCcRfIdPaese.Location = New System.Drawing.Point(113, 23)
+      Me.eui_cmbCcRfIdPaese.Name = "eui_cmbCcRfIdPaese"
+      Me.eui_cmbCcRfIdPaese.Size = New System.Drawing.Size(201, 21)
+      Me.eui_cmbCcRfIdPaese.TabIndex = 0
+      Me.eui_cmbCcRfIdPaese.TextEditorWidth = 182
+      '
+      'Label89
+      '
+      Me.Label89.Location = New System.Drawing.Point(19, 25)
+      Me.Label89.Name = "Label89"
+      Me.Label89.Size = New System.Drawing.Size(50, 19)
+      Me.Label89.TabIndex = 0
+      Me.Label89.Text = "Paese:"
+      '
       'TabPage9
       '
       Me.TabPage9.ActiveControl = Nothing
@@ -2605,6 +2610,7 @@ Partial Class frmFatturaElettronica
       'eui_tpConvalida
       '
       Me.eui_tpConvalida.ActiveControl = Nothing
+      Me.eui_tpConvalida.Controls.Add(Me.eui_cmdConvalidaWeb)
       Me.eui_tpConvalida.Controls.Add(Me.eui_cmdSalvaErrori)
       Me.eui_tpConvalida.Controls.Add(Me.eui_cmdConvalida)
       Me.eui_tpConvalida.Controls.Add(Me.eui_txtConvalida)
@@ -2617,16 +2623,16 @@ Partial Class frmFatturaElettronica
       'eui_cmdSalvaErrori
       '
       Me.eui_cmdSalvaErrori.Id = "b3876e90-9e2d-438a-ab42-9cb94349f33f"
-      Me.eui_cmdSalvaErrori.Location = New System.Drawing.Point(696, 422)
+      Me.eui_cmdSalvaErrori.Location = New System.Drawing.Point(695, 422)
       Me.eui_cmdSalvaErrori.Name = "eui_cmdSalvaErrori"
       Me.eui_cmdSalvaErrori.Size = New System.Drawing.Size(110, 32)
-      Me.eui_cmdSalvaErrori.TabIndex = 2
+      Me.eui_cmdSalvaErrori.TabIndex = 3
       Me.eui_cmdSalvaErrori.Text = "Salva lista errori"
       '
       'eui_cmdConvalida
       '
       Me.eui_cmdConvalida.Id = "f06cd621-78bb-492f-aebb-74b0711187e1"
-      Me.eui_cmdConvalida.Location = New System.Drawing.Point(575, 422)
+      Me.eui_cmdConvalida.Location = New System.Drawing.Point(402, 422)
       Me.eui_cmdConvalida.Name = "eui_cmdConvalida"
       Me.eui_cmdConvalida.Size = New System.Drawing.Size(110, 32)
       Me.eui_cmdConvalida.TabIndex = 1
@@ -2711,6 +2717,10 @@ Partial Class frmFatturaElettronica
       'TabPage4
       '
       Me.TabPage4.ActiveControl = Nothing
+      Me.TabPage4.Controls.Add(Me.eui_cmdAnteprimaWeb)
+      Me.TabPage4.Controls.Add(Me.Label2)
+      Me.TabPage4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      Me.TabPage4.ForeColor = System.Drawing.SystemColors.ControlDark
       Me.TabPage4.KeyTip = Nothing
       Me.TabPage4.Name = "TabPage4"
       Me.TabPage4.Size = New System.Drawing.Size(812, 465)
@@ -2723,11 +2733,11 @@ Partial Class frmFatturaElettronica
       Me.eui_cmdApriCartella.ImageAlign = System.Drawing.ContentAlignment.TopCenter
       Me.eui_cmdApriCartella.Location = New System.Drawing.Point(832, 103)
       Me.eui_cmdApriCartella.Name = "eui_cmdApriCartella"
-      Me.eui_cmdApriCartella.ScreenTip.Caption = "Anteprima"
-      Me.eui_cmdApriCartella.ScreenTip.Text = "Salva e visualizza l'anteprima del documento."
+      Me.eui_cmdApriCartella.ScreenTip.Caption = "Apri cartella"
+      Me.eui_cmdApriCartella.ScreenTip.Text = "Apre la cartella contenente il file xml."
       Me.eui_cmdApriCartella.Size = New System.Drawing.Size(129, 65)
       Me.eui_cmdApriCartella.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdApriCartella.SmallImages.Images"), System.Drawing.Image))})
-      Me.eui_cmdApriCartella.TabIndex = 0
+      Me.eui_cmdApriCartella.TabIndex = 1
       Me.eui_cmdApriCartella.Text = "Apri cartella..."
       Me.eui_cmdApriCartella.TextAlign = System.Drawing.ContentAlignment.BottomCenter
       '
@@ -2737,11 +2747,11 @@ Partial Class frmFatturaElettronica
       Me.eui_cmdEsporta.ImageAlign = System.Drawing.ContentAlignment.TopCenter
       Me.eui_cmdEsporta.Location = New System.Drawing.Point(832, 28)
       Me.eui_cmdEsporta.Name = "eui_cmdEsporta"
-      Me.eui_cmdEsporta.ScreenTip.Caption = "Salva"
-      Me.eui_cmdEsporta.ScreenTip.Text = "Salva il documento."
+      Me.eui_cmdEsporta.ScreenTip.Caption = "Esporta in XML"
+      Me.eui_cmdEsporta.ScreenTip.Text = "Esporta il documento in formato XML."
       Me.eui_cmdEsporta.Size = New System.Drawing.Size(129, 65)
       Me.eui_cmdEsporta.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdEsporta.SmallImages.Images"), System.Drawing.Image))})
-      Me.eui_cmdEsporta.TabIndex = 2
+      Me.eui_cmdEsporta.TabIndex = 0
       Me.eui_cmdEsporta.Text = "Esporta in XML"
       Me.eui_cmdEsporta.TextAlign = System.Drawing.ContentAlignment.BottomCenter
       '
@@ -2751,11 +2761,11 @@ Partial Class frmFatturaElettronica
       Me.eui_cmdInvia.ImageAlign = System.Drawing.ContentAlignment.TopCenter
       Me.eui_cmdInvia.Location = New System.Drawing.Point(832, 178)
       Me.eui_cmdInvia.Name = "eui_cmdInvia"
-      Me.eui_cmdInvia.ScreenTip.Caption = "Anteprima"
-      Me.eui_cmdInvia.ScreenTip.Text = "Salva e visualizza l'anteprima del documento."
+      Me.eui_cmdInvia.ScreenTip.Caption = "Invia"
+      Me.eui_cmdInvia.ScreenTip.Text = "Invia il file xml al servizio SDI tramite e-mail. "
       Me.eui_cmdInvia.Size = New System.Drawing.Size(129, 65)
       Me.eui_cmdInvia.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdInvia.SmallImages.Images"), System.Drawing.Image))})
-      Me.eui_cmdInvia.TabIndex = 1
+      Me.eui_cmdInvia.TabIndex = 2
       Me.eui_cmdInvia.Text = "Invia"
       Me.eui_cmdInvia.TextAlign = System.Drawing.ContentAlignment.BottomCenter
       '
@@ -2799,12 +2809,57 @@ Partial Class frmFatturaElettronica
       Me.eui_lblStatoClienteDoc.TabIndex = 0
       Me.eui_lblStatoClienteDoc.Text = "Luigi Montana Spa"
       '
+      'eui_cmdConvalidaWeb
+      '
+      Me.eui_cmdConvalidaWeb.Id = "4e933d6d-de0d-4317-b0dd-c71a4214d450"
+      Me.eui_cmdConvalidaWeb.Location = New System.Drawing.Point(521, 422)
+      Me.eui_cmdConvalidaWeb.Name = "eui_cmdConvalidaWeb"
+      Me.eui_cmdConvalidaWeb.Size = New System.Drawing.Size(165, 32)
+      Me.eui_cmdConvalidaWeb.TabIndex = 2
+      Me.eui_cmdConvalidaWeb.Text = "Convalida su fatturapa.gov.it"
+      '
+      'Label2
+      '
+      Me.Label2.AutoSize = True
+      Me.Label2.BackColor = System.Drawing.Color.Transparent
+      Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      Me.Label2.ForeColor = System.Drawing.Color.Silver
+      Me.Label2.Location = New System.Drawing.Point(265, 221)
+      Me.Label2.Name = "Label2"
+      Me.Label2.Size = New System.Drawing.Size(285, 25)
+      Me.Label2.TabIndex = 16
+      Me.Label2.Text = "Anteprima non disponibile"
+      '
+      'eui_cmdAnteprimaWeb
+      '
+      Me.eui_cmdAnteprimaWeb.Id = "bd587cbd-9373-4999-8beb-bb10b825c807"
+      Me.eui_cmdAnteprimaWeb.Location = New System.Drawing.Point(639, 421)
+      Me.eui_cmdAnteprimaWeb.Name = "eui_cmdAnteprimaWeb"
+      Me.eui_cmdAnteprimaWeb.Size = New System.Drawing.Size(165, 32)
+      Me.eui_cmdAnteprimaWeb.TabIndex = 0
+      Me.eui_cmdAnteprimaWeb.Text = "Anteprima su fatturapa.gov.it"
+      '
+      'eui_cmdSalva
+      '
+      Me.eui_cmdSalva.Id = "480f1733-d999-4c61-8154-ce920719f2af"
+      Me.eui_cmdSalva.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+      Me.eui_cmdSalva.Location = New System.Drawing.Point(832, 282)
+      Me.eui_cmdSalva.Name = "eui_cmdSalva"
+      Me.eui_cmdSalva.ScreenTip.Caption = "Salva"
+      Me.eui_cmdSalva.ScreenTip.Text = "Salva i dati del documento."
+      Me.eui_cmdSalva.Size = New System.Drawing.Size(129, 65)
+      Me.eui_cmdSalva.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_cmdSalva.SmallImages.Images"), System.Drawing.Image))})
+      Me.eui_cmdSalva.TabIndex = 3
+      Me.eui_cmdSalva.Text = "Salva"
+      Me.eui_cmdSalva.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+      '
       'frmFatturaElettronica
       '
       Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
       Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(999, 570)
+      Me.ClientSize = New System.Drawing.Size(967, 529)
+      Me.Controls.Add(Me.eui_cmdSalva)
       Me.Controls.Add(Me.eui_cmdInvia)
       Me.Controls.Add(Me.eui_cmdEsporta)
       Me.Controls.Add(Me.eui_cmdApriCartella)
@@ -2828,25 +2883,6 @@ Partial Class frmFatturaElettronica
       CType(Me.eui_tpcDocumento, System.ComponentModel.ISupportInitialize).EndInit()
       Me.TabPage1.ResumeLayout(False)
       CType(Me.TabControl1, System.ComponentModel.ISupportInitialize).EndInit()
-      Me.TabPage8.ResumeLayout(False)
-      CType(Me.TabControl3, System.ComponentModel.ISupportInitialize).EndInit()
-      Me.TabPage17.ResumeLayout(False)
-      Me.TabPage17.PerformLayout()
-      Me.GroupBox12.ResumeLayout(False)
-      Me.GroupBox12.PerformLayout()
-      Me.GroupBox13.ResumeLayout(False)
-      Me.GroupBox13.PerformLayout()
-      Me.TabPage18.ResumeLayout(False)
-      Me.GroupBox14.ResumeLayout(False)
-      Me.GroupBox14.PerformLayout()
-      Me.TabPage19.ResumeLayout(False)
-      Me.GroupBox17.ResumeLayout(False)
-      Me.GroupBox17.PerformLayout()
-      Me.TabPage20.ResumeLayout(False)
-      Me.GroupBox18.ResumeLayout(False)
-      Me.GroupBox18.PerformLayout()
-      Me.GroupBox19.ResumeLayout(False)
-      Me.GroupBox19.PerformLayout()
       Me.TabPage5.ResumeLayout(False)
       Me.TabPage5.PerformLayout()
       Me.GroupBox2.ResumeLayout(False)
@@ -2883,6 +2919,25 @@ Partial Class frmFatturaElettronica
       Me.GroupBox10.PerformLayout()
       Me.GroupBox11.ResumeLayout(False)
       Me.GroupBox11.PerformLayout()
+      Me.TabPage8.ResumeLayout(False)
+      CType(Me.TabControl3, System.ComponentModel.ISupportInitialize).EndInit()
+      Me.TabPage17.ResumeLayout(False)
+      Me.TabPage17.PerformLayout()
+      Me.GroupBox12.ResumeLayout(False)
+      Me.GroupBox12.PerformLayout()
+      Me.GroupBox13.ResumeLayout(False)
+      Me.GroupBox13.PerformLayout()
+      Me.TabPage18.ResumeLayout(False)
+      Me.GroupBox14.ResumeLayout(False)
+      Me.GroupBox14.PerformLayout()
+      Me.TabPage19.ResumeLayout(False)
+      Me.GroupBox17.ResumeLayout(False)
+      Me.GroupBox17.PerformLayout()
+      Me.TabPage20.ResumeLayout(False)
+      Me.GroupBox18.ResumeLayout(False)
+      Me.GroupBox18.PerformLayout()
+      Me.GroupBox19.ResumeLayout(False)
+      Me.GroupBox19.PerformLayout()
       Me.TabPage9.ResumeLayout(False)
       Me.TabPage9.PerformLayout()
       Me.GroupBox15.ResumeLayout(False)
@@ -2896,6 +2951,8 @@ Partial Class frmFatturaElettronica
       Me.TabPage3.ResumeLayout(False)
       Me.TabPage21.ResumeLayout(False)
       Me.TabPage21.PerformLayout()
+      Me.TabPage4.ResumeLayout(False)
+      Me.TabPage4.PerformLayout()
       Me.StatusBarPane5.ResumeLayout(False)
       Me.StatusBarPane5.PerformLayout()
       Me.StatusBarPane1.ResumeLayout(False)
@@ -3145,4 +3202,8 @@ Partial Class frmFatturaElettronica
    Friend WithEvents TabPage21 As Elegant.Ui.TabPage
    Friend WithEvents eui_txtFormatoTxt As Elegant.Ui.TextBox
    Friend WithEvents eui_cmdApriFileTxt As Elegant.Ui.Button
+   Friend WithEvents eui_cmdAnteprimaWeb As Elegant.Ui.Button
+   Friend WithEvents Label2 As Label
+   Friend WithEvents eui_cmdConvalidaWeb As Elegant.Ui.Button
+   Friend WithEvents eui_cmdSalva As Elegant.Ui.Button
 End Class

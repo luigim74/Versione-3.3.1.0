@@ -2,12 +2,11 @@
 ' ***************************************************************************************************
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       29/10/2018
-' Data ultima modifica: 23/11/2018
+' Data ultima modifica: 19/12/2018
 ' Descrizione:          Form per la compilazione della Fattura elettronica con generazione file XML.
 ' Note:
 '
 ' Elenco Attivita:
-' DA_FARE: Sviluppare! Aggiungere i campi CUP, CIG ecc in Fattura.
 '
 '
 ' ***************************************************************************************************
@@ -742,23 +741,23 @@ Public Class frmFatturaElettronica
          'fatturaXlm.Body.Item(0).DatiGenerali.DatiGeneraliDocumento.Art73 = ""
 
          ' FACOLTATIVO
-         'Dim datiOrdineAcquisto As New FatturaElettronicaBody.DatiGenerali.DatiOrdineAcquisto
-         'fatturaXlm.Body.Item(0).DatiGenerali.DatiOrdineAcquisto.Add(datiOrdineAcquisto)
+         Dim datiOrdineAcquisto As New FatturaElettronicaBody.DatiGenerali.DatiOrdineAcquisto
+         fatturaXlm.Body.Item(0).DatiGenerali.DatiOrdineAcquisto.Add(datiOrdineAcquisto)
 
          ' FACOLTATIVO - formato numerico; lunghezza massima di 4 caratteri.
          'fatturaXlm.Body.Item(0).DatiGenerali.DatiOrdineAcquisto.Item(0).RiferimentoNumeroLinea.Add(0)
          ' OBBLIGATORIO - formato alfanumerico; lunghezza massima di 20 caratteri.
-         'fatturaXlm.Body.Item(0).DatiGenerali.DatiOrdineAcquisto.Item(0).IdDocumento = ""
+         fatturaXlm.Body.Item(0).DatiGenerali.DatiOrdineAcquisto.Item(0).IdDocumento = Doc.Numero
          ' FACOLTATIVO - la data deve essere rappresentata secondo il formato ISO 8601:2004, con la seguente precisione: YYYY-MM-DD.
-         'fatturaXlm.Body.Item(0).DatiGenerali.DatiOrdineAcquisto.Item(0).Data = Today.Date
+         fatturaXlm.Body.Item(0).DatiGenerali.DatiOrdineAcquisto.Item(0).Data = Doc.Data
          ' FACOLTATIVO - formato alfanumerico; lunghezza massima di 20 caratteri.
          'fatturaXlm.Body.Item(0).DatiGenerali.DatiOrdineAcquisto.Item(0).NumItem = ""
          ' FACOLTATIVO - formato alfanumerico; lunghezza massima di 100 caratteri.
-         'fatturaXlm.Body.Item(0).DatiGenerali.DatiOrdineAcquisto.Item(0).CodiceCommessaConvenzione = ""
+         fatturaXlm.Body.Item(0).DatiGenerali.DatiOrdineAcquisto.Item(0).CodiceCommessaConvenzione = Doc.CodiceCommConv_PA
          ' FACOLTATIVO - formato alfanumerico; lunghezza massima di 15 caratteri.
-         'fatturaXlm.Body.Item(0).DatiGenerali.DatiOrdineAcquisto.Item(0).CodiceCUP = ""
+         fatturaXlm.Body.Item(0).DatiGenerali.DatiOrdineAcquisto.Item(0).CodiceCUP = Doc.CodiceCUP_PA
          ' FACOLTATIVO - formato alfanumerico; lunghezza massima di 15 caratteri.
-         'fatturaXlm.Body.Item(0).DatiGenerali.DatiOrdineAcquisto.Item(0).CodiceCIG = ""
+         fatturaXlm.Body.Item(0).DatiGenerali.DatiOrdineAcquisto.Item(0).CodiceCIG = Doc.CodiceCIG_PA
 
          ' FACOLTATIVO
          'Dim datiContratto As New FatturaElettronicaBody.DatiGenerali.DatiContratto
@@ -995,34 +994,34 @@ Public Class frmFatturaElettronica
             'fatturaXlm.Body.Item(0).DatiBeniServizi.DettaglioLinee.Item(numLinea - 1).Ritenuta = ""
 
             If Convert.ToDecimal(dr.Item("AliquotaIva")) = 0 Then
-                  ' FACOLTATIVO - formato alfanumerico; lunghezza di 2 caratteri; i valori ammessi sono i seguenti:
-                  ' N1 escluse ex art.15
-                  ' N2 non soggette
-                  ' N3 non imponibili
-                  ' N4 esenti
-                  ' N5 regime del margine / IVA non esposta in fattura
-                  ' N6 inversione contabile (per le operazioni in reverse charge ovvero nei casi di autofatturazione per acquisti extra UE di servizi ovvero per importazioni di beni nei soli casi previsti)
-                  ' N7 IVA assolta In altro stato UE (vendite a distanza ex art. 40 commi 3 e 4 e art. 41 comma 1 lett. b, DL 331/93; prestazione di servizi di telecomunicazioni, tele - radiodiffusione ed elettronici ex art. 7-sexies lett. f, g, DPR 633/72 e art. 74-sexies, DPR 633/72)
-                  fatturaXlm.Body.Item(0).DatiBeniServizi.DettaglioLinee.Item(numLinea - 1).Natura = "N2"
-               End If
+               ' FACOLTATIVO - formato alfanumerico; lunghezza di 2 caratteri; i valori ammessi sono i seguenti:
+               ' N1 escluse ex art.15
+               ' N2 non soggette
+               ' N3 non imponibili
+               ' N4 esenti
+               ' N5 regime del margine / IVA non esposta in fattura
+               ' N6 inversione contabile (per le operazioni in reverse charge ovvero nei casi di autofatturazione per acquisti extra UE di servizi ovvero per importazioni di beni nei soli casi previsti)
+               ' N7 IVA assolta In altro stato UE (vendite a distanza ex art. 40 commi 3 e 4 e art. 41 comma 1 lett. b, DL 331/93; prestazione di servizi di telecomunicazioni, tele - radiodiffusione ed elettronici ex art. 7-sexies lett. f, g, DPR 633/72 e art. 74-sexies, DPR 633/72)
+               fatturaXlm.Body.Item(0).DatiBeniServizi.DettaglioLinee.Item(numLinea - 1).Natura = "N2"
+            End If
 
-               ' FACOLTATIVO - formato alfanumerico; lunghezza massima di 20 caratteri.
-               'fatturaXlm.Body.Item(0).DatiBeniServizi.DettaglioLinee.Item(numLinea - 1).RiferimentoAmministrazione = ""
+            ' FACOLTATIVO - formato alfanumerico; lunghezza massima di 20 caratteri.
+            'fatturaXlm.Body.Item(0).DatiBeniServizi.DettaglioLinee.Item(numLinea - 1).RiferimentoAmministrazione = ""
 
-               ' FACOLTATIVO
-               'Dim altriDatiGestionali As New FatturaElettronicaBody.DatiBeniServizi.AltriDatiGestionali
-               'fatturaXlm.Body.Item(0).DatiBeniServizi.DettaglioLinee.Item(numLinea - 1).AltriDatiGestionali.Add(altriDatiGestionali)
+            ' FACOLTATIVO
+            'Dim altriDatiGestionali As New FatturaElettronicaBody.DatiBeniServizi.AltriDatiGestionali
+            'fatturaXlm.Body.Item(0).DatiBeniServizi.DettaglioLinee.Item(numLinea - 1).AltriDatiGestionali.Add(altriDatiGestionali)
 
-               ' OBBLIGATORIO - formato alfanumerico; lunghezza massima di 10 caratteri.
-               'fatturaXlm.Body.Item(0).DatiBeniServizi.DettaglioLinee.Item(numLinea - 1).AltriDatiGestionali.Item(0).TipoDato = ""
-               ' FACOLTATIVO - formato alfanumerico; lunghezza massima di 60 caratteri.
-               'fatturaXlm.Body.Item(0).DatiBeniServizi.DettaglioLinee.Item(numLinea - 1).AltriDatiGestionali.Item(0).RiferimentoTesto = ""
-               ' FACOLTATIVO - formato numerico nel quale i decimali vanno separati dall'intero con il carattere '.' (punto). La sua lunghezza va da 4 a 21 caratteri.
-               'fatturaXlm.Body.Item(0).DatiBeniServizi.DettaglioLinee.Item(numLinea - 1).AltriDatiGestionali.Item(0).RiferimentoNumero = 0
-               ' FACOLTATIVO - la data deve essere rappresentata secondo il formato ISO 8601:2004, con la seguente precisione: YYYY-MM-DD.
-               'fatturaXlm.Body.Item(0).DatiBeniServizi.DettaglioLinee.Item(numLinea - 1).AltriDatiGestionali.Item(0).RiferimentoData = Today.Date
+            ' OBBLIGATORIO - formato alfanumerico; lunghezza massima di 10 caratteri.
+            'fatturaXlm.Body.Item(0).DatiBeniServizi.DettaglioLinee.Item(numLinea - 1).AltriDatiGestionali.Item(0).TipoDato = ""
+            ' FACOLTATIVO - formato alfanumerico; lunghezza massima di 60 caratteri.
+            'fatturaXlm.Body.Item(0).DatiBeniServizi.DettaglioLinee.Item(numLinea - 1).AltriDatiGestionali.Item(0).RiferimentoTesto = ""
+            ' FACOLTATIVO - formato numerico nel quale i decimali vanno separati dall'intero con il carattere '.' (punto). La sua lunghezza va da 4 a 21 caratteri.
+            'fatturaXlm.Body.Item(0).DatiBeniServizi.DettaglioLinee.Item(numLinea - 1).AltriDatiGestionali.Item(0).RiferimentoNumero = 0
+            ' FACOLTATIVO - la data deve essere rappresentata secondo il formato ISO 8601:2004, con la seguente precisione: YYYY-MM-DD.
+            'fatturaXlm.Body.Item(0).DatiBeniServizi.DettaglioLinee.Item(numLinea - 1).AltriDatiGestionali.Item(0).RiferimentoData = Today.Date
 
-               numLinea += 1
+            numLinea += 1
          Loop
 
          Dim i As Integer = 0
@@ -1874,6 +1873,17 @@ salta:
       End Try
    End Sub
 
+   Private Sub eui_cmdConvalidaWeb_Click(sender As Object, e As EventArgs) Handles eui_cmdConvalidaWeb.Click
+      Try
+         ApriSitoInternet("https://sdi.fatturapa.gov.it/SdI2FatturaPAWeb/AccediAlServizioAction.do?pagina=controlla_fattura")
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+      End Try
+   End Sub
+
+
    Private Sub eui_cmdSalvaErrori_Click(sender As Object, e As EventArgs) Handles eui_cmdSalvaErrori.Click
       Try
          ' Modifica il cursore del mouse.
@@ -1902,6 +1912,16 @@ salta:
       End Try
    End Sub
 
+   Private Sub eui_cmdAnteprimaWeb_Click(sender As Object, e As EventArgs) Handles eui_cmdAnteprimaWeb.Click
+      Try
+         ApriSitoInternet("https://sdi.fatturapa.gov.it/SdI2FatturaPAWeb/AccediAlServizioAction.do?pagina=visualizza_file_sdi")
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+      End Try
+   End Sub
+
    Private Sub eui_cmdApriCartella_Click(sender As Object, e As EventArgs) Handles eui_cmdApriCartella.Click
       Try
          ' Verifica se esiste la cartella dell'anno corrente e in caso contrario la crea.
@@ -1916,6 +1936,19 @@ salta:
          err.GestisciErrore(ex.StackTrace, ex.Message)
 
       End Try
+   End Sub
+
+   Private Sub eui_cmdInvia_Click(sender As Object, e As EventArgs) Handles eui_cmdInvia.Click
+      Try
+         ' Invia un'e-mail con allegato il documento xml generato..
+         InviaEmail(g_frmMain.LeggiPECMittente, EMAIL_SDI_FATTURA_PA, "Trasmissione Fattura elettronica", String.Empty, GeneraDirectoryNomeFileXML)
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+
    End Sub
 
    Private Sub eui_cmdTastiera_Click(sender As Object, e As EventArgs) Handles eui_cmdTastiera.Click

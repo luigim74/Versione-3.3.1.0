@@ -1717,13 +1717,15 @@ Module Procedure
          DataInst = DataInst.AddDays(NUM_GIORNI_VALUTAZIONE)
 
          If DataInst <= Today Then
-            MsgBox("Versione dimostrativa! Tempo di valutazione terminato.", MsgBoxStyle.OkOnly + MsgBoxStyle.Exclamation, NOME_PRODOTTO)
+            MessageBox.Show("Versione dimostrativa! Tempo di valutazione terminato.", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             giorniVerDemo = "0"
+
             Return False
          Else
             diffGiorni = DataInst.Subtract(Today)
-            MsgBox("Versione dimostrativa! Tempo di valutazione " & diffGiorni.Days.ToString & " giorni.", MsgBoxStyle.OkOnly + MsgBoxStyle.Exclamation, NOME_PRODOTTO)
+            MessageBox.Show("Versione dimostrativa! Tempo di valutazione " & diffGiorni.Days.ToString & " giorni.", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             giorniVerDemo = diffGiorni.Days.ToString
+
             Return True
          End If
 
@@ -3547,7 +3549,7 @@ Module Procedure
 
    End Sub
 
-   Public Sub InviaEmail(ByVal destinatario As String)
+   Public Sub InviaEmail(ByVal mittente As String, ByVal destinatario As String, ByVal oggetto As String, ByVal messaggio As String, ByVal allegato As String)
       Try
          If destinatario = String.Empty Then
             MessageBox.Show("Il campo 'E-mail' è vuoto! Si consiglia di inserire un indirizzo di posta elettronica valido e riprovare.", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
@@ -3556,7 +3558,7 @@ Module Procedure
             Cursor.Current = Cursors.AppStarting
 
             ' Apre la finestra Invio e-mail per un nuovo messaggio.
-            Dim frmEmail As New InvioEmail(g_frmMain.LeggiEmailMittente, destinatario, String.Empty, String.Empty, String.Empty, String.Empty, String.Empty, String.Empty, String.Empty)
+            Dim frmEmail As New InvioEmail(mittente, destinatario, oggetto, String.Empty, allegato, String.Empty, String.Empty, String.Empty, String.Empty)
 
             frmEmail.Tag = String.Empty
             frmEmail.ShowDialog()
