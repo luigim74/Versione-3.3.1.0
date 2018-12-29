@@ -384,7 +384,7 @@ Module Dichiarazioni
    Public Const TITOLO_FINESTRA_ELENCO_SCHEDINE_PS As String = "Elenco Schedine P.S."
 
    ' GESTIONE DOCUMENTI.
-   Public Const TITOLO_FINESTRA_ELENCO_DOCUMENTI As String = "Elenco Documenti"
+   Public Const TITOLO_FINESTRA_ELENCO_DOCUMENTI As String = "Elenco documenti di Vendita"
 
    ' E-MAIL.
    Public Const TITOLO_FINESTRA_ELENCO_EMAIL As String = "Elenco E-mail inviate"
@@ -824,6 +824,7 @@ Module Dichiarazioni
     ' Chiave per la generazione della licenza.
    Public Const CHIAVE_ATTIVAZIONE As String = "C1DM0" ' Vecchia non utilizzata.
    Public Const CHIAVE_ATTIVAZIONE_HOSPITALITY As String = "HS3M0"
+   Public Const CHIAVE_ATTIVAZIONE_HOTEL As String = "HM311"
    Public Const CHIAVE_ATTIVAZIONE_RISTORANTE As String = "CS3M1"
    Public Const CHIAVE_ATTIVAZIONE_BAR As String = "BS3M2"
    Public Const CHIAVE_ATTIVAZIONE_MAGAZZINO As String = "MG3M3"
@@ -834,14 +835,14 @@ Module Dichiarazioni
    Public Const CHIAVE_ATTIVAZIONE_CENTRO_SPORTIVO As String = "SS3M8"
    Public Const CHIAVE_ATTIVAZIONE_REG_CASSA As String = "RC3M9"
    Public Const CHIAVE_ATTIVAZIONE_PREN_ONLINE As String = "PO310"
-   Public Const CHIAVE_ATTIVAZIONE_HOTEL As String = "HM311"
+   Public Const CHIAVE_ATTIVAZIONE_FATT_ELETTRONICA As String = "FE3PA"
 
    ' Codice di accesso per attivare la versione dimostrativa del software. (NON PIU' UTILIZZATA)
    Public Const CHIAVE_ACCESSO_DEMO As String = "0274M F30HS M1083 0ZY3I 90DH2"
    ' Testo che compare nel titolo del programma.
    Public Const VER_DEMO As String = "VERSIONE DIMOSTRATIVA"
    ' Numero di serie del prodotto. (VERSIONE_FILE - VERSIONE_PRODOTTO - DATA_RILASCIO - ORA_RILASCIO)
-   Public Const NUMERO_SERIE As String = "03310-003-1608018-01045"
+   Public Const NUMERO_SERIE As String = "03310-003-3112018-01529"
    ' Numero di elementi inseribili per la versione demo.
    Public Const NUM_ELEMENTI_DEMO As Integer = 16
    ' File per la data di installazione.
@@ -1055,6 +1056,7 @@ Module Dichiarazioni
       Public Const NOME_PENDRIVE_PORTABLE As String = "PEN DRIVE PORTABLE"
       Public Const NOME_PENDRIVE_RECOVERY As String = "PEN DRIVE RECOVERY"
       Public Const NOME_REG_CASSA As String = "REGISTRATORI DI CASSA"
+      Public Const NOME_FATT_ELETTRONICA As String = "FATTURAZIONE ELETTRONICA"
 
       Public Const NOME_BAR As String = "BAR SOLUTION"
 
@@ -1065,7 +1067,7 @@ Module Dichiarazioni
       Public Const NOME_HOTEL As String = "HOTEL SOLUTION"
       Public Const NOME_CAMPING As String = "CAMPING SOLUTION"
       Public Const NOME_BEACH As String = "BEACH SOLUTION"
-      Public Const NOME_BEUTY As String = "BEUTY SOLUTION"
+      Public Const NOME_BEAUTY As String = "BEAUTY SOLUTION"
       Public Const NOME_SPORTING As String = "SPORTING CLUB SOLUTION"
 
       Public Const NOME_RETAIL As String = "RETAIL SOLUTION"
@@ -1078,6 +1080,7 @@ Module Dichiarazioni
       Public Const NOME_PENDRIVE_PORTABLE_CONFIG As String = "KeyAccessPenDrivePortable"
       Public Const NOME_PENDRIVE_RECOVERY_CONFIG As String = "KeyAccessPenDriveRecovery"
       Public Const NOME_REG_CASSA_CONFIG As String = "KeyAccessRegCassa"
+      Public Const NOME_FATT_ELETTRONICA_CONFIG As String = "KeyAccessFattElettronica"
 
       Public Const NOME_BAR_CONFIG As String = "KeyAccessBar"
 
@@ -1088,7 +1091,7 @@ Module Dichiarazioni
       Public Const NOME_HOTEL_CONFIG As String = "KeyAccessHotel"
       Public Const NOME_CAMPING_CONFIG As String = "KeyAccessCamping"
       Public Const NOME_BEACH_CONFIG As String = "KeyAccessBeach"
-      Public Const NOME_BEUTY_CONFIG As String = "KeyAccessBeuty"
+      Public Const NOME_BEAUTY_CONFIG As String = "KeyAccessBeauty"
       Public Const NOME_SPORTING_CONFIG As String = "KeyAccessSporting"
 
       Public Const NOME_RETAIL_CONFIG As String = "KeyAccessRetail"
@@ -1101,6 +1104,7 @@ Module Dichiarazioni
       Public PenDrivePortable As Boolean
       Public PenDriveRecovery As Boolean
       Public RegCassa As Boolean
+      Public FattElettronica As Boolean
 
       Public Bar As Boolean
 

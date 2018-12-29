@@ -1785,6 +1785,25 @@ salta:
       End Try
    End Sub
 
+   Private Sub frmFatturaElettronica_Resize(sender As Object, e As EventArgs) Handles Me.Resize
+      Try
+         ' Larghezza minima.
+         If Me.Width <= 985 Then
+            Me.Width = 985
+         End If
+
+         ' Altezza minima.
+         If Me.Height <= 565 Then
+            Me.Height = 565
+         End If
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+      End Try
+   End Sub
+
    Private Sub eui_cmdEsporta_Click(sender As Object, e As EventArgs) Handles eui_cmdEsporta.Click
       Try
          ' Convalida i campi necessari per creare il nome del file xml.
@@ -1882,7 +1901,6 @@ salta:
          err.GestisciErrore(ex.StackTrace, ex.Message)
       End Try
    End Sub
-
 
    Private Sub eui_cmdSalvaErrori_Click(sender As Object, e As EventArgs) Handles eui_cmdSalvaErrori.Click
       Try

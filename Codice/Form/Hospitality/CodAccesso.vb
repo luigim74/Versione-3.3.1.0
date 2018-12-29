@@ -393,6 +393,10 @@ Public Class CodAccesso
             chiaveAttivazione = GeneraChiaveLicenza(CHIAVE_ATTIVAZIONE_REG_CASSA)
             nomeChiaveConfig = Modulo.NOME_REG_CASSA_CONFIG
 
+         Case Modulo.NOME_FATT_ELETTRONICA
+            chiaveAttivazione = GeneraChiaveLicenza(CHIAVE_ATTIVAZIONE_FATT_ELETTRONICA)
+            nomeChiaveConfig = Modulo.NOME_FATT_ELETTRONICA_CONFIG
+
       End Select
 
       txtChiave1.Focus()

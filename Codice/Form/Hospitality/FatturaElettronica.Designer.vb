@@ -246,6 +246,7 @@ Partial Class frmFatturaElettronica
       Me.eui_cmbSoggettoEmittente = New Elegant.Ui.ComboBox()
       Me.Label75 = New Elegant.Ui.Label()
       Me.eui_tpConvalida = New Elegant.Ui.TabPage()
+      Me.eui_cmdConvalidaWeb = New Elegant.Ui.Button()
       Me.eui_cmdSalvaErrori = New Elegant.Ui.Button()
       Me.eui_cmdConvalida = New Elegant.Ui.Button()
       Me.eui_txtConvalida = New Elegant.Ui.TextBox()
@@ -256,6 +257,8 @@ Partial Class frmFatturaElettronica
       Me.eui_txtFormatoTxt = New Elegant.Ui.TextBox()
       Me.eui_cmdApriFileTxt = New Elegant.Ui.Button()
       Me.TabPage4 = New Elegant.Ui.TabPage()
+      Me.eui_cmdAnteprimaWeb = New Elegant.Ui.Button()
+      Me.Label2 = New System.Windows.Forms.Label()
       Me.eui_cmdApriCartella = New Elegant.Ui.Button()
       Me.eui_cmdEsporta = New Elegant.Ui.Button()
       Me.eui_cmdInvia = New Elegant.Ui.Button()
@@ -263,9 +266,6 @@ Partial Class frmFatturaElettronica
       Me.eui_lblStatoDataDoc = New Elegant.Ui.Label()
       Me.StatusBarPane1 = New Elegant.Ui.StatusBarPane()
       Me.eui_lblStatoClienteDoc = New Elegant.Ui.Label()
-      Me.eui_cmdConvalidaWeb = New Elegant.Ui.Button()
-      Me.Label2 = New System.Windows.Forms.Label()
-      Me.eui_cmdAnteprimaWeb = New Elegant.Ui.Button()
       Me.eui_cmdSalva = New Elegant.Ui.Button()
       Me.StatusBar1.SuspendLayout()
       Me.StatusBarNotificationsArea1.SuspendLayout()
@@ -331,10 +331,10 @@ Partial Class frmFatturaElettronica
       Me.StatusBar1.Controls.Add(Me.StatusBarControlsArea1)
       Me.StatusBar1.ControlsArea = Me.StatusBarControlsArea1
       Me.StatusBar1.Dock = System.Windows.Forms.DockStyle.Bottom
-      Me.StatusBar1.Location = New System.Drawing.Point(0, 507)
+      Me.StatusBar1.Location = New System.Drawing.Point(0, 516)
       Me.StatusBar1.Name = "StatusBar1"
       Me.StatusBar1.NotificationsArea = Me.StatusBarNotificationsArea1
-      Me.StatusBar1.Size = New System.Drawing.Size(967, 22)
+      Me.StatusBar1.Size = New System.Drawing.Size(976, 22)
       Me.StatusBar1.TabIndex = 4
       Me.StatusBar1.Text = "StatusBar1"
       '
@@ -347,7 +347,7 @@ Partial Class frmFatturaElettronica
       Me.StatusBarNotificationsArea1.MaximumSize = New System.Drawing.Size(0, 22)
       Me.StatusBarNotificationsArea1.MinimumSize = New System.Drawing.Size(0, 22)
       Me.StatusBarNotificationsArea1.Name = "StatusBarNotificationsArea1"
-      Me.StatusBarNotificationsArea1.Size = New System.Drawing.Size(895, 22)
+      Me.StatusBarNotificationsArea1.Size = New System.Drawing.Size(904, 22)
       Me.StatusBarNotificationsArea1.TabIndex = 1
       '
       'StatusBarPane2
@@ -440,7 +440,7 @@ Partial Class frmFatturaElettronica
       '
       Me.StatusBarControlsArea1.Controls.Add(Me.StatusBarPane3)
       Me.StatusBarControlsArea1.Dock = System.Windows.Forms.DockStyle.Right
-      Me.StatusBarControlsArea1.Location = New System.Drawing.Point(895, 0)
+      Me.StatusBarControlsArea1.Location = New System.Drawing.Point(904, 0)
       Me.StatusBarControlsArea1.MaximumSize = New System.Drawing.Size(0, 22)
       Me.StatusBarControlsArea1.MinimumSize = New System.Drawing.Size(0, 22)
       Me.StatusBarControlsArea1.Name = "StatusBarControlsArea1"
@@ -458,6 +458,7 @@ Partial Class frmFatturaElettronica
       '
       'eui_cmdTastiera
       '
+      Me.eui_cmdTastiera.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.eui_cmdTastiera.Id = "295ab16e-e7c5-4477-a8b5-fc8631e2896a"
       Me.eui_cmdTastiera.Location = New System.Drawing.Point(832, 430)
       Me.eui_cmdTastiera.Name = "eui_cmdTastiera"
@@ -470,6 +471,7 @@ Partial Class frmFatturaElettronica
       '
       'eui_cmdAnnulla
       '
+      Me.eui_cmdAnnulla.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.eui_cmdAnnulla.DialogResult = System.Windows.Forms.DialogResult.Cancel
       Me.eui_cmdAnnulla.Id = "73a9f32c-e7b8-41a5-b071-7351d12b4ba9"
       Me.eui_cmdAnnulla.ImageAlign = System.Drawing.ContentAlignment.TopCenter
@@ -485,6 +487,9 @@ Partial Class frmFatturaElettronica
       '
       'eui_tpcDocumento
       '
+      Me.eui_tpcDocumento.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.eui_tpcDocumento.EndScrollButtonVisible = True
       Me.eui_tpcDocumento.EqualTabHeight = True
       Me.eui_tpcDocumento.EqualTabWidth = True
@@ -508,6 +513,9 @@ Partial Class frmFatturaElettronica
       '
       'TabControl1
       '
+      Me.TabControl1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.TabControl1.Location = New System.Drawing.Point(6, 4)
       Me.TabControl1.Name = "TabControl1"
       Me.TabControl1.SelectedTabPage = Me.TabPage5
@@ -724,6 +732,9 @@ Partial Class frmFatturaElettronica
       '
       'TabControl2
       '
+      Me.TabControl2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.TabControl2.Location = New System.Drawing.Point(8, 6)
       Me.TabControl2.Name = "TabControl2"
       Me.TabControl2.SelectedTabPage = Me.TabPage11
@@ -1768,6 +1779,9 @@ Partial Class frmFatturaElettronica
       '
       'TabControl3
       '
+      Me.TabControl3.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.TabControl3.Location = New System.Drawing.Point(8, 9)
       Me.TabControl3.Name = "TabControl3"
       Me.TabControl3.SelectedTabPage = Me.TabPage17
@@ -2620,8 +2634,19 @@ Partial Class frmFatturaElettronica
       Me.eui_tpConvalida.TabIndex = 1
       Me.eui_tpConvalida.Text = "Convalida"
       '
+      'eui_cmdConvalidaWeb
+      '
+      Me.eui_cmdConvalidaWeb.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+      Me.eui_cmdConvalidaWeb.Id = "4e933d6d-de0d-4317-b0dd-c71a4214d450"
+      Me.eui_cmdConvalidaWeb.Location = New System.Drawing.Point(521, 422)
+      Me.eui_cmdConvalidaWeb.Name = "eui_cmdConvalidaWeb"
+      Me.eui_cmdConvalidaWeb.Size = New System.Drawing.Size(165, 32)
+      Me.eui_cmdConvalidaWeb.TabIndex = 2
+      Me.eui_cmdConvalidaWeb.Text = "Convalida su fatturapa.gov.it"
+      '
       'eui_cmdSalvaErrori
       '
+      Me.eui_cmdSalvaErrori.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.eui_cmdSalvaErrori.Id = "b3876e90-9e2d-438a-ab42-9cb94349f33f"
       Me.eui_cmdSalvaErrori.Location = New System.Drawing.Point(695, 422)
       Me.eui_cmdSalvaErrori.Name = "eui_cmdSalvaErrori"
@@ -2631,6 +2656,7 @@ Partial Class frmFatturaElettronica
       '
       'eui_cmdConvalida
       '
+      Me.eui_cmdConvalida.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.eui_cmdConvalida.Id = "f06cd621-78bb-492f-aebb-74b0711187e1"
       Me.eui_cmdConvalida.Location = New System.Drawing.Point(402, 422)
       Me.eui_cmdConvalida.Name = "eui_cmdConvalida"
@@ -2640,6 +2666,9 @@ Partial Class frmFatturaElettronica
       '
       'eui_txtConvalida
       '
+      Me.eui_txtConvalida.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.eui_txtConvalida.Id = "fbd1d89a-a47f-4e31-b0e7-81fc65da197c"
       Me.eui_txtConvalida.Location = New System.Drawing.Point(1, 0)
       Me.eui_txtConvalida.Multiline = True
@@ -2663,6 +2692,9 @@ Partial Class frmFatturaElettronica
       '
       'WebBrowser1
       '
+      Me.WebBrowser1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.WebBrowser1.Location = New System.Drawing.Point(3, 1)
       Me.WebBrowser1.MinimumSize = New System.Drawing.Size(20, 20)
       Me.WebBrowser1.Name = "WebBrowser1"
@@ -2671,6 +2703,7 @@ Partial Class frmFatturaElettronica
       '
       'eui_cmdCopiaPercorso
       '
+      Me.eui_cmdCopiaPercorso.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.eui_cmdCopiaPercorso.Id = "60ebbd95-62c4-4451-90f1-4270387cc16d"
       Me.eui_cmdCopiaPercorso.Location = New System.Drawing.Point(694, 426)
       Me.eui_cmdCopiaPercorso.Name = "eui_cmdCopiaPercorso"
@@ -2693,6 +2726,9 @@ Partial Class frmFatturaElettronica
       '
       'eui_txtFormatoTxt
       '
+      Me.eui_txtFormatoTxt.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.eui_txtFormatoTxt.Id = "329cfc75-ea3b-4e9e-9bf1-a485dd548600"
       Me.eui_txtFormatoTxt.Location = New System.Drawing.Point(1, 1)
       Me.eui_txtFormatoTxt.Multiline = True
@@ -2705,6 +2741,7 @@ Partial Class frmFatturaElettronica
       '
       'eui_cmdApriFileTxt
       '
+      Me.eui_cmdApriFileTxt.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.eui_cmdApriFileTxt.Id = "396425fd-fa39-42d2-8af8-2039c1104cdd"
       Me.eui_cmdApriFileTxt.Location = New System.Drawing.Point(694, 426)
       Me.eui_cmdApriFileTxt.Name = "eui_cmdApriFileTxt"
@@ -2727,8 +2764,31 @@ Partial Class frmFatturaElettronica
       Me.TabPage4.TabIndex = 3
       Me.TabPage4.Text = "HTML - (Anteprima)"
       '
+      'eui_cmdAnteprimaWeb
+      '
+      Me.eui_cmdAnteprimaWeb.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+      Me.eui_cmdAnteprimaWeb.Id = "bd587cbd-9373-4999-8beb-bb10b825c807"
+      Me.eui_cmdAnteprimaWeb.Location = New System.Drawing.Point(639, 421)
+      Me.eui_cmdAnteprimaWeb.Name = "eui_cmdAnteprimaWeb"
+      Me.eui_cmdAnteprimaWeb.Size = New System.Drawing.Size(165, 32)
+      Me.eui_cmdAnteprimaWeb.TabIndex = 0
+      Me.eui_cmdAnteprimaWeb.Text = "Anteprima su fatturapa.gov.it"
+      '
+      'Label2
+      '
+      Me.Label2.AutoSize = True
+      Me.Label2.BackColor = System.Drawing.Color.Transparent
+      Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+      Me.Label2.ForeColor = System.Drawing.Color.Silver
+      Me.Label2.Location = New System.Drawing.Point(265, 221)
+      Me.Label2.Name = "Label2"
+      Me.Label2.Size = New System.Drawing.Size(285, 25)
+      Me.Label2.TabIndex = 16
+      Me.Label2.Text = "Anteprima non disponibile"
+      '
       'eui_cmdApriCartella
       '
+      Me.eui_cmdApriCartella.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.eui_cmdApriCartella.Id = "26a292a3-ef05-45a1-8f74-0996002fd2fc"
       Me.eui_cmdApriCartella.ImageAlign = System.Drawing.ContentAlignment.TopCenter
       Me.eui_cmdApriCartella.Location = New System.Drawing.Point(832, 103)
@@ -2743,6 +2803,7 @@ Partial Class frmFatturaElettronica
       '
       'eui_cmdEsporta
       '
+      Me.eui_cmdEsporta.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.eui_cmdEsporta.Id = "5d8dd0e2-1657-41ae-af95-d93b67be2536"
       Me.eui_cmdEsporta.ImageAlign = System.Drawing.ContentAlignment.TopCenter
       Me.eui_cmdEsporta.Location = New System.Drawing.Point(832, 28)
@@ -2757,6 +2818,7 @@ Partial Class frmFatturaElettronica
       '
       'eui_cmdInvia
       '
+      Me.eui_cmdInvia.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.eui_cmdInvia.Id = "e098d816-fac2-4c14-bb8e-ded39b6e9ceb"
       Me.eui_cmdInvia.ImageAlign = System.Drawing.ContentAlignment.TopCenter
       Me.eui_cmdInvia.Location = New System.Drawing.Point(832, 178)
@@ -2809,38 +2871,9 @@ Partial Class frmFatturaElettronica
       Me.eui_lblStatoClienteDoc.TabIndex = 0
       Me.eui_lblStatoClienteDoc.Text = "Luigi Montana Spa"
       '
-      'eui_cmdConvalidaWeb
-      '
-      Me.eui_cmdConvalidaWeb.Id = "4e933d6d-de0d-4317-b0dd-c71a4214d450"
-      Me.eui_cmdConvalidaWeb.Location = New System.Drawing.Point(521, 422)
-      Me.eui_cmdConvalidaWeb.Name = "eui_cmdConvalidaWeb"
-      Me.eui_cmdConvalidaWeb.Size = New System.Drawing.Size(165, 32)
-      Me.eui_cmdConvalidaWeb.TabIndex = 2
-      Me.eui_cmdConvalidaWeb.Text = "Convalida su fatturapa.gov.it"
-      '
-      'Label2
-      '
-      Me.Label2.AutoSize = True
-      Me.Label2.BackColor = System.Drawing.Color.Transparent
-      Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.Label2.ForeColor = System.Drawing.Color.Silver
-      Me.Label2.Location = New System.Drawing.Point(265, 221)
-      Me.Label2.Name = "Label2"
-      Me.Label2.Size = New System.Drawing.Size(285, 25)
-      Me.Label2.TabIndex = 16
-      Me.Label2.Text = "Anteprima non disponibile"
-      '
-      'eui_cmdAnteprimaWeb
-      '
-      Me.eui_cmdAnteprimaWeb.Id = "bd587cbd-9373-4999-8beb-bb10b825c807"
-      Me.eui_cmdAnteprimaWeb.Location = New System.Drawing.Point(639, 421)
-      Me.eui_cmdAnteprimaWeb.Name = "eui_cmdAnteprimaWeb"
-      Me.eui_cmdAnteprimaWeb.Size = New System.Drawing.Size(165, 32)
-      Me.eui_cmdAnteprimaWeb.TabIndex = 0
-      Me.eui_cmdAnteprimaWeb.Text = "Anteprima su fatturapa.gov.it"
-      '
       'eui_cmdSalva
       '
+      Me.eui_cmdSalva.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.eui_cmdSalva.Id = "480f1733-d999-4c61-8154-ce920719f2af"
       Me.eui_cmdSalva.ImageAlign = System.Drawing.ContentAlignment.TopCenter
       Me.eui_cmdSalva.Location = New System.Drawing.Point(832, 282)
@@ -2852,13 +2885,14 @@ Partial Class frmFatturaElettronica
       Me.eui_cmdSalva.TabIndex = 3
       Me.eui_cmdSalva.Text = "Salva"
       Me.eui_cmdSalva.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+      Me.eui_cmdSalva.Visible = False
       '
       'frmFatturaElettronica
       '
       Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
       Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(967, 529)
+      Me.ClientSize = New System.Drawing.Size(976, 538)
       Me.Controls.Add(Me.eui_cmdSalva)
       Me.Controls.Add(Me.eui_cmdInvia)
       Me.Controls.Add(Me.eui_cmdEsporta)

@@ -146,7 +146,7 @@ Public Class frmElencoAcquisti
       Me.ToolBar1.Location = New System.Drawing.Point(0, 0)
       Me.ToolBar1.Name = "ToolBar1"
       Me.ToolBar1.ShowToolTips = True
-      Me.ToolBar1.Size = New System.Drawing.Size(582, 26)
+      Me.ToolBar1.Size = New System.Drawing.Size(590, 26)
       Me.ToolBar1.TabIndex = 2
       Me.ToolBar1.TextAlign = System.Windows.Forms.ToolBarTextAlign.Right
       Me.ToolBar1.Wrappable = False
@@ -286,7 +286,7 @@ Public Class frmElencoAcquisti
       Me.DataGrid1.Location = New System.Drawing.Point(0, 56)
       Me.DataGrid1.Name = "DataGrid1"
       Me.DataGrid1.ReadOnly = True
-      Me.DataGrid1.Size = New System.Drawing.Size(574, 268)
+      Me.DataGrid1.Size = New System.Drawing.Size(590, 284)
       Me.DataGrid1.TabIndex = 1
       '
       'Panel1
@@ -299,14 +299,14 @@ Public Class frmElencoAcquisti
       Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
       Me.Panel1.Location = New System.Drawing.Point(0, 26)
       Me.Panel1.Name = "Panel1"
-      Me.Panel1.Size = New System.Drawing.Size(582, 30)
+      Me.Panel1.Size = New System.Drawing.Size(590, 30)
       Me.Panel1.TabIndex = 0
       '
       'CampoRicerca
       '
       Me.CampoRicerca.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.CampoRicerca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-      Me.CampoRicerca.Location = New System.Drawing.Point(440, 8)
+      Me.CampoRicerca.Location = New System.Drawing.Point(448, 8)
       Me.CampoRicerca.Name = "CampoRicerca"
       Me.CampoRicerca.Size = New System.Drawing.Size(136, 21)
       Me.CampoRicerca.TabIndex = 1
@@ -317,7 +317,7 @@ Public Class frmElencoAcquisti
       Me.Label2.AutoSize = True
       Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.Label2.ForeColor = System.Drawing.SystemColors.Control
-      Me.Label2.Location = New System.Drawing.Point(351, 8)
+      Me.Label2.Location = New System.Drawing.Point(359, 8)
       Me.Label2.Name = "Label2"
       Me.Label2.Size = New System.Drawing.Size(85, 15)
       Me.Label2.TabIndex = 8
@@ -340,7 +340,7 @@ Public Class frmElencoAcquisti
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.TestoRicerca.Location = New System.Drawing.Point(115, 8)
       Me.TestoRicerca.Name = "TestoRicerca"
-      Me.TestoRicerca.Size = New System.Drawing.Size(222, 20)
+      Me.TestoRicerca.Size = New System.Drawing.Size(230, 20)
       Me.TestoRicerca.TabIndex = 0
       '
       'PrintDialog1
@@ -357,9 +357,9 @@ Public Class frmElencoAcquisti
       Me.Panel2.Controls.Add(Me.txtTotImporto)
       Me.Panel2.Controls.Add(Me.Label6)
       Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
-      Me.Panel2.Location = New System.Drawing.Point(0, 334)
+      Me.Panel2.Location = New System.Drawing.Point(0, 342)
       Me.Panel2.Name = "Panel2"
-      Me.Panel2.Size = New System.Drawing.Size(582, 32)
+      Me.Panel2.Size = New System.Drawing.Size(590, 32)
       Me.Panel2.TabIndex = 13
       '
       'txtTotImporto
@@ -370,7 +370,7 @@ Public Class frmElencoAcquisti
       Me.txtTotImporto.Cursor = System.Windows.Forms.Cursors.IBeam
       Me.txtTotImporto.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.txtTotImporto.ForeColor = System.Drawing.Color.Red
-      Me.txtTotImporto.Location = New System.Drawing.Point(438, 6)
+      Me.txtTotImporto.Location = New System.Drawing.Point(446, 6)
       Me.txtTotImporto.MaxLength = 0
       Me.txtTotImporto.Name = "txtTotImporto"
       Me.txtTotImporto.ReadOnly = True
@@ -385,7 +385,7 @@ Public Class frmElencoAcquisti
       Me.Label6.AutoSize = True
       Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.Label6.ForeColor = System.Drawing.Color.White
-      Me.Label6.Location = New System.Drawing.Point(329, 8)
+      Me.Label6.Location = New System.Drawing.Point(337, 8)
       Me.Label6.Name = "Label6"
       Me.Label6.Size = New System.Drawing.Size(105, 15)
       Me.Label6.TabIndex = 16
@@ -400,7 +400,7 @@ Public Class frmElencoAcquisti
       '
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(582, 366)
+      Me.ClientSize = New System.Drawing.Size(590, 374)
       Me.Controls.Add(Me.Panel2)
       Me.Controls.Add(Me.Panel1)
       Me.Controls.Add(Me.DataGrid1)

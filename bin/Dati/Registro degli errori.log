@@ -499,3 +499,310 @@ Nome parametro: index"
    in Hospitality_Solution.frmFatturaElettronica.CaricaDatiCliente() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 1646"
 "
 "
+"*** 22/12/2018 - 14:41:53 ***"
+"- DESCRIZIONE ERRORE: appSettings section not found"
+"- NOME PROCEDURA:    in AppConfig.GetValue(String key)
+   in Hospitality_Solution.frmMain.VerificaProdottoAttivo() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\Main.vb:riga 13616"
+"
+"
+"*** 22/12/2018 - 14:42:11 ***"
+"- DESCRIZIONE ERRORE: appSettings section not found"
+"- NOME PROCEDURA:    in AppConfig.GetValue(String key)
+   in Hospitality_Solution.frmMain.VerificaProdottoAttivo() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\Main.vb:riga 13616"
+"
+"
+"*** 22/12/2018 - 14:42:45 ***"
+"- DESCRIZIONE ERRORE: Index e length devono fare riferimento a una posizione nella stringa.
+Nome parametro: length"
+"- NOME PROCEDURA:    in System.String.Substring(Int32 startIndex, Int32 length)
+   in Hospitality_Solution.frmModuloReg.frmModuloReg_Load(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\ModuloReg.vb:riga 1239"
+"
+"
+"*** 22/12/2018 - 14:43:25 ***"
+"- DESCRIZIONE ERRORE: appSettings section not found"
+"- NOME PROCEDURA:    in AppConfig.GetValue(String key)
+   in Hospitality_Solution.frmMain.VerificaProdottoAttivo() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\Main.vb:riga 13616"
+"
+"
+"*** 22/12/2018 - 14:43:32 ***"
+"- DESCRIZIONE ERRORE: appSettings section not found"
+"- NOME PROCEDURA:    in AppConfig.GetValue(String key)
+   in Hospitality_Solution.frmMain.VerificaProdottoAttivo() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\Main.vb:riga 13616"
+"
+"
+"*** 29/12/2018 - 15:19:20 ***"
+"- DESCRIZIONE ERRORE: appSettings section not found"
+"- NOME PROCEDURA:    in AppConfig.GetValue(String key)
+   in Hospitality_Solution.frmMain.ImpostaModuli() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\Main.vb:riga 13268"
+"
+"
+"*** 29/12/2018 - 15:24:37 ***"
+"- DESCRIZIONE ERRORE: startIndex non può essere maggiore della lunghezza della stringa.
+Nome parametro: startIndex"
+"- NOME PROCEDURA:    in System.String.Substring(Int32 startIndex, Int32 length)
+   in Hospitality_Solution.frmModuloReg.frmModuloReg_Load(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\ModuloReg.vb:riga 1343"
+"
+"
+"*** 29/12/2018 - 15:25:06 ***"
+"- DESCRIZIONE ERRORE: startIndex non può essere maggiore della lunghezza della stringa.
+Nome parametro: startIndex"
+"- NOME PROCEDURA:    in System.String.Substring(Int32 startIndex, Int32 length)
+   in Hospitality_Solution.frmModuloReg.frmModuloReg_Load(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\ModuloReg.vb:riga 1343"
+"
+"
+"*** 29/12/2018 - 15:33:08 ***"
+"- DESCRIZIONE ERRORE: startIndex non può essere maggiore della lunghezza della stringa.
+Nome parametro: startIndex"
+"- NOME PROCEDURA:    in System.String.Substring(Int32 startIndex, Int32 length)
+   in Hospitality_Solution.frmModuloReg.frmModuloReg_Load(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\ModuloReg.vb:riga 1343"
+"
+"
+"*** 29/12/2018 - 17:25:53 ***"
+"- DESCRIZIONE ERRORE: Impossibile attivare i vincoli. Una o più righe contengono valori che violano il vincolo non-null, unique o foreign-key."
+"- NOME PROCEDURA:    in System.Data.DataSet.EnableConstraints()
+   in System.Data.DataSet.set_EnforceConstraints(Boolean value)
+   in System.Data.DataTable.EndLoadData()
+   in System.Data.Common.DataAdapter.FillFromReader(DataSet dataset, DataTable datatable, String srcTable, DataReaderContainer dataReader, Int32 startRecord, Int32 maxRecords, DataColumn parentChapterColumn, Object parentChapterValue)
+   in System.Data.Common.DataAdapter.Fill(DataSet dataSet, String srcTable, IDataReader dataReader, Int32 startRecord, Int32 maxRecords)
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, String srcTable)
+   in Hospitality_Solution.frmDocumento.AnteprimaDiStampa() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\Documento.vb:riga 2591"
+"
+"
+"*** 29/12/2018 - 17:26:27 ***"
+"- DESCRIZIONE ERRORE: Impossibile attivare i vincoli. Una o più righe contengono valori che violano il vincolo non-null, unique o foreign-key."
+"- NOME PROCEDURA:    in System.Data.DataSet.EnableConstraints()
+   in System.Data.DataSet.set_EnforceConstraints(Boolean value)
+   in System.Data.DataTable.EndLoadData()
+   in System.Data.Common.DataAdapter.FillFromReader(DataSet dataset, DataTable datatable, String srcTable, DataReaderContainer dataReader, Int32 startRecord, Int32 maxRecords, DataColumn parentChapterColumn, Object parentChapterValue)
+   in System.Data.Common.DataAdapter.Fill(DataSet dataSet, String srcTable, IDataReader dataReader, Int32 startRecord, Int32 maxRecords)
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, String srcTable)
+   in Hospitality_Solution.frmDocumento.AnteprimaDiStampa() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\Documento.vb:riga 2591"
+"
+"
+"*** 29/12/2018 - 17:26:54 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.frmDocumento.CalcolaImportoTotaleIva() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\Documento.vb:riga 1630"
+"
+"
+"*** 29/12/2018 - 17:26:58 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.frmDocumento.CalcolaImportoTotaleIva() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\Documento.vb:riga 1630"
+"
+"
+"*** 29/12/2018 - 17:26:59 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.frmDocumento.CalcolaImportoTotaleIva() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\Documento.vb:riga 1630"
+"
+"
+"*** 29/12/2018 - 17:27:00 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.frmDocumento.CalcolaImportoTotaleIva() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\Documento.vb:riga 1630"
+"
+"
+"*** 29/12/2018 - 17:27:01 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.frmDocumento.CalcolaImportoTotaleIva() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\Documento.vb:riga 1630"
+"
+"
+"*** 29/12/2018 - 17:27:01 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.frmDocumento.CalcolaImportoTotaleIva() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\Documento.vb:riga 1630"
+"
+"
+"*** 29/12/2018 - 17:27:02 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.frmDocumento.CalcolaImportoTotaleIva() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\Documento.vb:riga 1630"
+"
+"
+"*** 29/12/2018 - 17:27:03 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.frmDocumento.CalcolaImportoTotaleIva() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\Documento.vb:riga 1630"
+"
+"
+"*** 29/12/2018 - 17:27:04 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.frmDocumento.CalcolaImportoTotaleIva() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\Documento.vb:riga 1630"
+"
+"
+"*** 29/12/2018 - 17:27:05 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.frmDocumento.CalcolaImportoTotaleIva() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\Documento.vb:riga 1630"
+"
+"
+"*** 29/12/2018 - 17:27:05 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.frmDocumento.CalcolaImportoTotaleIva() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\Documento.vb:riga 1630"
+"
+"
+"*** 29/12/2018 - 17:27:06 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.frmDocumento.CalcolaImportoTotaleIva() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\Documento.vb:riga 1630"
+"
+"
+"*** 29/12/2018 - 17:27:06 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.frmDocumento.CalcolaImportoTotaleIva() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\Documento.vb:riga 1630"
+"
+"
+"*** 29/12/2018 - 17:27:07 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.frmDocumento.CalcolaImportoTotaleIva() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\Documento.vb:riga 1630"
+"
+"
+"*** 29/12/2018 - 17:27:37 ***"
+"- DESCRIZIONE ERRORE: Impossibile attivare i vincoli. Una o più righe contengono valori che violano il vincolo non-null, unique o foreign-key."
+"- NOME PROCEDURA:    in System.Data.DataSet.EnableConstraints()
+   in System.Data.DataSet.set_EnforceConstraints(Boolean value)
+   in System.Data.DataTable.EndLoadData()
+   in System.Data.Common.DataAdapter.FillFromReader(DataSet dataset, DataTable datatable, String srcTable, DataReaderContainer dataReader, Int32 startRecord, Int32 maxRecords, DataColumn parentChapterColumn, Object parentChapterValue)
+   in System.Data.Common.DataAdapter.Fill(DataSet dataSet, String srcTable, IDataReader dataReader, Int32 startRecord, Int32 maxRecords)
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, String srcTable)
+   in Hospitality_Solution.frmDocumento.AnteprimaDiStampa() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\Documento.vb:riga 2591"
+"
+"
+"*** 29/12/2018 - 17:37:01 ***"
+"- DESCRIZIONE ERRORE: Impossibile attivare i vincoli. Una o più righe contengono valori che violano il vincolo non-null, unique o foreign-key."
+"- NOME PROCEDURA:    in System.Data.DataSet.EnableConstraints()
+   in System.Data.DataSet.set_EnforceConstraints(Boolean value)
+   in System.Data.DataTable.EndLoadData()
+   in System.Data.Common.DataAdapter.FillFromReader(DataSet dataset, DataTable datatable, String srcTable, DataReaderContainer dataReader, Int32 startRecord, Int32 maxRecords, DataColumn parentChapterColumn, Object parentChapterValue)
+   in System.Data.Common.DataAdapter.Fill(DataSet dataSet, String srcTable, IDataReader dataReader, Int32 startRecord, Int32 maxRecords)
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, String srcTable)
+   in Hospitality_Solution.frmDocumento.AnteprimaDiStampa() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\Documento.vb:riga 2591"
+"
+"
+"*** 29/12/2018 - 17:47:01 ***"
+"- DESCRIZIONE ERRORE: Impossibile attivare i vincoli. Una o più righe contengono valori che violano il vincolo non-null, unique o foreign-key."
+"- NOME PROCEDURA:    in System.Data.DataSet.EnableConstraints()
+   in System.Data.DataSet.set_EnforceConstraints(Boolean value)
+   in System.Data.DataTable.EndLoadData()
+   in System.Data.Common.DataAdapter.FillFromReader(DataSet dataset, DataTable datatable, String srcTable, DataReaderContainer dataReader, Int32 startRecord, Int32 maxRecords, DataColumn parentChapterColumn, Object parentChapterValue)
+   in System.Data.Common.DataAdapter.Fill(DataSet dataSet, String srcTable, IDataReader dataReader, Int32 startRecord, Int32 maxRecords)
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, String srcTable)
+   in Hospitality_Solution.frmDocumento.AnteprimaDiStampa() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\Documento.vb:riga 2591"
+"
+"
+"*** 29/12/2018 - 17:47:47 ***"
+"- DESCRIZIONE ERRORE: Impossibile attivare i vincoli. Una o più righe contengono valori che violano il vincolo non-null, unique o foreign-key."
+"- NOME PROCEDURA:    in System.Data.DataSet.EnableConstraints()
+   in System.Data.DataSet.set_EnforceConstraints(Boolean value)
+   in System.Data.DataTable.EndLoadData()
+   in System.Data.Common.DataAdapter.FillFromReader(DataSet dataset, DataTable datatable, String srcTable, DataReaderContainer dataReader, Int32 startRecord, Int32 maxRecords, DataColumn parentChapterColumn, Object parentChapterValue)
+   in System.Data.Common.DataAdapter.Fill(DataSet dataSet, String srcTable, IDataReader dataReader, Int32 startRecord, Int32 maxRecords)
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, String srcTable)
+   in Hospitality_Solution.frmDocumento.AnteprimaDiStampa() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\Documento.vb:riga 2591"
+"
+"
+"*** 29/12/2018 - 17:55:40 ***"
+"- DESCRIZIONE ERRORE: Impossibile attivare i vincoli. Una o più righe contengono valori che violano il vincolo non-null, unique o foreign-key."
+"- NOME PROCEDURA:    in System.Data.DataSet.EnableConstraints()
+   in System.Data.DataSet.set_EnforceConstraints(Boolean value)
+   in System.Data.DataTable.EndLoadData()
+   in System.Data.Common.DataAdapter.FillFromReader(DataSet dataset, DataTable datatable, String srcTable, DataReaderContainer dataReader, Int32 startRecord, Int32 maxRecords, DataColumn parentChapterColumn, Object parentChapterValue)
+   in System.Data.Common.DataAdapter.Fill(DataSet dataSet, String srcTable, IDataReader dataReader, Int32 startRecord, Int32 maxRecords)
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, String srcTable)
+   in Hospitality_Solution.frmDocumento.AnteprimaDiStampa() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\Documento.vb:riga 2591"
+"
+"
+"*** 29/12/2018 - 18:13:08 ***"
+"- DESCRIZIONE ERRORE: Impossibile attivare i vincoli. Una o più righe contengono valori che violano il vincolo non-null, unique o foreign-key."
+"- NOME PROCEDURA:    in System.Data.DataSet.EnableConstraints()
+   in System.Data.DataSet.set_EnforceConstraints(Boolean value)
+   in System.Data.DataTable.EndLoadData()
+   in System.Data.Common.DataAdapter.FillFromReader(DataSet dataset, DataTable datatable, String srcTable, DataReaderContainer dataReader, Int32 startRecord, Int32 maxRecords, DataColumn parentChapterColumn, Object parentChapterValue)
+   in System.Data.Common.DataAdapter.Fill(DataSet dataSet, String srcTable, IDataReader dataReader, Int32 startRecord, Int32 maxRecords)
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, String srcTable)
+   in Hospitality_Solution.frmDocumento.AnteprimaDiStampa() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\Documento.vb:riga 2591"
+"
+"
+"*** 29/12/2018 - 18:23:50 ***"
+"- DESCRIZIONE ERRORE: Impossibile attivare i vincoli. Una o più righe contengono valori che violano il vincolo non-null, unique o foreign-key."
+"- NOME PROCEDURA:    in System.Data.DataSet.EnableConstraints()
+   in System.Data.DataSet.set_EnforceConstraints(Boolean value)
+   in System.Data.DataTable.EndLoadData()
+   in System.Data.Common.DataAdapter.FillFromReader(DataSet dataset, DataTable datatable, String srcTable, DataReaderContainer dataReader, Int32 startRecord, Int32 maxRecords, DataColumn parentChapterColumn, Object parentChapterValue)
+   in System.Data.Common.DataAdapter.Fill(DataSet dataSet, String srcTable, IDataReader dataReader, Int32 startRecord, Int32 maxRecords)
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, String srcTable)
+   in Hospitality_Solution.ElencoSchedinePS.AnteprimaDiStampaSchedina(String nomeDoc) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hotel\ElencoSchedinePS.vb:riga 1086"
+"
+"
+"*** 29/12/2018 - 18:24:45 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.DataModIstatC59.eui_cmdOk_Click(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hotel\DataModIstatC59.vb:riga 54"
+"
+"
+"*** 29/12/2018 - 18:24:53 ***"
+"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
+"- NOME PROCEDURA:    in Hospitality_Solution.DataModIstatC59.eui_cmdOk_Click(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hotel\DataModIstatC59.vb:riga 54"
+"
+"
+"*** 29/12/2018 - 18:43:44 ***"
+"- DESCRIZIONE ERRORE: Impossibile attivare i vincoli. Una o più righe contengono valori che violano il vincolo non-null, unique o foreign-key."
+"- NOME PROCEDURA:    in System.Data.DataSet.EnableConstraints()
+   in System.Data.DataSet.set_EnforceConstraints(Boolean value)
+   in System.Data.DataTable.EndLoadData()
+   in System.Data.Common.DataAdapter.FillFromReader(DataSet dataset, DataTable datatable, String srcTable, DataReaderContainer dataReader, Int32 startRecord, Int32 maxRecords, DataColumn parentChapterColumn, Object parentChapterValue)
+   in System.Data.Common.DataAdapter.Fill(DataSet dataSet, String srcTable, IDataReader dataReader, Int32 startRecord, Int32 maxRecords)
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, String srcTable)
+   in Hospitality_Solution.frmDocumento.AnteprimaDiStampa() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\Documento.vb:riga 2591"
+"
+"
+"*** 29/12/2018 - 18:46:23 ***"
+"- DESCRIZIONE ERRORE: Impossibile attivare i vincoli. Una o più righe contengono valori che violano il vincolo non-null, unique o foreign-key."
+"- NOME PROCEDURA:    in System.Data.DataSet.EnableConstraints()
+   in System.Data.DataSet.set_EnforceConstraints(Boolean value)
+   in System.Data.DataTable.EndLoadData()
+   in System.Data.Common.DataAdapter.FillFromReader(DataSet dataset, DataTable datatable, String srcTable, DataReaderContainer dataReader, Int32 startRecord, Int32 maxRecords, DataColumn parentChapterColumn, Object parentChapterValue)
+   in System.Data.Common.DataAdapter.Fill(DataSet dataSet, String srcTable, IDataReader dataReader, Int32 startRecord, Int32 maxRecords)
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, String srcTable)
+   in Hospitality_Solution.frmDocumento.AnteprimaDiStampa() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\Documento.vb:riga 2591"
+"
+"
+"*** 29/12/2018 - 18:50:17 ***"
+"- DESCRIZIONE ERRORE: Impossibile attivare i vincoli. Una o più righe contengono valori che violano il vincolo non-null, unique o foreign-key."
+"- NOME PROCEDURA:    in System.Data.DataSet.EnableConstraints()
+   in System.Data.DataSet.set_EnforceConstraints(Boolean value)
+   in System.Data.DataTable.EndLoadData()
+   in System.Data.Common.DataAdapter.FillFromReader(DataSet dataset, DataTable datatable, String srcTable, DataReaderContainer dataReader, Int32 startRecord, Int32 maxRecords, DataColumn parentChapterColumn, Object parentChapterValue)
+   in System.Data.Common.DataAdapter.Fill(DataSet dataSet, String srcTable, IDataReader dataReader, Int32 startRecord, Int32 maxRecords)
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, String srcTable)
+   in Hospitality_Solution.frmDocumento.AnteprimaDiStampa() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\Documento.vb:riga 2591"
+"
+"
+"*** 29/12/2018 - 18:54:22 ***"
+"- DESCRIZIONE ERRORE: Impossibile attivare i vincoli. Una o più righe contengono valori che violano il vincolo non-null, unique o foreign-key."
+"- NOME PROCEDURA:    in System.Data.DataSet.EnableConstraints()
+   in System.Data.DataSet.set_EnforceConstraints(Boolean value)
+   in System.Data.DataTable.EndLoadData()
+   in System.Data.Common.DataAdapter.FillFromReader(DataSet dataset, DataTable datatable, String srcTable, DataReaderContainer dataReader, Int32 startRecord, Int32 maxRecords, DataColumn parentChapterColumn, Object parentChapterValue)
+   in System.Data.Common.DataAdapter.Fill(DataSet dataSet, String srcTable, IDataReader dataReader, Int32 startRecord, Int32 maxRecords)
+   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, String srcTable)
+   in Hospitality_Solution.frmDocumento.AnteprimaDiStampa() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\Documento.vb:riga 2591"
+"
+"

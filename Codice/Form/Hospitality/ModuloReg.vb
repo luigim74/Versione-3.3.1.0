@@ -1,8 +1,15 @@
-' Nome form:            frmClienti
+#Region " DATI FILE.VB "
+' **********************************************************************************************
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       07/01/2006
-' Data ultima modifica: 23/06/2006
-' Descrizione:          Anagrafica Clienti.
+' Data ultima modifica: 22/12/2018
+' Descrizione:          Form per la compilazione del modulo di registrazione licenza.
+' Note:
+'
+' Elenco Attivita:
+'
+' ***********************************************************************************************
+#End Region
 
 Option Strict Off
 Option Explicit On 
@@ -97,6 +104,7 @@ Public Class frmModuloReg
    Friend WithEvents eui_cmdCancella As Elegant.Ui.Button
    Friend WithEvents eui_cmdInvia As Elegant.Ui.Button
    Public WithEvents Label29 As System.Windows.Forms.Label
+   Friend WithEvents cmdSalva As Elegant.Ui.Button
    Public WithEvents Label20 As System.Windows.Forms.Label
    <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
       Me.components = New System.ComponentModel.Container()
@@ -154,6 +162,7 @@ Public Class frmModuloReg
       Me.eui_cmdCancella = New Elegant.Ui.Button()
       Me.eui_cmdAnnulla = New Elegant.Ui.Button()
       Me.Label29 = New System.Windows.Forms.Label()
+      Me.cmdSalva = New Elegant.Ui.Button()
       Me.SuspendLayout()
       '
       'ImageList1
@@ -868,24 +877,24 @@ Public Class frmModuloReg
       '
       Me.eui_cmdInvia.Id = "4424ad4a-5dcb-4688-86a5-b03c625020b5"
       Me.eui_cmdInvia.KeyTip = "I"
-      Me.eui_cmdInvia.Location = New System.Drawing.Point(408, 440)
+      Me.eui_cmdInvia.Location = New System.Drawing.Point(304, 440)
       Me.eui_cmdInvia.Name = "eui_cmdInvia"
       Me.eui_cmdInvia.ScreenTip.Caption = "Invia e-mail"
       Me.eui_cmdInvia.ScreenTip.Text = "Invia la richiesta di attivazione del software tramite e-mail"
       Me.eui_cmdInvia.Size = New System.Drawing.Size(96, 32)
-      Me.eui_cmdInvia.TabIndex = 49
+      Me.eui_cmdInvia.TabIndex = 16
       Me.eui_cmdInvia.Text = "&Invia e-mail"
       '
       'eui_cmdCancella
       '
       Me.eui_cmdCancella.Id = "e7b200a2-0075-47e4-ba44-cdb79973bfdf"
       Me.eui_cmdCancella.KeyTip = "C"
-      Me.eui_cmdCancella.Location = New System.Drawing.Point(512, 440)
+      Me.eui_cmdCancella.Location = New System.Drawing.Point(408, 440)
       Me.eui_cmdCancella.Name = "eui_cmdCancella"
       Me.eui_cmdCancella.ScreenTip.Caption = "Cancella tutto"
       Me.eui_cmdCancella.ScreenTip.Text = "Cancella il contenuto di tutte le caselle"
       Me.eui_cmdCancella.Size = New System.Drawing.Size(96, 32)
-      Me.eui_cmdCancella.TabIndex = 50
+      Me.eui_cmdCancella.TabIndex = 17
       Me.eui_cmdCancella.Text = "&Cancella tutto"
       '
       'eui_cmdAnnulla
@@ -898,7 +907,7 @@ Public Class frmModuloReg
       Me.eui_cmdAnnulla.ScreenTip.Caption = "Annulla"
       Me.eui_cmdAnnulla.ScreenTip.Text = "Annulla l'operazione e chiude la finestra"
       Me.eui_cmdAnnulla.Size = New System.Drawing.Size(96, 32)
-      Me.eui_cmdAnnulla.TabIndex = 51
+      Me.eui_cmdAnnulla.TabIndex = 19
       Me.eui_cmdAnnulla.Text = "&Annulla"
       '
       'Label29
@@ -914,13 +923,27 @@ Public Class frmModuloReg
       Me.Label29.TabIndex = 52
       Me.Label29.Text = "*"
       '
+      'cmdSalva
+      '
+      Me.cmdSalva.DialogResult = System.Windows.Forms.DialogResult.OK
+      Me.cmdSalva.Id = "0c170bc1-1dc6-4a22-a6cd-fbc342b48ddb"
+      Me.cmdSalva.KeyTip = "A"
+      Me.cmdSalva.Location = New System.Drawing.Point(512, 440)
+      Me.cmdSalva.Name = "cmdSalva"
+      Me.cmdSalva.ScreenTip.Caption = "Salva"
+      Me.cmdSalva.ScreenTip.Text = "Salva i dati e chiude la finestra"
+      Me.cmdSalva.Size = New System.Drawing.Size(96, 32)
+      Me.cmdSalva.TabIndex = 18
+      Me.cmdSalva.Text = "&Salva"
+      '
       'frmModuloReg
       '
       Me.AcceptButton = Me.eui_cmdInvia
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
       Me.CancelButton = Me.eui_cmdAnnulla
-      Me.ClientSize = New System.Drawing.Size(727, 485)
+      Me.ClientSize = New System.Drawing.Size(723, 479)
+      Me.Controls.Add(Me.cmdSalva)
       Me.Controls.Add(Me.Label29)
       Me.Controls.Add(Me.eui_cmdAnnulla)
       Me.Controls.Add(Me.eui_cmdCancella)
@@ -1105,6 +1128,85 @@ Public Class frmModuloReg
       End Try
    End Function
 
+   Private Sub SalvaDatiRegistrazione()
+      Try
+         ' Modifica il cursore del mouse.
+         Cursor.Current = Cursors.AppStarting
+
+         If txtNome.Text = String.Empty Then
+            MessageBox.Show("Campo 'Nome e Cognome' è vuoto!", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1)
+            Me.DialogResult = DialogResult.None
+            Exit Sub
+         End If
+         If txtVia.Text = String.Empty Then
+            MessageBox.Show("Campo 'Via e numero' è vuoto!", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1)
+            Me.DialogResult = DialogResult.None
+            Exit Sub
+         End If
+         If txtCittà.Text = String.Empty Then
+            MessageBox.Show("Campo 'Città' è vuoto!", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1)
+            Me.DialogResult = DialogResult.None
+            Exit Sub
+         End If
+         If txtCap.Text = String.Empty Then
+            MessageBox.Show("Campo 'CAP' è vuoto!", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1)
+            Me.DialogResult = DialogResult.None
+            Exit Sub
+         End If
+         If txtProv.Text = String.Empty Then
+            MessageBox.Show("Campo 'Provincia' è vuoto!", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1)
+            Me.DialogResult = DialogResult.None
+            Exit Sub
+         End If
+         If txtTelefono.Text = String.Empty Then
+            MessageBox.Show("Campo 'Telefono' è vuoto!", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1)
+            Me.DialogResult = DialogResult.None
+            Exit Sub
+         End If
+         If txtEmail.Text = String.Empty Then
+            MessageBox.Show("Campo 'E-mail' è vuoto!", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1)
+            Me.DialogResult = DialogResult.None
+            Exit Sub
+         End If
+
+         ' Salva i dati dell'utente / azienda nel file di configurazione.
+         DatiConfig = New AppConfig
+         DatiConfig.ConfigType = ConfigFileType.AppConfig
+         DatiConfig.SetValue("RagioneSociale", txtRagSoc.Text)
+         DatiConfig.SetValue("Nome", txtNome.Text)
+         DatiConfig.SetValue("Via", txtVia.Text)
+         DatiConfig.SetValue("Città", txtCittà.Text)
+         DatiConfig.SetValue("Cap", txtCap.Text)
+         DatiConfig.SetValue("Provincia", txtProv.Text)
+         DatiConfig.SetValue("Telefono", txtTelefono.Text)
+         DatiConfig.SetValue("Fax", txtFax.Text)
+         DatiConfig.SetValue("Email", txtEmail.Text)
+         DatiConfig.SetValue("Piva", txtPiva.Text)
+
+         ' Salva i dati del rivenditore nel file di configurazione.
+         DatiConfig.SetValue("RagioneSocialeRiv", txtRagSocRiv.Text)
+         DatiConfig.SetValue("NomeRiv", txtNomeRiv.Text)
+         DatiConfig.SetValue("TelefonoRiv", txtTelefonoRiv.Text)
+         DatiConfig.SetValue("EmailRiv", txtEmailRiv.Text)
+         DatiConfig.SetValue("PivaRiv", txtPivaRiv.Text)
+
+         Me.DialogResult = Windows.Forms.DialogResult.Cancel
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+         Me.DialogResult = Windows.Forms.DialogResult.Abort
+
+      Finally
+         ' Visualizza un messaggio nella barra di stato.
+         g_frmMain.eui_Informazioni.Text = g_frmMain.LeggiDatiRivenditore()
+
+         ' Modifica il cursore del mouse.
+         Cursor.Current = Cursors.Default
+      End Try
+   End Sub
+
    Private Sub InviaDatiRegistrazione()
       Try
          ' Modifica il cursore del mouse.
@@ -1167,33 +1269,34 @@ Public Class frmModuloReg
          DatiConfig.SetValue("EmailRiv", txtEmailRiv.Text)
          DatiConfig.SetValue("PivaRiv", txtPivaRiv.Text)
 
+
          Dim nomeMailServer As String = NOME_MAIL_SERVER_SMTP
          Dim eMailDestinatario As String = EMAIL_ATTIVAZIONE_A
          Dim eMailMittente As String = txtEmail.Text
 
          Dim oggetto As String = EMAIL_ATTIVAZIONE_OGGETTO & nomeModulo
 
-         Dim corpoMessaggio As String = "DATI UTENTE: " & vbNewLine & vbNewLine & _
-                                        "RAGIONE SOCIALE: " & txtRagSoc.Text & vbNewLine & _
-                                        "NOME E COGNOME: " & txtNome.Text & vbNewLine & _
-                                        "VIA E NUMERO: " & txtVia.Text & vbNewLine & _
-                                        "CITTA': " & txtCittà.Text & vbNewLine & _
-                                        "CAP: " & txtCap.Text & vbNewLine & _
-                                        "PROVINCIA: " & txtProv.Text & vbNewLine & _
-                                        "TELEFONO: " & txtTelefono.Text & vbNewLine & _
-                                        "FAX: " & txtFax.Text & vbNewLine & _
-                                        "E-MAIL: " & txtEmail.Text & vbNewLine & _
-                                        "PARTITA IVA: " & txtPiva.Text & vbNewLine & vbNewLine & _
-                                        "DATI RIVENDITORE: " & vbNewLine & vbNewLine & _
-                                        "RAGIONE SOCIALE: " & txtRagSocRiv.Text & vbNewLine & _
-                                        "NOME E COGNOME: " & txtNomeRiv.Text & vbNewLine & _
-                                        "TELEFONO: " & txtTelefonoRiv.Text & vbNewLine & _
-                                        "E-MAIL: " & txtEmailRiv.Text & vbNewLine & _
-                                        "PARTITA IVA: " & txtPivaRiv.Text & vbNewLine & vbNewLine & _
-                                        "NOTE: " & txtNote.Text & vbNewLine & vbNewLine & _
-                                        "NUMERO DI SERIE: " & NUMERO_SERIE & vbNewLine & _
-                                        "VERSIONE PRODOTTO: " & FileVersionInfo.GetVersionInfo(GetExecutingAssembly.Location).ProductVersion & vbNewLine & _
-                                        "NOME MODULO: " & nomeModulo & vbNewLine & _
+         Dim corpoMessaggio As String = "DATI UTENTE: " & vbNewLine & vbNewLine &
+                                        "RAGIONE SOCIALE: " & txtRagSoc.Text & vbNewLine &
+                                        "NOME E COGNOME: " & txtNome.Text & vbNewLine &
+                                        "VIA E NUMERO: " & txtVia.Text & vbNewLine &
+                                        "CITTA': " & txtCittà.Text & vbNewLine &
+                                        "CAP: " & txtCap.Text & vbNewLine &
+                                        "PROVINCIA: " & txtProv.Text & vbNewLine &
+                                        "TELEFONO: " & txtTelefono.Text & vbNewLine &
+                                        "FAX: " & txtFax.Text & vbNewLine &
+                                        "E-MAIL: " & txtEmail.Text & vbNewLine &
+                                        "PARTITA IVA: " & txtPiva.Text & vbNewLine & vbNewLine &
+                                        "DATI RIVENDITORE: " & vbNewLine & vbNewLine &
+                                        "RAGIONE SOCIALE: " & txtRagSocRiv.Text & vbNewLine &
+                                        "NOME E COGNOME: " & txtNomeRiv.Text & vbNewLine &
+                                        "TELEFONO: " & txtTelefonoRiv.Text & vbNewLine &
+                                        "E-MAIL: " & txtEmailRiv.Text & vbNewLine &
+                                        "PARTITA IVA: " & txtPivaRiv.Text & vbNewLine & vbNewLine &
+                                        "NOTE: " & txtNote.Text & vbNewLine & vbNewLine &
+                                        "NUMERO DI SERIE: " & NUMERO_SERIE & vbNewLine &
+                                        "VERSIONE PRODOTTO: " & FileVersionInfo.GetVersionInfo(GetExecutingAssembly.Location).ProductVersion & vbNewLine &
+                                        "NOME MODULO: " & nomeModulo & vbNewLine &
                                         "ID: " & OffuscaChiave(chiaveAttivazione)
 
          ' Nel caso si verifica l'errore di invio e-mail passa i dati al gestore degli errori.
@@ -1304,6 +1407,17 @@ Public Class frmModuloReg
       'br.Dispose()
    End Sub
 
+   Private Sub cmdSalva_Click(sender As Object, e As EventArgs) Handles cmdSalva.Click
+      Try
+         SalvaDatiRegistrazione()
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+      End Try
+
+   End Sub
+
    Private Sub eui_cmdAnnulla_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles eui_cmdAnnulla.Click
       Me.Close()
    End Sub
@@ -1342,12 +1456,6 @@ Public Class frmModuloReg
       Try
          InviaDatiRegistrazione()
 
-         'Dim Web As New Varie.WebSolution
-         'Dim allegato(-1) As String
-
-         'Web.createEmail(Application.StartupPath & "\Dati\" & EMAIL_ATTIVAZIONE_NOME_FILE, EMAIL_DA, EMAIL_ATTIVAZIONE_A, EMAIL_ATTIVAZIONE_OGGETTO & NOME_PRODOTTO, testoEmail, allegato)
-         'Process.Start(Application.StartupPath & "\Dati\" & EMAIL_ATTIVAZIONE_NOME_FILE)
-
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
          err.GestisciErrore(ex.StackTrace, ex.Message)
@@ -1382,4 +1490,5 @@ Public Class frmModuloReg
       e.Handled = CConvalida.DigitaSoloNumeri(e.KeyChar)
 
    End Sub
+
 End Class

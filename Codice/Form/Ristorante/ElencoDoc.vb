@@ -196,7 +196,7 @@ Public Class ElencoDoc
       Me.DataGrid1.Location = New System.Drawing.Point(0, 34)
       Me.DataGrid1.Name = "DataGrid1"
       Me.DataGrid1.ReadOnly = True
-      Me.DataGrid1.Size = New System.Drawing.Size(634, 298)
+      Me.DataGrid1.Size = New System.Drawing.Size(650, 313)
       Me.DataGrid1.TabIndex = 0
       '
       'Panel1
@@ -213,7 +213,7 @@ Public Class ElencoDoc
       Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
       Me.Panel1.Location = New System.Drawing.Point(0, 0)
       Me.Panel1.Name = "Panel1"
-      Me.Panel1.Size = New System.Drawing.Size(642, 34)
+      Me.Panel1.Size = New System.Drawing.Size(650, 34)
       Me.Panel1.TabIndex = 0
       '
       'eui_cmbCampoRicerca
@@ -222,7 +222,7 @@ Public Class ElencoDoc
       Me.eui_cmbCampoRicerca.Editable = False
       Me.eui_cmbCampoRicerca.FormattingEnabled = False
       Me.eui_cmbCampoRicerca.Id = "6e85627c-5d62-4010-971d-8de73ae45222"
-      Me.eui_cmbCampoRicerca.Location = New System.Drawing.Point(498, 7)
+      Me.eui_cmbCampoRicerca.Location = New System.Drawing.Point(506, 7)
       Me.eui_cmbCampoRicerca.Name = "eui_cmbCampoRicerca"
       Me.eui_cmbCampoRicerca.Size = New System.Drawing.Size(134, 21)
       Me.eui_cmbCampoRicerca.TabIndex = 1
@@ -235,7 +235,7 @@ Public Class ElencoDoc
       Me.eui_txtTestoRicerca.Id = "bb5a861b-2fcf-4573-8803-b69d17c915f7"
       Me.eui_txtTestoRicerca.Location = New System.Drawing.Point(114, 7)
       Me.eui_txtTestoRicerca.Name = "eui_txtTestoRicerca"
-      Me.eui_txtTestoRicerca.Size = New System.Drawing.Size(281, 21)
+      Me.eui_txtTestoRicerca.Size = New System.Drawing.Size(289, 21)
       Me.eui_txtTestoRicerca.TabIndex = 0
       Me.eui_txtTestoRicerca.TextEditorWidth = 529
       '
@@ -243,7 +243,7 @@ Public Class ElencoDoc
       '
       Me.dtpAl.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.dtpAl.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.dtpAl.Location = New System.Drawing.Point(458, 40)
+      Me.dtpAl.Location = New System.Drawing.Point(466, 40)
       Me.dtpAl.Name = "dtpAl"
       Me.dtpAl.Size = New System.Drawing.Size(174, 20)
       Me.dtpAl.TabIndex = 55670
@@ -254,7 +254,7 @@ Public Class ElencoDoc
       '
       Me.dtpDal.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.dtpDal.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.dtpDal.Location = New System.Drawing.Point(242, 40)
+      Me.dtpDal.Location = New System.Drawing.Point(250, 40)
       Me.dtpDal.MaxDate = New Date(9998, 12, 1, 0, 0, 0, 0)
       Me.dtpDal.Name = "dtpDal"
       Me.dtpDal.Size = New System.Drawing.Size(174, 20)
@@ -268,7 +268,7 @@ Public Class ElencoDoc
       Me.lblAl.AutoSize = True
       Me.lblAl.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.lblAl.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-      Me.lblAl.Location = New System.Drawing.Point(434, 40)
+      Me.lblAl.Location = New System.Drawing.Point(442, 40)
       Me.lblAl.Name = "lblAl"
       Me.lblAl.Size = New System.Drawing.Size(23, 15)
       Me.lblAl.TabIndex = 55672
@@ -282,7 +282,7 @@ Public Class ElencoDoc
       Me.lblDal.AutoSize = True
       Me.lblDal.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.lblDal.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-      Me.lblDal.Location = New System.Drawing.Point(210, 40)
+      Me.lblDal.Location = New System.Drawing.Point(218, 40)
       Me.lblDal.Name = "lblDal"
       Me.lblDal.Size = New System.Drawing.Size(33, 15)
       Me.lblDal.TabIndex = 55671
@@ -296,7 +296,7 @@ Public Class ElencoDoc
       Me.lblCampo.AutoSize = True
       Me.lblCampo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.lblCampo.ForeColor = System.Drawing.Color.White
-      Me.lblCampo.Location = New System.Drawing.Point(409, 8)
+      Me.lblCampo.Location = New System.Drawing.Point(417, 8)
       Me.lblCampo.Name = "lblCampo"
       Me.lblCampo.Size = New System.Drawing.Size(85, 15)
       Me.lblCampo.TabIndex = 8
@@ -335,9 +335,9 @@ Public Class ElencoDoc
       Me.Panel2.Controls.Add(Me.Label3)
       Me.Panel2.Controls.Add(Me.Label6)
       Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
-      Me.Panel2.Location = New System.Drawing.Point(0, 340)
+      Me.Panel2.Location = New System.Drawing.Point(0, 348)
       Me.Panel2.Name = "Panel2"
-      Me.Panel2.Size = New System.Drawing.Size(642, 50)
+      Me.Panel2.Size = New System.Drawing.Size(650, 50)
       Me.Panel2.TabIndex = 13
       '
       'eui_txtBuoni
@@ -345,7 +345,7 @@ Public Class ElencoDoc
       Me.eui_txtBuoni.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.eui_txtBuoni.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.eui_txtBuoni.Id = "b350a5b8-b563-4150-b00a-eab48f81095a"
-      Me.eui_txtBuoni.Location = New System.Drawing.Point(530, 20)
+      Me.eui_txtBuoni.Location = New System.Drawing.Point(538, 20)
       Me.eui_txtBuoni.Name = "eui_txtBuoni"
       Me.eui_txtBuoni.ReadOnly = True
       Me.eui_txtBuoni.Size = New System.Drawing.Size(102, 21)
@@ -359,7 +359,7 @@ Public Class ElencoDoc
       Me.eui_txtSospeso.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.eui_txtSospeso.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.eui_txtSospeso.Id = "3c2ab487-6393-4c7f-a14d-7837bbdae6d6"
-      Me.eui_txtSospeso.Location = New System.Drawing.Point(218, 20)
+      Me.eui_txtSospeso.Location = New System.Drawing.Point(226, 20)
       Me.eui_txtSospeso.Name = "eui_txtSospeso"
       Me.eui_txtSospeso.ReadOnly = True
       Me.eui_txtSospeso.Size = New System.Drawing.Size(102, 21)
@@ -373,7 +373,7 @@ Public Class ElencoDoc
       Me.eui_txtTotale.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.eui_txtTotale.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.eui_txtTotale.Id = "0d65cebb-55d0-4baf-aa53-aa5d7ed71ce2"
-      Me.eui_txtTotale.Location = New System.Drawing.Point(114, 20)
+      Me.eui_txtTotale.Location = New System.Drawing.Point(122, 20)
       Me.eui_txtTotale.Name = "eui_txtTotale"
       Me.eui_txtTotale.ReadOnly = True
       Me.eui_txtTotale.Size = New System.Drawing.Size(102, 21)
@@ -387,7 +387,7 @@ Public Class ElencoDoc
       Me.eui_txtImposta.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.eui_txtImposta.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.eui_txtImposta.Id = "fa3b517a-f528-4af1-9a37-995fbf6c2301"
-      Me.eui_txtImposta.Location = New System.Drawing.Point(426, 20)
+      Me.eui_txtImposta.Location = New System.Drawing.Point(434, 20)
       Me.eui_txtImposta.Name = "eui_txtImposta"
       Me.eui_txtImposta.ReadOnly = True
       Me.eui_txtImposta.Size = New System.Drawing.Size(102, 21)
@@ -401,7 +401,7 @@ Public Class ElencoDoc
       Me.eui_txtImponibile.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.eui_txtImponibile.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.eui_txtImponibile.Id = "dcf69703-40b2-49ff-89bd-3697977a0492"
-      Me.eui_txtImponibile.Location = New System.Drawing.Point(322, 20)
+      Me.eui_txtImponibile.Location = New System.Drawing.Point(330, 20)
       Me.eui_txtImponibile.Name = "eui_txtImponibile"
       Me.eui_txtImponibile.ReadOnly = True
       Me.eui_txtImponibile.Size = New System.Drawing.Size(102, 21)
@@ -416,7 +416,7 @@ Public Class ElencoDoc
       Me.Label1.AutoSize = True
       Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.Label1.ForeColor = System.Drawing.Color.White
-      Me.Label1.Location = New System.Drawing.Point(527, 5)
+      Me.Label1.Location = New System.Drawing.Point(535, 5)
       Me.Label1.Name = "Label1"
       Me.Label1.Size = New System.Drawing.Size(87, 15)
       Me.Label1.TabIndex = 238
@@ -428,7 +428,7 @@ Public Class ElencoDoc
       Me.Label4.AutoSize = True
       Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.Label4.ForeColor = System.Drawing.Color.White
-      Me.Label4.Location = New System.Drawing.Point(423, 5)
+      Me.Label4.Location = New System.Drawing.Point(431, 5)
       Me.Label4.Name = "Label4"
       Me.Label4.Size = New System.Drawing.Size(62, 15)
       Me.Label4.TabIndex = 242
@@ -440,7 +440,7 @@ Public Class ElencoDoc
       Me.Label2.AutoSize = True
       Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.Label2.ForeColor = System.Drawing.Color.White
-      Me.Label2.Location = New System.Drawing.Point(319, 5)
+      Me.Label2.Location = New System.Drawing.Point(327, 5)
       Me.Label2.Name = "Label2"
       Me.Label2.Size = New System.Drawing.Size(79, 15)
       Me.Label2.TabIndex = 240
@@ -452,7 +452,7 @@ Public Class ElencoDoc
       Me.Label3.AutoSize = True
       Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.Label3.ForeColor = System.Drawing.Color.White
-      Me.Label3.Location = New System.Drawing.Point(215, 5)
+      Me.Label3.Location = New System.Drawing.Point(223, 5)
       Me.Label3.Name = "Label3"
       Me.Label3.Size = New System.Drawing.Size(66, 15)
       Me.Label3.TabIndex = 236
@@ -464,7 +464,7 @@ Public Class ElencoDoc
       Me.Label6.AutoSize = True
       Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
       Me.Label6.ForeColor = System.Drawing.Color.White
-      Me.Label6.Location = New System.Drawing.Point(111, 5)
+      Me.Label6.Location = New System.Drawing.Point(119, 5)
       Me.Label6.Name = "Label6"
       Me.Label6.Size = New System.Drawing.Size(51, 15)
       Me.Label6.TabIndex = 16
@@ -479,7 +479,7 @@ Public Class ElencoDoc
       '
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(642, 390)
+      Me.ClientSize = New System.Drawing.Size(650, 398)
       Me.Controls.Add(Me.Panel2)
       Me.Controls.Add(Me.Panel1)
       Me.Controls.Add(Me.DataGrid1)
@@ -2693,7 +2693,7 @@ Public Class ElencoDoc
       ' Esporta.
       g_frmMain.eui_Strumenti_Esporta.Visible = True
       g_frmMain.eui_Strumenti_Esporta_SepXML.Visible = True
-      g_frmMain.eui_Strumenti_Esporta_XML.Visible = True
+      g_frmMain.eui_Strumenti_Esporta_XML.Visible = moduloAttivo.FattElettronica
       g_frmMain.eui_Strumenti_Esporta_EML.Visible = False
 
       ' Stampa.
