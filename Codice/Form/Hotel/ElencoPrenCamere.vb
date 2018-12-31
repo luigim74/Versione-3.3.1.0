@@ -2079,10 +2079,12 @@ Public Class ElencoPrenCamere
       g_frmMain.eui_Strumenti_Elimina.Visible = True
       g_frmMain.eui_Strumenti_Annulla.Visible = True
       g_frmMain.eui_Strumenti_Aggiorna.Visible = True
-      g_frmMain.eui_Strumenti_Esporta.Visible = True
 
+      ' Esporta.
+      g_frmMain.eui_Strumenti_Esporta.Visible = True
       g_frmMain.eui_Strumenti_Esporta_SepXML.Visible = False
       g_frmMain.eui_Strumenti_Esporta_XML.Visible = False
+      g_frmMain.eui_Strumenti_Esporta_EML.Visible = False
 
       ' Stampa.
       g_frmMain.eui_Strumenti_Stampa_Anteprima.Visible = True
@@ -2125,6 +2127,7 @@ Public Class ElencoPrenCamere
 
       ' Documento.
       g_frmMain.eui_Strumenti_Documenti_Schedina.Visible = True
+      g_frmMain.eui_Strumenti_Documenti_IstatC59.Visible = True
       g_frmMain.eui_Strumenti_Documenti_Sep1.Visible = True
       g_frmMain.eui_Strumenti_Documenti_Invia.Visible = True
       g_frmMain.eui_Strumenti_Documenti_Esporta.Visible = True
@@ -2244,39 +2247,6 @@ Public Class ElencoPrenCamere
 
       ' Attiva/disattiva il pulsante Genera Schedina PS..
       AttivaDisattivaSchedinaPS()
-   End Sub
-
-   ' DA_FARE_A: Modificare!
-   Private Sub ToolBar1_ButtonClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.ToolBarButtonClickEventArgs)
-      'Select Case e.Button.Tag
-
-      '   Case "Sospeso"
-      '      ' Apre la finestra per l'incasso del sospeso.
-      '      Dim frm As New IncassaSospeso(DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 0),
-      '                                    DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 1),
-      '                                    DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 2),
-      '                                    DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 4),
-      '                                    DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 5),
-      '                                    DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 8))
-      '      frm.ShowDialog()
-
-      '   Case "Stampa"
-      '      ' Registra loperazione effettuata dall'operatore identificato.
-      '      g_frmMain.RegistraOperazione(TipoOperazione.Stampa, STR_CONTABILITA_DOCUMENTI, MODULO_CONTABILITA_DOCUMENTI)
-
-      '      StampaDocumento(PERCORSO_REP_DOC, TAB_PRENOTAZIONI, repSql)
-
-      '   Case "Anteprima"
-      '      ' Registra loperazione effettuata dall'operatore identificato.
-      '      g_frmMain.RegistraOperazione(TipoOperazione.Anteprima, STR_CONTABILITA_DOCUMENTI, MODULO_CONTABILITA_DOCUMENTI)
-
-      '      g_frmMain.ApriReports(repSql, TAB_PRENOTAZIONI, PERCORSO_REP_DOC)
-
-      '   Case "Aggiorna"
-      '      ' Registra loperazione effettuata dall'operatore identificato.
-      '      g_frmMain.RegistraOperazione(TipoOperazione.Aggiorna, STR_CONTABILITA_DOCUMENTI, MODULO_CONTABILITA_DOCUMENTI)
-
-      'End Select
    End Sub
 
    Private Sub TestoRicerca_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TestoRicerca.TextChanged

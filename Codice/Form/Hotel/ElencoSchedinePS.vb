@@ -412,7 +412,6 @@ Public Class ElencoSchedinePS
       End Try
    End Sub
 
-   ' DA_FARE_A: Modificare!
    Public Sub EliminaDati(ByVal tabella As String, ByVal id As Integer)
       Try
          Dim Risposta As Short
@@ -464,7 +463,7 @@ Public Class ElencoSchedinePS
             ' Conferma la transazione.
             tr.Commit()
 
-            ' DA_FARE: Modificare!
+            ' DA_FARE_B: Modificare!
             ' Registra loperazione effettuata dall'operatore identificato.
             'g_frmMain.RegistraOperazione(TipoOperazione.Elimina, Descrizione, MODULO_GESTIONE_PLANNING_RISORSE)
          End If
@@ -1123,10 +1122,12 @@ Public Class ElencoSchedinePS
       g_frmMain.eui_Strumenti_Elimina.Visible = True
       g_frmMain.eui_Strumenti_Annulla.Visible = False
       g_frmMain.eui_Strumenti_Aggiorna.Visible = True
-      g_frmMain.eui_Strumenti_Esporta.Visible = True
 
+      ' Esporta.
+      g_frmMain.eui_Strumenti_Esporta.Visible = True
       g_frmMain.eui_Strumenti_Esporta_SepXML.Visible = False
       g_frmMain.eui_Strumenti_Esporta_XML.Visible = False
+      g_frmMain.eui_Strumenti_Esporta_EML.Visible = False
 
       ' Stampa.
       g_frmMain.eui_Strumenti_Stampa_Anteprima.Visible = True
@@ -1169,6 +1170,7 @@ Public Class ElencoSchedinePS
 
       ' Documento.
       g_frmMain.eui_Strumenti_Documenti_Schedina.Visible = False
+      g_frmMain.eui_Strumenti_Documenti_IstatC59.Visible = False
       g_frmMain.eui_Strumenti_Documenti_Sep1.Visible = False
       g_frmMain.eui_Strumenti_Documenti_Invia.Visible = False
       g_frmMain.eui_Strumenti_Documenti_Esporta.Visible = True
@@ -1191,7 +1193,6 @@ Public Class ElencoSchedinePS
 
    End Sub
 
-   ' DA_FARE_A: Verificare!
    Private Sub ElencoSchedinePS_Deactivate(sender As Object, e As EventArgs) Handles Me.Deactivate
 #Region "Strumenti di Modifica - (Condivisa) "
       ' Visualizza i comandi Strumenti di modifica sul Ribbon.
@@ -1285,30 +1286,6 @@ Public Class ElencoSchedinePS
          err.GestisciErrore(ex.StackTrace, ex.Message)
 
       End Try
-   End Sub
-
-   ' DA_FARE: Modificare!
-   Private Sub ToolBar1_ButtonClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.ToolBarButtonClickEventArgs)
-      'Select Case e.Button.Tag
-
-      '   Case "Stampa"
-      '      ' Registra loperazione effettuata dall'operatore identificato.
-      '      g_frmMain.RegistraOperazione(TipoOperazione.Stampa, STR_CONTABILITA_DOCUMENTI, MODULO_CONTABILITA_DOCUMENTI)
-
-      '      StampaDocumento(PERCORSO_REP_DOC, TAB_SCHEDINE, repSql)
-
-      '   Case "Anteprima"
-      '      ' Registra loperazione effettuata dall'operatore identificato.
-      '      g_frmMain.RegistraOperazione(TipoOperazione.Anteprima, STR_CONTABILITA_DOCUMENTI, MODULO_CONTABILITA_DOCUMENTI)
-
-      '      g_frmMain.ApriReports(repSql, TAB_SCHEDINE, PERCORSO_REP_DOC)
-
-
-      '   Case "Aggiorna"
-      '      ' Registra loperazione effettuata dall'operatore identificato.
-      '      g_frmMain.RegistraOperazione(TipoOperazione.Aggiorna, STR_CONTABILITA_DOCUMENTI, MODULO_CONTABILITA_DOCUMENTI)
-
-      'End Select
    End Sub
 
    Private Sub TestoRicerca_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TestoRicerca.TextChanged

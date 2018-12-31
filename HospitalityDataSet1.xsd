@@ -5,13 +5,12 @@
       <DataSource DefaultConnectionIndex="2" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
           <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="HospitalityConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="HospitalityConnectionString (MySettings)" PropertyReference="ApplicationSettings.Hospitality_Solution.My.MySettings.GlobalReference.Default.HospitalityConnectionString12" Provider="System.Data.OleDb" />
-          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="HospitalityConnectionString13" IsAppSettingsProperty="true" Modifier="Assembly" Name="HospitalityConnectionString13 (MySettings)" PropertyReference="ApplicationSettings.Hospitality_Solution.My.MySettings.GlobalReference.Default.HospitalityConnectionString12" Provider="System.Data.OleDb" />
-          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="HospitalityConnectionString13" IsAppSettingsProperty="true" Modifier="Assembly" Name="HospitalityConnectionString13 (MySettings)" PropertyReference="ApplicationSettings.Hospitality_Solution.My.MySettings.GlobalReference.Default.HospitalityConnectionString12" Provider="System.Data.OleDb" />
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="HospitalityConnectionString13" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="HospitalityConnectionString13 (MySettings)" PropertyReference="ApplicationSettings.Hospitality_Solution.My.MySettings.GlobalReference.Default.HospitalityConnectionString12" Provider="System.Data.OleDb" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="AziendaTableAdapter" GeneratorDataComponentClassName="AziendaTableAdapter" Name="Azienda" UserDataComponentName="AziendaTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="HospitalityConnectionString (MySettings)" DbObjectName="Azienda" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="HospitalityConnectionString13 (MySettings)" DbObjectName="Azienda" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM `Azienda` WHERE ((`ID` = ?) AND ((? = 1 AND `RagSoc` IS NULL) OR (`RagSoc` = ?)) AND ((? = 1 AND `Descrizione` IS NULL) OR (`Descrizione` = ?)) AND ((? = 1 AND `Iva` IS NULL) OR (`Iva` = ?)) AND ((? = 1 AND `CodFisc` IS NULL) OR (`CodFisc` = ?)) AND ((? = 1 AND `Rea` IS NULL) OR (`Rea` = ?)) AND ((? = 1 AND `Iri` IS NULL) OR (`Iri` = ?)) AND ((? = 1 AND `Indirizzo` IS NULL) OR (`Indirizzo` = ?)) AND ((? = 1 AND `Città` IS NULL) OR (`Città` = ?)) AND ((? = 1 AND `Prov` IS NULL) OR (`Prov` = ?)) AND ((? = 1 AND `Cap` IS NULL) OR (`Cap` = ?)) AND ((? = 1 AND `Regione` IS NULL) OR (`Regione` = ?)) AND ((? = 1 AND `Nazione` IS NULL) OR (`Nazione` = ?)) AND ((? = 1 AND `Tel` IS NULL) OR (`Tel` = ?)) AND ((? = 1 AND `Fax` IS NULL) OR (`Fax` = ?)) AND ((? = 1 AND `Internet` IS NULL) OR (`Internet` = ?)) AND ((? = 1 AND `Mail` IS NULL) OR (`Mail` = ?)) AND ((? = 1 AND `PercorsoImg` IS NULL) OR (`PercorsoImg` = ?)) AND ((? = 1 AND `Attività` IS NULL) OR (`Attività` = ?)) AND ((? = 1 AND `PercorsoDB` IS NULL) OR (`PercorsoDB` = ?)) AND ((? = 1 AND `ModPagamento` IS NULL) OR (`ModPagamento` = ?)) AND ((? = 1 AND `Banca` IS NULL) OR (`Banca` = ?)) AND ((? = 1 AND `CIN` IS NULL) OR (`CIN` = ?)) AND ((? = 1 AND `ABI` IS NULL) OR (`ABI` = ?)) AND ((? = 1 AND `CAB` IS NULL) OR (`CAB` = ?)) AND ((? = 1 AND `CC` IS NULL) OR (`CC` = ?)) AND ((? = 1 AND `IBAN` IS NULL) OR (`IBAN` = ?)))</CommandText>
@@ -107,7 +106,7 @@
                   </DbCommand>
                 </InsertCommand>
                 <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT ID, RagSoc, Descrizione, Iva, CodFisc, Rea, Iri, Indirizzo, Città, Prov, Cap, Regione, Nazione, Tel, Fax, Internet, Mail, Immagine, PercorsoImg, Attività, PercorsoDB, ModPagamento, Banca, CIN, ABI, CAB, CC, IBAN FROM Azienda</CommandText>
                     <Parameters />
                   </DbCommand>
@@ -1184,14 +1183,14 @@
               <xs:element name="CodFisc" msprop:Generator_ColumnVarNameInTable="columnCodFisc" msprop:Generator_ColumnPropNameInRow="CodFisc" msprop:Generator_ColumnPropNameInTable="CodFiscColumn" msprop:Generator_UserColumnName="CodFisc" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="11" />
+                    <xs:maxLength value="16" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
               <xs:element name="Rea" msprop:Generator_ColumnVarNameInTable="columnRea" msprop:Generator_ColumnPropNameInRow="Rea" msprop:Generator_ColumnPropNameInTable="ReaColumn" msprop:Generator_UserColumnName="Rea" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
+                    <xs:maxLength value="20" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>

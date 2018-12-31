@@ -2521,8 +2521,8 @@ Partial Public Class HospitalityDataSet
             Me.columnRagSoc.MaxLength = 100
             Me.columnDescrizione.MaxLength = 255
             Me.columnIva.MaxLength = 11
-            Me.columnCodFisc.MaxLength = 11
-            Me.columnRea.MaxLength = 50
+            Me.columnCodFisc.MaxLength = 16
+            Me.columnRea.MaxLength = 20
             Me.columnIri.MaxLength = 50
             Me.columnIndirizzo.MaxLength = 100
             Me.columnCittà.MaxLength = 50

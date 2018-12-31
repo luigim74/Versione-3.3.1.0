@@ -16539,7 +16539,6 @@ Friend Class frmMain
          With CStoricoPresenzeIstatC59
             .EliminaDati(TAB_STORICO_PRESENZE_ISTAT_C59)
 
-            ' DA_FARE: Sviluppare! Leggere progressivo.
             .Numero = g_frmMain.LeggiNumeroModelloIstatC59
             .Giorno = dataOggi.Day.ToString
             .Mese = dataOggi.Month.ToString

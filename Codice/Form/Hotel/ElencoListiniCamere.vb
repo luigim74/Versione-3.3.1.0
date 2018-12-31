@@ -1052,10 +1052,12 @@ Public Class ElencoListiniCamere
       g_frmMain.eui_Strumenti_Elimina.Visible = True
       g_frmMain.eui_Strumenti_Annulla.Visible = False
       g_frmMain.eui_Strumenti_Aggiorna.Visible = True
-      g_frmMain.eui_Strumenti_Esporta.Visible = True
 
+      ' Esporta.
+      g_frmMain.eui_Strumenti_Esporta.Visible = True
       g_frmMain.eui_Strumenti_Esporta_SepXML.Visible = False
       g_frmMain.eui_Strumenti_Esporta_XML.Visible = False
+      g_frmMain.eui_Strumenti_Esporta_EML.Visible = False
 
       ' Stampa.
       g_frmMain.eui_Strumenti_Stampa_Anteprima.Visible = True

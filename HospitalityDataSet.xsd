@@ -17,7 +17,6 @@
           <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="HospitalityConnectionString10" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="HospitalityConnectionString10 (MySettings)" PropertyReference="ApplicationSettings.Hospitality_Solution.My.MySettings.GlobalReference.Default.HospitalityConnectionString10" Provider="System.Data.OleDb" />
           <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="HospitalityConnectionString11" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="HospitalityConnectionString11 (MySettings)" PropertyReference="ApplicationSettings.Hospitality_Solution.My.MySettings.GlobalReference.Default.HospitalityConnectionString10" Provider="System.Data.OleDb" />
           <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="HospitalityConnectionString12" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="HospitalityConnectionString12 (MySettings)" PropertyReference="ApplicationSettings.Hospitality_Solution.My.MySettings.GlobalReference.Default.HospitalityConnectionString10" Provider="System.Data.OleDb" />
-          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="HospitalityConnectionString12" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="HospitalityConnectionString12 (MySettings)" PropertyReference="ApplicationSettings.Hospitality_Solution.My.MySettings.GlobalReference.Default.HospitalityConnectionString12" Provider="System.Data.OleDb" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="AccessoriServiziTableAdapter" GeneratorDataComponentClassName="AccessoriServiziTableAdapter" Name="AccessoriServizi" UserDataComponentName="AccessoriServiziTableAdapter">
@@ -2324,14 +2323,14 @@
               <xs:element name="CodFisc" msprop:Generator_ColumnVarNameInTable="columnCodFisc" msprop:Generator_ColumnPropNameInRow="CodFisc" msprop:Generator_ColumnPropNameInTable="CodFiscColumn" msprop:Generator_UserColumnName="CodFisc" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="11" />
+                    <xs:maxLength value="16" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
               <xs:element name="Rea" msprop:Generator_ColumnVarNameInTable="columnRea" msprop:Generator_ColumnPropNameInRow="Rea" msprop:Generator_ColumnPropNameInTable="ReaColumn" msprop:Generator_UserColumnName="Rea" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
+                    <xs:maxLength value="20" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>

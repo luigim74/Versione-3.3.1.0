@@ -1452,36 +1452,6 @@ Public Class ElencoDoc
       End Try
    End Sub
 
-   ' DA_FARE_B: Non più utilizzata. DA CANCELLARE!
-   Private Sub VisualizzaDate()
-      'lblAl.Location = New Point(lblAl.Location.X, 8)
-      'lblDal.Location = New Point(lblDal.Location.X, 8)
-      'dtpAl.Location = New Point(dtpAl.Location.X, 8)
-      'dtpDal.Location = New Point(dtpDal.Location.X, 8)
-      'lblAl.Visible = True
-      'lblDal.Visible = True
-      'dtpAl.Visible = True
-      'dtpDal.Visible = True
-
-      'lblTesto.Visible = False
-      'lblCampo.Visible = False
-      'eui_txtTestoRicerca.Visible = False
-      'CampoRicerca.Visible = False
-   End Sub
-
-   ' DA_FARE_B: Non più utilizzata. DA CANCELLARE!
-   Public Sub NascondiDate()
-      'lblAl.Visible = False
-      'lblDal.Visible = False
-      'dtpAl.Visible = False
-      'dtpDal.Visible = False
-
-      'lblTesto.Visible = True
-      'lblCampo.Visible = True
-      'eui_txtTestoRicerca.Visible = True
-      'CampoRicerca.Visible = True
-   End Sub
-
    Public Sub AggiornaDatiSospesi()
       Try
          ' Crea la stringa di selezione dei dati..
@@ -1714,34 +1684,6 @@ Public Class ElencoDoc
       If ImpostaFunzioniOperatore(Finestra.Documenti) = True Then
          ImpostaComandi()
       End If
-   End Sub
-
-   ' DA_FARE_B: NON UTILIZZATA!
-   Private Sub ApriDati(ByVal val As String)
-      'Try
-      '   ' Modifica il cursore del mouse.
-      '   Cursor.Current = Cursors.AppStarting
-
-      '   ' Per la versione demo.
-      '   ' Se è un nuovo inserimento verifica il numero dei record.
-      '   If val = String.Empty Then
-      '      If g_VerDemo = True Then
-      '         ' Test per la versione demo.
-      '         If VerificaNumRecord(LeggiNumRecord(TAB_DOCUMENTI)) = True Then
-      '            Exit Sub
-      '         End If
-      '      End If
-      '   End If
-
-      '   Dim frm As New frmAcquisti
-      '   frm.Tag = val
-      '   frm.ShowDialog()
-
-      'Catch ex As Exception
-      '   ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-      '   err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      'End Try
    End Sub
 
    Public Sub AggIntGriglia()
