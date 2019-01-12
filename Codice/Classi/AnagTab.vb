@@ -2,7 +2,7 @@
 ' ******************************************************************
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       01/01/2005
-' Data ultima modifica: 12/12/2018
+' Data ultima modifica: 09/01/2019
 ' Descrizione:          Classe Anagrafiche e Tabelle.
 ' Note:
 ' ATTENZIONENE! QUESTO FILE CONTIENE PROCEDURE VARIE CONDIVISE DA TUTTI I PROGETTI.
@@ -23,7 +23,6 @@ Namespace Anagrafiche
       Public Descrizione As String
       Public Piva As String
       Public CodFisc As String
-      Public Rea As String
       Public Iri As String
       Public Indirizzo As String
       Public Cap As String
@@ -48,6 +47,20 @@ Namespace Anagrafiche
       Public Cab As String
       Public Cc As String
       Public Iban As String
+
+      ' Fatturazione Elettronica.
+      Public UfficioRea As String
+      Public NumeroRea As String
+      Public StatoLiquidazioneRea As String
+      Public TiSeIdPaese As String
+      Public TiSePartitaIva As String
+      Public TiSeCodiceFiscale As String
+      Public TiSeDenominazione As String
+      Public TiSeNome As String
+      Public TiSeCognome As String
+      Public TiSeTitolo As String
+      Public TiSeCodiceEORI As String
+      Public SoggettoEmittente As String
 
       Private m_ConnString As String
 
@@ -123,11 +136,6 @@ Namespace Anagrafiche
                Me.CodFisc = ds.Tables(tabella).Rows(0)("CodFisc")
             Else
                Me.CodFisc = ""
-            End If
-            If IsDBNull(ds.Tables(tabella).Rows(0)("Rea")) = False Then
-               Me.Rea = ds.Tables(tabella).Rows(0)("Rea")
-            Else
-               Me.Rea = ""
             End If
             If IsDBNull(ds.Tables(tabella).Rows(0)("Iri")) = False Then
                Me.Iri = ds.Tables(tabella).Rows(0)("Iri")
@@ -249,6 +257,66 @@ Namespace Anagrafiche
             Else
                Me.Iban = ""
             End If
+            If IsDBNull(ds.Tables(tabella).Rows(0)("UfficioRea")) = False Then
+               Me.UfficioRea = ds.Tables(tabella).Rows(0)("UfficioRea")
+            Else
+               Me.UfficioRea = ""
+            End If
+            If IsDBNull(ds.Tables(tabella).Rows(0)("NumeroRea")) = False Then
+               Me.NumeroRea = ds.Tables(tabella).Rows(0)("NumeroRea")
+            Else
+               Me.NumeroRea = ""
+            End If
+            If IsDBNull(ds.Tables(tabella).Rows(0)("StatoLiquidazioneRea")) = False Then
+               Me.StatoLiquidazioneRea = ds.Tables(tabella).Rows(0)("StatoLiquidazioneRea")
+            Else
+               Me.StatoLiquidazioneRea = ""
+            End If
+            If IsDBNull(ds.Tables(tabella).Rows(0)("TiSeIdPaese")) = False Then
+               Me.TiSeIdPaese = ds.Tables(tabella).Rows(0)("TiSeIdPaese")
+            Else
+               Me.TiSeIdPaese = ""
+            End If
+            If IsDBNull(ds.Tables(tabella).Rows(0)("TiSePartitaIva")) = False Then
+               Me.TiSePartitaIva = ds.Tables(tabella).Rows(0)("TiSePartitaIva")
+            Else
+               Me.TiSePartitaIva = ""
+            End If
+            If IsDBNull(ds.Tables(tabella).Rows(0)("TiSeCodiceFiscale")) = False Then
+               Me.TiSeCodiceFiscale = ds.Tables(tabella).Rows(0)("TiSeCodiceFiscale")
+            Else
+               Me.TiSeCodiceFiscale = ""
+            End If
+            If IsDBNull(ds.Tables(tabella).Rows(0)("TiSeDenominazione")) = False Then
+               Me.TiSeDenominazione = ds.Tables(tabella).Rows(0)("TiSeDenominazione")
+            Else
+               Me.TiSeDenominazione = ""
+            End If
+            If IsDBNull(ds.Tables(tabella).Rows(0)("TiSeNome")) = False Then
+               Me.TiSeNome = ds.Tables(tabella).Rows(0)("TiSeNome")
+            Else
+               Me.TiSeNome = ""
+            End If
+            If IsDBNull(ds.Tables(tabella).Rows(0)("TiSeCognome")) = False Then
+               Me.TiSeCognome = ds.Tables(tabella).Rows(0)("TiSeCognome")
+            Else
+               Me.TiSeCognome = ""
+            End If
+            If IsDBNull(ds.Tables(tabella).Rows(0)("TiSeTitolo")) = False Then
+               Me.TiSeTitolo = ds.Tables(tabella).Rows(0)("TiSeTitolo")
+            Else
+               Me.TiSeTitolo = ""
+            End If
+            If IsDBNull(ds.Tables(tabella).Rows(0)("TiSeCodiceEORI")) = False Then
+               Me.TiSeCodiceEORI = ds.Tables(tabella).Rows(0)("TiSeCodiceEORI")
+            Else
+               Me.TiSeCodiceEORI = ""
+            End If
+            If IsDBNull(ds.Tables(tabella).Rows(0)("SoggettoEmittente")) = False Then
+               Me.SoggettoEmittente = ds.Tables(tabella).Rows(0)("SoggettoEmittente")
+            Else
+               Me.SoggettoEmittente = ""
+            End If
 
          Catch ex As Exception
             ' Visualizza un messaggio di errore e lo registra nell'apposito file.
@@ -312,11 +380,6 @@ Namespace Anagrafiche
                Me.CodFisc = ds.Tables(tabella).Rows(0)("CodFisc")
             Else
                Me.CodFisc = ""
-            End If
-            If IsDBNull(ds.Tables(tabella).Rows(0)("Rea")) = False Then
-               Me.Rea = ds.Tables(tabella).Rows(0)("Rea")
-            Else
-               Me.Rea = ""
             End If
             If IsDBNull(ds.Tables(tabella).Rows(0)("Iri")) = False Then
                Me.Iri = ds.Tables(tabella).Rows(0)("Iri")
@@ -438,6 +501,66 @@ Namespace Anagrafiche
             Else
                Me.Iban = ""
             End If
+            If IsDBNull(ds.Tables(tabella).Rows(0)("UfficioRea")) = False Then
+               Me.UfficioRea = ds.Tables(tabella).Rows(0)("UfficioRea")
+            Else
+               Me.UfficioRea = ""
+            End If
+            If IsDBNull(ds.Tables(tabella).Rows(0)("NumeroRea")) = False Then
+               Me.NumeroRea = ds.Tables(tabella).Rows(0)("NumeroRea")
+            Else
+               Me.NumeroRea = ""
+            End If
+            If IsDBNull(ds.Tables(tabella).Rows(0)("StatoLiquidazioneRea")) = False Then
+               Me.StatoLiquidazioneRea = ds.Tables(tabella).Rows(0)("StatoLiquidazioneRea")
+            Else
+               Me.StatoLiquidazioneRea = ""
+            End If
+            If IsDBNull(ds.Tables(tabella).Rows(0)("TiSeIdPaese")) = False Then
+               Me.TiSeIdPaese = ds.Tables(tabella).Rows(0)("TiSeIdPaese")
+            Else
+               Me.TiSeIdPaese = ""
+            End If
+            If IsDBNull(ds.Tables(tabella).Rows(0)("TiSePartitaIva")) = False Then
+               Me.TiSePartitaIva = ds.Tables(tabella).Rows(0)("TiSePartitaIva")
+            Else
+               Me.TiSePartitaIva = ""
+            End If
+            If IsDBNull(ds.Tables(tabella).Rows(0)("TiSeCodiceFiscale")) = False Then
+               Me.TiSeCodiceFiscale = ds.Tables(tabella).Rows(0)("TiSeCodiceFiscale")
+            Else
+               Me.TiSeCodiceFiscale = ""
+            End If
+            If IsDBNull(ds.Tables(tabella).Rows(0)("TiSeDenominazione")) = False Then
+               Me.TiSeDenominazione = ds.Tables(tabella).Rows(0)("TiSeDenominazione")
+            Else
+               Me.TiSeDenominazione = ""
+            End If
+            If IsDBNull(ds.Tables(tabella).Rows(0)("TiSeNome")) = False Then
+               Me.TiSeNome = ds.Tables(tabella).Rows(0)("TiSeNome")
+            Else
+               Me.TiSeNome = ""
+            End If
+            If IsDBNull(ds.Tables(tabella).Rows(0)("TiSeCognome")) = False Then
+               Me.TiSeCognome = ds.Tables(tabella).Rows(0)("TiSeCognome")
+            Else
+               Me.TiSeCognome = ""
+            End If
+            If IsDBNull(ds.Tables(tabella).Rows(0)("TiSeTitolo")) = False Then
+               Me.TiSeTitolo = ds.Tables(tabella).Rows(0)("TiSeTitolo")
+            Else
+               Me.TiSeTitolo = ""
+            End If
+            If IsDBNull(ds.Tables(tabella).Rows(0)("TiSeCodiceEORI")) = False Then
+               Me.TiSeCodiceEORI = ds.Tables(tabella).Rows(0)("TiSeCodiceEORI")
+            Else
+               Me.TiSeCodiceEORI = ""
+            End If
+            If IsDBNull(ds.Tables(tabella).Rows(0)("SoggettoEmittente")) = False Then
+               Me.SoggettoEmittente = ds.Tables(tabella).Rows(0)("SoggettoEmittente")
+            Else
+               Me.SoggettoEmittente = ""
+            End If
 
             Return True
 
@@ -456,65 +579,64 @@ Namespace Anagrafiche
       End Function
 
       Public Sub InserisciDati(ByVal tabella As String)
-         ' Dichiara un oggetto connessione.
-         Dim cn As New OleDbConnection(Me.ConnString)
-         Dim sql As String
+         '' Dichiara un oggetto connessione.
+         'Dim cn As New OleDbConnection(Me.ConnString)
+         'Dim sql As String
 
-         Try
-            ' Apre la connessione.
-            cn.Open()
+         'Try
+         '   ' Apre la connessione.
+         '   cn.Open()
 
-            ' Avvia una transazione.
-            tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
-            sql = String.Format("INSERT INTO {0} (RagSoc, Descrizione, Iva, CodFisc, Rea, Iri, Indirizzo, " &
-                                                 "Città, Prov, Cap, Nazione, RegimeFiscale, Tel, Fax, Internet, " &
-                                                 "Mail, PEC, Immagine, Attività, PercorsoDB) " &
-                                          "VALUES(@RagSoc, @Descrizione, @Iva, @CodFisc, @Rea, @Iri, @Indirizzo, " &
-                                                 "@Città, @Prov, @Cap, @Nazione, @RegimeFiscale, @Tel, @Fax, @Internet, " &
-                                                 "@Mail, @PEC, @Immagine, @Attività, @PercorsoDB)", tabella)
+         '   ' Avvia una transazione.
+         '   tr = cn.BeginTransaction(IsolationLevel.ReadCommitted)
+         '   sql = String.Format("INSERT INTO {0} (RagSoc, Descrizione, Iva, CodFisc, Iri, Indirizzo, " &
+         '                                        "Città, Prov, Cap, Nazione, RegimeFiscale, Tel, Fax, Internet, " &
+         '                                        "Mail, PEC, Immagine, Attività, PercorsoDB) " &
+         '                                 "VALUES(@RagSoc, @Descrizione, @Iva, @CodFisc, @Iri, @Indirizzo, " &
+         '                                        "@Città, @Prov, @Cap, @Nazione, @RegimeFiscale, @Tel, @Fax, @Internet, " &
+         '                                        "@Mail, @PEC, @Immagine, @Attività, @PercorsoDB)", tabella)
 
-            ' Crea il comando per la connessione corrente.
-            Dim cmdInsert As New OleDbCommand(sql, cn, tr)
+         '   ' Crea il comando per la connessione corrente.
+         '   Dim cmdInsert As New OleDbCommand(sql, cn, tr)
 
-            cmdInsert.Parameters.Add("@RagSoc", Me.RagSociale)
-            cmdInsert.Parameters.Add("@Descrizione", Me.Descrizione)
-            cmdInsert.Parameters.Add("@Iva", Me.Piva)
-            cmdInsert.Parameters.Add("@CodFisc", Me.CodFisc)
-            cmdInsert.Parameters.Add("@Rea", Me.Rea)
-            cmdInsert.Parameters.Add("@Iri", Me.Iri)
-            cmdInsert.Parameters.Add("@Indirizzo", Me.Indirizzo)
-            cmdInsert.Parameters.Add("@Città", Me.Città)
-            cmdInsert.Parameters.Add("@Prov", Me.Provincia)
-            cmdInsert.Parameters.Add("@Cap", Me.Cap)
-            cmdInsert.Parameters.Add("@Nazione", Me.Nazione)
-            cmdInsert.Parameters.Add("@RegimeFiscale", Me.RegimeFiscale)
-            cmdInsert.Parameters.Add("@Tel", Me.Telefono)
-            cmdInsert.Parameters.Add("@Fax", Me.Fax)
-            cmdInsert.Parameters.Add("@Internet", Me.Internet)
-            cmdInsert.Parameters.Add("@Mail", Me.Email)
-            cmdInsert.Parameters.Add("@PEC", Me.PEC)
-            cmdInsert.Parameters.Add("@Immagine", Me.Immagine)
-            cmdInsert.Parameters.Add("@Attività", Me.Attività)
-            cmdInsert.Parameters.Add("@PercorsoDB", Me.PercorsoDB)
+         '   cmdInsert.Parameters.Add("@RagSoc", Me.RagSociale)
+         '   cmdInsert.Parameters.Add("@Descrizione", Me.Descrizione)
+         '   cmdInsert.Parameters.Add("@Iva", Me.Piva)
+         '   cmdInsert.Parameters.Add("@CodFisc", Me.CodFisc)
+         '   cmdInsert.Parameters.Add("@Iri", Me.Iri)
+         '   cmdInsert.Parameters.Add("@Indirizzo", Me.Indirizzo)
+         '   cmdInsert.Parameters.Add("@Città", Me.Città)
+         '   cmdInsert.Parameters.Add("@Prov", Me.Provincia)
+         '   cmdInsert.Parameters.Add("@Cap", Me.Cap)
+         '   cmdInsert.Parameters.Add("@Nazione", Me.Nazione)
+         '   cmdInsert.Parameters.Add("@RegimeFiscale", Me.RegimeFiscale)
+         '   cmdInsert.Parameters.Add("@Tel", Me.Telefono)
+         '   cmdInsert.Parameters.Add("@Fax", Me.Fax)
+         '   cmdInsert.Parameters.Add("@Internet", Me.Internet)
+         '   cmdInsert.Parameters.Add("@Mail", Me.Email)
+         '   cmdInsert.Parameters.Add("@PEC", Me.PEC)
+         '   cmdInsert.Parameters.Add("@Immagine", Me.Immagine)
+         '   cmdInsert.Parameters.Add("@Attività", Me.Attività)
+         '   cmdInsert.Parameters.Add("@PercorsoDB", Me.PercorsoDB)
 
-            ' Esegue il comando.
-            Dim Record As Integer = cmdInsert.ExecuteNonQuery()
+         '   ' Esegue il comando.
+         '   Dim Record As Integer = cmdInsert.ExecuteNonQuery()
 
-            ' Conferma transazione.
-            tr.Commit()
+         '   ' Conferma transazione.
+         '   tr.Commit()
 
-         Catch ex As Exception
-            ' Annulla transazione.
-            tr.Rollback()
+         'Catch ex As Exception
+         '   ' Annulla transazione.
+         '   tr.Rollback()
 
-            ' Visualizza un messaggio di errore e lo registra nell'apposito file.
-            err.GestisciErrore(ex.StackTrace, ex.Message)
+         '   ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         '   err.GestisciErrore(ex.StackTrace, ex.Message)
 
-         Finally
-            ' Chiude la connessione.
-            cn.Close()
+         'Finally
+         '   ' Chiude la connessione.
+         '   cn.Close()
 
-         End Try
+         'End Try
       End Sub
 
       Public Sub ModificaDati(ByVal tabella As String, ByVal codice As Integer)
@@ -535,12 +657,12 @@ Namespace Anagrafiche
                                 "Descrizione = @Descrizione, " &
                                 "Iva = @Iva, " &
                                 "CodFisc = @CodFisc, " &
-                                "Rea = @Rea, " &
                                 "Iri = @Iri, " &
                                 "Indirizzo = @Indirizzo, " &
                                 "Città = @Città, " &
                                 "Prov = @Prov, " &
                                 "Cap = @Cap, " &
+                                "Regione = @Regione, " &
                                 "Nazione = @Nazione, " &
                                 "RegimeFiscale = @RegimeFiscale, " &
                                 "Tel = @Tel, " &
@@ -558,7 +680,19 @@ Namespace Anagrafiche
                                 "Abi = @Abi, " &
                                 "Cab = @Cab, " &
                                 "Cc = @Cc, " &
-                                "Iban = @Iban " &
+                                "Iban = @Iban, " &
+                                "UfficioRea = @UfficioRea, " &
+                                "NumeroRea = @NumeroRea, " &
+                                "StatoLiquidazioneRea = @StatoLiquidazioneRea, " &
+                                "TiSeIdPaese = @TiSeIdPaese, " &
+                                "TiSePartitaIva = @TiSePartitaIva, " &
+                                "TiSeCodiceFiscale = @TiSeCodiceFiscale, " &
+                                "TiSeDenominazione = @TiSeDenominazione, " &
+                                "TiSeNome = @TiSeNome, " &
+                                "TiSeCognome = @TiSeCognome, " &
+                                "TiSeTitolo = @TiSeTitolo, " &
+                                "TiSeCodiceEORI = @TiSeCodiceEORI, " &
+                                "SoggettoEmittente = @SoggettoEmittente " &
                                 "WHERE Id = {1}",
                                  tabella,
                                  codice)
@@ -570,12 +704,12 @@ Namespace Anagrafiche
             cmdUpdate.Parameters.Add("@Descrizione", Me.Descrizione)
             cmdUpdate.Parameters.Add("@Iva", Me.Piva)
             cmdUpdate.Parameters.Add("@CodFisc", Me.CodFisc)
-            cmdUpdate.Parameters.Add("@Rea", Me.Rea)
             cmdUpdate.Parameters.Add("@Iri", Me.Iri)
             cmdUpdate.Parameters.Add("@Indirizzo", Me.Indirizzo)
             cmdUpdate.Parameters.Add("@Città", Me.Città)
             cmdUpdate.Parameters.Add("@Prov", Me.Provincia)
             cmdUpdate.Parameters.Add("@Cap", Me.Cap)
+            cmdUpdate.Parameters.Add("@Regione", Me.Regione)
             cmdUpdate.Parameters.Add("@Nazione", Me.Nazione)
             cmdUpdate.Parameters.Add("@RegimeFiscale", Me.RegimeFiscale)
             cmdUpdate.Parameters.Add("@Tel", Me.Telefono)
@@ -594,6 +728,18 @@ Namespace Anagrafiche
             cmdUpdate.Parameters.Add("@Cab", Me.Cab)
             cmdUpdate.Parameters.Add("@Cc", Me.Cc)
             cmdUpdate.Parameters.Add("@Iban", Me.Iban)
+            cmdUpdate.Parameters.Add("@UfficioRea", Me.UfficioRea)
+            cmdUpdate.Parameters.Add("@NumeroRea", Me.NumeroRea)
+            cmdUpdate.Parameters.Add("@StatoLiquidazioneRea", Me.StatoLiquidazioneRea)
+            cmdUpdate.Parameters.Add("@TiSeIdPaese", Me.TiSeIdPaese)
+            cmdUpdate.Parameters.Add("@TiSePartitaIva", Me.TiSePartitaIva)
+            cmdUpdate.Parameters.Add("@TiSeCodiceFiscale", Me.TiSeCodiceFiscale)
+            cmdUpdate.Parameters.Add("@TiSeDenominazione", Me.TiSeDenominazione)
+            cmdUpdate.Parameters.Add("@TiSeNome", Me.TiSeNome)
+            cmdUpdate.Parameters.Add("@TiSeCognome", Me.TiSeCognome)
+            cmdUpdate.Parameters.Add("@TiSeTitolo", Me.TiSeTitolo)
+            cmdUpdate.Parameters.Add("@TiSeCodiceEORI", Me.TiSeCodiceEORI)
+            cmdUpdate.Parameters.Add("@SoggettoEmittente", Me.SoggettoEmittente)
 
             ' Esegue il comando.
             Dim Record As Integer = cmdUpdate.ExecuteNonQuery()

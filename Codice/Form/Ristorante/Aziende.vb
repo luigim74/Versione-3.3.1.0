@@ -1985,6 +1985,7 @@ Public Class frmAziende
 #End Region
 
 #Region "Funzioni "
+   ' DA_FARE: Verificare!
 
    Private Function SalvaDati() As Boolean
       Try
@@ -2007,6 +2008,8 @@ Public Class frmAziende
             .Provincia = FormattaApici(txtProv.Text)
             .Regione = FormattaApici(txtRegione.Text)
             .Nazione = FormattaApici(cmbNazione.Text)
+            .Contatto = FormattaApici(txtContatto.Text)
+            .Attività = FormattaApici(cmbAttività.Text)
             .TipoCliente = FormattaApici(cmbTipoCliente.Text)
             If IsNumeric(txtSconto.Text) = True Then
                .Sconto = txtSconto.Text
@@ -2539,6 +2542,12 @@ Public Class frmAziende
             .TotDoc = valDaPagare
             .Chiuso = "No"
             .Note = FormattaApici(txtNoteDoc.Text)
+
+            ' SCHEDA PA.
+            .NumeroDoc_PA = String.Empty
+            .CodiceCUP_PA = String.Empty
+            .CodiceCIG_PA = String.Empty
+            .CodiceCommConv_PA = String.Empty
 
             ' Calcola l'IVA.
             Dim valImposta As Double
@@ -3336,7 +3345,6 @@ Public Class frmAziende
 
          ' Salva il documento fiscale.
          SalvaDocumento()
-
 
          ' Esegue la stampa.
          StampaDocumento(percorsoRep, LeggiUltimoRecord(TAB_DOC))

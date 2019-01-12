@@ -832,6 +832,12 @@ Public Class IncassaSospeso
             .SospesoIncassare = txtSospeso.Text
             .TotDoc = CFormatta.FormattaEuro(totaleDoc)
 
+            ' SCHEDA PA.
+            .NumeroDoc_PA = String.Empty
+            .CodiceCUP_PA = String.Empty
+            .CodiceCIG_PA = String.Empty
+            .CodiceCommConv_PA = String.Empty
+
             .Imponibile = VALORE_ZERO
             .Iva = VALORE_ZERO
             .Imposta = VALORE_ZERO

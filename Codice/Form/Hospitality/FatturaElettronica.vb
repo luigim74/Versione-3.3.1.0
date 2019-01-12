@@ -30,13 +30,15 @@ Public Class frmFatturaElettronica
    Private CConvalida As New ConvalidaKeyPress
    Private nomeDirectory As String = Application.StartupPath & "\" & CARTELLA_FATTURE_ELETTRONICHE & "\" & Today.Year.ToString
    Private idDocumento As String
+   Private idCliente As String
 
-   Public Sub New(ByVal idDoc As String)
+   Public Sub New(ByVal idDoc As String, ByVal idCli As String)
 
       ' La chiamata è richiesta dalla finestra di progettazione.
       InitializeComponent()
 
       idDocumento = idDoc
+      idCliente = idCli
 
       ' Aggiungere le eventuali istruzioni di inizializzazione dopo la chiamata a InitializeComponent().
 
@@ -1320,8 +1322,6 @@ Public Class frmFatturaElettronica
 
 #End Region
 
-salta:
-
 #Region "SCRITTURA DEL FILE XML "
          ' Serializzazione XML
          Dim settings As New XmlWriterSettings()
@@ -1577,19 +1577,16 @@ salta:
 
             ' Sede - Provincia.
             If IsDBNull(dr.Item("Prov")) = False Then
-               eui_cmbCpSedeProvincia.Text = dr.Item("Prov").ToString
+               eui_cmbCpSedeProvincia.Text = FormattaProvincia(dr.Item("Prov").ToString)
             Else
                eui_cmbCpSedeProvincia.Text = String.Empty
             End If
 
             ' Sede - Nazione.
-            eui_cmbCpSedeNazione.Text = IT_ITALIA
-
-            ' Iscrizione REA.
-            If IsDBNull(dr.Item("Rea")) = False Then
-               eui_txtCpNumeroREA.Text = dr.Item("Rea").ToString
+            If IsDBNull(dr.Item("Nazione")) = False Then
+               eui_cmbCpSedeNazione.Text = FormattaStato(dr.Item("Nazione").ToString)
             Else
-               eui_txtCpNumeroREA.Text = String.Empty
+               eui_cmbCpSedeNazione.Text = String.Empty
             End If
 
             ' Contatti - Telefono.
@@ -1612,6 +1609,82 @@ salta:
             Else
                eui_txtCpEmail.Text = String.Empty
             End If
+
+            ' REA - UfficioRea.
+            If IsDBNull(dr.Item("UfficioRea")) = False Then
+               eui_cmbCpUfficioREA.Text = dr.Item("UfficioRea").ToString
+            Else
+               eui_cmbCpUfficioREA.Text = String.Empty
+            End If
+            ' REA - NumeroRea.
+            If IsDBNull(dr.Item("NumeroRea")) = False Then
+               eui_txtCpNumeroREA.Text = dr.Item("NumeroRea").ToString
+            Else
+               eui_txtCpNumeroREA.Text = String.Empty
+            End If
+            ' REA - StatoLiquidazioneRea.
+            If IsDBNull(dr.Item("StatoLiquidazioneRea")) = False Then
+               eui_cmbCpStatoLiquidazioneREA.Text = dr.Item("StatoLiquidazioneRea").ToString
+            Else
+               eui_cmbCpStatoLiquidazioneREA.Text = String.Empty
+            End If
+
+            ' Terzo Intermediario Soggetto Emittente - TiSeIdPaese.
+            If IsDBNull(dr.Item("TiSeIdPaese")) = False Then
+               eui_cmbTiSeIdPaese.Text = dr.Item("TiSeIdPaese").ToString
+            Else
+               eui_cmbTiSeIdPaese.Text = String.Empty
+            End If
+            ' Terzo Intermediario Soggetto Emittente - TiSePartitaIva.
+            If IsDBNull(dr.Item("TiSePartitaIva")) = False Then
+               eui_txtTiSeIdCodice.Text = dr.Item("TiSePartitaIva").ToString
+            Else
+               eui_txtTiSeIdCodice.Text = String.Empty
+            End If
+            ' Terzo Intermediario Soggetto Emittente - TiSeCodiceFiscale.
+            If IsDBNull(dr.Item("TiSeCodiceFiscale")) = False Then
+               eui_txtTiSeCodiceFiscale.Text = dr.Item("TiSeCodiceFiscale").ToString
+            Else
+               eui_txtTiSeCodiceFiscale.Text = String.Empty
+            End If
+            ' Terzo Intermediario Soggetto Emittente - TiSeDenominazione.
+            If IsDBNull(dr.Item("TiSeDenominazione")) = False Then
+               eui_txtTiSeDenominazione.Text = dr.Item("TiSeDenominazione").ToString
+            Else
+               eui_txtTiSeDenominazione.Text = String.Empty
+
+               ' Terzo Intermediario Soggetto Emittente - TiSeNome.
+               If IsDBNull(dr.Item("TiSeNome")) = False Then
+                  eui_txtTiSeNome.Text = dr.Item("TiSeNome").ToString
+               Else
+                  eui_txtTiSeNome.Text = String.Empty
+               End If
+               ' Terzo Intermediario Soggetto Emittente - TiSeCognome.
+               If IsDBNull(dr.Item("TiSeCognome")) = False Then
+                  eui_txtTiSeCognome.Text = dr.Item("TiSeCognome").ToString
+               Else
+                  eui_txtTiSeCognome.Text = String.Empty
+               End If
+            End If
+            ' Terzo Intermediario Soggetto Emittente - TiSeTitolo.
+            If IsDBNull(dr.Item("TiSeTitolo")) = False Then
+               eui_txtTiSeTitolo.Text = dr.Item("TiSeTitolo").ToString
+            Else
+               eui_txtTiSeTitolo.Text = String.Empty
+            End If
+            ' Terzo Intermediario Soggetto Emittente - TiSeCodiceEORI.
+            If IsDBNull(dr.Item("TiSeCodiceEORI")) = False Then
+               eui_txtTiSeCodiceEORI.Text = dr.Item("TiSeCodiceEORI").ToString
+            Else
+               eui_txtTiSeCodiceEORI.Text = String.Empty
+            End If
+            ' Terzo Intermediario Soggetto Emittente - SoggettoEmittente.
+            If IsDBNull(dr.Item("SoggettoEmittente")) = False Then
+               eui_cmbSoggettoEmittente.Text = dr.Item("SoggettoEmittente").ToString
+            Else
+               eui_cmbSoggettoEmittente.Text = String.Empty
+            End If
+
          Loop
 
       Catch ex As Exception
@@ -1631,7 +1704,7 @@ salta:
       Try
          cn.Open()
 
-         Dim cmd As New OleDbCommand("SELECT * FROM Clienti ORDER BY Id ASC", cn)
+         Dim cmd As New OleDbCommand("SELECT * FROM Clienti WHERE Id = " & idCliente & " ORDER BY Id ASC", cn)
          Dim dr As OleDbDataReader = cmd.ExecuteReader()
 
          Do While dr.Read()
@@ -1663,9 +1736,9 @@ salta:
 
             ' Partita IVA.
             If IsDBNull(dr.Item("Piva")) = False Then
-               eui_txtCpIdCodice.Text = dr.Item("Piva").ToString
+               eui_txtCcIdCodice.Text = dr.Item("Piva").ToString
             Else
-               eui_txtCpIdCodice.Text = String.Empty
+               eui_txtCcIdCodice.Text = String.Empty
             End If
 
             ' Codice fiscale.
@@ -1680,20 +1753,20 @@ salta:
                eui_txtCcDenominazione.Text = dr.Item("Cognome").ToString
             Else
                eui_txtCcDenominazione.Text = String.Empty
-            End If
 
-            ' Nome.
-            If IsDBNull(dr.Item("Nome")) = False Then
-               eui_txtCcNome.Text = dr.Item("Nome").ToString
-            Else
-               eui_txtCcNome.Text = String.Empty
-            End If
+               ' Nome.
+               If IsDBNull(dr.Item("Nome")) = False Then
+                  eui_txtCcNome.Text = dr.Item("Nome").ToString
+               Else
+                  eui_txtCcNome.Text = String.Empty
+               End If
 
-            ' Cognome.
-            If IsDBNull(dr.Item("Cognome")) = False Then
-               eui_txtCcCognome.Text = dr.Item("Cognome").ToString
-            Else
-               eui_txtCcCognome.Text = String.Empty
+               ' Cognome.
+               If IsDBNull(dr.Item("Cognome")) = False Then
+                  eui_txtCcCognome.Text = dr.Item("Cognome").ToString
+               Else
+                  eui_txtCcCognome.Text = String.Empty
+               End If
             End If
 
             ' Titolo.
@@ -1726,13 +1799,17 @@ salta:
 
             ' Sede - Provincia.
             If IsDBNull(dr.Item("Provincia")) = False Then
-               eui_cmbCcSedeProvincia.Text = dr.Item("Provincia").ToString
+               eui_cmbCcSedeProvincia.Text = FormattaProvincia(dr.Item("Provincia").ToString)
             Else
                eui_cmbCcSedeProvincia.Text = String.Empty
             End If
 
             ' Sede - Nazione.
-            eui_cmbCcSedeNazione.Text = IT_ITALIA
+            If IsDBNull(dr.Item("Nazione")) = False Then
+               eui_cmbCcSedeNazione.Text = FormattaStato(dr.Item("Nazione").ToString)
+            Else
+               eui_cmbCcSedeNazione.Text = String.Empty
+            End If
 
          Loop
 

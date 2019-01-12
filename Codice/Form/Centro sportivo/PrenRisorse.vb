@@ -4129,6 +4129,12 @@ Public Class frmPrenRisorse
 
             .TotDoc = CFormatta.FormattaNumeroDouble(Convert.ToDouble(valDaPagare))
 
+            ' SCHEDA PA.
+            .NumeroDoc_PA = String.Empty
+            .CodiceCUP_PA = String.Empty
+            .CodiceCIG_PA = String.Empty
+            .CodiceCommConv_PA = String.Empty
+
             If tipoDocumento = TIPO_DOC_FF Or tipoDocumento = TIPO_DOC_RF Or tipoDocumento = TIPO_DOC_SF Then
                ' Calcola l'IVA.
                Dim valImposta As Double

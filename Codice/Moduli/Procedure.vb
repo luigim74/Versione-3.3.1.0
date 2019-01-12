@@ -3200,6 +3200,769 @@ Module Procedure
 
 #End Region
 
+#Region "Fatturazione Elettronica "
+
+   Public Function FormattaProvincia(ByVal provincia As String)
+      Try
+         Select Case provincia.ToUpper
+            Case "AG"
+               Return "AG Agrigento"
+            Case "AL"
+               Return "AL Alessandria"
+            Case "AN"
+               Return "AN Ancona"
+            Case "AO"
+               Return "AO Aosta"
+            Case "AR"
+               Return "AR Arezzo"
+            Case "AP"
+               Return "AP Ascoli Piceno"
+            Case "AT"
+               Return "AT Asti"
+            Case "AV"
+               Return "AV Avellino"
+            Case "BA"
+               Return "BA Bari"
+            Case "BT"
+               Return "BT Barletta - Andria - Trani"
+            Case "BL"
+               Return "BL Belluno"
+            Case "BN"
+               Return "BN Benevento"
+            Case "BG"
+               Return "BG Bergamo"
+            Case "BI"
+               Return "BI Biella"
+            Case "BO"
+               Return "BO Bologna"
+            Case "BZ"
+               Return "BZ Bolzano"
+            Case "BS"
+               Return "BS Brescia"
+            Case "BR"
+               Return "BR Brindisi"
+            Case "CA"
+               Return "CA Cagliari"
+            Case "CL"
+               Return "CL Caltanissetta"
+            Case "CB"
+               Return "CB Campobasso"
+            Case "CI"
+               Return "CI Carbonia - Iglesias"
+            Case "CE"
+               Return "CE Caserta"
+            Case "CT"
+               Return "CT Catania"
+            Case "CZ"
+               Return "CZ Catanzaro"
+            Case "CH"
+               Return "CH Chieti"
+            Case "CO"
+               Return "CO Como"
+            Case "CS"
+               Return "CS Cosenza"
+            Case "CR"
+               Return "CR Cremona"
+            Case "KR"
+               Return "KR Crotone"
+            Case "CN"
+               Return "CN Cuneo"
+            Case "EN"
+               Return "EN Enna"
+            Case "FM"
+               Return "FM Fermo"
+            Case "FE"
+               Return "FE Ferrara"
+            Case "FI"
+               Return "FI Firenze"
+            Case "FU"
+               Return "FU Fiume"
+            Case "FG"
+               Return "FG Foggia"
+            Case "FC"
+               Return "FC Forlì - Cesena"
+            Case "FR"
+               Return "FR Frosinone"
+            Case "GE"
+               Return "GE Genova"
+            Case "GO"
+               Return "GO Gorizia"
+            Case "GR"
+               Return "GR Grosseto"
+            Case "IM"
+               Return "IM Imperia"
+            Case "IS"
+               Return "IS Isernia"
+            Case "AQ"
+               Return "AQ L'Aquila"
+            Case "SP"
+               Return "SP La Spezia"
+            Case "LT"
+               Return "LT Latina"
+            Case "LE"
+               Return "LE Lecce"
+            Case "LC"
+               Return "LC Lecco"
+            Case "LI"
+               Return "LI Livorno"
+            Case "LO"
+               Return "LO Lodi"
+            Case "LB"
+               Return "LB Lubiana"
+            Case "LU"
+               Return "LU Lucca"
+            Case "MC"
+               Return "MC Macerata"
+            Case "MN"
+               Return "MN Mantova"
+            Case "MS"
+               Return "MS Massa - Carrara"
+            Case "MT"
+               Return "MT Matera"
+            Case "VS"
+               Return "VS Medio Campidano"
+            Case "ME"
+               Return "ME Messina"
+            Case "MI"
+               Return "MI Milano"
+            Case "MO"
+               Return "MO Modena"
+            Case "MB"
+               Return "MB Monza e Brianza"
+            Case "NA"
+               Return "NA Napoli"
+            Case "NO"
+               Return "NO Novara"
+            Case "NU"
+               Return "NU Nuoro"
+            Case "OG"
+               Return "OG Ogliastra"
+            Case "OT"
+               Return "OT Olbia - Tempio"
+            Case "OR"
+               Return "OR Oristano"
+            Case "PD"
+               Return "PD Padova"
+            Case "PA"
+               Return "PA Palermo"
+            Case "PR"
+               Return "PR Parma"
+            Case "PV"
+               Return "PV Pavia"
+            Case "PG"
+               Return "PG Perugia"
+            Case "PU"
+               Return "PU Pesaro e Urbino"
+            Case "PE"
+               Return "PE Pescara"
+            Case "PC"
+               Return "PC Piacenza"
+            Case "PI"
+               Return "PI Pisa"
+            Case ""
+               Return "PT Pistoia"
+            Case "PL"
+               Return "PL Pola"
+            Case "PN"
+               Return "PN Pordenone"
+            Case "PZ"
+               Return "PZ Potenza"
+            Case "PO"
+               Return "PO Prato"
+            Case "RG"
+               Return "RG Ragusa"
+            Case "RA"
+               Return "RA Ravenna"
+            Case "RC"
+               Return "RC Reggio di Calabria"
+            Case "RE"
+               Return "RE Reggio nell'Emilia"
+            Case "RI"
+               Return "RI Rieti"
+            Case "RN"
+               Return "RN Rimini"
+            Case "RM"
+               Return "RM Roma"
+            Case "RO"
+               Return "RO Rovigo"
+            Case "SA"
+               Return "SA Salerno"
+            Case "SS"
+               Return "SS Sassari"
+            Case "SV"
+               Return "SV Savona"
+            Case "SI"
+               Return "SI Siena"
+            Case "SR"
+               Return "SR Siracusa"
+            Case "SO"
+               Return "SO Sondrio"
+            Case "SU"
+               Return "SU Sud Sardegna"
+            Case "TA"
+               Return "TA Taranto"
+            Case "TE"
+               Return "TE Teramo"
+            Case "TR"
+               Return "TR Terni"
+            Case "TO"
+               Return "TO Torino"
+            Case "TP"
+               Return "TP Trapani"
+            Case "TN"
+               Return "TN Trento"
+            Case "TV"
+               Return "TV Treviso"
+            Case "TS"
+               Return "TS Trieste"
+            Case "UD"
+               Return "UD Udine"
+            Case "VA"
+               Return "VA Varese"
+            Case "VE"
+               Return "VE Venezia"
+            Case "VB"
+               Return "VB Verbano - Cusio - Ossola"
+            Case "VC"
+               Return "VC Vercelli"
+            Case "VR"
+               Return "VR Verona"
+            Case "VV"
+               Return "VV Vibo Valentia"
+            Case "VI"
+               Return "VI Vicenza"
+            Case "VT"
+               Return "VT Viterbo"
+            Case "ZA"
+               Return "ZA Zara"
+            Case Else
+               Return String.Empty
+         End Select
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+         Return String.Empty
+
+      End Try
+   End Function
+
+   Public Function FormattaStato(ByVal stato As String)
+      Try
+         Select Case stato.ToUpper
+            Case "Andorra".ToUpper
+               Return "AD Andorra"
+            Case "Emirati Arabi Uniti".ToUpper
+               Return "AE Emirati Arabi Uniti"
+            Case "Afghanistan".ToUpper
+               Return "AF Afghanistan"
+            Case "Antigua e Barbuda".ToUpper
+               Return "AG Antigua e Barbuda"
+            Case "Anguilla".ToUpper
+               Return "AI Anguilla"
+            Case "Albania".ToUpper
+               Return "AL Albania"
+            Case "Armenia".ToUpper
+               Return "AM Armenia"
+            Case "Angola".ToUpper
+               Return "AO Angola"
+            Case "Antartide".ToUpper
+               Return "AQ Antartide"
+            Case "Argentina".ToUpper
+               Return "AR Argentina"
+            Case "Samoa Americane".ToUpper
+               Return "AS Samoa Americane"
+            Case "Austria".ToUpper
+               Return "AT Austria"
+            Case "Australia".ToUpper
+               Return "AU Australia"
+            Case "Aruba".ToUpper
+               Return "AW Aruba"
+            Case "Isole Åland".ToUpper
+               Return "AX Isole Åland"
+            Case "Azerbaigian".ToUpper
+               Return "AZ Azerbaigian"
+            Case "Bosnia ed Erzegovina".ToUpper
+               Return "BA Bosnia ed Erzegovina"
+            Case "Barbados".ToUpper
+               Return "BB Barbados"
+            Case "Bangladesh".ToUpper
+               Return "BD Bangladesh"
+            Case "Belgio".ToUpper
+               Return "BE Belgio"
+            Case "Burkina Faso".ToUpper
+               Return "BF Burkina Faso"
+            Case "Bulgaria".ToUpper
+               Return "BG Bulgaria"
+            Case "Bahrein".ToUpper
+               Return " BH Bahrein"
+            Case "Burundi".ToUpper
+               Return "BI Burundi"
+            Case "Benin".ToUpper
+               Return "BJ Benin"
+            Case "Saint - Barthélemy".ToUpper
+               Return "BL Saint - Barthélemy"
+            Case "Bermuda".ToUpper
+               Return "BM Bermuda"
+            Case "Brunei".ToUpper
+               Return "BN Brunei"
+            Case "Bolivia".ToUpper
+               Return "BO Bolivia"
+            Case "Isole BES".ToUpper
+               Return "BQ Isole BES"
+            Case "Brasile".ToUpper
+               Return "BR Brasile"
+            Case "Bahamas".ToUpper
+               Return "BS Bahamas"
+            Case "Bhutan".ToUpper
+               Return "BT Bhutan"
+            Case "Isola Bouvet".ToUpper
+               Return "BV Isola Bouvet"
+            Case "Botswana".ToUpper
+               Return "BW Botswana"
+            Case "Bielorussia".ToUpper
+               Return "BY Bielorussia"
+            Case "Belize".ToUpper
+               Return "BZ Belize"
+            Case "Canada".ToUpper
+               Return "CA Canada"
+            Case "Isole Cocos e Keeling".ToUpper
+               Return "CC Isole Cocos e Keeling"
+            Case "Repubblica Democratica del Congo".ToUpper
+               Return "CD Repubblica Democratica del Congo"
+            Case "Repubblica Centrafricana".ToUpper
+               Return "CF Repubblica Centrafricana"
+            Case "Repubblica del Congo".ToUpper
+               Return "CG Repubblica del Congo"
+            Case "Svizzera".ToUpper
+               Return "CH Svizzera"
+            Case "Costa d'Avorio".ToUpper
+               Return "CI Costa d'Avorio"
+            Case "Isole Cook".ToUpper
+               Return "CK Isole Cook"
+            Case "Cile".ToUpper
+               Return "CL Cile"
+            Case "Camerun".ToUpper
+               Return "CM Camerun"
+            Case "Cina".ToUpper
+               Return "CN Cina"
+            Case "Colombia".ToUpper
+               Return "CO Colombia"
+            Case "Costa Rica".ToUpper
+               Return "CR Costa Rica"
+            Case "Cuba".ToUpper
+               Return "CU Cuba"
+            Case "Capo Verde".ToUpper
+               Return "CV Capo Verde"
+            Case "Curaçao".ToUpper
+               Return "CW Curaçao"
+            Case "Isola del Natale".ToUpper
+               Return "CX Isola del Natale"
+            Case "Cipro".ToUpper
+               Return "CY Cipro"
+            Case "Repubblica Ceca".ToUpper
+               Return "CZ Repubblica Ceca"
+            Case "Germania".ToUpper
+               Return "DE Germania"
+            Case "Gibuti".ToUpper
+               Return "DJ Gibuti"
+            Case "Danimarca".ToUpper
+               Return "DK Danimarca"
+            Case "Dominica".ToUpper
+               Return "DM Dominica"
+            Case "Repubblica Dominicana".ToUpper
+               Return "Do Repubblica Dominicana"
+            Case "Algeria".ToUpper
+               Return "DZ Algeria"
+            Case "Ecuador".ToUpper
+               Return "EC Ecuador"
+            Case "Estonia".ToUpper
+               Return "EE Estonia"
+            Case "Egitto".ToUpper
+               Return "EG Egitto"
+            Case "Sahara Occidentale".ToUpper
+               Return "EH Sahara Occidentale"
+            Case "Eritrea".ToUpper
+               Return "ER Eritrea"
+            Case "Spagna".ToUpper
+               Return "ES Spagna"
+            Case "Etiopia".ToUpper
+               Return "ET Etiopia"
+            Case "Finlandia".ToUpper
+               Return "FI Finlandia"
+            Case "Figi".ToUpper
+               Return "FJ Figi"
+            Case "Isole Falkland".ToUpper
+               Return "FK Isole Falkland"
+            Case "Stati Federati di Micronesia".ToUpper
+               Return "FM Stati Federati di Micronesia"
+            Case "Isole Fær Øer".ToUpper
+               Return "FO Isole Fær Øer"
+            Case "Francia".ToUpper
+               Return "FR Francia"
+            Case "Gabon".ToUpper
+               Return "GA Gabon"
+            Case "Regno Unito".ToUpper
+               Return "GB Regno Unito"
+            Case "Grenada".ToUpper
+               Return "GD Grenada"
+            Case "Georgia".ToUpper
+               Return "GE Georgia"
+            Case "Guyana francese".ToUpper
+               Return "GF Guyana francese"
+            Case "Guernsey".ToUpper
+               Return "GG Guernsey"
+            Case "Ghana".ToUpper
+               Return "GH Ghana"
+            Case "Gibilterra".ToUpper
+               Return "GI Gibilterra"
+            Case "Groenlandia".ToUpper
+               Return "GL Groenlandia"
+            Case "Gambia".ToUpper
+               Return "GM Gambia"
+            Case "Guinea".ToUpper
+               Return "GN Guinea"
+            Case "Guadalupa".ToUpper
+               Return "GP Guadalupa"
+            Case "Guinea Equatoriale".ToUpper
+               Return "GQ Guinea Equatoriale"
+            Case "Grecia".ToUpper
+               Return "GR Grecia"
+            Case "Georgia del Sud e isole Sandwich meridionali".ToUpper
+               Return "GS Georgia del Sud e isole Sandwich meridionali"
+            Case "Guatemala".ToUpper
+               Return "GT Guatemala"
+            Case "Guam".ToUpper
+               Return "GU Guam"
+            Case "Guinea - Bissau".ToUpper
+               Return "GW Guinea - Bissau"
+            Case "Guyana".ToUpper
+               Return "GY Guyana"
+            Case "Hong Kong".ToUpper
+               Return "HK Hong Kong"
+            Case "Isole Heard e McDonald".ToUpper
+               Return "HM Isole Heard e McDonald"
+            Case "Honduras".ToUpper
+               Return "HN Honduras"
+            Case "Croazia".ToUpper
+               Return "HR Croazia"
+            Case "Haiti".ToUpper
+               Return "HT Haiti"
+            Case "Ungheria".ToUpper
+               Return "HU Ungheria"
+            Case "Indonesia".ToUpper
+               Return "ID Indonesia"
+            Case "Irlanda".ToUpper
+               Return "IE Irlanda"
+            Case "Israele".ToUpper
+               Return "IL Israele"
+            Case "Isola di Man".ToUpper
+               Return "IM Isola di Man"
+            Case "India".ToUpper
+               Return "IN India"
+            Case "Territori Britannici dell'Oceano Indiano".ToUpper
+               Return "IO Territori Britannici dell'Oceano Indiano"
+            Case "Iraq".ToUpper
+               Return "IQ Iraq"
+            Case "Iran".ToUpper
+               Return "IR Iran"
+            Case "Islanda".ToUpper
+               Return "Is Islanda"
+            Case "Italia".ToUpper
+               Return "IT Italia"
+            Case "Jersey".ToUpper
+               Return "JE Jersey"
+            Case "Giamaica".ToUpper
+               Return "JM Giamaica"
+            Case "Giordania".ToUpper
+               Return "JO Giordania"
+            Case "Giappone".ToUpper
+               Return "JP Giappone"
+            Case "Kenya".ToUpper
+               Return "KE Kenya"
+            Case "Cambogia".ToUpper
+               Return "KH Cambogia"
+            Case "Kiribati".ToUpper
+               Return "KI Kiribati"
+            Case "Comore".ToUpper
+               Return "KM Comore"
+            Case "Saint Kitts e Nevis".ToUpper
+               Return "KN Saint Kitts e Nevis"
+            Case "Corea del Nord".ToUpper
+               Return "KP Corea del Nord"
+            Case "Corea del Sud".ToUpper
+               Return "KR Corea del Sud"
+            Case "Kuwait".ToUpper
+               Return "KW Kuwait"
+            Case "Isole Cayman".ToUpper
+               Return "KY Isole Cayman"
+            Case "Kazakistan".ToUpper
+               Return "KZ Kazakistan"
+            Case "Laos".ToUpper
+               Return "LA Laos"
+            Case "Libano".ToUpper
+               Return "LB Libano"
+            Case "Santa Lucia".ToUpper
+               Return "LC Santa Lucia"
+            Case "Liechtenstein".ToUpper
+               Return "LI Liechtenstein"
+            Case "Sri Lanka".ToUpper
+               Return "LK Sri Lanka"
+            Case "Liberia".ToUpper
+               Return "LR Liberia"
+            Case "Lesotho".ToUpper
+               Return "LS Lesotho"
+            Case "Lituania".ToUpper
+               Return "LT Lituania"
+            Case "Lussemburgo".ToUpper
+               Return "LU Lussemburgo"
+            Case "Lettonia".ToUpper
+               Return "LV Lettonia"
+            Case "Libia".ToUpper
+               Return "LY Libia"
+            Case "Marocco".ToUpper
+               Return "MA Marocco"
+            Case "Monaco".ToUpper
+               Return "MC Monaco"
+            Case "Moldavia".ToUpper
+               Return "MD Moldavia"
+            Case "Montenegro".ToUpper
+               Return "Me Montenegro"
+            Case "Saint - Martin".ToUpper
+               Return "MF Saint - Martin"
+            Case "Madagascar".ToUpper
+               Return "MG Madagascar"
+            Case "Isole Marshall".ToUpper
+               Return "MH Isole Marshall"
+            Case "Macedonia".ToUpper
+               Return "MK Macedonia"
+            Case "Mali".ToUpper
+               Return "ML Mali"
+            Case "Birmania".ToUpper
+               Return "MM Birmania"
+            Case "Mongolia".ToUpper
+               Return "MN Mongolia"
+            Case "Macao".ToUpper
+               Return "MO Macao"
+            Case "Isole Marianne Settentrionali".ToUpper
+               Return "MP Isole Marianne Settentrionali"
+            Case "Martinica".ToUpper
+               Return "MQ Martinica"
+            Case "Mauritania".ToUpper
+               Return "MR Mauritania"
+            Case "Montserrat".ToUpper
+               Return "MS Montserrat"
+            Case "Malta".ToUpper
+               Return "MT Malta"
+            Case "Mauritius".ToUpper
+               Return "MU Mauritius"
+            Case "Maldive".ToUpper
+               Return "MV Maldive"
+            Case "Malawi".ToUpper
+               Return "MW Malawi"
+            Case "Messico".ToUpper
+               Return "MX Messico"
+            Case "Malaysia".ToUpper
+               Return "My Malaysia"
+            Case "Mozambico".ToUpper
+               Return "MZ Mozambico"
+            Case "Namibia".ToUpper
+               Return "NA Namibia"
+            Case "Nuova Caledonia".ToUpper
+               Return "NC Nuova Caledonia"
+            Case "Niger".ToUpper
+               Return "NE Niger"
+            Case "Isola Norfolk".ToUpper
+               Return "NF Isola Norfolk"
+            Case "Nigeria".ToUpper
+               Return "NG Nigeria"
+            Case "Nicaragua".ToUpper
+               Return "NI Nicaragua"
+            Case "Paesi Bassi".ToUpper
+               Return "NL Paesi Bassi"
+            Case "Norvegia".ToUpper
+               Return "NO Norvegia"
+            Case "Nepal".ToUpper
+               Return "NP Nepal"
+            Case "Nauru".ToUpper
+               Return "NR Nauru"
+            Case "Niue".ToUpper
+               Return "NU Niue"
+            Case "Nuova Zelanda".ToUpper
+               Return "NZ Nuova Zelanda"
+            Case "Oman".ToUpper
+               Return "OM Oman"
+            Case "Panama".ToUpper
+               Return "PA Panama"
+            Case "Perù".ToUpper
+               Return "PE Perù"
+            Case "Polinesia Francese".ToUpper
+               Return "PF Polinesia Francese"
+            Case "Papua Nuova Guinea".ToUpper
+               Return "PG Papua Nuova Guinea"
+            Case "Filippine".ToUpper
+               Return "PH Filippine"
+            Case "Pakistan".ToUpper
+               Return "PK Pakistan"
+            Case "Polonia".ToUpper
+               Return "PL Polonia"
+            Case "Saint - Pierre e Miquelon".ToUpper
+               Return "PM Saint - Pierre e Miquelon"
+            Case "Isole Pitcairn".ToUpper
+               Return "PN Isole Pitcairn"
+            Case "Porto Rico".ToUpper
+               Return "PR Porto Rico"
+            Case "Stato di Palestina".ToUpper
+               Return "PS stato di Palestina"
+            Case "Portogallo".ToUpper
+               Return "PT Portogallo"
+            Case "Palau".ToUpper
+               Return "PW Palau"
+            Case "Paraguay".ToUpper
+               Return "PY Paraguay"
+            Case "Qatar".ToUpper
+               Return "QA Qatar"
+            Case "Riunione".ToUpper
+               Return "RE Riunione"
+            Case "Romania".ToUpper
+               Return "RO Romania"
+            Case "Serbia".ToUpper
+               Return "RS Serbia"
+            Case "Russia".ToUpper
+               Return "RU Russia"
+            Case "Ruanda".ToUpper
+               Return "RW Ruanda"
+            Case "Arabia Saudita".ToUpper
+               Return "SA Arabia Saudita"
+            Case "Isole Salomone".ToUpper
+               Return "SB Isole Salomone"
+            Case "Seychelles".ToUpper
+               Return "SC Seychelles"
+            Case "Sudan".ToUpper
+               Return "SD Sudan"
+            Case "Svezia".ToUpper
+               Return "SE Svezia"
+            Case "Singapore".ToUpper
+               Return "SG Singapore"
+            Case "Sant'Elena, Isola di Ascensione e Tristan da Cunha".ToUpper
+               Return "SH Sant'Elena, Isola di Ascensione e Tristan da Cunha"
+            Case "Slovenia".ToUpper
+               Return "SI Slovenia"
+            Case "Svalbard e Jan Mayen".ToUpper
+               Return "SJ Svalbard e Jan Mayen"
+            Case "Slovacchia".ToUpper
+               Return "SK Slovacchia"
+            Case "Sierra Leone".ToUpper
+               Return "SL Sierra Leone"
+            Case "San Marino".ToUpper
+               Return "SM San Marino"
+            Case "Senegal".ToUpper
+               Return "SN Senegal"
+            Case "Somalia".ToUpper
+               Return "SO Somalia"
+            Case "Suriname".ToUpper
+               Return "SR Suriname"
+            Case "Sudan del Sud".ToUpper
+               Return "SS Sudan del Sud"
+            Case "São Tomé e Príncipe".ToUpper
+               Return "ST São Tomé e Príncipe"
+            Case "El Salvador".ToUpper
+               Return "SV El Salvador"
+            Case "Sint Maarten".ToUpper
+               Return "SX Sint Maarten"
+            Case "Siria".ToUpper
+               Return "SY Siria"
+            Case "Swaziland".ToUpper
+               Return "SZ Swaziland"
+            Case "Isole Turks e Caicos".ToUpper
+               Return "TC Isole Turks e Caicos"
+            Case "Ciad".ToUpper
+               Return "TD Ciad"
+            Case "Territori Francesi del Sud".ToUpper
+               Return "TF Territori Francesi del Sud"
+            Case "Togo".ToUpper
+               Return "TG Togo"
+            Case "Thailandia".ToUpper
+               Return "TH Thailandia"
+            Case "Tagikistan".ToUpper
+               Return "TJ Tagikistan"
+            Case "Tokelau".ToUpper
+               Return "TK Tokelau"
+            Case "Timor Est".ToUpper
+               Return "TL Timor Est"
+            Case "Turkmenistan".ToUpper
+               Return "TM Turkmenistan"
+            Case "Tunisia".ToUpper
+               Return "TN Tunisia"
+            Case "Tonga".ToUpper
+               Return "TO Tonga"
+            Case "Turchia".ToUpper
+               Return "TR Turchia"
+            Case "Trinidad e Tobago".ToUpper
+               Return "TT Trinidad e Tobago"
+            Case "Tuvalu".ToUpper
+               Return "TV Tuvalu"
+            Case "Repubblica di Cina".ToUpper
+               Return "TW Repubblica di Cina"
+            Case "Tanzania".ToUpper
+               Return "TZ Tanzania"
+            Case "Ucraina".ToUpper
+               Return "UA Ucraina"
+            Case "Uganda".ToUpper
+               Return "UG Uganda"
+            Case "Isole minori esterne degli Stati Uniti".ToUpper
+               Return "UM Isole minori esterne degli Stati Uniti"
+            Case "Stati Uniti d'America".ToUpper
+               Return "US Stati Uniti d'America"
+            Case "Uruguay".ToUpper
+               Return "UY Uruguay"
+            Case "Uzbekistan".ToUpper
+               Return "UZ Uzbekistan"
+            Case "Città del Vaticano".ToUpper
+               Return "VA Città del Vaticano"
+            Case "Saint Vincent e Grenadine".ToUpper
+               Return "VC Saint Vincent e Grenadine"
+            Case "Venezuela".ToUpper
+               Return "VE Venezuela"
+            Case "Isole Vergini britanniche".ToUpper
+               Return "VG Isole Vergini britanniche"
+            Case "Isole Vergini americane".ToUpper
+               Return "VI Isole Vergini americane"
+            Case "Vietnam".ToUpper
+               Return "VN Vietnam"
+            Case "Vanuatu".ToUpper
+               Return "VU Vanuatu"
+            Case "Wallis e Futuna".ToUpper
+               Return "WF Wallis e Futuna"
+            Case "Samoa".ToUpper
+               Return "WS Samoa"
+            Case "Yemen".ToUpper
+               Return "YE Yemen"
+            Case "Mayotte".ToUpper
+               Return "YT Mayotte"
+            Case "Sudafrica".ToUpper
+               Return "ZA Sudafrica"
+            Case "Zambia".ToUpper
+               Return "ZM Zambia"
+            Case "Zimbabwe".ToUpper
+               Return "ZW Zimbabwe"
+            Case Else
+               Return String.Empty
+         End Select
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+         Return String.Empty
+
+      End Try
+   End Function
+
+#End Region
+
+
 #Region "Varie"
 
    Public Function InserisciChiaveAccesso() As Boolean

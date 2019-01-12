@@ -2935,7 +2935,8 @@ Public Class ContoPos
          Dim cmd As New OleDbCommand("SELECT * FROM " & tabella & " WHERE Id = " & id, cn)
          Dim dr As OleDbDataReader = cmd.ExecuteReader()
 
-         idCliente = id
+         'idCliente = id
+         txtIdAzienda.Text = id
 
          Do While dr.Read
             If IsDBNull(dr.Item("Cognome")) = False Then
@@ -3329,10 +3330,10 @@ Public Class ContoPos
                Case Cliente.Azienda
                   ' Viene aggiunta la lettera A per identificare le Aziende.
                   ' Codice aggiunto dopo la creazione della nuova anagrafica Aziende.
-                  .IdCliente = "A" & idCliente
+                  .IdCliente = "A" & g_frmContoPos.txtIdAzienda.Text
                Case Cliente.Privato
                   ' ID normale.
-                  .IdCliente = idCliente
+                  .IdCliente = g_frmContoPos.txtIdCliente.Text
             End Select
 
             If eui_cmdCliente.Text = "Seleziona cliente" Then
@@ -3386,6 +3387,12 @@ Public Class ContoPos
             .Sospeso = CFormatta.FormattaNumeroDouble(valSospeso)
             .SospesoIncassare = CFormatta.FormattaNumeroDouble(valSospeso)
             .TotDoc = CFormatta.FormattaNumeroDouble(Convert.ToDouble(valDaPagare))
+
+            ' SCHEDA PA.
+            .NumeroDoc_PA = String.Empty
+            .CodiceCUP_PA = String.Empty
+            .CodiceCIG_PA = String.Empty
+            .CodiceCommConv_PA = String.Empty
 
             ' Se Fattura, Ricevuta o Scontrino salva l'iva...
             If tipoDocumento = TIPO_DOC_FF Or tipoDocumento = TIPO_DOC_RF Or tipoDocumento = TIPO_DOC_SF Then

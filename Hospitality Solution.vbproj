@@ -517,9 +517,10 @@
     <Compile Include="HospitalityDataSet.vb">
       <DependentUpon>HospitalityDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="HospitalityDataSet11.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
+    <Compile Include="HospitalityDataSet1.Designer.vb">
+      <DependentUpon>HospitalityDataSet1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HospitalityDataSet1.vb">
       <DependentUpon>HospitalityDataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="IstatDataSet.Designer.vb">
@@ -953,7 +954,6 @@
       <DependentUpon>HospitalityDataSet1.xsd</DependentUpon>
     </None>
     <None Include="HospitalityDataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>HospitalityDataSet11.Designer.vb</LastGenOutput>
     </None>
     <None Include="HospitalityDataSet1.xss">

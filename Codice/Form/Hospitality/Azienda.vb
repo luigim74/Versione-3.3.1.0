@@ -70,7 +70,6 @@ Friend Class frmAzienda
    Public WithEvents picFoto As System.Windows.Forms.PictureBox
    Public WithEvents txtIndirizzo As System.Windows.Forms.TextBox
    Public WithEvents txtPIva As System.Windows.Forms.TextBox
-   Public WithEvents txtProv As System.Windows.Forms.TextBox
    Public WithEvents txtCap As System.Windows.Forms.TextBox
    Public WithEvents txtCittà As System.Windows.Forms.TextBox
    Public WithEvents txtRagSoc As System.Windows.Forms.TextBox
@@ -92,15 +91,42 @@ Friend Class frmAzienda
    Friend WithEvents Button1 As System.Windows.Forms.Button
    Friend WithEvents formFrameSkinner As Elegant.Ui.FormFrameSkinner
    Friend WithEvents tbrSalva As ToolBarButton
-   Public WithEvents txtNumeroREA As TextBox
-   Public WithEvents Label11 As Label
    Public WithEvents txtCodiceFiscale As TextBox
    Public WithEvents Label8 As Label
-   Friend WithEvents cmbRegimeFiscale As ComboBox
-   Public WithEvents Label12 As Label
    Friend WithEvents cmbNazione As ComboBox
    Public WithEvents txtPec As TextBox
    Friend WithEvents Label13 As Label
+   Friend WithEvents TabPage4 As TabPage
+   Friend WithEvents eui_txtTiSeCodiceFiscale As Elegant.Ui.TextBox
+   Friend WithEvents Label72 As Elegant.Ui.Label
+   Friend WithEvents cmbRegimeFiscale As ComboBox
+   Public WithEvents Label12 As Label
+   Friend WithEvents TabControl2 As TabControl
+   Friend WithEvents TabPage5 As TabPage
+   Friend WithEvents TabPage6 As TabPage
+   Friend WithEvents Label67 As Elegant.Ui.Label
+   Friend WithEvents Label68 As Elegant.Ui.Label
+   Friend WithEvents Label69 As Elegant.Ui.Label
+   Friend WithEvents eui_txtTiSeCodiceEORI As Elegant.Ui.TextBox
+   Friend WithEvents eui_txtTiSeTitolo As Elegant.Ui.TextBox
+   Friend WithEvents eui_txtTiSeCognome As Elegant.Ui.TextBox
+   Friend WithEvents eui_txtTiSeDenominazione As Elegant.Ui.TextBox
+   Friend WithEvents eui_txtTiSeNome As Elegant.Ui.TextBox
+   Friend WithEvents Label70 As Elegant.Ui.Label
+   Friend WithEvents Label71 As Elegant.Ui.Label
+   Friend WithEvents eui_txtTiSeIdCodice As Elegant.Ui.TextBox
+   Friend WithEvents Label73 As Elegant.Ui.Label
+   Friend WithEvents eui_cmbTiSeIdPaese As Elegant.Ui.ComboBox
+   Friend WithEvents Label74 As Elegant.Ui.Label
+   Friend WithEvents eui_cmbCpUfficioREA As Elegant.Ui.ComboBox
+   Friend WithEvents eui_cmbCpStatoLiquidazioneREA As Elegant.Ui.ComboBox
+   Friend WithEvents Label14 As Elegant.Ui.Label
+   Friend WithEvents Label41 As Elegant.Ui.Label
+   Public WithEvents Label11 As Label
+   Friend WithEvents eui_txtCpNumeroREA As Elegant.Ui.TextBox
+   Friend WithEvents eui_cmbSoggettoEmittente As Elegant.Ui.ComboBox
+   Friend WithEvents Label75 As Elegant.Ui.Label
+   Public WithEvents txtProvincia As TextBox
    Friend WithEvents tbrElimina As System.Windows.Forms.ToolBarButton
    <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
       Me.components = New System.ComponentModel.Container()
@@ -116,11 +142,10 @@ Friend Class frmAzienda
       Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
       Me.TabControl1 = New System.Windows.Forms.TabControl()
       Me.TabPage1 = New System.Windows.Forms.TabPage()
-      Me.cmbNazione = New System.Windows.Forms.ComboBox()
+      Me.txtProvincia = New System.Windows.Forms.TextBox()
       Me.cmbRegimeFiscale = New System.Windows.Forms.ComboBox()
       Me.Label12 = New System.Windows.Forms.Label()
-      Me.txtNumeroREA = New System.Windows.Forms.TextBox()
-      Me.Label11 = New System.Windows.Forms.Label()
+      Me.cmbNazione = New System.Windows.Forms.ComboBox()
       Me.txtCodiceFiscale = New System.Windows.Forms.TextBox()
       Me.Label8 = New System.Windows.Forms.Label()
       Me.EliminaImg = New System.Windows.Forms.Button()
@@ -128,7 +153,6 @@ Friend Class frmAzienda
       Me.picFoto = New System.Windows.Forms.PictureBox()
       Me.txtIndirizzo = New System.Windows.Forms.TextBox()
       Me.txtPIva = New System.Windows.Forms.TextBox()
-      Me.txtProv = New System.Windows.Forms.TextBox()
       Me.txtCap = New System.Windows.Forms.TextBox()
       Me.txtCittà = New System.Windows.Forms.TextBox()
       Me.txtRagSoc = New System.Windows.Forms.TextBox()
@@ -140,6 +164,8 @@ Friend Class frmAzienda
       Me.Label4 = New System.Windows.Forms.Label()
       Me.Label3 = New System.Windows.Forms.Label()
       Me.TabPage3 = New System.Windows.Forms.TabPage()
+      Me.txtPec = New System.Windows.Forms.TextBox()
+      Me.Label13 = New System.Windows.Forms.Label()
       Me.txtInternet = New System.Windows.Forms.TextBox()
       Me.Label2 = New System.Windows.Forms.Label()
       Me.txtMail = New System.Windows.Forms.TextBox()
@@ -164,9 +190,35 @@ Friend Class frmAzienda
       Me.Label36 = New System.Windows.Forms.Label()
       Me.Label37 = New System.Windows.Forms.Label()
       Me.Label38 = New System.Windows.Forms.Label()
+      Me.TabPage4 = New System.Windows.Forms.TabPage()
+      Me.TabControl2 = New System.Windows.Forms.TabControl()
+      Me.TabPage5 = New System.Windows.Forms.TabPage()
+      Me.eui_txtCpNumeroREA = New Elegant.Ui.TextBox()
+      Me.Label11 = New System.Windows.Forms.Label()
+      Me.eui_cmbCpUfficioREA = New Elegant.Ui.ComboBox()
+      Me.eui_cmbCpStatoLiquidazioneREA = New Elegant.Ui.ComboBox()
+      Me.Label14 = New Elegant.Ui.Label()
+      Me.Label41 = New Elegant.Ui.Label()
+      Me.TabPage6 = New System.Windows.Forms.TabPage()
+      Me.eui_cmbSoggettoEmittente = New Elegant.Ui.ComboBox()
+      Me.Label75 = New Elegant.Ui.Label()
+      Me.Label67 = New Elegant.Ui.Label()
+      Me.Label68 = New Elegant.Ui.Label()
+      Me.Label69 = New Elegant.Ui.Label()
+      Me.eui_txtTiSeCodiceEORI = New Elegant.Ui.TextBox()
+      Me.eui_txtTiSeTitolo = New Elegant.Ui.TextBox()
+      Me.eui_txtTiSeCognome = New Elegant.Ui.TextBox()
+      Me.eui_txtTiSeDenominazione = New Elegant.Ui.TextBox()
+      Me.eui_txtTiSeNome = New Elegant.Ui.TextBox()
+      Me.Label70 = New Elegant.Ui.Label()
+      Me.Label71 = New Elegant.Ui.Label()
+      Me.eui_txtTiSeIdCodice = New Elegant.Ui.TextBox()
+      Me.Label73 = New Elegant.Ui.Label()
+      Me.eui_cmbTiSeIdPaese = New Elegant.Ui.ComboBox()
+      Me.Label74 = New Elegant.Ui.Label()
+      Me.Label72 = New Elegant.Ui.Label()
+      Me.eui_txtTiSeCodiceFiscale = New Elegant.Ui.TextBox()
       Me.formFrameSkinner = New Elegant.Ui.FormFrameSkinner()
-      Me.txtPec = New System.Windows.Forms.TextBox()
-      Me.Label13 = New System.Windows.Forms.Label()
       Me.Panel1.SuspendLayout()
       CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
       Me.TabControl1.SuspendLayout()
@@ -174,6 +226,10 @@ Friend Class frmAzienda
       CType(Me.picFoto, System.ComponentModel.ISupportInitialize).BeginInit()
       Me.TabPage3.SuspendLayout()
       Me.TabPage2.SuspendLayout()
+      Me.TabPage4.SuspendLayout()
+      Me.TabControl2.SuspendLayout()
+      Me.TabPage5.SuspendLayout()
+      Me.TabPage6.SuspendLayout()
       Me.SuspendLayout()
       '
       'ToolBar1
@@ -185,7 +241,7 @@ Friend Class frmAzienda
       Me.ToolBar1.Location = New System.Drawing.Point(0, 0)
       Me.ToolBar1.Name = "ToolBar1"
       Me.ToolBar1.ShowToolTips = True
-      Me.ToolBar1.Size = New System.Drawing.Size(575, 28)
+      Me.ToolBar1.Size = New System.Drawing.Size(581, 28)
       Me.ToolBar1.TabIndex = 1
       Me.ToolBar1.TextAlign = System.Windows.Forms.ToolBarTextAlign.Right
       '
@@ -220,7 +276,7 @@ Friend Class frmAzienda
       Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
       Me.Panel1.Location = New System.Drawing.Point(0, 28)
       Me.Panel1.Name = "Panel1"
-      Me.Panel1.Size = New System.Drawing.Size(575, 20)
+      Me.Panel1.Size = New System.Drawing.Size(581, 20)
       Me.Panel1.TabIndex = 19
       '
       'lblIntestazione
@@ -257,22 +313,22 @@ Friend Class frmAzienda
       Me.TabControl1.Controls.Add(Me.TabPage1)
       Me.TabControl1.Controls.Add(Me.TabPage3)
       Me.TabControl1.Controls.Add(Me.TabPage2)
+      Me.TabControl1.Controls.Add(Me.TabPage4)
       Me.TabControl1.Dock = System.Windows.Forms.DockStyle.Fill
       Me.TabControl1.Location = New System.Drawing.Point(0, 48)
       Me.TabControl1.Multiline = True
       Me.TabControl1.Name = "TabControl1"
       Me.TabControl1.SelectedIndex = 0
-      Me.TabControl1.Size = New System.Drawing.Size(575, 343)
+      Me.TabControl1.Size = New System.Drawing.Size(581, 333)
       Me.TabControl1.TabIndex = 0
       '
       'TabPage1
       '
       Me.TabPage1.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.TabPage1.Controls.Add(Me.cmbNazione)
+      Me.TabPage1.Controls.Add(Me.txtProvincia)
       Me.TabPage1.Controls.Add(Me.cmbRegimeFiscale)
       Me.TabPage1.Controls.Add(Me.Label12)
-      Me.TabPage1.Controls.Add(Me.txtNumeroREA)
-      Me.TabPage1.Controls.Add(Me.Label11)
+      Me.TabPage1.Controls.Add(Me.cmbNazione)
       Me.TabPage1.Controls.Add(Me.txtCodiceFiscale)
       Me.TabPage1.Controls.Add(Me.Label8)
       Me.TabPage1.Controls.Add(Me.EliminaImg)
@@ -280,7 +336,6 @@ Friend Class frmAzienda
       Me.TabPage1.Controls.Add(Me.picFoto)
       Me.TabPage1.Controls.Add(Me.txtIndirizzo)
       Me.TabPage1.Controls.Add(Me.txtPIva)
-      Me.TabPage1.Controls.Add(Me.txtProv)
       Me.TabPage1.Controls.Add(Me.txtCap)
       Me.TabPage1.Controls.Add(Me.txtCittà)
       Me.TabPage1.Controls.Add(Me.txtRagSoc)
@@ -294,18 +349,24 @@ Friend Class frmAzienda
       Me.TabPage1.ForeColor = System.Drawing.SystemColors.Desktop
       Me.TabPage1.Location = New System.Drawing.Point(4, 22)
       Me.TabPage1.Name = "TabPage1"
-      Me.TabPage1.Size = New System.Drawing.Size(567, 317)
+      Me.TabPage1.Size = New System.Drawing.Size(573, 307)
       Me.TabPage1.TabIndex = 0
       Me.TabPage1.Tag = "Codice fornito da Azienda emettitrice di Buoni pasto:"
       Me.TabPage1.Text = "Dati principali"
       Me.TabPage1.ToolTipText = "Dati principali"
       '
-      'cmbNazione
+      'txtProvincia
       '
-      Me.cmbNazione.Location = New System.Drawing.Point(104, 218)
-      Me.cmbNazione.Name = "cmbNazione"
-      Me.cmbNazione.Size = New System.Drawing.Size(160, 21)
-      Me.cmbNazione.TabIndex = 216
+      Me.txtProvincia.AcceptsReturn = True
+      Me.txtProvincia.BackColor = System.Drawing.SystemColors.Window
+      Me.txtProvincia.Cursor = System.Windows.Forms.Cursors.IBeam
+      Me.txtProvincia.ForeColor = System.Drawing.SystemColors.WindowText
+      Me.txtProvincia.Location = New System.Drawing.Point(104, 197)
+      Me.txtProvincia.MaxLength = 2
+      Me.txtProvincia.Name = "txtProvincia"
+      Me.txtProvincia.RightToLeft = System.Windows.Forms.RightToLeft.No
+      Me.txtProvincia.Size = New System.Drawing.Size(90, 20)
+      Me.txtProvincia.TabIndex = 6
       '
       'cmbRegimeFiscale
       '
@@ -323,7 +384,7 @@ Friend Class frmAzienda
       Me.cmbRegimeFiscale.Name = "cmbRegimeFiscale"
       Me.cmbRegimeFiscale.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.cmbRegimeFiscale.Size = New System.Drawing.Size(416, 21)
-      Me.cmbRegimeFiscale.TabIndex = 9
+      Me.cmbRegimeFiscale.TabIndex = 8
       '
       'Label12
       '
@@ -331,38 +392,19 @@ Friend Class frmAzienda
       Me.Label12.BackColor = System.Drawing.Color.Transparent
       Me.Label12.Cursor = System.Windows.Forms.Cursors.Default
       Me.Label12.ForeColor = System.Drawing.Color.Black
-      Me.Label12.Location = New System.Drawing.Point(16, 251)
+      Me.Label12.Location = New System.Drawing.Point(14, 251)
       Me.Label12.Name = "Label12"
       Me.Label12.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.Label12.Size = New System.Drawing.Size(82, 13)
-      Me.Label12.TabIndex = 215
+      Me.Label12.TabIndex = 219
       Me.Label12.Text = "Regime Fiscale:"
       '
-      'txtNumeroREA
+      'cmbNazione
       '
-      Me.txtNumeroREA.AcceptsReturn = True
-      Me.txtNumeroREA.BackColor = System.Drawing.SystemColors.Window
-      Me.txtNumeroREA.Cursor = System.Windows.Forms.Cursors.IBeam
-      Me.txtNumeroREA.ForeColor = System.Drawing.SystemColors.WindowText
-      Me.txtNumeroREA.Location = New System.Drawing.Point(104, 108)
-      Me.txtNumeroREA.MaxLength = 20
-      Me.txtNumeroREA.Name = "txtNumeroREA"
-      Me.txtNumeroREA.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.txtNumeroREA.Size = New System.Drawing.Size(160, 20)
-      Me.txtNumeroREA.TabIndex = 3
-      '
-      'Label11
-      '
-      Me.Label11.AutoSize = True
-      Me.Label11.BackColor = System.Drawing.Color.Transparent
-      Me.Label11.Cursor = System.Windows.Forms.Cursors.Default
-      Me.Label11.ForeColor = System.Drawing.Color.Black
-      Me.Label11.Location = New System.Drawing.Point(16, 108)
-      Me.Label11.Name = "Label11"
-      Me.Label11.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.Label11.Size = New System.Drawing.Size(81, 13)
-      Me.Label11.TabIndex = 213
-      Me.Label11.Text = "Numero R.E.A.:"
+      Me.cmbNazione.Location = New System.Drawing.Point(104, 224)
+      Me.cmbNazione.Name = "cmbNazione"
+      Me.cmbNazione.Size = New System.Drawing.Size(160, 21)
+      Me.cmbNazione.TabIndex = 7
       '
       'txtCodiceFiscale
       '
@@ -383,7 +425,7 @@ Friend Class frmAzienda
       Me.Label8.BackColor = System.Drawing.Color.Transparent
       Me.Label8.Cursor = System.Windows.Forms.Cursors.Default
       Me.Label8.ForeColor = System.Drawing.Color.Black
-      Me.Label8.Location = New System.Drawing.Point(16, 82)
+      Me.Label8.Location = New System.Drawing.Point(14, 82)
       Me.Label8.Name = "Label8"
       Me.Label8.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.Label8.Size = New System.Drawing.Size(79, 13)
@@ -396,7 +438,7 @@ Friend Class frmAzienda
       Me.EliminaImg.Location = New System.Drawing.Point(447, 184)
       Me.EliminaImg.Name = "EliminaImg"
       Me.EliminaImg.Size = New System.Drawing.Size(72, 24)
-      Me.EliminaImg.TabIndex = 11
+      Me.EliminaImg.TabIndex = 10
       Me.EliminaImg.Text = "&Elimina"
       '
       'ApriImg
@@ -405,7 +447,7 @@ Friend Class frmAzienda
       Me.ApriImg.Location = New System.Drawing.Point(367, 184)
       Me.ApriImg.Name = "ApriImg"
       Me.ApriImg.Size = New System.Drawing.Size(72, 24)
-      Me.ApriImg.TabIndex = 10
+      Me.ApriImg.TabIndex = 9
       Me.ApriImg.Text = "&Apri"
       '
       'picFoto
@@ -425,12 +467,12 @@ Friend Class frmAzienda
       Me.txtIndirizzo.BackColor = System.Drawing.SystemColors.Window
       Me.txtIndirizzo.Cursor = System.Windows.Forms.Cursors.IBeam
       Me.txtIndirizzo.ForeColor = System.Drawing.SystemColors.WindowText
-      Me.txtIndirizzo.Location = New System.Drawing.Point(104, 140)
+      Me.txtIndirizzo.Location = New System.Drawing.Point(104, 119)
       Me.txtIndirizzo.MaxLength = 100
       Me.txtIndirizzo.Name = "txtIndirizzo"
       Me.txtIndirizzo.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.txtIndirizzo.Size = New System.Drawing.Size(248, 20)
-      Me.txtIndirizzo.TabIndex = 4
+      Me.txtIndirizzo.TabIndex = 3
       '
       'txtPIva
       '
@@ -445,31 +487,18 @@ Friend Class frmAzienda
       Me.txtPIva.Size = New System.Drawing.Size(160, 20)
       Me.txtPIva.TabIndex = 1
       '
-      'txtProv
-      '
-      Me.txtProv.AcceptsReturn = True
-      Me.txtProv.BackColor = System.Drawing.SystemColors.Window
-      Me.txtProv.Cursor = System.Windows.Forms.Cursors.IBeam
-      Me.txtProv.ForeColor = System.Drawing.SystemColors.WindowText
-      Me.txtProv.Location = New System.Drawing.Point(104, 192)
-      Me.txtProv.MaxLength = 2
-      Me.txtProv.Name = "txtProv"
-      Me.txtProv.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.txtProv.Size = New System.Drawing.Size(56, 20)
-      Me.txtProv.TabIndex = 6
-      '
       'txtCap
       '
       Me.txtCap.AcceptsReturn = True
       Me.txtCap.BackColor = System.Drawing.SystemColors.Window
       Me.txtCap.Cursor = System.Windows.Forms.Cursors.IBeam
       Me.txtCap.ForeColor = System.Drawing.SystemColors.WindowText
-      Me.txtCap.Location = New System.Drawing.Point(264, 192)
+      Me.txtCap.Location = New System.Drawing.Point(104, 171)
       Me.txtCap.MaxLength = 5
       Me.txtCap.Name = "txtCap"
       Me.txtCap.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.txtCap.Size = New System.Drawing.Size(88, 20)
-      Me.txtCap.TabIndex = 7
+      Me.txtCap.Size = New System.Drawing.Size(90, 20)
+      Me.txtCap.TabIndex = 5
       '
       'txtCittà
       '
@@ -477,12 +506,12 @@ Friend Class frmAzienda
       Me.txtCittà.BackColor = System.Drawing.SystemColors.Window
       Me.txtCittà.Cursor = System.Windows.Forms.Cursors.IBeam
       Me.txtCittà.ForeColor = System.Drawing.SystemColors.WindowText
-      Me.txtCittà.Location = New System.Drawing.Point(104, 166)
+      Me.txtCittà.Location = New System.Drawing.Point(104, 145)
       Me.txtCittà.MaxLength = 100
       Me.txtCittà.Name = "txtCittà"
       Me.txtCittà.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.txtCittà.Size = New System.Drawing.Size(248, 20)
-      Me.txtCittà.TabIndex = 5
+      Me.txtCittà.TabIndex = 4
       '
       'txtRagSoc
       '
@@ -504,7 +533,7 @@ Friend Class frmAzienda
       Me.Label31.BackColor = System.Drawing.Color.Transparent
       Me.Label31.Cursor = System.Windows.Forms.Cursors.Default
       Me.Label31.ForeColor = System.Drawing.Color.Black
-      Me.Label31.Location = New System.Drawing.Point(16, 56)
+      Me.Label31.Location = New System.Drawing.Point(14, 56)
       Me.Label31.Name = "Label31"
       Me.Label31.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.Label31.Size = New System.Drawing.Size(69, 13)
@@ -517,7 +546,7 @@ Friend Class frmAzienda
       Me.Label10.BackColor = System.Drawing.Color.Transparent
       Me.Label10.Cursor = System.Windows.Forms.Cursors.Default
       Me.Label10.ForeColor = System.Drawing.Color.Black
-      Me.Label10.Location = New System.Drawing.Point(16, 218)
+      Me.Label10.Location = New System.Drawing.Point(14, 224)
       Me.Label10.Name = "Label10"
       Me.Label10.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.Label10.Size = New System.Drawing.Size(49, 13)
@@ -530,7 +559,7 @@ Friend Class frmAzienda
       Me.Label9.BackColor = System.Drawing.Color.Transparent
       Me.Label9.Cursor = System.Windows.Forms.Cursors.Default
       Me.Label9.ForeColor = System.Drawing.Color.Black
-      Me.Label9.Location = New System.Drawing.Point(16, 192)
+      Me.Label9.Location = New System.Drawing.Point(14, 197)
       Me.Label9.Name = "Label9"
       Me.Label9.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.Label9.Size = New System.Drawing.Size(54, 13)
@@ -543,7 +572,7 @@ Friend Class frmAzienda
       Me.Label6.BackColor = System.Drawing.Color.Transparent
       Me.Label6.Cursor = System.Windows.Forms.Cursors.Default
       Me.Label6.ForeColor = System.Drawing.Color.Black
-      Me.Label6.Location = New System.Drawing.Point(224, 192)
+      Me.Label6.Location = New System.Drawing.Point(14, 171)
       Me.Label6.Name = "Label6"
       Me.Label6.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.Label6.Size = New System.Drawing.Size(40, 13)
@@ -556,7 +585,7 @@ Friend Class frmAzienda
       Me.Label5.BackColor = System.Drawing.Color.Transparent
       Me.Label5.Cursor = System.Windows.Forms.Cursors.Default
       Me.Label5.ForeColor = System.Drawing.Color.Black
-      Me.Label5.Location = New System.Drawing.Point(16, 166)
+      Me.Label5.Location = New System.Drawing.Point(14, 145)
       Me.Label5.Name = "Label5"
       Me.Label5.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.Label5.Size = New System.Drawing.Size(31, 13)
@@ -569,7 +598,7 @@ Friend Class frmAzienda
       Me.Label4.BackColor = System.Drawing.Color.Transparent
       Me.Label4.Cursor = System.Windows.Forms.Cursors.Default
       Me.Label4.ForeColor = System.Drawing.Color.Black
-      Me.Label4.Location = New System.Drawing.Point(16, 140)
+      Me.Label4.Location = New System.Drawing.Point(14, 119)
       Me.Label4.Name = "Label4"
       Me.Label4.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.Label4.Size = New System.Drawing.Size(48, 13)
@@ -582,7 +611,7 @@ Friend Class frmAzienda
       Me.Label3.BackColor = System.Drawing.Color.Transparent
       Me.Label3.Cursor = System.Windows.Forms.Cursors.Default
       Me.Label3.ForeColor = System.Drawing.Color.Black
-      Me.Label3.Location = New System.Drawing.Point(16, 24)
+      Me.Label3.Location = New System.Drawing.Point(14, 24)
       Me.Label3.Name = "Label3"
       Me.Label3.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.Label3.Size = New System.Drawing.Size(86, 13)
@@ -604,11 +633,37 @@ Friend Class frmAzienda
       Me.TabPage3.Controls.Add(Me.Label21)
       Me.TabPage3.Location = New System.Drawing.Point(4, 22)
       Me.TabPage3.Name = "TabPage3"
-      Me.TabPage3.Size = New System.Drawing.Size(567, 317)
+      Me.TabPage3.Size = New System.Drawing.Size(565, 299)
       Me.TabPage3.TabIndex = 2
       Me.TabPage3.Text = "Tel./Internet"
       Me.TabPage3.ToolTipText = "Dati sul telefono e Internet"
       Me.TabPage3.Visible = False
+      '
+      'txtPec
+      '
+      Me.txtPec.AcceptsReturn = True
+      Me.txtPec.BackColor = System.Drawing.SystemColors.Window
+      Me.txtPec.Cursor = System.Windows.Forms.Cursors.IBeam
+      Me.txtPec.ForeColor = System.Drawing.SystemColors.WindowText
+      Me.txtPec.Location = New System.Drawing.Point(112, 106)
+      Me.txtPec.MaxLength = 0
+      Me.txtPec.Name = "txtPec"
+      Me.txtPec.RightToLeft = System.Windows.Forms.RightToLeft.No
+      Me.txtPec.Size = New System.Drawing.Size(248, 20)
+      Me.txtPec.TabIndex = 3
+      '
+      'Label13
+      '
+      Me.Label13.AutoSize = True
+      Me.Label13.BackColor = System.Drawing.Color.Transparent
+      Me.Label13.Cursor = System.Windows.Forms.Cursors.Default
+      Me.Label13.ForeColor = System.Drawing.Color.Black
+      Me.Label13.Location = New System.Drawing.Point(24, 106)
+      Me.Label13.Name = "Label13"
+      Me.Label13.RightToLeft = System.Windows.Forms.RightToLeft.No
+      Me.Label13.Size = New System.Drawing.Size(31, 13)
+      Me.Label13.TabIndex = 220
+      Me.Label13.Text = "PEC:"
       '
       'txtInternet
       '
@@ -734,7 +789,7 @@ Friend Class frmAzienda
       Me.TabPage2.Controls.Add(Me.Label38)
       Me.TabPage2.Location = New System.Drawing.Point(4, 22)
       Me.TabPage2.Name = "TabPage2"
-      Me.TabPage2.Size = New System.Drawing.Size(559, 309)
+      Me.TabPage2.Size = New System.Drawing.Size(565, 299)
       Me.TabPage2.TabIndex = 6
       Me.TabPage2.Text = "Modalità pagamento"
       Me.TabPage2.Visible = False
@@ -923,42 +978,311 @@ Friend Class frmAzienda
       Me.Label38.TabIndex = 172
       Me.Label38.Text = "Banca:"
       '
+      'TabPage4
+      '
+      Me.TabPage4.BackColor = System.Drawing.SystemColors.AppWorkspace
+      Me.TabPage4.Controls.Add(Me.TabControl2)
+      Me.TabPage4.Location = New System.Drawing.Point(4, 22)
+      Me.TabPage4.Name = "TabPage4"
+      Me.TabPage4.Padding = New System.Windows.Forms.Padding(3)
+      Me.TabPage4.Size = New System.Drawing.Size(573, 307)
+      Me.TabPage4.TabIndex = 7
+      Me.TabPage4.Text = "Fatturazione Elettronica"
+      '
+      'TabControl2
+      '
+      Me.TabControl2.Controls.Add(Me.TabPage5)
+      Me.TabControl2.Controls.Add(Me.TabPage6)
+      Me.TabControl2.Dock = System.Windows.Forms.DockStyle.Fill
+      Me.TabControl2.Location = New System.Drawing.Point(3, 3)
+      Me.TabControl2.Name = "TabControl2"
+      Me.TabControl2.SelectedIndex = 0
+      Me.TabControl2.Size = New System.Drawing.Size(567, 301)
+      Me.TabControl2.TabIndex = 222
+      '
+      'TabPage5
+      '
+      Me.TabPage5.BackColor = System.Drawing.SystemColors.AppWorkspace
+      Me.TabPage5.Controls.Add(Me.eui_txtCpNumeroREA)
+      Me.TabPage5.Controls.Add(Me.Label11)
+      Me.TabPage5.Controls.Add(Me.eui_cmbCpUfficioREA)
+      Me.TabPage5.Controls.Add(Me.eui_cmbCpStatoLiquidazioneREA)
+      Me.TabPage5.Controls.Add(Me.Label14)
+      Me.TabPage5.Controls.Add(Me.Label41)
+      Me.TabPage5.Location = New System.Drawing.Point(4, 22)
+      Me.TabPage5.Name = "TabPage5"
+      Me.TabPage5.Padding = New System.Windows.Forms.Padding(3)
+      Me.TabPage5.Size = New System.Drawing.Size(559, 275)
+      Me.TabPage5.TabIndex = 0
+      Me.TabPage5.Text = "Iscrizione REA"
+      '
+      'eui_txtCpNumeroREA
+      '
+      Me.eui_txtCpNumeroREA.Id = "d6e12046-94d2-44bc-ac29-6669b5e32222"
+      Me.eui_txtCpNumeroREA.Location = New System.Drawing.Point(110, 48)
+      Me.eui_txtCpNumeroREA.MaxLength = 20
+      Me.eui_txtCpNumeroREA.Name = "eui_txtCpNumeroREA"
+      Me.eui_txtCpNumeroREA.Size = New System.Drawing.Size(202, 21)
+      Me.eui_txtCpNumeroREA.TabIndex = 1
+      Me.eui_txtCpNumeroREA.TextEditorWidth = 196
+      '
+      'Label11
+      '
+      Me.Label11.AutoSize = True
+      Me.Label11.BackColor = System.Drawing.Color.Transparent
+      Me.Label11.Cursor = System.Windows.Forms.Cursors.Default
+      Me.Label11.ForeColor = System.Drawing.Color.Black
+      Me.Label11.Location = New System.Drawing.Point(13, 48)
+      Me.Label11.Name = "Label11"
+      Me.Label11.RightToLeft = System.Windows.Forms.RightToLeft.No
+      Me.Label11.Size = New System.Drawing.Size(81, 13)
+      Me.Label11.TabIndex = 215
+      Me.Label11.Text = "Numero R.E.A.:"
+      '
+      'eui_cmbCpUfficioREA
+      '
+      Me.eui_cmbCpUfficioREA.Editable = False
+      Me.eui_cmbCpUfficioREA.FormattingEnabled = False
+      Me.eui_cmbCpUfficioREA.Id = "4d686c59-8292-4895-8cf4-6da4193c5757"
+      Me.eui_cmbCpUfficioREA.Items.AddRange(New Object() {" ", "AG Agrigento", "AL Alessandria", "AN Ancona", "AO Aosta", "AR Arezzo", "AP Ascoli Piceno", "AT Asti", "AV Avellino", "BA Bari", "BT Barletta-Andria-Trani", "BL Belluno", "BN Benevento", "BG Bergamo", "BI Biella", "BO Bologna", "BZ Bolzano", "BS Brescia", "BR Brindisi", "CA Cagliari", "CL Caltanissetta", "CB Campobasso", "CI Carbonia-Iglesias", "CE Caserta", "CT Catania", "CZ Catanzaro", "CH Chieti", "CO Como", "CS Cosenza", "CR Cremona", "KR Crotone", "CN Cuneo", "EN Enna", "FM Fermo", "FE Ferrara", "FI Firenze", "FU Fiume", "FG Foggia", "FC Forlì-Cesena", "FR Frosinone", "GE Genova", "GO Gorizia", "GR Grosseto", "IM Imperia", "IS Isernia", "AQ L'Aquila", "SP La Spezia", "LT Latina", "LE Lecce", "LC Lecco", "LI Livorno", "LO Lodi", "LB Lubiana", "LU Lucca", "MC Macerata", "MN Mantova", "MS Massa-Carrara", "MT Matera", "VS Medio Campidano", "ME Messina", "MI Milano", "MO Modena", "MB Monza e Brianza", "NA Napoli", "NO Novara", "NU Nuoro", "OG Ogliastra", "OT Olbia-Tempio", "OR Oristano", "PD Padova", "PA Palermo", "PR Parma", "PV Pavia", "PG Perugia", "PU Pesaro e Urbino ", "PE Pescara", "PC Piacenza", "PI Pisa", "PT Pistoia", "PL Pola", "PN Pordenone", "PZ Potenza", "PO Prato", "RG Ragusa", "RA Ravenna", "RC Reggio di Calabria", "RE Reggio nell'Emilia", "RI Rieti", "RN Rimini", "RM Roma", "RO Rovigo", "SA Salerno", "SS Sassari", "SV Savona", "SI Siena", "SR Siracusa", "SO Sondrio", "SU Sud Sardegna", "TA Taranto", "TE Teramo", "TR Terni", "TO Torino", "TP Trapani", "TN Trento", "TV Treviso", "TS Trieste", "UD Udine", "VA Varese", "VE Venezia", "VB Verbano-Cusio-Ossola", "VC Vercelli", "VR Verona", "VV Vibo Valentia", "VI Vicenza", "VT Viterbo", "ZA Zara"})
+      Me.eui_cmbCpUfficioREA.Location = New System.Drawing.Point(110, 14)
+      Me.eui_cmbCpUfficioREA.Name = "eui_cmbCpUfficioREA"
+      Me.eui_cmbCpUfficioREA.Size = New System.Drawing.Size(202, 21)
+      Me.eui_cmbCpUfficioREA.TabIndex = 0
+      Me.eui_cmbCpUfficioREA.TextEditorWidth = 183
+      '
+      'eui_cmbCpStatoLiquidazioneREA
+      '
+      Me.eui_cmbCpStatoLiquidazioneREA.Editable = False
+      Me.eui_cmbCpStatoLiquidazioneREA.FormattingEnabled = False
+      Me.eui_cmbCpStatoLiquidazioneREA.Id = "0a10dbc8-8458-48de-960e-87a137997afb"
+      Me.eui_cmbCpStatoLiquidazioneREA.Items.AddRange(New Object() {"LS In liquidazione", "LN Non in liquidazione"})
+      Me.eui_cmbCpStatoLiquidazioneREA.Location = New System.Drawing.Point(110, 80)
+      Me.eui_cmbCpStatoLiquidazioneREA.Name = "eui_cmbCpStatoLiquidazioneREA"
+      Me.eui_cmbCpStatoLiquidazioneREA.Size = New System.Drawing.Size(202, 21)
+      Me.eui_cmbCpStatoLiquidazioneREA.TabIndex = 2
+      Me.eui_cmbCpStatoLiquidazioneREA.TextEditorWidth = 183
+      '
+      'Label14
+      '
+      Me.Label14.Location = New System.Drawing.Point(16, 82)
+      Me.Label14.Name = "Label14"
+      Me.Label14.Size = New System.Drawing.Size(86, 19)
+      Me.Label14.TabIndex = 16
+      Me.Label14.Text = "Stato liquidazione:"
+      '
+      'Label41
+      '
+      Me.Label41.Location = New System.Drawing.Point(16, 16)
+      Me.Label41.Name = "Label41"
+      Me.Label41.Size = New System.Drawing.Size(76, 19)
+      Me.Label41.TabIndex = 12
+      Me.Label41.Text = "Ufficio:"
+      '
+      'TabPage6
+      '
+      Me.TabPage6.BackColor = System.Drawing.SystemColors.AppWorkspace
+      Me.TabPage6.Controls.Add(Me.eui_cmbSoggettoEmittente)
+      Me.TabPage6.Controls.Add(Me.Label75)
+      Me.TabPage6.Controls.Add(Me.Label67)
+      Me.TabPage6.Controls.Add(Me.Label68)
+      Me.TabPage6.Controls.Add(Me.Label69)
+      Me.TabPage6.Controls.Add(Me.eui_txtTiSeCodiceEORI)
+      Me.TabPage6.Controls.Add(Me.eui_txtTiSeTitolo)
+      Me.TabPage6.Controls.Add(Me.eui_txtTiSeCognome)
+      Me.TabPage6.Controls.Add(Me.eui_txtTiSeDenominazione)
+      Me.TabPage6.Controls.Add(Me.eui_txtTiSeNome)
+      Me.TabPage6.Controls.Add(Me.Label70)
+      Me.TabPage6.Controls.Add(Me.Label71)
+      Me.TabPage6.Controls.Add(Me.eui_txtTiSeIdCodice)
+      Me.TabPage6.Controls.Add(Me.Label73)
+      Me.TabPage6.Controls.Add(Me.eui_cmbTiSeIdPaese)
+      Me.TabPage6.Controls.Add(Me.Label74)
+      Me.TabPage6.Controls.Add(Me.Label72)
+      Me.TabPage6.Controls.Add(Me.eui_txtTiSeCodiceFiscale)
+      Me.TabPage6.Location = New System.Drawing.Point(4, 22)
+      Me.TabPage6.Name = "TabPage6"
+      Me.TabPage6.Padding = New System.Windows.Forms.Padding(3)
+      Me.TabPage6.Size = New System.Drawing.Size(551, 267)
+      Me.TabPage6.TabIndex = 1
+      Me.TabPage6.Text = "Terzo Intermediario o Soggetto Emittente"
+      '
+      'eui_cmbSoggettoEmittente
+      '
+      Me.eui_cmbSoggettoEmittente.Editable = False
+      Me.eui_cmbSoggettoEmittente.FormattingEnabled = False
+      Me.eui_cmbSoggettoEmittente.Id = "aedfaf46-34ed-4262-bc19-e9d011b6dfa4"
+      Me.eui_cmbSoggettoEmittente.Items.AddRange(New Object() {"CC Cessionario / Committente", "TZ Terzo"})
+      Me.eui_cmbSoggettoEmittente.Location = New System.Drawing.Point(352, 220)
+      Me.eui_cmbSoggettoEmittente.Name = "eui_cmbSoggettoEmittente"
+      Me.eui_cmbSoggettoEmittente.Size = New System.Drawing.Size(160, 21)
+      Me.eui_cmbSoggettoEmittente.TabIndex = 8
+      Me.eui_cmbSoggettoEmittente.TextEditorWidth = 141
+      '
+      'Label75
+      '
+      Me.Label75.Location = New System.Drawing.Point(352, 201)
+      Me.Label75.Name = "Label75"
+      Me.Label75.Size = New System.Drawing.Size(92, 19)
+      Me.Label75.TabIndex = 237
+      Me.Label75.Text = "Soggetto emittente:"
+      '
+      'Label67
+      '
+      Me.Label67.Location = New System.Drawing.Point(18, 222)
+      Me.Label67.Name = "Label67"
+      Me.Label67.Size = New System.Drawing.Size(78, 19)
+      Me.Label67.TabIndex = 235
+      Me.Label67.Text = "Codice EORI:"
+      '
+      'Label68
+      '
+      Me.Label68.Location = New System.Drawing.Point(18, 195)
+      Me.Label68.Name = "Label68"
+      Me.Label68.Size = New System.Drawing.Size(78, 19)
+      Me.Label68.TabIndex = 234
+      Me.Label68.Text = "Titolo:"
+      '
+      'Label69
+      '
+      Me.Label69.Location = New System.Drawing.Point(19, 167)
+      Me.Label69.Name = "Label69"
+      Me.Label69.Size = New System.Drawing.Size(78, 19)
+      Me.Label69.TabIndex = 233
+      Me.Label69.Text = "Cognome:"
+      '
+      'eui_txtTiSeCodiceEORI
+      '
+      Me.eui_txtTiSeCodiceEORI.Id = "cfb7d1d7-790d-4dc4-81b2-a727944fea34"
+      Me.eui_txtTiSeCodiceEORI.Location = New System.Drawing.Point(113, 220)
+      Me.eui_txtTiSeCodiceEORI.MaxLength = 17
+      Me.eui_txtTiSeCodiceEORI.Name = "eui_txtTiSeCodiceEORI"
+      Me.eui_txtTiSeCodiceEORI.Size = New System.Drawing.Size(201, 21)
+      Me.eui_txtTiSeCodiceEORI.TabIndex = 7
+      Me.eui_txtTiSeCodiceEORI.TextEditorWidth = 195
+      '
+      'eui_txtTiSeTitolo
+      '
+      Me.eui_txtTiSeTitolo.Id = "d7b2c482-99bf-4cba-a955-0654a417d113"
+      Me.eui_txtTiSeTitolo.Location = New System.Drawing.Point(113, 193)
+      Me.eui_txtTiSeTitolo.MaxLength = 10
+      Me.eui_txtTiSeTitolo.Name = "eui_txtTiSeTitolo"
+      Me.eui_txtTiSeTitolo.Size = New System.Drawing.Size(201, 21)
+      Me.eui_txtTiSeTitolo.TabIndex = 6
+      Me.eui_txtTiSeTitolo.TextEditorWidth = 195
+      '
+      'eui_txtTiSeCognome
+      '
+      Me.eui_txtTiSeCognome.Id = "50d76e36-d8a6-4fe6-a906-e8ddc67ca282"
+      Me.eui_txtTiSeCognome.Location = New System.Drawing.Point(113, 165)
+      Me.eui_txtTiSeCognome.MaxLength = 60
+      Me.eui_txtTiSeCognome.Name = "eui_txtTiSeCognome"
+      Me.eui_txtTiSeCognome.Size = New System.Drawing.Size(201, 21)
+      Me.eui_txtTiSeCognome.TabIndex = 5
+      Me.eui_txtTiSeCognome.TextEditorWidth = 195
+      '
+      'eui_txtTiSeDenominazione
+      '
+      Me.eui_txtTiSeDenominazione.Id = "ede56250-1958-45df-9a25-7b64c8b28fca"
+      Me.eui_txtTiSeDenominazione.Location = New System.Drawing.Point(112, 109)
+      Me.eui_txtTiSeDenominazione.MaxLength = 80
+      Me.eui_txtTiSeDenominazione.Name = "eui_txtTiSeDenominazione"
+      Me.eui_txtTiSeDenominazione.Size = New System.Drawing.Size(201, 21)
+      Me.eui_txtTiSeDenominazione.TabIndex = 3
+      Me.eui_txtTiSeDenominazione.TextEditorWidth = 195
+      '
+      'eui_txtTiSeNome
+      '
+      Me.eui_txtTiSeNome.Id = "567f89fa-c9dd-4004-8b09-2cd6c8b90932"
+      Me.eui_txtTiSeNome.Location = New System.Drawing.Point(113, 137)
+      Me.eui_txtTiSeNome.MaxLength = 60
+      Me.eui_txtTiSeNome.Name = "eui_txtTiSeNome"
+      Me.eui_txtTiSeNome.Size = New System.Drawing.Size(201, 21)
+      Me.eui_txtTiSeNome.TabIndex = 4
+      Me.eui_txtTiSeNome.TextEditorWidth = 195
+      '
+      'Label70
+      '
+      Me.Label70.Location = New System.Drawing.Point(19, 137)
+      Me.Label70.Name = "Label70"
+      Me.Label70.Size = New System.Drawing.Size(86, 19)
+      Me.Label70.TabIndex = 230
+      Me.Label70.Text = "Nome:"
+      '
+      'Label71
+      '
+      Me.Label71.Location = New System.Drawing.Point(18, 111)
+      Me.Label71.Name = "Label71"
+      Me.Label71.Size = New System.Drawing.Size(76, 19)
+      Me.Label71.TabIndex = 227
+      Me.Label71.Text = "Denominazione:"
+      '
+      'eui_txtTiSeIdCodice
+      '
+      Me.eui_txtTiSeIdCodice.Id = "9b8c1992-718b-4d99-8ca2-b2dc1efac116"
+      Me.eui_txtTiSeIdCodice.Location = New System.Drawing.Point(112, 42)
+      Me.eui_txtTiSeIdCodice.MaxLength = 28
+      Me.eui_txtTiSeIdCodice.Name = "eui_txtTiSeIdCodice"
+      Me.eui_txtTiSeIdCodice.Size = New System.Drawing.Size(201, 21)
+      Me.eui_txtTiSeIdCodice.TabIndex = 1
+      Me.eui_txtTiSeIdCodice.TextEditorWidth = 195
+      '
+      'Label73
+      '
+      Me.Label73.Location = New System.Drawing.Point(18, 42)
+      Me.Label73.Name = "Label73"
+      Me.Label73.Size = New System.Drawing.Size(131, 19)
+      Me.Label73.TabIndex = 225
+      Me.Label73.Text = "Partita IVA:"
+      '
+      'eui_cmbTiSeIdPaese
+      '
+      Me.eui_cmbTiSeIdPaese.Editable = False
+      Me.eui_cmbTiSeIdPaese.FormattingEnabled = False
+      Me.eui_cmbTiSeIdPaese.Id = "1e3daa27-5dfd-46fb-b48f-94bbc397b819"
+      Me.eui_cmbTiSeIdPaese.Items.AddRange(New Object() {" ", "AD Andorra", "AE Emirati Arabi Uniti", "AF Afghanistan", "AG Antigua e Barbuda", "AI Anguilla", "AL Albania", "AM Armenia", "AO Angola", "AQ Antartide ", "AR Argentina", "AS Samoa Americane", "AT Austria", "AU Australia", "AW Aruba", "AX Isole Åland", "AZ Azerbaigian", "BA Bosnia ed Erzegovina", "BB Barbados", "BD Bangladesh", "BE Belgio", "BF Burkina Faso", "BG Bulgaria", "BH Bahrein", "BI Burundi", "BJ Benin", "BL Saint-Barthélemy", "BM Bermuda", "BN Brunei", "BO Bolivia", "BQ Isole BES", "BR Brasile", "BS Bahamas", "BT Bhutan", "BV Isola Bouvet", "BW Botswana", "BY Bielorussia", "BZ Belize", "CA Canada", "CC Isole Cocos e Keeling", "CD Repubblica Democratica del Congo", "CF Repubblica Centrafricana", "CG Repubblica del Congo", "CH Svizzera", "CI Costa d'Avorio", "CK Isole Cook", "CL Cile", "CM Camerun", "CN Cina", "CO Colombia", "CR Costa Rica", "CU Cuba", "CV Capo Verde", "CW Curaçao", "CX Isola del Natale", "CY Cipro", "CZ Repubblica Ceca", "DE Germania", "DJ Gibuti", "DK Danimarca", "DM Dominica", "DO Repubblica Dominicana", "DZ Algeria", "EC Ecuador", "EE Estonia", "EG Egitto", "EH Sahara Occidentale", "ER Eritrea", "ES Spagna", "ET Etiopia", "FI Finlandia", "FJ Figi", "FK Isole Falkland", "FM Stati Federati di Micronesia", "FO Isole Fær Øer", "FR Francia", "GA Gabon", "GB Regno Unito", "GD Grenada", "GE Georgia", "GF Guyana francese", "GG Guernsey", "GH Ghana", "GI Gibilterra", "GL Groenlandia", "GM Gambia", "GN Guinea", "GP Guadalupa", "GQ Guinea Equatoriale", "GR Grecia", "GS Georgia del Sud e isole Sandwich meridionali", "GT Guatemala", "GU Guam", "GW Guinea-Bissau", "GY Guyana", "HK Hong Kong", "HM Isole Heard e McDonald", "HN Honduras", "HR Croazia", "HT Haiti", "HU Ungheria", "ID Indonesia", "IE Irlanda", "IL Israele", "IM Isola di Man", "IN India", "IO Territori Britannici dell'Oceano Indiano", "IQ Iraq", "IR Iran", "IS Islanda", "IT Italia", "JE Jersey", "JM Giamaica", "JO Giordania", "JP Giappone", "KE Kenya", "KG Kirghizistan", "KH Cambogia", "KI Kiribati", "KM Comore", "KN Saint Kitts e Nevis", "KP Corea del Nord", "KR Corea del Sud", "KW Kuwait", "KY Isole Cayman", "KZ Kazakistan", "LA Laos", "LB Libano", "LC Santa Lucia", "LI Liechtenstein", "LK Sri Lanka", "LR Liberia", "LS Lesotho", "LT Lituania", "LU Lussemburgo", "LV Lettonia", "LY Libia", "MA Marocco", "MC Monaco", "MD Moldavia", "ME Montenegro", "MF Saint-Martin", "MG Madagascar", "MH Isole Marshall", "MK Macedonia", "ML Mali", "MM Birmania", "MN Mongolia", "MO Macao", "MP Isole Marianne Settentrionali", "MQ Martinica", "MR Mauritania", "MS Montserrat", "MT Malta", "MU Mauritius", "MV Maldive", "MW Malawi", "MX Messico", "MY Malaysia", "MZ Mozambico", "NA Namibia", "NC Nuova Caledonia", "NE Niger", "NF Isola Norfolk", "NG Nigeria", "NI Nicaragua", "NL Paesi Bassi", "NO Norvegia", "NP Nepal", "NR Nauru", "NU Niue", "NZ Nuova Zelanda", "OM Oman", "PA Panama", "PE Perù", "PF Polinesia Francese", "PG Papua Nuova Guinea", "PH Filippine", "PK Pakistan", "PL Polonia", "PM Saint-Pierre e Miquelon", "PN Isole Pitcairn", "PR Porto Rico", "PS Stato di Palestina", "PT Portogallo", "PW Palau", "PY Paraguay", "QA Qatar", "RE Riunione", "RO Romania", "RS Serbia", "RU Russia", "RW Ruanda", "SA Arabia Saudita", "SB Isole Salomone", "SC Seychelles", "SD Sudan", "SE Svezia", "SG Singapore", "SH Sant'Elena, Isola di Ascensione e Tristan da Cunha", "SI Slovenia", "SJ Svalbard e Jan Mayen", "SK Slovacchia", "SL Sierra Leone", "SM San Marino", "SN Senegal", "SO Somalia", "SR Suriname", "SS Sudan del Sud", "ST São Tomé e Príncipe", "SV El Salvador", "SX Sint Maarten", "SY Siria", "SZ Swaziland", "TC Isole Turks e Caicos", "TD Ciad", "TF Territori Francesi del Sud", "TG Togo", "TH Thailandia", "TJ Tagikistan", "TK Tokelau", "TL Timor Est", "TM Turkmenistan", "TN Tunisia", "TO Tonga", "TR Turchia", "TT Trinidad e Tobago", "TV Tuvalu", "TW Repubblica di Cina", "TZ Tanzania", "UA Ucraina", "UG Uganda", "UM Isole minori esterne degli Stati Uniti", "US Stati Uniti d'America", "UY Uruguay", "UZ Uzbekistan", "VA Città del Vaticano", "VC Saint Vincent e Grenadine", "VE Venezuela", "VG Isole Vergini britanniche", "VI Isole Vergini americane", "VN Vietnam", "VU Vanuatu", "WF Wallis e Futuna", "WS Samoa", "YE Yemen", "YT Mayotte", "ZA Sudafrica", "ZM Zambia", "ZW Zimbabwe"})
+      Me.eui_cmbTiSeIdPaese.Location = New System.Drawing.Point(112, 14)
+      Me.eui_cmbTiSeIdPaese.Name = "eui_cmbTiSeIdPaese"
+      Me.eui_cmbTiSeIdPaese.Size = New System.Drawing.Size(201, 21)
+      Me.eui_cmbTiSeIdPaese.TabIndex = 0
+      Me.eui_cmbTiSeIdPaese.TextEditorWidth = 182
+      '
+      'Label74
+      '
+      Me.Label74.Location = New System.Drawing.Point(18, 16)
+      Me.Label74.Name = "Label74"
+      Me.Label74.Size = New System.Drawing.Size(50, 19)
+      Me.Label74.TabIndex = 223
+      Me.Label74.Text = "Paese:"
+      '
+      'Label72
+      '
+      Me.Label72.Location = New System.Drawing.Point(18, 77)
+      Me.Label72.Name = "Label72"
+      Me.Label72.Size = New System.Drawing.Size(87, 19)
+      Me.Label72.TabIndex = 220
+      Me.Label72.Text = "Codice fiscale:"
+      '
+      'eui_txtTiSeCodiceFiscale
+      '
+      Me.eui_txtTiSeCodiceFiscale.Id = "73541a07-8808-4c65-ac81-d943f8a01e93"
+      Me.eui_txtTiSeCodiceFiscale.Location = New System.Drawing.Point(112, 75)
+      Me.eui_txtTiSeCodiceFiscale.MaxLength = 16
+      Me.eui_txtTiSeCodiceFiscale.Name = "eui_txtTiSeCodiceFiscale"
+      Me.eui_txtTiSeCodiceFiscale.Size = New System.Drawing.Size(201, 21)
+      Me.eui_txtTiSeCodiceFiscale.TabIndex = 2
+      Me.eui_txtTiSeCodiceFiscale.TextEditorWidth = 195
+      '
       'formFrameSkinner
       '
       Me.formFrameSkinner.AllowGlass = False
       Me.formFrameSkinner.Form = Me
       '
-      'txtPec
-      '
-      Me.txtPec.AcceptsReturn = True
-      Me.txtPec.BackColor = System.Drawing.SystemColors.Window
-      Me.txtPec.Cursor = System.Windows.Forms.Cursors.IBeam
-      Me.txtPec.ForeColor = System.Drawing.SystemColors.WindowText
-      Me.txtPec.Location = New System.Drawing.Point(112, 106)
-      Me.txtPec.MaxLength = 0
-      Me.txtPec.Name = "txtPec"
-      Me.txtPec.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.txtPec.Size = New System.Drawing.Size(248, 20)
-      Me.txtPec.TabIndex = 3
-      '
-      'Label13
-      '
-      Me.Label13.AutoSize = True
-      Me.Label13.BackColor = System.Drawing.Color.Transparent
-      Me.Label13.Cursor = System.Windows.Forms.Cursors.Default
-      Me.Label13.ForeColor = System.Drawing.Color.Black
-      Me.Label13.Location = New System.Drawing.Point(24, 106)
-      Me.Label13.Name = "Label13"
-      Me.Label13.RightToLeft = System.Windows.Forms.RightToLeft.No
-      Me.Label13.Size = New System.Drawing.Size(31, 13)
-      Me.Label13.TabIndex = 220
-      Me.Label13.Text = "PEC:"
-      '
       'frmAzienda
       '
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(575, 391)
+      Me.ClientSize = New System.Drawing.Size(581, 381)
       Me.Controls.Add(Me.TabControl1)
       Me.Controls.Add(Me.chkVisRagSoc)
       Me.Controls.Add(Me.Panel1)
@@ -985,6 +1309,12 @@ Friend Class frmAzienda
       Me.TabPage3.PerformLayout()
       Me.TabPage2.ResumeLayout(False)
       Me.TabPage2.PerformLayout()
+      Me.TabPage4.ResumeLayout(False)
+      Me.TabControl2.ResumeLayout(False)
+      Me.TabPage5.ResumeLayout(False)
+      Me.TabPage5.PerformLayout()
+      Me.TabPage6.ResumeLayout(False)
+      Me.TabPage6.PerformLayout()
       Me.ResumeLayout(False)
       Me.PerformLayout()
 
@@ -1007,28 +1337,46 @@ Friend Class frmAzienda
          AggiornaTabella(cmbPagamento, TAB_PAGAMENTO)
 
          ' Salva i dati eventualmente modificati.
-         AAzienda.RagSociale = txtRagSoc.Text ' FormattaApici(txtRagSoc.Text)
-         AAzienda.Piva = FormattaApici(txtPIva.Text)
-         AAzienda.CodFisc = FormattaApici(txtCodiceFiscale.Text)
-         AAzienda.Rea = FormattaApici(txtNumeroREA.Text)
-         AAzienda.Indirizzo = FormattaApici(txtIndirizzo.Text)
-         AAzienda.Cap = FormattaApici(txtCap.Text)
-         AAzienda.Città = FormattaApici(txtCittà.Text)
-         AAzienda.Provincia = FormattaApici(txtProv.Text)
-         AAzienda.Nazione = FormattaApici(cmbNazione.Text)
-         AAzienda.RegimeFiscale = FormattaApici(cmbRegimeFiscale.Text)
-         AAzienda.Telefono = FormattaApici(txtTel.Text)
-         AAzienda.Fax = FormattaApici(txtFax.Text)
-         AAzienda.Email = FormattaApici(txtMail.Text)
-         AAzienda.PEC = FormattaApici(txtPec.Text)
-         AAzienda.Internet = FormattaApici(txtInternet.Text)
-         AAzienda.TipoPagamento = FormattaApici(cmbPagamento.Text)
-         AAzienda.Banca = FormattaApici(txtBanca.Text)
-         AAzienda.Abi = FormattaApici(txtABI.Text)
-         AAzienda.Cab = FormattaApici(txtCAB.Text)
-         AAzienda.Cc = FormattaApici(txtCC.Text)
-         AAzienda.Cin = FormattaApici(txtCIN.Text)
-         AAzienda.Iban = FormattaApici(txtIBAN.Text)
+         AAzienda.RagSociale = txtRagSoc.Text
+         AAzienda.Descrizione = String.Empty
+         AAzienda.Piva = txtPIva.Text
+         AAzienda.CodFisc = txtCodiceFiscale.Text
+         AAzienda.Iri = String.Empty
+         AAzienda.Indirizzo = txtIndirizzo.Text
+         AAzienda.Cap = txtCap.Text
+         AAzienda.Città = txtCittà.Text
+         AAzienda.Provincia = txtProvincia.Text
+         AAzienda.Regione = String.Empty
+         AAzienda.Nazione = cmbNazione.Text
+         AAzienda.RegimeFiscale = cmbRegimeFiscale.Text
+         AAzienda.Telefono = txtTel.Text
+         AAzienda.Fax = txtFax.Text
+         AAzienda.Email = txtMail.Text
+         AAzienda.PEC = txtPec.Text
+         AAzienda.Internet = txtInternet.Text
+         AAzienda.Attività = String.Empty
+         AAzienda.PercorsoDB = String.Empty
+         AAzienda.TipoPagamento = cmbPagamento.Text
+         AAzienda.Banca = txtBanca.Text
+         AAzienda.Abi = txtABI.Text
+         AAzienda.Cab = txtCAB.Text
+         AAzienda.Cc = txtCC.Text
+         AAzienda.Cin = txtCIN.Text
+         AAzienda.Iban = txtIBAN.Text
+
+         ' Fatturazione Elettronica.
+         AAzienda.UfficioRea = eui_cmbCpUfficioREA.Text
+         AAzienda.NumeroRea = eui_txtCpNumeroREA.Text
+         AAzienda.StatoLiquidazioneRea = eui_cmbCpStatoLiquidazioneREA.Text
+         AAzienda.TiSeIdPaese = eui_cmbTiSeIdPaese.Text
+         AAzienda.TiSePartitaIva = eui_txtTiSeIdCodice.Text
+         AAzienda.TiSeCodiceFiscale = eui_txtTiSeCodiceFiscale.Text
+         AAzienda.TiSeDenominazione = eui_txtTiSeDenominazione.Text
+         AAzienda.TiSeNome = eui_txtTiSeNome.Text
+         AAzienda.TiSeCognome = eui_txtTiSeCognome.Text
+         AAzienda.TiSeTitolo = eui_txtTiSeTitolo.Text
+         AAzienda.TiSeCodiceEORI = eui_txtTiSeCodiceEORI.Text
+         AAzienda.SoggettoEmittente = eui_cmbSoggettoEmittente.Text
 
          AAzienda.ModificaDati(NOME_TABELLA, AAzienda.Codice)
 
@@ -1045,17 +1393,38 @@ Friend Class frmAzienda
          txtRagSoc.Text = String.Empty
          txtPIva.Text = String.Empty
          txtCodiceFiscale.Text = String.Empty
-         txtNumeroREA.Text = String.Empty
          txtIndirizzo.Text = String.Empty
          txtCap.Text = String.Empty
          txtCittà.Text = String.Empty
-         txtProv.Text = String.Empty
+         txtProvincia.Text = String.Empty
          cmbNazione.Text = String.Empty
          cmbRegimeFiscale.Text = String.Empty
          txtTel.Text = String.Empty
          txtFax.Text = String.Empty
          txtMail.Text = String.Empty
+         txtPec.Text = String.Empty
          txtInternet.Text = String.Empty
+         cmbPagamento.Text = String.Empty
+         txtBanca.Text = String.Empty
+         txtCIN.Text = String.Empty
+         txtABI.Text = String.Empty
+         txtCAB.Text = String.Empty
+         txtCC.Text = String.Empty
+         txtIBAN.Text = String.Empty
+
+         ' Fatturazione Elettronica.
+         eui_cmbCpUfficioREA.Text = String.Empty
+         eui_txtCpNumeroREA.Text = String.Empty
+         eui_cmbCpStatoLiquidazioneREA.Text = String.Empty
+         eui_cmbTiSeIdPaese.Text = String.Empty
+         eui_txtTiSeIdCodice.Text = String.Empty
+         eui_txtTiSeCodiceFiscale.Text = String.Empty
+         eui_txtTiSeDenominazione.Text = String.Empty
+         eui_txtTiSeNome.Text = String.Empty
+         eui_txtTiSeCognome.Text = String.Empty
+         eui_txtTiSeTitolo.Text = String.Empty
+         eui_txtTiSeCodiceEORI.Text = String.Empty
+         eui_cmbSoggettoEmittente.Text = String.Empty
 
          EliminaImmagine()
 
@@ -1175,11 +1544,10 @@ Friend Class frmAzienda
          txtRagSoc.Text = AAzienda.RagSociale
          txtPIva.Text = AAzienda.Piva
          txtCodiceFiscale.Text = AAzienda.CodFisc
-         txtNumeroREA.Text = AAzienda.Rea
          txtIndirizzo.Text = AAzienda.Indirizzo
          txtCap.Text = AAzienda.Cap
          txtCittà.Text = AAzienda.Città
-         txtProv.Text = AAzienda.Provincia
+         txtProvincia.Text = AAzienda.Provincia
          cmbNazione.Text = AAzienda.Nazione
          cmbRegimeFiscale.Text = AAzienda.RegimeFiscale
          txtTel.Text = AAzienda.Telefono
@@ -1194,6 +1562,20 @@ Friend Class frmAzienda
          txtCC.Text = AAzienda.Cc
          txtCIN.Text = AAzienda.Cin
          txtIBAN.Text = AAzienda.Iban
+
+         ' Fatturazione Elettronica.
+         eui_cmbCpUfficioREA.Text = AAzienda.UfficioRea
+         eui_txtCpNumeroREA.Text = AAzienda.NumeroRea
+         eui_cmbCpStatoLiquidazioneREA.Text = AAzienda.StatoLiquidazioneRea
+         eui_cmbTiSeIdPaese.Text = AAzienda.TiSeIdPaese
+         eui_txtTiSeIdCodice.Text = AAzienda.TiSePartitaIva
+         eui_txtTiSeCodiceFiscale.Text = AAzienda.TiSeCodiceFiscale
+         eui_txtTiSeDenominazione.Text = AAzienda.TiSeDenominazione
+         eui_txtTiSeNome.Text = AAzienda.TiSeNome
+         eui_txtTiSeCognome.Text = AAzienda.TiSeCognome
+         eui_txtTiSeTitolo.Text = AAzienda.TiSeTitolo
+         eui_txtTiSeCodiceEORI.Text = AAzienda.TiSeCodiceEORI
+         eui_cmbSoggettoEmittente.Text = AAzienda.SoggettoEmittente
 
          If AAzienda.PercorsoImg <> Nothing Then
             If File.Exists(AAzienda.PercorsoImg) = True Then
@@ -1332,6 +1714,11 @@ Friend Class frmAzienda
             Case 2
                ' Imposta lo stato attivo.
                cmbPagamento.Focus()
+
+            Case 3
+               ' Imposta lo stato attivo.
+               eui_cmbCpUfficioREA.Focus()
+
          End Select
 
       Catch ex As Exception
@@ -1341,23 +1728,22 @@ Friend Class frmAzienda
    End Sub
 
    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
-      If (txtCC.Text.Length > 12) Then
-         'Lunghezza errata
-         Exit Sub
-      Else
-         Dim IBAN As New CalcolaIBAN
-         IBAN.Abi = txtABI.Text
-         IBAN.Cab = txtCAB.Text
-         IBAN.ContoCorrente = txtCC.Text
-         IBAN.Paese = "IT"
+      'If (txtCC.Text.Length > 12) Then
+      '   'Lunghezza errata
+      '   Exit Sub
+      'Else
+      '   Dim IBAN As New CalcolaIBAN
+      '   IBAN.Abi = txtABI.Text
+      '   IBAN.Cab = txtCAB.Text
+      '   IBAN.ContoCorrente = txtCC.Text
+      '   IBAN.Paese = "IT"
 
-         txtCIN.Text = IBAN.CalcolaCin()
-         txtIBAN.Text = IBAN.CalcolaIBAN()
-         'Dim sCheck As String = String.Empty
-         'sCheck = IBAN.CalcolaCheckIBAN(paese, IBAN.CalcolaBBAN())
+      '   txtCIN.Text = IBAN.CalcolaCin()
+      '   txtIBAN.Text = IBAN.CalcolaIBAN()
+      '   'Dim sCheck As String = String.Empty
+      '   'sCheck = IBAN.CalcolaCheckIBAN(paese, IBAN.CalcolaBBAN())
 
-      End If
-
+      'End If
    End Sub
 
 End Class

@@ -1,479 +1,150 @@
-"*** 13/10/2018 - 15:01:17 ***"
-"- DESCRIZIONE ERRORE: Database già aperto in modo esclusivo dall'utente 'Admin' sulla macchina 'LuigiMontana-PC'. Ritentare l'operazione quando il database è disponibile."
-"- NOME PROCEDURA:    in JRO.JetEngineClass.CompactDatabase(String SourceConnection, String Destconnection)
-   in Hospitality_Solution.Procedure.CompattaDb(String PercorsoFileOrigine, String PercorsoFileDestinazione)"
+"*** 07/01/2019 - 17:24:41 ***"
+"- DESCRIZIONE ERRORE: Nessun valore predefinito per il parametro @NumeroDoc_PA."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.Documenti.InserisciDati(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Classi\Documenti.vb:riga 445"
 "
 "
-"*** 13/10/2018 - 15:01:25 ***"
-"- DESCRIZIONE ERRORE: Il processo non può accedere al file 'D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\bin\Archivi\Hospitality.mdb' perché è in uso da un altro processo."
-"- NOME PROCEDURA:    in System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
-   in System.IO.File.InternalDelete(String path, Boolean checkHost)
-   in System.IO.File.Delete(String path)
-   in Hospitality_Solution.frmMain.eui_cmdArchiviCompatta_Click(Object sender, EventArgs e)"
+"*** 09/01/2019 - 20:42:47 ***"
+"- DESCRIZIONE ERRORE: Nessun valore specificato per alcuni parametri necessari."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.Anagrafiche.Azienda.ModificaDati(String tabella, Int32 codice)"
 "
 "
-"*** 13/10/2018 - 15:01:36 ***"
-"- DESCRIZIONE ERRORE: Database già aperto in modo esclusivo dall'utente 'Admin' sulla macchina 'LuigiMontana-PC'. Ritentare l'operazione quando il database è disponibile."
-"- NOME PROCEDURA:    in JRO.JetEngineClass.CompactDatabase(String SourceConnection, String Destconnection)
-   in Hospitality_Solution.Procedure.CompattaDb(String PercorsoFileOrigine, String PercorsoFileDestinazione)"
+"*** 09/01/2019 - 20:43:34 ***"
+"- DESCRIZIONE ERRORE: Nessun valore specificato per alcuni parametri necessari."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.Anagrafiche.Azienda.ModificaDati(String tabella, Int32 codice)"
 "
 "
-"*** 13/10/2018 - 15:01:38 ***"
-"- DESCRIZIONE ERRORE: Il processo non può accedere al file 'D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.0.0\bin\Archivi\Hospitality.mdb' perché è in uso da un altro processo."
-"- NOME PROCEDURA:    in System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
-   in System.IO.File.InternalDelete(String path, Boolean checkHost)
-   in System.IO.File.Delete(String path)
-   in Hospitality_Solution.frmMain.eui_cmdArchiviCompatta_Click(Object sender, EventArgs e)"
-"
-"
-"*** 31/10/2018 - 16:23:57 ***"
-"- DESCRIZIONE ERRORE: Il file 'D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\bin\IT01234567890_FPA02.xml' non è stato trovato."
-"- NOME PROCEDURA:    in System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
-   in System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
-   in System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize)
-   in System.Xml.XmlDownloadManager.GetStream(Uri uri, ICredentials credentials, IWebProxy proxy, RequestCachePolicy cachePolicy)
-   in System.Xml.XmlUrlResolver.GetEntity(Uri absoluteUri, String role, Type ofObjectToReturn)
-   in System.Xml.XmlTextReaderImpl.FinishInitUriString()
-   in System.Xml.XmlTextReaderImpl..ctor(String uriStr, XmlReaderSettings settings, XmlParserContext context, XmlResolver uriResolver)
-   in System.Xml.XmlReaderSettings.CreateReader(String inputUri, XmlParserContext inputContext)
-   in System.Xml.XmlReader.Create(String inputUri, XmlReaderSettings settings, XmlParserContext inputContext)
-   in System.Xml.XmlReader.Create(String inputUri, XmlReaderSettings settings)
-   in Hospitality_Solution.frmFatturaElettronica.FatturaElettronica_Load(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 31"
-"
-"
-"*** 31/10/2018 - 16:25:02 ***"
-"- DESCRIZIONE ERRORE: Non è stato possibile caricare il file o l'assembly 'Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed' o una delle relative dipendenze. Impossibile trovare il file specificato."
-"- NOME PROCEDURA:    in System.ModuleHandle.ResolveType(RuntimeModule module, Int32 typeToken, IntPtr* typeInstArgs, Int32 typeInstCount, IntPtr* methodInstArgs, Int32 methodInstCount, ObjectHandleOnStack type)
-   in System.ModuleHandle.ResolveTypeHandleInternal(RuntimeModule module, Int32 typeToken, RuntimeTypeHandle[] typeInstantiationContext, RuntimeTypeHandle[] methodInstantiationContext)
-   in System.Reflection.RuntimeModule.ResolveType(Int32 metadataToken, Type[] genericTypeArguments, Type[] genericMethodArguments)
-   in System.Reflection.CustomAttribute.FilterCustomAttributeRecord(CustomAttributeRecord caRecord, MetadataImport scope, Assembly& lastAptcaOkAssembly, RuntimeModule decoratedModule, MetadataToken decoratedToken, RuntimeType attributeFilterType, Boolean mustBeInheritable, Object[] attributes, IList derivedAttributes, RuntimeType& attributeType, IRuntimeMethodInfo& ctor, Boolean& ctorHasParameters, Boolean& isVarArg)
-   in System.Reflection.CustomAttribute.GetCustomAttributes(RuntimeModule decoratedModule, Int32 decoratedMetadataToken, Int32 pcaCount, RuntimeType attributeFilterType, Boolean mustBeInheritable, IList derivedAttributes, Boolean isDecoratedTargetSecurityTransparent)
-   in System.Reflection.CustomAttribute.GetCustomAttributes(RuntimePropertyInfo property, RuntimeType caType)
-   in System.Reflection.RuntimePropertyInfo.GetCustomAttributes(Type attributeType, Boolean inherit)
-   in System.Attribute.InternalGetCustomAttributes(PropertyInfo element, Type type, Boolean inherit)
-   in System.Attribute.GetCustomAttributes(MemberInfo element, Type type, Boolean inherit)
-   in System.Reflection.CustomAttributeExtensions.GetCustomAttributes[T](MemberInfo element, Boolean inherit)
-   in FatturaElettronica.Common.BaseClass.<>c.<GetAllDataProperties>b__7_0(PropertyInfo pi)
-   in System.Linq.Enumerable.WhereArrayIterator`1.MoveNext()
-   in System.Linq.Buffer`1..ctor(IEnumerable`1 source)
-   in System.Linq.OrderedEnumerable`1.<GetEnumerator>d__1.MoveNext()
-   in System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
-   in System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
-   in FatturaElettronica.Common.BaseClassSerializable.ReadXml(XmlReader r)
-   in FatturaElettronica.Fattura.ReadXml(XmlReader r)
-   in Hospitality_Solution.frmFatturaElettronica.FatturaElettronica_Load(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 32"
-"
-"
-"*** 04/11/2018 - 16:43:35 ***"
-"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
-"- NOME PROCEDURA:    in Hospitality_Solution.frmFatturaElettronica.eui_cmdEsporta_Click(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 202"
-"
-"
-"*** 05/11/2018 - 17:00:08 ***"
-"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
-"- NOME PROCEDURA:    in Hospitality_Solution.frmFatturaElettronica.GeneraFileXML(String nomefile) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 79"
-"
-"
-"*** 05/11/2018 - 17:01:46 ***"
-"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
-"- NOME PROCEDURA:    in Hospitality_Solution.frmFatturaElettronica.GeneraFileXML(String nomefile) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 79"
-"
-"
-"*** 05/11/2018 - 17:04:50 ***"
-"- DESCRIZIONE ERRORE: Cast non valido dalla stringa """" al tipo 'Date'."
-"- NOME PROCEDURA:    in Microsoft.VisualBasic.CompilerServices.Conversions.ToDate(String Value)
-   in Hospitality_Solution.frmFatturaElettronica.GeneraFileXML(String nomefile) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 103"
-"
-"
-"*** 05/11/2018 - 17:08:18 ***"
+"*** 09/01/2019 - 20:56:59 ***"
 "- DESCRIZIONE ERRORE: Index e length devono fare riferimento a una posizione nella stringa.
 Nome parametro: length"
 "- NOME PROCEDURA:    in System.String.Substring(Int32 startIndex, Int32 length)
-   in Hospitality_Solution.frmFatturaElettronica.GeneraNomeFileXML() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 208"
+   in Hospitality_Solution.frmAzienda.Salva()"
 "
 "
-"*** 05/11/2018 - 17:08:22 ***"
-"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
-"- NOME PROCEDURA:    in Hospitality_Solution.frmFatturaElettronica.GeneraFileXML(String nomefile) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 79"
+"*** 09/01/2019 - 20:57:51 ***"
+"- DESCRIZIONE ERRORE: Nessun valore specificato per alcuni parametri necessari."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.Anagrafiche.Azienda.ModificaDati(String tabella, Int32 codice)"
 "
 "
-"*** 05/11/2018 - 17:08:53 ***"
-"- DESCRIZIONE ERRORE: Cast non valido dalla stringa """" al tipo 'Decimal'."
-"- NOME PROCEDURA:    in Microsoft.VisualBasic.CompilerServices.Conversions.ToDecimal(String Value, NumberFormatInfo NumberFormat)
-   in Microsoft.VisualBasic.CompilerServices.Conversions.ToDecimal(String Value)
-   in Hospitality_Solution.frmFatturaElettronica.GeneraFileXML(String nomefile) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 122"
-"
-"
-"*** 05/11/2018 - 17:10:20 ***"
-"- DESCRIZIONE ERRORE: Cast non valido dalla stringa """" al tipo 'Decimal'."
-"- NOME PROCEDURA:    in Microsoft.VisualBasic.CompilerServices.Conversions.ToDecimal(String Value, NumberFormatInfo NumberFormat)
-   in Microsoft.VisualBasic.CompilerServices.Conversions.ToDecimal(String Value)
-   in Hospitality_Solution.frmFatturaElettronica.GeneraFileXML(String nomefile) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 122"
-"
-"
-"*** 05/11/2018 - 17:52:03 ***"
-"- DESCRIZIONE ERRORE: Index non compreso nell'intervallo. Richiesto valore non negativo e minore della dimensione della raccolta.
-Nome parametro: index"
-"- NOME PROCEDURA:    in System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
-   in System.Collections.Generic.List`1.get_Item(Int32 index)
-   in Hospitality_Solution.frmFatturaElettronica.GeneraFileXML(String nomefile) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 190"
-"
-"
-"*** 05/11/2018 - 17:52:17 ***"
-"- DESCRIZIONE ERRORE: Index non compreso nell'intervallo. Richiesto valore non negativo e minore della dimensione della raccolta.
-Nome parametro: index"
-"- NOME PROCEDURA:    in System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
-   in System.Collections.Generic.List`1.get_Item(Int32 index)
-   in Hospitality_Solution.frmFatturaElettronica.GeneraFileXML(String nomefile) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 190"
-"
-"
-"*** 08/11/2018 - 16:22:02 ***"
-"- DESCRIZIONE ERRORE: Index non compreso nell'intervallo. Richiesto valore non negativo e minore della dimensione della raccolta.
-Nome parametro: index"
-"- NOME PROCEDURA:    in System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
-   in System.Collections.Generic.List`1.get_Item(Int32 index)
-   in Hospitality_Solution.frmFatturaElettronica.GeneraFileXML(String nomefile) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 232"
-"
-"
-"*** 08/11/2018 - 16:22:15 ***"
-"- DESCRIZIONE ERRORE: Il file 'D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\bin\Fatture elettroniche\2018\ITDHFG6TDFR00KIU_00001.xml' non è stato trovato."
-"- NOME PROCEDURA:    in System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
-   in System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
-   in System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize)
-   in System.Xml.XmlDownloadManager.GetStream(Uri uri, ICredentials credentials, IWebProxy proxy, RequestCachePolicy cachePolicy)
-   in System.Xml.XmlUrlResolver.GetEntity(Uri absoluteUri, String role, Type ofObjectToReturn)
-   in System.Xml.XmlTextReaderImpl.FinishInitUriString()
-   in System.Xml.XmlTextReaderImpl..ctor(String uriStr, XmlReaderSettings settings, XmlParserContext context, XmlResolver uriResolver)
-   in System.Xml.XmlReaderSettings.CreateReader(String inputUri, XmlParserContext inputContext)
-   in System.Xml.XmlReader.Create(String inputUri, XmlReaderSettings settings, XmlParserContext inputContext)
-   in System.Xml.XmlReader.Create(String inputUri, XmlReaderSettings settings)
-   in Hospitality_Solution.frmFatturaElettronica.ConvalidaFileXML(String nomefile) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 81"
-"
-"
-"*** 08/11/2018 - 16:24:17 ***"
-"- DESCRIZIONE ERRORE: Index non compreso nell'intervallo. Richiesto valore non negativo e minore della dimensione della raccolta.
-Nome parametro: index"
-"- NOME PROCEDURA:    in System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
-   in System.Collections.Generic.List`1.get_Item(Int32 index)
-   in Hospitality_Solution.frmFatturaElettronica.GeneraFileXML(String nomefile) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 232"
-"
-"
-"*** 08/11/2018 - 16:30:53 ***"
-"- DESCRIZIONE ERRORE: Index non compreso nell'intervallo. Richiesto valore non negativo e minore della dimensione della raccolta.
-Nome parametro: index"
-"- NOME PROCEDURA:    in System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
-   in System.Collections.Generic.List`1.get_Item(Int32 index)
-   in Hospitality_Solution.frmFatturaElettronica.GeneraFileXML(String nomefile) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 232"
-"
-"
-"*** 08/11/2018 - 16:43:01 ***"
-"- DESCRIZIONE ERRORE: Il file 'D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\bin\Fatture elettroniche\2018\ITSDRF56TGGU999_00001.xml' non è stato trovato."
-"- NOME PROCEDURA:    in System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
-   in System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
-   in System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize)
-   in System.Xml.XmlDownloadManager.GetStream(Uri uri, ICredentials credentials, IWebProxy proxy, RequestCachePolicy cachePolicy)
-   in System.Xml.XmlUrlResolver.GetEntity(Uri absoluteUri, String role, Type ofObjectToReturn)
-   in System.Xml.XmlTextReaderImpl.FinishInitUriString()
-   in System.Xml.XmlTextReaderImpl..ctor(String uriStr, XmlReaderSettings settings, XmlParserContext context, XmlResolver uriResolver)
-   in System.Xml.XmlReaderSettings.CreateReader(String inputUri, XmlParserContext inputContext)
-   in System.Xml.XmlReader.Create(String inputUri, XmlReaderSettings settings, XmlParserContext inputContext)
-   in System.Xml.XmlReader.Create(String inputUri, XmlReaderSettings settings)
-   in Hospitality_Solution.frmFatturaElettronica.GeneraFileXML(String nomefile) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 122"
-"
-"
-"*** 08/11/2018 - 16:43:42 ***"
-"- DESCRIZIONE ERRORE: Il file 'D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\bin\Fatture elettroniche\2018\ITSDRF56TGGU999_00001.xml' non è stato trovato."
-"- NOME PROCEDURA:    in System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
-   in System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
-   in System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize)
-   in System.Xml.XmlDownloadManager.GetStream(Uri uri, ICredentials credentials, IWebProxy proxy, RequestCachePolicy cachePolicy)
-   in System.Xml.XmlUrlResolver.GetEntity(Uri absoluteUri, String role, Type ofObjectToReturn)
-   in System.Xml.XmlTextReaderImpl.FinishInitUriString()
-   in System.Xml.XmlTextReaderImpl..ctor(String uriStr, XmlReaderSettings settings, XmlParserContext context, XmlResolver uriResolver)
-   in System.Xml.XmlReaderSettings.CreateReader(String inputUri, XmlParserContext inputContext)
-   in System.Xml.XmlReader.Create(String inputUri, XmlReaderSettings settings, XmlParserContext inputContext)
-   in System.Xml.XmlReader.Create(String inputUri, XmlReaderSettings settings)
-   in Hospitality_Solution.frmFatturaElettronica.GeneraFileXML(String nomefile) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 122"
-"
-"
-"*** 08/11/2018 - 17:08:05 ***"
-"- DESCRIZIONE ERRORE: Index non compreso nell'intervallo. Richiesto valore non negativo e minore della dimensione della raccolta.
-Nome parametro: index"
-"- NOME PROCEDURA:    in System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
-   in System.Collections.Generic.List`1.get_Item(Int32 index)
-   in Hospitality_Solution.frmFatturaElettronica.GeneraFileXML(String nomefile) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 234"
-"
-"
-"*** 08/11/2018 - 17:13:56 ***"
-"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
-"- NOME PROCEDURA:    in Hospitality_Solution.frmFatturaElettronica.GeneraFileXML(String nomefile) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 238"
-"
-"
-"*** 08/11/2018 - 17:18:20 ***"
-"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
-"- NOME PROCEDURA:    in Hospitality_Solution.frmFatturaElettronica.GeneraFileXML(String nomefile) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 237"
-"
-"
-"*** 08/11/2018 - 17:21:50 ***"
-"- DESCRIZIONE ERRORE: Index non compreso nell'intervallo. Richiesto valore non negativo e minore della dimensione della raccolta.
-Nome parametro: index"
-"- NOME PROCEDURA:    in System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
-   in System.Collections.Generic.List`1.get_Item(Int32 index)
-   in Hospitality_Solution.frmFatturaElettronica.GeneraFileXML(String nomefile) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 245"
-"
-"
-"*** 08/11/2018 - 17:37:14 ***"
-"- DESCRIZIONE ERRORE: Index non compreso nell'intervallo. Richiesto valore non negativo e minore della dimensione della raccolta.
-Nome parametro: index"
-"- NOME PROCEDURA:    in System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
-   in System.Collections.Generic.List`1.get_Item(Int32 index)
-   in Hospitality_Solution.frmFatturaElettronica.GeneraFileXML(String nomefile) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 249"
-"
-"
-"*** 09/11/2018 - 15:45:47 ***"
-"- DESCRIZIONE ERRORE: Index non compreso nell'intervallo. Richiesto valore non negativo e minore della dimensione della raccolta.
-Nome parametro: index"
-"- NOME PROCEDURA:    in System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
-   in System.Collections.Generic.List`1.get_Item(Int32 index)
-   in Hospitality_Solution.frmFatturaElettronica.GeneraFileXML(String nomefile) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 261"
-"
-"
-"*** 09/11/2018 - 17:10:20 ***"
-"- DESCRIZIONE ERRORE: Index non compreso nell'intervallo. Richiesto valore non negativo e minore della dimensione della raccolta.
-Nome parametro: index"
-"- NOME PROCEDURA:    in System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
-   in System.Collections.Generic.List`1.get_Item(Int32 index)
-   in Hospitality_Solution.frmFatturaElettronica.GeneraFileXML(String nomefile) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 385"
-"
-"
-"*** 09/11/2018 - 18:07:33 ***"
+"*** 09/01/2019 - 20:58:37 ***"
 "- DESCRIZIONE ERRORE: Index e length devono fare riferimento a una posizione nella stringa.
 Nome parametro: length"
 "- NOME PROCEDURA:    in System.String.Substring(Int32 startIndex, Int32 length)
-   in Hospitality_Solution.frmFatturaElettronica.GeneraNomeFileXML() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 504"
+   in Hospitality_Solution.frmAzienda.Salva()"
 "
 "
-"*** 09/11/2018 - 18:07:37 ***"
-"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
-"- NOME PROCEDURA:    in Hospitality_Solution.frmFatturaElettronica.GeneraFileXML(String nomefile) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 122"
+"*** 09/01/2019 - 20:59:01 ***"
+"- DESCRIZIONE ERRORE: Nessun valore specificato per alcuni parametri necessari."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.Anagrafiche.Azienda.ModificaDati(String tabella, Int32 codice)"
 "
 "
-"*** 10/11/2018 - 17:40:31 ***"
-"- DESCRIZIONE ERRORE: Index e length devono fare riferimento a una posizione nella stringa.
-Nome parametro: length"
-"- NOME PROCEDURA:    in System.String.Substring(Int32 startIndex, Int32 length)
-   in Hospitality_Solution.frmFatturaElettronica.GeneraNomeFileXML() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 992"
+"*** 09/01/2019 - 21:03:19 ***"
+"- DESCRIZIONE ERRORE: Nessun valore specificato per alcuni parametri necessari."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.Anagrafiche.Azienda.ModificaDati(String tabella, Int32 codice) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Classi\AnagTab.vb:riga 745"
 "
 "
-"*** 10/11/2018 - 17:40:38 ***"
-"- DESCRIZIONE ERRORE: Index e length devono fare riferimento a una posizione nella stringa.
-Nome parametro: length"
-"- NOME PROCEDURA:    in System.String.Substring(Int32 startIndex, Int32 length)
-   in Hospitality_Solution.frmFatturaElettronica.GeneraNomeFileXML() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 992"
+"*** 09/01/2019 - 21:14:20 ***"
+"- DESCRIZIONE ERRORE: Nessun valore specificato per alcuni parametri necessari."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.Anagrafiche.Azienda.ModificaDati(String tabella, Int32 codice) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Classi\AnagTab.vb:riga 746"
 "
 "
-"*** 10/11/2018 - 17:40:43 ***"
-"- DESCRIZIONE ERRORE: Index e length devono fare riferimento a una posizione nella stringa.
-Nome parametro: length"
-"- NOME PROCEDURA:    in System.String.Substring(Int32 startIndex, Int32 length)
-   in Hospitality_Solution.frmFatturaElettronica.GeneraNomeFileXML() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 992"
+"*** 09/01/2019 - 21:15:06 ***"
+"- DESCRIZIONE ERRORE: Nessun valore specificato per alcuni parametri necessari."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.Anagrafiche.Azienda.ModificaDati(String tabella, Int32 codice) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Classi\AnagTab.vb:riga 746"
 "
 "
-"*** 10/11/2018 - 17:40:46 ***"
-"- DESCRIZIONE ERRORE: Impossibile trovare una parte del percorso 'D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\bin\Fatture elettroniche\2018\'."
-"- NOME PROCEDURA:    in System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
-   in System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
-   in System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize)
-   in System.Xml.XmlDownloadManager.GetStream(Uri uri, ICredentials credentials, IWebProxy proxy, RequestCachePolicy cachePolicy)
-   in System.Xml.XmlUrlResolver.GetEntity(Uri absoluteUri, String role, Type ofObjectToReturn)
-   in System.Xml.XmlTextReaderImpl.FinishInitUriString()
-   in System.Xml.XmlTextReaderImpl..ctor(String uriStr, XmlReaderSettings settings, XmlParserContext context, XmlResolver uriResolver)
-   in System.Xml.XmlReaderSettings.CreateReader(String inputUri, XmlParserContext inputContext)
-   in System.Xml.XmlReader.Create(String inputUri, XmlReaderSettings settings, XmlParserContext inputContext)
-   in System.Xml.XmlReader.Create(String inputUri, XmlReaderSettings settings)
-   in Hospitality_Solution.frmFatturaElettronica.ConvalidaFileXML(String nomefile) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 83"
+"*** 09/01/2019 - 21:19:55 ***"
+"- DESCRIZIONE ERRORE: Nessun valore specificato per alcuni parametri necessari."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.Anagrafiche.Azienda.ModificaDati(String tabella, Int32 codice) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Classi\AnagTab.vb:riga 746"
 "
 "
-"*** 21/11/2018 - 09:28:05 ***"
-"- DESCRIZIONE ERRORE: Il file 'D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\bin\Fatture elettroniche\2018\ITDHFGRTYGGFF_00001.xml' non è stato trovato."
-"- NOME PROCEDURA:    in System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
-   in System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
-   in System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize)
-   in System.Xml.XmlDownloadManager.GetStream(Uri uri, ICredentials credentials, IWebProxy proxy, RequestCachePolicy cachePolicy)
-   in System.Xml.XmlUrlResolver.GetEntity(Uri absoluteUri, String role, Type ofObjectToReturn)
-   in System.Xml.XmlTextReaderImpl.FinishInitUriString()
-   in System.Xml.XmlTextReaderImpl..ctor(String uriStr, XmlReaderSettings settings, XmlParserContext context, XmlResolver uriResolver)
-   in System.Xml.XmlReaderSettings.CreateReader(String inputUri, XmlParserContext inputContext)
-   in System.Xml.XmlReader.Create(String inputUri, XmlReaderSettings settings, XmlParserContext inputContext)
-   in System.Xml.XmlReader.Create(String inputUri, XmlReaderSettings settings)
-   in Hospitality_Solution.frmFatturaElettronica.ConvalidaFileXML(String nomefile) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 84"
+"*** 09/01/2019 - 21:20:16 ***"
+"- DESCRIZIONE ERRORE: Nessun valore specificato per alcuni parametri necessari."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.Anagrafiche.Azienda.ModificaDati(String tabella, Int32 codice) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Classi\AnagTab.vb:riga 746"
 "
 "
-"*** 21/11/2018 - 09:28:20 ***"
-"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
-"- NOME PROCEDURA:    in System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
-   in System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
-   in System.Convert.ToDecimal(String value)
-   in Hospitality_Solution.frmFatturaElettronica.GeneraFileXML(String nomefile) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 257"
+"*** 09/01/2019 - 21:20:56 ***"
+"- DESCRIZIONE ERRORE: Nessun valore specificato per alcuni parametri necessari."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.Anagrafiche.Azienda.ModificaDati(String tabella, Int32 codice) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Classi\AnagTab.vb:riga 746"
 "
 "
-"*** 21/11/2018 - 09:29:10 ***"
-"- DESCRIZIONE ERRORE: Formato della stringa di input non corretto."
-"- NOME PROCEDURA:    in System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
-   in System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
-   in System.Convert.ToDecimal(String value)
-   in Hospitality_Solution.frmFatturaElettronica.GeneraFileXML(String nomefile) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 257"
+"*** 09/01/2019 - 21:24:55 ***"
+"- DESCRIZIONE ERRORE: Nessun valore specificato per alcuni parametri necessari."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
+   in Hospitality_Solution.Anagrafiche.Azienda.ModificaDati(String tabella, Int32 codice) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Classi\AnagTab.vb:riga 746"
 "
 "
-"*** 21/11/2018 - 10:45:56 ***"
-"- DESCRIZIONE ERRORE: Index e length devono fare riferimento a una posizione nella stringa.
-Nome parametro: length"
-"- NOME PROCEDURA:    in System.String.Substring(Int32 startIndex, Int32 length)
-   in Hospitality_Solution.frmFatturaElettronica.GeneraFileXML(String nomefile) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 163"
-"
-"
-"*** 21/11/2018 - 13:03:13 ***"
-"- DESCRIZIONE ERRORE: Index e length devono fare riferimento a una posizione nella stringa.
-Nome parametro: length"
-"- NOME PROCEDURA:    in System.String.Substring(Int32 startIndex, Int32 length)
-   in Hospitality_Solution.frmFatturaElettronica.GeneraNomeFileXML() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 1166"
-"
-"
-"*** 21/11/2018 - 13:03:15 ***"
-"- DESCRIZIONE ERRORE: Impossibile trovare una parte del percorso 'D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\bin\Fatture elettroniche\2018\'."
-"- NOME PROCEDURA:    in System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
-   in System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
-   in System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize)
-   in System.Xml.XmlDownloadManager.GetStream(Uri uri, ICredentials credentials, IWebProxy proxy, RequestCachePolicy cachePolicy)
-   in System.Xml.XmlUrlResolver.GetEntity(Uri absoluteUri, String role, Type ofObjectToReturn)
-   in System.Xml.XmlTextReaderImpl.FinishInitUriString()
-   in System.Xml.XmlTextReaderImpl..ctor(String uriStr, XmlReaderSettings settings, XmlParserContext context, XmlResolver uriResolver)
-   in System.Xml.XmlReaderSettings.CreateReader(String inputUri, XmlParserContext inputContext)
-   in System.Xml.XmlReader.Create(String inputUri, XmlReaderSettings settings, XmlParserContext inputContext)
-   in System.Xml.XmlReader.Create(String inputUri, XmlReaderSettings settings)
-   in Hospitality_Solution.frmFatturaElettronica.ConvalidaFileXML(String nomefile) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 84"
-"
-"
-"*** 21/11/2018 - 14:31:31 ***"
-"- DESCRIZIONE ERRORE: Index e length devono fare riferimento a una posizione nella stringa.
-Nome parametro: length"
-"- NOME PROCEDURA:    in System.String.Substring(Int32 startIndex, Int32 length)
-   in Hospitality_Solution.frmFatturaElettronica.GeneraNomeFileXML() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 1169"
-"
-"
-"*** 21/11/2018 - 14:42:24 ***"
-"- DESCRIZIONE ERRORE: Il file 'D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\bin\Fatture elettroniche\2018\ITDHFGFYT677555_00001.txt' esiste già."
-"- NOME PROCEDURA:    in System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
-   in System.IO.File.InternalCopy(String sourceFileName, String destFileName, Boolean overwrite, Boolean checkHost)
-   in System.IO.File.Copy(String sourceFileName, String destFileName)
-   in Hospitality_Solution.frmFatturaElettronica.eui_cmdSalvaTestoXml_Click(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 1446"
-"
-"
-"*** 21/11/2018 - 15:26:50 ***"
-"- DESCRIZIONE ERRORE: Index e length devono fare riferimento a una posizione nella stringa.
-Nome parametro: length"
-"- NOME PROCEDURA:    in System.String.Substring(Int32 startIndex, Int32 length)
-   in Hospitality_Solution.frmFatturaElettronica.GeneraNomeFileXML() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 1170"
-"
-"
-"*** 21/11/2018 - 15:26:53 ***"
-"- DESCRIZIONE ERRORE: Index e length devono fare riferimento a una posizione nella stringa.
-Nome parametro: length"
-"- NOME PROCEDURA:    in System.String.Substring(Int32 startIndex, Int32 length)
-   in Hospitality_Solution.frmFatturaElettronica.GeneraNomeFileTxt() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 1185"
-"
-"
-"*** 21/11/2018 - 15:26:59 ***"
-"- DESCRIZIONE ERRORE: Index e length devono fare riferimento a una posizione nella stringa.
-Nome parametro: length"
-"- NOME PROCEDURA:    in System.String.Substring(Int32 startIndex, Int32 length)
-   in Hospitality_Solution.frmFatturaElettronica.GeneraNomeFileXML() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 1170"
-"
-"
-"*** 21/11/2018 - 15:27:01 ***"
-"- DESCRIZIONE ERRORE: Index e length devono fare riferimento a una posizione nella stringa.
-Nome parametro: length"
-"- NOME PROCEDURA:    in System.String.Substring(Int32 startIndex, Int32 length)
-   in Hospitality_Solution.frmFatturaElettronica.GeneraNomeFileTxt() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 1185"
-"
-"
-"*** 21/11/2018 - 15:27:04 ***"
-"- DESCRIZIONE ERRORE: Index e length devono fare riferimento a una posizione nella stringa.
-Nome parametro: length"
-"- NOME PROCEDURA:    in System.String.Substring(Int32 startIndex, Int32 length)
-   in Hospitality_Solution.frmFatturaElettronica.GeneraNomeFileXML() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 1170"
-"
-"
-"*** 21/11/2018 - 15:27:13 ***"
-"- DESCRIZIONE ERRORE: Index e length devono fare riferimento a una posizione nella stringa.
-Nome parametro: length"
-"- NOME PROCEDURA:    in System.String.Substring(Int32 startIndex, Int32 length)
-   in Hospitality_Solution.frmFatturaElettronica.GeneraNomeFileTxt() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 1185"
-"
-"
-"*** 21/11/2018 - 15:27:16 ***"
-"- DESCRIZIONE ERRORE: Index e length devono fare riferimento a una posizione nella stringa.
-Nome parametro: length"
-"- NOME PROCEDURA:    in System.String.Substring(Int32 startIndex, Int32 length)
-   in Hospitality_Solution.frmFatturaElettronica.GeneraNomeFileXML() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 1170"
-"
-"
-"*** 21/11/2018 - 15:27:18 ***"
-"- DESCRIZIONE ERRORE: Index e length devono fare riferimento a una posizione nella stringa.
-Nome parametro: length"
-"- NOME PROCEDURA:    in System.String.Substring(Int32 startIndex, Int32 length)
-   in Hospitality_Solution.frmFatturaElettronica.GeneraNomeFileTxt() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 1185"
-"
-"
-"*** 21/11/2018 - 16:41:54 ***"
-"- DESCRIZIONE ERRORE: Impossibile trovare una parte del percorso 'D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\bin\Fatture elettroniche\2018\'."
-"- NOME PROCEDURA:    in System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
-   in System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
-   in System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize)
-   in System.Xml.XmlDownloadManager.GetStream(Uri uri, ICredentials credentials, IWebProxy proxy, RequestCachePolicy cachePolicy)
-   in System.Xml.XmlUrlResolver.GetEntity(Uri absoluteUri, String role, Type ofObjectToReturn)
-   in System.Xml.XmlTextReaderImpl.FinishInitUriString()
-   in System.Xml.XmlTextReaderImpl..ctor(String uriStr, XmlReaderSettings settings, XmlParserContext context, XmlResolver uriResolver)
-   in System.Xml.XmlReaderSettings.CreateReader(String inputUri, XmlParserContext inputContext)
-   in System.Xml.XmlReader.Create(String inputUri, XmlReaderSettings settings, XmlParserContext inputContext)
-   in System.Xml.XmlReader.Create(String inputUri, XmlReaderSettings settings)
-   in Hospitality_Solution.frmFatturaElettronica.ConvalidaFileXML(String nomefile) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 85"
-"
-"
-"*** 21/11/2018 - 16:42:16 ***"
-"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
-"- NOME PROCEDURA:    in Hospitality_Solution.frmFatturaElettronica.GeneraFileXML(String nomefile) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 134"
-"
-"
-"*** 23/11/2018 - 10:52:06 ***"
-"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
-"- NOME PROCEDURA:    in Hospitality_Solution.frmFatturaElettronica.GeneraFileXML(String nomefile) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 144"
-"
-"
-"*** 23/11/2018 - 10:53:45 ***"
-"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
-"- NOME PROCEDURA:    in Hospitality_Solution.frmFatturaElettronica.GeneraFileXML(String nomefile) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 134"
-"
-"
-"*** 23/11/2018 - 10:59:06 ***"
-"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
-"- NOME PROCEDURA:    in Hospitality_Solution.frmFatturaElettronica.GeneraFileXML(String nomefile) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 134"
-"
-"
-"*** 23/11/2018 - 14:37:42 ***"
-"- DESCRIZIONE ERRORE: Cast specificato non valido."
-"- NOME PROCEDURA:    in Hospitality_Solution.frmFatturaElettronica.GeneraFileXML(String nomefile) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 956"
-"
-"
-"*** 23/11/2018 - 16:23:29 ***"
-"- DESCRIZIONE ERRORE: Index non compreso nell'intervallo. Richiesto valore non negativo e minore della dimensione della raccolta.
-Nome parametro: index"
-"- NOME PROCEDURA:    in System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
-   in System.Collections.Generic.List`1.get_Item(Int32 index)
-   in Hospitality_Solution.frmFatturaElettronica.GeneraFileXML(String nomefile) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 1057"
-"
-"
-"*** 01/12/2018 - 15:27:58 ***"
+"*** 09/01/2019 - 21:32:30 ***"
 "- DESCRIZIONE ERRORE: Impossibile aggiungere la quantità di dati desiderata. Inserire o incollare meno dati."
 "- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
@@ -481,421 +152,88 @@ Nome parametro: index"
    in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
    in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
    in System.Data.OleDb.OleDbCommand.ExecuteNonQuery()
-   in Hospitality_Solution.Anagrafiche.Azienda.ModificaDati(String tabella, Int32 codice) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Classi\AnagTab.vb:riga 556"
+   in Hospitality_Solution.Anagrafiche.Azienda.ModificaDati(String tabella, Int32 codice) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Classi\AnagTab.vb:riga 745"
 "
 "
-"*** 01/12/2018 - 16:35:26 ***"
-"- DESCRIZIONE ERRORE: La colonna 'RegimeFiscale' non appartiene alla tabella Azienda."
-"- NOME PROCEDURA:    in System.Data.DataRow.GetDataColumn(String columnName)
-   in System.Data.DataRow.get_Item(String columnName)
-   in Hospitality_Solution.Anagrafiche.Azienda.LeggiDati(String tabella) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Classi\AnagTab.vb:riga 330"
-"
-"
-"*** 01/12/2018 - 18:10:47 ***"
-"- DESCRIZIONE ERRORE: Piva"
-"- NOME PROCEDURA:    in System.Data.ProviderBase.FieldNameLookup.GetOrdinal(String fieldName)
-   in System.Data.OleDb.OleDbDataReader.GetOrdinal(String name)
-   in System.Data.OleDb.OleDbDataReader.get_Item(String name)
-   in Hospitality_Solution.frmFatturaElettronica.CaricaDatiCliente() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\FatturaElettronica.vb:riga 1646"
-"
-"
-"*** 22/12/2018 - 14:41:53 ***"
-"- DESCRIZIONE ERRORE: appSettings section not found"
-"- NOME PROCEDURA:    in AppConfig.GetValue(String key)
-   in Hospitality_Solution.frmMain.VerificaProdottoAttivo() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\Main.vb:riga 13616"
-"
-"
-"*** 22/12/2018 - 14:42:11 ***"
-"- DESCRIZIONE ERRORE: appSettings section not found"
-"- NOME PROCEDURA:    in AppConfig.GetValue(String key)
-   in Hospitality_Solution.frmMain.VerificaProdottoAttivo() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\Main.vb:riga 13616"
-"
-"
-"*** 22/12/2018 - 14:42:45 ***"
-"- DESCRIZIONE ERRORE: Index e length devono fare riferimento a una posizione nella stringa.
-Nome parametro: length"
-"- NOME PROCEDURA:    in System.String.Substring(Int32 startIndex, Int32 length)
-   in Hospitality_Solution.frmModuloReg.frmModuloReg_Load(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\ModuloReg.vb:riga 1239"
-"
-"
-"*** 22/12/2018 - 14:43:25 ***"
-"- DESCRIZIONE ERRORE: appSettings section not found"
-"- NOME PROCEDURA:    in AppConfig.GetValue(String key)
-   in Hospitality_Solution.frmMain.VerificaProdottoAttivo() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\Main.vb:riga 13616"
-"
-"
-"*** 22/12/2018 - 14:43:32 ***"
-"- DESCRIZIONE ERRORE: appSettings section not found"
-"- NOME PROCEDURA:    in AppConfig.GetValue(String key)
-   in Hospitality_Solution.frmMain.VerificaProdottoAttivo() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\Main.vb:riga 13616"
-"
-"
-"*** 29/12/2018 - 15:19:20 ***"
-"- DESCRIZIONE ERRORE: appSettings section not found"
-"- NOME PROCEDURA:    in AppConfig.GetValue(String key)
-   in Hospitality_Solution.frmMain.ImpostaModuli() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\Main.vb:riga 13268"
-"
-"
-"*** 29/12/2018 - 15:24:37 ***"
-"- DESCRIZIONE ERRORE: startIndex non può essere maggiore della lunghezza della stringa.
-Nome parametro: startIndex"
-"- NOME PROCEDURA:    in System.String.Substring(Int32 startIndex, Int32 length)
-   in Hospitality_Solution.frmModuloReg.frmModuloReg_Load(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\ModuloReg.vb:riga 1343"
-"
-"
-"*** 29/12/2018 - 15:25:06 ***"
-"- DESCRIZIONE ERRORE: startIndex non può essere maggiore della lunghezza della stringa.
-Nome parametro: startIndex"
-"- NOME PROCEDURA:    in System.String.Substring(Int32 startIndex, Int32 length)
-   in Hospitality_Solution.frmModuloReg.frmModuloReg_Load(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\ModuloReg.vb:riga 1343"
-"
-"
-"*** 29/12/2018 - 15:33:08 ***"
-"- DESCRIZIONE ERRORE: startIndex non può essere maggiore della lunghezza della stringa.
-Nome parametro: startIndex"
-"- NOME PROCEDURA:    in System.String.Substring(Int32 startIndex, Int32 length)
-   in Hospitality_Solution.frmModuloReg.frmModuloReg_Load(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\ModuloReg.vb:riga 1343"
-"
-"
-"*** 29/12/2018 - 17:25:53 ***"
-"- DESCRIZIONE ERRORE: Impossibile attivare i vincoli. Una o più righe contengono valori che violano il vincolo non-null, unique o foreign-key."
-"- NOME PROCEDURA:    in System.Data.DataSet.EnableConstraints()
-   in System.Data.DataSet.set_EnforceConstraints(Boolean value)
-   in System.Data.DataTable.EndLoadData()
-   in System.Data.Common.DataAdapter.FillFromReader(DataSet dataset, DataTable datatable, String srcTable, DataReaderContainer dataReader, Int32 startRecord, Int32 maxRecords, DataColumn parentChapterColumn, Object parentChapterValue)
-   in System.Data.Common.DataAdapter.Fill(DataSet dataSet, String srcTable, IDataReader dataReader, Int32 startRecord, Int32 maxRecords)
+"*** 12/01/2019 - 15:27:39 ***"
+"- DESCRIZIONE ERRORE: Nessun valore specificato per alcuni parametri necessari."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.OleDb.OleDbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
    in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
-   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
-   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, String srcTable)
-   in Hospitality_Solution.frmDocumento.AnteprimaDiStampa() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\Documento.vb:riga 2591"
+   in System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   in Hospitality_Solution.HospitalityDataSetTableAdapters.AziendaTableAdapter.Fill(AziendaDataTable dataTable) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\HospitalityDataSet.Designer.vb:riga 17038
+   in Hospitality_Solution.RepDocumenti.ReportViewer_Load(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\ReportsViewer\RepDocumenti.vb:riga 62"
 "
 "
-"*** 29/12/2018 - 17:26:27 ***"
-"- DESCRIZIONE ERRORE: Impossibile attivare i vincoli. Una o più righe contengono valori che violano il vincolo non-null, unique o foreign-key."
-"- NOME PROCEDURA:    in System.Data.DataSet.EnableConstraints()
-   in System.Data.DataSet.set_EnforceConstraints(Boolean value)
-   in System.Data.DataTable.EndLoadData()
-   in System.Data.Common.DataAdapter.FillFromReader(DataSet dataset, DataTable datatable, String srcTable, DataReaderContainer dataReader, Int32 startRecord, Int32 maxRecords, DataColumn parentChapterColumn, Object parentChapterValue)
-   in System.Data.Common.DataAdapter.Fill(DataSet dataSet, String srcTable, IDataReader dataReader, Int32 startRecord, Int32 maxRecords)
+"*** 12/01/2019 - 15:42:31 ***"
+"- DESCRIZIONE ERRORE: Nessun valore specificato per alcuni parametri necessari."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.OleDb.OleDbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
    in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
-   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
-   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, String srcTable)
-   in Hospitality_Solution.frmDocumento.AnteprimaDiStampa() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\Documento.vb:riga 2591"
+   in System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   in Hospitality_Solution.HospitalityDataSetTableAdapters.AziendaTableAdapter.Fill(AziendaDataTable dataTable) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\HospitalityDataSet.Designer.vb:riga 17038
+   in Hospitality_Solution.RepDocumenti.ReportViewer_Load(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\ReportsViewer\RepDocumenti.vb:riga 62"
 "
 "
-"*** 29/12/2018 - 17:26:54 ***"
-"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
-"- NOME PROCEDURA:    in Hospitality_Solution.frmDocumento.CalcolaImportoTotaleIva() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\Documento.vb:riga 1630"
-"
-"
-"*** 29/12/2018 - 17:26:58 ***"
-"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
-"- NOME PROCEDURA:    in Hospitality_Solution.frmDocumento.CalcolaImportoTotaleIva() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\Documento.vb:riga 1630"
-"
-"
-"*** 29/12/2018 - 17:26:59 ***"
-"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
-"- NOME PROCEDURA:    in Hospitality_Solution.frmDocumento.CalcolaImportoTotaleIva() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\Documento.vb:riga 1630"
-"
-"
-"*** 29/12/2018 - 17:27:00 ***"
-"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
-"- NOME PROCEDURA:    in Hospitality_Solution.frmDocumento.CalcolaImportoTotaleIva() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\Documento.vb:riga 1630"
-"
-"
-"*** 29/12/2018 - 17:27:01 ***"
-"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
-"- NOME PROCEDURA:    in Hospitality_Solution.frmDocumento.CalcolaImportoTotaleIva() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\Documento.vb:riga 1630"
-"
-"
-"*** 29/12/2018 - 17:27:01 ***"
-"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
-"- NOME PROCEDURA:    in Hospitality_Solution.frmDocumento.CalcolaImportoTotaleIva() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\Documento.vb:riga 1630"
-"
-"
-"*** 29/12/2018 - 17:27:02 ***"
-"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
-"- NOME PROCEDURA:    in Hospitality_Solution.frmDocumento.CalcolaImportoTotaleIva() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\Documento.vb:riga 1630"
-"
-"
-"*** 29/12/2018 - 17:27:03 ***"
-"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
-"- NOME PROCEDURA:    in Hospitality_Solution.frmDocumento.CalcolaImportoTotaleIva() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\Documento.vb:riga 1630"
-"
-"
-"*** 29/12/2018 - 17:27:04 ***"
-"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
-"- NOME PROCEDURA:    in Hospitality_Solution.frmDocumento.CalcolaImportoTotaleIva() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\Documento.vb:riga 1630"
-"
-"
-"*** 29/12/2018 - 17:27:05 ***"
-"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
-"- NOME PROCEDURA:    in Hospitality_Solution.frmDocumento.CalcolaImportoTotaleIva() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\Documento.vb:riga 1630"
-"
-"
-"*** 29/12/2018 - 17:27:05 ***"
-"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
-"- NOME PROCEDURA:    in Hospitality_Solution.frmDocumento.CalcolaImportoTotaleIva() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\Documento.vb:riga 1630"
-"
-"
-"*** 29/12/2018 - 17:27:06 ***"
-"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
-"- NOME PROCEDURA:    in Hospitality_Solution.frmDocumento.CalcolaImportoTotaleIva() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\Documento.vb:riga 1630"
-"
-"
-"*** 29/12/2018 - 17:27:06 ***"
-"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
-"- NOME PROCEDURA:    in Hospitality_Solution.frmDocumento.CalcolaImportoTotaleIva() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\Documento.vb:riga 1630"
-"
-"
-"*** 29/12/2018 - 17:27:07 ***"
-"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
-"- NOME PROCEDURA:    in Hospitality_Solution.frmDocumento.CalcolaImportoTotaleIva() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\Documento.vb:riga 1630"
-"
-"
-"*** 29/12/2018 - 17:27:37 ***"
-"- DESCRIZIONE ERRORE: Impossibile attivare i vincoli. Una o più righe contengono valori che violano il vincolo non-null, unique o foreign-key."
-"- NOME PROCEDURA:    in System.Data.DataSet.EnableConstraints()
-   in System.Data.DataSet.set_EnforceConstraints(Boolean value)
-   in System.Data.DataTable.EndLoadData()
-   in System.Data.Common.DataAdapter.FillFromReader(DataSet dataset, DataTable datatable, String srcTable, DataReaderContainer dataReader, Int32 startRecord, Int32 maxRecords, DataColumn parentChapterColumn, Object parentChapterValue)
-   in System.Data.Common.DataAdapter.Fill(DataSet dataSet, String srcTable, IDataReader dataReader, Int32 startRecord, Int32 maxRecords)
+"*** 12/01/2019 - 15:53:25 ***"
+"- DESCRIZIONE ERRORE: Nessun valore specificato per alcuni parametri necessari."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.OleDb.OleDbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
    in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
-   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
-   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, String srcTable)
-   in Hospitality_Solution.frmDocumento.AnteprimaDiStampa() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\Documento.vb:riga 2591"
+   in System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   in Hospitality_Solution.HospitalityDataSetTableAdapters.AziendaTableAdapter.Fill(AziendaDataTable dataTable) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\HospitalityDataSet.Designer.vb:riga 17038
+   in Hospitality_Solution.RepDocumenti.ReportViewer_Load(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\ReportsViewer\RepDocumenti.vb:riga 62"
 "
 "
-"*** 29/12/2018 - 17:37:01 ***"
-"- DESCRIZIONE ERRORE: Impossibile attivare i vincoli. Una o più righe contengono valori che violano il vincolo non-null, unique o foreign-key."
-"- NOME PROCEDURA:    in System.Data.DataSet.EnableConstraints()
-   in System.Data.DataSet.set_EnforceConstraints(Boolean value)
-   in System.Data.DataTable.EndLoadData()
-   in System.Data.Common.DataAdapter.FillFromReader(DataSet dataset, DataTable datatable, String srcTable, DataReaderContainer dataReader, Int32 startRecord, Int32 maxRecords, DataColumn parentChapterColumn, Object parentChapterValue)
-   in System.Data.Common.DataAdapter.Fill(DataSet dataSet, String srcTable, IDataReader dataReader, Int32 startRecord, Int32 maxRecords)
+"*** 12/01/2019 - 15:54:00 ***"
+"- DESCRIZIONE ERRORE: Nessun valore specificato per alcuni parametri necessari."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+   in System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   in System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
+   in System.Data.OleDb.OleDbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
    in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
-   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
-   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, String srcTable)
-   in Hospitality_Solution.frmDocumento.AnteprimaDiStampa() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\Documento.vb:riga 2591"
+   in System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   in Hospitality_Solution.HospitalityDataSetTableAdapters.AziendaTableAdapter.Fill(AziendaDataTable dataTable) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\HospitalityDataSet.Designer.vb:riga 17038
+   in Hospitality_Solution.RepDocumenti.ReportViewer_Load(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\ReportsViewer\RepDocumenti.vb:riga 62"
 "
 "
-"*** 29/12/2018 - 17:47:01 ***"
-"- DESCRIZIONE ERRORE: Impossibile attivare i vincoli. Una o più righe contengono valori che violano il vincolo non-null, unique o foreign-key."
-"- NOME PROCEDURA:    in System.Data.DataSet.EnableConstraints()
-   in System.Data.DataSet.set_EnforceConstraints(Boolean value)
-   in System.Data.DataTable.EndLoadData()
-   in System.Data.Common.DataAdapter.FillFromReader(DataSet dataset, DataTable datatable, String srcTable, DataReaderContainer dataReader, Int32 startRecord, Int32 maxRecords, DataColumn parentChapterColumn, Object parentChapterValue)
-   in System.Data.Common.DataAdapter.Fill(DataSet dataSet, String srcTable, IDataReader dataReader, Int32 startRecord, Int32 maxRecords)
+"*** 12/01/2019 - 16:49:29 ***"
+"- DESCRIZIONE ERRORE: ""D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\bin\bin\Archivi\Hospitality.mdb"" non è un percorso valido. Assicurarsi che il nome del percorso sia corretto e di essere collegati al server in cui si trova il file."
+"- NOME PROCEDURA:    in System.Data.OleDb.OleDbConnectionInternal..ctor(OleDbConnectionString constr, OleDbConnection connection)
+   in System.Data.OleDb.OleDbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   in System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   in System.Data.ProviderBase.DbConnectionInternal.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   in System.Data.OleDb.OleDbConnection.Open()
    in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
-   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
-   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, String srcTable)
-   in Hospitality_Solution.frmDocumento.AnteprimaDiStampa() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\Documento.vb:riga 2591"
-"
-"
-"*** 29/12/2018 - 17:47:47 ***"
-"- DESCRIZIONE ERRORE: Impossibile attivare i vincoli. Una o più righe contengono valori che violano il vincolo non-null, unique o foreign-key."
-"- NOME PROCEDURA:    in System.Data.DataSet.EnableConstraints()
-   in System.Data.DataSet.set_EnforceConstraints(Boolean value)
-   in System.Data.DataTable.EndLoadData()
-   in System.Data.Common.DataAdapter.FillFromReader(DataSet dataset, DataTable datatable, String srcTable, DataReaderContainer dataReader, Int32 startRecord, Int32 maxRecords, DataColumn parentChapterColumn, Object parentChapterValue)
-   in System.Data.Common.DataAdapter.Fill(DataSet dataSet, String srcTable, IDataReader dataReader, Int32 startRecord, Int32 maxRecords)
-   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
-   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
-   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, String srcTable)
-   in Hospitality_Solution.frmDocumento.AnteprimaDiStampa() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\Documento.vb:riga 2591"
-"
-"
-"*** 29/12/2018 - 17:55:40 ***"
-"- DESCRIZIONE ERRORE: Impossibile attivare i vincoli. Una o più righe contengono valori che violano il vincolo non-null, unique o foreign-key."
-"- NOME PROCEDURA:    in System.Data.DataSet.EnableConstraints()
-   in System.Data.DataSet.set_EnforceConstraints(Boolean value)
-   in System.Data.DataTable.EndLoadData()
-   in System.Data.Common.DataAdapter.FillFromReader(DataSet dataset, DataTable datatable, String srcTable, DataReaderContainer dataReader, Int32 startRecord, Int32 maxRecords, DataColumn parentChapterColumn, Object parentChapterValue)
-   in System.Data.Common.DataAdapter.Fill(DataSet dataSet, String srcTable, IDataReader dataReader, Int32 startRecord, Int32 maxRecords)
-   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
-   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
-   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, String srcTable)
-   in Hospitality_Solution.frmDocumento.AnteprimaDiStampa() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\Documento.vb:riga 2591"
-"
-"
-"*** 29/12/2018 - 18:13:08 ***"
-"- DESCRIZIONE ERRORE: Impossibile attivare i vincoli. Una o più righe contengono valori che violano il vincolo non-null, unique o foreign-key."
-"- NOME PROCEDURA:    in System.Data.DataSet.EnableConstraints()
-   in System.Data.DataSet.set_EnforceConstraints(Boolean value)
-   in System.Data.DataTable.EndLoadData()
-   in System.Data.Common.DataAdapter.FillFromReader(DataSet dataset, DataTable datatable, String srcTable, DataReaderContainer dataReader, Int32 startRecord, Int32 maxRecords, DataColumn parentChapterColumn, Object parentChapterValue)
-   in System.Data.Common.DataAdapter.Fill(DataSet dataSet, String srcTable, IDataReader dataReader, Int32 startRecord, Int32 maxRecords)
-   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
-   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
-   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, String srcTable)
-   in Hospitality_Solution.frmDocumento.AnteprimaDiStampa() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\Documento.vb:riga 2591"
-"
-"
-"*** 29/12/2018 - 18:23:50 ***"
-"- DESCRIZIONE ERRORE: Impossibile attivare i vincoli. Una o più righe contengono valori che violano il vincolo non-null, unique o foreign-key."
-"- NOME PROCEDURA:    in System.Data.DataSet.EnableConstraints()
-   in System.Data.DataSet.set_EnforceConstraints(Boolean value)
-   in System.Data.DataTable.EndLoadData()
-   in System.Data.Common.DataAdapter.FillFromReader(DataSet dataset, DataTable datatable, String srcTable, DataReaderContainer dataReader, Int32 startRecord, Int32 maxRecords, DataColumn parentChapterColumn, Object parentChapterValue)
-   in System.Data.Common.DataAdapter.Fill(DataSet dataSet, String srcTable, IDataReader dataReader, Int32 startRecord, Int32 maxRecords)
-   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
-   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
-   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, String srcTable)
-   in Hospitality_Solution.ElencoSchedinePS.AnteprimaDiStampaSchedina(String nomeDoc) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hotel\ElencoSchedinePS.vb:riga 1086"
-"
-"
-"*** 29/12/2018 - 18:24:45 ***"
-"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
-"- NOME PROCEDURA:    in Hospitality_Solution.DataModIstatC59.eui_cmdOk_Click(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hotel\DataModIstatC59.vb:riga 54"
-"
-"
-"*** 29/12/2018 - 18:24:53 ***"
-"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
-"- NOME PROCEDURA:    in Hospitality_Solution.DataModIstatC59.eui_cmdOk_Click(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hotel\DataModIstatC59.vb:riga 54"
-"
-"
-"*** 29/12/2018 - 18:43:44 ***"
-"- DESCRIZIONE ERRORE: Impossibile attivare i vincoli. Una o più righe contengono valori che violano il vincolo non-null, unique o foreign-key."
-"- NOME PROCEDURA:    in System.Data.DataSet.EnableConstraints()
-   in System.Data.DataSet.set_EnforceConstraints(Boolean value)
-   in System.Data.DataTable.EndLoadData()
-   in System.Data.Common.DataAdapter.FillFromReader(DataSet dataset, DataTable datatable, String srcTable, DataReaderContainer dataReader, Int32 startRecord, Int32 maxRecords, DataColumn parentChapterColumn, Object parentChapterValue)
-   in System.Data.Common.DataAdapter.Fill(DataSet dataSet, String srcTable, IDataReader dataReader, Int32 startRecord, Int32 maxRecords)
-   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
-   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
-   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, String srcTable)
-   in Hospitality_Solution.frmDocumento.AnteprimaDiStampa() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\Documento.vb:riga 2591"
-"
-"
-"*** 29/12/2018 - 18:46:23 ***"
-"- DESCRIZIONE ERRORE: Impossibile attivare i vincoli. Una o più righe contengono valori che violano il vincolo non-null, unique o foreign-key."
-"- NOME PROCEDURA:    in System.Data.DataSet.EnableConstraints()
-   in System.Data.DataSet.set_EnforceConstraints(Boolean value)
-   in System.Data.DataTable.EndLoadData()
-   in System.Data.Common.DataAdapter.FillFromReader(DataSet dataset, DataTable datatable, String srcTable, DataReaderContainer dataReader, Int32 startRecord, Int32 maxRecords, DataColumn parentChapterColumn, Object parentChapterValue)
-   in System.Data.Common.DataAdapter.Fill(DataSet dataSet, String srcTable, IDataReader dataReader, Int32 startRecord, Int32 maxRecords)
-   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
-   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
-   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, String srcTable)
-   in Hospitality_Solution.frmDocumento.AnteprimaDiStampa() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\Documento.vb:riga 2591"
-"
-"
-"*** 29/12/2018 - 18:50:17 ***"
-"- DESCRIZIONE ERRORE: Impossibile attivare i vincoli. Una o più righe contengono valori che violano il vincolo non-null, unique o foreign-key."
-"- NOME PROCEDURA:    in System.Data.DataSet.EnableConstraints()
-   in System.Data.DataSet.set_EnforceConstraints(Boolean value)
-   in System.Data.DataTable.EndLoadData()
-   in System.Data.Common.DataAdapter.FillFromReader(DataSet dataset, DataTable datatable, String srcTable, DataReaderContainer dataReader, Int32 startRecord, Int32 maxRecords, DataColumn parentChapterColumn, Object parentChapterValue)
-   in System.Data.Common.DataAdapter.Fill(DataSet dataSet, String srcTable, IDataReader dataReader, Int32 startRecord, Int32 maxRecords)
-   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
-   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
-   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, String srcTable)
-   in Hospitality_Solution.frmDocumento.AnteprimaDiStampa() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\Documento.vb:riga 2591"
-"
-"
-"*** 29/12/2018 - 18:54:22 ***"
-"- DESCRIZIONE ERRORE: Impossibile attivare i vincoli. Una o più righe contengono valori che violano il vincolo non-null, unique o foreign-key."
-"- NOME PROCEDURA:    in System.Data.DataSet.EnableConstraints()
-   in System.Data.DataSet.set_EnforceConstraints(Boolean value)
-   in System.Data.DataTable.EndLoadData()
-   in System.Data.Common.DataAdapter.FillFromReader(DataSet dataset, DataTable datatable, String srcTable, DataReaderContainer dataReader, Int32 startRecord, Int32 maxRecords, DataColumn parentChapterColumn, Object parentChapterValue)
-   in System.Data.Common.DataAdapter.Fill(DataSet dataSet, String srcTable, IDataReader dataReader, Int32 startRecord, Int32 maxRecords)
-   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
-   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
-   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, String srcTable)
-   in Hospitality_Solution.frmDocumento.AnteprimaDiStampa() in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hospitality\Documento.vb:riga 2591"
-"
-"
-"*** 31/12/2018 - 14:25:36 ***"
-"- DESCRIZIONE ERRORE: Impossibile attivare i vincoli. Una o più righe contengono valori che violano il vincolo non-null, unique o foreign-key."
-"- NOME PROCEDURA:    in System.Data.DataSet.EnableConstraints()
-   in System.Data.DataSet.set_EnforceConstraints(Boolean value)
-   in System.Data.DataTable.EndLoadData()
-   in System.Data.Common.DataAdapter.FillFromReader(DataSet dataset, DataTable datatable, String srcTable, DataReaderContainer dataReader, Int32 startRecord, Int32 maxRecords, DataColumn parentChapterColumn, Object parentChapterValue)
-   in System.Data.Common.DataAdapter.Fill(DataSet dataSet, String srcTable, IDataReader dataReader, Int32 startRecord, Int32 maxRecords)
-   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
-   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
-   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, String srcTable)
-   in Hospitality_Solution.ElencoSchedinePS.AnteprimaDiStampaSchedina(String nomeDoc) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hotel\ElencoSchedinePS.vb:riga 1086"
-"
-"
-"*** 31/12/2018 - 14:30:16 ***"
-"- DESCRIZIONE ERRORE: Impossibile attivare i vincoli. Una o più righe contengono valori che violano il vincolo non-null, unique o foreign-key."
-"- NOME PROCEDURA:    in System.Data.DataSet.EnableConstraints()
-   in System.Data.DataSet.set_EnforceConstraints(Boolean value)
-   in System.Data.DataTable.EndLoadData()
-   in System.Data.Common.DataAdapter.FillFromReader(DataSet dataset, DataTable datatable, String srcTable, DataReaderContainer dataReader, Int32 startRecord, Int32 maxRecords, DataColumn parentChapterColumn, Object parentChapterValue)
-   in System.Data.Common.DataAdapter.Fill(DataSet dataSet, String srcTable, IDataReader dataReader, Int32 startRecord, Int32 maxRecords)
-   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
-   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
-   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, String srcTable)
-   in Hospitality_Solution.ElencoSchedinePS.AnteprimaDiStampaSchedina(String nomeDoc) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hotel\ElencoSchedinePS.vb:riga 1086"
-"
-"
-"*** 31/12/2018 - 14:30:29 ***"
-"- DESCRIZIONE ERRORE: Impossibile attivare i vincoli. Una o più righe contengono valori che violano il vincolo non-null, unique o foreign-key."
-"- NOME PROCEDURA:    in System.Data.DataSet.EnableConstraints()
-   in System.Data.DataSet.set_EnforceConstraints(Boolean value)
-   in System.Data.DataTable.EndLoadData()
-   in System.Data.Common.DataAdapter.FillFromReader(DataSet dataset, DataTable datatable, String srcTable, DataReaderContainer dataReader, Int32 startRecord, Int32 maxRecords, DataColumn parentChapterColumn, Object parentChapterValue)
-   in System.Data.Common.DataAdapter.Fill(DataSet dataSet, String srcTable, IDataReader dataReader, Int32 startRecord, Int32 maxRecords)
-   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
-   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
-   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, String srcTable)
-   in Hospitality_Solution.ElencoSchedinePS.AnteprimaDiStampaSchedina(String nomeDoc) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hotel\ElencoSchedinePS.vb:riga 1086"
-"
-"
-"*** 31/12/2018 - 14:36:37 ***"
-"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
-"- NOME PROCEDURA:    in Hospitality_Solution.DataModIstatC59.eui_cmdOk_Click(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hotel\DataModIstatC59.vb:riga 54"
-"
-"
-"*** 31/12/2018 - 14:36:51 ***"
-"- DESCRIZIONE ERRORE: Impossibile attivare i vincoli. Una o più righe contengono valori che violano il vincolo non-null, unique o foreign-key."
-"- NOME PROCEDURA:    in System.Data.DataSet.EnableConstraints()
-   in System.Data.DataSet.set_EnforceConstraints(Boolean value)
-   in System.Data.DataTable.EndLoadData()
-   in System.Data.Common.DataAdapter.FillFromReader(DataSet dataset, DataTable datatable, String srcTable, DataReaderContainer dataReader, Int32 startRecord, Int32 maxRecords, DataColumn parentChapterColumn, Object parentChapterValue)
-   in System.Data.Common.DataAdapter.Fill(DataSet dataSet, String srcTable, IDataReader dataReader, Int32 startRecord, Int32 maxRecords)
-   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
-   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
-   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, String srcTable)
-   in Hospitality_Solution.ElencoSchedinePS.AnteprimaDiStampaSchedina(String nomeDoc) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hotel\ElencoSchedinePS.vb:riga 1086"
-"
-"
-"*** 31/12/2018 - 14:37:31 ***"
-"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
-"- NOME PROCEDURA:    in Hospitality_Solution.DataModIstatC59.eui_cmdOk_Click(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hotel\DataModIstatC59.vb:riga 54"
-"
-"
-"*** 31/12/2018 - 14:49:01 ***"
-"- DESCRIZIONE ERRORE: Impossibile attivare i vincoli. Una o più righe contengono valori che violano il vincolo non-null, unique o foreign-key."
-"- NOME PROCEDURA:    in System.Data.DataSet.EnableConstraints()
-   in System.Data.DataSet.set_EnforceConstraints(Boolean value)
-   in System.Data.DataTable.EndLoadData()
-   in System.Data.Common.DataAdapter.FillFromReader(DataSet dataset, DataTable datatable, String srcTable, DataReaderContainer dataReader, Int32 startRecord, Int32 maxRecords, DataColumn parentChapterColumn, Object parentChapterValue)
-   in System.Data.Common.DataAdapter.Fill(DataSet dataSet, String srcTable, IDataReader dataReader, Int32 startRecord, Int32 maxRecords)
-   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
-   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
-   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, String srcTable)
-   in Hospitality_Solution.ElencoSchedinePS.AnteprimaDiStampaSchedina(String nomeDoc) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hotel\ElencoSchedinePS.vb:riga 1086"
-"
-"
-"*** 31/12/2018 - 14:53:47 ***"
-"- DESCRIZIONE ERRORE: Impossibile attivare i vincoli. Una o più righe contengono valori che violano il vincolo non-null, unique o foreign-key."
-"- NOME PROCEDURA:    in System.Data.DataSet.EnableConstraints()
-   in System.Data.DataSet.set_EnforceConstraints(Boolean value)
-   in System.Data.DataTable.EndLoadData()
-   in System.Data.Common.DataAdapter.FillFromReader(DataSet dataset, DataTable datatable, String srcTable, DataReaderContainer dataReader, Int32 startRecord, Int32 maxRecords, DataColumn parentChapterColumn, Object parentChapterValue)
-   in System.Data.Common.DataAdapter.Fill(DataSet dataSet, String srcTable, IDataReader dataReader, Int32 startRecord, Int32 maxRecords)
-   in System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
-   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
-   in System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, String srcTable)
-   in Hospitality_Solution.ElencoSchedinePS.AnteprimaDiStampaSchedina(String nomeDoc) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hotel\ElencoSchedinePS.vb:riga 1086"
-"
-"
-"*** 31/12/2018 - 15:18:28 ***"
-"- DESCRIZIONE ERRORE: Riferimento a un oggetto non impostato su un'istanza di oggetto."
-"- NOME PROCEDURA:    in Hospitality_Solution.DataModIstatC59.eui_cmdOk_Click(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\Form\Hotel\DataModIstatC59.vb:riga 54"
+   in System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   in System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   in Hospitality_Solution.HospitalityDataSetTableAdapters.AziendaTableAdapter.Fill(AziendaDataTable dataTable) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\HospitalityDataSet.Designer.vb:riga 25145
+   in Hospitality_Solution.RepDocumenti.ReportViewer_Load(Object sender, EventArgs e) in D:\Montana Software - Progetti\Hospitality Solution\Versione 3.3.1.0\Codice\ReportsViewer\RepDocumenti.vb:riga 62"
 "
 "

@@ -314,7 +314,7 @@ Public Class frmClienti
       Me.ToolBar1.Location = New System.Drawing.Point(0, 0)
       Me.ToolBar1.Name = "ToolBar1"
       Me.ToolBar1.ShowToolTips = True
-      Me.ToolBar1.Size = New System.Drawing.Size(596, 26)
+      Me.ToolBar1.Size = New System.Drawing.Size(606, 26)
       Me.ToolBar1.TabIndex = 0
       Me.ToolBar1.TextAlign = System.Windows.Forms.ToolBarTextAlign.Right
       '
@@ -359,7 +359,7 @@ Public Class frmClienti
       Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
       Me.Panel1.Location = New System.Drawing.Point(0, 26)
       Me.Panel1.Name = "Panel1"
-      Me.Panel1.Size = New System.Drawing.Size(596, 20)
+      Me.Panel1.Size = New System.Drawing.Size(606, 20)
       Me.Panel1.TabIndex = 0
       '
       'lblIntestazione
@@ -387,7 +387,7 @@ Public Class frmClienti
       Me.TabControl1.Multiline = True
       Me.TabControl1.Name = "TabControl1"
       Me.TabControl1.SelectedIndex = 0
-      Me.TabControl1.Size = New System.Drawing.Size(596, 333)
+      Me.TabControl1.Size = New System.Drawing.Size(606, 343)
       Me.TabControl1.TabIndex = 0
       '
       'TabPage1
@@ -433,7 +433,7 @@ Public Class frmClienti
       Me.TabPage1.ForeColor = System.Drawing.Color.Black
       Me.TabPage1.Location = New System.Drawing.Point(4, 22)
       Me.TabPage1.Name = "TabPage1"
-      Me.TabPage1.Size = New System.Drawing.Size(588, 307)
+      Me.TabPage1.Size = New System.Drawing.Size(598, 317)
       Me.TabPage1.TabIndex = 0
       Me.TabPage1.Text = "Dati principali"
       Me.TabPage1.ToolTipText = "Dati principali"
@@ -606,7 +606,6 @@ Public Class frmClienti
       '
       'cmbNazione
       '
-      Me.cmbNazione.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
       Me.cmbNazione.Location = New System.Drawing.Point(136, 200)
       Me.cmbNazione.Name = "cmbNazione"
       Me.cmbNazione.Size = New System.Drawing.Size(184, 21)
@@ -911,7 +910,7 @@ Public Class frmClienti
       Me.TabPage2.Location = New System.Drawing.Point(4, 22)
       Me.TabPage2.Name = "TabPage2"
       Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-      Me.TabPage2.Size = New System.Drawing.Size(612, 336)
+      Me.TabPage2.Size = New System.Drawing.Size(598, 317)
       Me.TabPage2.TabIndex = 7
       Me.TabPage2.Text = "Dati personali"
       '
@@ -1464,7 +1463,7 @@ Public Class frmClienti
       Me.TabPage4.Controls.Add(Me.lvwAllegati)
       Me.TabPage4.Location = New System.Drawing.Point(4, 22)
       Me.TabPage4.Name = "TabPage4"
-      Me.TabPage4.Size = New System.Drawing.Size(612, 336)
+      Me.TabPage4.Size = New System.Drawing.Size(588, 307)
       Me.TabPage4.TabIndex = 3
       Me.TabPage4.Text = "Documenti allegati"
       '
@@ -1504,7 +1503,7 @@ Public Class frmClienti
       Me.lvwAllegati.Location = New System.Drawing.Point(0, 0)
       Me.lvwAllegati.MultiSelect = False
       Me.lvwAllegati.Name = "lvwAllegati"
-      Me.lvwAllegati.Size = New System.Drawing.Size(612, 256)
+      Me.lvwAllegati.Size = New System.Drawing.Size(588, 256)
       Me.lvwAllegati.SmallImageList = Me.ImageList1
       Me.lvwAllegati.TabIndex = 0
       Me.lvwAllegati.UseCompatibleStateImageBehavior = False
@@ -1546,7 +1545,7 @@ Public Class frmClienti
       Me.tbpStatGioco.Controls.Add(Me.Panel2)
       Me.tbpStatGioco.Location = New System.Drawing.Point(4, 22)
       Me.tbpStatGioco.Name = "tbpStatGioco"
-      Me.tbpStatGioco.Size = New System.Drawing.Size(612, 336)
+      Me.tbpStatGioco.Size = New System.Drawing.Size(588, 307)
       Me.tbpStatGioco.TabIndex = 6
       Me.tbpStatGioco.Text = "Statistiche di gioco"
       Me.tbpStatGioco.UseVisualStyleBackColor = True
@@ -1566,7 +1565,7 @@ Public Class frmClienti
       Me.DataGrid1.Location = New System.Drawing.Point(0, 40)
       Me.DataGrid1.Name = "DataGrid1"
       Me.DataGrid1.ReadOnly = True
-      Me.DataGrid1.Size = New System.Drawing.Size(612, 296)
+      Me.DataGrid1.Size = New System.Drawing.Size(588, 267)
       Me.DataGrid1.TabIndex = 233
       '
       'Panel2
@@ -1579,7 +1578,7 @@ Public Class frmClienti
       Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
       Me.Panel2.Location = New System.Drawing.Point(0, 0)
       Me.Panel2.Name = "Panel2"
-      Me.Panel2.Size = New System.Drawing.Size(612, 40)
+      Me.Panel2.Size = New System.Drawing.Size(588, 40)
       Me.Panel2.TabIndex = 232
       '
       'txtTotPartite
@@ -1650,7 +1649,7 @@ Public Class frmClienti
       Me.TabPage3.Location = New System.Drawing.Point(4, 22)
       Me.TabPage3.Name = "TabPage3"
       Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
-      Me.TabPage3.Size = New System.Drawing.Size(612, 336)
+      Me.TabPage3.Size = New System.Drawing.Size(588, 307)
       Me.TabPage3.TabIndex = 8
       Me.TabPage3.Text = "Fatturazione Elettronica"
       '
@@ -1685,7 +1684,7 @@ Public Class frmClienti
       Me.TabPage6.Controls.Add(Me.txtNote)
       Me.TabPage6.Location = New System.Drawing.Point(4, 22)
       Me.TabPage6.Name = "TabPage6"
-      Me.TabPage6.Size = New System.Drawing.Size(612, 336)
+      Me.TabPage6.Size = New System.Drawing.Size(588, 307)
       Me.TabPage6.TabIndex = 5
       Me.TabPage6.Text = "Note"
       Me.TabPage6.ToolTipText = "Note varie"
@@ -1703,7 +1702,7 @@ Public Class frmClienti
       Me.txtNote.Name = "txtNote"
       Me.txtNote.RightToLeft = System.Windows.Forms.RightToLeft.No
       Me.txtNote.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-      Me.txtNote.Size = New System.Drawing.Size(612, 336)
+      Me.txtNote.Size = New System.Drawing.Size(588, 307)
       Me.txtNote.TabIndex = 0
       '
       'ErrorProvider1
@@ -1720,7 +1719,7 @@ Public Class frmClienti
       Me.AcceptButton = Me.ApriImg
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(596, 379)
+      Me.ClientSize = New System.Drawing.Size(606, 389)
       Me.Controls.Add(Me.TabControl1)
       Me.Controls.Add(Me.Panel1)
       Me.Controls.Add(Me.ToolBar1)

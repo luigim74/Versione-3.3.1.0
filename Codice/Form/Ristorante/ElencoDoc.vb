@@ -37,6 +37,7 @@ Public Class ElencoDoc
    Const COLONNA_CONTABILIZZATO As Short = 14
    Const COLONNA_IMPORTO_SOSPESO_INC As Short = 15
    Const COLONNA_IMPORTO_BUONI_INC As Short = 16
+   Const COLONNA_ID_CLIENTE As Short = 17
 
    Const TIPO_DOC_RF As String = "Ricevuta Fiscale"
    Const TIPO_DOC_FF As String = "Fattura"
@@ -2219,6 +2220,15 @@ Public Class ElencoDoc
          buoniIncStyle.Alignment = HorizontalAlignment.Right
          buoniIncStyle.TextBox.BackColor = Color.White
          gridStyle.GridColumnStyles.Add(buoniIncStyle)
+         ' 17 Id Cliente.
+         Dim idClienteStyle As New DataGridTextBoxColumn
+         idClienteStyle.MappingName = "idCliente"
+         idClienteStyle.HeaderText = ""
+         idClienteStyle.Width = 0
+         idClienteStyle.NullText = ""
+         idClienteStyle.Alignment = HorizontalAlignment.Right
+         idClienteStyle.TextBox.BackColor = Color.White
+         gridStyle.GridColumnStyles.Add(idClienteStyle)
 
          '' Tavolo
          'Dim tavoloStyle As New DataGridTextBoxColumn
@@ -2903,7 +2913,8 @@ Public Class ElencoDoc
          ' Modifica il cursore del mouse.
          Cursor.Current = Cursors.AppStarting
 
-         g_frmFatturaElettronica = New frmFatturaElettronica(DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, 0).ToString)
+         g_frmFatturaElettronica = New frmFatturaElettronica(DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_ID_DOC).ToString,
+                                                             DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_ID_CLIENTE).ToString)
          g_frmFatturaElettronica.ShowDialog()
 
       Catch ex As Exception
@@ -2912,6 +2923,5 @@ Public Class ElencoDoc
 
       End Try
    End Sub
-
 
 End Class

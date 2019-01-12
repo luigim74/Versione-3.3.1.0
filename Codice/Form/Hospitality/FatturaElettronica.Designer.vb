@@ -40,25 +40,6 @@ Partial Class frmFatturaElettronica
       Me.eui_tpcDocumento = New Elegant.Ui.TabControl()
       Me.TabPage1 = New Elegant.Ui.TabPage()
       Me.TabControl1 = New Elegant.Ui.TabControl()
-      Me.TabPage5 = New Elegant.Ui.TabPage()
-      Me.GroupBox2 = New Elegant.Ui.GroupBox()
-      Me.Label10 = New Elegant.Ui.Label()
-      Me.eui_txtTrasmittentePECDestinatario = New Elegant.Ui.TextBox()
-      Me.eui_txtTrasmittenteTelefono = New Elegant.Ui.TextBox()
-      Me.eui_txtTrasmittenteEmail = New Elegant.Ui.TextBox()
-      Me.Label8 = New Elegant.Ui.Label()
-      Me.Label9 = New Elegant.Ui.Label()
-      Me.eui_txtProgressivoInvio = New Elegant.Ui.TextBox()
-      Me.Label7 = New Elegant.Ui.Label()
-      Me.eui_txtCodiceDestinatario = New Elegant.Ui.TextBox()
-      Me.Label5 = New Elegant.Ui.Label()
-      Me.eui_cmbFormatoTrasmissione = New Elegant.Ui.ComboBox()
-      Me.Label6 = New Elegant.Ui.Label()
-      Me.GroupBox1 = New Elegant.Ui.GroupBox()
-      Me.eui_txtTrasmittenteIdCodice = New Elegant.Ui.TextBox()
-      Me.Label4 = New Elegant.Ui.Label()
-      Me.eui_cmbTrasmittenteIdPaese = New Elegant.Ui.ComboBox()
-      Me.Label1 = New Elegant.Ui.Label()
       Me.TabPage6 = New Elegant.Ui.TabPage()
       Me.TabControl2 = New Elegant.Ui.TabControl()
       Me.TabPage11 = New Elegant.Ui.TabPage()
@@ -142,6 +123,25 @@ Partial Class frmFatturaElettronica
       Me.TabPage16 = New Elegant.Ui.TabPage()
       Me.eui_txtCpRifAmministrazione = New Elegant.Ui.TextBox()
       Me.Label44 = New Elegant.Ui.Label()
+      Me.TabPage5 = New Elegant.Ui.TabPage()
+      Me.GroupBox2 = New Elegant.Ui.GroupBox()
+      Me.Label10 = New Elegant.Ui.Label()
+      Me.eui_txtTrasmittentePECDestinatario = New Elegant.Ui.TextBox()
+      Me.eui_txtTrasmittenteTelefono = New Elegant.Ui.TextBox()
+      Me.eui_txtTrasmittenteEmail = New Elegant.Ui.TextBox()
+      Me.Label8 = New Elegant.Ui.Label()
+      Me.Label9 = New Elegant.Ui.Label()
+      Me.eui_txtProgressivoInvio = New Elegant.Ui.TextBox()
+      Me.Label7 = New Elegant.Ui.Label()
+      Me.eui_txtCodiceDestinatario = New Elegant.Ui.TextBox()
+      Me.Label5 = New Elegant.Ui.Label()
+      Me.eui_cmbFormatoTrasmissione = New Elegant.Ui.ComboBox()
+      Me.Label6 = New Elegant.Ui.Label()
+      Me.GroupBox1 = New Elegant.Ui.GroupBox()
+      Me.eui_txtTrasmittenteIdCodice = New Elegant.Ui.TextBox()
+      Me.Label4 = New Elegant.Ui.Label()
+      Me.eui_cmbTrasmittenteIdPaese = New Elegant.Ui.ComboBox()
+      Me.Label1 = New Elegant.Ui.Label()
       Me.TabPage7 = New Elegant.Ui.TabPage()
       Me.Label52 = New Elegant.Ui.Label()
       Me.GroupBox10 = New Elegant.Ui.GroupBox()
@@ -251,7 +251,6 @@ Partial Class frmFatturaElettronica
       Me.eui_cmdConvalida = New Elegant.Ui.Button()
       Me.eui_txtConvalida = New Elegant.Ui.TextBox()
       Me.TabPage3 = New Elegant.Ui.TabPage()
-      Me.WebBrowser1 = New System.Windows.Forms.WebBrowser()
       Me.eui_cmdCopiaPercorso = New Elegant.Ui.Button()
       Me.TabPage21 = New Elegant.Ui.TabPage()
       Me.eui_txtFormatoTxt = New Elegant.Ui.TextBox()
@@ -267,6 +266,7 @@ Partial Class frmFatturaElettronica
       Me.StatusBarPane1 = New Elegant.Ui.StatusBarPane()
       Me.eui_lblStatoClienteDoc = New Elegant.Ui.Label()
       Me.eui_cmdSalva = New Elegant.Ui.Button()
+      Me.WebBrowser1 = New System.Windows.Forms.WebBrowser()
       Me.StatusBar1.SuspendLayout()
       Me.StatusBarNotificationsArea1.SuspendLayout()
       Me.StatusBarPane2.SuspendLayout()
@@ -275,9 +275,6 @@ Partial Class frmFatturaElettronica
       CType(Me.eui_tpcDocumento, System.ComponentModel.ISupportInitialize).BeginInit()
       Me.TabPage1.SuspendLayout()
       CType(Me.TabControl1, System.ComponentModel.ISupportInitialize).BeginInit()
-      Me.TabPage5.SuspendLayout()
-      Me.GroupBox2.SuspendLayout()
-      Me.GroupBox1.SuspendLayout()
       Me.TabPage6.SuspendLayout()
       CType(Me.TabControl2, System.ComponentModel.ISupportInitialize).BeginInit()
       Me.TabPage11.SuspendLayout()
@@ -293,6 +290,9 @@ Partial Class frmFatturaElettronica
       Me.TabPage15.SuspendLayout()
       Me.GroupBox9.SuspendLayout()
       Me.TabPage16.SuspendLayout()
+      Me.TabPage5.SuspendLayout()
+      Me.GroupBox2.SuspendLayout()
+      Me.GroupBox1.SuspendLayout()
       Me.TabPage7.SuspendLayout()
       Me.GroupBox10.SuspendLayout()
       Me.GroupBox11.SuspendLayout()
@@ -331,10 +331,10 @@ Partial Class frmFatturaElettronica
       Me.StatusBar1.Controls.Add(Me.StatusBarControlsArea1)
       Me.StatusBar1.ControlsArea = Me.StatusBarControlsArea1
       Me.StatusBar1.Dock = System.Windows.Forms.DockStyle.Bottom
-      Me.StatusBar1.Location = New System.Drawing.Point(0, 516)
+      Me.StatusBar1.Location = New System.Drawing.Point(0, 512)
       Me.StatusBar1.Name = "StatusBar1"
       Me.StatusBar1.NotificationsArea = Me.StatusBarNotificationsArea1
-      Me.StatusBar1.Size = New System.Drawing.Size(976, 22)
+      Me.StatusBar1.Size = New System.Drawing.Size(974, 22)
       Me.StatusBar1.TabIndex = 4
       Me.StatusBar1.Text = "StatusBar1"
       '
@@ -347,7 +347,7 @@ Partial Class frmFatturaElettronica
       Me.StatusBarNotificationsArea1.MaximumSize = New System.Drawing.Size(0, 22)
       Me.StatusBarNotificationsArea1.MinimumSize = New System.Drawing.Size(0, 22)
       Me.StatusBarNotificationsArea1.Name = "StatusBarNotificationsArea1"
-      Me.StatusBarNotificationsArea1.Size = New System.Drawing.Size(904, 22)
+      Me.StatusBarNotificationsArea1.Size = New System.Drawing.Size(902, 22)
       Me.StatusBarNotificationsArea1.TabIndex = 1
       '
       'StatusBarPane2
@@ -440,7 +440,7 @@ Partial Class frmFatturaElettronica
       '
       Me.StatusBarControlsArea1.Controls.Add(Me.StatusBarPane3)
       Me.StatusBarControlsArea1.Dock = System.Windows.Forms.DockStyle.Right
-      Me.StatusBarControlsArea1.Location = New System.Drawing.Point(904, 0)
+      Me.StatusBarControlsArea1.Location = New System.Drawing.Point(902, 0)
       Me.StatusBarControlsArea1.MaximumSize = New System.Drawing.Size(0, 22)
       Me.StatusBarControlsArea1.MinimumSize = New System.Drawing.Size(0, 22)
       Me.StatusBarControlsArea1.Name = "StatusBarControlsArea1"
@@ -460,7 +460,7 @@ Partial Class frmFatturaElettronica
       '
       Me.eui_cmdTastiera.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.eui_cmdTastiera.Id = "295ab16e-e7c5-4477-a8b5-fc8631e2896a"
-      Me.eui_cmdTastiera.Location = New System.Drawing.Point(832, 430)
+      Me.eui_cmdTastiera.Location = New System.Drawing.Point(832, 434)
       Me.eui_cmdTastiera.Name = "eui_cmdTastiera"
       Me.eui_cmdTastiera.ScreenTip.Caption = "Tastiera virtuale"
       Me.eui_cmdTastiera.ScreenTip.Text = "Apre la tastiera virtuale."
@@ -475,7 +475,7 @@ Partial Class frmFatturaElettronica
       Me.eui_cmdAnnulla.DialogResult = System.Windows.Forms.DialogResult.Cancel
       Me.eui_cmdAnnulla.Id = "73a9f32c-e7b8-41a5-b071-7351d12b4ba9"
       Me.eui_cmdAnnulla.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-      Me.eui_cmdAnnulla.Location = New System.Drawing.Point(832, 356)
+      Me.eui_cmdAnnulla.Location = New System.Drawing.Point(832, 360)
       Me.eui_cmdAnnulla.Name = "eui_cmdAnnulla"
       Me.eui_cmdAnnulla.ScreenTip.Caption = "Esci"
       Me.eui_cmdAnnulla.ScreenTip.Text = "Annula le modifiche e chiude la finestra."
@@ -496,7 +496,7 @@ Partial Class frmFatturaElettronica
       Me.eui_tpcDocumento.Location = New System.Drawing.Point(9, 9)
       Me.eui_tpcDocumento.Name = "eui_tpcDocumento"
       Me.eui_tpcDocumento.SelectedTabPage = Me.TabPage1
-      Me.eui_tpcDocumento.Size = New System.Drawing.Size(814, 486)
+      Me.eui_tpcDocumento.Size = New System.Drawing.Size(814, 490)
       Me.eui_tpcDocumento.TabIndex = 15
       Me.eui_tpcDocumento.TabPages.AddRange(New Elegant.Ui.TabPage() {Me.TabPage1, Me.eui_tpConvalida, Me.TabPage3, Me.TabPage21, Me.TabPage4})
       Me.eui_tpcDocumento.Text = " "
@@ -507,7 +507,7 @@ Partial Class frmFatturaElettronica
       Me.TabPage1.Controls.Add(Me.TabControl1)
       Me.TabPage1.KeyTip = Nothing
       Me.TabPage1.Name = "TabPage1"
-      Me.TabPage1.Size = New System.Drawing.Size(812, 465)
+      Me.TabPage1.Size = New System.Drawing.Size(812, 469)
       Me.TabPage1.TabIndex = 0
       Me.TabPage1.Text = "Intestazione"
       '
@@ -519,206 +519,10 @@ Partial Class frmFatturaElettronica
       Me.TabControl1.Location = New System.Drawing.Point(6, 4)
       Me.TabControl1.Name = "TabControl1"
       Me.TabControl1.SelectedTabPage = Me.TabPage5
-      Me.TabControl1.Size = New System.Drawing.Size(800, 455)
+      Me.TabControl1.Size = New System.Drawing.Size(800, 459)
       Me.TabControl1.TabIndex = 19
       Me.TabControl1.TabPages.AddRange(New Elegant.Ui.TabPage() {Me.TabPage5, Me.TabPage6, Me.TabPage7, Me.TabPage8, Me.TabPage9, Me.TabPage10})
       Me.TabControl1.Text = "TabControl1"
-      '
-      'TabPage5
-      '
-      Me.TabPage5.ActiveControl = Nothing
-      Me.TabPage5.Controls.Add(Me.GroupBox2)
-      Me.TabPage5.Controls.Add(Me.eui_txtProgressivoInvio)
-      Me.TabPage5.Controls.Add(Me.Label7)
-      Me.TabPage5.Controls.Add(Me.eui_txtCodiceDestinatario)
-      Me.TabPage5.Controls.Add(Me.Label5)
-      Me.TabPage5.Controls.Add(Me.eui_cmbFormatoTrasmissione)
-      Me.TabPage5.Controls.Add(Me.Label6)
-      Me.TabPage5.Controls.Add(Me.GroupBox1)
-      Me.TabPage5.KeyTip = Nothing
-      Me.TabPage5.Name = "TabPage5"
-      Me.TabPage5.Size = New System.Drawing.Size(798, 434)
-      Me.TabPage5.TabIndex = 0
-      Me.TabPage5.Text = "Dati Trasmissione"
-      '
-      'GroupBox2
-      '
-      Me.GroupBox2.Controls.Add(Me.Label10)
-      Me.GroupBox2.Controls.Add(Me.eui_txtTrasmittentePECDestinatario)
-      Me.GroupBox2.Controls.Add(Me.eui_txtTrasmittenteTelefono)
-      Me.GroupBox2.Controls.Add(Me.eui_txtTrasmittenteEmail)
-      Me.GroupBox2.Controls.Add(Me.Label8)
-      Me.GroupBox2.Controls.Add(Me.Label9)
-      Me.GroupBox2.Id = "0ec4e9c2-0581-4e69-bc73-522dd0fa544e"
-      Me.GroupBox2.Location = New System.Drawing.Point(12, 240)
-      Me.GroupBox2.Name = "GroupBox2"
-      Me.GroupBox2.Size = New System.Drawing.Size(384, 131)
-      Me.GroupBox2.TabIndex = 10
-      Me.GroupBox2.Text = "Contatti Trasmittente:"
-      '
-      'Label10
-      '
-      Me.Label10.Location = New System.Drawing.Point(19, 94)
-      Me.Label10.Name = "Label10"
-      Me.Label10.Size = New System.Drawing.Size(81, 19)
-      Me.Label10.TabIndex = 6
-      Me.Label10.Tag = ""
-      Me.Label10.Text = "PEC destinatario:"
-      '
-      'eui_txtTrasmittentePECDestinatario
-      '
-      Me.eui_txtTrasmittentePECDestinatario.Id = "565f1a0b-f27c-4c3f-b58d-a95108ec3465"
-      Me.eui_txtTrasmittentePECDestinatario.Location = New System.Drawing.Point(161, 93)
-      Me.eui_txtTrasmittentePECDestinatario.MaxLength = 256
-      Me.eui_txtTrasmittentePECDestinatario.Name = "eui_txtTrasmittentePECDestinatario"
-      Me.eui_txtTrasmittentePECDestinatario.Size = New System.Drawing.Size(201, 21)
-      Me.eui_txtTrasmittentePECDestinatario.TabIndex = 2
-      Me.eui_txtTrasmittentePECDestinatario.TextEditorWidth = 195
-      '
-      'eui_txtTrasmittenteTelefono
-      '
-      Me.eui_txtTrasmittenteTelefono.Id = "7fbb2205-1fd0-4f0f-8fd8-d1fdb9c243d9"
-      Me.eui_txtTrasmittenteTelefono.Location = New System.Drawing.Point(161, 23)
-      Me.eui_txtTrasmittenteTelefono.MaxLength = 12
-      Me.eui_txtTrasmittenteTelefono.Name = "eui_txtTrasmittenteTelefono"
-      Me.eui_txtTrasmittenteTelefono.Size = New System.Drawing.Size(201, 21)
-      Me.eui_txtTrasmittenteTelefono.TabIndex = 0
-      Me.eui_txtTrasmittenteTelefono.TextEditorWidth = 195
-      '
-      'eui_txtTrasmittenteEmail
-      '
-      Me.eui_txtTrasmittenteEmail.Id = "65e93da9-c779-46e0-98d2-aee936ef62fb"
-      Me.eui_txtTrasmittenteEmail.Location = New System.Drawing.Point(161, 57)
-      Me.eui_txtTrasmittenteEmail.MaxLength = 256
-      Me.eui_txtTrasmittenteEmail.Name = "eui_txtTrasmittenteEmail"
-      Me.eui_txtTrasmittenteEmail.Size = New System.Drawing.Size(201, 21)
-      Me.eui_txtTrasmittenteEmail.TabIndex = 1
-      Me.eui_txtTrasmittenteEmail.TextEditorWidth = 195
-      '
-      'Label8
-      '
-      Me.Label8.Location = New System.Drawing.Point(19, 57)
-      Me.Label8.Name = "Label8"
-      Me.Label8.Size = New System.Drawing.Size(131, 19)
-      Me.Label8.TabIndex = 2
-      Me.Label8.Text = "E-mail:"
-      '
-      'Label9
-      '
-      Me.Label9.Location = New System.Drawing.Point(19, 25)
-      Me.Label9.Name = "Label9"
-      Me.Label9.Size = New System.Drawing.Size(50, 19)
-      Me.Label9.TabIndex = 0
-      Me.Label9.Text = "Telefono:"
-      '
-      'eui_txtProgressivoInvio
-      '
-      Me.eui_txtProgressivoInvio.Id = "dc244b45-e5d1-483a-8c12-b069b2822598"
-      Me.eui_txtProgressivoInvio.Location = New System.Drawing.Point(173, 130)
-      Me.eui_txtProgressivoInvio.MaxLength = 10
-      Me.eui_txtProgressivoInvio.Name = "eui_txtProgressivoInvio"
-      Me.eui_txtProgressivoInvio.ScreenTip.Caption = "Progressivo Invio"
-      Me.eui_txtProgressivoInvio.ScreenTip.Text = "Formato alfanumerico; lunghezza massima di 10 caratteri."
-      Me.eui_txtProgressivoInvio.Size = New System.Drawing.Size(201, 21)
-      Me.eui_txtProgressivoInvio.TabIndex = 0
-      Me.eui_txtProgressivoInvio.TextEditorWidth = 195
-      '
-      'Label7
-      '
-      Me.Label7.Location = New System.Drawing.Point(31, 130)
-      Me.Label7.Name = "Label7"
-      Me.Label7.Size = New System.Drawing.Size(131, 19)
-      Me.Label7.TabIndex = 8
-      Me.Label7.Text = "Progressivo invio:"
-      '
-      'eui_txtCodiceDestinatario
-      '
-      Me.eui_txtCodiceDestinatario.Id = "e70c0676-da53-4b00-b304-f82eb0d9f5bd"
-      Me.eui_txtCodiceDestinatario.Location = New System.Drawing.Point(173, 199)
-      Me.eui_txtCodiceDestinatario.MaxLength = 7
-      Me.eui_txtCodiceDestinatario.Name = "eui_txtCodiceDestinatario"
-      Me.eui_txtCodiceDestinatario.Size = New System.Drawing.Size(201, 21)
-      Me.eui_txtCodiceDestinatario.TabIndex = 2
-      Me.eui_txtCodiceDestinatario.TextEditorWidth = 195
-      '
-      'Label5
-      '
-      Me.Label5.Location = New System.Drawing.Point(29, 197)
-      Me.Label5.Name = "Label5"
-      Me.Label5.Size = New System.Drawing.Size(131, 19)
-      Me.Label5.TabIndex = 6
-      Me.Label5.Text = "Codice destinatario:"
-      '
-      'eui_cmbFormatoTrasmissione
-      '
-      Me.eui_cmbFormatoTrasmissione.Editable = False
-      Me.eui_cmbFormatoTrasmissione.FormattingEnabled = False
-      Me.eui_cmbFormatoTrasmissione.Id = "d71e40ca-1c67-4fd6-b225-783f1484673c"
-      Me.eui_cmbFormatoTrasmissione.Items.AddRange(New Object() {"FPA12", "FPR12"})
-      Me.eui_cmbFormatoTrasmissione.Location = New System.Drawing.Point(173, 163)
-      Me.eui_cmbFormatoTrasmissione.Name = "eui_cmbFormatoTrasmissione"
-      Me.eui_cmbFormatoTrasmissione.Size = New System.Drawing.Size(111, 21)
-      Me.eui_cmbFormatoTrasmissione.TabIndex = 1
-      Me.eui_cmbFormatoTrasmissione.TextEditorWidth = 92
-      '
-      'Label6
-      '
-      Me.Label6.Location = New System.Drawing.Point(29, 165)
-      Me.Label6.Name = "Label6"
-      Me.Label6.Size = New System.Drawing.Size(101, 19)
-      Me.Label6.TabIndex = 4
-      Me.Label6.Text = "Formato trasmissione:"
-      '
-      'GroupBox1
-      '
-      Me.GroupBox1.Controls.Add(Me.eui_txtTrasmittenteIdCodice)
-      Me.GroupBox1.Controls.Add(Me.Label4)
-      Me.GroupBox1.Controls.Add(Me.eui_cmbTrasmittenteIdPaese)
-      Me.GroupBox1.Controls.Add(Me.Label1)
-      Me.GroupBox1.Id = "f3a236fd-ad3d-4d3b-bb74-ee015ee0c032"
-      Me.GroupBox1.Location = New System.Drawing.Point(12, 9)
-      Me.GroupBox1.Name = "GroupBox1"
-      Me.GroupBox1.Size = New System.Drawing.Size(393, 100)
-      Me.GroupBox1.TabIndex = 0
-      Me.GroupBox1.Text = "Identificativo Trasmittente"
-      '
-      'eui_txtTrasmittenteIdCodice
-      '
-      Me.eui_txtTrasmittenteIdCodice.Id = "433798ef-3d1e-4f71-af05-cb5195003521"
-      Me.eui_txtTrasmittenteIdCodice.Location = New System.Drawing.Point(161, 57)
-      Me.eui_txtTrasmittenteIdCodice.MaxLength = 28
-      Me.eui_txtTrasmittenteIdCodice.Name = "eui_txtTrasmittenteIdCodice"
-      Me.eui_txtTrasmittenteIdCodice.Size = New System.Drawing.Size(201, 21)
-      Me.eui_txtTrasmittenteIdCodice.TabIndex = 1
-      Me.eui_txtTrasmittenteIdCodice.TextEditorWidth = 195
-      '
-      'Label4
-      '
-      Me.Label4.Location = New System.Drawing.Point(19, 57)
-      Me.Label4.Name = "Label4"
-      Me.Label4.Size = New System.Drawing.Size(131, 19)
-      Me.Label4.TabIndex = 2
-      Me.Label4.Text = "Codice identificativo fiscale:"
-      '
-      'eui_cmbTrasmittenteIdPaese
-      '
-      Me.eui_cmbTrasmittenteIdPaese.Editable = False
-      Me.eui_cmbTrasmittenteIdPaese.FormattingEnabled = False
-      Me.eui_cmbTrasmittenteIdPaese.Id = "4ea8545f-2893-4998-bf33-cba9d5abf513"
-      Me.eui_cmbTrasmittenteIdPaese.Items.AddRange(New Object() {" ", "AD Andorra", "AE Emirati Arabi Uniti", "AF Afghanistan", "AG Antigua e Barbuda", "AI Anguilla", "AL Albania", "AM Armenia", "AO Angola", "AQ Antartide ", "AR Argentina", "AS Samoa Americane", "AT Austria", "AU Australia", "AW Aruba", "AX Isole Åland", "AZ Azerbaigian", "BA Bosnia ed Erzegovina", "BB Barbados", "BD Bangladesh", "BE Belgio", "BF Burkina Faso", "BG Bulgaria", "BH Bahrein", "BI Burundi", "BJ Benin", "BL Saint-Barthélemy", "BM Bermuda", "BN Brunei", "BO Bolivia", "BQ Isole BES", "BR Brasile", "BS Bahamas", "BT Bhutan", "BV Isola Bouvet", "BW Botswana", "BY Bielorussia", "BZ Belize", "CA Canada", "CC Isole Cocos e Keeling", "CD Repubblica Democratica del Congo", "CF Repubblica Centrafricana", "CG Repubblica del Congo", "CH Svizzera", "CI Costa d'Avorio", "CK Isole Cook", "CL Cile", "CM Camerun", "CN Cina", "CO Colombia", "CR Costa Rica", "CU Cuba", "CV Capo Verde", "CW Curaçao", "CX Isola del Natale", "CY Cipro", "CZ Repubblica Ceca", "DE Germania", "DJ Gibuti", "DK Danimarca", "DM Dominica", "DO Repubblica Dominicana", "DZ Algeria", "EC Ecuador", "EE Estonia", "EG Egitto", "EH Sahara Occidentale", "ER Eritrea", "ES Spagna", "ET Etiopia", "FI Finlandia", "FJ Figi", "FK Isole Falkland", "FM Stati Federati di Micronesia", "FO Isole Fær Øer", "FR Francia", "GA Gabon", "GB Regno Unito", "GD Grenada", "GE Georgia", "GF Guyana francese", "GG Guernsey", "GH Ghana", "GI Gibilterra", "GL Groenlandia", "GM Gambia", "GN Guinea", "GP Guadalupa", "GQ Guinea Equatoriale", "GR Grecia", "GS Georgia del Sud e isole Sandwich meridionali", "GT Guatemala", "GU Guam", "GW Guinea-Bissau", "GY Guyana", "HK Hong Kong", "HM Isole Heard e McDonald", "HN Honduras", "HR Croazia", "HT Haiti", "HU Ungheria", "ID Indonesia", "IE Irlanda", "IL Israele", "IM Isola di Man", "IN India", "IO Territori Britannici dell'Oceano Indiano", "IQ Iraq", "IR Iran", "IS Islanda", "IT Italia", "JE Jersey", "JM Giamaica", "JO Giordania", "JP Giappone", "KE Kenya", "KG Kirghizistan", "KH Cambogia", "KI Kiribati", "KM Comore", "KN Saint Kitts e Nevis", "KP Corea del Nord", "KR Corea del Sud", "KW Kuwait", "KY Isole Cayman", "KZ Kazakistan", "LA Laos", "LB Libano", "LC Santa Lucia", "LI Liechtenstein", "LK Sri Lanka", "LR Liberia", "LS Lesotho", "LT Lituania", "LU Lussemburgo", "LV Lettonia", "LY Libia", "MA Marocco", "MC Monaco", "MD Moldavia", "ME Montenegro", "MF Saint-Martin", "MG Madagascar", "MH Isole Marshall", "MK Macedonia", "ML Mali", "MM Birmania", "MN Mongolia", "MO Macao", "MP Isole Marianne Settentrionali", "MQ Martinica", "MR Mauritania", "MS Montserrat", "MT Malta", "MU Mauritius", "MV Maldive", "MW Malawi", "MX Messico", "MY Malaysia", "MZ Mozambico", "NA Namibia", "NC Nuova Caledonia", "NE Niger", "NF Isola Norfolk", "NG Nigeria", "NI Nicaragua", "NL Paesi Bassi", "NO Norvegia", "NP Nepal", "NR Nauru", "NU Niue", "NZ Nuova Zelanda", "OM Oman", "PA Panama", "PE Perù", "PF Polinesia Francese", "PG Papua Nuova Guinea", "PH Filippine", "PK Pakistan", "PL Polonia", "PM Saint-Pierre e Miquelon", "PN Isole Pitcairn", "PR Porto Rico", "PS Stato di Palestina", "PT Portogallo", "PW Palau", "PY Paraguay", "QA Qatar", "RE Riunione", "RO Romania", "RS Serbia", "RU Russia", "RW Ruanda", "SA Arabia Saudita", "SB Isole Salomone", "SC Seychelles", "SD Sudan", "SE Svezia", "SG Singapore", "SH Sant'Elena, Isola di Ascensione e Tristan da Cunha", "SI Slovenia", "SJ Svalbard e Jan Mayen", "SK Slovacchia", "SL Sierra Leone", "SM San Marino", "SN Senegal", "SO Somalia", "SR Suriname", "SS Sudan del Sud", "ST São Tomé e Príncipe", "SV El Salvador", "SX Sint Maarten", "SY Siria", "SZ Swaziland", "TC Isole Turks e Caicos", "TD Ciad", "TF Territori Francesi del Sud", "TG Togo", "TH Thailandia", "TJ Tagikistan", "TK Tokelau", "TL Timor Est", "TM Turkmenistan", "TN Tunisia", "TO Tonga", "TR Turchia", "TT Trinidad e Tobago", "TV Tuvalu", "TW Repubblica di Cina", "TZ Tanzania", "UA Ucraina", "UG Uganda", "UM Isole minori esterne degli Stati Uniti", "US Stati Uniti d'America", "UY Uruguay", "UZ Uzbekistan", "VA Città del Vaticano", "VC Saint Vincent e Grenadine", "VE Venezuela", "VG Isole Vergini britanniche", "VI Isole Vergini americane", "VN Vietnam", "VU Vanuatu", "WF Wallis e Futuna", "WS Samoa", "YE Yemen", "YT Mayotte", "ZA Sudafrica", "ZM Zambia", "ZW Zimbabwe"})
-      Me.eui_cmbTrasmittenteIdPaese.Location = New System.Drawing.Point(161, 23)
-      Me.eui_cmbTrasmittenteIdPaese.Name = "eui_cmbTrasmittenteIdPaese"
-      Me.eui_cmbTrasmittenteIdPaese.Size = New System.Drawing.Size(201, 21)
-      Me.eui_cmbTrasmittenteIdPaese.TabIndex = 0
-      Me.eui_cmbTrasmittenteIdPaese.TextEditorWidth = 182
-      '
-      'Label1
-      '
-      Me.Label1.Location = New System.Drawing.Point(19, 25)
-      Me.Label1.Name = "Label1"
-      Me.Label1.Size = New System.Drawing.Size(50, 19)
-      Me.Label1.TabIndex = 0
-      Me.Label1.Text = "Paese:"
       '
       'TabPage6
       '
@@ -726,7 +530,7 @@ Partial Class frmFatturaElettronica
       Me.TabPage6.Controls.Add(Me.TabControl2)
       Me.TabPage6.KeyTip = Nothing
       Me.TabPage6.Name = "TabPage6"
-      Me.TabPage6.Size = New System.Drawing.Size(798, 434)
+      Me.TabPage6.Size = New System.Drawing.Size(798, 438)
       Me.TabPage6.TabIndex = 1
       Me.TabPage6.Text = "Cedente/Prestatore"
       '
@@ -738,7 +542,7 @@ Partial Class frmFatturaElettronica
       Me.TabControl2.Location = New System.Drawing.Point(8, 6)
       Me.TabControl2.Name = "TabControl2"
       Me.TabControl2.SelectedTabPage = Me.TabPage11
-      Me.TabControl2.Size = New System.Drawing.Size(782, 419)
+      Me.TabControl2.Size = New System.Drawing.Size(782, 423)
       Me.TabControl2.TabIndex = 0
       Me.TabControl2.TabPages.AddRange(New Elegant.Ui.TabPage() {Me.TabPage11, Me.TabPage12, Me.TabPage13, Me.TabPage14, Me.TabPage15, Me.TabPage16})
       Me.TabControl2.Text = "TabControl2"
@@ -755,7 +559,7 @@ Partial Class frmFatturaElettronica
       Me.TabPage11.Controls.Add(Me.GroupBox3)
       Me.TabPage11.KeyTip = Nothing
       Me.TabPage11.Name = "TabPage11"
-      Me.TabPage11.Size = New System.Drawing.Size(780, 398)
+      Me.TabPage11.Size = New System.Drawing.Size(780, 402)
       Me.TabPage11.TabIndex = 0
       Me.TabPage11.Text = " Dati Anagrafici"
       '
@@ -1203,7 +1007,7 @@ Partial Class frmFatturaElettronica
       Me.TabPage13.Controls.Add(Me.GroupBox7)
       Me.TabPage13.KeyTip = Nothing
       Me.TabPage13.Name = "TabPage13"
-      Me.TabPage13.Size = New System.Drawing.Size(780, 398)
+      Me.TabPage13.Size = New System.Drawing.Size(780, 402)
       Me.TabPage13.TabIndex = 2
       Me.TabPage13.Text = "Stabile Organizzazione"
       '
@@ -1576,6 +1380,202 @@ Partial Class frmFatturaElettronica
       Me.Label44.TabIndex = 6
       Me.Label44.Text = "Riferimento amministrazione:"
       '
+      'TabPage5
+      '
+      Me.TabPage5.ActiveControl = Nothing
+      Me.TabPage5.Controls.Add(Me.GroupBox2)
+      Me.TabPage5.Controls.Add(Me.eui_txtProgressivoInvio)
+      Me.TabPage5.Controls.Add(Me.Label7)
+      Me.TabPage5.Controls.Add(Me.eui_txtCodiceDestinatario)
+      Me.TabPage5.Controls.Add(Me.Label5)
+      Me.TabPage5.Controls.Add(Me.eui_cmbFormatoTrasmissione)
+      Me.TabPage5.Controls.Add(Me.Label6)
+      Me.TabPage5.Controls.Add(Me.GroupBox1)
+      Me.TabPage5.KeyTip = Nothing
+      Me.TabPage5.Name = "TabPage5"
+      Me.TabPage5.Size = New System.Drawing.Size(798, 438)
+      Me.TabPage5.TabIndex = 0
+      Me.TabPage5.Text = "Dati Trasmissione"
+      '
+      'GroupBox2
+      '
+      Me.GroupBox2.Controls.Add(Me.Label10)
+      Me.GroupBox2.Controls.Add(Me.eui_txtTrasmittentePECDestinatario)
+      Me.GroupBox2.Controls.Add(Me.eui_txtTrasmittenteTelefono)
+      Me.GroupBox2.Controls.Add(Me.eui_txtTrasmittenteEmail)
+      Me.GroupBox2.Controls.Add(Me.Label8)
+      Me.GroupBox2.Controls.Add(Me.Label9)
+      Me.GroupBox2.Id = "0ec4e9c2-0581-4e69-bc73-522dd0fa544e"
+      Me.GroupBox2.Location = New System.Drawing.Point(12, 240)
+      Me.GroupBox2.Name = "GroupBox2"
+      Me.GroupBox2.Size = New System.Drawing.Size(384, 131)
+      Me.GroupBox2.TabIndex = 10
+      Me.GroupBox2.Text = "Contatti Trasmittente:"
+      '
+      'Label10
+      '
+      Me.Label10.Location = New System.Drawing.Point(19, 94)
+      Me.Label10.Name = "Label10"
+      Me.Label10.Size = New System.Drawing.Size(81, 19)
+      Me.Label10.TabIndex = 6
+      Me.Label10.Tag = ""
+      Me.Label10.Text = "PEC destinatario:"
+      '
+      'eui_txtTrasmittentePECDestinatario
+      '
+      Me.eui_txtTrasmittentePECDestinatario.Id = "565f1a0b-f27c-4c3f-b58d-a95108ec3465"
+      Me.eui_txtTrasmittentePECDestinatario.Location = New System.Drawing.Point(161, 93)
+      Me.eui_txtTrasmittentePECDestinatario.MaxLength = 256
+      Me.eui_txtTrasmittentePECDestinatario.Name = "eui_txtTrasmittentePECDestinatario"
+      Me.eui_txtTrasmittentePECDestinatario.Size = New System.Drawing.Size(201, 21)
+      Me.eui_txtTrasmittentePECDestinatario.TabIndex = 2
+      Me.eui_txtTrasmittentePECDestinatario.TextEditorWidth = 195
+      '
+      'eui_txtTrasmittenteTelefono
+      '
+      Me.eui_txtTrasmittenteTelefono.Id = "7fbb2205-1fd0-4f0f-8fd8-d1fdb9c243d9"
+      Me.eui_txtTrasmittenteTelefono.Location = New System.Drawing.Point(161, 23)
+      Me.eui_txtTrasmittenteTelefono.MaxLength = 12
+      Me.eui_txtTrasmittenteTelefono.Name = "eui_txtTrasmittenteTelefono"
+      Me.eui_txtTrasmittenteTelefono.Size = New System.Drawing.Size(201, 21)
+      Me.eui_txtTrasmittenteTelefono.TabIndex = 0
+      Me.eui_txtTrasmittenteTelefono.TextEditorWidth = 195
+      '
+      'eui_txtTrasmittenteEmail
+      '
+      Me.eui_txtTrasmittenteEmail.Id = "65e93da9-c779-46e0-98d2-aee936ef62fb"
+      Me.eui_txtTrasmittenteEmail.Location = New System.Drawing.Point(161, 57)
+      Me.eui_txtTrasmittenteEmail.MaxLength = 256
+      Me.eui_txtTrasmittenteEmail.Name = "eui_txtTrasmittenteEmail"
+      Me.eui_txtTrasmittenteEmail.Size = New System.Drawing.Size(201, 21)
+      Me.eui_txtTrasmittenteEmail.TabIndex = 1
+      Me.eui_txtTrasmittenteEmail.TextEditorWidth = 195
+      '
+      'Label8
+      '
+      Me.Label8.Location = New System.Drawing.Point(19, 57)
+      Me.Label8.Name = "Label8"
+      Me.Label8.Size = New System.Drawing.Size(131, 19)
+      Me.Label8.TabIndex = 2
+      Me.Label8.Text = "E-mail:"
+      '
+      'Label9
+      '
+      Me.Label9.Location = New System.Drawing.Point(19, 25)
+      Me.Label9.Name = "Label9"
+      Me.Label9.Size = New System.Drawing.Size(50, 19)
+      Me.Label9.TabIndex = 0
+      Me.Label9.Text = "Telefono:"
+      '
+      'eui_txtProgressivoInvio
+      '
+      Me.eui_txtProgressivoInvio.Id = "dc244b45-e5d1-483a-8c12-b069b2822598"
+      Me.eui_txtProgressivoInvio.Location = New System.Drawing.Point(173, 130)
+      Me.eui_txtProgressivoInvio.MaxLength = 10
+      Me.eui_txtProgressivoInvio.Name = "eui_txtProgressivoInvio"
+      Me.eui_txtProgressivoInvio.ScreenTip.Caption = "Progressivo Invio"
+      Me.eui_txtProgressivoInvio.ScreenTip.Text = "Formato alfanumerico; lunghezza massima di 10 caratteri."
+      Me.eui_txtProgressivoInvio.Size = New System.Drawing.Size(201, 21)
+      Me.eui_txtProgressivoInvio.TabIndex = 0
+      Me.eui_txtProgressivoInvio.TextEditorWidth = 195
+      '
+      'Label7
+      '
+      Me.Label7.Location = New System.Drawing.Point(31, 130)
+      Me.Label7.Name = "Label7"
+      Me.Label7.Size = New System.Drawing.Size(131, 19)
+      Me.Label7.TabIndex = 8
+      Me.Label7.Text = "Progressivo invio:"
+      '
+      'eui_txtCodiceDestinatario
+      '
+      Me.eui_txtCodiceDestinatario.Id = "e70c0676-da53-4b00-b304-f82eb0d9f5bd"
+      Me.eui_txtCodiceDestinatario.Location = New System.Drawing.Point(173, 199)
+      Me.eui_txtCodiceDestinatario.MaxLength = 7
+      Me.eui_txtCodiceDestinatario.Name = "eui_txtCodiceDestinatario"
+      Me.eui_txtCodiceDestinatario.Size = New System.Drawing.Size(201, 21)
+      Me.eui_txtCodiceDestinatario.TabIndex = 2
+      Me.eui_txtCodiceDestinatario.TextEditorWidth = 195
+      '
+      'Label5
+      '
+      Me.Label5.Location = New System.Drawing.Point(29, 197)
+      Me.Label5.Name = "Label5"
+      Me.Label5.Size = New System.Drawing.Size(131, 19)
+      Me.Label5.TabIndex = 6
+      Me.Label5.Text = "Codice destinatario:"
+      '
+      'eui_cmbFormatoTrasmissione
+      '
+      Me.eui_cmbFormatoTrasmissione.Editable = False
+      Me.eui_cmbFormatoTrasmissione.FormattingEnabled = False
+      Me.eui_cmbFormatoTrasmissione.Id = "d71e40ca-1c67-4fd6-b225-783f1484673c"
+      Me.eui_cmbFormatoTrasmissione.Items.AddRange(New Object() {"FPA12", "FPR12"})
+      Me.eui_cmbFormatoTrasmissione.Location = New System.Drawing.Point(173, 163)
+      Me.eui_cmbFormatoTrasmissione.Name = "eui_cmbFormatoTrasmissione"
+      Me.eui_cmbFormatoTrasmissione.Size = New System.Drawing.Size(111, 21)
+      Me.eui_cmbFormatoTrasmissione.TabIndex = 1
+      Me.eui_cmbFormatoTrasmissione.TextEditorWidth = 92
+      '
+      'Label6
+      '
+      Me.Label6.Location = New System.Drawing.Point(29, 165)
+      Me.Label6.Name = "Label6"
+      Me.Label6.Size = New System.Drawing.Size(101, 19)
+      Me.Label6.TabIndex = 4
+      Me.Label6.Text = "Formato trasmissione:"
+      '
+      'GroupBox1
+      '
+      Me.GroupBox1.Controls.Add(Me.eui_txtTrasmittenteIdCodice)
+      Me.GroupBox1.Controls.Add(Me.Label4)
+      Me.GroupBox1.Controls.Add(Me.eui_cmbTrasmittenteIdPaese)
+      Me.GroupBox1.Controls.Add(Me.Label1)
+      Me.GroupBox1.Id = "f3a236fd-ad3d-4d3b-bb74-ee015ee0c032"
+      Me.GroupBox1.Location = New System.Drawing.Point(12, 9)
+      Me.GroupBox1.Name = "GroupBox1"
+      Me.GroupBox1.Size = New System.Drawing.Size(393, 100)
+      Me.GroupBox1.TabIndex = 0
+      Me.GroupBox1.Text = "Identificativo Trasmittente"
+      '
+      'eui_txtTrasmittenteIdCodice
+      '
+      Me.eui_txtTrasmittenteIdCodice.Id = "433798ef-3d1e-4f71-af05-cb5195003521"
+      Me.eui_txtTrasmittenteIdCodice.Location = New System.Drawing.Point(161, 57)
+      Me.eui_txtTrasmittenteIdCodice.MaxLength = 28
+      Me.eui_txtTrasmittenteIdCodice.Name = "eui_txtTrasmittenteIdCodice"
+      Me.eui_txtTrasmittenteIdCodice.Size = New System.Drawing.Size(201, 21)
+      Me.eui_txtTrasmittenteIdCodice.TabIndex = 1
+      Me.eui_txtTrasmittenteIdCodice.TextEditorWidth = 195
+      '
+      'Label4
+      '
+      Me.Label4.Location = New System.Drawing.Point(19, 57)
+      Me.Label4.Name = "Label4"
+      Me.Label4.Size = New System.Drawing.Size(131, 19)
+      Me.Label4.TabIndex = 2
+      Me.Label4.Text = "Codice identificativo fiscale:"
+      '
+      'eui_cmbTrasmittenteIdPaese
+      '
+      Me.eui_cmbTrasmittenteIdPaese.Editable = False
+      Me.eui_cmbTrasmittenteIdPaese.FormattingEnabled = False
+      Me.eui_cmbTrasmittenteIdPaese.Id = "4ea8545f-2893-4998-bf33-cba9d5abf513"
+      Me.eui_cmbTrasmittenteIdPaese.Items.AddRange(New Object() {" ", "AD Andorra", "AE Emirati Arabi Uniti", "AF Afghanistan", "AG Antigua e Barbuda", "AI Anguilla", "AL Albania", "AM Armenia", "AO Angola", "AQ Antartide ", "AR Argentina", "AS Samoa Americane", "AT Austria", "AU Australia", "AW Aruba", "AX Isole Åland", "AZ Azerbaigian", "BA Bosnia ed Erzegovina", "BB Barbados", "BD Bangladesh", "BE Belgio", "BF Burkina Faso", "BG Bulgaria", "BH Bahrein", "BI Burundi", "BJ Benin", "BL Saint-Barthélemy", "BM Bermuda", "BN Brunei", "BO Bolivia", "BQ Isole BES", "BR Brasile", "BS Bahamas", "BT Bhutan", "BV Isola Bouvet", "BW Botswana", "BY Bielorussia", "BZ Belize", "CA Canada", "CC Isole Cocos e Keeling", "CD Repubblica Democratica del Congo", "CF Repubblica Centrafricana", "CG Repubblica del Congo", "CH Svizzera", "CI Costa d'Avorio", "CK Isole Cook", "CL Cile", "CM Camerun", "CN Cina", "CO Colombia", "CR Costa Rica", "CU Cuba", "CV Capo Verde", "CW Curaçao", "CX Isola del Natale", "CY Cipro", "CZ Repubblica Ceca", "DE Germania", "DJ Gibuti", "DK Danimarca", "DM Dominica", "DO Repubblica Dominicana", "DZ Algeria", "EC Ecuador", "EE Estonia", "EG Egitto", "EH Sahara Occidentale", "ER Eritrea", "ES Spagna", "ET Etiopia", "FI Finlandia", "FJ Figi", "FK Isole Falkland", "FM Stati Federati di Micronesia", "FO Isole Fær Øer", "FR Francia", "GA Gabon", "GB Regno Unito", "GD Grenada", "GE Georgia", "GF Guyana francese", "GG Guernsey", "GH Ghana", "GI Gibilterra", "GL Groenlandia", "GM Gambia", "GN Guinea", "GP Guadalupa", "GQ Guinea Equatoriale", "GR Grecia", "GS Georgia del Sud e isole Sandwich meridionali", "GT Guatemala", "GU Guam", "GW Guinea-Bissau", "GY Guyana", "HK Hong Kong", "HM Isole Heard e McDonald", "HN Honduras", "HR Croazia", "HT Haiti", "HU Ungheria", "ID Indonesia", "IE Irlanda", "IL Israele", "IM Isola di Man", "IN India", "IO Territori Britannici dell'Oceano Indiano", "IQ Iraq", "IR Iran", "IS Islanda", "IT Italia", "JE Jersey", "JM Giamaica", "JO Giordania", "JP Giappone", "KE Kenya", "KG Kirghizistan", "KH Cambogia", "KI Kiribati", "KM Comore", "KN Saint Kitts e Nevis", "KP Corea del Nord", "KR Corea del Sud", "KW Kuwait", "KY Isole Cayman", "KZ Kazakistan", "LA Laos", "LB Libano", "LC Santa Lucia", "LI Liechtenstein", "LK Sri Lanka", "LR Liberia", "LS Lesotho", "LT Lituania", "LU Lussemburgo", "LV Lettonia", "LY Libia", "MA Marocco", "MC Monaco", "MD Moldavia", "ME Montenegro", "MF Saint-Martin", "MG Madagascar", "MH Isole Marshall", "MK Macedonia", "ML Mali", "MM Birmania", "MN Mongolia", "MO Macao", "MP Isole Marianne Settentrionali", "MQ Martinica", "MR Mauritania", "MS Montserrat", "MT Malta", "MU Mauritius", "MV Maldive", "MW Malawi", "MX Messico", "MY Malaysia", "MZ Mozambico", "NA Namibia", "NC Nuova Caledonia", "NE Niger", "NF Isola Norfolk", "NG Nigeria", "NI Nicaragua", "NL Paesi Bassi", "NO Norvegia", "NP Nepal", "NR Nauru", "NU Niue", "NZ Nuova Zelanda", "OM Oman", "PA Panama", "PE Perù", "PF Polinesia Francese", "PG Papua Nuova Guinea", "PH Filippine", "PK Pakistan", "PL Polonia", "PM Saint-Pierre e Miquelon", "PN Isole Pitcairn", "PR Porto Rico", "PS Stato di Palestina", "PT Portogallo", "PW Palau", "PY Paraguay", "QA Qatar", "RE Riunione", "RO Romania", "RS Serbia", "RU Russia", "RW Ruanda", "SA Arabia Saudita", "SB Isole Salomone", "SC Seychelles", "SD Sudan", "SE Svezia", "SG Singapore", "SH Sant'Elena, Isola di Ascensione e Tristan da Cunha", "SI Slovenia", "SJ Svalbard e Jan Mayen", "SK Slovacchia", "SL Sierra Leone", "SM San Marino", "SN Senegal", "SO Somalia", "SR Suriname", "SS Sudan del Sud", "ST São Tomé e Príncipe", "SV El Salvador", "SX Sint Maarten", "SY Siria", "SZ Swaziland", "TC Isole Turks e Caicos", "TD Ciad", "TF Territori Francesi del Sud", "TG Togo", "TH Thailandia", "TJ Tagikistan", "TK Tokelau", "TL Timor Est", "TM Turkmenistan", "TN Tunisia", "TO Tonga", "TR Turchia", "TT Trinidad e Tobago", "TV Tuvalu", "TW Repubblica di Cina", "TZ Tanzania", "UA Ucraina", "UG Uganda", "UM Isole minori esterne degli Stati Uniti", "US Stati Uniti d'America", "UY Uruguay", "UZ Uzbekistan", "VA Città del Vaticano", "VC Saint Vincent e Grenadine", "VE Venezuela", "VG Isole Vergini britanniche", "VI Isole Vergini americane", "VN Vietnam", "VU Vanuatu", "WF Wallis e Futuna", "WS Samoa", "YE Yemen", "YT Mayotte", "ZA Sudafrica", "ZM Zambia", "ZW Zimbabwe"})
+      Me.eui_cmbTrasmittenteIdPaese.Location = New System.Drawing.Point(161, 23)
+      Me.eui_cmbTrasmittenteIdPaese.Name = "eui_cmbTrasmittenteIdPaese"
+      Me.eui_cmbTrasmittenteIdPaese.Size = New System.Drawing.Size(201, 21)
+      Me.eui_cmbTrasmittenteIdPaese.TabIndex = 0
+      Me.eui_cmbTrasmittenteIdPaese.TextEditorWidth = 182
+      '
+      'Label1
+      '
+      Me.Label1.Location = New System.Drawing.Point(19, 25)
+      Me.Label1.Name = "Label1"
+      Me.Label1.Size = New System.Drawing.Size(50, 19)
+      Me.Label1.TabIndex = 0
+      Me.Label1.Text = "Paese:"
+      '
       'TabPage7
       '
       Me.TabPage7.ActiveControl = Nothing
@@ -1585,7 +1585,7 @@ Partial Class frmFatturaElettronica
       Me.TabPage7.Controls.Add(Me.GroupBox11)
       Me.TabPage7.KeyTip = Nothing
       Me.TabPage7.Name = "TabPage7"
-      Me.TabPage7.Size = New System.Drawing.Size(798, 434)
+      Me.TabPage7.Size = New System.Drawing.Size(798, 438)
       Me.TabPage7.TabIndex = 2
       Me.TabPage7.Text = "Rappresentante Fiscale"
       '
@@ -1773,7 +1773,7 @@ Partial Class frmFatturaElettronica
       Me.TabPage8.Controls.Add(Me.TabControl3)
       Me.TabPage8.KeyTip = Nothing
       Me.TabPage8.Name = "TabPage8"
-      Me.TabPage8.Size = New System.Drawing.Size(798, 434)
+      Me.TabPage8.Size = New System.Drawing.Size(798, 438)
       Me.TabPage8.TabIndex = 3
       Me.TabPage8.Text = "Cessionario/Committente"
       '
@@ -1785,7 +1785,7 @@ Partial Class frmFatturaElettronica
       Me.TabControl3.Location = New System.Drawing.Point(8, 9)
       Me.TabControl3.Name = "TabControl3"
       Me.TabControl3.SelectedTabPage = Me.TabPage17
-      Me.TabControl3.Size = New System.Drawing.Size(782, 418)
+      Me.TabControl3.Size = New System.Drawing.Size(782, 422)
       Me.TabControl3.TabIndex = 0
       Me.TabControl3.TabPages.AddRange(New Elegant.Ui.TabPage() {Me.TabPage17, Me.TabPage18, Me.TabPage19, Me.TabPage20})
       Me.TabControl3.Text = "TabControl3"
@@ -1799,7 +1799,7 @@ Partial Class frmFatturaElettronica
       Me.TabPage17.Controls.Add(Me.GroupBox13)
       Me.TabPage17.KeyTip = Nothing
       Me.TabPage17.Name = "TabPage17"
-      Me.TabPage17.Size = New System.Drawing.Size(780, 397)
+      Me.TabPage17.Size = New System.Drawing.Size(780, 401)
       Me.TabPage17.TabIndex = 0
       Me.TabPage17.Text = "Dati Anagrafici"
       '
@@ -2408,7 +2408,7 @@ Partial Class frmFatturaElettronica
       Me.TabPage9.Controls.Add(Me.GroupBox16)
       Me.TabPage9.KeyTip = Nothing
       Me.TabPage9.Name = "TabPage9"
-      Me.TabPage9.Size = New System.Drawing.Size(798, 434)
+      Me.TabPage9.Size = New System.Drawing.Size(798, 438)
       Me.TabPage9.TabIndex = 4
       Me.TabPage9.Text = "Terzo Intermediario o Soggetto Emittente"
       '
@@ -2597,7 +2597,7 @@ Partial Class frmFatturaElettronica
       Me.TabPage10.Controls.Add(Me.Label75)
       Me.TabPage10.KeyTip = Nothing
       Me.TabPage10.Name = "TabPage10"
-      Me.TabPage10.Size = New System.Drawing.Size(798, 434)
+      Me.TabPage10.Size = New System.Drawing.Size(798, 438)
       Me.TabPage10.TabIndex = 5
       Me.TabPage10.Text = "Soggetto Emittente"
       '
@@ -2630,7 +2630,7 @@ Partial Class frmFatturaElettronica
       Me.eui_tpConvalida.Controls.Add(Me.eui_txtConvalida)
       Me.eui_tpConvalida.KeyTip = Nothing
       Me.eui_tpConvalida.Name = "eui_tpConvalida"
-      Me.eui_tpConvalida.Size = New System.Drawing.Size(812, 465)
+      Me.eui_tpConvalida.Size = New System.Drawing.Size(812, 469)
       Me.eui_tpConvalida.TabIndex = 1
       Me.eui_tpConvalida.Text = "Convalida"
       '
@@ -2638,7 +2638,7 @@ Partial Class frmFatturaElettronica
       '
       Me.eui_cmdConvalidaWeb.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.eui_cmdConvalidaWeb.Id = "4e933d6d-de0d-4317-b0dd-c71a4214d450"
-      Me.eui_cmdConvalidaWeb.Location = New System.Drawing.Point(521, 422)
+      Me.eui_cmdConvalidaWeb.Location = New System.Drawing.Point(521, 426)
       Me.eui_cmdConvalidaWeb.Name = "eui_cmdConvalidaWeb"
       Me.eui_cmdConvalidaWeb.Size = New System.Drawing.Size(165, 32)
       Me.eui_cmdConvalidaWeb.TabIndex = 2
@@ -2648,7 +2648,7 @@ Partial Class frmFatturaElettronica
       '
       Me.eui_cmdSalvaErrori.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.eui_cmdSalvaErrori.Id = "b3876e90-9e2d-438a-ab42-9cb94349f33f"
-      Me.eui_cmdSalvaErrori.Location = New System.Drawing.Point(695, 422)
+      Me.eui_cmdSalvaErrori.Location = New System.Drawing.Point(695, 426)
       Me.eui_cmdSalvaErrori.Name = "eui_cmdSalvaErrori"
       Me.eui_cmdSalvaErrori.Size = New System.Drawing.Size(110, 32)
       Me.eui_cmdSalvaErrori.TabIndex = 3
@@ -2658,7 +2658,7 @@ Partial Class frmFatturaElettronica
       '
       Me.eui_cmdConvalida.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.eui_cmdConvalida.Id = "f06cd621-78bb-492f-aebb-74b0711187e1"
-      Me.eui_cmdConvalida.Location = New System.Drawing.Point(402, 422)
+      Me.eui_cmdConvalida.Location = New System.Drawing.Point(402, 426)
       Me.eui_cmdConvalida.Name = "eui_cmdConvalida"
       Me.eui_cmdConvalida.Size = New System.Drawing.Size(110, 32)
       Me.eui_cmdConvalida.TabIndex = 1
@@ -2674,7 +2674,7 @@ Partial Class frmFatturaElettronica
       Me.eui_txtConvalida.Multiline = True
       Me.eui_txtConvalida.Name = "eui_txtConvalida"
       Me.eui_txtConvalida.ScrollBars = System.Windows.Forms.ScrollBars.Both
-      Me.eui_txtConvalida.Size = New System.Drawing.Size(810, 412)
+      Me.eui_txtConvalida.Size = New System.Drawing.Size(810, 416)
       Me.eui_txtConvalida.TabIndex = 0
       Me.eui_txtConvalida.TextEditorWidth = 804
       Me.eui_txtConvalida.WordWrap = False
@@ -2686,26 +2686,15 @@ Partial Class frmFatturaElettronica
       Me.TabPage3.Controls.Add(Me.eui_cmdCopiaPercorso)
       Me.TabPage3.KeyTip = Nothing
       Me.TabPage3.Name = "TabPage3"
-      Me.TabPage3.Size = New System.Drawing.Size(812, 465)
+      Me.TabPage3.Size = New System.Drawing.Size(812, 469)
       Me.TabPage3.TabIndex = 2
       Me.TabPage3.Text = "XML"
-      '
-      'WebBrowser1
-      '
-      Me.WebBrowser1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-      Me.WebBrowser1.Location = New System.Drawing.Point(3, 1)
-      Me.WebBrowser1.MinimumSize = New System.Drawing.Size(20, 20)
-      Me.WebBrowser1.Name = "WebBrowser1"
-      Me.WebBrowser1.Size = New System.Drawing.Size(805, 417)
-      Me.WebBrowser1.TabIndex = 3
       '
       'eui_cmdCopiaPercorso
       '
       Me.eui_cmdCopiaPercorso.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.eui_cmdCopiaPercorso.Id = "60ebbd95-62c4-4451-90f1-4270387cc16d"
-      Me.eui_cmdCopiaPercorso.Location = New System.Drawing.Point(694, 426)
+      Me.eui_cmdCopiaPercorso.Location = New System.Drawing.Point(694, 430)
       Me.eui_cmdCopiaPercorso.Name = "eui_cmdCopiaPercorso"
       Me.eui_cmdCopiaPercorso.ScreenTip.Caption = "Copia percorso"
       Me.eui_cmdCopiaPercorso.ScreenTip.Text = "Copia il percorso del file XML negli appunti."
@@ -2720,7 +2709,7 @@ Partial Class frmFatturaElettronica
       Me.TabPage21.Controls.Add(Me.eui_cmdApriFileTxt)
       Me.TabPage21.KeyTip = Nothing
       Me.TabPage21.Name = "TabPage21"
-      Me.TabPage21.Size = New System.Drawing.Size(812, 465)
+      Me.TabPage21.Size = New System.Drawing.Size(812, 469)
       Me.TabPage21.TabIndex = 4
       Me.TabPage21.Text = "TXT"
       '
@@ -2734,7 +2723,7 @@ Partial Class frmFatturaElettronica
       Me.eui_txtFormatoTxt.Multiline = True
       Me.eui_txtFormatoTxt.Name = "eui_txtFormatoTxt"
       Me.eui_txtFormatoTxt.ScrollBars = System.Windows.Forms.ScrollBars.Both
-      Me.eui_txtFormatoTxt.Size = New System.Drawing.Size(810, 421)
+      Me.eui_txtFormatoTxt.Size = New System.Drawing.Size(810, 425)
       Me.eui_txtFormatoTxt.TabIndex = 4
       Me.eui_txtFormatoTxt.TextEditorWidth = 806
       Me.eui_txtFormatoTxt.WordWrap = False
@@ -2743,7 +2732,7 @@ Partial Class frmFatturaElettronica
       '
       Me.eui_cmdApriFileTxt.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.eui_cmdApriFileTxt.Id = "396425fd-fa39-42d2-8af8-2039c1104cdd"
-      Me.eui_cmdApriFileTxt.Location = New System.Drawing.Point(694, 426)
+      Me.eui_cmdApriFileTxt.Location = New System.Drawing.Point(694, 430)
       Me.eui_cmdApriFileTxt.Name = "eui_cmdApriFileTxt"
       Me.eui_cmdApriFileTxt.ScreenTip.Caption = "Salva"
       Me.eui_cmdApriFileTxt.ScreenTip.Text = "Salva il codice XML in un file di testo TXT."
@@ -2760,7 +2749,7 @@ Partial Class frmFatturaElettronica
       Me.TabPage4.ForeColor = System.Drawing.SystemColors.ControlDark
       Me.TabPage4.KeyTip = Nothing
       Me.TabPage4.Name = "TabPage4"
-      Me.TabPage4.Size = New System.Drawing.Size(812, 465)
+      Me.TabPage4.Size = New System.Drawing.Size(812, 469)
       Me.TabPage4.TabIndex = 3
       Me.TabPage4.Text = "HTML - (Anteprima)"
       '
@@ -2768,7 +2757,7 @@ Partial Class frmFatturaElettronica
       '
       Me.eui_cmdAnteprimaWeb.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.eui_cmdAnteprimaWeb.Id = "bd587cbd-9373-4999-8beb-bb10b825c807"
-      Me.eui_cmdAnteprimaWeb.Location = New System.Drawing.Point(639, 421)
+      Me.eui_cmdAnteprimaWeb.Location = New System.Drawing.Point(639, 425)
       Me.eui_cmdAnteprimaWeb.Name = "eui_cmdAnteprimaWeb"
       Me.eui_cmdAnteprimaWeb.Size = New System.Drawing.Size(165, 32)
       Me.eui_cmdAnteprimaWeb.TabIndex = 0
@@ -2876,7 +2865,7 @@ Partial Class frmFatturaElettronica
       Me.eui_cmdSalva.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
       Me.eui_cmdSalva.Id = "480f1733-d999-4c61-8154-ce920719f2af"
       Me.eui_cmdSalva.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-      Me.eui_cmdSalva.Location = New System.Drawing.Point(832, 282)
+      Me.eui_cmdSalva.Location = New System.Drawing.Point(832, 286)
       Me.eui_cmdSalva.Name = "eui_cmdSalva"
       Me.eui_cmdSalva.ScreenTip.Caption = "Salva"
       Me.eui_cmdSalva.ScreenTip.Text = "Salva i dati del documento."
@@ -2887,12 +2876,23 @@ Partial Class frmFatturaElettronica
       Me.eui_cmdSalva.TextAlign = System.Drawing.ContentAlignment.BottomCenter
       Me.eui_cmdSalva.Visible = False
       '
+      'WebBrowser1
+      '
+      Me.WebBrowser1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+      Me.WebBrowser1.Location = New System.Drawing.Point(3, 1)
+      Me.WebBrowser1.MinimumSize = New System.Drawing.Size(20, 20)
+      Me.WebBrowser1.Name = "WebBrowser1"
+      Me.WebBrowser1.Size = New System.Drawing.Size(805, 421)
+      Me.WebBrowser1.TabIndex = 3
+      '
       'frmFatturaElettronica
       '
       Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
       Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
       Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-      Me.ClientSize = New System.Drawing.Size(976, 538)
+      Me.ClientSize = New System.Drawing.Size(974, 534)
       Me.Controls.Add(Me.eui_cmdSalva)
       Me.Controls.Add(Me.eui_cmdInvia)
       Me.Controls.Add(Me.eui_cmdEsporta)
@@ -2917,12 +2917,6 @@ Partial Class frmFatturaElettronica
       CType(Me.eui_tpcDocumento, System.ComponentModel.ISupportInitialize).EndInit()
       Me.TabPage1.ResumeLayout(False)
       CType(Me.TabControl1, System.ComponentModel.ISupportInitialize).EndInit()
-      Me.TabPage5.ResumeLayout(False)
-      Me.TabPage5.PerformLayout()
-      Me.GroupBox2.ResumeLayout(False)
-      Me.GroupBox2.PerformLayout()
-      Me.GroupBox1.ResumeLayout(False)
-      Me.GroupBox1.PerformLayout()
       Me.TabPage6.ResumeLayout(False)
       CType(Me.TabControl2, System.ComponentModel.ISupportInitialize).EndInit()
       Me.TabPage11.ResumeLayout(False)
@@ -2947,6 +2941,12 @@ Partial Class frmFatturaElettronica
       Me.GroupBox9.PerformLayout()
       Me.TabPage16.ResumeLayout(False)
       Me.TabPage16.PerformLayout()
+      Me.TabPage5.ResumeLayout(False)
+      Me.TabPage5.PerformLayout()
+      Me.GroupBox2.ResumeLayout(False)
+      Me.GroupBox2.PerformLayout()
+      Me.GroupBox1.ResumeLayout(False)
+      Me.GroupBox1.PerformLayout()
       Me.TabPage7.ResumeLayout(False)
       Me.TabPage7.PerformLayout()
       Me.GroupBox10.ResumeLayout(False)

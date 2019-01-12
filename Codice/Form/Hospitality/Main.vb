@@ -1199,7 +1199,7 @@ Friend Class frmMain
       Me.lvwGestioneModuli.MultiSelect = False
       Me.lvwGestioneModuli.Name = "lvwGestioneModuli"
       Me.lvwGestioneModuli.ShowItemToolTips = True
-      Me.lvwGestioneModuli.Size = New System.Drawing.Size(1305, 599)
+      Me.lvwGestioneModuli.Size = New System.Drawing.Size(1313, 602)
       Me.lvwGestioneModuli.SmallImageList = Me.ImageList1
       Me.lvwGestioneModuli.TabIndex = 79
       Me.ToolTip1.SetToolTip(Me.lvwGestioneModuli, "Elenco moduli.")
@@ -1299,19 +1299,19 @@ Friend Class frmMain
       Me.eui_File.Name = "eui_File"
       Me.eui_File.QuickAccessToolbarCustomizationDialogEnabled = False
       Me.eui_File.QuickAccessToolbarCustomizationEnabled = False
-      Me.eui_File.Size = New System.Drawing.Size(1453, 154)
+      Me.eui_File.Size = New System.Drawing.Size(1461, 154)
       Me.eui_File.SmallImages.Images.AddRange(New Elegant.Ui.ControlImage() {New Elegant.Ui.ControlImage("Normal", CType(resources.GetObject("eui_File.SmallImages.Images"), System.Drawing.Image))})
       Me.eui_File.TabIndex = 15
       Me.eui_File.TabPages.AddRange(New Elegant.Ui.RibbonTabPage() {Me.eui_Gestione, Me.eui_Archivi, Me.eui_Contabilità, Me.eui_Magazzino, Me.eui_Visualizza, Me.eui_Strumenti, Me.eui_Finestra})
       '
       'eui_BackstageView1
       '
-      Me.eui_BackstageView1.CurrentPage = Me.eui_GestioneModuli
+      Me.eui_BackstageView1.CurrentPage = Me.eui_Guida
       Me.eui_BackstageView1.Id = "26b6ed12-6b3d-4104-bf29-d19f8880bdff"
       Me.eui_BackstageView1.Items.AddRange(New System.Windows.Forms.Control() {Me.eui_Info, Me.eui_GestioneModuli, Me.BackstageViewSeparator1, Me.eui_Guida, Me.eui_Opzioni, Me.eui_Esci})
       Me.eui_BackstageView1.Location = New System.Drawing.Point(0, 55)
       Me.eui_BackstageView1.Name = "eui_BackstageView1"
-      Me.eui_BackstageView1.Size = New System.Drawing.Size(1453, 729)
+      Me.eui_BackstageView1.Size = New System.Drawing.Size(1461, 732)
       Me.eui_BackstageView1.Style = Elegant.Ui.BackstageViewStyle.Office2010DarkBlue
       Me.eui_BackstageView1.TabIndex = 16
       '
@@ -1323,7 +1323,7 @@ Friend Class frmMain
       Me.eui_GestioneModuli.Location = New System.Drawing.Point(0, 0)
       Me.eui_GestioneModuli.Name = "eui_GestioneModuli"
       Me.eui_GestioneModuli.Padding = New System.Windows.Forms.Padding(0, 1, 2, 1)
-      Me.eui_GestioneModuli.Size = New System.Drawing.Size(1310, 727)
+      Me.eui_GestioneModuli.Size = New System.Drawing.Size(1318, 730)
       Me.eui_GestioneModuli.TabIndex = 0
       Me.eui_GestioneModuli.Text = "Gestione Moduli    "
       '
@@ -1371,7 +1371,7 @@ Friend Class frmMain
       Me.eui_Info.Location = New System.Drawing.Point(0, 0)
       Me.eui_Info.Name = "eui_Info"
       Me.eui_Info.Padding = New System.Windows.Forms.Padding(0, 1, 2, 1)
-      Me.eui_Info.Size = New System.Drawing.Size(937, 728)
+      Me.eui_Info.Size = New System.Drawing.Size(1318, 730)
       Me.eui_Info.TabIndex = 0
       Me.eui_Info.Text = "Informazioni"
       '
@@ -1769,7 +1769,7 @@ Friend Class frmMain
       Me.eui_Guida.Location = New System.Drawing.Point(0, 0)
       Me.eui_Guida.Name = "eui_Guida"
       Me.eui_Guida.Padding = New System.Windows.Forms.Padding(0, 1, 2, 1)
-      Me.eui_Guida.Size = New System.Drawing.Size(867, 274)
+      Me.eui_Guida.Size = New System.Drawing.Size(1318, 730)
       Me.eui_Guida.TabIndex = 0
       Me.eui_Guida.Text = "Guida"
       '
@@ -1812,7 +1812,7 @@ Friend Class frmMain
       Me.BackstageViewPage1.Location = New System.Drawing.Point(0, 1)
       Me.BackstageViewPage1.Name = "BackstageViewPage1"
       Me.BackstageViewPage1.Padding = New System.Windows.Forms.Padding(0, 1, 2, 1)
-      Me.BackstageViewPage1.Size = New System.Drawing.Size(865, 272)
+      Me.BackstageViewPage1.Size = New System.Drawing.Size(1316, 728)
       Me.BackstageViewPage1.TabIndex = 6
       Me.BackstageViewPage1.Text = "Guida"
       '
@@ -3708,7 +3708,7 @@ Friend Class frmMain
       Me.eui_Gestione.KeyTip = "G"
       Me.eui_Gestione.Location = New System.Drawing.Point(0, 0)
       Me.eui_Gestione.Name = "eui_Gestione"
-      Me.eui_Gestione.Size = New System.Drawing.Size(1453, 99)
+      Me.eui_Gestione.Size = New System.Drawing.Size(1461, 99)
       Me.eui_Gestione.TabIndex = 0
       Me.eui_Gestione.Text = "Gestione"
       '
@@ -5693,10 +5693,10 @@ Friend Class frmMain
       Me.eui_sbrMain.ControlsArea = Me.StatusBarControlsArea1
       Me.eui_sbrMain.Dock = System.Windows.Forms.DockStyle.Bottom
       Me.eui_sbrMain.ForeColor = System.Drawing.SystemColors.ControlText
-      Me.eui_sbrMain.Location = New System.Drawing.Point(0, 784)
+      Me.eui_sbrMain.Location = New System.Drawing.Point(0, 787)
       Me.eui_sbrMain.Name = "eui_sbrMain"
       Me.eui_sbrMain.NotificationsArea = Me.StatusBarNotificationsArea1
-      Me.eui_sbrMain.Size = New System.Drawing.Size(1453, 22)
+      Me.eui_sbrMain.Size = New System.Drawing.Size(1461, 22)
       Me.eui_sbrMain.TabIndex = 20
       '
       'StatusBarNotificationsArea1
@@ -5708,7 +5708,7 @@ Friend Class frmMain
       Me.StatusBarNotificationsArea1.MaximumSize = New System.Drawing.Size(0, 22)
       Me.StatusBarNotificationsArea1.MinimumSize = New System.Drawing.Size(0, 22)
       Me.StatusBarNotificationsArea1.Name = "StatusBarNotificationsArea1"
-      Me.StatusBarNotificationsArea1.Size = New System.Drawing.Size(856, 22)
+      Me.StatusBarNotificationsArea1.Size = New System.Drawing.Size(864, 22)
       Me.StatusBarNotificationsArea1.TabIndex = 1
       Me.StatusBarNotificationsArea1.Text = "Prova 2"
       '
@@ -5785,7 +5785,7 @@ Friend Class frmMain
       Me.StatusBarControlsArea1.Controls.Add(Me.StatusBarPane2)
       Me.StatusBarControlsArea1.Controls.Add(Me.StatusBarPane7)
       Me.StatusBarControlsArea1.Dock = System.Windows.Forms.DockStyle.Right
-      Me.StatusBarControlsArea1.Location = New System.Drawing.Point(856, 0)
+      Me.StatusBarControlsArea1.Location = New System.Drawing.Point(864, 0)
       Me.StatusBarControlsArea1.MaximumSize = New System.Drawing.Size(0, 22)
       Me.StatusBarControlsArea1.MinimumSize = New System.Drawing.Size(0, 22)
       Me.StatusBarControlsArea1.Name = "StatusBarControlsArea1"
@@ -6091,7 +6091,7 @@ Friend Class frmMain
       '
       Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
       Me.BackColor = System.Drawing.Color.White
-      Me.ClientSize = New System.Drawing.Size(1453, 806)
+      Me.ClientSize = New System.Drawing.Size(1461, 809)
       Me.Controls.Add(Me.eui_BackstageView1)
       Me.Controls.Add(Me.eui_File)
       Me.Controls.Add(Me.eui_sbrMain)
@@ -13035,7 +13035,6 @@ Friend Class frmMain
                eui_Strumenti_Periodo_Mese.Pressed = False
                eui_Strumenti_Periodo_Anno.Pressed = False
                g_frmDocumenti.filtroDati = "Tutti"
-               g_frmDocumenti.NascondiDate()
                g_frmDocumenti.eui_txtTestoRicerca.Text = String.Empty
                g_frmDocumenti.AggiornaDatiSospesi()
 

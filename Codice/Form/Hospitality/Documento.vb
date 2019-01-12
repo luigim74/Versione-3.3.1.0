@@ -1820,6 +1820,7 @@ Public Class frmDocumento
       Try
          ' Legge il nome relativo alla lista Cognome.
          eui_cmbIdCliente.SelectedIndex = eui_cmbClienteCognome.SelectedIndex
+         eui_txtIdCliente.Text = eui_cmbIdCliente.Text
 
          Dim AClienti As New Anagrafiche.Cliente(ConnString)
 
