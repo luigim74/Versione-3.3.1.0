@@ -2,7 +2,7 @@
 ' ***************************************************************************************************
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       29/10/2018
-' Data ultima modifica: 19/12/2018
+' Data ultima modifica: 14/01/2019
 ' Descrizione:          Form per la compilazione della Fattura elettronica con generazione file XML.
 ' Note:
 '
@@ -129,6 +129,34 @@ Public Class frmFatturaElettronica
 
    End Function
 
+   Private Function EseguiConvalidaFileXML() As Boolean
+      Dim fileConvalidato As Boolean
+
+      Try
+         ' Modifica il cursore del mouse.
+         Cursor.Current = Cursors.AppStarting
+
+         Dim nomeFileXml As String = nomeDirectory & "\" & GeneraNomeFileXML()
+
+         If File.Exists(nomeFileXml) = True Then
+            ' Convalida la fattura elettronica in formato xml.
+            fileConvalidato = ConvalidaFileXML(GeneraDirectoryNomeFileXML)
+         End If
+
+         Return fileConvalidato
+
+      Catch ex As Exception
+         ' Visualizza un messaggio di errore e lo registra nell'apposito file.
+         err.GestisciErrore(ex.StackTrace, ex.Message)
+
+         Return False
+
+      Finally
+         ' Modifica il cursore del mouse.
+         Cursor.Current = Cursors.Default
+      End Try
+
+   End Function
    Private Function GeneraFileXML(ByVal nomefile As String) As Boolean
       Try
 
@@ -1846,6 +1874,10 @@ Public Class frmFatturaElettronica
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
          err.GestisciErrore(ex.StackTrace, ex.Message)
 
+      Finally
+         ' Modifica il cursore del mouse.
+         Cursor.Current = Cursors.Default
+
       End Try
    End Sub
 
@@ -1920,7 +1952,14 @@ Public Class frmFatturaElettronica
             SalvaNumeroProgressivoFileXML()
 
             ' Esegue la convalida del file xml.
-            eui_cmdConvalida.PerformClick()
+            If EseguiConvalidaFileXML() = True Then
+               ' Modifica lo stato del documento selezionato.
+               Dim Id As String = g_frmDocumenti.DataGrid1.Item(g_frmDocumenti.DataGrid1.CurrentCell.RowNumber, g_frmDocumenti.COLONNA_ID_DOC)
+               g_frmDocumenti.ModificaStatoDocumento(TAB_DOCUMENTI, Id, g_frmDocumenti.STATO_DOC_ESPORTATO_XML)
+
+               ' Aggiorna la lista dei documenti.
+               g_frmDocumenti.AggiornaDati()
+            End If
 
             ' Visualizza la scheda Convalida con l'elenco di eventuali errori.
             eui_tpcDocumento.SelectedTabPage = eui_tpConvalida
@@ -1937,34 +1976,19 @@ Public Class frmFatturaElettronica
          Cursor.Current = Cursors.Default
 
       End Try
-
    End Sub
 
    Private Sub eui_cmdConvalida_Click(sender As Object, e As EventArgs) Handles eui_cmdConvalida.Click
-      Dim fileConvalidato As Boolean
-
       Try
-         ' Modifica il cursore del mouse.
-         Cursor.Current = Cursors.AppStarting
-
-         Dim nomeFileXml As String = nomeDirectory & "\" & GeneraNomeFileXML()
-
-         If File.Exists(nomeFileXml) = True Then
-            ' Convalida la fattura elettronica in formato xml.
-            fileConvalidato = ConvalidaFileXML(GeneraDirectoryNomeFileXML)
+         If EseguiConvalidaFileXML() = False Then
+            MessageBox.Show("Riscontrati errori di convalida.", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Error)
+         Else
+            MessageBox.Show("Convalida eseguita con successo!", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Information)
          End If
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
          err.GestisciErrore(ex.StackTrace, ex.Message)
-
-      Finally
-         ' Modifica il cursore del mouse.
-         Cursor.Current = Cursors.Default
-
-         If fileConvalidato = False Then
-            MessageBox.Show("Riscontrati errori di convalida.", NOME_PRODOTTO, MessageBoxButtons.OK, MessageBoxIcon.Error)
-         End If
 
       End Try
    End Sub

@@ -23,7 +23,7 @@ Public Class ElencoDoc
    Public Const TAB_DOCUMENTI As String = "Documenti"
    Const TAB_DETTAGLI_DOC As String = "DettagliDoc"
    Const TITOLO_FINESTRA As String = "Elenco documenti di Vendita"
-   Const COLONNA_ID_DOC As Short = 0
+   Public Const COLONNA_ID_DOC As Short = 0
    Const COLONNA_NUMERO_DOC As Short = 1
    Const COLONNA_DATA_DOC As Short = 2
    Const COLONNA_TIPO_DOC As Short = 4
@@ -48,6 +48,7 @@ Public Class ElencoDoc
    Const STATO_DOC_EMESSO As String = "Emesso"
    Const STATO_DOC_EMESSO_STAMPATO As String = "Emesso e stampato"
    Const STATO_DOC_ANNULLATO As String = "Annullato"
+   Public Const STATO_DOC_ESPORTATO_XML As String = "Esportato in XML"
 
    ' Dichiara un oggetto connessione.
    Dim cn As New OleDbConnection(ConnString)
@@ -1828,7 +1829,7 @@ Public Class ElencoDoc
                Case TIPO_DOC_RF, TIPO_DOC_FF, TIPO_DOC_SF
 
                   Select Case statoDoc
-                     Case STATO_DOC_EMESSO, STATO_DOC_EMESSO_STAMPATO
+                     Case STATO_DOC_EMESSO, STATO_DOC_EMESSO_STAMPATO, STATO_DOC_ESPORTATO_XML
                         g_frmMain.eui_Strumenti_Annulla.Enabled = True
 
                      Case Else
@@ -1861,11 +1862,11 @@ Public Class ElencoDoc
                Case TIPO_DOC_FF
 
                   Select Case statoDoc
-                     Case STATO_DOC_ANNULLATO
-                        g_frmMain.eui_Strumenti_Esporta_XML.Enabled = False
+                     Case STATO_DOC_EMESSO, STATO_DOC_EMESSO_STAMPATO
+                        g_frmMain.eui_Strumenti_Esporta_XML.Enabled = True
 
                      Case Else
-                        g_frmMain.eui_Strumenti_Esporta_XML.Enabled = True
+                        g_frmMain.eui_Strumenti_Esporta_XML.Enabled = False
 
                   End Select
 
@@ -1881,7 +1882,6 @@ Public Class ElencoDoc
 
       End Try
    End Sub
-
 
    Public Sub AnnullaDocumento()
       Try
@@ -1925,6 +1925,9 @@ Public Class ElencoDoc
          ' QUESTA PROCEDURA NON E' PIU' NECESSARIA. 
          ' Salva il Numero del documento annullato come prossimo numero da stampare rendendolo nuovamente disponibile.
          'RipristinaNumeroDocFiscaleConfig(TAB_DOCUMENTI, Documento, Numero)
+
+         ' Aggiorna la lista dei documenti.
+         g_frmDocumenti.AggiornaDati()
 
          ' Attiva/disattiva il pulsanti per i sospesi, i buoni e annulla.
          AttivaDisattivaSospeso()
