@@ -1,3 +1,18 @@
+#Region " DATI FILE.VB "
+
+' ******************************************************************
+' Autore:               Luigi Montana, Montana Software
+' Data creazione:       05/08/2005
+' Data ultima modifica: 26/01/2019
+' Descrizione:          Form per la configurazione di tutte le opzioni del programma.
+' Note:
+'
+' Elenco Attivita:
+'
+' ******************************************************************
+
+#End Region
+
 Imports System.IO
 
 Public Class frmOpzioni
@@ -3585,7 +3600,9 @@ Public Class frmOpzioni
 
    Private Sub LeggiDatiConfig()
       Try
-         ' SCHEDA GENERALI.
+
+#Region "SCHEDA GENERALI "
+
          If DatiConfig.GetValue("FormatoFattAziende").Length = 0 Then
             cmbFormatoFatt.SelectedIndex = 0
          Else
@@ -3679,7 +3696,9 @@ Public Class frmOpzioni
             txtAliquotaIva4.Text = ""
          End If
 
-         ' SCHEDA BAR / RISTORANTE.
+#End Region
+
+#Region "SCHEDA BAR / RISTORANTE "
 
          ' Aliquota IVA standard.
          cmbIvaRistorante.Text = DatiConfig.GetValue("RepartoAliquotaIvaRistorante")
@@ -3752,7 +3771,9 @@ Public Class frmOpzioni
             ColorePrenTavAgent = Color.White
          End If
 
-         ' SCHEDA HOTEL.
+#End Region
+
+#Region "SCHEDA HOTEL "
 
          ' Tipo esercizio.
          cmbTipoEsercizio.Text = DatiConfig.GetValue("TipoEsercizioHotel")
@@ -3831,7 +3852,9 @@ Public Class frmOpzioni
             txtNumeroModC59.Text = numMod.ToString
          End If
 
-         ' SCHEDA CENTRO SPORTIVO.
+#End Region
+
+#Region "SCHEDA CENTRO SPORTIVO "
 
          ' Aliquota IVA standard.
          cmbIvaCentroSportivo.Text = DatiConfig.GetValue("RepartoAliquotaIvaCentroSportivo")
@@ -3839,7 +3862,9 @@ Public Class frmOpzioni
             cmbIvaCentroSportivo.SelectedIndex = 0
          End If
 
-         ' SCHEDA PERCORSI DI STAMPA.
+#End Region
+
+#Region "SCHEDA PERCORSI DI STAMPA "
 
          ' Comanda - Percorso 1.
          cmbReparto1.Text = DatiConfig.GetValue("Reparto1")
@@ -4027,7 +4052,10 @@ Public Class frmOpzioni
             cmbReportScontrini.Text = String.Empty
          End If
 
-         ' SCHEDA DISPOSITIVO PALMARE
+#End Region
+
+#Region "SCHEDA DISPOSITIVO PALMARE "
+
          txtPercorsoRetePalmare.Text = DatiConfig.GetValue("PercorsoRP")
          If txtPercorsoRetePalmare.Text.Length = 0 Then
             txtPercorsoRetePalmare.Text = ""
@@ -4057,7 +4085,9 @@ Public Class frmOpzioni
          End If
          FreqAggPalmare = Convert.ToInt16(cmbFreqAggPalmare.Text)
 
-         ' SCHEDA STAMPANTI FISCALI
+#End Region
+
+#Region "SCHEDA STAMPANTI FISCALI "
 
          If cmbStampanteProduttore.Enabled = True Then
             If DatiConfig.GetValue("ProduttoreSF") <> String.Empty Then
@@ -4115,7 +4145,9 @@ Public Class frmOpzioni
             txtEstensioneFileWpos1.Text = ""
          End If
 
-         ' SCHEDA USB PEN DRIVE RECOVERY
+#End Region
+
+#Region "SCHEDA USB PEN DRIVE RECOVERY "
 
          txtPercorsoRecovery.Text = DatiConfig.GetValue("PercorsoRecovery")
          If txtPercorsoRecovery.Text.Length = 0 Then
@@ -4139,6 +4171,8 @@ Public Class frmOpzioni
             End If
          End If
 
+#End Region
+
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.
          err.GestisciErrore(ex.StackTrace, ex.Message)
@@ -4148,7 +4182,8 @@ Public Class frmOpzioni
 
    Private Sub SalvaDatiConfig()
       Try
-         ' SCHEDA GENERALI.
+
+#Region "SCHEDA GENERALI "
 
          DatiConfig.SetValue("FormatoFattAziende", cmbFormatoFatt.SelectedIndex.ToString)
 
@@ -4248,7 +4283,9 @@ Public Class frmOpzioni
             DatiConfig.SetValue("AliquotaIva4", txtAliquotaIva4.Text)
          End If
 
-         ' SCHEDA BAR / RISTORANTE.
+#End Region
+
+#Region "SCHEDA BAR / RISTORANTE "
 
          ' Aliquota IVA standard.
          DatiConfig.SetValue("RepartoAliquotaIvaRistorante", cmbIvaRistorante.Text)
@@ -4328,7 +4365,9 @@ Public Class frmOpzioni
          DatiConfig.SetValue("ColorePrenTavAgent", cmdColorePrenTavAgent.BackColor.ToArgb)
          ColorePrenTavAgent = cmdColorePrenTavAgent.BackColor
 
-         ' SCHEDA HOTEL.
+#End Region
+
+#Region "SCHEDA HOTEL "
 
          ' Tipo di esercizio.
          DatiConfig.SetValue("TipoEsercizioHotel", cmbTipoEsercizio.Text)
@@ -4419,7 +4458,9 @@ Public Class frmOpzioni
             DatiConfig.SetValue("NumeroModC59", txtNumeroModC59.Text)
          End If
 
-         ' SCHEDA CENTRO SPORTIVO.
+#End Region
+
+#Region "SCHEDA CENTRO SPORTIVO "
 
          ' Aliquota IVA standard.
          DatiConfig.SetValue("RepartoAliquotaIvaCentroSportivo", cmbIvaCentroSportivo.Text)
@@ -4447,7 +4488,9 @@ Public Class frmOpzioni
 
          End Select
 
-         ' SCHEDA PERCORSI DI STAMPA.
+#End Region
+
+#Region "SCHEDA PERCORSI DI STAMPA "
 
          ' Comande - Percorso 1
          If cmbReparto1.Text.Length = 0 Then
@@ -4679,7 +4722,10 @@ Public Class frmOpzioni
             DatiConfig.SetValue("ReportScontrini", cmbReportScontrini.Text)
          End If
 
-         ' SCHEDA DISPOSITIVO PALMARE
+#End Region
+
+#Region "SCHEDA DISPOSITIVO PALMARE "
+
          If txtPercorsoRetePalmare.Text.Length = 0 Then
             DatiConfig.SetValue("PercorsoRP", "")
             PercorsoRP = ""
@@ -4697,7 +4743,9 @@ Public Class frmOpzioni
          DatiConfig.SetValue("FreqAggPalmare", cmbFreqAggPalmare.Text)
          FreqAggPalmare = Convert.ToInt16(cmbFreqAggPalmare.Text)
 
-         ' SCHEDA STAMPANTI FISCALI
+#End Region
+
+#Region "SCHEDA STAMPANTI FISCALI "
 
          If cmbStampanteProduttore.Text.Length = 0 Then
             DatiConfig.SetValue("ProduttoreSF", "")
@@ -4791,7 +4839,9 @@ Public Class frmOpzioni
             EstensioneFileWpos1 = txtEstensioneFileWpos1.Text
          End If
 
-         ' SCHEDA USB PEN DRIVE RECOVERY
+#End Region
+
+#Region "SCHEDA USB PEN DRIVE RECOVERY "
 
          If txtPercorsoRecovery.Text.Length = 0 Then
             DatiConfig.SetValue("PercorsoRecovery", "")
@@ -4800,6 +4850,8 @@ Public Class frmOpzioni
          End If
 
          DatiConfig.SetValue("AttivaRecovery", chkAttivaRecovery.Checked)
+
+#End Region
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.

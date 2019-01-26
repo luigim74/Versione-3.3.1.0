@@ -46,7 +46,7 @@ Public Class frmDocumento
    Const STATO_DOC_EMESSO_STAMPATO As String = "Emesso e stampato"
    Const STATO_DOC_EMESSO As String = "Emesso"
    Const STATO_DOC_ANNULLATO As String = "Annullato"
-   Const STATO_DOC_ESPORTATO_XML As String = "Esportato in XML"
+   Const STATO_DOC_EMESSO_XML As String = "Emesso in XML"
 
    Const STATO_DOC_NUOVO As String = " (Nuovo)"
    Const STATO_DOC_MODIFICA As String = " (Modifica)"
@@ -831,7 +831,7 @@ Public Class frmDocumento
       Try
          Select Case stato
 
-            Case STATO_DOC_EMESSO, STATO_DOC_EMESSO_STAMPATO, STATO_DOC_ESPORTATO_XML
+            Case STATO_DOC_EMESSO, STATO_DOC_EMESSO_STAMPATO, STATO_DOC_EMESSO_XML
                ' Disattiva tutti i controlli delle schede.
                eui_tpGenerale.Enabled = False
                eui_tpDettagli.Enabled = False
@@ -1782,7 +1782,7 @@ Public Class frmDocumento
                eui_cmbStatoDocumento.Items.Add("Emesso e stampato")
                eui_cmbStatoDocumento.Items.Add("Annullato")
                eui_cmbStatoDocumento.Items.Add("Stampato")
-               eui_cmbStatoDocumento.Items.Add("Esportato in XML")
+               eui_cmbStatoDocumento.Items.Add("Emesso in XML")
          End Select
 
       Catch ex As Exception

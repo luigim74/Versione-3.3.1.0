@@ -157,6 +157,7 @@ Public Class frmFatturaElettronica
       End Try
 
    End Function
+
    Private Function GeneraFileXML(ByVal nomefile As String) As Boolean
       Try
 
@@ -1016,7 +1017,12 @@ Public Class frmFatturaElettronica
             End If
 
             ' OBBLIGATORIO - formato numerico nel quale i decimali vanno separati dall'intero con il carattere '.' (punto). La sua lunghezza va da 4 a 21 caratteri.
-            fatturaXlm.Body.Item(0).DatiBeniServizi.DettaglioLinee.Item(numLinea - 1).PrezzoTotale = CFormatta.FormattaImponibileIva(CalcolaImponibileIva(dr.Item("AliquotaIva"), dr.Item("ImportoNetto")))
+            Dim quantita As Decimal = fatturaXlm.Body.Item(0).DatiBeniServizi.DettaglioLinee.Item(numLinea - 1).Quantita
+            Dim prezzoUnitario As Decimal = fatturaXlm.Body.Item(0).DatiBeniServizi.DettaglioLinee.Item(numLinea - 1).PrezzoUnitario
+            ' Con questo codice i decimali sono errati per la convalida del file .xml.
+            ' CFormatta.FormattaImponibileIva(CalcolaImponibileIva(dr.Item("AliquotaIva"), dr.Item("ImportoNetto")))
+            fatturaXlm.Body.Item(0).DatiBeniServizi.DettaglioLinee.Item(numLinea - 1).PrezzoTotale = quantita * prezzoUnitario
+
             ' OBBLIGATORIO - formato numerico nel quale i decimali vanno separati dall'intero con il carattere '.' (punto). La sua lunghezza va da 4 a 6 caratteri.
             fatturaXlm.Body.Item(0).DatiBeniServizi.DettaglioLinee.Item(numLinea - 1).AliquotaIVA = CFormatta.FormattaEuro(Convert.ToDecimal(dr.Item("AliquotaIva")))
 
@@ -1955,7 +1961,7 @@ Public Class frmFatturaElettronica
             If EseguiConvalidaFileXML() = True Then
                ' Modifica lo stato del documento selezionato.
                Dim Id As String = g_frmDocumenti.DataGrid1.Item(g_frmDocumenti.DataGrid1.CurrentCell.RowNumber, g_frmDocumenti.COLONNA_ID_DOC)
-               g_frmDocumenti.ModificaStatoDocumento(TAB_DOCUMENTI, Id, g_frmDocumenti.STATO_DOC_ESPORTATO_XML)
+               g_frmDocumenti.ModificaStatoDocumento(TAB_DOCUMENTI, Id, g_frmDocumenti.STATO_DOC_EMESSO_XML)
 
                ' Aggiorna la lista dei documenti.
                g_frmDocumenti.AggiornaDati()

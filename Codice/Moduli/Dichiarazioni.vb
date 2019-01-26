@@ -1,7 +1,6 @@
 #Region " DATI FILE.VB "
 
 ' ******************************************************************
-' Nome Modulo:          Dichiarazioni
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       05/08/2005
 ' Data ultima modifica: 22/08/2018

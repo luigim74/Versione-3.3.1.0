@@ -2493,6 +2493,8 @@ Public Class frmClienti
                      Dim bmp As New Bitmap(.Immagine)
                      picFoto.Image = bmp
                   End If
+               Else
+                  .Immagine = String.Empty
                End If
             End With
 

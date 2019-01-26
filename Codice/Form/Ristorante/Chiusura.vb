@@ -1,9 +1,8 @@
 #Region " DATI FILE.VB "
 ' ******************************************************************
-' Nome form:            Chiusura
 ' Autore:               Luigi Montana, Montana Software
 ' Data creazione:       13/08/2010
-' Data ultima modifica: 14/08/2018
+' Data ultima modifica: 26/01/2019
 ' Descrizione:          Finestra per effettuare la chiusura giornaliera di tutti i documenti emessi.
 ' Note:
 

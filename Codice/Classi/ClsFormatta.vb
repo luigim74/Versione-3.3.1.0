@@ -135,10 +135,11 @@ Public Class ClsFormatta
 
    Public Function FormattaImponibileIva(ByVal numero As Double) As Decimal
       Try
-         Dim valString As String = String.Format("{0:##,##0.00}", numero)
-         Dim valDecimal As Decimal = Convert.ToDecimal(valString)
 
-         Return valDecimal
+         Dim valDecimal As Decimal = Convert.ToDecimal(numero)
+         Dim valString As String = String.Format("{0:##,##0.00}", valDecimal)
+
+         Return Convert.ToDecimal(valString)
 
       Catch ex As Exception
          ' Visualizza un messaggio di errore e lo registra nell'apposito file.

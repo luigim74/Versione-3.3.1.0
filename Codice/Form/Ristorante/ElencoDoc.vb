@@ -48,7 +48,7 @@ Public Class ElencoDoc
    Const STATO_DOC_EMESSO As String = "Emesso"
    Const STATO_DOC_EMESSO_STAMPATO As String = "Emesso e stampato"
    Const STATO_DOC_ANNULLATO As String = "Annullato"
-   Public Const STATO_DOC_ESPORTATO_XML As String = "Esportato in XML"
+   Public Const STATO_DOC_EMESSO_XML As String = "Emesso in XML"
 
    ' Dichiara un oggetto connessione.
    Dim cn As New OleDbConnection(ConnString)
@@ -1829,7 +1829,7 @@ Public Class ElencoDoc
                Case TIPO_DOC_RF, TIPO_DOC_FF, TIPO_DOC_SF
 
                   Select Case statoDoc
-                     Case STATO_DOC_EMESSO, STATO_DOC_EMESSO_STAMPATO, STATO_DOC_ESPORTATO_XML
+                     Case STATO_DOC_EMESSO, STATO_DOC_EMESSO_STAMPATO, STATO_DOC_EMESSO_XML
                         g_frmMain.eui_Strumenti_Annulla.Enabled = True
 
                      Case Else
@@ -1854,7 +1854,6 @@ Public Class ElencoDoc
       Try
          ' Attiva/disattiva il pulsante per esportare il documento in Fattura elettronica.
          If numRecord <> 0 Then
-
             Dim tipoDoc As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_TIPO_DOC)
             Dim statoDoc As String = DataGrid1.Item(DataGrid1.CurrentCell.RowNumber, COLONNA_STATO_DOC)
 
